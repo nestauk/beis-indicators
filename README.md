@@ -1,7 +1,7 @@
-beis_indicators
-==============================
+Beis Indicators 
+===============
 
-Regional indicators for BEIS.
+Regional indicators for BEIS to assess regional conditions needed for value for money of regional R&D spend.
 
 Project Organization
 ------------
