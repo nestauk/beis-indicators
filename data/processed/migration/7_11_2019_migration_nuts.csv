@@ -1,0 +1,821 @@
+,nuts_name,nuts_code,variable,period,population_estimate,inflow,outflow,net
+0,Bedfordshire and Hertfordshire,UKH2,internal_migration,2008,1697185,83310,81014,0.0013528283599018374
+1,Bedfordshire and Hertfordshire,UKH2,internal_migration,2009,1716219,88586,86057,0.001473588160951487
+2,Bedfordshire and Hertfordshire,UKH2,internal_migration,2010,1736949,88764,84266,0.0025895981977594046
+3,Bedfordshire and Hertfordshire,UKH2,internal_migration,2011,1753749,96082,92048,0.002300215139110557
+4,Bedfordshire and Hertfordshire,UKH2,internal_migration,2012,1773368,96338,90222,0.003448804760207695
+5,Bedfordshire and Hertfordshire,UKH2,internal_migration,2013,1796213,101369,97087,0.0023839043587815033
+6,Bedfordshire and Hertfordshire,UKH2,internal_migration,2014,1817710,101181,98195,0.0016427262874715988
+7,Bedfordshire and Hertfordshire,UKH2,internal_migration,2015,1837845,100392,99022,0.0007454382714537951
+8,Bedfordshire and Hertfordshire,UKH2,internal_migration,2016,1845534,107906,114542,-0.0035957072587121126
+9,Bedfordshire and Hertfordshire,UKH2,internal_migration,2017,1853703,109121,113766,-0.0025057951570451147
+10,Bedfordshire and Hertfordshire,UKH2,international_migration,2008,1697185,16391,10335,0.00356826156252854
+11,Bedfordshire and Hertfordshire,UKH2,international_migration,2009,1716219,16341,8135,0.004781441063174338
+12,Bedfordshire and Hertfordshire,UKH2,international_migration,2010,1736949,15660,8504,0.0041198676529938414
+13,Bedfordshire and Hertfordshire,UKH2,international_migration,2011,1753749,12205,9903,0.0013126165716986866
+14,Bedfordshire and Hertfordshire,UKH2,international_migration,2012,1773368,12062,7818,0.0023931862986137113
+15,Bedfordshire and Hertfordshire,UKH2,international_migration,2013,1796213,14402,6339,0.004488888567224489
+16,Bedfordshire and Hertfordshire,UKH2,international_migration,2014,1817710,16180,6346,0.005410103921967751
+17,Bedfordshire and Hertfordshire,UKH2,international_migration,2015,1837845,17204,8445,0.004765907897564811
+18,Bedfordshire and Hertfordshire,UKH2,international_migration,2016,1845534,14650,8947,0.003090162522066784
+19,Bedfordshire and Hertfordshire,UKH2,international_migration,2017,1853703,15907,10614,0.0028553657193196537
+20,"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,internal_migration,2008,2230698,124817,124781,1.6138446351769714e-05
+21,"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,internal_migration,2009,2254528,128667,129137,-0.00020846935589178756
+22,"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,internal_migration,2010,2275173,125787,126645,-0.00037711417988873814
+23,"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,internal_migration,2011,2294573,132087,131234,0.00037174672586141297
+24,"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,internal_migration,2012,2314117,132636,130041,0.0011213780461402773
+25,"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,internal_migration,2013,2336630,135660,136449,-0.0003376657836285591
+26,"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,internal_migration,2014,2357766,136257,138602,-0.000994585552595126
+27,"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,internal_migration,2015,2379299,134712,139421,-0.001979154364373708
+28,"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,internal_migration,2016,2391696,150404,157059,-0.0027825442698403142
+29,"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,internal_migration,2017,2407593,154553,157519,-0.0012319357964572916
+30,"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,international_migration,2008,2230698,25659,21526,0.001852783299218451
+31,"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,international_migration,2009,2254528,23300,14589,0.003863779913134811
+32,"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,international_migration,2010,2275173,23513,18509,0.0021993931890014516
+33,"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,international_migration,2011,2294573,19516,16803,0.00118235506126848
+34,"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,international_migration,2012,2314117,19081,15432,0.0015768433488885826
+35,"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,international_migration,2013,2336630,23726,12890,0.004637447948541275
+36,"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,international_migration,2014,2357766,26502,14721,0.004996679059754022
+37,"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,international_migration,2015,2379299,26982,13711,0.005577693261754828
+38,"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,international_migration,2016,2391696,23648,15571,0.0033771014376409044
+39,"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,international_migration,2017,2407593,27248,17956,0.003859456311760335
+40,Cheshire,UKD6,internal_migration,2008,897196,31657,30768,0.0009908648723355878
+41,Cheshire,UKD6,internal_migration,2009,899913,32626,31088,0.0017090540974516425
+42,Cheshire,UKD6,internal_migration,2010,902971,32196,30896,0.0014396918616433971
+43,Cheshire,UKD6,internal_migration,2011,906402,34514,33263,0.0013801823032164537
+44,Cheshire,UKD6,internal_migration,2012,909240,33529,31924,0.0017652105054771017
+45,Cheshire,UKD6,internal_migration,2013,913559,35954,33712,0.0024541381563752316
+46,Cheshire,UKD6,internal_migration,2014,917452,36322,33587,0.0029810823890514164
+47,Cheshire,UKD6,internal_migration,2015,922000,36219,33496,0.002953362255965293
+48,Cheshire,UKD6,internal_migration,2016,926536,41479,36809,0.005040279060932333
+49,Cheshire,UKD6,internal_migration,2017,930839,42316,37990,0.004647420230566188
+50,Cheshire,UKD6,international_migration,2008,897196,3497,3577,-8.916669267361869e-05
+51,Cheshire,UKD6,international_migration,2009,899913,3092,3285,-0.000214465176078132
+52,Cheshire,UKD6,international_migration,2010,902971,3678,3411,0.00029569055927599003
+53,Cheshire,UKD6,international_migration,2011,906402,2974,2528,0.0004920554014664574
+54,Cheshire,UKD6,international_migration,2012,909240,3420,3228,0.00021116536887950377
+55,Cheshire,UKD6,international_migration,2013,913559,3902,3412,0.0005363638254343726
+56,Cheshire,UKD6,international_migration,2014,917452,4052,3344,0.0007717024977873502
+57,Cheshire,UKD6,international_migration,2015,922000,4202,3187,0.0011008676789587852
+58,Cheshire,UKD6,international_migration,2016,926536,3881,4146,-0.0002860115527081517
+59,Cheshire,UKD6,international_migration,2017,930839,4096,3932,0.00017618514050227806
+60,Cornwall and Isles of Scilly,UKK3,internal_migration,2008,528616,19896,16456,0.0065075593625618594
+61,Cornwall and Isles of Scilly,UKK3,internal_migration,2009,532022,21016,16685,0.008140640800568397
+62,Cornwall and Isles of Scilly,UKK3,internal_migration,2010,535984,20594,16376,0.007869637899638795
+63,Cornwall and Isles of Scilly,UKK3,internal_migration,2011,540528,21379,17586,0.007017212799336945
+64,Cornwall and Isles of Scilly,UKK3,internal_migration,2012,543999,20222,17140,0.0056654515909036595
+65,Cornwall and Isles of Scilly,UKK3,internal_migration,2013,548253,21656,17815,0.007005889616655084
+66,Cornwall and Isles of Scilly,UKK3,internal_migration,2014,552618,21655,17117,0.00821182082378786
+67,Cornwall and Isles of Scilly,UKK3,internal_migration,2015,557388,21542,16663,0.008753328022849434
+68,Cornwall and Isles of Scilly,UKK3,internal_migration,2016,563608,25827,18804,0.012460788349349192
+69,Cornwall and Isles of Scilly,UKK3,internal_migration,2017,568210,25057,19638,0.009536966966438465
+70,Cornwall and Isles of Scilly,UKK3,international_migration,2008,528616,2053,2489,-0.000824795314557259
+71,Cornwall and Isles of Scilly,UKK3,international_migration,2009,532022,1996,1402,0.0011164951825300457
+72,Cornwall and Isles of Scilly,UKK3,international_migration,2010,535984,2220,1464,0.0014104898653691156
+73,Cornwall and Isles of Scilly,UKK3,international_migration,2011,540528,1776,1066,0.0013135304739069946
+74,Cornwall and Isles of Scilly,UKK3,international_migration,2012,543999,1925,1476,0.000825369164281552
+75,Cornwall and Isles of Scilly,UKK3,international_migration,2013,548253,2065,1498,0.0010341940673375249
+76,Cornwall and Isles of Scilly,UKK3,international_migration,2014,552618,2198,1692,0.0009156415462398981
+77,Cornwall and Isles of Scilly,UKK3,international_migration,2015,557388,2205,1740,0.0008342483153566277
+78,Cornwall and Isles of Scilly,UKK3,international_migration,2016,563608,2004,1874,0.0002306567685341585
+79,Cornwall and Isles of Scilly,UKK3,international_migration,2017,568210,2260,1512,0.0013164147058305907
+80,Cumbria,UKD1,internal_migration,2008,500786,15711,16112,-0.0008007412347789275
+81,Cumbria,UKD1,internal_migration,2009,500165,15776,16205,-0.0008577169534053763
+82,Cumbria,UKD1,internal_migration,2010,499817,15527,15776,-0.0004981823347345128
+83,Cumbria,UKD1,internal_migration,2011,499205,16255,16795,-0.001081719934696167
+84,Cumbria,UKD1,internal_migration,2012,498499,16185,16338,-0.000306921377976686
+85,Cumbria,UKD1,internal_migration,2013,498376,17215,17031,0.0003691991588680033
+86,Cumbria,UKD1,internal_migration,2014,498581,17308,16658,0.0013036999003171
+87,Cumbria,UKD1,internal_migration,2015,498793,16962,16598,0.0007297616446100887
+88,Cumbria,UKD1,internal_migration,2016,498375,18572,17470,0.0022111863556558814
+89,Cumbria,UKD1,internal_migration,2017,498888,18964,17298,0.0033394268853931142
+90,Cumbria,UKD1,international_migration,2008,500786,1798,1238,0.0011182421233820435
+91,Cumbria,UKD1,international_migration,2009,500165,1179,1154,4.998350544320374e-05
+92,Cumbria,UKD1,international_migration,2010,499817,1583,1273,0.0006202270030831285
+93,Cumbria,UKD1,international_migration,2011,499205,1336,1169,0.00033453190573011087
+94,Cumbria,UKD1,international_migration,2012,498499,1253,1128,0.0002507527597848742
+95,Cumbria,UKD1,international_migration,2013,498376,1378,1358,4.013034335521775e-05
+96,Cumbria,UKD1,international_migration,2014,498581,1580,1238,0.000685946716782228
+97,Cumbria,UKD1,international_migration,2015,498793,1592,1126,0.0009342552922755532
+98,Cumbria,UKD1,international_migration,2016,498375,1394,1529,-0.0002708803611738149
+99,Cumbria,UKD1,international_migration,2017,498888,1625,1465,0.0003207132663042607
+100,Derbyshire and Nottinghamshire,UKF1,internal_migration,2008,2083210,100619,98836,0.0008558906687275887
+101,Derbyshire and Nottinghamshire,UKF1,internal_migration,2009,2098381,103828,100989,0.0013529478202480864
+102,Derbyshire and Nottinghamshire,UKF1,internal_migration,2010,2110326,100564,99440,0.0005326191308830958
+103,Derbyshire and Nottinghamshire,UKF1,internal_migration,2011,2122938,106781,104194,0.00121859423120223
+104,Derbyshire and Nottinghamshire,UKF1,internal_migration,2012,2135031,106918,104793,0.0009953017075630284
+105,Derbyshire and Nottinghamshire,UKF1,internal_migration,2013,2148696,111886,110182,0.0007930391269867864
+106,Derbyshire and Nottinghamshire,UKF1,internal_migration,2014,2162110,111857,108424,0.0015878008056944373
+107,Derbyshire and Nottinghamshire,UKF1,internal_migration,2015,2179199,111238,106354,0.002241190455759203
+108,Derbyshire and Nottinghamshire,UKF1,internal_migration,2016,2196060,132519,125449,0.003219402019981239
+109,Derbyshire and Nottinghamshire,UKF1,internal_migration,2017,2207511,134137,127029,0.0032199160049485595
+110,Derbyshire and Nottinghamshire,UKF1,international_migration,2008,2083210,12844,5489,0.0035306090120535137
+111,Derbyshire and Nottinghamshire,UKF1,international_migration,2009,2098381,12331,5687,0.003166250552211443
+112,Derbyshire and Nottinghamshire,UKF1,international_migration,2010,2110326,13185,7866,0.0025204636629601305
+113,Derbyshire and Nottinghamshire,UKF1,international_migration,2011,2122938,11425,7832,0.0016924658185966807
+114,Derbyshire and Nottinghamshire,UKF1,international_migration,2012,2135031,12470,7825,0.0021756124384142432
+115,Derbyshire and Nottinghamshire,UKF1,international_migration,2013,2148696,12759,6064,0.0031158432835543047
+116,Derbyshire and Nottinghamshire,UKF1,international_migration,2014,2162110,13813,6356,0.003448945705815153
+117,Derbyshire and Nottinghamshire,UKF1,international_migration,2015,2179199,14596,6442,0.0037417418051311512
+118,Derbyshire and Nottinghamshire,UKF1,international_migration,2016,2196060,12920,5833,0.0032271431563800626
+119,Derbyshire and Nottinghamshire,UKF1,international_migration,2017,2207511,14561,11291,0.0014813063219164028
+120,Devon,UKK4,internal_migration,2008,1125745,58878,54707,0.0037051019547055504
+121,Devon,UKK4,internal_migration,2009,1129578,59319,56519,0.002478801818024076
+122,Devon,UKK4,internal_migration,2010,1135491,60176,56669,0.0030885317452978493
+123,Devon,UKK4,internal_migration,2011,1142326,63590,59066,0.0039603405682791075
+124,Devon,UKK4,internal_migration,2012,1148723,61555,57408,0.003610095732391534
+125,Devon,UKK4,internal_migration,2013,1158478,67736,61451,0.005425221713316956
+126,Devon,UKK4,internal_migration,2014,1167583,67295,60554,0.005773465355353752
+127,Devon,UKK4,internal_migration,2015,1175592,66805,59905,0.005869383255415144
+128,Devon,UKK4,internal_migration,2016,1185488,77057,67427,0.008123237012943194
+129,Devon,UKK4,internal_migration,2017,1194166,76827,68399,0.007057645252000141
+130,Devon,UKK4,international_migration,2008,1125745,6308,7581,-0.0011308067102230078
+131,Devon,UKK4,international_migration,2009,1129578,6536,4464,0.0018343133453378165
+132,Devon,UKK4,international_migration,2010,1135491,7559,4205,0.0029537882730906718
+133,Devon,UKK4,international_migration,2011,1142326,5990,3276,0.002375854178229332
+134,Devon,UKK4,international_migration,2012,1148723,6069,3335,0.0023800341770818553
+135,Devon,UKK4,international_migration,2013,1158478,6932,3864,0.0026483023415205123
+136,Devon,UKK4,international_migration,2014,1167583,7138,3474,0.003138106669932673
+137,Devon,UKK4,international_migration,2015,1175592,6912,4511,0.0020423752458335886
+138,Devon,UKK4,international_migration,2016,1185488,6311,4089,0.0018743336077632164
+139,Devon,UKK4,international_migration,2017,1194166,6790,3384,0.0028521997779203225
+140,Dorset and Somerset,UKK2,internal_migration,2008,1257107,57446,52122,0.004235120797195465
+141,Dorset and Somerset,UKK2,internal_migration,2009,1266686,60414,54565,0.004617561100383204
+142,Dorset and Somerset,UKK2,internal_migration,2010,1276919,60325,54384,0.004652605216149184
+143,Dorset and Somerset,UKK2,internal_migration,2011,1284951,62982,57683,0.004123892662054818
+144,Dorset and Somerset,UKK2,internal_migration,2012,1292103,62242,56387,0.004531372498941648
+145,Dorset and Somerset,UKK2,internal_migration,2013,1300046,65636,58937,0.005152894589883742
+146,Dorset and Somerset,UKK2,internal_migration,2014,1308991,65238,58287,0.005310196937946861
+147,Dorset and Somerset,UKK2,internal_migration,2015,1318743,65226,57401,0.0059336807854145955
+148,Dorset and Somerset,UKK2,internal_migration,2016,1325884,71956,65016,0.00523424371966175
+149,Dorset and Somerset,UKK2,internal_migration,2017,1331667,71833,66111,0.004296870013299121
+150,Dorset and Somerset,UKK2,international_migration,2008,1257107,8145,9817,-0.0013300379363093196
+151,Dorset and Somerset,UKK2,international_migration,2009,1266686,7692,4863,0.002233386964093706
+152,Dorset and Somerset,UKK2,international_migration,2010,1276919,7890,4635,0.0025491045242493847
+153,Dorset and Somerset,UKK2,international_migration,2011,1284951,7503,4805,0.0020996909609782787
+154,Dorset and Somerset,UKK2,international_migration,2012,1292103,6670,4349,0.0017962964252849812
+155,Dorset and Somerset,UKK2,international_migration,2013,1300046,7879,5224,0.002042235428592527
+156,Dorset and Somerset,UKK2,international_migration,2014,1308991,8751,5047,0.002829660402554334
+157,Dorset and Somerset,UKK2,international_migration,2015,1318743,8820,5736,0.002338590612424104
+158,Dorset and Somerset,UKK2,international_migration,2016,1325884,7785,5512,0.001714327950258092
+159,Dorset and Somerset,UKK2,international_migration,2017,1331667,8429,4688,0.0028092608737770026
+160,East Anglia,UKH1,internal_migration,2008,2349739,117260,111976,0.0022487603942395306
+161,East Anglia,UKH1,internal_migration,2009,2373563,122100,116166,0.0025000389709478954
+162,East Anglia,UKH1,internal_migration,2010,2396328,120197,114749,0.002273478421985638
+163,East Anglia,UKH1,internal_migration,2011,2410153,125980,120854,0.0021268359311628765
+164,East Anglia,UKH1,internal_migration,2012,2423429,123825,118461,0.0022133926762451057
+165,East Anglia,UKH1,internal_migration,2013,2445566,128929,124167,0.0019471974994745593
+166,East Anglia,UKH1,internal_migration,2014,2467663,130598,124283,0.002559101465637731
+167,East Anglia,UKH1,internal_migration,2015,2484216,129951,123541,0.002580290924782708
+168,East Anglia,UKH1,internal_migration,2016,2502519,148589,139541,0.0036155569648022652
+169,East Anglia,UKH1,internal_migration,2017,2514759,149422,141084,0.003315625871107331
+170,East Anglia,UKH1,international_migration,2008,2349739,22128,16931,0.002211735005462309
+171,East Anglia,UKH1,international_migration,2009,2373563,20526,9740,0.004544223178403101
+172,East Anglia,UKH1,international_migration,2010,2396328,19146,10928,0.003429413669581126
+173,East Anglia,UKH1,international_migration,2011,2410153,18014,14050,0.001644708862881319
+174,East Anglia,UKH1,international_migration,2012,2423429,16987,11042,0.0024531356189927576
+175,East Anglia,UKH1,international_migration,2013,2445566,18714,9276,0.0038592293154222786
+176,East Anglia,UKH1,international_migration,2014,2467663,20494,8803,0.004737680955624816
+177,East Anglia,UKH1,international_migration,2015,2484216,20676,12598,0.003251730123306508
+178,East Anglia,UKH1,international_migration,2016,2502519,18402,12806,0.0022361468584254506
+179,East Anglia,UKH1,international_migration,2017,2514759,20891,16982,0.001554423306567349
+180,East Wales,UKL2,internal_migration,2008,1116498,44977,44444,0.0004773855394277464
+181,East Wales,UKL2,internal_migration,2009,1122623,45664,44580,0.0009655957520913076
+182,East Wales,UKL2,internal_migration,2010,1130221,46914,45203,0.0015138632179016317
+183,East Wales,UKL2,internal_migration,2011,1135023,49579,48013,0.001379707723984448
+184,East Wales,UKL2,internal_migration,2012,1140382,47787,48369,-0.0005103553019952963
+185,East Wales,UKL2,internal_migration,2013,1145046,48849,49681,-0.0007266083633321282
+186,East Wales,UKL2,internal_migration,2014,1148472,49126,49579,-0.0003944371303784507
+187,East Wales,UKL2,internal_migration,2015,1155184,49338,49320,1.558193326777379e-05
+188,East Wales,UKL2,internal_migration,2016,1161762,54063,51409,0.0022844610169724952
+189,East Wales,UKL2,internal_migration,2017,1168023,54567,52367,0.0018835245538829286
+190,East Wales,UKL2,international_migration,2008,1116498,9156,5436,0.0033318465415970292
+191,East Wales,UKL2,international_migration,2009,1122623,7758,7225,0.0004747809371445267
+192,East Wales,UKL2,international_migration,2010,1130221,7201,6323,0.000776839219940171
+193,East Wales,UKL2,international_migration,2011,1135023,7244,7446,-0.00017796996184218293
+194,East Wales,UKL2,international_migration,2012,1140382,7279,3737,0.0031059767691878687
+195,East Wales,UKL2,international_migration,2013,1145046,7976,5371,0.0022750177722117714
+196,East Wales,UKL2,international_migration,2014,1148472,8633,6580,0.001787592557763707
+197,East Wales,UKL2,international_migration,2015,1155184,8697,4148,0.003937900801950165
+198,East Wales,UKL2,international_migration,2016,1161762,7932,5920,0.0017318521349467446
+199,East Wales,UKL2,international_migration,2017,1168023,9253,6584,0.002285057742869789
+200,East Yorkshire and Northern Lincolnshire,UKE1,internal_migration,2008,913088,29652,31961,-0.0025287814537043526
+201,East Yorkshire and Northern Lincolnshire,UKE1,internal_migration,2009,915263,30357,32283,-0.002104313186483011
+202,East Yorkshire and Northern Lincolnshire,UKE1,internal_migration,2010,918047,30131,31706,-0.001715598438859884
+203,East Yorkshire and Northern Lincolnshire,UKE1,internal_migration,2011,921052,32685,33035,-0.0003800002605716072
+204,East Yorkshire and Northern Lincolnshire,UKE1,internal_migration,2012,921939,31414,32829,-0.0015348087020941733
+205,East Yorkshire and Northern Lincolnshire,UKE1,internal_migration,2013,923888,33179,33940,-0.0008236929151585474
+206,East Yorkshire and Northern Lincolnshire,UKE1,internal_migration,2014,925157,31560,33174,-0.0017445687596807894
+207,East Yorkshire and Northern Lincolnshire,UKE1,internal_migration,2015,928474,32660,32319,0.0003672693042562312
+208,East Yorkshire and Northern Lincolnshire,UKE1,internal_migration,2016,929854,37066,36814,0.0002710102876365537
+209,East Yorkshire and Northern Lincolnshire,UKE1,internal_migration,2017,932085,37044,36406,0.0006844869298400897
+210,East Yorkshire and Northern Lincolnshire,UKE1,international_migration,2008,913088,4767,2393,0.0025999684586808717
+211,East Yorkshire and Northern Lincolnshire,UKE1,international_migration,2009,915263,4385,1434,0.0032242098719165967
+212,East Yorkshire and Northern Lincolnshire,UKE1,international_migration,2010,918047,4858,1672,0.0034704105563222796
+213,East Yorkshire and Northern Lincolnshire,UKE1,international_migration,2011,921052,3794,2427,0.0014841724462896775
+214,East Yorkshire and Northern Lincolnshire,UKE1,international_migration,2012,921939,3897,2545,0.001466474463061005
+215,East Yorkshire and Northern Lincolnshire,UKE1,international_migration,2013,923888,4538,3033,0.00162898533155534
+216,East Yorkshire and Northern Lincolnshire,UKE1,international_migration,2014,925157,4705,2265,0.0026373901943129653
+217,East Yorkshire and Northern Lincolnshire,UKE1,international_migration,2015,928474,5124,2764,0.0025418051555563216
+218,East Yorkshire and Northern Lincolnshire,UKE1,international_migration,2016,929854,4625,3344,0.001377635628819148
+219,East Yorkshire and Northern Lincolnshire,UKE1,international_migration,2017,932085,5270,3090,0.002338842487541372
+220,Eastern Scotland,UKM7,internal_migration,2008,1876490,58797,57055,0.0009283289545907519
+221,Eastern Scotland,UKM7,internal_migration,2009,1891230,59099,56212,0.001526519778133807
+222,Eastern Scotland,UKM7,internal_migration,2010,1910240,59245,56895,0.0012302119105452717
+223,Eastern Scotland,UKM7,internal_migration,2011,1920780,61752,59242,0.0013067607950936599
+224,Eastern Scotland,UKM7,internal_migration,2012,1928450,64258,60670,0.0018605615909149836
+225,Eastern Scotland,UKM7,internal_migration,2013,1939570,67045,62214,0.002490758260851632
+226,Eastern Scotland,UKM7,internal_migration,2014,1953570,69698,64167,0.002831226933255527
+227,Eastern Scotland,UKM7,internal_migration,2015,1970280,68134,63036,0.0025874494995635137
+228,Eastern Scotland,UKM7,internal_migration,2016,1982530,68574,62383,0.0031227774611229087
+229,Eastern Scotland,UKM7,internal_migration,2017,1991830,68480,63510,0.002495192862844721
+230,Eastern Scotland,UKM7,international_migration,2008,1876490,20827,9972,0.005784736396143865
+231,Eastern Scotland,UKM7,international_migration,2009,1891230,22813,10204,0.006667089671800891
+232,Eastern Scotland,UKM7,international_migration,2010,1910240,21355,6997,0.007516333026216601
+233,Eastern Scotland,UKM7,international_migration,2011,1920780,17410,11227,0.003219004779308406
+234,Eastern Scotland,UKM7,international_migration,2012,1928450,13089,11297,0.0009292436931214187
+235,Eastern Scotland,UKM7,international_migration,2013,1939570,15068,10937,0.002129853524234753
+236,Eastern Scotland,UKM7,international_migration,2014,1953570,16846,7753,0.004654555506073496
+237,Eastern Scotland,UKM7,international_migration,2015,1970280,17918,7383,0.005346955762632722
+238,Eastern Scotland,UKM7,international_migration,2016,1982530,14587,8322,0.0031601035041083866
+239,Eastern Scotland,UKM7,international_migration,2017,1991830,15030,9200,0.0029269566177836464
+240,Essex,UKH3,internal_migration,2008,1704519,75418,70189,0.003067727611132525
+241,Essex,UKH3,internal_migration,2009,1717620,79002,74161,0.0028184348109593508
+242,Essex,UKH3,internal_migration,2010,1729141,78058,73512,0.0026290510721797703
+243,Essex,UKH3,internal_migration,2011,1742012,82820,76958,0.003365074408213032
+244,Essex,UKH3,internal_migration,2012,1755137,81928,75871,0.0034510126559920964
+245,Essex,UKH3,internal_migration,2013,1775471,90795,80346,0.005885198913415088
+246,Essex,UKH3,internal_migration,2014,1790597,88675,83339,0.0029800116944237033
+247,Essex,UKH3,internal_migration,2015,1806944,89571,82262,0.004044951033346911
+248,Essex,UKH3,internal_migration,2016,1820379,100024,93627,0.003514103381768302
+249,Essex,UKH3,internal_migration,2017,1832752,100831,94243,0.0035945943586475422
+250,Essex,UKH3,international_migration,2008,1704519,8245,8499,-0.00014901564605616013
+251,Essex,UKH3,international_migration,2009,1717620,7729,4239,0.0020318813241578465
+252,Essex,UKH3,international_migration,2010,1729141,8392,5828,0.001482817190732277
+253,Essex,UKH3,international_migration,2011,1742012,6755,5059,0.0009735868639251624
+254,Essex,UKH3,international_migration,2012,1755137,6705,4374,0.0013281014530489642
+255,Essex,UKH3,international_migration,2013,1775471,8118,3807,0.002428088096060144
+256,Essex,UKH3,international_migration,2014,1790597,9533,3445,0.0033999833575059043
+257,Essex,UKH3,international_migration,2015,1806944,9754,4959,0.0026536516903678253
+258,Essex,UKH3,international_migration,2016,1820379,8436,4728,0.002036938461715939
+259,Essex,UKH3,international_migration,2017,1832752,9080,5889,0.0017410975407474662
+260,"Gloucestershire, Wiltshire and Bath/Bristol area",UKK1,internal_migration,2008,2315353,114104,107687,0.002771499637420298
+261,"Gloucestershire, Wiltshire and Bath/Bristol area",UKK1,internal_migration,2009,2332984,116772,110836,0.002544380930173546
+262,"Gloucestershire, Wiltshire and Bath/Bristol area",UKK1,internal_migration,2010,2352437,115619,110037,0.0023728584442431404
+263,"Gloucestershire, Wiltshire and Bath/Bristol area",UKK1,internal_migration,2011,2371934,122570,116750,0.0024536939054796633
+264,"Gloucestershire, Wiltshire and Bath/Bristol area",UKK1,internal_migration,2012,2392877,123682,115752,0.0033140023494730403
+265,"Gloucestershire, Wiltshire and Bath/Bristol area",UKK1,internal_migration,2013,2416501,130055,121176,0.003674320846546308
+266,"Gloucestershire, Wiltshire and Bath/Bristol area",UKK1,internal_migration,2014,2442418,131397,120062,0.004640892754639051
+267,"Gloucestershire, Wiltshire and Bath/Bristol area",UKK1,internal_migration,2015,2465250,131471,120927,0.004277051009025454
+268,"Gloucestershire, Wiltshire and Bath/Bristol area",UKK1,internal_migration,2016,2484336,148288,137862,0.004196694811007851
+269,"Gloucestershire, Wiltshire and Bath/Bristol area",UKK1,internal_migration,2017,2505692,150349,140638,0.0038755760883620173
+270,"Gloucestershire, Wiltshire and Bath/Bristol area",UKK1,international_migration,2008,2315353,16143,14059,0.000900078735294359
+271,"Gloucestershire, Wiltshire and Bath/Bristol area",UKK1,international_migration,2009,2332984,15613,10816,0.0020561649801284533
+272,"Gloucestershire, Wiltshire and Bath/Bristol area",UKK1,international_migration,2010,2352437,17244,11277,0.0025365185125042666
+273,"Gloucestershire, Wiltshire and Bath/Bristol area",UKK1,international_migration,2011,2371934,15152,10914,0.0017867276239558099
+274,"Gloucestershire, Wiltshire and Bath/Bristol area",UKK1,international_migration,2012,2392877,16147,10808,0.0022312053649226433
+275,"Gloucestershire, Wiltshire and Bath/Bristol area",UKK1,international_migration,2013,2416501,18221,12725,0.0022743628080435308
+276,"Gloucestershire, Wiltshire and Bath/Bristol area",UKK1,international_migration,2014,2442418,20145,12485,0.003136236303531992
+277,"Gloucestershire, Wiltshire and Bath/Bristol area",UKK1,international_migration,2015,2465250,20604,15440,0.0020947165601865937
+278,"Gloucestershire, Wiltshire and Bath/Bristol area",UKK1,international_migration,2016,2484336,17890,14891,0.0012071636042789704
+279,"Gloucestershire, Wiltshire and Bath/Bristol area",UKK1,international_migration,2017,2505692,20746,13162,0.0030267087894282297
+280,Greater Manchester,UKD3,internal_migration,2008,2639833,107386,110916,-0.0013372058005184418
+281,Greater Manchester,UKD3,internal_migration,2009,2661841,108234,112809,-0.0017187352663062896
+282,Greater Manchester,UKD3,internal_migration,2010,2685386,108092,112284,-0.0015610418762889208
+283,Greater Manchester,UKD3,internal_migration,2011,2701377,112509,118193,-0.002104112088020295
+284,Greater Manchester,UKD3,internal_migration,2012,2713572,111161,117066,-0.002176098515167462
+285,Greater Manchester,UKD3,internal_migration,2013,2730123,116143,120889,-0.0017383832157012707
+286,Greater Manchester,UKD3,internal_migration,2014,2754017,117521,119040,-0.0005515579606080863
+287,Greater Manchester,UKD3,internal_migration,2015,2780844,118644,120093,-0.0005210648278004807
+288,Greater Manchester,UKD3,internal_migration,2016,2798799,137175,138810,-0.0005841791425536453
+289,Greater Manchester,UKD3,internal_migration,2017,2812569,138267,142425,-0.001478363730809804
+290,Greater Manchester,UKD3,international_migration,2008,2639833,22961,15673,0.002760780700900398
+291,Greater Manchester,UKD3,international_migration,2009,2661841,21472,12876,0.0032293439014576754
+292,Greater Manchester,UKD3,international_migration,2010,2685386,25899,16016,0.0036802902822908887
+293,Greater Manchester,UKD3,international_migration,2011,2701377,21659,14457,0.0026660477230686422
+294,Greater Manchester,UKD3,international_migration,2012,2713572,21051,16244,0.001771465802270955
+295,Greater Manchester,UKD3,international_migration,2013,2730123,24061,16691,0.0026995120732655636
+296,Greater Manchester,UKD3,international_migration,2014,2754017,27688,14207,0.004895031512151159
+297,Greater Manchester,UKD3,international_migration,2015,2780844,30298,15240,0.005414902813678149
+298,Greater Manchester,UKD3,international_migration,2016,2798799,25093,17371,0.002759040574189143
+299,Greater Manchester,UKD3,international_migration,2017,2812569,26499,18372,0.0028895291102191624
+300,Hampshire and Isle of Wight,UKJ3,internal_migration,2008,1869067,98468,94528,0.002108003618917888
+301,Hampshire and Isle of Wight,UKJ3,internal_migration,2009,1886496,101836,97026,0.00254970060895968
+302,Hampshire and Isle of Wight,UKJ3,internal_migration,2010,1901813,98632,94553,0.002144795518802322
+303,Hampshire and Isle of Wight,UKJ3,internal_migration,2011,1915256,106297,102433,0.0020174848688634837
+304,Hampshire and Isle of Wight,UKJ3,internal_migration,2012,1925263,97856,95910,0.0010107709959626295
+305,Hampshire and Isle of Wight,UKJ3,internal_migration,2013,1939102,102200,100628,0.0008106845333561617
+306,Hampshire and Isle of Wight,UKJ3,internal_migration,2014,1953349,103343,100344,0.0015353119181467315
+307,Hampshire and Isle of Wight,UKJ3,internal_migration,2015,1969079,102590,99569,0.0015342198052998382
+308,Hampshire and Isle of Wight,UKJ3,internal_migration,2016,1978789,117556,114808,0.0013887281564633723
+309,Hampshire and Isle of Wight,UKJ3,internal_migration,2017,1985783,116563,115122,0.0007256583423264274
+310,Hampshire and Isle of Wight,UKJ3,international_migration,2008,1869067,14598,11648,0.0015783275826923271
+311,Hampshire and Isle of Wight,UKJ3,international_migration,2009,1886496,14275,8288,0.0031736086373891064
+312,Hampshire and Isle of Wight,UKJ3,international_migration,2010,1901813,14231,10036,0.002205789948854067
+313,Hampshire and Isle of Wight,UKJ3,international_migration,2011,1915256,11594,8661,0.0015313879711119558
+314,Hampshire and Isle of Wight,UKJ3,international_migration,2012,1925263,11863,8543,0.001724439725897189
+315,Hampshire and Isle of Wight,UKJ3,international_migration,2013,1939102,13913,7032,0.0035485497926359727
+316,Hampshire and Isle of Wight,UKJ3,international_migration,2014,1953349,14960,7779,0.0036762503781966253
+317,Hampshire and Isle of Wight,UKJ3,international_migration,2015,1969079,15007,7391,0.0038677980924076687
+318,Hampshire and Isle of Wight,UKJ3,international_migration,2016,1978789,13056,8463,0.002321116602123824
+319,Hampshire and Isle of Wight,UKJ3,international_migration,2017,1985783,14887,10308,0.0023058914292246433
+320,"Herefordshire, Worcestershire and Warwickshire",UKG1,internal_migration,2008,1286794,54153,52979,0.0009123449441013868
+321,"Herefordshire, Worcestershire and Warwickshire",UKG1,internal_migration,2009,1291111,55711,54635,0.0008333907774002391
+322,"Herefordshire, Worcestershire and Warwickshire",UKG1,internal_migration,2010,1296730,56079,54280,0.0013873358370670842
+323,"Herefordshire, Worcestershire and Warwickshire",UKG1,internal_migration,2011,1302818,59668,58199,0.0011275558059529421
+324,"Herefordshire, Worcestershire and Warwickshire",UKG1,internal_migration,2012,1308519,58013,56351,0.0012701382249703673
+325,"Herefordshire, Worcestershire and Warwickshire",UKG1,internal_migration,2013,1316180,61970,59603,0.0017983862389642754
+326,"Herefordshire, Worcestershire and Warwickshire",UKG1,internal_migration,2014,1322726,61115,58358,0.0020843319024499403
+327,"Herefordshire, Worcestershire and Warwickshire",UKG1,internal_migration,2015,1332014,61967,57887,0.00306303086904492
+328,"Herefordshire, Worcestershire and Warwickshire",UKG1,internal_migration,2016,1343973,74539,66505,0.005977798661133817
+329,"Herefordshire, Worcestershire and Warwickshire",UKG1,internal_migration,2017,1355174,76238,67248,0.006633834474392218
+330,"Herefordshire, Worcestershire and Warwickshire",UKG1,international_migration,2008,1286794,7224,5597,0.0012643826439974076
+331,"Herefordshire, Worcestershire and Warwickshire",UKG1,international_migration,2009,1291111,6282,5447,0.0006467298319044605
+332,"Herefordshire, Worcestershire and Warwickshire",UKG1,international_migration,2010,1296730,6270,4947,0.0010202586506057544
+333,"Herefordshire, Worcestershire and Warwickshire",UKG1,international_migration,2011,1302818,6534,4153,0.001827576837286559
+334,"Herefordshire, Worcestershire and Warwickshire",UKG1,international_migration,2012,1308519,6134,3945,0.001672883618808745
+335,"Herefordshire, Worcestershire and Warwickshire",UKG1,international_migration,2013,1316180,7644,4285,0.0025520825419015638
+336,"Herefordshire, Worcestershire and Warwickshire",UKG1,international_migration,2014,1322726,7996,4357,0.0027511366677603678
+337,"Herefordshire, Worcestershire and Warwickshire",UKG1,international_migration,2015,1332014,8379,3853,0.003397862184631693
+338,"Herefordshire, Worcestershire and Warwickshire",UKG1,international_migration,2016,1343973,7495,3603,0.0028958915097252696
+339,"Herefordshire, Worcestershire and Warwickshire",UKG1,international_migration,2017,1355174,7704,5003,0.001993101992806828
+340,Highlands and Islands,UKM6,internal_migration,2008,482520,15178,13675,0.003114896791842825
+341,Highlands and Islands,UKM6,internal_migration,2009,484920,14957,13714,0.0025633094118617506
+342,Highlands and Islands,UKM6,internal_migration,2010,487480,14549,13773,0.0015918601788791336
+343,Highlands and Islands,UKM6,internal_migration,2011,485030,15098,14322,0.0015999010370492547
+344,Highlands and Islands,UKM6,internal_migration,2012,487500,15588,14231,0.0027835897435897435
+345,Highlands and Islands,UKM6,internal_migration,2013,487550,15371,14499,0.0017885345092810993
+346,Highlands and Islands,UKM6,internal_migration,2014,488450,15862,14670,0.0024403726072269425
+347,Highlands and Islands,UKM6,internal_migration,2015,489920,15874,14278,0.0032576747224036576
+348,Highlands and Islands,UKM6,internal_migration,2016,489800,15538,14308,0.0025112290730910578
+349,Highlands and Islands,UKM6,internal_migration,2017,489330,15520,14130,0.002840618805305213
+350,Highlands and Islands,UKM6,international_migration,2008,482520,2383,2157,0.0004683743679018486
+351,Highlands and Islands,UKM6,international_migration,2009,484920,2469,1953,0.0010640930462756744
+352,Highlands and Islands,UKM6,international_migration,2010,487480,2017,1572,0.0009128579634036268
+353,Highlands and Islands,UKM6,international_migration,2011,485030,1553,2066,-0.0010576665360905511
+354,Highlands and Islands,UKM6,international_migration,2012,487500,1218,1937,-0.001474871794871795
+355,Highlands and Islands,UKM6,international_migration,2013,487550,1375,1842,-0.0009578504768741668
+356,Highlands and Islands,UKM6,international_migration,2014,488450,1750,1591,0.0003255195004606408
+357,Highlands and Islands,UKM6,international_migration,2015,489920,1807,1279,0.0010777269758327891
+358,Highlands and Islands,UKM6,international_migration,2016,489800,1391,1442,-0.00010412413229889751
+359,Highlands and Islands,UKM6,international_migration,2017,489330,1430,1700,-0.000551774875850653
+360,Inner London - East,UKI4,internal_migration,2008,2055661,166100,181508,-0.00749539929005804
+361,Inner London - East,UKI4,internal_migration,2009,2096253,164650,185742,-0.01006176258304699
+362,Inner London - East,UKI4,internal_migration,2010,2145615,165107,181497,-0.0076388354853969605
+363,Inner London - East,UKI4,internal_migration,2011,2184813,172053,191532,-0.00891563717352469
+364,Inner London - East,UKI4,internal_migration,2012,2225724,172532,192509,-0.008975506397019576
+365,Inner London - East,UKI4,internal_migration,2013,2271316,182400,203747,-0.009398516102559045
+366,Inner London - East,UKI4,internal_migration,2014,2318635,185828,207896,-0.009517668800824624
+367,Inner London - East,UKI4,internal_migration,2015,2356469,183739,209401,-0.01089002231728913
+368,Inner London - East,UKI4,internal_migration,2016,2377700,202374,232465,-0.012655507423140009
+369,Inner London - East,UKI4,internal_migration,2017,2405850,211325,241241,-0.01243469044204751
+370,Inner London - East,UKI4,international_migration,2008,2055661,68227,33947,0.01667590132808863
+371,Inner London - East,UKI4,international_migration,2009,2096253,72099,39134,0.015725678150490422
+372,Inner London - East,UKI4,international_migration,2010,2145615,71170,33021,0.017779983827480698
+373,Inner London - East,UKI4,international_migration,2011,2184813,62657,32191,0.013944442842476678
+374,Inner London - East,UKI4,international_migration,2012,2225724,62433,29424,0.01483067981474792
+375,Inner London - East,UKI4,international_migration,2013,2271316,69488,29266,0.017708676379684728
+376,Inner London - East,UKI4,international_migration,2014,2318635,71001,27394,0.01880718612459486
+377,Inner London - East,UKI4,international_migration,2015,2356469,68451,31050,0.01587162827094267
+378,Inner London - East,UKI4,international_migration,2016,2377700,63401,37268,0.010990873533246414
+379,Inner London - East,UKI4,international_migration,2017,2405850,66576,32722,0.014071533969283205
+380,Inner London - West,UKI3,internal_migration,2008,1078732,100571,102689,-0.0019634163072941193
+381,Inner London - West,UKI3,internal_migration,2009,1083175,102713,106069,-0.0030982989821589308
+382,Inner London - West,UKI3,internal_migration,2010,1095487,97443,104732,-0.006653661796077908
+383,Inner London - West,UKI3,internal_migration,2011,1103684,96827,107950,-0.010078065823188521
+384,Inner London - West,UKI3,internal_migration,2012,1113476,93315,107425,-0.012672028853787598
+385,Inner London - West,UKI3,internal_migration,2013,1128105,97418,111041,-0.012076003563498078
+386,Inner London - West,UKI3,internal_migration,2014,1148820,98280,112086,-0.012017548441009036
+387,Inner London - West,UKI3,internal_migration,2015,1158435,94404,113255,-0.016272816342738264
+388,Inner London - West,UKI3,internal_migration,2016,1167807,105706,119094,-0.011464223112209466
+389,Inner London - West,UKI3,internal_migration,2017,1194353,110233,121823,-0.009703998734042615
+390,Inner London - West,UKI3,international_migration,2008,1078732,43197,38535,0.004321740710389606
+391,Inner London - West,UKI3,international_migration,2009,1083175,42426,40286,0.0019756733676460406
+392,Inner London - West,UKI3,international_migration,2010,1095487,46375,32648,0.012530500133730478
+393,Inner London - West,UKI3,international_migration,2011,1103684,41703,32976,0.007907154584101971
+394,Inner London - West,UKI3,international_migration,2012,1113476,40843,27109,0.012334347574622173
+395,Inner London - West,UKI3,international_migration,2013,1128105,45492,27258,0.0161633890462324
+396,Inner London - West,UKI3,international_migration,2014,1148820,49648,24438,0.021944255845128043
+397,Inner London - West,UKI3,international_migration,2015,1158435,44811,25545,0.016631058281215607
+398,Inner London - West,UKI3,international_migration,2016,1167807,41958,28054,0.011906076945933703
+399,Inner London - West,UKI3,international_migration,2017,1194353,53926,23802,0.025222023974486606
+400,Kent,UKJ4,internal_migration,2008,1695499,78911,74563,0.0025644367823277987
+401,Kent,UKJ4,internal_migration,2009,1714643,82779,76956,0.003396042208203107
+402,Kent,UKJ4,internal_migration,2010,1731351,82898,76353,0.0037802848757993034
+403,Kent,UKJ4,internal_migration,2011,1748281,90693,82614,0.004621110679576109
+404,Kent,UKJ4,internal_migration,2012,1763803,89827,81810,0.004545292189660636
+405,Kent,UKJ4,internal_migration,2013,1782513,95589,87329,0.004633907298291794
+406,Kent,UKJ4,internal_migration,2014,1798276,93579,87381,0.0034466344432111645
+407,Kent,UKJ4,internal_migration,2015,1817395,94074,86596,0.004114680628041785
+408,Kent,UKJ4,internal_migration,2016,1832252,99476,93417,0.0033068595367886076
+409,Kent,UKJ4,internal_migration,2017,1846478,101502,94688,0.0036902687169844428
+410,Kent,UKJ4,international_migration,2008,1695499,11586,7982,0.002125627912490659
+411,Kent,UKJ4,international_migration,2009,1714643,11341,5443,0.003439783091873935
+412,Kent,UKJ4,international_migration,2010,1731351,10966,7885,0.001779535172244103
+413,Kent,UKJ4,international_migration,2011,1748281,9797,7100,0.0015426581882431944
+414,Kent,UKJ4,international_migration,2012,1763803,8962,6412,0.001445739688616019
+415,Kent,UKJ4,international_migration,2013,1782513,11045,5582,0.0030647742821510978
+416,Kent,UKJ4,international_migration,2014,1798276,11931,5550,0.00354839857730404
+417,Kent,UKJ4,international_migration,2015,1817395,12250,5126,0.003919896335139031
+418,Kent,UKJ4,international_migration,2016,1832252,10806,5903,0.002675941955582529
+419,Kent,UKJ4,international_migration,2017,1846478,11056,6796,0.002307094912584932
+420,Lancashire,UKD4,internal_migration,2008,1452916,62139,64673,-0.0017440788042804953
+421,Lancashire,UKD4,internal_migration,2009,1457298,64938,66041,-0.0007568801988337321
+422,Lancashire,UKD4,internal_migration,2010,1461295,64893,65602,-0.0004851860849452027
+423,Lancashire,UKD4,internal_migration,2011,1465261,68705,70694,-0.0013574373439271229
+424,Lancashire,UKD4,internal_migration,2012,1467960,68371,70083,-0.0011662443118341098
+425,Lancashire,UKD4,internal_migration,2013,1470919,71577,73246,-0.0011346647911951644
+426,Lancashire,UKD4,internal_migration,2014,1476893,70686,70508,0.00012052328773987012
+427,Lancashire,UKD4,internal_migration,2015,1483863,71193,70332,0.0005802422460833649
+428,Lancashire,UKD4,internal_migration,2016,1490497,78615,74861,0.0025186229828037224
+429,Lancashire,UKD4,internal_migration,2017,1498300,78023,74926,0.002067009277180805
+430,Lancashire,UKD4,international_migration,2008,1452916,7930,5307,0.001805334926451357
+431,Lancashire,UKD4,international_migration,2009,1457298,7258,3611,0.0025025766864429926
+432,Lancashire,UKD4,international_migration,2010,1461295,8136,4749,0.002317807150506913
+433,Lancashire,UKD4,international_migration,2011,1465261,6752,4134,0.0017867124014083497
+434,Lancashire,UKD4,international_migration,2012,1467960,6490,4683,0.0012309599716613532
+435,Lancashire,UKD4,international_migration,2013,1470919,7225,4906,0.001576565398910477
+436,Lancashire,UKD4,international_migration,2014,1476893,7882,4089,0.002568229384254648
+437,Lancashire,UKD4,international_migration,2015,1483863,8530,4620,0.002635014148880321
+438,Lancashire,UKD4,international_migration,2016,1490497,7514,5266,0.0015082217542202365
+439,Lancashire,UKD4,international_migration,2017,1498300,9670,4454,0.003481278782620303
+440,"Leicestershire, Rutland and Northamptonshire",UKF2,internal_migration,2008,1682844,80646,81421,-0.0004605299124577204
+441,"Leicestershire, Rutland and Northamptonshire",UKF2,internal_migration,2009,1696885,85056,83708,0.0007943967917684463
+442,"Leicestershire, Rutland and Northamptonshire",UKF2,internal_migration,2010,1712354,83321,82557,0.00044616942524734954
+443,"Leicestershire, Rutland and Northamptonshire",UKF2,internal_migration,2011,1725676,90090,88503,0.0009196396078985858
+444,"Leicestershire, Rutland and Northamptonshire",UKF2,internal_migration,2012,1738994,87878,87163,0.00041115725528667726
+445,"Leicestershire, Rutland and Northamptonshire",UKF2,internal_migration,2013,1756787,92574,91275,0.0007394180398648214
+446,"Leicestershire, Rutland and Northamptonshire",UKF2,internal_migration,2014,1777965,94423,90367,0.002281259754832069
+447,"Leicestershire, Rutland and Northamptonshire",UKF2,internal_migration,2015,1801380,94895,90231,0.0025891261144233863
+448,"Leicestershire, Rutland and Northamptonshire",UKF2,internal_migration,2016,1824435,114594,106181,0.0046112906187395
+449,"Leicestershire, Rutland and Northamptonshire",UKF2,internal_migration,2017,1840805,114500,109399,0.0027710702654545156
+450,"Leicestershire, Rutland and Northamptonshire",UKF2,international_migration,2008,1682844,12670,7308,0.003186272762062318
+451,"Leicestershire, Rutland and Northamptonshire",UKF2,international_migration,2009,1696885,13184,8472,0.002776852880425014
+452,"Leicestershire, Rutland and Northamptonshire",UKF2,international_migration,2010,1712354,14956,8054,0.004030708603478019
+453,"Leicestershire, Rutland and Northamptonshire",UKF2,international_migration,2011,1725676,12560,8656,0.002262301845769426
+454,"Leicestershire, Rutland and Northamptonshire",UKF2,international_migration,2012,1738994,13429,7862,0.0032012761401131917
+455,"Leicestershire, Rutland and Northamptonshire",UKF2,international_migration,2013,1756787,15668,6438,0.0052539095519263295
+456,"Leicestershire, Rutland and Northamptonshire",UKF2,international_migration,2014,1777965,18138,7006,0.0062610906288931446
+457,"Leicestershire, Rutland and Northamptonshire",UKF2,international_migration,2015,1801380,18766,7009,0.006526662891782966
+458,"Leicestershire, Rutland and Northamptonshire",UKF2,international_migration,2016,1824435,15974,6572,0.005153376250729678
+459,"Leicestershire, Rutland and Northamptonshire",UKF2,international_migration,2017,1840805,18716,12426,0.0034169833306624004
+460,Lincolnshire,UKF3,internal_migration,2008,705599,35157,33415,0.0024688243605787423
+461,Lincolnshire,UKF3,internal_migration,2009,711805,36695,33692,0.004218852073250398
+462,Lincolnshire,UKF3,internal_migration,2010,714768,35957,33924,0.0028442795424529358
+463,Lincolnshire,UKF3,internal_migration,2011,719184,39162,37037,0.0029547375914925804
+464,Lincolnshire,UKF3,internal_migration,2012,724523,38950,36162,0.003848048992233511
+465,Lincolnshire,UKF3,internal_migration,2013,731886,41204,38055,0.004302582642651998
+466,Lincolnshire,UKF3,internal_migration,2014,737350,39923,37967,0.0026527429307655792
+467,Lincolnshire,UKF3,internal_migration,2015,744811,40232,37019,0.004313846062960939
+468,Lincolnshire,UKF3,internal_migration,2016,751171,47320,42990,0.005764333287626919
+469,Lincolnshire,UKF3,internal_migration,2017,755833,47169,42356,0.006367808761988429
+470,Lincolnshire,UKF3,international_migration,2008,705599,6020,1915,0.005817752009285727
+471,Lincolnshire,UKF3,international_migration,2009,711805,5435,1740,0.005191028441778296
+472,Lincolnshire,UKF3,international_migration,2010,714768,3901,2149,0.002451144986904842
+473,Lincolnshire,UKF3,international_migration,2011,719184,3759,2008,0.0024347037753898863
+474,Lincolnshire,UKF3,international_migration,2012,724523,4341,1901,0.0033677329774210066
+475,Lincolnshire,UKF3,international_migration,2013,731886,4732,1339,0.0046359678966396405
+476,Lincolnshire,UKF3,international_migration,2014,737350,5156,1452,0.005023394588729911
+477,Lincolnshire,UKF3,international_migration,2015,744811,5350,1514,0.005150299874733322
+478,Lincolnshire,UKF3,international_migration,2016,751171,4537,1714,0.0037581323027646167
+479,Lincolnshire,UKF3,international_migration,2017,755833,4758,3449,0.0017318640493336492
+480,Merseyside,UKD7,internal_migration,2008,1495425,47587,49874,-0.0015293311266028052
+481,Merseyside,UKD7,internal_migration,2009,1500704,47393,50066,-0.001781164040343732
+482,Merseyside,UKD7,internal_migration,2010,1506492,46341,49534,-0.002119493498803844
+483,Merseyside,UKD7,internal_migration,2011,1512225,52188,53427,-0.000819322521450181
+484,Merseyside,UKD7,internal_migration,2012,1514217,50430,52769,-0.0015446927355854544
+485,Merseyside,UKD7,internal_migration,2013,1520049,53873,54302,-0.00028222774397404293
+486,Merseyside,UKD7,internal_migration,2014,1528235,54419,52823,0.0010443420023752892
+487,Merseyside,UKD7,internal_migration,2015,1538461,55622,52504,0.002026700709345248
+488,Merseyside,UKD7,internal_migration,2016,1544420,63403,60610,0.0018084458890716257
+489,Merseyside,UKD7,internal_migration,2017,1551497,66813,63096,0.00239575068466133
+490,Merseyside,UKD7,international_migration,2008,1495425,8096,6372,0.0011528495243827005
+491,Merseyside,UKD7,international_migration,2009,1500704,7928,4884,0.0020283813463547774
+492,Merseyside,UKD7,international_migration,2010,1506492,9381,5490,0.0025828215483387896
+493,Merseyside,UKD7,international_migration,2011,1512225,7934,4290,0.0024096943245879416
+494,Merseyside,UKD7,international_migration,2012,1514217,8135,5348,0.0018405552176471403
+495,Merseyside,UKD7,international_migration,2013,1520049,9437,6021,0.002247295975327111
+496,Merseyside,UKD7,international_migration,2014,1528235,10431,5160,0.0034490768762657576
+497,Merseyside,UKD7,international_migration,2015,1538461,11067,5866,0.0033806511832279143
+498,Merseyside,UKD7,international_migration,2016,1544420,9830,7836,0.0012910995713601222
+499,Merseyside,UKD7,international_migration,2017,1551497,11501,8631,0.0018498263290228727
+500,North Eastern Scotland,UKM5,internal_migration,2008,466040,15612,15405,0.0004441678825851858
+501,North Eastern Scotland,UKM5,internal_migration,2009,471160,15542,15556,-2.9713897614398505e-05
+502,North Eastern Scotland,UKM5,internal_migration,2010,476110,15696,16087,-0.0008212387893554011
+503,North Eastern Scotland,UKM5,internal_migration,2011,480470,17238,16316,0.0019189543571919163
+504,North Eastern Scotland,UKM5,internal_migration,2012,484840,18980,17070,0.003939443940268955
+505,North Eastern Scotland,UKM5,internal_migration,2013,489450,19284,17920,0.0027868015119011133
+506,North Eastern Scotland,UKM5,internal_migration,2014,492310,17878,19252,-0.0027909244175417926
+507,North Eastern Scotland,UKM5,internal_migration,2015,492030,15327,19440,-0.0083592463874154
+508,North Eastern Scotland,UKM5,internal_migration,2016,490600,14616,18422,-0.007757847533632287
+509,North Eastern Scotland,UKM5,internal_migration,2017,489030,14240,17300,-0.006257284829151586
+510,North Eastern Scotland,UKM5,international_migration,2008,466040,7377,3103,0.009170886619174319
+511,North Eastern Scotland,UKM5,international_migration,2009,471160,7409,2948,0.009468121232702267
+512,North Eastern Scotland,UKM5,international_migration,2010,476110,6722,1869,0.010193022620822919
+513,North Eastern Scotland,UKM5,international_migration,2011,480470,5476,3165,0.004809873665369326
+514,North Eastern Scotland,UKM5,international_migration,2012,484840,4614,3196,0.002924676181833182
+515,North Eastern Scotland,UKM5,international_migration,2013,489450,5264,3175,0.004268055981203392
+516,North Eastern Scotland,UKM5,international_migration,2014,492310,5670,2225,0.006997623448640085
+517,North Eastern Scotland,UKM5,international_migration,2015,492030,5135,2345,0.005670385952076093
+518,North Eastern Scotland,UKM5,international_migration,2016,490600,3940,2238,0.0034692213615980434
+519,North Eastern Scotland,UKM5,international_migration,2017,489030,3580,2440,0.0023311453285074536
+520,North Yorkshire,UKE2,internal_migration,2008,788794,36090,34856,0.0015644135224152313
+521,North Yorkshire,UKE2,internal_migration,2009,794098,37352,35153,0.00276917962266622
+522,North Yorkshire,UKE2,internal_migration,2010,798989,36836,35149,0.0021114183048827955
+523,North Yorkshire,UKE2,internal_migration,2011,803075,39735,37713,0.002517822121221555
+524,North Yorkshire,UKE2,internal_migration,2012,806837,39452,36890,0.0031753625577409066
+525,North Yorkshire,UKE2,internal_migration,2013,808384,41310,39874,0.0017763835009104584
+526,North Yorkshire,UKE2,internal_migration,2014,811801,41175,38914,0.0027851653299269157
+527,North Yorkshire,UKE2,internal_migration,2015,816458,41198,38992,0.0027019148566123424
+528,North Yorkshire,UKE2,internal_migration,2016,819796,47832,45202,0.003208115189632543
+529,North Yorkshire,UKE2,internal_migration,2017,824398,48678,45319,0.0040744882932758205
+530,North Yorkshire,UKE2,international_migration,2008,788794,4960,3671,0.0016341402191193137
+531,North Yorkshire,UKE2,international_migration,2009,794098,4651,2890,0.0022176104208800427
+532,North Yorkshire,UKE2,international_migration,2010,798989,5245,2964,0.0028548578265783385
+533,North Yorkshire,UKE2,international_migration,2011,803075,4584,3822,0.000948852846869844
+534,North Yorkshire,UKE2,international_migration,2012,806837,4640,2979,0.002058656209370666
+535,North Yorkshire,UKE2,international_migration,2013,808384,5168,3831,0.0016539169503602248
+536,North Yorkshire,UKE2,international_migration,2014,811801,5259,3078,0.002686619011309422
+537,North Yorkshire,UKE2,international_migration,2015,816458,5025,2957,0.0025328920777308813
+538,North Yorkshire,UKE2,international_migration,2016,819796,4740,3156,0.001932188007748269
+539,North Yorkshire,UKE2,international_migration,2017,824398,5493,2780,0.0032908861981712717
+540,Northern Ireland,UKN0,internal_migration,2008,1793333,48568,47909,0.0003674721872624883
+541,Northern Ireland,UKN0,internal_migration,2009,1804833,47059,47671,-0.000339089544572822
+542,Northern Ireland,UKN0,internal_migration,2010,1814318,47481,48279,-0.0004398346927054684
+543,Northern Ireland,UKN0,internal_migration,2011,1823634,52284,54041,-0.0009634608698894625
+544,Northern Ireland,UKN0,internal_migration,2012,1829725,51979,53430,-0.0007930153438358223
+545,Northern Ireland,UKN0,internal_migration,2013,1840498,54061,54727,-0.00036185858392674154
+546,Northern Ireland,UKN0,internal_migration,2014,1851621,54413,54154,0.00013987743712131153
+547,Northern Ireland,UKN0,internal_migration,2015,1862137,57302,57302,0.0
+548,Northern Ireland,UKN0,internal_migration,2016,1870834,58870,58278,0.0003164364128511669
+549,Northern Ireland,UKN0,internal_migration,2017,1881641,59400,59185,0.00011426196601795986
+550,Northern Ireland,UKN0,international_migration,2008,1793333,14404,11406,0.001671747522629651
+551,Northern Ireland,UKN0,international_migration,2009,1804833,13877,12115,0.0009762676103550854
+552,Northern Ireland,UKN0,international_migration,2010,1814318,13401,14097,-0.0003836152207055213
+553,Northern Ireland,UKN0,international_migration,2011,1823634,12922,12480,0.00024237319549865816
+554,Northern Ireland,UKN0,international_migration,2012,1829725,12736,13623,-0.00048477230184863844
+555,Northern Ireland,UKN0,international_migration,2013,1840498,13300,11063,0.0012154319102764578
+556,Northern Ireland,UKN0,international_migration,2014,1851621,13093,10298,0.0015094881727956207
+557,Northern Ireland,UKN0,international_migration,2015,1862137,12998,11540,0.0007829713925452316
+558,Northern Ireland,UKN0,international_migration,2016,1870834,11310,10727,0.0003116257241422809
+559,Northern Ireland,UKN0,international_migration,2017,1881641,13100,9182,0.002082225036550543
+560,Northumberland and Tyne and Wear,UKC2,internal_migration,2008,1409127,48759,50962,-0.001563379312155682
+561,Northumberland and Tyne and Wear,UKC2,internal_migration,2009,1415487,49134,50588,-0.0010272083035732578
+562,Northumberland and Tyne and Wear,UKC2,internal_migration,2010,1420419,48261,50107,-0.0012996165216038367
+563,Northumberland and Tyne and Wear,UKC2,internal_migration,2011,1424173,52817,53330,-0.00036020904763676883
+564,Northumberland and Tyne and Wear,UKC2,internal_migration,2012,1428948,52013,52607,-0.00041569042400423247
+565,Northumberland and Tyne and Wear,UKC2,internal_migration,2013,1434164,55335,54165,0.000815806281568914
+566,Northumberland and Tyne and Wear,UKC2,internal_migration,2014,1436974,54340,54591,-0.00017467261063874504
+567,Northumberland and Tyne and Wear,UKC2,internal_migration,2015,1443861,54472,53932,0.00037399721995399836
+568,Northumberland and Tyne and Wear,UKC2,internal_migration,2016,1448568,62603,60458,0.0014807727355567706
+569,Northumberland and Tyne and Wear,UKC2,internal_migration,2017,1456645,64938,62074,0.0019661619680841937
+570,Northumberland and Tyne and Wear,UKC2,international_migration,2008,1409127,9906,4357,0.003937899138970441
+571,Northumberland and Tyne and Wear,UKC2,international_migration,2009,1415487,10275,3567,0.0047390050208868046
+572,Northumberland and Tyne and Wear,UKC2,international_migration,2010,1420419,10487,5076,0.003809439327409729
+573,Northumberland and Tyne and Wear,UKC2,international_migration,2011,1424173,8150,5979,0.001524393455008626
+574,Northumberland and Tyne and Wear,UKC2,international_migration,2012,1428948,8781,4422,0.003050495889283585
+575,Northumberland and Tyne and Wear,UKC2,international_migration,2013,1434164,9447,6737,0.0018896025838049204
+576,Northumberland and Tyne and Wear,UKC2,international_migration,2014,1436974,9734,5743,0.0027773640998375753
+577,Northumberland and Tyne and Wear,UKC2,international_migration,2015,1443861,9442,3943,0.0038085383565315497
+578,Northumberland and Tyne and Wear,UKC2,international_migration,2016,1448568,8553,5778,0.0019156850075384795
+579,Northumberland and Tyne and Wear,UKC2,international_migration,2017,1456645,9527,3142,0.004383360393232394
+580,Outer London - East and North East,UKI5,internal_migration,2008,1704071,92848,97919,-0.002975814974845532
+581,Outer London - East and North East,UKI5,internal_migration,2009,1735699,95579,100156,-0.0026369779552791123
+582,Outer London - East and North East,UKI5,internal_migration,2010,1768285,92343,96606,-0.002410810474555855
+583,Outer London - East and North East,UKI5,internal_migration,2011,1789037,98013,107157,-0.005111129618895528
+584,Outer London - East and North East,UKI5,internal_migration,2012,1812448,100718,106361,-0.0031134686346863468
+585,Outer London - East and North East,UKI5,internal_migration,2013,1839612,106874,115303,-0.004581944453504326
+586,Outer London - East and North East,UKI5,internal_migration,2014,1866742,107576,117812,-0.005483350136226645
+587,Outer London - East and North East,UKI5,internal_migration,2015,1893464,105305,118592,-0.007017297397785224
+588,Outer London - East and North East,UKI5,internal_migration,2016,1905718,115773,137927,-0.011625014823809189
+589,Outer London - East and North East,UKI5,internal_migration,2017,1917679,120295,142414,-0.01153425573310236
+590,Outer London - East and North East,UKI5,international_migration,2008,1704071,27580,12147,0.009056547526482172
+591,Outer London - East and North East,UKI5,international_migration,2009,1735699,28434,11026,0.01002938873618064
+592,Outer London - East and North East,UKI5,international_migration,2010,1768285,27033,9525,0.009901118880723413
+593,Outer London - East and North East,UKI5,international_migration,2011,1789037,22488,10168,0.006886386363166329
+594,Outer London - East and North East,UKI5,international_migration,2012,1812448,20559,8112,0.006867507371245961
+595,Outer London - East and North East,UKI5,international_migration,2013,1839612,27416,8772,0.010134745805093683
+596,Outer London - East and North East,UKI5,international_migration,2014,1866742,29484,8380,0.011305258037800617
+597,Outer London - East and North East,UKI5,international_migration,2015,1893464,32047,9562,0.011875060735245033
+598,Outer London - East and North East,UKI5,international_migration,2016,1905718,28411,10836,0.00922224589367367
+599,Outer London - East and North East,UKI5,international_migration,2017,1917679,26890,8906,0.009378003305036974
+600,Outer London - South,UKI6,internal_migration,2008,1203297,69504,70653,-0.0009548764768797729
+601,Outer London - South,UKI6,internal_migration,2009,1213616,70625,72559,-0.0015935847912354484
+602,Outer London - South,UKI6,internal_migration,2010,1227471,69847,69801,3.747542711803375e-05
+603,Outer London - South,UKI6,internal_migration,2011,1241951,74678,73879,0.000643342611745552
+604,Outer London - South,UKI6,internal_migration,2012,1256876,73944,73278,0.0005298852074508544
+605,Outer London - South,UKI6,internal_migration,2013,1269660,77300,80452,-0.002482554384638407
+606,Outer London - South,UKI6,internal_migration,2014,1282817,77344,80732,-0.00264106259895215
+607,Outer London - South,UKI6,internal_migration,2015,1293235,76211,82887,-0.005162248160620459
+608,Outer London - South,UKI6,internal_migration,2016,1298132,83484,92510,-0.006953067946865188
+609,Outer London - South,UKI6,internal_migration,2017,1302623,84255,94434,-0.007814233281617167
+610,Outer London - South,UKI6,international_migration,2008,1203297,16306,9043,0.006035916319911044
+611,Outer London - South,UKI6,international_migration,2009,1213616,15018,8268,0.005561891075925169
+612,Outer London - South,UKI6,international_migration,2010,1227471,14929,7097,0.006380598808444354
+613,Outer London - South,UKI6,international_migration,2011,1241951,12527,8856,0.0029558332011488378
+614,Outer London - South,UKI6,international_migration,2012,1256876,11296,6470,0.0038396786954321667
+615,Outer London - South,UKI6,international_migration,2013,1269660,13903,7384,0.005134445442086858
+616,Outer London - South,UKI6,international_migration,2014,1282817,14753,7368,0.005756861656806856
+617,Outer London - South,UKI6,international_migration,2015,1293235,15067,7812,0.005609962613136824
+618,Outer London - South,UKI6,international_migration,2016,1298132,13242,8620,0.0035605007811224127
+619,Outer London - South,UKI6,international_migration,2017,1302623,13102,6801,0.004837163170003908
+620,Outer London - West and North West,UKI7,internal_migration,2008,1900833,117437,125633,-0.004311793829336928
+621,Outer London - West and North West,UKI7,internal_migration,2009,1932752,117542,129142,-0.006001804680579816
+622,Outer London - West and North West,UKI7,internal_migration,2010,1967549,115035,127483,-0.006326653110036904
+623,Outer London - West and North West,UKI7,internal_migration,2011,1989348,120208,132920,-0.006390033317448732
+624,Outer London - West and North West,UKI7,internal_migration,2012,2008934,117165,133128,-0.007946005194794851
+625,Outer London - West and North West,UKI7,internal_migration,2013,2030705,120250,142333,-0.010874548494242147
+626,Outer London - West and North West,UKI7,internal_migration,2014,2049916,118734,146771,-0.013677145795242342
+627,Outer London - West and North West,UKI7,internal_migration,2015,2068056,119953,148779,-0.013938694116600325
+628,Outer London - West and North West,UKI7,internal_migration,2016,2075644,137941,169890,-0.015392331247554975
+629,Outer London - West and North West,UKI7,internal_migration,2017,2087576,142006,171432,-0.014095774237680448
+630,Outer London - West and North West,UKI7,international_migration,2008,1900833,47380,25219,0.011658572846746663
+631,Outer London - West and North West,UKI7,international_migration,2009,1932752,47819,25905,0.011338236876743627
+632,Outer London - West and North West,UKI7,international_migration,2010,1967549,45836,20035,0.013113269351868746
+633,Outer London - West and North West,UKI7,international_migration,2011,1989348,36965,22968,0.007035973595368935
+634,Outer London - West and North West,UKI7,international_migration,2012,2008934,34923,19122,0.007865365412701462
+635,Outer London - West and North West,UKI7,international_migration,2013,2030705,44603,20815,0.011714158383418567
+636,Outer London - West and North West,UKI7,international_migration,2014,2049916,47951,18867,0.014187898430960098
+637,Outer London - West and North West,UKI7,international_migration,2015,2068056,48217,20399,0.013451279849288414
+638,Outer London - West and North West,UKI7,international_migration,2016,2075644,43389,22135,0.010239713553962047
+639,Outer London - West and North West,UKI7,international_migration,2017,2087576,41378,16848,0.011750470402035662
+640,Shropshire and Staffordshire,UKG2,internal_migration,2008,1554097,57722,58451,-0.0004690826891757722
+641,Shropshire and Staffordshire,UKG2,internal_migration,2009,1562817,59996,59373,0.0003986391240945037
+642,Shropshire and Staffordshire,UKG2,internal_migration,2010,1572204,60096,59795,0.0001914509821880621
+643,Shropshire and Staffordshire,UKG2,internal_migration,2011,1578058,62462,62447,9.505354049090717e-06
+644,Shropshire and Staffordshire,UKG2,internal_migration,2012,1584758,63372,61539,0.0011566434749027928
+645,Shropshire and Staffordshire,UKG2,internal_migration,2013,1591368,65582,64658,0.0005806325124044218
+646,Shropshire and Staffordshire,UKG2,internal_migration,2014,1597816,64343,62864,0.0009256384965477877
+647,Shropshire and Staffordshire,UKG2,internal_migration,2015,1608208,65207,62174,0.001885950076109558
+648,Shropshire and Staffordshire,UKG2,internal_migration,2016,1619430,78530,72701,0.0035994146088438525
+649,Shropshire and Staffordshire,UKG2,internal_migration,2017,1629125,77756,71002,0.004145783779636308
+650,Shropshire and Staffordshire,UKG2,international_migration,2008,1554097,5770,4145,0.001045623278341056
+651,Shropshire and Staffordshire,UKG2,international_migration,2009,1562817,5305,3116,0.0014006758308874295
+652,Shropshire and Staffordshire,UKG2,international_migration,2010,1572204,6427,3296,0.0019914718446206727
+653,Shropshire and Staffordshire,UKG2,international_migration,2011,1578058,5334,3289,0.0012958966020260344
+654,Shropshire and Staffordshire,UKG2,international_migration,2012,1584758,5311,3665,0.0010386443860829224
+655,Shropshire and Staffordshire,UKG2,international_migration,2013,1591368,6239,3570,0.0016771733502244609
+656,Shropshire and Staffordshire,UKG2,international_migration,2014,1597816,7364,3606,0.0023519604259814647
+657,Shropshire and Staffordshire,UKG2,international_migration,2015,1608208,7988,3242,0.002951110801587854
+658,Shropshire and Staffordshire,UKG2,international_migration,2016,1619430,6827,2878,0.002438512316061824
+659,Shropshire and Staffordshire,UKG2,international_migration,2017,1629125,7585,4132,0.0021195426993017726
+660,South Yorkshire,UKE3,internal_migration,2008,1323855,42139,43951,-0.0013687299590967289
+661,South Yorkshire,UKE3,internal_migration,2009,1332871,42263,44404,-0.0016063069869477241
+662,South Yorkshire,UKE3,internal_migration,2010,1343805,42873,44194,-0.0009830295318145118
+663,South Yorkshire,UKE3,internal_migration,2011,1352382,45433,45926,-0.000364541971129459
+664,South Yorkshire,UKE3,internal_migration,2012,1358520,43617,46174,-0.00188219533021229
+665,South Yorkshire,UKE3,internal_migration,2013,1366088,46643,47751,-0.0008110751283958281
+666,South Yorkshire,UKE3,internal_migration,2014,1375457,46520,47514,-0.0007226689020449203
+667,South Yorkshire,UKE3,internal_migration,2015,1385413,46775,46863,-6.351896510282494e-05
+668,South Yorkshire,UKE3,internal_migration,2016,1393445,55111,55376,-0.0001901761461701036
+669,South Yorkshire,UKE3,internal_migration,2017,1402918,57563,56078,0.0010585080525019994
+670,South Yorkshire,UKE3,international_migration,2008,1323855,9519,4588,0.0037247281613167604
+671,South Yorkshire,UKE3,international_migration,2009,1332871,8834,3121,0.004286236252420527
+672,South Yorkshire,UKE3,international_migration,2010,1343805,10342,3747,0.004907706103192055
+673,South Yorkshire,UKE3,international_migration,2011,1352382,9169,4797,0.003232814397115608
+674,South Yorkshire,UKE3,international_migration,2012,1358520,9458,4444,0.0036907811441863206
+675,South Yorkshire,UKE3,international_migration,2013,1366088,10166,5342,0.0035312512810302117
+676,South Yorkshire,UKE3,international_migration,2014,1375457,11877,4109,0.005647577496061309
+677,South Yorkshire,UKE3,international_migration,2015,1385413,11786,4931,0.004947983020225738
+678,South Yorkshire,UKE3,international_migration,2016,1393445,10644,4966,0.004074793048882446
+679,South Yorkshire,UKE3,international_migration,2017,1402918,11003,4903,0.004348080215664778
+680,Southern Scotland,UKM9,internal_migration,2008,949360,24731,22389,0.0024669250863739783
+681,Southern Scotland,UKM9,internal_migration,2009,950770,23897,21841,0.0021624577973642415
+682,Southern Scotland,UKM9,internal_migration,2010,952950,23898,21810,0.002191090823233118
+683,Southern Scotland,UKM9,internal_migration,2011,952110,24590,23258,0.001398998014935249
+684,Southern Scotland,UKM9,internal_migration,2012,951210,25377,22995,0.0025041788879427256
+685,Southern Scotland,UKM9,internal_migration,2013,950440,25505,23183,0.0024430789949917934
+686,Southern Scotland,UKM9,internal_migration,2014,950520,26552,23918,0.0027711147582375963
+687,Southern Scotland,UKM9,internal_migration,2015,951710,26508,23673,0.0029788485988378813
+688,Southern Scotland,UKM9,internal_migration,2016,952800,27034,23304,0.003914777497900924
+689,Southern Scotland,UKM9,internal_migration,2017,952750,27120,23190,0.004124901600629756
+690,Southern Scotland,UKM9,international_migration,2008,949360,2244,2782,-0.0005666975646751495
+691,Southern Scotland,UKM9,international_migration,2009,950770,2169,2704,-0.0005627018101118041
+692,Southern Scotland,UKM9,international_migration,2010,952950,1935,1809,0.00013222099795372265
+693,Southern Scotland,UKM9,international_migration,2011,952110,1579,2706,-0.0011836867588829022
+694,Southern Scotland,UKM9,international_migration,2012,951210,1113,2637,-0.0016021698678525247
+695,Southern Scotland,UKM9,international_migration,2013,950440,1262,2583,-0.0013898825806994656
+696,Southern Scotland,UKM9,international_migration,2014,950520,1501,1903,-0.00042292639818204773
+697,Southern Scotland,UKM9,international_migration,2015,951710,1849,1741,0.00011347994662239548
+698,Southern Scotland,UKM9,international_migration,2016,952800,1558,1810,-0.00026448362720403023
+699,Southern Scotland,UKM9,international_migration,2017,952750,1440,2220,-0.0008186827604303332
+700,"Surrey, East and West Sussex",UKJ2,internal_migration,2008,2695658,147744,138063,0.003591330947768597
+701,"Surrey, East and West Sussex",UKJ2,internal_migration,2009,2722104,157340,145660,0.00429079858815093
+702,"Surrey, East and West Sussex",UKJ2,internal_migration,2010,2744447,155074,144196,0.0039636400338574585
+703,"Surrey, East and West Sussex",UKJ2,internal_migration,2011,2766818,165149,153612,0.0041697719184998795
+704,"Surrey, East and West Sussex",UKJ2,internal_migration,2012,2789971,160398,148101,0.0044075726952000575
+705,"Surrey, East and West Sussex",UKJ2,internal_migration,2013,2815760,169868,158916,0.0038895360400034093
+706,"Surrey, East and West Sussex",UKJ2,internal_migration,2014,2840001,167575,158155,0.0033169002405280842
+707,"Surrey, East and West Sussex",UKJ2,internal_migration,2015,2864574,166116,158247,0.0027470053138791317
+708,"Surrey, East and West Sussex",UKJ2,internal_migration,2016,2878088,181549,176800,0.0016500537857077338
+709,"Surrey, East and West Sussex",UKJ2,internal_migration,2017,2893771,183958,178580,0.0018584746339637794
+710,"Surrey, East and West Sussex",UKJ2,international_migration,2008,2695658,23494,18840,0.0017264801395429242
+711,"Surrey, East and West Sussex",UKJ2,international_migration,2009,2722104,21705,13132,0.003149402080155644
+712,"Surrey, East and West Sussex",UKJ2,international_migration,2010,2744447,22675,17309,0.001955220851413782
+713,"Surrey, East and West Sussex",UKJ2,international_migration,2011,2766818,21639,16613,0.0018165271441778967
+714,"Surrey, East and West Sussex",UKJ2,international_migration,2012,2789971,20162,13602,0.0023512789201034705
+715,"Surrey, East and West Sussex",UKJ2,international_migration,2013,2815760,22708,11960,0.003817086683524164
+716,"Surrey, East and West Sussex",UKJ2,international_migration,2014,2840001,24216,12714,0.004049998573944164
+717,"Surrey, East and West Sussex",UKJ2,international_migration,2015,2864574,25039,11875,0.00459544770007687
+718,"Surrey, East and West Sussex",UKJ2,international_migration,2016,2878088,21720,13636,0.002808809181651152
+719,"Surrey, East and West Sussex",UKJ2,international_migration,2017,2893771,25322,15242,0.0034833440517580694
+720,Tees Valley and Durham,UKC1,internal_migration,2008,1166314,36525,37951,-0.001222655305518068
+721,Tees Valley and Durham,UKC1,internal_migration,2009,1171381,36723,37044,-0.00027403551875948134
+722,Tees Valley and Durham,UKC1,internal_migration,2010,1176022,36598,37474,-0.0007448840242784574
+723,Tees Valley and Durham,UKC1,internal_migration,2011,1178214,37642,39633,-0.0016898458174830718
+724,Tees Valley and Durham,UKC1,internal_migration,2012,1181615,38543,39379,-0.0007075062520364078
+725,Tees Valley and Durham,UKC1,internal_migration,2013,1184572,39030,39940,-0.000768209952624239
+726,Tees Valley and Durham,UKC1,internal_migration,2014,1187605,39874,39773,8.504511180064079e-05
+727,Tees Valley and Durham,UKC1,internal_migration,2015,1192728,39690,39212,0.0004007619507549081
+728,Tees Valley and Durham,UKC1,internal_migration,2016,1196159,46042,45253,0.0006596113058548236
+729,Tees Valley and Durham,UKC1,internal_migration,2017,1201264,47257,46709,0.00045618615058804727
+730,Tees Valley and Durham,UKC1,international_migration,2008,1166314,4935,2905,0.0017405261361863101
+731,Tees Valley and Durham,UKC1,international_migration,2009,1171381,4879,2550,0.0019882514741147413
+732,Tees Valley and Durham,UKC1,international_migration,2010,1176022,6006,3397,0.002218495912491433
+733,Tees Valley and Durham,UKC1,international_migration,2011,1178214,4101,2937,0.000987935977674684
+734,Tees Valley and Durham,UKC1,international_migration,2012,1181615,4301,2102,0.0018610122586460057
+735,Tees Valley and Durham,UKC1,international_migration,2013,1184572,4983,3371,0.001360829058934366
+736,Tees Valley and Durham,UKC1,international_migration,2014,1187605,5398,3078,0.001953511478985016
+737,Tees Valley and Durham,UKC1,international_migration,2015,1192728,5850,2058,0.003179266354105882
+738,Tees Valley and Durham,UKC1,international_migration,2016,1196159,5284,2900,0.0019930460749783266
+739,Tees Valley and Durham,UKC1,international_migration,2017,1201264,6347,1459,0.004069047270208713
+740,West Central Scotland,UKM8,internal_migration,2008,1457490,39210,40882,-0.0011471776821796375
+741,West Central Scotland,UKM8,internal_migration,2009,1464120,37303,40200,-0.001978662951124225
+742,West Central Scotland,UKM8,internal_migration,2010,1473120,38000,39914,-0.0012992831541218637
+743,West Central Scotland,UKM8,internal_migration,2011,1475210,39721,42223,-0.0016960297178028891
+744,West Central Scotland,UKM8,internal_migration,2012,1475700,41641,43016,-0.0009317611980754896
+745,West Central Scotland,UKM8,internal_migration,2013,1480590,43531,43335,0.0001323796594600801
+746,West Central Scotland,UKM8,internal_migration,2014,1488150,46406,46021,0.0002587104794543561
+747,West Central Scotland,UKM8,internal_migration,2015,1500760,47856,44479,0.0022501932354273835
+748,West Central Scotland,UKM8,internal_migration,2016,1509070,47223,44113,0.002060871927743577
+749,West Central Scotland,UKM8,internal_migration,2017,1515160,48220,45460,0.001821589799097125
+750,West Central Scotland,UKM8,international_migration,2008,1457490,12269,6786,0.0037619469087266464
+751,West Central Scotland,UKM8,international_migration,2009,1464120,12540,6791,0.003926590716607928
+752,West Central Scotland,UKM8,international_migration,2010,1473120,12171,4653,0.005103453893776475
+753,West Central Scotland,UKM8,international_migration,2011,1475210,9882,7036,0.0019292168572610001
+754,West Central Scotland,UKM8,international_migration,2012,1475700,8166,7033,0.0007677712272142034
+755,West Central Scotland,UKM8,international_migration,2013,1480590,10231,6663,0.0024098501273141113
+756,West Central Scotland,UKM8,international_migration,2014,1488150,12033,4728,0.004908779356919665
+757,West Central Scotland,UKM8,international_migration,2015,1500760,13691,4752,0.005956315466830139
+758,West Central Scotland,UKM8,international_migration,2016,1509070,11424,5688,0.003801016520108411
+759,West Central Scotland,UKM8,international_migration,2017,1515160,11470,6470,0.0032999815201034876
+760,West Midlands,UKG3,internal_migration,2008,2687116,97244,106484,-0.003438630859255797
+761,West Midlands,UKG3,internal_migration,2009,2711938,99306,109079,-0.0036036959547010292
+762,West Midlands,UKG3,internal_migration,2010,2739733,98645,107854,-0.0033612764455514463
+763,West Midlands,UKG3,internal_migration,2011,2761887,107910,115655,-0.0028042421721091414
+764,West Midlands,UKG3,internal_migration,2012,2781753,107199,113695,-0.002335218116058471
+765,West Midlands,UKG3,internal_migration,2013,2805891,111839,118081,-0.0022246053036272615
+766,West Midlands,UKG3,internal_migration,2014,2834490,110496,116780,-0.0022169773045591975
+767,West Midlands,UKG3,internal_migration,2015,2870551,111736,117153,-0.0018870941502171534
+768,West Midlands,UKG3,internal_migration,2016,2897303,134417,142592,-0.002821589595565255
+769,West Midlands,UKG3,internal_migration,2017,2916458,134460,147481,-0.004464662271837962
+770,West Midlands,UKG3,international_migration,2008,2687116,26295,15471,0.00402811043512822
+771,West Midlands,UKG3,international_migration,2009,2711938,27375,12826,0.005364798162789858
+772,West Midlands,UKG3,international_migration,2010,2739733,32608,16276,0.00596116482883551
+773,West Midlands,UKG3,international_migration,2011,2761887,24324,12980,0.004107336759251917
+774,West Midlands,UKG3,international_migration,2012,2781753,24977,14811,0.003654530075100126
+775,West Midlands,UKG3,international_migration,2013,2805891,28434,14790,0.004862626523981153
+776,West Midlands,UKG3,international_migration,2014,2834490,34997,14177,0.007345236709249283
+777,West Midlands,UKG3,international_migration,2015,2870551,38518,12513,0.009059236362635606
+778,West Midlands,UKG3,international_migration,2016,2897303,30997,10614,0.007035163391609369
+779,West Midlands,UKG3,international_migration,2017,2916458,35534,15771,0.00677637051519343
+780,West Wales and The Valleys,UKL1,internal_migration,2008,1922374,63470,63433,1.924703517629764e-05
+781,West Wales and The Valleys,UKL1,internal_migration,2009,1927348,64880,63203,0.0008701075259890793
+782,West Wales and The Valleys,UKL1,internal_migration,2010,1933537,63443,62493,0.0004913275515286234
+783,West Wales and The Valleys,UKL1,internal_migration,2011,1939044,69328,66414,0.001502802411910199
+784,West Wales and The Valleys,UKL1,internal_migration,2012,1942030,66276,66359,-4.273878364391899e-05
+785,West Wales and The Valleys,UKL1,internal_migration,2013,1946990,68199,67202,0.0005120724811118701
+786,West Wales and The Valleys,UKL1,internal_migration,2014,1950614,67572,66279,0.0006628682045755849
+787,West Wales and The Valleys,UKL1,internal_migration,2015,1957966,69695,66334,0.0017165773052238906
+788,West Wales and The Valleys,UKL1,internal_migration,2016,1963403,73929,69197,0.0024101012374942894
+789,West Wales and The Valleys,UKL1,internal_migration,2017,1970608,75985,69352,0.003365966239860997
+790,West Wales and The Valleys,UKL1,international_migration,2008,1922374,7518,5305,0.0011511807795985588
+791,West Wales and The Valleys,UKL1,international_migration,2009,1927348,6912,7222,-0.00016084277463125496
+792,West Wales and The Valleys,UKL1,international_migration,2010,1933537,6040,4909,0.0005849383797672348
+793,West Wales and The Valleys,UKL1,international_migration,2011,1939044,6469,5133,0.0006889993213150398
+794,West Wales and The Valleys,UKL1,international_migration,2012,1942030,6446,2677,0.001940752717517237
+795,West Wales and The Valleys,UKL1,international_migration,2013,1946990,7204,3912,0.0016908150529792141
+796,West Wales and The Valleys,UKL1,international_migration,2014,1950614,8066,4197,0.001983478022817431
+797,West Wales and The Valleys,UKL1,international_migration,2015,1957966,8129,3002,0.002618533723261793
+798,West Wales and The Valleys,UKL1,international_migration,2016,1963403,7298,4220,0.0015676863079052033
+799,West Wales and The Valleys,UKL1,international_migration,2017,1970608,8217,4208,0.00203439750574442
+800,West Yorkshire,UKE4,internal_migration,2008,2197607,77163,80056,-0.0013164319189008771
+801,West Yorkshire,UKE4,internal_migration,2009,2212556,76085,81013,-0.002227288258466678
+802,West Yorkshire,UKE4,internal_migration,2010,2227371,76035,80513,-0.0020104419066244465
+803,West Yorkshire,UKE4,internal_migration,2011,2240388,81455,84843,-0.001512238058764821
+804,West Yorkshire,UKE4,internal_migration,2012,2250644,78912,84311,-0.0023988689459550246
+805,West Yorkshire,UKE4,internal_migration,2013,2261757,81834,86069,-0.0018724381089568862
+806,West Yorkshire,UKE4,internal_migration,2014,2277796,82793,84708,-0.0008407249815172211
+807,West Yorkshire,UKE4,internal_migration,2015,2295025,83441,84771,-0.0005795143843748978
+808,West Yorkshire,UKE4,internal_migration,2016,2307035,95413,98694,-0.0014221717485863891
+809,West Yorkshire,UKE4,internal_migration,2017,2320214,97745,101056,-0.0014270235417939898
+810,West Yorkshire,UKE4,international_migration,2008,2197607,18442,11749,0.0030455854936756207
+811,West Yorkshire,UKE4,international_migration,2009,2212556,17542,7685,0.004455028482894897
+812,West Yorkshire,UKE4,international_migration,2010,2227371,18219,7723,0.004712281878501606
+813,West Yorkshire,UKE4,international_migration,2011,2240388,14549,10014,0.0020242029505603493
+814,West Yorkshire,UKE4,international_migration,2012,2250644,14287,9666,0.0020531901091420945
+815,West Yorkshire,UKE4,international_migration,2013,2261757,16535,12500,0.0017840112797263366
+816,West Yorkshire,UKE4,international_migration,2014,2277796,17730,9599,0.0035696787596430934
+817,West Yorkshire,UKE4,international_migration,2015,2295025,18767,10544,0.0035829675058005905
+818,West Yorkshire,UKE4,international_migration,2016,2307035,16658,10666,0.002597273123294618
+819,West Yorkshire,UKE4,international_migration,2017,2320214,18080,9048,0.003892744376165302
