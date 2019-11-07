@@ -4,6 +4,7 @@ pandas
 matplotlib
 jupyter
 ipython
+nuts-finder
 
 # local package
 -e .
