@@ -8,7 +8,7 @@ We aggregate institutions into NUTS using a learning provider metadata file and 
 
 We could easily change the output indicators by modifying the code in the notebooks.
 
-There is some repetition and overlaps between the HESA and HE-BCI notebooks because both of them are extracting information from the same website. There is much scope for refacto
+There is some repetition and overlaps between the HESA and HE-BCI notebooks because both of them are extracting information from the same website. There is much scope for refactoring.
 
 
 
