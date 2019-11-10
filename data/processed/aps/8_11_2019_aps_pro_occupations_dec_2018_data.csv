@@ -1,0 +1,41 @@
+geography_name,geography_code,"% all in employment who are - 1: managers, directors and senior officials (SOC2010)",% all in employment who are - 2: professional occupations (SOC2010),% all in employment who are - 3: associate prof & tech occupations (SOC2010),% all in employment who are - 4: administrative and secretarial occupations (SOC2010),% all in employment who are - 5: skilled trades occupations (SOC2010),"% all in employment who are - 6: caring, leisure and other service occupations (SOC2010)",% all in employment who are - 7: sales and customer service occupations (SOC2010),"% all in employment who are - 8: process, plant and machine operatives (SOC2010)",% all in employment who are - 9: elementary occupations (SOC2010)
+Bedfordshire and Hertfordshire,UKH2,12.6,21.3,15.6,11.2,9.1,8.3,6.6,5.7,9.4
+"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,13.5,24.6,17.9,9.7,8.1,7.6,7.1,4.1,7.3
+Cheshire,UKD6,13.5,24.4,15.8,9.9,7.3,7.6,7.9,5.3,8.2
+Cornwall and Isles of Scilly,UKK3,11.0,14.6,11.8,7.6,14.5,11.8,8.0,5.8,14.8
+Cumbria,UKD1,11.1,18.4,10.1,9.7,14.0,10.3,7.1,7.6,11.5
+Derbyshire and Nottinghamshire,UKF1,10.0,17.6,13.6,9.6,10.8,9.9,8.1,7.0,13.2
+Devon,UKK4,11.2,18.5,14.4,8.9,12.0,9.1,7.7,6.5,11.3
+Dorset and Somerset,UKK2,12.2,18.9,12.8,9.6,13.2,9.8,6.6,5.9,10.7
+East Anglia,UKH1,10.8,20.3,13.1,10.1,10.9,9.8,7.5,7.0,10.4
+East Wales,UKL2,10.9,21.8,15.8,9.7,8.8,7.8,7.5,6.4,10.8
+East Yorkshire and Northern Lincolnshire,UKE1,10.2,14.6,12.0,9.5,12.8,10.1,7.6,9.9,13.1
+Eastern Scotland,UKM7,9.2,22.9,14.0,8.9,10.0,8.8,9.3,5.7,10.8
+Essex,UKH3,12.8,17.2,15.7,11.4,11.4,9.1,6.7,5.8,9.8
+"Gloucestershire, Wiltshire and Bath/Bristol area",UKK1,10.6,21.5,15.7,10.4,9.8,8.1,7.3,6.3,10.2
+Greater Manchester,UKD3,9.3,20.2,13.6,10.8,9.1,9.4,8.3,7.1,11.5
+Hampshire and Isle of Wight,UKJ3,10.5,20.3,15.0,10.7,11.1,9.1,7.4,5.2,10.4
+"Herefordshire, Worcestershire and Warwickshire",UKG1,12.3,20.1,13.8,9.6,11.8,8.5,6.4,5.7,11.7
+Highlands and Islands,UKM6,8.4,15.4,9.5,12.8,16.2,10.2,7.1,8.4,11.5
+Inner London - East,UKI4,11.4,28.7,19.7,8.0,5.5,6.7,5.6,3.6,10.0
+Inner London - West,UKI3,18.4,28.4,23.1,7.8,4.3,5.9,4.6,1.9,4.5
+Kent,UKJ4,10.0,19.4,14.8,10.9,11.5,9.6,6.8,5.8,10.8
+Lancashire,UKD4,10.0,17.9,12.9,11.5,10.1,10.5,9.4,7.7,9.6
+"Leicestershire, Rutland and Northamptonshire",UKF2,10.4,18.4,15.0,10.2,10.4,8.5,7.1,8.2,11.7
+Lincolnshire,UKF3,12.9,14.9,11.7,7.7,12.7,9.9,7.5,9.7,12.5
+Merseyside,UKD7,9.2,19.2,14.1,11.5,9.1,9.9,8.1,6.7,11.8
+North Eastern Scotland,UKM5,7.6,23.3,12.3,10.2,12.2,9.7,7.5,6.0,10.9
+North Yorkshire,UKE2,12.9,19.3,14.1,9.2,11.1,8.4,8.0,5.9,10.9
+Northumberland and Tyne and Wear,UKC2,8.5,19.9,12.3,11.3,10.7,9.0,9.8,6.9,11.2
+Outer London - East and North East,UKI5,9.2,23.2,17.0,11.3,8.6,8.2,6.1,6.5,9.2
+Outer London - South,UKI6,11.6,26.3,16.4,11.0,7.2,8.7,6.2,4.4,7.7
+Outer London - West and North West,UKI7,12.9,24.3,16.8,9.7,8.2,6.9,6.7,5.2,9.1
+Shropshire and Staffordshire,UKG2,10.9,17.6,12.8,10.0,11.9,9.6,7.9,7.6,11.4
+South Yorkshire,UKE3,8.2,20.5,11.9,9.5,11.1,9.5,9.3,7.6,12.0
+Southern Scotland,UKM9,9.0,16.4,13.3,9.4,13.5,11.7,8.3,7.3,10.7
+"Surrey, East and West Sussex",UKJ2,13.7,23.8,16.4,10.3,8.3,8.7,7.8,3.3,7.6
+Tees Valley and Durham,UKC1,8.4,16.9,12.0,10.7,12.2,11.2,7.9,9.0,11.6
+West Central Scotland,UKM8,8.2,21.1,14.1,10.8,9.3,9.6,7.8,7.4,11.2
+West Midlands,UKG3,8.6,19.1,13.0,10.2,9.9,9.3,7.6,9.4,12.3
+West Wales,UKL1,9.0,16.7,12.5,9.9,13.4,10.7,8.3,7.9,11.0
+West Yorkshire,UKE4,9.7,18.4,13.8,10.0,10.4,10.4,8.4,7.9,10.7
