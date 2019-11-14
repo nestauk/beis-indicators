@@ -1,0 +1,994 @@
+nuts_name,nuts_code,unit_of_assessment_name,4*_fte,3*_fte,2*_fte,1*_fte,unclassified_fte,total_fte
+Bedfordshire and Hertfordshire,UKH2,"Psychology, Psychiatry and Neuroscience",0.61,6.1,5.002,0.488,0.0,12.2
+"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,"Psychology, Psychiatry and Neuroscience",79.48349999999999,52.754999999999995,19.3735,1.1364999999999998,0.40149999999999997,153.15
+Cheshire,UKD6,"Psychology, Psychiatry and Neuroscience",1.2060000000000002,3.752,5.7620000000000005,2.68,0.0,13.4
+Derbyshire and Nottinghamshire,UKF1,"Psychology, Psychiatry and Neuroscience",27.106,36.308,23.434000000000005,2.334,0.218,89.40000000000002
+Devon,UKK4,"Psychology, Psychiatry and Neuroscience",18.742,34.277,9.758,0.32299999999999995,0.0,63.1
+Dorset and Somerset,UKK2,"Psychology, Psychiatry and Neuroscience",0.91,6.24,4.81,1.04,0.0,13.0
+East Anglia,UKH1,"Psychology, Psychiatry and Neuroscience",47.995000000000005,33.6545,7.900499999999999,0.0,0.0,89.55
+East Wales,UKL2,"Psychology, Psychiatry and Neuroscience",41.692,23.407600000000002,10.1524,3.478,0.0,78.73
+East Yorkshire and Northern Lincolnshire,UKE1,"Psychology, Psychiatry and Neuroscience",2.8340000000000005,12.426000000000002,6.322,0.0,0.218,21.8
+Eastern Scotland,UKM7,"Psychology, Psychiatry and Neuroscience",85.933,80.3533,33.380100000000006,2.8286,0.275,202.77
+Essex,UKH3,"Psychology, Psychiatry and Neuroscience",9.359,16.665,6.210000000000001,2.4659999999999997,0.0,34.7
+"Gloucestershire, Wiltshire and Bristol/Bath area",UKK1,"Psychology, Psychiatry and Neuroscience",29.5883,25.4597,12.3858,0.6881,0.6881,68.81000000000002
+Greater Manchester,UKD3,"Psychology, Psychiatry and Neuroscience",28.593,29.029,13.017,2.255,0.106,72.99999999999999
+Hampshire and Isle of Wight,UKJ3,"Psychology, Psychiatry and Neuroscience",18.293000000000003,23.810000000000002,14.202,5.096,0.19899999999999998,61.60000000000001
+"Herefordshire, Worcestershire and Warwickshire",UKG1,"Psychology, Psychiatry and Neuroscience",0.20800000000000002,3.432,3.536,2.704,0.52,10.4
+Inner London - East,UKI4,"Psychology, Psychiatry and Neuroscience",15.674,42.31999999999999,24.366,2.114,1.226,85.69999999999999
+Inner London - West,UKI3,"Psychology, Psychiatry and Neuroscience",300.9376,230.27990000000003,81.0049,9.6881,3.1495,625.06
+Kent,UKJ4,"Psychology, Psychiatry and Neuroscience",7.6199,17.890200000000004,6.626,0.6626000000000001,0.33130000000000004,33.13
+Lancashire,UKD4,"Psychology, Psychiatry and Neuroscience",10.411,20.912,18.035999999999998,1.924,0.217,51.49999999999999
+"Leicestershire, Rutland and Northamptonshire",UKF2,"Psychology, Psychiatry and Neuroscience",7.568,21.991999999999997,7.776,2.904,2.16,42.39999999999999
+Lincolnshire,UKF3,"Psychology, Psychiatry and Neuroscience",1.6640000000000001,2.8160000000000003,7.04,1.024,0.256,12.8
+Merseyside,UKD7,"Psychology, Psychiatry and Neuroscience",13.396,20.715,16.829,2.56,0.0,53.50000000000001
+North Eastern Scotland,UKM5,"Psychology, Psychiatry and Neuroscience",5.974000000000001,13.39,1.236,0.0,0.0,20.6
+North Yorkshire,UKE2,"Psychology, Psychiatry and Neuroscience",13.348999999999998,12.956,2.6950000000000003,0.8,0.1,29.900000000000002
+Northern Ireland,UKN0,"Psychology, Psychiatry and Neuroscience",9.334,20.752,15.025,1.569,0.22,46.9
+Northumberland and Tyne and Wear,UKC2,"Psychology, Psychiatry and Neuroscience",30.5518,24.9378,13.5236,1.6738000000000002,0.193,70.88
+Outer London - East and North East,UKI5,"Psychology, Psychiatry and Neuroscience",0.92,2.645,7.245,0.115,0.575,11.5
+Outer London - South,UKI6,"Psychology, Psychiatry and Neuroscience",0.4,3.9,4.7,1.0,0.0,10.0
+Outer London - West and North West,UKI7,"Psychology, Psychiatry and Neuroscience",5.044,15.888,12.531,2.237,0.0,35.7
+Shropshire and Staffordshire,UKG2,"Psychology, Psychiatry and Neuroscience",3.12,7.938,14.295,2.533,0.41400000000000003,28.300000000000004
+South Yorkshire,UKE3,"Psychology, Psychiatry and Neuroscience",13.435500000000001,14.469000000000001,6.2010000000000005,0.34450000000000003,0.0,34.45
+"Surrey, East and West Sussex",UKJ2,"Psychology, Psychiatry and Neuroscience",34.287499999999994,41.068999999999996,13.5535,1.54,0.2,90.64999999999999
+Tees Valley and Durham,UKC1,"Psychology, Psychiatry and Neuroscience",7.162999999999999,11.856,5.434,0.0,0.247,24.7
+West Central Scotland,UKM8,"Psychology, Psychiatry and Neuroscience",17.088,17.85,10.56,0.36,0.342,46.2
+West Midlands,UKG3,"Psychology, Psychiatry and Neuroscience",31.677999999999997,31.992999999999995,12.959,1.47,0.6,78.69999999999999
+West Wales and The Valleys,UKL1,"Psychology, Psychiatry and Neuroscience",15.336,15.816000000000003,11.508,2.204,0.736,45.599999999999994
+West Yorkshire,UKE4,"Psychology, Psychiatry and Neuroscience",12.1335,28.346999999999998,12.729,2.8405,0.0,56.05
+Bedfordshire and Hertfordshire,UKH2,English Language and Literature,4.85,6.41,4.54,1.04,0.16,17.0
+"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,English Language and Literature,50.5818,68.9868,25.446399999999997,0.9750000000000001,0.0,145.98999999999998
+Cheshire,UKD6,English Language and Literature,1.1,3.41,4.18,2.31,0.0,11.0
+Derbyshire and Nottinghamshire,UKF1,English Language and Literature,23.936000000000003,24.463,11.112000000000002,2.0195000000000003,0.41950000000000004,61.95
+Devon,UKK4,English Language and Literature,21.0334,25.541800000000002,14.479500000000002,3.1153000000000004,0.0,64.17
+East Anglia,UKH1,English Language and Literature,30.878999999999994,38.739,13.95,1.3319999999999999,0.0,84.89999999999999
+East Wales,UKL2,English Language and Literature,10.084200000000001,10.8045,2.6411000000000002,0.4802,0.0,24.01
+East Yorkshire and Northern Lincolnshire,UKE1,English Language and Literature,5.5916999999999994,13.2435,9.7119,0.8828999999999999,0.0,29.43
+Eastern Scotland,UKM7,English Language and Literature,36.265,49.217000000000006,20.725999999999996,0.992,0.0,107.2
+Essex,UKH3,English Language and Literature,6.274,14.036000000000001,11.3,2.19,0.0,33.800000000000004
+"Gloucestershire, Wiltshire and Bristol/Bath area",UKK1,English Language and Literature,9.1225,30.712000000000007,17.162,6.231000000000001,0.7225,63.95
+Greater Manchester,UKD3,English Language and Literature,23.3675,30.521,16.8915,3.521,0.39899999999999997,74.7
+Hampshire and Isle of Wight,UKJ3,English Language and Literature,12.168000000000001,12.93,10.585,1.617,0.0,37.3
+"Herefordshire, Worcestershire and Warwickshire",UKG1,English Language and Literature,0.525,2.1,3.675,0.825,0.375,7.5
+Inner London - East,UKI4,English Language and Literature,27.7102,24.3242,9.3643,1.7313,0.0,63.13
+Inner London - West,UKI3,English Language and Literature,51.839999999999996,58.03500000000001,26.002,2.986,0.337,139.2
+Kent,UKJ4,English Language and Literature,13.544,19.96,13.429,2.967,0.0,49.900000000000006
+Lancashire,UKD4,English Language and Literature,22.876,28.2029,19.302,3.6891,0.0,74.07
+"Leicestershire, Rutland and Northamptonshire",UKF2,English Language and Literature,16.089,36.054,16.969,4.856,0.132,74.1
+Lincolnshire,UKF3,English Language and Literature,1.04,4.5,6.79,0.6100000000000001,0.06,13.0
+Merseyside,UKD7,English Language and Literature,16.118,24.006999999999998,12.528,3.247,0.0,55.9
+North Eastern Scotland,UKM5,English Language and Literature,6.665,13.33,1.505,0.0,0.0,21.5
+North Yorkshire,UKE2,English Language and Literature,23.010099999999998,12.9707,8.3812,2.784,0.46399999999999997,47.61
+Northern Ireland,UKN0,English Language and Literature,18.779999999999998,22.605999999999998,9.991,1.194,0.129,52.699999999999996
+Northumberland and Tyne and Wear,UKC2,English Language and Literature,26.705,26.712000000000003,17.229,2.73,0.124,73.5
+Outer London - East and North East,UKI5,English Language and Literature,0.72,3.04,3.6,0.64,0.0,7.999999999999999
+Outer London - South,UKI6,English Language and Literature,6.78,7.006,7.232,1.582,0.0,22.6
+Outer London - West and North West,UKI7,English Language and Literature,5.054,12.761999999999999,6.410499999999999,4.9595,1.4639999999999997,30.65
+Shropshire and Staffordshire,UKG2,English Language and Literature,2.224,7.645,3.6140000000000003,0.278,0.139,13.9
+South Yorkshire,UKE3,English Language and Literature,18.186799999999998,24.957,15.2318,2.0644,0.0,60.44
+"Surrey, East and West Sussex",UKJ2,English Language and Literature,35.3495,34.708,19.696,1.9965000000000002,0.0,91.75
+Tees Valley and Durham,UKC1,English Language and Literature,18.2076,16.067400000000003,5.323,0.7680000000000001,0.064,40.43000000000001
+West Central Scotland,UKM8,English Language and Literature,27.3325,27.0625,14.8065,2.3485,0.0,71.55
+West Midlands,UKG3,English Language and Literature,37.949600000000004,43.9904,13.412500000000001,3.4815000000000005,0.636,99.46999999999998
+West Wales and The Valleys,UKL1,English Language and Literature,16.8729,20.8123,12.6955,1.2133,0.136,51.730000000000004
+West Yorkshire,UKE4,English Language and Literature,16.466000000000005,21.905499999999996,11.7035,3.12,0.055,53.24999999999999
+Bedfordshire and Hertfordshire,UKH2,Education,1.008,2.1,3.36,1.9320000000000002,0.0,8.4
+"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,Education,51.790800000000004,37.472,25.663200000000003,4.5489999999999995,0.105,119.58
+Cheshire,UKD6,Education,0.55,0.9,2.1,1.25,0.2,5.000000000000001
+Cumbria,UKD1,Education,0.0,1.0856,2.4544,1.0856,0.0944,4.720000000000001
+Derbyshire and Nottinghamshire,UKF1,Education,15.324,11.589,15.915,6.991999999999999,1.6800000000000002,51.5
+Devon,UKK4,Education,13.5648,21.168000000000003,12.5472,2.64,0.0,49.92
+East Anglia,UKH1,Education,20.316000000000003,16.524,9.216,0.9480000000000001,0.39599999999999996,47.400000000000006
+East Wales,UKL2,Education,9.888,7.416,2.8840000000000003,0.41200000000000003,0.0,20.6
+East Yorkshire and Northern Lincolnshire,UKE1,Education,1.36,3.4,6.936,1.7679999999999998,0.136,13.599999999999998
+Eastern Scotland,UKM7,Education,21.0591,28.3692,12.03,1.3117,0.0,62.77
+Essex,UKH3,Education,0.0,1.352,2.34,1.352,0.15600000000000003,5.2
+"Gloucestershire, Wiltshire and Bristol/Bath area",UKK1,Education,17.88,19.746,16.719,3.159,0.39599999999999996,57.9
+Greater Manchester,UKD3,Education,17.239,25.652,17.259999999999998,2.4050000000000002,0.44400000000000006,63.00000000000001
+Hampshire and Isle of Wight,UKJ3,Education,7.6756,12.8355,7.614599999999999,0.8617,0.1426,29.13
+"Herefordshire, Worcestershire and Warwickshire",UKG1,Education,1.0010000000000001,3.1460000000000004,3.003,6.578,0.5720000000000001,14.3
+Inner London - East,UKI4,Education,2.835,9.762,7.696000000000001,1.407,0.0,21.700000000000003
+Inner London - West,UKI3,Education,128.95600000000002,88.35300000000001,50.104000000000006,7.769,2.518,277.7
+Kent,UKJ4,Education,1.08,10.8,6.912000000000001,2.8080000000000003,0.0,21.6
+Lancashire,UKD4,Education,3.803,8.989,6.88,3.0279999999999996,0.0,22.7
+"Leicestershire, Rutland and Northamptonshire",UKF2,Education,5.34,19.848,15.24,5.9719999999999995,0.0,46.4
+Lincolnshire,UKF3,Education,1.152,3.3,4.74,3.168,0.24,12.6
+Merseyside,UKD7,Education,3.1100000000000003,11.164,8.756,1.5859999999999999,0.38400000000000006,25.0
+North Eastern Scotland,UKM5,Education,0.768,5.664,2.784,0.384,0.0,9.6
+North Yorkshire,UKE2,Education,10.094000000000001,9.190999999999999,8.327,3.113,0.975,31.700000000000003
+Northern Ireland,UKN0,Education,11.908,17.448,7.811999999999999,2.832,0.0,40.0
+Northumberland and Tyne and Wear,UKC2,Education,4.561999999999999,10.671,11.349,8.686,2.532,37.8
+Outer London - East and North East,UKI5,Education,0.3,1.1,4.9,2.7,1.0,10.0
+Outer London - West and North West,UKI7,Education,2.8781999999999996,8.5304,9.0358,7.9828,1.6328000000000003,30.060000000000002
+Shropshire and Staffordshire,UKG2,Education,1.08,2.025,2.025,1.62,0.0,6.75
+South Yorkshire,UKE3,Education,6.998,15.187999999999999,3.4740000000000006,1.116,0.124,26.9
+"Surrey, East and West Sussex",UKJ2,Education,4.682,10.356000000000002,7.368,0.994,0.0,23.400000000000002
+Tees Valley and Durham,UKC1,Education,12.25,7.595,4.41,0.245,0.0,24.5
+West Central Scotland,UKM8,Education,17.008,36.276,22.688000000000002,6.528,0.0,82.50000000000001
+West Midlands,UKG3,Education,24.3004,30.8418,23.034000000000002,4.1938,0.0,82.37
+West Yorkshire,UKE4,Education,9.3749,24.5281,18.0041,3.4368,0.1161,55.46
+"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,Anthropology and Development Studies,35.79,52.2657,30.417,3.5572999999999997,0.0,122.03
+East Anglia,UKH1,Anthropology and Development Studies,19.690800000000003,24.1136,14.323200000000003,1.1936,0.3588,59.68000000000001
+Eastern Scotland,UKM7,Anthropology and Development Studies,13.669100000000002,24.4469,16.8981,2.6959,0.0,57.71
+Greater Manchester,UKD3,Anthropology and Development Studies,15.2915,17.935499999999998,7.8567,0.6844,0.4219,42.18999999999999
+Inner London - East,UKI4,Anthropology and Development Studies,2.875,6.5,2.25,0.5,0.375,12.5
+Inner London - West,UKI3,Anthropology and Development Studies,37.518499999999996,55.5231,36.0341,9.882200000000001,1.6121,140.57
+Kent,UKJ4,Anthropology and Development Studies,2.9997,13.0896,9.5445,1.3635,0.2727,27.27
+Merseyside,UKD7,Anthropology and Development Studies,2.376,4.62,4.356,0.7919999999999999,1.056,13.2
+North Eastern Scotland,UKM5,Anthropology and Development Studies,2.53,3.85,4.07,0.55,0.0,11.0
+Northern Ireland,UKN0,Anthropology and Development Studies,6.09,3.77,4.205,0.435,0.0,14.5
+Outer London - East and North East,UKI5,Anthropology and Development Studies,0.5219999999999999,3.7409999999999997,4.0889999999999995,0.174,0.174,8.7
+Outer London - West and North West,UKI7,Anthropology and Development Studies,1.62,3.06,3.6,0.72,0.0,9.0
+"Surrey, East and West Sussex",UKJ2,Anthropology and Development Studies,4.44,8.325,5.365,0.37,0.0,18.500000000000004
+Tees Valley and Durham,UKC1,Anthropology and Development Studies,7.425,10.89,4.95,0.99,0.495,24.75
+Bedfordshire and Hertfordshire,UKH2,Physics,2.31,19.14,11.22,0.0,0.33,33.0
+"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,Physics,53.621,61.103,8.729,1.247,0.0,124.7
+Derbyshire and Nottinghamshire,UKF1,Physics,20.1872,32.1904,2.1824,0.0,0.0,54.56
+Devon,UKK4,Physics,9.246,26.934,3.6180000000000003,0.402,0.0,40.2
+East Anglia,UKH1,Physics,58.254000000000005,81.24900000000001,13.797,0.0,0.0,153.3
+East Wales,UKL2,Physics,6.045,13.26,0.195,0.0,0.0,19.5
+Eastern Scotland,UKM7,Physics,43.346999999999994,74.349,6.204,0.0,0.0,123.89999999999999
+"Gloucestershire, Wiltshire and Bristol/Bath area",UKK1,Physics,15.904499999999999,42.553,8.692499999999999,0.0,0.0,67.14999999999999
+Greater Manchester,UKD3,Physics,24.662000000000003,35.04600000000001,4.543000000000001,0.649,0.0,64.90000000000002
+Hampshire and Isle of Wight,UKJ3,Physics,13.559000000000001,33.66,3.881,0.0,0.0,51.099999999999994
+Inner London - East,UKI4,Physics,4.08,17.52,2.4,0.0,0.0,24.0
+Inner London - West,UKI3,Physics,71.3314,158.8464,21.896,2.2802,0.266,254.62
+Kent,UKJ4,Physics,1.35,2.4,1.25,0.0,0.0,5.0
+Lancashire,UKD4,Physics,9.6426,31.003800000000002,13.6095,1.6041000000000003,0.0,55.86
+"Leicestershire, Rutland and Northamptonshire",UKF2,Physics,11.147300000000001,38.66,18.3354,0.8873,0.0,69.02999999999999
+Merseyside,UKD7,Physics,11.0543,38.2108,7.1748,0.5700999999999999,0.0,57.00999999999999
+North Yorkshire,UKE2,Physics,7.2093,19.224800000000002,6.179399999999999,1.7164999999999997,0.0,34.33
+Northern Ireland,UKN0,Physics,10.281,29.055,5.364000000000001,0.0,0.0,44.7
+Shropshire and Staffordshire,UKG2,Physics,1.575,5.775,2.1,0.21,0.84,10.500000000000002
+South Yorkshire,UKE3,Physics,6.9,20.1,2.7,0.3,0.0,30.0
+"Surrey, East and West Sussex",UKJ2,Physics,14.563400000000001,48.98500000000001,13.324399999999999,0.0,0.24719999999999998,77.12000000000002
+Tees Valley and Durham,UKC1,Physics,23.1105,48.4575,2.9819999999999998,0.0,0.0,74.55
+West Central Scotland,UKM8,Physics,20.678,44.754,6.198,0.27,0.0,71.89999999999999
+West Midlands,UKG3,Physics,24.804000000000002,59.28,8.736,0.78,0.0,93.60000000000001
+West Wales and The Valleys,UKL1,Physics,2.221,20.056,10.218,0.484,0.121,33.10000000000001
+West Yorkshire,UKE4,Physics,6.72,20.04,8.76,0.48,0.0,35.99999999999999
+"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,Clinical Medicine,126.41029999999999,93.01889999999999,19.0808,0.0,0.0,238.51
+Derbyshire and Nottinghamshire,UKF1,Clinical Medicine,35.258,48.739000000000004,17.629,1.037,1.037,103.70000000000003
+Devon,UKK4,Clinical Medicine,14.92,16.869999999999997,6.475,0.0,0.735,39.0
+East Anglia,UKH1,Clinical Medicine,115.99700000000001,62.31850000000001,24.198000000000004,2.016,1.9205,206.45000000000002
+East Wales,UKL2,Clinical Medicine,22.4238,30.0951,5.901,0.0,0.5901,59.01
+Eastern Scotland,UKM7,Clinical Medicine,107.6292,124.2792,36.182300000000005,2.27,2.0693,272.43
+"Gloucestershire, Wiltshire and Bristol/Bath area",UKK1,Clinical Medicine,26.179500000000004,40.536,16.89,0.8445,0.0,84.45
+Greater Manchester,UKD3,Clinical Medicine,49.024800000000006,66.7282,19.0652,0.0,1.3618000000000001,136.18
+Hampshire and Isle of Wight,UKJ3,Clinical Medicine,35.8475,71.695,30.111899999999995,2.8678,2.8678,143.38999999999996
+Inner London - East,UKI4,Clinical Medicine,57.644000000000005,72.055,12.969900000000003,0.0,1.4411,144.11
+Inner London - West,UKI3,Clinical Medicine,486.4466,420.5819,167.4798,9.768399999999998,5.753299999999999,1090.03
+"Leicestershire, Rutland and Northamptonshire",UKF2,Clinical Medicine,19.467,38.934,11.536,0.721,1.442,72.1
+Merseyside,UKD7,Clinical Medicine,43.05,71.75,27.265,1.435,0.0,143.5
+North Eastern Scotland,UKM5,Clinical Medicine,13.575,22.805999999999997,16.833,0.5429999999999999,0.5429999999999999,54.3
+Northern Ireland,UKN0,Clinical Medicine,14.72,36.8,21.343999999999998,0.0,0.736,73.6
+Northumberland and Tyne and Wear,UKC2,Clinical Medicine,55.9094,67.6798,20.5982,2.9426,0.0,147.13
+South Yorkshire,UKE3,Clinical Medicine,17.906000000000002,37.091,8.953000000000001,0.0,0.0,63.95
+West Central Scotland,UKM8,Clinical Medicine,70.96,76.282,26.61,1.774,1.774,177.39999999999998
+West Midlands,UKG3,Clinical Medicine,52.084500000000006,105.43900000000001,35.6935,1.6415,1.6415,196.50000000000003
+West Yorkshire,UKE4,Clinical Medicine,26.375999999999998,53.694,12.246000000000002,0.9420000000000001,0.9420000000000001,94.19999999999999
+Bedfordshire and Hertfordshire,UKH2,"Communication, Cultural and Media Studies, Library and Information Management",1.035,5.29,4.14,1.035,0.0,11.5
+"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,"Communication, Cultural and Media Studies, Library and Information Management",0.8029999999999999,3.139,1.9709999999999999,1.168,0.21899999999999997,7.3
+Derbyshire and Nottinghamshire,UKF1,"Communication, Cultural and Media Studies, Library and Information Management",11.078,19.326,12.192,1.8039999999999998,0.0,44.400000000000006
+Dorset and Somerset,UKK2,"Communication, Cultural and Media Studies, Library and Information Management",8.928,9.92,5.456,0.496,0.0,24.799999999999997
+East Anglia,UKH1,"Communication, Cultural and Media Studies, Library and Information Management",3.325,4.465,1.425,0.285,0.0,9.5
+East Wales,UKL2,"Communication, Cultural and Media Studies, Library and Information Management",8.51,4.382,2.516,1.9820000000000002,0.21,17.6
+Eastern Scotland,UKM7,"Communication, Cultural and Media Studies, Library and Information Management",7.265,14.072,7.3629999999999995,2.8,0.0,31.5
+Essex,UKH3,"Communication, Cultural and Media Studies, Library and Information Management",1.0439999999999998,4.002,3.654,0.0,0.0,8.7
+"Gloucestershire, Wiltshire and Bristol/Bath area",UKK1,"Communication, Cultural and Media Studies, Library and Information Management",5.822,12.054,5.852,1.492,0.18,25.400000000000002
+Greater Manchester,UKD3,"Communication, Cultural and Media Studies, Library and Information Management",4.356,7.23,6.486000000000001,5.01,1.518,24.6
+Hampshire and Isle of Wight,UKJ3,"Communication, Cultural and Media Studies, Library and Information Management",5.455,11.4205,7.8505,2.726,1.498,28.950000000000003
+Inner London - East,UKI4,"Communication, Cultural and Media Studies, Library and Information Management",25.603,33.298,15.221,2.642,1.136,77.89999999999999
+Inner London - West,UKI3,"Communication, Cultural and Media Studies, Library and Information Management",45.2945,30.1295,15.178999999999998,5.597,0.0,96.2
+Kent,UKJ4,"Communication, Cultural and Media Studies, Library and Information Management",0.715,4.433,7.436,1.5730000000000002,0.14300000000000002,14.3
+Lancashire,UKD4,"Communication, Cultural and Media Studies, Library and Information Management",3.123,8.3415,6.1485,2.43,1.107,21.15
+"Leicestershire, Rutland and Northamptonshire",UKF2,"Communication, Cultural and Media Studies, Library and Information Management",38.874,37.266999999999996,12.465,2.494,0.0,91.1
+Lincolnshire,UKF3,"Communication, Cultural and Media Studies, Library and Information Management",0.7680000000000001,3.3920000000000003,1.2160000000000002,0.8960000000000001,0.128,6.4
+Merseyside,UKD7,"Communication, Cultural and Media Studies, Library and Information Management",2.91,9.355,6.199999999999999,2.035,0.0,20.5
+North Eastern Scotland,UKM5,"Communication, Cultural and Media Studies, Library and Information Management",1.605,4.601,3.6379999999999995,0.856,0.0,10.7
+North Yorkshire,UKE2,"Communication, Cultural and Media Studies, Library and Information Management",0.3,1.74,1.68,1.62,0.66,6.0
+Northern Ireland,UKN0,"Communication, Cultural and Media Studies, Library and Information Management",3.444,6.395999999999999,3.6079999999999997,1.9679999999999997,0.9839999999999999,16.4
+Northumberland and Tyne and Wear,UKC2,"Communication, Cultural and Media Studies, Library and Information Management",13.343,19.992,12.373999999999999,2.4410000000000003,0.0,48.150000000000006
+Outer London - West and North West,UKI7,"Communication, Cultural and Media Studies, Library and Information Management",4.793000000000001,18.683000000000003,14.328000000000001,7.254,0.8419999999999999,45.900000000000006
+Shropshire and Staffordshire,UKG2,"Communication, Cultural and Media Studies, Library and Information Management",0.675,2.835,4.185,5.535,0.27,13.5
+South Yorkshire,UKE3,"Communication, Cultural and Media Studies, Library and Information Management",14.426000000000002,17.75,8.924,6.0,0.0,47.1
+"Surrey, East and West Sussex",UKJ2,"Communication, Cultural and Media Studies, Library and Information Management",20.364,20.223,11.690999999999999,1.1219999999999999,0.0,53.400000000000006
+West Central Scotland,UKM8,"Communication, Cultural and Media Studies, Library and Information Management",13.597,19.248,13.019,2.3840000000000003,0.652,48.9
+West Midlands,UKG3,"Communication, Cultural and Media Studies, Library and Information Management",4.3689,9.3718,3.2362,1.2331,0.0,18.21
+West Wales and The Valleys,UKL1,"Communication, Cultural and Media Studies, Library and Information Management",0.36,1.68,2.64,1.32,0.0,6.0
+West Yorkshire,UKE4,"Communication, Cultural and Media Studies, Library and Information Management",14.222000000000001,19.017999999999997,19.618000000000002,4.336,1.456,58.65
+"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,Biological Sciences,112.016,128.114,28.384000000000007,1.486,0.0,270.0
+Derbyshire and Nottinghamshire,UKF1,Biological Sciences,20.897800000000004,46.51,25.9892,5.4172,4.0458,102.86
+Devon,UKK4,Biological Sciences,15.828199999999999,32.2022,6.0038,0.0,0.5458,54.58
+East Anglia,UKH1,Biological Sciences,110.92760000000001,92.3305,28.4756,0.0,1.8962999999999999,233.63
+East Wales,UKL2,Biological Sciences,22.974,22.974,7.658,0.547,0.547,54.699999999999996
+Eastern Scotland,UKM7,Biological Sciences,120.8085,91.5125,25.6225,5.733499999999999,3.273,246.95
+Essex,UKH3,Biological Sciences,0.69,16.302500000000002,10.1875,1.91,1.16,30.250000000000004
+"Gloucestershire, Wiltshire and Bristol/Bath area",UKK1,Biological Sciences,26.952999999999996,48.135999999999996,13.12,0.0,0.8909999999999999,89.10000000000001
+Greater Manchester,UKD3,Biological Sciences,54.69350000000001,68.94550000000001,41.01,2.1715,1.9295,168.75
+Hampshire and Isle of Wight,UKJ3,Biological Sciences,6.263999999999999,22.272,5.9159999999999995,0.348,0.0,34.8
+"Herefordshire, Worcestershire and Warwickshire",UKG1,Biological Sciences,0.7680000000000001,4.224,5.632000000000001,1.6640000000000001,0.512,12.8
+Inner London - East,UKI4,Biological Sciences,7.250900000000001,11.9289,3.2746000000000004,0.4678,0.4678,23.39
+Inner London - West,UKI3,Biological Sciences,181.9315,161.358,51.1175,3.675,3.418,401.5
+Kent,UKJ4,Biological Sciences,4.598,16.698,2.904,0.0,0.0,24.2
+"Leicestershire, Rutland and Northamptonshire",UKF2,Biological Sciences,11.22,21.691999999999997,4.114,0.0,0.374,37.4
+Merseyside,UKD7,Biological Sciences,2.88,11.7,3.42,0.0,0.0,18.0
+North Eastern Scotland,UKM5,Biological Sciences,26.826,47.3926,14.3072,0.0,0.8942,89.42
+North Yorkshire,UKE2,Biological Sciences,20.8539,19.079099999999997,4.437,0.0,0.0,44.36999999999999
+Northumberland and Tyne and Wear,UKC2,Biological Sciences,15.3,12.852,2.1420000000000003,0.0,0.306,30.6
+Shropshire and Staffordshire,UKG2,Biological Sciences,1.364,3.8440000000000003,6.572,0.62,0.0,12.4
+South Yorkshire,UKE3,Biological Sciences,22.362,26.398,11.367999999999999,0.9719999999999999,0.0,61.1
+"Surrey, East and West Sussex",UKJ2,Biological Sciences,26.4528,33.207899999999995,9.564900000000002,0.9561,1.4283,71.60999999999999
+Tees Valley and Durham,UKC1,Biological Sciences,9.75,19.11,8.97,0.39,0.78,39.0
+West Central Scotland,UKM8,Biological Sciences,13.2748,34.3938,12.068000000000001,0.6034,0.0,60.339999999999996
+West Midlands,UKG3,Biological Sciences,23.5696,52.6288,9.728,0.428,1.3256000000000001,87.67999999999998
+West Yorkshire,UKE4,Biological Sciences,24.311999999999998,30.005000000000003,16.764,0.65,2.169,73.9
+Bedfordshire and Hertfordshire,UKH2,History,5.4,4.8,1.68,0.12,0.0,11.999999999999998
+"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,History,72.81099999999999,79.759,34.7115,2.0185000000000004,0.0,189.29999999999998
+Cheshire,UKD6,History,0.18,1.92,3.72,0.18,0.0,6.0
+Derbyshire and Nottinghamshire,UKF1,History,9.0275,15.64,11.837499999999999,0.745,0.0,37.24999999999999
+Devon,UKK4,History,18.8479,21.3667,12.0954,0.22,0.0,52.53
+East Anglia,UKH1,History,62.128,57.898999999999994,28.373999999999995,1.499,0.0,149.89999999999998
+East Wales,UKL2,History,5.328,6.624,2.3040000000000003,0.14400000000000002,0.0,14.4
+East Yorkshire and Northern Lincolnshire,UKE1,History,4.518,13.052,6.275,1.255,0.0,25.099999999999998
+Eastern Scotland,UKM7,History,40.976299999999995,58.7803,25.469,2.1243999999999996,0.0,127.34999999999998
+Essex,UKH3,History,3.898,10.894,7.334,0.952,0.622,23.699999999999996
+"Gloucestershire, Wiltshire and Bristol/Bath area",UKK1,History,6.78,19.088,13.384,3.748,0.0,43.0
+Greater Manchester,UKD3,History,12.855999999999998,17.322,9.079999999999998,0.142,0.0,39.4
+Hampshire and Isle of Wight,UKJ3,History,14.300999999999998,18.238,8.721,0.44,0.0,41.7
+"Herefordshire, Worcestershire and Warwickshire",UKG1,History,0.65,2.15,1.4,0.8,0.0,4.999999999999999
+Highlands and Islands,UKM6,History,0.7140000000000001,2.1,1.2180000000000002,0.168,0.0,4.2
+Inner London - East,UKI4,History,17.3,21.16,9.16,0.38,0.0,48.00000000000001
+Inner London - West,UKI3,History,67.82849999999999,86.622,38.88870000000001,3.8125,0.7283,197.87999999999997
+Kent,UKJ4,History,9.177999999999999,21.202,14.426,0.5940000000000001,0.0,45.400000000000006
+Lancashire,UKD4,History,7.3225999999999996,16.1384,11.735599999999998,1.3234000000000001,0.0,36.519999999999996
+"Leicestershire, Rutland and Northamptonshire",UKF2,History,11.636,23.855999999999998,11.46,0.6479999999999999,0.0,47.6
+Lincolnshire,UKF3,History,2.71,4.37,5.92,0.9099999999999999,0.09,14.0
+Merseyside,UKD7,History,8.664,16.622,12.969999999999999,2.344,0.0,40.6
+North Eastern Scotland,UKM5,History,6.24,10.56,6.96,0.24,0.0,24.0
+North Yorkshire,UKE2,History,14.49,16.215,3.795,0.0,0.0,34.5
+Northern Ireland,UKN0,History,11.4245,23.1575,10.219,1.2489999999999999,0.0,46.050000000000004
+Northumberland and Tyne and Wear,UKC2,History,9.62,20.358,15.923,1.999,0.0,47.900000000000006
+Outer London - East and North East,UKI5,History,0.268,2.278,2.8810000000000002,1.273,0.0,6.7
+Outer London - West and North West,UKI7,History,0.48,0.88,1.84,0.64,0.16,4.0
+Shropshire and Staffordshire,UKG2,History,2.667,7.746999999999999,2.286,0.0,0.0,12.699999999999998
+South Yorkshire,UKE3,History,15.952499999999999,17.7045,8.0685,0.5745,0.15,42.449999999999996
+"Surrey, East and West Sussex",UKJ2,History,18.165,24.616,16.023,0.673,0.32299999999999995,59.800000000000004
+Tees Valley and Durham,UKC1,History,12.26,18.855,7.66,0.725,0.0,39.50000000000001
+West Central Scotland,UKM8,History,24.072,31.54,14.7,1.888,0.0,72.2
+West Midlands,UKG3,History,35.765,37.278,17.241,1.416,0.0,91.7
+West Wales and The Valleys,UKL1,History,8.638,32.07,14.388,0.356,0.14800000000000002,55.6
+West Yorkshire,UKE4,History,13.435500000000001,22.026999999999997,11.9105,0.577,0.0,47.949999999999996
+Bedfordshire and Hertfordshire,UKH2,Business and Management Studies,14.336100000000002,23.863300000000002,26.236400000000003,4.1922,0.282,68.91
+"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,Business and Management Studies,40.4434,56.056900000000006,26.070899999999998,3.2588,0.0,125.83
+Cheshire,UKD6,Business and Management Studies,0.18,0.18,2.52,3.12,0.0,6.0
+Cumbria,UKD1,Business and Management Studies,0.33599999999999997,0.84,1.204,0.308,0.11199999999999999,2.8
+Derbyshire and Nottinghamshire,UKF1,Business and Management Studies,27.726,49.262,38.182,7.59,0.44,123.2
+Devon,UKK4,Business and Management Studies,11.437000000000001,40.3435,24.808999999999997,4.244,0.8165,81.65
+Dorset and Somerset,UKK2,Business and Management Studies,3.28,8.2,7.585,1.435,0.0,20.499999999999996
+East Anglia,UKH1,Business and Management Studies,30.57,23.331,7.691000000000001,0.63,0.778,63.0
+East Wales,UKL2,Business and Management Studies,31.217999999999996,31.217999999999996,9.437999999999999,0.726,0.0,72.6
+East Yorkshire and Northern Lincolnshire,UKE1,Business and Management Studies,2.625,21.4375,16.625,3.0625,0.0,43.75
+Eastern Scotland,UKM7,Business and Management Studies,42.158,83.30999999999999,50.465999999999994,6.8020000000000005,0.8640000000000001,183.59999999999997
+Essex,UKH3,Business and Management Studies,9.430200000000001,34.143,17.869,2.7918000000000003,0.42599999999999993,64.66
+"Gloucestershire, Wiltshire and Bristol/Bath area",UKK1,Business and Management Studies,36.619,57.42,28.501,3.311,0.649,126.5
+Greater Manchester,UKD3,Business and Management Studies,50.41009999999999,64.9961,40.6406,8.0542,0.42900000000000005,164.53
+Hampshire and Isle of Wight,UKJ3,Business and Management Studies,14.262,37.206,20.542,3.4459999999999997,0.344,75.8
+"Herefordshire, Worcestershire and Warwickshire",UKG1,Business and Management Studies,0.0,0.7829999999999999,4.0889999999999995,3.8279999999999994,0.0,8.7
+Inner London - East,UKI4,Business and Management Studies,40.218900000000005,51.3497,29.993100000000002,5.5283,0.7,127.79
+Inner London - West,UKI3,Business and Management Studies,156.82659999999998,125.95899999999999,64.7747,13.096100000000002,4.8436,365.49999999999994
+Kent,UKJ4,Business and Management Studies,8.226999999999999,20.783999999999995,13.423,0.866,0.0,43.3
+Lancashire,UKD4,Business and Management Studies,51.320800000000006,51.277699999999996,25.0768,4.930899999999999,1.2238,133.83
+"Leicestershire, Rutland and Northamptonshire",UKF2,Business and Management Studies,26.336,70.21499999999999,47.297,9.043999999999999,0.7080000000000001,153.6
+Lincolnshire,UKF3,Business and Management Studies,1.222,3.8540000000000005,4.136,0.188,0.0,9.4
+Merseyside,UKD7,Business and Management Studies,9.4815,23.477999999999998,11.2875,0.903,0.0,45.15
+North Eastern Scotland,UKM5,Business and Management Studies,5.227,7.587000000000001,6.706,0.542,0.138,20.200000000000003
+North Yorkshire,UKE2,Business and Management Studies,5.221,10.735,8.956,2.8579999999999997,1.43,29.2
+Northern Ireland,UKN0,Business and Management Studies,18.1293,35.5817,20.9411,1.8539,0.22399999999999998,76.72999999999999
+Northumberland and Tyne and Wear,UKC2,Business and Management Studies,13.478000000000002,31.688,37.442,4.752000000000001,0.54,87.9
+Outer London - East and North East,UKI5,Business and Management Studies,2.009,9.184,11.48,4.879,1.148,28.7
+Outer London - South,UKI6,Business and Management Studies,4.731,11.703,6.9719999999999995,1.245,0.249,24.9
+Outer London - West and North West,UKI7,Business and Management Studies,14.111500000000001,44.18600000000001,33.146,7.6979999999999995,1.8085,100.94999999999999
+Shropshire and Staffordshire,UKG2,Business and Management Studies,1.244,10.276,11.228,2.6690000000000005,0.183,25.599999999999998
+South Yorkshire,UKE3,Business and Management Studies,11.793,19.076,8.585,1.8459999999999999,0.0,41.3
+"Surrey, East and West Sussex",UKJ2,Business and Management Studies,27.8395,69.98750000000001,40.3375,4.9275,0.158,143.25
+Tees Valley and Durham,UKC1,Business and Management Studies,12.5387,24.896199999999997,11.657,0.7781,0.44,50.309999999999995
+West Central Scotland,UKM8,Business and Management Studies,39.9882,52.75639999999999,39.5619,5.84,0.7334999999999999,138.88
+West Midlands,UKG3,Business and Management Studies,64.897,105.998,56.036,9.769,0.0,236.70000000000002
+West Wales and The Valleys,UKL1,Business and Management Studies,12.398,35.598,24.3465,3.6075,0.3,76.25
+West Yorkshire,UKE4,Business and Management Studies,34.0862,51.08759999999999,34.0324,8.6878,0.696,128.59
+"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,Economics and Econometrics,46.98400000000001,27.687,8.39,0.8390000000000001,0.0,83.9
+Derbyshire and Nottinghamshire,UKF1,Economics and Econometrics,6.3,24.85,3.5,0.0,0.35,35.00000000000001
+Devon,UKK4,Economics and Econometrics,3.675,13.965,4.655,2.205,0.0,24.5
+East Anglia,UKH1,Economics and Econometrics,15.07,23.03,2.63,0.27,0.0,41.00000000000001
+Eastern Scotland,UKM7,Economics and Econometrics,8.325,22.335,7.165,0.175,0.0,38.0
+Essex,UKH3,Economics and Econometrics,10.6656,20.3313,2.3331,0.0,0.0,33.33
+"Gloucestershire, Wiltshire and Bristol/Bath area",UKK1,Economics and Econometrics,8.184000000000001,8.184000000000001,2.232,0.0,0.0,18.6
+Greater Manchester,UKD3,Economics and Econometrics,5.644000000000001,19.256,7.304000000000001,0.9960000000000001,0.0,33.2
+Hampshire and Isle of Wight,UKJ3,Economics and Econometrics,3.488,9.156,8.502,0.436,0.218,21.8
+Inner London - East,UKI4,Economics and Econometrics,6.4559999999999995,21.5095,6.848,2.2405,1.0959999999999999,38.14999999999999
+Inner London - West,UKI3,Economics and Econometrics,66.3775,32.794,10.965,1.52,1.7934999999999999,113.44999999999999
+Kent,UKJ4,Economics and Econometrics,0.8759999999999999,8.76,8.76,3.5039999999999996,0.0,21.9
+"Leicestershire, Rutland and Northamptonshire",UKF2,Economics and Econometrics,2.6879999999999997,10.527999999999999,6.944,1.7919999999999998,0.44799999999999995,22.4
+North Eastern Scotland,UKM5,Economics and Econometrics,0.5775,9.8175,7.1225,1.7325,0.0,19.25
+North Yorkshire,UKE2,Economics and Econometrics,4.7719,16.842,6.1754,0.2807,0.0,28.069999999999997
+Outer London - West and North West,UKI7,Economics and Econometrics,0.262,7.86,14.934,3.1439999999999997,0.0,26.199999999999996
+South Yorkshire,UKE3,Economics and Econometrics,1.9370000000000003,7.152,4.619000000000001,0.0,1.192,14.900000000000002
+"Surrey, East and West Sussex",UKJ2,Economics and Econometrics,11.9215,28.7115,11.036999999999999,0.462,0.318,52.45
+West Central Scotland,UKM8,Economics and Econometrics,2.85,15.2,5.225,0.475,0.0,23.75
+West Midlands,UKG3,Economics and Econometrics,21.14,35.494,8.924,0.242,0.0,65.8
+"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,"Architecture, Built Environment and Planning",21.712699999999998,29.465399999999995,14.2482,1.6637,0.0,67.09
+Derbyshire and Nottinghamshire,UKF1,"Architecture, Built Environment and Planning",3.408,16.896,11.056000000000001,3.376,0.46399999999999997,35.2
+Devon,UKK4,"Architecture, Built Environment and Planning",0.9064999999999999,4.7915,6.475,0.7769999999999999,0.0,12.95
+East Anglia,UKH1,"Architecture, Built Environment and Planning",19.545,14.8542,3.5181000000000004,1.1727,0.0,39.089999999999996
+East Wales,UKL2,"Architecture, Built Environment and Planning",15.975999999999999,18.413999999999998,6.204000000000001,1.606,0.0,42.2
+Eastern Scotland,UKM7,"Architecture, Built Environment and Planning",24.97,28.181000000000004,22.738999999999997,4.973999999999999,0.736,81.60000000000001
+Essex,UKH3,"Architecture, Built Environment and Planning",0.64,1.68,3.6,2.08,0.0,8.0
+"Gloucestershire, Wiltshire and Bristol/Bath area",UKK1,"Architecture, Built Environment and Planning",18.982,32.03,14.615400000000001,1.6526,0.0,67.28
+Greater Manchester,UKD3,"Architecture, Built Environment and Planning",13.39,30.166000000000004,20.806,5.077999999999999,1.1600000000000001,70.60000000000001
+Inner London - East,UKI4,"Architecture, Built Environment and Planning",1.4,5.5680000000000005,6.636,3.596,0.0,17.2
+Inner London - West,UKI3,"Architecture, Built Environment and Planning",67.60180000000001,58.992000000000004,30.7191,3.9871000000000008,0.0,161.3
+Kent,UKJ4,"Architecture, Built Environment and Planning",2.9640000000000004,2.508,4.56,1.368,0.0,11.4
+Lancashire,UKD4,"Architecture, Built Environment and Planning",0.29700000000000004,2.772,5.94,0.693,0.198,9.9
+"Leicestershire, Rutland and Northamptonshire",UKF2,"Architecture, Built Environment and Planning",18.398000000000003,19.486,6.463000000000001,1.953,0.0,46.300000000000004
+Lincolnshire,UKF3,"Architecture, Built Environment and Planning",0.31,0.992,2.914,1.984,0.0,6.2
+Merseyside,UKD7,"Architecture, Built Environment and Planning",8.974,18.396,10.31,1.72,0.0,39.4
+North Eastern Scotland,UKM5,"Architecture, Built Environment and Planning",5.078,7.077999999999999,7.088,5.464,0.292,25.0
+Northern Ireland,UKN0,"Architecture, Built Environment and Planning",15.926,33.466,16.844,2.364,0.0,68.60000000000001
+Northumberland and Tyne and Wear,UKC2,"Architecture, Built Environment and Planning",13.524,30.742,14.642,1.0919999999999999,0.0,60.0
+Outer London - East and North East,UKI5,"Architecture, Built Environment and Planning",0.36,1.44,3.24,0.96,0.0,6.0
+South Yorkshire,UKE3,"Architecture, Built Environment and Planning",23.04,21.412,8.024,0.532,0.192,53.199999999999996
+West Central Scotland,UKM8,"Architecture, Built Environment and Planning",15.569000000000003,25.482,16.11,3.3230000000000004,0.21600000000000003,60.7
+West Midlands,UKG3,"Architecture, Built Environment and Planning",1.235,4.515,8.755,2.8600000000000003,0.135,17.500000000000004
+West Yorkshire,UKE4,"Architecture, Built Environment and Planning",2.715,3.9820000000000007,7.602,3.62,0.18100000000000002,18.1
+Bedfordshire and Hertfordshire,UKH2,Law,0.0,1.3,2.2880000000000003,1.2480000000000002,0.364,5.2
+"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,Law,47.482,65.3772,29.592,1.6288,0.0,144.08
+Derbyshire and Nottinghamshire,UKF1,Law,17.3661,26.6352,18.185399999999998,2.4193000000000002,0.124,64.73
+Devon,UKK4,Law,3.2889999999999997,9.4185,2.2425,0.0,0.0,14.95
+East Anglia,UKH1,Law,36.754,39.022,11.613999999999999,1.01,0.0,88.4
+East Wales,UKL2,Law,7.92,10.56,3.52,0.0,0.0,22.0
+East Yorkshire and Northern Lincolnshire,UKE1,Law,0.4875,7.9625,6.9875,0.8125,0.0,16.25
+Eastern Scotland,UKM7,Law,26.032799999999998,31.7137,22.398,1.9855,0.28,82.41
+Essex,UKH3,Law,6.724500000000001,16.26,13.446,1.428,0.6915,38.55
+"Gloucestershire, Wiltshire and Bristol/Bath area",UKK1,Law,16.55,22.48,12.46,1.5100000000000002,0.0,53.0
+Greater Manchester,UKD3,Law,8.16,23.663999999999998,8.16,0.816,0.0,40.8
+Hampshire and Isle of Wight,UKJ3,Law,3.6,9.9,8.55,0.45,0.0,22.5
+Inner London - East,UKI4,Law,12.356200000000001,38.645,16.2314,2.3972,0.5902000000000001,70.22
+Inner London - West,UKI3,Law,88.69489999999999,82.37950000000001,35.4657,4.655899999999999,0.434,211.63
+Kent,UKJ4,Law,15.696000000000002,18.748,8.72,0.436,0.0,43.6
+Lancashire,UKD4,Law,9.024,26.434,15.316000000000003,3.826,0.0,54.6
+"Leicestershire, Rutland and Northamptonshire",UKF2,Law,5.2136,30.734399999999997,12.136000000000001,0.8460000000000001,0.0,48.92999999999999
+Lincolnshire,UKF3,Law,0.0,1.806,1.9320000000000002,0.462,0.0,4.2
+Merseyside,UKD7,Law,2.2,17.57,6.82,0.41000000000000003,0.0,27.0
+North Eastern Scotland,UKM5,Law,3.8699999999999997,13.985999999999999,12.402,1.9619999999999997,0.18,32.4
+North Yorkshire,UKE2,Law,4.6,4.4,0.8,0.0,0.2,10.0
+Northern Ireland,UKN0,Law,20.240000000000002,21.104,8.146,0.31,0.0,49.800000000000004
+Northumberland and Tyne and Wear,UKC2,Law,3.351,17.851,15.050999999999998,2.447,0.0,38.7
+Outer London - East and North East,UKI5,Law,0.16,1.2,2.64,3.68,0.32,8.0
+Outer London - West and North West,UKI7,Law,4.657,24.127499999999998,20.3275,1.838,0.0,50.949999999999996
+Shropshire and Staffordshire,UKG2,Law,4.68,7.02,5.76,0.54,0.0,18.0
+South Yorkshire,UKE3,Law,8.296,13.42,2.6839999999999997,0.0,0.0,24.400000000000002
+"Surrey, East and West Sussex",UKJ2,Law,4.75,19.01,12.129999999999999,3.11,0.0,39.0
+Tees Valley and Durham,UKC1,Law,10.692,11.177999999999999,2.43,0.0,0.0,24.299999999999997
+West Central Scotland,UKM8,Law,11.2349,25.0999,11.8811,1.5006000000000002,0.3035,50.02
+West Midlands,UKG3,Law,21.719099999999997,31.4897,20.8396,5.7816,0.96,80.78999999999999
+West Wales and The Valleys,UKL1,Law,4.995,20.43,16.845,1.815,0.915,44.99999999999999
+West Yorkshire,UKE4,Law,11.89,13.63,2.9,0.58,0.0,29.0
+"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,Sociology,20.2945,30.322499999999998,19.233,0.0,0.0,69.85
+Devon,UKK4,Sociology,5.566,13.068,5.324,0.242,0.0,24.2
+East Anglia,UKH1,Sociology,4.2848999999999995,7.1415,4.2848999999999995,0.15869999999999998,0.0,15.869999999999997
+East Wales,UKL2,Sociology,10.9076,14.4452,3.8324000000000003,0.2948,0.0,29.48
+Eastern Scotland,UKM7,Sociology,20.117600000000003,29.678600000000003,12.8724,2.4714,0.0,65.14
+Essex,UKH3,Sociology,18.031000000000002,18.98,9.49,0.9490000000000001,0.0,47.45
+"Gloucestershire, Wiltshire and Bristol/Bath area",UKK1,Sociology,5.44,7.48,3.91,0.17,0.0,17.000000000000004
+Greater Manchester,UKD3,Sociology,24.237,30.8245,14.3635,0.425,0.0,69.85
+Hampshire and Isle of Wight,UKJ3,Sociology,0.0,1.33,3.43,2.1,0.14,6.999999999999999
+Inner London - East,UKI4,Sociology,13.383,38.434,24.533500000000004,1.5995,0.0,77.95
+Inner London - West,UKI3,Sociology,22.304499999999997,36.451,20.7905,1.0639999999999998,0.74,81.34999999999998
+Lancashire,UKD4,Sociology,11.2125,12.65,4.6,0.2875,0.0,28.75
+"Leicestershire, Rutland and Northamptonshire",UKF2,Sociology,1.38,4.14,5.75,0.23,0.0,11.5
+North Eastern Scotland,UKM5,Sociology,1.82,7.54,3.64,0.0,0.0,13.0
+North Yorkshire,UKE2,Sociology,8.2,9.2,2.4,0.2,0.0,19.999999999999996
+Northern Ireland,UKN0,Sociology,2.9520000000000004,11.562000000000001,7.872000000000001,1.4760000000000002,0.7380000000000001,24.6
+Northumberland and Tyne and Wear,UKC2,Sociology,4.255,9.065,4.625,0.555,0.0,18.5
+Outer London - West and North West,UKI7,Sociology,1.08,6.12,4.8,0.0,0.0,12.0
+"Surrey, East and West Sussex",UKJ2,Sociology,6.401,17.96,10.237,0.739,0.163,35.49999999999999
+West Midlands,UKG3,Sociology,6.228000000000001,15.57,11.072000000000001,1.73,0.0,34.6
+Bedfordshire and Hertfordshire,UKH2,"Sport and Exercise Sciences, Leisure and Tourism",1.746,6.207999999999999,9.894,1.3579999999999999,0.19399999999999998,19.4
+"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,"Sport and Exercise Sciences, Leisure and Tourism",0.0,0.7,2.6,1.3,0.4,5.0
+Cheshire,UKD6,"Sport and Exercise Sciences, Leisure and Tourism",0.124,4.216,6.944,0.992,0.124,12.4
+Cumbria,UKD1,"Sport and Exercise Sciences, Leisure and Tourism",0.84,0.48,3.36,1.32,0.0,6.0
+Derbyshire and Nottinghamshire,UKF1,"Sport and Exercise Sciences, Leisure and Tourism",0.0,4.3554,7.942200000000001,0.5124,0.0,12.81
+Devon,UKK4,"Sport and Exercise Sciences, Leisure and Tourism",7.922000000000001,12.815,2.563,0.0,0.0,23.3
+Dorset and Somerset,UKK2,"Sport and Exercise Sciences, Leisure and Tourism",4.06,7.7,2.24,0.0,0.0,14.0
+East Wales,UKL2,"Sport and Exercise Sciences, Leisure and Tourism",5.2,6.11,1.56,0.0,0.13,13.000000000000002
+East Yorkshire and Northern Lincolnshire,UKE1,"Sport and Exercise Sciences, Leisure and Tourism",0.55,5.17,2.97,2.31,0.0,11.0
+Eastern Scotland,UKM7,"Sport and Exercise Sciences, Leisure and Tourism",10.856000000000002,22.84,16.22,2.284,0.0,52.199999999999996
+Essex,UKH3,"Sport and Exercise Sciences, Leisure and Tourism",1.131,3.5669999999999997,3.7409999999999997,0.26099999999999995,0.0,8.7
+"Gloucestershire, Wiltshire and Bristol/Bath area",UKK1,"Sport and Exercise Sciences, Leisure and Tourism",16.512,19.616,9.768,0.7040000000000001,0.0,46.6
+Hampshire and Isle of Wight,UKJ3,"Sport and Exercise Sciences, Leisure and Tourism",0.75,3.75,5.04,3.0,0.96,13.5
+"Herefordshire, Worcestershire and Warwickshire",UKG1,"Sport and Exercise Sciences, Leisure and Tourism",0.56,4.48,7.0,1.68,0.28,14.0
+Inner London - East,UKI4,"Sport and Exercise Sciences, Leisure and Tourism",1.504,5.3580000000000005,2.35,0.188,0.0,9.4
+Inner London - West,UKI3,"Sport and Exercise Sciences, Leisure and Tourism",6.348000000000001,5.796,1.38,0.276,0.0,13.8
+Kent,UKJ4,"Sport and Exercise Sciences, Leisure and Tourism",4.056,11.432,8.468,1.8440000000000003,0.0,25.8
+Lancashire,UKD4,"Sport and Exercise Sciences, Leisure and Tourism",2.88,12.536000000000001,16.052,3.096,0.6359999999999999,35.2
+"Leicestershire, Rutland and Northamptonshire",UKF2,"Sport and Exercise Sciences, Leisure and Tourism",29.963999999999995,25.877999999999997,10.895999999999999,1.3619999999999999,0.0,68.09999999999998
+Lincolnshire,UKF3,"Sport and Exercise Sciences, Leisure and Tourism",0.84,2.59,2.73,0.84,0.0,7.0
+Merseyside,UKD7,"Sport and Exercise Sciences, Leisure and Tourism",21.541500000000003,14.745999999999999,3.4469999999999996,3.4435,0.172,43.35
+North Yorkshire,UKE2,"Sport and Exercise Sciences, Leisure and Tourism",0.42,1.89,3.64,1.05,0.0,7.0
+Northern Ireland,UKN0,"Sport and Exercise Sciences, Leisure and Tourism",1.8479999999999999,6.731999999999999,3.5639999999999996,1.056,0.0,13.2
+Northumberland and Tyne and Wear,UKC2,"Sport and Exercise Sciences, Leisure and Tourism",0.456,5.928,10.38,2.856,0.18,19.800000000000004
+Outer London - West and North West,UKI7,"Sport and Exercise Sciences, Leisure and Tourism",12.047,14.425,6.455,2.784,0.289,36.0
+Shropshire and Staffordshire,UKG2,"Sport and Exercise Sciences, Leisure and Tourism",1.7420000000000002,6.834,4.422,0.402,0.0,13.4
+South Yorkshire,UKE3,"Sport and Exercise Sciences, Leisure and Tourism",5.44,16.0,8.0,2.24,0.32,32.0
+"Surrey, East and West Sussex",UKJ2,"Sport and Exercise Sciences, Leisure and Tourism",13.528300000000002,25.429499999999997,15.068100000000001,0.2141,0.57,54.81
+West Central Scotland,UKM8,"Sport and Exercise Sciences, Leisure and Tourism",1.38,1.84,3.5879999999999996,2.392,0.0,9.2
+West Midlands,UKG3,"Sport and Exercise Sciences, Leisure and Tourism",19.28,16.32,9.706,2.0940000000000003,0.0,47.4
+West Wales and The Valleys,UKL1,"Sport and Exercise Sciences, Leisure and Tourism",9.766,17.744,8.916,1.6640000000000001,0.11,38.2
+West Yorkshire,UKE4,"Sport and Exercise Sciences, Leisure and Tourism",17.956,22.888,19.03,3.044,1.182,64.1
+Bedfordshire and Hertfordshire,UKH2,"Aeronautical, Mechanical, Chemical and Manufacturing Engineering",40.742,90.88599999999998,25.072,0.0,0.0,156.7
+East Anglia,UKH1,"Aeronautical, Mechanical, Chemical and Manufacturing Engineering",15.181,14.534999999999998,2.2609999999999997,0.32299999999999995,0.0,32.3
+"Gloucestershire, Wiltshire and Bristol/Bath area",UKK1,"Aeronautical, Mechanical, Chemical and Manufacturing Engineering",11.59,42.7,6.71,0.0,0.0,61.00000000000001
+Greater Manchester,UKD3,"Aeronautical, Mechanical, Chemical and Manufacturing Engineering",19.4526,39.9366,8.8908,0.0,0.0,68.28
+Hampshire and Isle of Wight,UKJ3,"Aeronautical, Mechanical, Chemical and Manufacturing Engineering",0.18,8.82,8.1,0.9,0.0,18.0
+Inner London - West,UKI3,"Aeronautical, Mechanical, Chemical and Manufacturing Engineering",91.9448,110.5912,22.154400000000003,2.2696,0.0,226.96
+"Leicestershire, Rutland and Northamptonshire",UKF2,"Aeronautical, Mechanical, Chemical and Manufacturing Engineering",33.124,73.833,24.9065,2.2865,0.0,134.14999999999998
+Merseyside,UKD7,"Aeronautical, Mechanical, Chemical and Manufacturing Engineering",0.26,5.59,6.89,0.26,0.0,12.999999999999998
+Northern Ireland,UKN0,"Aeronautical, Mechanical, Chemical and Manufacturing Engineering",5.445,38.115,5.94,0.0,0.0,49.5
+Northumberland and Tyne and Wear,UKC2,"Aeronautical, Mechanical, Chemical and Manufacturing Engineering",9.3695,28.765,14.993000000000002,2.3275,0.245,55.7
+Outer London - East and North East,UKI5,"Aeronautical, Mechanical, Chemical and Manufacturing Engineering",1.53,5.13,2.34,0.0,0.0,9.0
+Outer London - West and North West,UKI7,"Aeronautical, Mechanical, Chemical and Manufacturing Engineering",3.7962000000000002,39.8601,17.715600000000002,1.8981000000000001,0.0,63.27
+South Yorkshire,UKE3,"Aeronautical, Mechanical, Chemical and Manufacturing Engineering",15.212000000000002,51.182,7.906000000000001,0.3,0.0,74.60000000000001
+"Surrey, East and West Sussex",UKJ2,"Aeronautical, Mechanical, Chemical and Manufacturing Engineering",0.595,5.1,2.21,0.595,0.0,8.5
+West Central Scotland,UKM8,"Aeronautical, Mechanical, Chemical and Manufacturing Engineering",16.128,37.632000000000005,12.767999999999999,0.672,0.0,67.2
+West Midlands,UKG3,"Aeronautical, Mechanical, Chemical and Manufacturing Engineering",11.834999999999999,36.93,16.375,0.36,0.0,65.5
+West Yorkshire,UKE4,"Aeronautical, Mechanical, Chemical and Manufacturing Engineering",10.977,26.109,10.928,0.168,0.168,48.349999999999994
+"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,Politics and International Studies,47.15700000000001,31.913500000000006,22.471500000000002,5.562,0.146,107.25000000000001
+Derbyshire and Nottinghamshire,UKF1,Politics and International Studies,5.327999999999999,17.316,9.323999999999998,0.9989999999999999,0.33299999999999996,33.3
+Devon,UKK4,Politics and International Studies,7.26,13.068,3.63,0.242,0.0,24.2
+East Anglia,UKH1,Politics and International Studies,11.84,17.8,10.375,1.19,0.295,41.5
+East Wales,UKL2,Politics and International Studies,3.3878,7.1665,1.8241999999999998,0.6515,0.0,13.03
+East Yorkshire and Northern Lincolnshire,UKE1,Politics and International Studies,0.0,7.104,9.024,3.072,0.0,19.2
+Eastern Scotland,UKM7,Politics and International Studies,22.8917,27.330399999999997,19.7744,3.7552000000000003,0.3283,74.08
+Essex,UKH3,Politics and International Studies,20.366,5.690499999999999,3.594,0.2995,0.0,29.95
+"Gloucestershire, Wiltshire and Bristol/Bath area",UKK1,Politics and International Studies,4.668,13.872,11.844,4.056,0.36,34.8
+Greater Manchester,UKD3,Politics and International Studies,7.331999999999999,19.7964,8.798399999999999,0.7332,0.0,36.66
+Hampshire and Isle of Wight,UKJ3,Politics and International Studies,3.7912,6.3638,2.9788,0.2708,0.1354,13.540000000000001
+Inner London - East,UKI4,Politics and International Studies,4.7669999999999995,25.152,16.099999999999998,3.181,0.0,49.199999999999996
+Inner London - West,UKI3,Politics and International Studies,90.82,96.31799999999998,47.103500000000004,7.4625,0.546,242.24999999999997
+Kent,UKJ4,Politics and International Studies,5.0649999999999995,16.0475,17.5425,5.725,0.87,45.25
+"Leicestershire, Rutland and Northamptonshire",UKF2,Politics and International Studies,1.44,8.28,7.02,1.26,0.0,18.0
+Lincolnshire,UKF3,Politics and International Studies,0.21899999999999997,2.117,3.65,1.314,0.0,7.3
+Merseyside,UKD7,Politics and International Studies,1.0,2.63,4.58,3.37,0.42,12.000000000000002
+North Eastern Scotland,UKM5,Politics and International Studies,1.044,6.843999999999999,6.795999999999999,1.716,0.0,16.4
+North Yorkshire,UKE2,Politics and International Studies,8.51,9.89,4.37,0.23,0.0,23.0
+Northern Ireland,UKN0,Politics and International Studies,7.5565,18.8755,15.4845,3.8435,0.39,46.15
+Northumberland and Tyne and Wear,UKC2,Politics and International Studies,2.8840000000000003,7.828,9.064,0.8240000000000001,0.0,20.6
+Outer London - West and North West,UKI7,Politics and International Studies,4.522,10.71,7.6160000000000005,0.9520000000000001,0.0,23.800000000000004
+Shropshire and Staffordshire,UKG2,Politics and International Studies,3.151,4.9319999999999995,4.6579999999999995,0.959,0.0,13.699999999999998
+South Yorkshire,UKE3,Politics and International Studies,9.36,6.66,1.8,0.18,0.0,18.0
+"Surrey, East and West Sussex",UKJ2,Politics and International Studies,10.086,26.394,14.973999999999998,4.7459999999999996,0.0,56.199999999999996
+Tees Valley and Durham,UKC1,Politics and International Studies,4.96,12.648,6.2,0.992,0.0,24.8
+West Central Scotland,UKM8,Politics and International Studies,8.745999999999999,23.712,10.074,0.8679999999999999,0.0,43.4
+West Midlands,UKG3,Politics and International Studies,32.543,41.927099999999996,27.865000000000002,11.600899999999998,0.374,114.31
+West Wales and The Valleys,UKL1,Politics and International Studies,13.526,12.886,8.28,0.708,0.0,35.4
+West Yorkshire,UKE4,Politics and International Studies,8.948,15.468,9.908,2.942,0.134,37.4
+Bedfordshire and Hertfordshire,UKH2,Social Work and Social Policy,4.26,6.815999999999999,2.698,0.42599999999999993,0.0,14.2
+"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,Social Work and Social Policy,24.436,13.88,7.312000000000001,0.37200000000000005,0.0,46.0
+Cheshire,UKD6,Social Work and Social Policy,0.0,0.2,1.8,2.05,0.95,5.0
+Derbyshire and Nottinghamshire,UKF1,Social Work and Social Policy,14.2472,15.015199999999998,10.604800000000001,2.3228,0.33,42.519999999999996
+Devon,UKK4,Social Work and Social Policy,3.7434,9.908999999999999,7.9272,0.4404,0.0,22.02
+East Anglia,UKH1,Social Work and Social Policy,4.608,4.032,0.96,0.0,0.0,9.600000000000001
+East Yorkshire and Northern Lincolnshire,UKE1,Social Work and Social Policy,2.94,10.045,9.8,1.715,0.0,24.5
+Eastern Scotland,UKM7,Social Work and Social Policy,34.1888,44.6667,20.601,2.0035,0.2,101.66000000000001
+Essex,UKH3,Social Work and Social Policy,1.0017,3.0051,7.584300000000001,2.7188999999999997,0.0,14.31
+"Gloucestershire, Wiltshire and Bristol/Bath area",UKK1,Social Work and Social Policy,30.984999999999996,35.283,20.583000000000002,4.0435,0.3555,91.25
+Greater Manchester,UKD3,Social Work and Social Policy,2.391,12.021999999999998,10.165,2.6109999999999998,0.861,28.049999999999997
+Hampshire and Isle of Wight,UKJ3,Social Work and Social Policy,18.657999999999998,27.332,15.673,1.975,0.462,64.1
+Inner London - East,UKI4,Social Work and Social Policy,4.8389999999999995,19.5155,14.282999999999998,1.8125,0.0,40.449999999999996
+Inner London - West,UKI3,Social Work and Social Policy,37.480000000000004,18.584000000000003,3.936,0.0,0.0,60.00000000000001
+Kent,UKJ4,Social Work and Social Policy,27.29,20.7404,6.0038,0.5458,0.0,54.58
+Lancashire,UKD4,Social Work and Social Policy,2.7624,18.759999999999998,16.2284,5.2092,1.36,44.32
+"Leicestershire, Rutland and Northamptonshire",UKF2,Social Work and Social Policy,7.236000000000001,18.800800000000002,14.667,1.8562000000000003,0.0,42.56
+Lincolnshire,UKF3,Social Work and Social Policy,0.56,4.367999999999999,5.824,0.44799999999999995,0.0,11.2
+Merseyside,UKD7,Social Work and Social Policy,3.426,17.91,8.472,2.2680000000000002,0.124,32.2
+North Yorkshire,UKE2,Social Work and Social Policy,18.144000000000002,11.088,4.032,0.0,0.336,33.599999999999994
+Northern Ireland,UKN0,Social Work and Social Policy,11.896,23.16,11.522,0.956,0.266,47.8
+Northumberland and Tyne and Wear,UKC2,Social Work and Social Policy,1.74,15.966000000000001,16.492,3.192,0.21,37.6
+Outer London - West and North West,UKI7,Social Work and Social Policy,10.354,29.923000000000002,21.309,4.211,1.7029999999999998,67.5
+Shropshire and Staffordshire,UKG2,Social Work and Social Policy,4.214,18.06,7.224000000000001,0.602,0.0,30.1
+South Yorkshire,UKE3,Social Work and Social Policy,4.628,9.434000000000001,3.56,0.17800000000000002,0.0,17.8
+"Surrey, East and West Sussex",UKJ2,Social Work and Social Policy,6.793000000000001,16.861,12.369,2.935,0.542,39.50000000000001
+Tees Valley and Durham,UKC1,Social Work and Social Policy,6.9110000000000005,20.282000000000004,5.89,1.7670000000000001,0.0,34.85000000000001
+West Central Scotland,UKM8,Social Work and Social Policy,19.755,32.608999999999995,24.433000000000003,4.761000000000001,0.542,82.1
+West Midlands,UKG3,Social Work and Social Policy,7.935,20.445,10.413,2.418,0.489,41.699999999999996
+West Wales and The Valleys,UKL1,Social Work and Social Policy,7.26,8.052000000000001,6.4319999999999995,0.9120000000000001,0.14400000000000002,22.799999999999997
+West Yorkshire,UKE4,Social Work and Social Policy,24.689,39.1183,25.673299999999998,7.741999999999999,0.7974,98.02
+"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,Area Studies,25.596,28.44,13.508999999999999,3.555,0.0,71.10000000000001
+Cheshire,UKD6,Area Studies,0.738,2.05,2.87,2.214,0.32799999999999996,8.2
+Derbyshire and Nottinghamshire,UKF1,Area Studies,9.565,18.09,12.235,1.415,0.195,41.5
+Devon,UKK4,Area Studies,6.542999999999999,5.234399999999999,2.6171999999999995,0.1454,0.0,14.539999999999997
+East Anglia,UKH1,Area Studies,14.36,20.0,11.0,0.32,0.32,46.0
+Eastern Scotland,UKM7,Area Studies,4.62,11.44,5.5,0.22,0.22,21.999999999999996
+"Gloucestershire, Wiltshire and Bristol/Bath area",UKK1,Area Studies,5.98,11.7,5.98,2.08,0.26,26.000000000000004
+Hampshire and Isle of Wight,UKJ3,Area Studies,9.85,16.942,11.032,1.5759999999999998,0.0,39.4
+Highlands and Islands,UKM6,Area Studies,1.2325,3.9875,1.8125,0.0,0.2175,7.25
+Inner London - East,UKI4,Area Studies,2.975,3.57,1.7,0.255,0.0,8.5
+Inner London - West,UKI3,Area Studies,37.6978,37.5096,30.5942,4.9084,0.0,110.71000000000001
+"Leicestershire, Rutland and Northamptonshire",UKF2,Area Studies,2.115,9.87,9.4,2.115,0.0,23.5
+South Yorkshire,UKE3,Area Studies,1.82,7.56,4.2,0.42,0.0,13.999999999999998
+"Surrey, East and West Sussex",UKJ2,Area Studies,2.73,6.63,3.25,0.39,0.0,13.0
+West Central Scotland,UKM8,Area Studies,2.16,6.156000000000001,2.2680000000000002,0.21600000000000003,0.0,10.8
+West Midlands,UKG3,Area Studies,6.723999999999999,12.094000000000001,6.662,0.84,0.28,26.6
+Bedfordshire and Hertfordshire,UKH2,"Music, Drama, Dance and Performing Arts",0.96,1.725,5.7940000000000005,2.714,0.907,12.100000000000001
+"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,"Music, Drama, Dance and Performing Arts",20.6305,21.896499999999996,9.2375,0.7355,0.0,52.5
+Cheshire,UKD6,"Music, Drama, Dance and Performing Arts",0.182,2.1839999999999997,3.003,3.185,0.5459999999999999,9.1
+Cornwall and Isles of Scilly,UKK3,"Music, Drama, Dance and Performing Arts",3.1320000000000006,5.22,12.006000000000002,3.6540000000000004,2.088,26.100000000000005
+Derbyshire and Nottinghamshire,UKF1,"Music, Drama, Dance and Performing Arts",4.725,4.095,1.68,0.0,0.0,10.5
+Devon,UKK4,"Music, Drama, Dance and Performing Arts",6.807999999999999,10.7234,4.9155999999999995,1.613,0.0,24.059999999999995
+East Anglia,UKH1,"Music, Drama, Dance and Performing Arts",7.615999999999999,9.408,4.48,0.8959999999999999,0.0,22.4
+East Wales,UKL2,"Music, Drama, Dance and Performing Arts",5.676,5.544,1.98,0.0,0.0,13.2
+East Yorkshire and Northern Lincolnshire,UKE1,"Music, Drama, Dance and Performing Arts",1.9035,8.036999999999999,9.306,1.9035,0.0,21.15
+Eastern Scotland,UKM7,"Music, Drama, Dance and Performing Arts",9.3396,9.6064,5.1690000000000005,0.519,0.34600000000000003,24.98
+Essex,UKH3,"Music, Drama, Dance and Performing Arts",1.6560000000000001,4.692,4.416,2.622,0.41400000000000003,13.8
+"Gloucestershire, Wiltshire and Bristol/Bath area",UKK1,"Music, Drama, Dance and Performing Arts",10.52,13.6,7.455,1.925,0.0,33.49999999999999
+Greater Manchester,UKD3,"Music, Drama, Dance and Performing Arts",18.345799999999997,22.216199999999997,15.046599999999998,3.2474,0.8240000000000001,59.67999999999999
+Hampshire and Isle of Wight,UKJ3,"Music, Drama, Dance and Performing Arts",16.4364,10.040600000000001,6.0411,1.7919,0.62,34.93
+"Herefordshire, Worcestershire and Warwickshire",UKG1,"Music, Drama, Dance and Performing Arts",0.0,1.4520000000000002,2.068,0.528,0.35200000000000004,4.4
+Inner London - East,UKI4,"Music, Drama, Dance and Performing Arts",22.994999999999997,20.474999999999998,11.718,2.168,0.14400000000000002,57.5
+Inner London - West,UKI3,"Music, Drama, Dance and Performing Arts",45.199999999999996,49.0055,25.729,4.09,2.3755,126.4
+Kent,UKJ4,"Music, Drama, Dance and Performing Arts",16.86,20.663999999999998,11.14,2.392,0.544,51.6
+Lancashire,UKD4,"Music, Drama, Dance and Performing Arts",0.0,2.415,5.06,2.415,1.61,11.5
+"Leicestershire, Rutland and Northamptonshire",UKF2,"Music, Drama, Dance and Performing Arts",2.73,6.63,2.6,0.91,0.13,13.0
+Lincolnshire,UKF3,"Music, Drama, Dance and Performing Arts",0.22399999999999998,3.2479999999999993,5.151999999999999,1.68,0.8959999999999999,11.2
+Merseyside,UKD7,"Music, Drama, Dance and Performing Arts",3.19,8.0125,11.14,3.4075,0.0,25.75
+North Eastern Scotland,UKM5,"Music, Drama, Dance and Performing Arts",1.7039999999999997,5.7936000000000005,2.6127999999999996,0.9087999999999999,0.3408,11.36
+North Yorkshire,UKE2,"Music, Drama, Dance and Performing Arts",6.691,18.125999999999998,10.629,1.948,0.306,37.699999999999996
+Northern Ireland,UKN0,"Music, Drama, Dance and Performing Arts",14.447,14.139,17.11,2.2039999999999997,0.0,47.9
+Northumberland and Tyne and Wear,UKC2,"Music, Drama, Dance and Performing Arts",4.896,5.5328,4.0733,1.0282,0.059699999999999996,15.589999999999998
+Outer London - East and North East,UKI5,"Music, Drama, Dance and Performing Arts",2.5009999999999994,8.278,4.554,1.813,0.35400000000000004,17.5
+Outer London - West and North West,UKI7,"Music, Drama, Dance and Performing Arts",9.1805,13.723700000000001,14.068,6.3684,0.8994,44.24
+Shropshire and Staffordshire,UKG2,"Music, Drama, Dance and Performing Arts",2.32,3.04,2.32,0.32,0.0,8.0
+South Yorkshire,UKE3,"Music, Drama, Dance and Performing Arts",5.9616,4.4712,1.7388,0.2484,0.0,12.42
+"Surrey, East and West Sussex",UKJ2,"Music, Drama, Dance and Performing Arts",21.475399999999997,31.7424,12.9249,3.931,1.0562999999999998,71.12999999999998
+Tees Valley and Durham,UKC1,"Music, Drama, Dance and Performing Arts",7.897,5.513000000000001,1.192,0.298,0.0,14.9
+West Central Scotland,UKM8,"Music, Drama, Dance and Performing Arts",7.3148,11.099799999999998,5.522799999999999,1.8948,0.1478,25.98
+West Midlands,UKG3,"Music, Drama, Dance and Performing Arts",22.281999999999996,28.232300000000002,9.2449,0.9308,0.18,60.87
+West Wales and The Valleys,UKL1,"Music, Drama, Dance and Performing Arts",12.958,26.4825,14.910499999999999,3.239,0.16,57.74999999999999
+West Yorkshire,UKE4,"Music, Drama, Dance and Performing Arts",17.410999999999998,21.087,11.511999999999999,5.622999999999999,1.9669999999999999,57.599999999999994
+"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,Modern Languages and Linguistics,37.3842,59.7549,32.7142,6.2717,2.335,138.46
+Derbyshire and Nottinghamshire,UKF1,Modern Languages and Linguistics,16.977700000000002,27.3021,19.4202,2.5041,0.0859,66.28999999999999
+Devon,UKK4,Modern Languages and Linguistics,9.6,11.2,7.68,3.52,0.0,31.999999999999996
+East Anglia,UKH1,Modern Languages and Linguistics,38.611999999999995,40.5426,15.4448,1.9306,0.0,96.52999999999999
+East Wales,UKL2,Modern Languages and Linguistics,8.687,11.7725,5.9495000000000005,0.741,0.0,27.15
+Eastern Scotland,UKM7,Modern Languages and Linguistics,37.8725,57.4355,24.512,3.364,0.866,124.05
+Essex,UKH3,Modern Languages and Linguistics,5.04,5.417999999999999,1.764,0.37799999999999995,0.0,12.599999999999998
+"Gloucestershire, Wiltshire and Bristol/Bath area",UKK1,Modern Languages and Linguistics,9.892,15.213,12.548,3.1470000000000002,0.0,40.8
+Greater Manchester,UKD3,Modern Languages and Linguistics,29.937,30.924999999999997,17.006,4.189,1.043,83.1
+Hampshire and Isle of Wight,UKJ3,Modern Languages and Linguistics,9.555,11.025,3.92,0.0,0.0,24.5
+Highlands and Islands,UKM6,Modern Languages and Linguistics,0.9279999999999999,2.61,1.9140000000000001,0.348,0.0,5.8
+Inner London - East,UKI4,Modern Languages and Linguistics,15.671,14.812999999999999,6.895999999999999,1.57,0.0,38.949999999999996
+Inner London - West,UKI3,Modern Languages and Linguistics,36.707899999999995,65.7294,31.184699999999996,5.9228000000000005,1.3252,140.86999999999998
+Kent,UKJ4,Modern Languages and Linguistics,9.633,11.362,3.705,0.0,0.0,24.699999999999996
+Lancashire,UKD4,Modern Languages and Linguistics,2.12,4.558,3.392,0.53,0.0,10.6
+"Leicestershire, Rutland and Northamptonshire",UKF2,Modern Languages and Linguistics,0.6,5.28,5.52,0.6,0.0,11.999999999999998
+Merseyside,UKD7,Modern Languages and Linguistics,5.46,9.66,5.25,0.63,0.0,21.0
+North Eastern Scotland,UKM5,Modern Languages and Linguistics,4.62,9.02,5.72,2.64,0.0,22.0
+North Yorkshire,UKE2,Modern Languages and Linguistics,6.336,5.632000000000001,0.9856,0.2816,0.8448,14.079999999999998
+Northern Ireland,UKN0,Modern Languages and Linguistics,13.126,19.96,10.562,2.398,0.354,46.4
+Northumberland and Tyne and Wear,UKC2,Modern Languages and Linguistics,17.4895,19.4883,10.9934,1.4990999999999999,0.4997,49.97
+Outer London - East and North East,UKI5,Modern Languages and Linguistics,0.21,0.6,1.59,0.6,0.0,3.0
+South Yorkshire,UKE3,Modern Languages and Linguistics,12.251999999999999,16.762,9.526,1.66,0.0,40.199999999999996
+"Surrey, East and West Sussex",UKJ2,Modern Languages and Linguistics,8.33,11.27,4.655,0.245,0.0,24.500000000000004
+Tees Valley and Durham,UKC1,Modern Languages and Linguistics,8.5,17.0,8.16,0.0,0.34,34.0
+West Central Scotland,UKM8,Modern Languages and Linguistics,7.4159999999999995,10.49,8.19,1.884,0.22,28.199999999999996
+West Midlands,UKG3,Modern Languages and Linguistics,21.154,48.736000000000004,22.509,3.8850000000000002,0.21600000000000003,96.5
+West Wales and The Valleys,UKL1,Modern Languages and Linguistics,15.911999999999999,23.824,16.61,4.594,0.26,61.2
+West Yorkshire,UKE4,Modern Languages and Linguistics,19.561,23.978,13.882,5.678999999999999,0.0,63.1
+"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,Theology and Religious Studies,12.198000000000002,14.526000000000002,10.668000000000001,1.308,0.0,38.7
+Cheshire,UKD6,Theology and Religious Studies,0.888,2.997,6.326999999999999,0.888,0.0,11.1
+Derbyshire and Nottinghamshire,UKF1,Theology and Religious Studies,4.713,6.9124,3.6133000000000006,0.47130000000000005,0.0,15.709999999999999
+Devon,UKK4,Theology and Religious Studies,2.352,6.944,1.5679999999999998,0.33599999999999997,0.0,11.2
+East Anglia,UKH1,Theology and Religious Studies,8.296,11.223999999999998,4.635999999999999,0.0,0.244,24.399999999999995
+East Wales,UKL2,Theology and Religious Studies,3.0359999999999996,3.9559999999999995,1.932,0.27599999999999997,0.0,9.2
+Eastern Scotland,UKM7,Theology and Religious Studies,13.384,16.044,10.374,0.7980000000000002,0.0,40.6
+"Gloucestershire, Wiltshire and Bristol/Bath area",UKK1,Theology and Religious Studies,1.965,5.46,5.507999999999999,0.9670000000000001,0.0,13.9
+Greater Manchester,UKD3,Theology and Religious Studies,4.06,6.815,2.9,0.58,0.145,14.5
+Hampshire and Isle of Wight,UKJ3,Theology and Religious Studies,0.504,3.0240000000000005,3.612,1.26,0.0,8.4
+Inner London - West,UKI3,Theology and Religious Studies,21.441000000000003,27.653,17.828,2.575,0.403,69.9
+Kent,UKJ4,Theology and Religious Studies,3.3544,5.7356,4.2124,0.5776,0.0,13.879999999999999
+Lancashire,UKD4,Theology and Religious Studies,9.378599999999999,7.3689,5.1358999999999995,0.44659999999999994,0.0,22.33
+Merseyside,UKD7,Theology and Religious Studies,1.341,5.513000000000001,5.662000000000001,2.086,0.298,14.900000000000002
+North Eastern Scotland,UKM5,Theology and Religious Studies,5.51,7.41,4.56,1.33,0.19,19.000000000000004
+North Yorkshire,UKE2,Theology and Religious Studies,0.14,1.61,3.99,1.12,0.14,7.0
+Outer London - West and North West,UKI7,Theology and Religious Studies,0.43199999999999994,1.248,1.9679999999999997,1.152,0.0,4.8
+South Yorkshire,UKE3,Theology and Religious Studies,0.84,2.04,1.12,0.0,0.0,4.0
+Tees Valley and Durham,UKC1,Theology and Religious Studies,12.4,8.68,3.472,0.248,0.0,24.8
+West Central Scotland,UKM8,Theology and Religious Studies,1.1945999999999999,4.7783999999999995,3.8009999999999997,1.0859999999999999,0.0,10.86
+West Midlands,UKG3,Theology and Religious Studies,4.59,3.04,2.09,1.26,0.02,10.999999999999998
+West Wales and The Valleys,UKL1,Theology and Religious Studies,1.148,3.9359999999999995,2.1319999999999997,0.9839999999999999,0.0,8.2
+West Yorkshire,UKE4,Theology and Religious Studies,3.5640000000000005,6.482000000000001,3.064,1.155,0.035,14.3
+Bedfordshire and Hertfordshire,UKH2,"Allied Health Professions, Dentistry, Nursing and Pharmacy",11.152,31.671,12.178999999999998,1.626,0.5720000000000001,57.199999999999996
+"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,"Allied Health Professions, Dentistry, Nursing and Pharmacy",8.642,33.592,12.904,1.7319999999999998,0.6299999999999999,57.49999999999999
+Cheshire,UKD6,"Allied Health Professions, Dentistry, Nursing and Pharmacy",0.69,8.74,10.35,2.99,0.23,23.000000000000004
+Cumbria,UKD1,"Allied Health Professions, Dentistry, Nursing and Pharmacy",0.21,1.26,1.35,0.18,0.0,3.0000000000000004
+Derbyshire and Nottinghamshire,UKF1,"Allied Health Professions, Dentistry, Nursing and Pharmacy",43.995,49.994,10.514,0.7559999999999999,0.441,105.7
+Devon,UKK4,"Allied Health Professions, Dentistry, Nursing and Pharmacy",4.885999999999999,17.101,9.423,0.349,3.1409999999999996,34.9
+Dorset and Somerset,UKK2,"Allied Health Professions, Dentistry, Nursing and Pharmacy",2.14,9.415999999999999,8.56,0.856,0.428,21.400000000000002
+East Anglia,UKH1,"Allied Health Professions, Dentistry, Nursing and Pharmacy",11.149999999999999,14.084,2.966,0.0,0.0,28.2
+East Wales,UKL2,"Allied Health Professions, Dentistry, Nursing and Pharmacy",37.056000000000004,42.277,7.1370000000000005,0.48,0.0,86.95
+East Yorkshire and Northern Lincolnshire,UKE1,"Allied Health Professions, Dentistry, Nursing and Pharmacy",10.633,19.208,4.116,0.0,0.34299999999999997,34.3
+Eastern Scotland,UKM7,"Allied Health Professions, Dentistry, Nursing and Pharmacy",18.682,37.86,19.581999999999997,0.408,0.6679999999999999,77.2
+Essex,UKH3,"Allied Health Professions, Dentistry, Nursing and Pharmacy",1.13,8.136000000000001,2.0340000000000003,0.0,0.0,11.300000000000002
+"Gloucestershire, Wiltshire and Bristol/Bath area",UKK1,"Allied Health Professions, Dentistry, Nursing and Pharmacy",47.311400000000006,50.8206,16.328400000000002,1.1578,0.1618,115.78
+Greater Manchester,UKD3,"Allied Health Professions, Dentistry, Nursing and Pharmacy",72.06450000000001,97.57050000000001,41.8625,3.6174999999999997,1.0350000000000001,216.15
+Hampshire and Isle of Wight,UKJ3,"Allied Health Professions, Dentistry, Nursing and Pharmacy",23.997,29.853,4.212,0.0,0.23800000000000002,58.3
+"Herefordshire, Worcestershire and Warwickshire",UKG1,"Allied Health Professions, Dentistry, Nursing and Pharmacy",0.222,3.441,4.662,1.665,1.11,11.099999999999998
+Highlands and Islands,UKM6,"Allied Health Professions, Dentistry, Nursing and Pharmacy",0.884,2.7560000000000002,1.456,0.10400000000000001,0.0,5.2
+Inner London - East,UKI4,"Allied Health Professions, Dentistry, Nursing and Pharmacy",38.211999999999996,74.968,23.022000000000002,3.0,0.998,140.2
+Inner London - West,UKI3,"Allied Health Professions, Dentistry, Nursing and Pharmacy",116.25479999999999,147.82299999999998,36.0831,1.3678000000000001,1.9313,303.46
+Kent,UKJ4,"Allied Health Professions, Dentistry, Nursing and Pharmacy",4.583,15.848,8.35,0.278,1.141,30.199999999999996
+Lancashire,UKD4,"Allied Health Professions, Dentistry, Nursing and Pharmacy",31.344600000000003,61.3168,27.782,4.121,0.49560000000000004,125.05999999999999
+"Leicestershire, Rutland and Northamptonshire",UKF2,"Allied Health Professions, Dentistry, Nursing and Pharmacy",4.752,14.164,22.752,2.684,0.448,44.8
+Lincolnshire,UKF3,"Allied Health Professions, Dentistry, Nursing and Pharmacy",4.85,11.833999999999998,2.7159999999999997,0.0,0.0,19.4
+Merseyside,UKD7,"Allied Health Professions, Dentistry, Nursing and Pharmacy",3.45,20.01,10.35,0.345,0.345,34.5
+North Eastern Scotland,UKM5,"Allied Health Professions, Dentistry, Nursing and Pharmacy",2.295,7.155,3.78,0.27,0.0,13.499999999999998
+North Yorkshire,UKE2,"Allied Health Professions, Dentistry, Nursing and Pharmacy",0.165,1.925,2.035,1.21,0.165,5.5
+Northern Ireland,UKN0,"Allied Health Professions, Dentistry, Nursing and Pharmacy",53.28739999999999,84.032,18.9336,0.9644999999999999,1.0625,158.27999999999997
+Northumberland and Tyne and Wear,UKC2,"Allied Health Professions, Dentistry, Nursing and Pharmacy",23.214000000000002,42.23400000000001,21.368000000000002,0.9840000000000001,0.0,87.8
+Outer London - East and North East,UKI5,"Allied Health Professions, Dentistry, Nursing and Pharmacy",0.94,6.152,4.368,0.0,0.14,11.600000000000001
+Outer London - South,UKI6,"Allied Health Professions, Dentistry, Nursing and Pharmacy",1.722,11.0208,4.305,0.0,0.1722,17.22
+Outer London - West and North West,UKI7,"Allied Health Professions, Dentistry, Nursing and Pharmacy",8.940999999999999,33.803000000000004,31.149,6.058999999999999,0.14800000000000002,80.1
+Shropshire and Staffordshire,UKG2,"Allied Health Professions, Dentistry, Nursing and Pharmacy",18.4716,21.1104,3.9581999999999997,0.0,0.43979999999999997,43.97999999999999
+South Yorkshire,UKE3,"Allied Health Professions, Dentistry, Nursing and Pharmacy",48.025499999999994,60.7446,11.2804,0.5595,0.0,120.60999999999999
+"Surrey, East and West Sussex",UKJ2,"Allied Health Professions, Dentistry, Nursing and Pharmacy",38.873999999999995,43.754,8.922,0.275,0.275,92.1
+Tees Valley and Durham,UKC1,"Allied Health Professions, Dentistry, Nursing and Pharmacy",1.92,8.96,4.64,0.48,0.0,16.0
+West Central Scotland,UKM8,"Allied Health Professions, Dentistry, Nursing and Pharmacy",49.024,76.068,17.721,0.743,1.8439999999999999,145.39999999999998
+West Midlands,UKG3,"Allied Health Professions, Dentistry, Nursing and Pharmacy",37.897999999999996,72.304,19.337,2.17,1.991,133.7
+West Wales and The Valleys,UKL1,"Allied Health Professions, Dentistry, Nursing and Pharmacy",30.907999999999998,37.929,9.259,0.40399999999999997,0.0,78.5
+West Yorkshire,UKE4,"Allied Health Professions, Dentistry, Nursing and Pharmacy",30.444000000000003,58.294,9.418,0.444,0.0,98.60000000000001
+"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,"Geography, Environmental Studies and Archaeology",46.70080000000001,65.73570000000001,38.328399999999995,3.9150999999999994,0.0,154.68
+Cheshire,UKD6,"Geography, Environmental Studies and Archaeology",1.1340000000000001,1.98,3.5700000000000003,5.531999999999999,1.584,13.799999999999999
+Cumbria,UKD1,"Geography, Environmental Studies and Archaeology",0.0,0.54,3.6,1.86,0.0,6.000000000000001
+Derbyshire and Nottinghamshire,UKF1,"Geography, Environmental Studies and Archaeology",11.413999999999998,29.0655,20.5484,4.2921,0.39,65.71000000000001
+Devon,UKK4,"Geography, Environmental Studies and Archaeology",23.709999999999997,43.599999999999994,21.584,3.3059999999999996,0.0,92.19999999999999
+Dorset and Somerset,UKK2,"Geography, Environmental Studies and Archaeology",2.95,13.865,12.095,0.59,0.0,29.500000000000004
+East Anglia,UKH1,"Geography, Environmental Studies and Archaeology",35.053,35.787000000000006,14.937999999999999,2.6220000000000003,0.0,88.4
+East Wales,UKL2,"Geography, Environmental Studies and Archaeology",3.6764000000000006,5.777200000000001,3.2825,0.39390000000000003,0.0,13.130000000000003
+East Yorkshire and Northern Lincolnshire,UKE1,"Geography, Environmental Studies and Archaeology",9.315,14.835,10.005,0.345,0.0,34.5
+Eastern Scotland,UKM7,"Geography, Environmental Studies and Archaeology",21.915,39.30200000000001,23.125,2.458,0.0,86.80000000000001
+Essex,UKH3,"Geography, Environmental Studies and Archaeology",2.275,7.175,7.525,0.525,0.0,17.5
+"Gloucestershire, Wiltshire and Bristol/Bath area",UKK1,"Geography, Environmental Studies and Archaeology",25.755500000000005,24.3765,22.361,6.952999999999999,0.504,79.95000000000002
+Greater Manchester,UKD3,"Geography, Environmental Studies and Archaeology",8.382,21.266000000000002,17.488,2.2640000000000002,0.0,49.400000000000006
+Hampshire and Isle of Wight,UKJ3,"Geography, Environmental Studies and Archaeology",17.673,29.356,19.236000000000004,2.8150000000000004,0.22,69.3
+"Herefordshire, Worcestershire and Warwickshire",UKG1,"Geography, Environmental Studies and Archaeology",0.22,2.75,5.61,2.42,0.0,11.0
+Highlands and Islands,UKM6,"Geography, Environmental Studies and Archaeology",0.39599999999999996,5.411999999999999,5.94,1.056,0.39599999999999996,13.2
+Inner London - East,UKI4,"Geography, Environmental Studies and Archaeology",10.659,15.361500000000001,4.0755,1.254,0.0,31.350000000000005
+Inner London - West,UKI3,"Geography, Environmental Studies and Archaeology",68.1606,66.9563,30.8246,6.0405,0.348,172.33
+Lancashire,UKD4,"Geography, Environmental Studies and Archaeology",0.5900000000000001,4.02,6.83,5.109999999999999,0.45,16.999999999999996
+"Leicestershire, Rutland and Northamptonshire",UKF2,"Geography, Environmental Studies and Archaeology",13.885399999999999,35.8663,30.7794,2.9589,0.0,83.49
+Merseyside,UKD7,"Geography, Environmental Studies and Archaeology",9.25,24.654,15.174,3.4080000000000004,0.7140000000000001,53.199999999999996
+North Eastern Scotland,UKM5,"Geography, Environmental Studies and Archaeology",1.7420000000000002,7.102,4.288,0.268,0.0,13.400000000000002
+North Yorkshire,UKE2,"Geography, Environmental Studies and Archaeology",7.8876,5.8218000000000005,3.9438,1.1268,0.0,18.78
+Northern Ireland,UKN0,"Geography, Environmental Studies and Archaeology",8.316,10.472000000000001,9.24,2.464,0.308,30.800000000000004
+Northumberland and Tyne and Wear,UKC2,"Geography, Environmental Studies and Archaeology",12.605999999999998,24.189,17.155,0.95,0.0,54.900000000000006
+Outer London - South,UKI6,"Geography, Environmental Studies and Archaeology",0.8,3.0,5.4,0.8,0.0,10.0
+Outer London - West and North West,UKI7,"Geography, Environmental Studies and Archaeology",1.6412,5.222,6.5648,1.1936,0.2984,14.920000000000002
+South Yorkshire,UKE3,"Geography, Environmental Studies and Archaeology",10.801,22.04,8.530000000000001,1.129,0.0,42.5
+"Surrey, East and West Sussex",UKJ2,"Geography, Environmental Studies and Archaeology",15.512999999999998,21.222,7.013999999999999,0.651,0.0,44.4
+Tees Valley and Durham,UKC1,"Geography, Environmental Studies and Archaeology",36.5128,31.362500000000004,18.047700000000003,1.258,0.629,87.81000000000002
+West Central Scotland,UKM8,"Geography, Environmental Studies and Archaeology",5.765,10.641,4.929,1.2149999999999999,0.0,22.55
+West Midlands,UKG3,"Geography, Environmental Studies and Archaeology",7.5,11.5,5.5,0.5,0.0,25.0
+West Wales and The Valleys,UKL1,"Geography, Environmental Studies and Archaeology",19.261400000000002,34.934,18.959,2.8863000000000003,0.3893,76.43
+West Yorkshire,UKE4,"Geography, Environmental Studies and Archaeology",20.0,26.124,15.087,0.489,0.0,61.699999999999996
+"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,Mathematical Sciences,93.34099999999998,83.761,15.593,0.265,0.94,193.89999999999995
+Cheshire,UKD6,Mathematical Sciences,0.135,1.08,4.455,1.08,0.0,6.75
+Derbyshire and Nottinghamshire,UKF1,Mathematical Sciences,17.552,30.715999999999998,6.0335,0.5485,0.0,54.85
+Devon,UKK4,Mathematical Sciences,7.236000000000001,28.97,11.498000000000001,0.14400000000000002,1.1520000000000001,49.00000000000001
+East Anglia,UKH1,Mathematical Sciences,66.6765,83.8519,13.8039,1.4377000000000002,0.0,165.77
+East Wales,UKL2,Mathematical Sciences,4.329000000000001,17.316000000000003,2.405,0.0,0.0,24.050000000000004
+Eastern Scotland,UKM7,Mathematical Sciences,38.4043,80.57419999999999,17.1855,0.306,0.0,136.47
+"Gloucestershire, Wiltshire and Bristol/Bath area",UKK1,Mathematical Sciences,47.449,64.268,14.46,1.7229999999999999,0.0,127.89999999999999
+Greater Manchester,UKD3,Mathematical Sciences,20.671999999999997,28.287999999999997,4.896,0.544,0.0,54.39999999999999
+Hampshire and Isle of Wight,UKJ3,Mathematical Sciences,13.264,41.232,11.303999999999998,0.0,0.0,65.8
+Inner London - East,UKI4,Mathematical Sciences,8.077499999999999,35.952,10.482,0.2385,0.0,54.75
+Inner London - West,UKI3,Mathematical Sciences,74.6721,126.94579999999999,32.0895,3.7926,0.0,237.5
+Kent,UKJ4,Mathematical Sciences,3.3079999999999994,20.5096,9.2624,0.0,0.0,33.08
+Lancashire,UKD4,Mathematical Sciences,9.96,12.698999999999998,1.992,0.0,0.249,24.9
+"Leicestershire, Rutland and Northamptonshire",UKF2,Mathematical Sciences,4.796,36.774,14.816,1.014,0.0,57.400000000000006
+Merseyside,UKD7,Mathematical Sciences,5.1519,26.5521,7.926,0.0,0.0,39.63
+North Eastern Scotland,UKM5,Mathematical Sciences,3.2340000000000004,14.322000000000001,5.5440000000000005,0.0,0.0,23.1
+North Yorkshire,UKE2,Mathematical Sciences,5.185,19.215,6.1,0.0,0.0,30.5
+Northern Ireland,UKN0,Mathematical Sciences,0.6,7.2,4.2,0.0,0.0,12.0
+Northumberland and Tyne and Wear,UKC2,Mathematical Sciences,6.616,18.476,8.264,1.044,0.0,34.39999999999999
+Outer London - East and North East,UKI5,Mathematical Sciences,0.4,1.4,1.8,1.0,0.4,5.0
+Outer London - West and North West,UKI7,Mathematical Sciences,2.6455,12.987,7.215,1.2025,0.0,24.05
+Shropshire and Staffordshire,UKG2,Mathematical Sciences,0.96,4.72,2.0,0.32,0.0,8.0
+South Yorkshire,UKE3,Mathematical Sciences,6.8,23.46,3.74,0.0,0.0,34.0
+"Surrey, East and West Sussex",UKJ2,Mathematical Sciences,9.398800000000001,39.056200000000004,13.365,0.6,0.0,62.42000000000001
+Tees Valley and Durham,UKC1,Mathematical Sciences,12.96,32.4,8.1,0.0,0.54,54.0
+West Central Scotland,UKM8,Mathematical Sciences,13.105,49.510999999999996,12.297,0.9869999999999999,0.0,75.89999999999999
+West Midlands,UKG3,Mathematical Sciences,52.434,82.62799999999999,15.396999999999998,1.041,1.6,153.09999999999997
+West Wales and The Valleys,UKL1,Mathematical Sciences,2.6239999999999997,14.243499999999997,14.9695,2.2249999999999996,0.588,34.65
+West Yorkshire,UKE4,Mathematical Sciences,19.08,25.97,7.95,0.0,0.0,53.0
+"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,Classics,38.2785,34.568000000000005,18.001500000000004,2.1020000000000003,0.0,92.95000000000002
+Derbyshire and Nottinghamshire,UKF1,Classics,5.32,5.88,2.24,0.56,0.0,14.0
+Devon,UKK4,Classics,5.7,8.55,4.56,0.19,0.0,19.0
+East Anglia,UKH1,Classics,20.405,13.86,3.85,0.385,0.0,38.5
+Eastern Scotland,UKM7,Classics,10.404,15.434999999999999,7.686,0.675,0.0,34.199999999999996
+"Gloucestershire, Wiltshire and Bristol/Bath area",UKK1,Classics,4.35,7.2,3.45,0.0,0.0,15.0
+Greater Manchester,UKD3,Classics,2.94,7.0,3.64,0.14,0.28,14.0
+Inner London - West,UKI3,Classics,12.948,19.656,9.736999999999998,0.5589999999999999,0.0,42.89999999999999
+Kent,UKJ4,Classics,2.852,5.332000000000001,3.8440000000000003,0.37200000000000005,0.0,12.400000000000002
+Merseyside,UKD7,Classics,1.445,4.335,2.21,0.51,0.0,8.5
+Northumberland and Tyne and Wear,UKC2,Classics,2.9579999999999997,4.794,2.2439999999999998,0.0,0.204,10.2
+"Surrey, East and West Sussex",UKJ2,Classics,1.1280000000000001,3.948,3.76,0.5640000000000001,0.0,9.4
+Tees Valley and Durham,UKC1,Classics,6.106,6.106,1.9879999999999998,0.0,0.0,14.2
+West Central Scotland,UKM8,Classics,1.36,3.76,2.56,0.32,0.0,8.0
+West Midlands,UKG3,Classics,11.491999999999999,15.828,6.38,0.2,0.0,33.900000000000006
+West Wales and The Valleys,UKL1,Classics,0.3772,3.5833999999999997,3.8663,0.8487,0.7544,9.43
+West Yorkshire,UKE4,Classics,0.84,3.6,1.56,0.0,0.0,6.0
+Bedfordshire and Hertfordshire,UKH2,"Agriculture, Veterinary and Food Science",7.209,16.947,11.857,1.887,0.0,37.9
+"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,"Agriculture, Veterinary and Food Science",32.85,26.28,12.41,1.46,0.0,73.0
+Derbyshire and Nottinghamshire,UKF1,"Agriculture, Veterinary and Food Science",41.23650000000001,47.923500000000004,18.9465,1.1145,2.229,111.45000000000002
+Devon,UKK4,"Agriculture, Veterinary and Food Science",3.1784999999999997,9.78,10.268999999999998,0.978,0.2445,24.45
+East Anglia,UKH1,"Agriculture, Veterinary and Food Science",19.36,22.11,8.338000000000001,0.792,0.0,50.6
+Eastern Scotland,UKM7,"Agriculture, Veterinary and Food Science",88.9808,75.0268,47.7077,5.7747,0.0,217.49
+Essex,UKH3,"Agriculture, Veterinary and Food Science",0.0,1.76,2.552,2.4640000000000004,2.024,8.8
+"Gloucestershire, Wiltshire and Bristol/Bath area",UKK1,"Agriculture, Veterinary and Food Science",14.216499999999998,25.326900000000002,13.288300000000001,4.837999999999999,2.2603,59.93
+Inner London - West,UKI3,"Agriculture, Veterinary and Food Science",36.2215,45.535599999999995,18.6282,3.1047,0.0,103.49
+Kent,UKJ4,"Agriculture, Veterinary and Food Science",0.25,3.875,6.0,2.125,0.25,12.5
+Lincolnshire,UKF3,"Agriculture, Veterinary and Food Science",4.34,6.58,2.8,0.28,0.0,13.999999999999998
+Merseyside,UKD7,"Agriculture, Veterinary and Food Science",22.948800000000002,21.855999999999998,9.2888,0.5464,0.0,54.64
+North Eastern Scotland,UKM5,"Agriculture, Veterinary and Food Science",11.424,7.343999999999999,1.632,0.0,0.0,20.400000000000002
+Northern Ireland,UKN0,"Agriculture, Veterinary and Food Science",14.696,13.36,5.01,0.0,0.33399999999999996,33.4
+Northumberland and Tyne and Wear,UKC2,"Agriculture, Veterinary and Food Science",4.826,11.937999999999999,8.382,0.254,0.0,25.400000000000002
+Outer London - East and North East,UKI5,"Agriculture, Veterinary and Food Science",4.935,7.99,9.165,1.41,0.0,23.5
+Shropshire and Staffordshire,UKG2,"Agriculture, Veterinary and Food Science",1.7,7.82,7.48,0.0,0.0,17.0
+West Central Scotland,UKM8,"Agriculture, Veterinary and Food Science",17.848,17.459999999999997,3.492,0.0,0.0,38.79999999999999
+West Midlands,UKG3,"Agriculture, Veterinary and Food Science",5.796,5.796,1.008,0.0,0.0,12.600000000000001
+West Wales and The Valleys,UKL1,"Agriculture, Veterinary and Food Science",28.291199999999996,40.6686,16.7979,0.8840999999999999,1.7681999999999998,88.41
+West Yorkshire,UKE4,"Agriculture, Veterinary and Food Science",4.32,6.912000000000001,2.88,0.28800000000000003,0.0,14.400000000000002
+Bedfordshire and Hertfordshire,UKH2,"Art and Design: History, Practice and Theory",0.8014999999999999,5.037999999999999,5.2669999999999995,0.3434999999999999,0.0,11.45
+"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,"Art and Design: History, Practice and Theory",17.363,33.925999999999995,14.207999999999998,3.611,0.192,69.29999999999998
+Cheshire,UKD6,"Art and Design: History, Practice and Theory",0.518,1.221,1.7020000000000002,0.259,0.0,3.7
+Cornwall and Isles of Scilly,UKK3,"Art and Design: History, Practice and Theory",0.4858,5.3438,12.3879,4.372199999999999,1.7003,24.29
+Cumbria,UKD1,"Art and Design: History, Practice and Theory",0.34240000000000004,1.8832000000000002,1.2412,0.8132,0.0,4.28
+Derbyshire and Nottinghamshire,UKF1,"Art and Design: History, Practice and Theory",5.943,15.843,11.221,2.7459999999999996,2.3469999999999995,38.10000000000001
+Devon,UKK4,"Art and Design: History, Practice and Theory",2.3375,7.5625,3.3,0.4125,0.1375,13.749999999999998
+Dorset and Somerset,UKK2,"Art and Design: History, Practice and Theory",5.263,10.014,7.634,2.868,0.121,25.9
+East Anglia,UKH1,"Art and Design: History, Practice and Theory",6.034500000000001,9.834,6.109,0.3725,0.0,22.349999999999998
+East Wales,UKL2,"Art and Design: History, Practice and Theory",2.3,5.2,2.2,0.2,0.1,9.999999999999998
+Eastern Scotland,UKM7,"Art and Design: History, Practice and Theory",36.5715,45.303000000000004,20.652,4.656,0.3675,107.55000000000003
+Essex,UKH3,"Art and Design: History, Practice and Theory",2.028,8.959,7.090000000000001,2.3310000000000004,1.6920000000000002,22.1
+"Gloucestershire, Wiltshire and Bristol/Bath area",UKK1,"Art and Design: History, Practice and Theory",7.7304,17.9775,14.802800000000001,1.9116,0.3477,42.77
+Greater Manchester,UKD3,"Art and Design: History, Practice and Theory",13.633,37.778999999999996,19.695999999999998,4.45,0.192,75.74999999999999
+Hampshire and Isle of Wight,UKJ3,"Art and Design: History, Practice and Theory",3.0254999999999996,8.1115,8.901,4.427,1.585,26.049999999999997
+"Herefordshire, Worcestershire and Warwickshire",UKG1,"Art and Design: History, Practice and Theory",0.742,1.431,2.0140000000000002,1.113,0.0,5.300000000000001
+Inner London - East,UKI4,"Art and Design: History, Practice and Theory",9.424,21.709999999999997,14.659,1.8809999999999998,0.626,48.3
+Inner London - West,UKI3,"Art and Design: History, Practice and Theory",103.8851,138.7903,42.95099999999999,7.208599999999999,0.7050000000000001,293.53999999999996
+Lancashire,UKD4,"Art and Design: History, Practice and Theory",11.0844,20.2804,11.3066,3.3086,0.0,45.980000000000004
+"Leicestershire, Rutland and Northamptonshire",UKF2,"Art and Design: History, Practice and Theory",28.156399999999998,34.9801,23.9533,5.3179,1.2223000000000002,93.63
+Lincolnshire,UKF3,"Art and Design: History, Practice and Theory",1.31,7.86,2.8819999999999997,1.048,0.0,13.1
+Merseyside,UKD7,"Art and Design: History, Practice and Theory",1.1179999999999999,4.385999999999999,2.924,0.172,0.0,8.6
+North Eastern Scotland,UKM5,"Art and Design: History, Practice and Theory",0.36,3.42,3.51,1.53,0.18,8.999999999999998
+North Yorkshire,UKE2,"Art and Design: History, Practice and Theory",8.9065,6.821999999999999,3.032,0.1895,0.0,18.95
+Northern Ireland,UKN0,"Art and Design: History, Practice and Theory",11.656,7.936,4.712,0.496,0.0,24.799999999999997
+Northumberland and Tyne and Wear,UKC2,"Art and Design: History, Practice and Theory",14.848,35.9915,20.058500000000002,9.416,0.23600000000000002,80.55
+Outer London - East and North East,UKI5,"Art and Design: History, Practice and Theory",0.504,1.08,3.6,2.016,0.0,7.2
+Outer London - South,UKI6,"Art and Design: History, Practice and Theory",5.64,11.045,6.345,0.47,0.0,23.499999999999996
+Outer London - West and North West,UKI7,"Art and Design: History, Practice and Theory",8.463899999999999,18.6463,8.7239,0.7559,0.0,36.589999999999996
+Shropshire and Staffordshire,UKG2,"Art and Design: History, Practice and Theory",0.0,2.178,4.554,2.97,0.198,9.9
+South Yorkshire,UKE3,"Art and Design: History, Practice and Theory",10.2732,9.5394,4.4028,0.2446,0.0,24.459999999999997
+"Surrey, East and West Sussex",UKJ2,"Art and Design: History, Practice and Theory",24.192500000000003,40.551500000000004,26.758499999999998,3.5935,1.054,96.15
+Tees Valley and Durham,UKC1,"Art and Design: History, Practice and Theory",0.8260000000000001,2.7140000000000004,3.658,4.248,0.35400000000000004,11.8
+West Central Scotland,UKM8,"Art and Design: History, Practice and Theory",17.602199999999996,26.0184,20.833799999999997,4.8856,0.0,69.33999999999999
+West Midlands,UKG3,"Art and Design: History, Practice and Theory",27.2783,44.1759,28.366,7.282500000000001,2.3773,109.48
+West Wales and The Valleys,UKL1,"Art and Design: History, Practice and Theory",3.7248,9.3552,3.6272,0.9152,0.1376,17.759999999999998
+West Yorkshire,UKE4,"Art and Design: History, Practice and Theory",14.6507,21.337799999999998,15.4133,6.8515,0.2367,58.49
+Bedfordshire and Hertfordshire,UKH2,Computer Science and Informatics,3.9219999999999997,21.83,30.048000000000002,5.926,0.27399999999999997,62.0
+"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,Computer Science and Informatics,45.598,49.342,17.329,2.8209999999999997,2.51,117.60000000000001
+Cheshire,UKD6,Computer Science and Informatics,0.0,0.2,1.64,1.32,0.84,4.0
+Derbyshire and Nottinghamshire,UKF1,Computer Science and Informatics,17.1895,28.1235,15.618500000000001,8.1685,0.0,69.1
+Devon,UKK4,Computer Science and Informatics,4.16,13.483999999999998,4.432,0.324,0.0,22.400000000000002
+East Anglia,UKH1,Computer Science and Informatics,31.304000000000002,31.85,9.1,0.546,0.0,72.80000000000001
+East Wales,UKL2,Computer Science and Informatics,3.8898,8.3009,6.394,1.5453000000000001,0.0,20.13
+East Yorkshire and Northern Lincolnshire,UKE1,Computer Science and Informatics,3.4040000000000004,4.44,6.216,0.74,0.0,14.800000000000002
+Eastern Scotland,UKM7,Computer Science and Informatics,54.808,88.5865,34.0535,4.005,1.8969999999999998,183.34999999999997
+Essex,UKH3,Computer Science and Informatics,7.678,17.101,8.725,1.396,0.0,34.9
+"Gloucestershire, Wiltshire and Bristol/Bath area",UKK1,Computer Science and Informatics,17.46,48.476,12.920000000000002,1.544,0.0,80.4
+Greater Manchester,UKD3,Computer Science and Informatics,22.122799999999998,32.5506,11.9916,1.645,1.05,69.36
+Hampshire and Isle of Wight,UKJ3,Computer Science and Informatics,22.048000000000002,21.19,11.362,2.6,0.0,57.2
+Inner London - East,UKI4,Computer Science and Informatics,19.75,43.474999999999994,22.682000000000002,4.699,0.5940000000000001,91.19999999999999
+Inner London - West,UKI3,Computer Science and Informatics,89.487,83.241,25.293,6.3825,0.19649999999999998,204.6
+Kent,UKJ4,Computer Science and Informatics,5.238,18.333000000000002,4.947,0.5820000000000001,0.0,29.1
+Lancashire,UKD4,Computer Science and Informatics,11.88,18.25,4.29,3.18,0.4,38.0
+"Leicestershire, Rutland and Northamptonshire",UKF2,Computer Science and Informatics,6.255,29.424,23.62,2.601,0.0,61.900000000000006
+Lincolnshire,UKF3,Computer Science and Informatics,1.45,4.64,4.495,2.755,1.16,14.5
+Merseyside,UKD7,Computer Science and Informatics,8.4,21.636,8.681999999999999,1.7879999999999998,0.19399999999999998,40.7
+North Eastern Scotland,UKM5,Computer Science and Informatics,4.18,15.13,14.127500000000001,4.3125,0.0,37.75
+North Yorkshire,UKE2,Computer Science and Informatics,15.311999999999998,16.008,3.48,0.0,0.0,34.8
+Northern Ireland,UKN0,Computer Science and Informatics,6.1080000000000005,34.896,16.996000000000002,2.8000000000000003,0.0,60.800000000000004
+Northumberland and Tyne and Wear,UKC2,Computer Science and Informatics,13.43,17.775,15.015,7.279999999999999,0.0,53.5
+Outer London - East and North East,UKI5,Computer Science and Informatics,1.278,4.26,4.544,4.117999999999999,0.0,14.2
+Outer London - South,UKI6,Computer Science and Informatics,0.9179999999999999,4.59,4.4879999999999995,0.204,0.0,10.2
+Outer London - West and North West,UKI7,Computer Science and Informatics,8.371,36.149,30.951,16.436,1.6930000000000003,93.60000000000001
+Shropshire and Staffordshire,UKG2,Computer Science and Informatics,0.15,2.774,6.724,3.1519999999999997,0.0,12.799999999999999
+South Yorkshire,UKE3,Computer Science and Informatics,14.335,13.725,2.44,0.0,0.0,30.500000000000004
+"Surrey, East and West Sussex",UKJ2,Computer Science and Informatics,13.083,36.544,20.3725,1.818,0.6325,72.44999999999999
+Tees Valley and Durham,UKC1,Computer Science and Informatics,3.0789999999999997,14.706,8.973,0.0,0.142,26.900000000000002
+West Central Scotland,UKM8,Computer Science and Informatics,18.148,37.516000000000005,26.528,6.406000000000001,0.20199999999999999,88.80000000000001
+West Midlands,UKG3,Computer Science and Informatics,29.592,48.07,22.922,2.0180000000000002,0.9980000000000001,103.60000000000001
+West Wales and The Valleys,UKL1,Computer Science and Informatics,14.388000000000002,27.354,21.994,4.029,0.135,67.9
+West Yorkshire,UKE4,Computer Science and Informatics,9.142399999999999,18.595799999999997,13.542100000000001,7.0897,0.0,48.37
+"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,Chemistry,42.871,54.613,7.577,0.0,0.8390000000000001,105.9
+Derbyshire and Nottinghamshire,UKF1,Chemistry,11.34,28.56,2.1,0.0,0.0,42.0
+East Anglia,UKH1,Chemistry,41.423,38.604,2.273,0.0,0.0,82.3
+East Wales,UKL2,Chemistry,7.36,14.95,0.69,0.0,0.0,23.0
+East Yorkshire and Northern Lincolnshire,UKE1,Chemistry,2.88,16.08,5.04,0.0,0.0,23.999999999999996
+Eastern Scotland,UKM7,Chemistry,26.168,77.102,7.33,0.0,0.0,110.60000000000001
+"Gloucestershire, Wiltshire and Bristol/Bath area",UKK1,Chemistry,31.128999999999998,57.565,3.006,0.0,0.0,91.69999999999999
+Greater Manchester,UKD3,Chemistry,17.292,30.916,3.668,0.524,0.0,52.4
+Hampshire and Isle of Wight,UKJ3,Chemistry,12.991999999999997,29.12,2.6879999999999997,0.0,0.0,44.8
+Inner London - East,UKI4,Chemistry,2.8,9.38,1.82,0.0,0.0,14.0
+Inner London - West,UKI3,Chemistry,41.606,69.378,5.295999999999999,0.62,0.0,116.9
+Kent,UKJ4,Chemistry,2.04,11.22,3.4,0.34,0.0,17.0
+Lancashire,UKD4,Chemistry,2.4,7.44,1.68,0.48,0.0,12.0
+"Leicestershire, Rutland and Northamptonshire",UKF2,Chemistry,3.9269999999999996,28.796499999999998,10.8735,0.22649999999999998,0.22649999999999998,44.050000000000004
+Merseyside,UKD7,Chemistry,17.34,16.32,0.34,0.0,0.0,34.0
+North Eastern Scotland,UKM5,Chemistry,2.8280000000000003,13.332,4.04,0.0,0.0,20.2
+North Yorkshire,UKE2,Chemistry,12.7062,31.5302,2.8236000000000003,0.0,0.0,47.06
+Northern Ireland,UKN0,Chemistry,3.7785,24.3885,6.183000000000001,0.0,0.0,34.35
+Northumberland and Tyne and Wear,UKC2,Chemistry,1.936,18.15,4.114,0.0,0.0,24.2
+Outer London - East and North East,UKI5,Chemistry,0.28800000000000003,6.912000000000001,6.336,0.8640000000000001,0.0,14.400000000000002
+South Yorkshire,UKE3,Chemistry,6.132,22.484,0.584,0.0,0.0,29.2
+"Surrey, East and West Sussex",UKJ2,Chemistry,1.848,8.4,6.048000000000001,0.0,0.504,16.800000000000004
+Tees Valley and Durham,UKC1,Chemistry,14.28,24.887999999999998,1.632,0.0,0.0,40.8
+West Central Scotland,UKM8,Chemistry,13.902000000000001,48.326,3.9719999999999995,0.0,0.0,66.2
+West Midlands,UKG3,Chemistry,14.216,45.087999999999994,3.4959999999999996,0.0,0.0,62.8
+West Wales and The Valleys,UKL1,Chemistry,0.28200000000000003,6.016,3.102,0.0,0.0,9.4
+West Yorkshire,UKE4,Chemistry,8.35,33.674,6.976,0.0,0.0,49.0
+East Wales,UKL2,Civil and Construction Engineering,6.721,7.15,0.42900000000000005,0.0,0.0,14.3
+Eastern Scotland,UKM7,Civil and Construction Engineering,6.365,11.865,6.49,2.66,1.12,28.5
+Greater Manchester,UKD3,Civil and Construction Engineering,6.555,13.11,1.9665000000000001,0.21850000000000003,0.0,21.849999999999998
+Inner London - West,UKI3,Civil and Construction Engineering,30.793000000000003,45.837,13.879000000000001,3.81,0.381,94.70000000000002
+"Leicestershire, Rutland and Northamptonshire",UKF2,Civil and Construction Engineering,2.552,18.183,8.613,2.552,0.0,31.9
+Northern Ireland,UKN0,Civil and Construction Engineering,3.365,21.8725,8.075999999999999,0.33649999999999997,0.0,33.65
+Northumberland and Tyne and Wear,UKC2,Civil and Construction Engineering,12.18,23.548000000000002,4.872000000000001,0.0,0.0,40.6
+South Yorkshire,UKE3,Civil and Construction Engineering,8.7,24.36,1.74,0.0,0.0,34.800000000000004
+West Central Scotland,UKM8,Civil and Construction Engineering,4.04,12.524,3.2319999999999998,0.0,0.40399999999999997,20.2
+West Midlands,UKG3,Civil and Construction Engineering,1.2670000000000001,10.679,5.43,0.7240000000000001,0.0,18.099999999999998
+West Yorkshire,UKE4,Civil and Construction Engineering,10.3845,31.96,7.820499999999999,1.109,0.5760000000000001,51.849999999999994
+"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,"Public Health, Health Services and Primary Care",27.189,16.695,3.3390000000000004,0.47700000000000004,0.0,47.699999999999996
+Derbyshire and Nottinghamshire,UKF1,"Public Health, Health Services and Primary Care",12.547600000000003,14.5288,5.283200000000001,0.6604000000000001,0.0,33.02
+Devon,UKK4,"Public Health, Health Services and Primary Care",6.2125,14.91,3.4790000000000005,0.24850000000000003,0.0,24.85
+East Anglia,UKH1,"Public Health, Health Services and Primary Care",31.615000000000002,33.3601,5.5242,0.0,0.5707,71.07000000000001
+East Wales,UKL2,"Public Health, Health Services and Primary Care",8.9873,9.473099999999999,5.3438,0.4858,0.0,24.290000000000003
+Eastern Scotland,UKM7,"Public Health, Health Services and Primary Care",3.8879999999999995,7.127999999999999,4.374,0.81,0.0,16.199999999999996
+"Gloucestershire, Wiltshire and Bristol/Bath area",UKK1,"Public Health, Health Services and Primary Care",37.3,26.855999999999998,8.952,1.492,0.0,74.6
+Greater Manchester,UKD3,"Public Health, Health Services and Primary Care",5.6661,16.331699999999998,9.999,0.9998999999999999,0.3333,33.33
+Hampshire and Isle of Wight,UKJ3,"Public Health, Health Services and Primary Care",4.051,8.238,5.825,0.686,0.0,18.8
+Inner London - East,UKI4,"Public Health, Health Services and Primary Care",9.068399999999999,8.6562,2.6793,0.2061,0.0,20.61
+Inner London - West,UKI3,"Public Health, Health Services and Primary Care",227.58320000000003,187.27280000000002,85.18,4.4005,2.1435,506.5800000000001
+"Leicestershire, Rutland and Northamptonshire",UKF2,"Public Health, Health Services and Primary Care",8.712,11.616,2.904,0.484,0.484,24.200000000000003
+Merseyside,UKD7,"Public Health, Health Services and Primary Care",11.894,10.955,6.886,0.9390000000000001,0.626,31.3
+North Eastern Scotland,UKM5,"Public Health, Health Services and Primary Care",16.15,22.325,9.025,0.0,0.0,47.49999999999999
+North Yorkshire,UKE2,"Public Health, Health Services and Primary Care",22.1508,21.6234,8.4384,0.5274,0.0,52.74
+Northern Ireland,UKN0,"Public Health, Health Services and Primary Care",6.808000000000001,13.616000000000001,8.584000000000001,0.29600000000000004,0.29600000000000004,29.6
+Northumberland and Tyne and Wear,UKC2,"Public Health, Health Services and Primary Care",6.805,13.3378,6.5328,0.5444,0.0,27.220000000000002
+Outer London - West and North West,UKI7,"Public Health, Health Services and Primary Care",2.06,5.047000000000001,2.266,0.618,0.309,10.3
+Shropshire and Staffordshire,UKG2,"Public Health, Health Services and Primary Care",3.312,5.06,0.828,0.0,0.0,9.2
+South Yorkshire,UKE3,"Public Health, Health Services and Primary Care",28.2416,23.7824,17.836799999999997,4.459199999999999,0.0,74.32
+West Central Scotland,UKM8,"Public Health, Health Services and Primary Care",12.105,26.146800000000002,9.684000000000001,0.4842,0.0,48.42
+West Midlands,UKG3,"Public Health, Health Services and Primary Care",25.4103,36.7537,12.104300000000002,1.2017,0.0,75.47000000000001
+West Yorkshire,UKE4,"Public Health, Health Services and Primary Care",8.610000000000001,17.394,13.006,8.886,0.904,48.800000000000004
+Bedfordshire and Hertfordshire,UKH2,Philosophy,1.805,4.465,2.565,0.665,0.0,9.5
+"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,Philosophy,39.416,30.56,24.371,2.653,0.0,97.0
+Derbyshire and Nottinghamshire,UKF1,Philosophy,1.43,7.54,4.03,0.0,0.0,13.0
+East Anglia,UKH1,Philosophy,21.116600000000002,25.8,10.9486,1.5947999999999998,0.0,59.46
+East Wales,UKL2,Philosophy,2.0,4.9,2.7,0.4,0.0,10.000000000000002
+East Yorkshire and Northern Lincolnshire,UKE1,Philosophy,0.14400000000000002,2.088,4.464,0.21600000000000003,0.28800000000000003,7.200000000000001
+Eastern Scotland,UKM7,Philosophy,19.854100000000003,29.157600000000002,13.5704,1.0079,0.0,63.59
+Essex,UKH3,Philosophy,3.23,4.845,1.425,0.0,0.0,9.5
+"Gloucestershire, Wiltshire and Bristol/Bath area",UKK1,Philosophy,5.155,9.315,5.345,0.685,0.0,20.499999999999996
+Greater Manchester,UKD3,Philosophy,2.86,9.530999999999999,6.441,1.487,0.38099999999999995,20.699999999999996
+Hampshire and Isle of Wight,UKJ3,Philosophy,2.04,6.24,3.72,0.0,0.0,12.000000000000002
+Inner London - West,UKI3,Philosophy,31.805000000000003,28.0715,16.4435,0.48,0.0,76.80000000000001
+Kent,UKJ4,Philosophy,2.376,5.148,5.28,0.39599999999999996,0.0,13.2
+Merseyside,UKD7,Philosophy,1.36,3.6,3.04,0.0,0.0,8.0
+North Eastern Scotland,UKM5,Philosophy,4.1075,4.1075,2.65,2.385,0.0,13.25
+North Yorkshire,UKE2,Philosophy,2.562,9.15,5.856,0.732,0.0,18.299999999999997
+Northern Ireland,UKN0,Philosophy,1.38,3.12,1.5,0.0,0.0,6.0
+Outer London - South,UKI6,Philosophy,1.4880000000000002,2.418,1.9220000000000002,0.37200000000000005,0.0,6.200000000000001
+Outer London - West and North West,UKI7,Philosophy,0.192,0.48,1.392,2.7359999999999998,0.0,4.8
+Shropshire and Staffordshire,UKG2,Philosophy,0.64,1.64,1.72,0.0,0.0,4.0
+South Yorkshire,UKE3,Philosophy,6.336,9.984,2.88,0.0,0.0,19.2
+"Surrey, East and West Sussex",UKJ2,Philosophy,2.625,5.46,1.995,0.42,0.0,10.500000000000002
+Tees Valley and Durham,UKC1,Philosophy,3.77,9.425,4.147,1.508,0.0,18.849999999999998
+West Central Scotland,UKM8,Philosophy,0.88,4.73,5.17,0.22,0.0,11.000000000000002
+West Midlands,UKG3,Philosophy,13.32,15.4,3.81,0.28,0.19,33.0
+West Yorkshire,UKE4,Philosophy,8.5,11.25,5.0,0.25,0.0,25.0
+Bedfordshire and Hertfordshire,UKH2,General Engineering,0.0,8.436,5.624,0.74,0.0,14.799999999999999
+"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,General Engineering,52.36150000000001,52.4399,13.852599999999999,1.036,0.0,119.69
+Derbyshire and Nottinghamshire,UKF1,General Engineering,43.857,103.53799999999998,22.994999999999997,5.33,0.78,176.5
+Devon,UKK4,General Engineering,12.815999999999999,39.016,9.024,0.344,0.0,61.199999999999996
+Dorset and Somerset,UKK2,General Engineering,0.0,9.176,14.136000000000001,1.4880000000000002,0.0,24.8
+East Anglia,UKH1,General Engineering,93.91599999999998,74.42399999999999,8.86,0.0,0.0,177.2
+East Wales,UKL2,General Engineering,12.168,20.618,0.6759999999999999,0.0,0.33799999999999997,33.800000000000004
+East Yorkshire and Northern Lincolnshire,UKE1,General Engineering,1.341,9.834,3.576,0.0,0.149,14.899999999999999
+Eastern Scotland,UKM7,General Engineering,79.78139999999999,129.52370000000002,21.8709,2.272,0.142,233.59
+Essex,UKH3,General Engineering,0.0,2.72,4.8,0.48,0.0,8.0
+"Gloucestershire, Wiltshire and Bristol/Bath area",UKK1,General Engineering,48.2844,76.95899999999999,10.9028,1.2338,0.0,137.37999999999997
+Greater Manchester,UKD3,General Engineering,2.331,18.861,13.682000000000002,0.426,0.0,35.300000000000004
+Hampshire and Isle of Wight,UKJ3,General Engineering,63.43589999999999,112.85340000000001,17.9284,4.7273,1.785,200.73
+Inner London - East,UKI4,General Engineering,16.16,70.00500000000001,29.552999999999997,2.6879999999999997,1.094,119.5
+Inner London - West,UKI3,General Engineering,57.0262,78.6204,4.8934,0.0,0.0,140.54000000000002
+Kent,UKJ4,General Engineering,2.64,14.16,6.72,0.24,0.24,23.999999999999996
+Lancashire,UKD4,General Engineering,4.5946,25.5612,5.9601999999999995,0.46399999999999997,0.0,36.58
+"Leicestershire, Rutland and Northamptonshire",UKF2,General Engineering,3.247,32.644999999999996,16.779,1.782,0.247,54.69999999999999
+Lincolnshire,UKF3,General Engineering,1.08,4.56,5.4,0.0,0.96,12.0
+Merseyside,UKD7,General Engineering,6.46,32.22,5.11,0.99,0.22,45.0
+North Eastern Scotland,UKM5,General Engineering,5.472,33.46,13.668,0.0,0.0,52.6
+Northumberland and Tyne and Wear,UKC2,General Engineering,2.76,12.88,7.36,0.0,0.0,23.0
+Outer London - East and North East,UKI5,General Engineering,1.12,3.36,8.54,0.7,0.28,13.999999999999998
+Outer London - South,UKI6,General Engineering,0.14,5.74,6.72,1.26,0.14,14.0
+Outer London - West and North West,UKI7,General Engineering,6.979500000000001,36.801,15.228000000000002,2.5380000000000003,1.9035000000000002,63.45000000000001
+Shropshire and Staffordshire,UKG2,General Engineering,7.058,27.0465,7.317500000000001,1.4280000000000002,0.0,42.85
+South Yorkshire,UKE3,General Engineering,9.592,11.336000000000002,0.872,0.0,0.0,21.800000000000004
+"Surrey, East and West Sussex",UKJ2,General Engineering,11.431000000000001,44.569,12.95,0.0,0.0,68.95
+Tees Valley and Durham,UKC1,General Engineering,6.300000000000001,32.31,8.39,0.0,0.0,47.0
+West Central Scotland,UKM8,General Engineering,26.74,67.02000000000001,23.380000000000003,0.86,0.0,118.00000000000001
+West Midlands,UKG3,General Engineering,34.6125,78.89609999999999,22.252200000000002,1.3192,0.0,137.07999999999998
+West Wales and The Valleys,UKL1,General Engineering,26.335499999999996,52.2747,13.014800000000001,2.5599999999999996,0.145,94.33
+West Yorkshire,UKE4,General Engineering,7.664,47.268,22.58,1.74,0.348,79.6
+Bedfordshire and Hertfordshire,UKH2,Earth Systems and Environmental Sciences,0.0,0.72,3.2159999999999997,0.8639999999999999,0.0,4.8
+"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,Earth Systems and Environmental Sciences,42.488200000000006,101.52730000000001,23.6663,2.4582,0.0,170.14000000000004
+Derbyshire and Nottinghamshire,UKF1,Earth Systems and Environmental Sciences,0.0,1.825,2.92,2.555,0.0,7.300000000000001
+Devon,UKK4,Earth Systems and Environmental Sciences,14.616800000000001,54.4482,9.7588,0.44920000000000004,0.34700000000000003,79.62
+East Anglia,UKH1,Earth Systems and Environmental Sciences,39.07,56.367,8.853,0.0,1.26,105.55
+East Wales,UKL2,Earth Systems and Environmental Sciences,3.5976,8.994,2.2485,0.1499,0.0,14.99
+Eastern Scotland,UKM7,Earth Systems and Environmental Sciences,25.848800000000004,88.8506,36.6201,6.2105,0.0,157.53
+"Gloucestershire, Wiltshire and Bristol/Bath area",UKK1,Earth Systems and Environmental Sciences,15.9408,27.4536,0.8856,0.0,0.0,44.28
+Greater Manchester,UKD3,Earth Systems and Environmental Sciences,13.4177,37.8806,14.1704,0.24,0.4213,66.13
+Hampshire and Isle of Wight,UKJ3,Earth Systems and Environmental Sciences,30.1926,51.635000000000005,10.463799999999999,0.6862,1.3724,94.35000000000001
+Highlands and Islands,UKM6,Earth Systems and Environmental Sciences,4.543000000000001,21.417,5.516500000000001,0.9735,0.0,32.45
+Inner London - West,UKI3,Earth Systems and Environmental Sciences,14.671,25.026999999999997,3.0204999999999997,0.4315,0.0,43.14999999999999
+Lancashire,UKD4,Earth Systems and Environmental Sciences,14.368,21.102999999999998,8.081999999999999,1.347,0.0,44.9
+"Leicestershire, Rutland and Northamptonshire",UKF2,Earth Systems and Environmental Sciences,3.488,16.35,1.744,0.218,0.0,21.8
+Merseyside,UKD7,Earth Systems and Environmental Sciences,4.216,17.36,3.224,0.0,0.0,24.8
+North Eastern Scotland,UKM5,Earth Systems and Environmental Sciences,5.112,20.163999999999998,2.84,0.284,0.0,28.399999999999995
+North Yorkshire,UKE2,Earth Systems and Environmental Sciences,3.3740000000000006,13.496000000000002,6.266,0.9640000000000001,0.0,24.1
+Northern Ireland,UKN0,Earth Systems and Environmental Sciences,4.096,26.031999999999996,11.751999999999999,0.92,0.0,42.8
+Northumberland and Tyne and Wear,UKC2,Earth Systems and Environmental Sciences,6.15,14.514000000000001,3.9360000000000004,0.0,0.0,24.6
+Outer London - West and North West,UKI7,Earth Systems and Environmental Sciences,3.0780000000000003,8.748,3.7259999999999995,0.648,0.0,16.2
+Shropshire and Staffordshire,UKG2,Earth Systems and Environmental Sciences,0.204,5.61,4.1819999999999995,0.204,0.0,10.2
+South Yorkshire,UKE3,Earth Systems and Environmental Sciences,4.5409999999999995,14.578999999999999,4.5409999999999995,0.239,0.0,23.9
+"Surrey, East and West Sussex",UKJ2,Earth Systems and Environmental Sciences,7.0569999999999995,24.660999999999998,7.0545,0.4275,0.0,39.199999999999996
+Tees Valley and Durham,UKC1,Earth Systems and Environmental Sciences,9.398700000000002,21.2341,4.1772,0.0,0.0,34.81
+West Central Scotland,UKM8,Earth Systems and Environmental Sciences,7.308,21.923999999999996,5.22,0.348,0.0,34.8
+West Midlands,UKG3,Earth Systems and Environmental Sciences,4.497999999999999,27.136,6.446,0.52,0.0,38.6
+West Wales and The Valleys,UKL1,Earth Systems and Environmental Sciences,12.0715,32.693999999999996,5.7844999999999995,0.0,0.0,50.55
+West Yorkshire,UKE4,Earth Systems and Environmental Sciences,28.512000000000004,42.768,7.92,0.0,0.0,79.2
+"Berkshire, Buckinghamshire and Oxfordshire",UKJ1,"Electrical and Electronic Engineering, Metallurgy and Materials",23.631999999999998,37.3176,7.510399999999999,0.86,0.0,69.32
+Devon,UKK4,"Electrical and Electronic Engineering, Metallurgy and Materials",1.248,3.822,2.73,0.0,0.0,7.800000000000001
+East Anglia,UKH1,"Electrical and Electronic Engineering, Metallurgy and Materials",23.156400000000005,9.3968,0.6712,0.3356,0.0,33.56
+East Wales,UKL2,"Electrical and Electronic Engineering, Metallurgy and Materials",0.278,8.201,4.726,0.556,0.139,13.900000000000002
+Eastern Scotland,UKM7,"Electrical and Electronic Engineering, Metallurgy and Materials",0.10300000000000001,4.223,4.635000000000001,1.236,0.10300000000000001,10.3
+"Gloucestershire, Wiltshire and Bristol/Bath area",UKK1,"Electrical and Electronic Engineering, Metallurgy and Materials",2.665,15.99,1.845,0.0,0.0,20.5
+Greater Manchester,UKD3,"Electrical and Electronic Engineering, Metallurgy and Materials",28.04,65.9575,14.812999999999999,2.073,0.4665000000000001,111.35
+Hampshire and Isle of Wight,UKJ3,"Electrical and Electronic Engineering, Metallurgy and Materials",29.4875,50.55,4.2125,0.0,0.0,84.25
+Inner London - East,UKI4,"Electrical and Electronic Engineering, Metallurgy and Materials",8.882,30.982,3.094,0.242,0.0,43.199999999999996
+Inner London - West,UKI3,"Electrical and Electronic Engineering, Metallurgy and Materials",53.138000000000005,63.226,2.8360000000000003,0.0,0.0,119.2
+Lancashire,UKD4,"Electrical and Electronic Engineering, Metallurgy and Materials",0.16,3.04,4.48,0.16,0.16,8.0
+"Leicestershire, Rutland and Northamptonshire",UKF2,"Electrical and Electronic Engineering, Metallurgy and Materials",1.504,24.064,9.776,1.88,0.376,37.6
+Merseyside,UKD7,"Electrical and Electronic Engineering, Metallurgy and Materials",2.88,23.689999999999998,4.29,0.14,0.0,30.999999999999996
+North Yorkshire,UKE2,"Electrical and Electronic Engineering, Metallurgy and Materials",0.892,18.509,2.8990000000000005,0.0,0.0,22.3
+Northern Ireland,UKN0,"Electrical and Electronic Engineering, Metallurgy and Materials",11.216,35.227999999999994,5.827999999999999,0.528,0.0,52.79999999999999
+Northumberland and Tyne and Wear,UKC2,"Electrical and Electronic Engineering, Metallurgy and Materials",8.424,19.656,1.8719999999999999,0.0,1.248,31.2
+Outer London - East and North East,UKI5,"Electrical and Electronic Engineering, Metallurgy and Materials",0.72,5.04,4.44,1.8,0.0,12.0
+South Yorkshire,UKE3,"Electrical and Electronic Engineering, Metallurgy and Materials",17.328,65.916,16.932,0.312,0.312,100.8
+"Surrey, East and West Sussex",UKJ2,"Electrical and Electronic Engineering, Metallurgy and Materials",12.470999999999998,64.8492,5.8198,0.0,0.0,83.14
+West Central Scotland,UKM8,"Electrical and Electronic Engineering, Metallurgy and Materials",12.215,45.482,8.036000000000001,0.9670000000000001,0.0,66.7
+West Midlands,UKG3,"Electrical and Electronic Engineering, Metallurgy and Materials",16.529,48.06899999999999,12.482999999999999,1.6660000000000001,0.553,79.29999999999998
+West Wales and The Valleys,UKL1,"Electrical and Electronic Engineering, Metallurgy and Materials",2.898,5.67,3.78,0.252,0.0,12.6
+West Yorkshire,UKE4,"Electrical and Electronic Engineering, Metallurgy and Materials",8.2,11.8,0.0,0.0,0.0,20.0

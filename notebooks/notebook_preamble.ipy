@@ -48,3 +48,7 @@ import matplotlib.pyplot as plt
 # project directory e.g. `/home/user/GIT/nesta`
 project_dir = beis_indicators.project_dir
 data_path = f'{project_dir}/data'
+
+#today
+today_str = re.sub('-','_',str(datetime.datetime.today()).split(' ')[0])
+

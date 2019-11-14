@@ -1,0 +1,16 @@
+data:
+  external:
+    {}
+
+  nomis:
+    years: [2018, 2017, 2016,2015,2014,2013,2012,2011,2010]
+    geography: TYPE450
+
+seed: 42
+
+models:
+  word2vec:
+    size: 300
+    window: 10
+    min_count: 5
+    iter: 20
