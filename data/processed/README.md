@@ -46,7 +46,9 @@ Period: Most recent year available
 ## Migration
 
 Source: ONS
+
 Period: All years
+
 [Notebook link](https://github.com/nestauk/beis-indicators/blob/master/notebooks/dev/02_jmg_migration.ipynb)
 
 * `7_11_2019_migration_nuts.csv`
@@ -55,6 +57,7 @@ Period: All years
 ## Official
 
 Source: Nomis
+
 Period: 2010-2018
 
 * `2019_11_15_ashe_rankings.csv`
@@ -70,7 +73,9 @@ Period: 2010-2018
 ## Patents
 
 Source: PATSTAT
+
 Period: After 2015
+
 [Notebook link](https://github.com/nestauk/beis-indicators/blob/master/notebooks/dev/06_jmg_patents.ipynb)
 
 * `2019_11_14_patent_nuts.csv`
@@ -79,7 +84,9 @@ Period: After 2015
 ## Trademarks
 
 Source: IPO
+
 Period: Since 2015
+
 [Notebook link](https://github.com/nestauk/beis-indicators/blob/master/notebooks/dev/05-jmg-trademarks.ipynb)
 
 * `12_11_2019_nuts_trademarks.csv`
@@ -88,7 +95,9 @@ Period: Since 2015
 ## REF (Research Excellence Framework)
 
 Source: Research England
+
 Period: 2014
+
 [Notebook link](https://github.com/nestauk/beis-indicators/blob/master/notebooks/dev/04-jmg-ref.ipynb)
 
 * `9_11_2019_ref_nuts.csv`
