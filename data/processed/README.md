@@ -103,5 +103,17 @@ Period: 2014
 * `9_11_2019_ref_nuts.csv`
   * FTE submissions in different categories
 
+## APS
 
+Source: NOMIS
 
+Period: 2012-2018
+
+[Notebook link](https://github.com/nestauk/beis-indicators/blob/master/notebooks/dev/09_ao_aps_data.ipynb)
+(Raw data collected via command line)
+
+* `aps_pro_occupations_data.csv`
+  * Content: Percentage of employment in occupation categories - NUTS2 level
+
+* `aps_tertiary_education_data.csv`
+  * Content: Percentage of the employed (aged 16-64) with NVQ4+ - NUTS2 level
