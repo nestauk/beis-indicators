@@ -1,0 +1,8 @@
+API: Eurostat API
+endpoint: http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/rd_e_gerdreg?sinceTimePeriod=2012&geoLevel=nuts2&precision=1&sectperf=BES&unit=EUR_HAB&unit=MIO_EUR
+schema:
+  geo: string
+  time: integer
+  euro per inhabitant: float
+  euros (Millions): float
+  
