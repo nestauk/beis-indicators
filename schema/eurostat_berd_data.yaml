@@ -1,9 +1,11 @@
 API: Eurostat API
+API documentation: https://ec.europa.eu/eurostat/cache/metadata/en/rd_esms.htm
+Dataset code: rd_e_gerdreg
 endpoint: http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/rd_e_gerdreg?sinceTimePeriod=2012&geoLevel=nuts2&precision=1&sectperf=BES&unit=EUR_HAB&unit=MIO_EUR
 schema:
-  geo: 
+  geo:
     type: string
-    description: name of NUTS2 region
+    description: name of NUTS2 (2013) region
   time:
      type: integer
      description: year
