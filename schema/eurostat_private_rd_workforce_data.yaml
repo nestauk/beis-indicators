@@ -1,8 +1,12 @@
 API: Eurostat API
 endpoint: http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/rd_p_persreg?sinceTimePeriod=2012&geoLevel=nuts2&precision=1&sex=T&sectperf=BES&prof_pos=TOTAL&unit=FTE&unit=HC&unit=PC_ACT_FTE&unit=PC_ACT_HC
 schema:
-  geo: string
-  time: integer
+  geo:
+    type: string
+    description: name of NUTS2 region
+  time:
+     type: integer
+     description: year
   percentage of active population- FTE: float
   percentage of active population- HC: float
   full time equivalent (FTE): float
