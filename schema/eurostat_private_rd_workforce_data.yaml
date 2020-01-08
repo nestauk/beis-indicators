@@ -8,7 +8,7 @@ schema:
     description: name of NUTS2 (2013) region
   geo:
     type: string
-    description: NUTS2 region code
+    description: NUTS2 (2013) region code
   time:
      type: integer
      description: year
