@@ -117,3 +117,17 @@ Period: 2012-2018
 
 * `aps_tertiary_education_data.csv`
   * Content: Percentage of the employed (aged 16-64) with NVQ4+ - NUTS2 level
+  
+## Eurostat
+
+Source: Eurostat
+
+Period: 2012-2018
+
+[Notebook link](https://github.com/nestauk/beis-indicators/blob/master/notebooks/dev/10_ao_eurostat.ipynb)
+
+* `17_12_2019_eurostat_berd_data.csv`
+  * Content: Business Enterprise R&D (BERD) - NUTS2 level
+
+* `17_12_2019_eurostat_private_rd_data.csv`
+  * Content: Private sector R&D workforce - NUTS2 level
