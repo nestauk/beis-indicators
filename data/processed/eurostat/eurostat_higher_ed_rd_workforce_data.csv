@@ -1,0 +1,158 @@
+geo_name,geo,time,euro per inhabitant,euros (Millions)
+Bedfordshire and Hertfordshire,UKH2,2012,65.9,115.057
+Bedfordshire and Hertfordshire,UKH2,2014,59.6,106.314
+"Berkshire, Buckinghamshire, and Oxfordshire",UKJ1,2012,403.4,921.815
+"Berkshire, Buckinghamshire, and Oxfordshire",UKJ1,2014,459.9,1069.47
+"Berkshire, Buckinghamshire, and Oxfordshire",UKJ1,2013,417.5,961.969
+"Berkshire, Buckinghamshire, and Oxfordshire",UKJ1,2015,502.1,1178.424
+"Berkshire, Buckinghamshire, and Oxfordshire",UKJ1,2016,481.7,1140.818
+Cheshire,UKD6,2012,0.7,0.617
+Cheshire,UKD6,2014,2.0,1.861
+Cheshire,UKD6,2015,3.5,3.169
+Cheshire,UKD6,2016,2.1,1.952
+Cornwall and Isles of Scilly,UKK3,2012,0.9,0.493
+Cornwall and Isles of Scilly,UKK3,2014,2.7,1.489
+Cornwall and Isles of Scilly,UKK3,2013,2.2,1.177
+Cornwall and Isles of Scilly,UKK3,2015,3.0,1.653
+Cornwall and Isles of Scilly,UKK3,2016,3.1,1.708
+Cumbria,UKD1,2012,2.0,0.987
+Cumbria,UKD1,2014,1.2,0.62
+Cumbria,UKD1,2015,1.4,0.689
+Cumbria,UKD1,2016,1.2,0.61
+Derbyshire and Nottinghamshire,UKF1,2012,93.9,198.668
+Derbyshire and Nottinghamshire,UKF1,2014,94.5,202.332
+Derbyshire and Nottinghamshire,UKF1,2015,115.3,248.553
+Derbyshire and Nottinghamshire,UKF1,2016,106.6,231.361
+Devon,UKK4,2012,99.1,112.838
+Devon,UKK4,2014,113.0,130.381
+Devon,UKK4,2013,102.9,117.862
+Devon,UKK4,2015,122.9,142.877
+Devon,UKK4,2016,124.5,145.821
+Dorset and Somerset,UKK2,2012,6.4,8.139
+Dorset and Somerset,UKK2,2014,6.6,8.56
+Dorset and Somerset,UKK2,2015,7.7,10.058
+Dorset and Somerset,UKK2,2016,7.2,9.518
+East Anglia,UKH1,2012,270.3,649.525
+East Anglia,UKH1,2014,328.3,799.281
+East Anglia,UKH1,2013,299.8,724.479
+East Riding and North Lincolnshire,UKE1,2012,21.1,19.361
+East Riding and North Lincolnshire,UKE1,2014,20.6,18.98
+East Riding and North Lincolnshire,UKE1,2015,21.8,20.116
+East Riding and North Lincolnshire,UKE1,2016,19.7,18.304
+East Wales,UKL2,2012,153.1,173.388
+East Wales,UKL2,2014,156.7,179.01
+Eastern Scotland,UKM2,2012,58.8,119.25
+Eastern Scotland,UKM2,2014,369.4,756.482
+Eastern Scotland,UKM2,2013,355.3,724.126
+Eastern Scotland,UKM2,2015,423.3,871.728
+Eastern Scotland,UKM2,2016,352.4,730.079
+Essex,UKH3,2012,32.4,56.234
+Essex,UKH3,2014,29.6,52.227
+"Gloucestershire, Wiltshire and Bristol/Bath area",UKK1,2012,115.5,272.783
+"Gloucestershire, Wiltshire and Bristol/Bath area",UKK1,2014,126.8,304.925
+"Gloucestershire, Wiltshire and Bristol/Bath area",UKK1,2015,146.7,356.297
+"Gloucestershire, Wiltshire and Bristol/Bath area",UKK1,2016,139.3,341.794
+Greater Manchester,UKD3,2012,140.1,377.359
+Greater Manchester,UKD3,2014,150.2,408.882
+Greater Manchester,UKD3,2015,170.2,466.795
+Greater Manchester,UKD3,2016,146.4,405.003
+Hampshire and Isle of Wight,UKJ3,2012,91.0,173.634
+Hampshire and Isle of Wight,UKJ3,2014,100.2,193.524
+Hampshire and Isle of Wight,UKJ3,2015,107.0,208.184
+Hampshire and Isle of Wight,UKJ3,2016,100.0,196.217
+"Herefordshire, Worcestershire and Warwickshire",UKG1,2012,0.4,0.493
+"Herefordshire, Worcestershire and Warwickshire",UKG1,2014,2.6,3.474
+Highlands and Islands,UKM6,2012,96.2,44.888
+Highlands and Islands,UKM6,2014,67.2,31.386
+Highlands and Islands,UKM6,2015,72.7,34.031
+Highlands and Islands,UKM6,2016,62.7,29.408
+Inner London - East,UKI4,2012,89.2,193.119
+Inner London - East,UKI4,2014,94.1,211.512
+Inner London - East,UKI4,2013,87.8,193.689
+Inner London - East,UKI4,2015,106.1,243.593
+Inner London - East,UKI4,2016,87.9,205.369
+Inner London - West,UKI3,2012,1847.7,2031.693
+Inner London - West,UKI3,2014,1985.1,2224.91
+Inner London - West,UKI3,2013,1837.9,2037.443
+Inner London - West,UKI3,2015,2184.6,2487.049
+Inner London - West,UKI3,2016,1810.0,2088.103
+Kent,UKJ4,2012,12.0,20.841
+Kent,UKJ4,2014,13.8,24.439
+Kent,UKJ4,2015,18.1,32.378
+Kent,UKJ4,2016,17.5,31.605
+Lancashire,UKD4,2012,46.4,67.826
+Lancashire,UKD4,2014,50.7,74.433
+Lancashire,UKD4,2015,59.4,87.49
+Lancashire,UKD4,2016,52.8,78.218
+"Leicestershire, Rutland and Northamptonshire",UKF2,2012,106.0,182.267
+"Leicestershire, Rutland and Northamptonshire",UKF2,2014,100.1,175.04
+"Leicestershire, Rutland and Northamptonshire",UKF2,2013,96.0,166.372
+"Leicestershire, Rutland and Northamptonshire",UKF2,2015,103.9,183.659
+"Leicestershire, Rutland and Northamptonshire",UKF2,2016,96.1,172.056
+Lincolnshire,UKF3,2012,9.1,6.536
+Lincolnshire,UKF3,2014,16.0,11.661
+Lincolnshire,UKF3,2015,19.1,14.054
+Lincolnshire,UKF3,2016,22.6,16.718
+Merseyside,UKD7,2012,173.8,262.301
+Merseyside,UKD7,2014,174.4,264.607
+Merseyside,UKD7,2015,202.3,308.349
+Merseyside,UKD7,2016,203.5,312.02
+North Eastern Scotland,UKM5,2012,785.1,375.509
+North Eastern Scotland,UKM5,2014,233.0,113.51
+North Eastern Scotland,UKM5,2013,253.0,122.101
+North Eastern Scotland,UKM5,2015,251.5,123.45
+North Eastern Scotland,UKM5,2016,194.1,95.546
+North Yorkshire,UKE2,2012,93.4,74.855
+North Yorkshire,UKE2,2014,104.3,84.233
+North Yorkshire,UKE2,2013,98.7,79.477
+North Yorkshire,UKE2,2015,117.0,94.792
+North Yorkshire,UKE2,2016,107.5,87.492
+Northern Ireland,UKN0,2012,89.4,162.659
+Northern Ireland,UKN0,2014,89.6,164.372
+Northumberland and Tyne and Wear,UKC2,2012,128.6,182.883
+Northumberland and Tyne and Wear,UKC2,2014,143.2,204.937
+Northumberland and Tyne and Wear,UKC2,2015,168.1,241.389
+Northumberland and Tyne and Wear,UKC2,2016,145.5,209.518
+Outer London - East and North East,UKI5,2012,15.3,27.254
+Outer London - East and North East,UKI5,2014,17.1,31.138
+Outer London - East and North East,UKI5,2013,16.2,29.083
+Outer London - East and North East,UKI5,2015,20.5,38.027
+Outer London - East and North East,UKI5,2016,14.7,27.578
+Outer London - South,UKI6,2012,4.5,5.549
+Outer London - South,UKI6,2014,5.0,6.327
+Outer London - South,UKI6,2013,4.8,6.005
+Outer London - South,UKI6,2015,7.4,9.507
+Outer London - South,UKI6,2016,6.2,7.932
+Outer London - West and North West,UKI7,2012,20.9,41.312
+Outer London - West and North West,UKI7,2014,23.3,47.141
+Outer London - West and North West,UKI7,2013,22.0,44.036
+Outer London - West and North West,UKI7,2015,22.7,46.294
+Outer London - West and North West,UKI7,2016,20.6,42.465
+Shropshire and Staffordshire,UKG2,2012,22.1,34.776
+Shropshire and Staffordshire,UKG2,2014,25.8,40.938
+South Western Scotland,UKM3,2012,284.9,664.57
+South Western Scotland,UKM3,2014,183.8,429.227
+South Western Scotland,UKM3,2015,212.1,496.142
+South Western Scotland,UKM3,2016,187.7,439.536
+South Yorkshire,UKE3,2012,156.2,210.63
+South Yorkshire,UKE3,2014,165.5,225.53
+South Yorkshire,UKE3,2013,151.4,205.228
+South Yorkshire,UKE3,2015,183.3,251.309
+South Yorkshire,UKE3,2016,180.4,249.054
+"Surrey, East and West Sussex",UKJ2,2012,50.3,138.735
+"Surrey, East and West Sussex",UKJ2,2014,58.1,162.883
+"Surrey, East and West Sussex",UKJ2,2013,47.6,132.344
+"Surrey, East and West Sussex",UKJ2,2015,63.8,180.353
+"Surrey, East and West Sussex",UKJ2,2016,63.0,179.744
+Tees Valley and Durham,UKC1,2012,72.6,85.461
+Tees Valley and Durham,UKC1,2014,75.5,89.319
+Tees Valley and Durham,UKC1,2015,79.8,94.654
+Tees Valley and Durham,UKC1,2016,71.2,84.686
+West Midlands,UKG3,2012,146.2,402.269
+West Midlands,UKG3,2014,158.5,442.873
+West Wales and The Valleys,UKL1,2012,80.5,155.876
+West Wales and The Valleys,UKL1,2014,83.6,162.635
+West Yorkshire,UKE4,2012,143.9,321.371
+West Yorkshire,UKE4,2014,144.1,325.146
+West Yorkshire,UKE4,2015,146.4,332.323
+West Yorkshire,UKE4,2016,128.1,292.862

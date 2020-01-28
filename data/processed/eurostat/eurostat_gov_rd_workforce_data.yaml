@@ -1,0 +1,16 @@
+API: Eurostat API
+API documentation: https://ec.europa.eu/eurostat/cache/metadata/en/rd_esms.htm
+Dataset code: rd_e_gerdreg
+endpoint: http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/rd_e_gerdreg?sinceTimePeriod=2012&geoLevel=nuts2&precision=2&sectperf=GOV&unit=EUR_HAB&unit=MIO_EUR'
+schema:
+  geo_name:
+    type: string
+    description: name of NUTS2 (2013) region
+  geo:
+    type: string
+    description: NUTS2 (2013) region code
+  time:
+     type: integer
+     description: year
+  euro per inhabitant: float
+  euros (Millions): float
