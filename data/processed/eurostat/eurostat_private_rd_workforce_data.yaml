@@ -12,7 +12,8 @@ schema:
   time:
      type: integer
      description: year
-  percentage of active population- FTE: float
-  percentage of active population- HC: float
-  full time equivalent (FTE): float
-  head count(HC): float
+  Full-time equivalent (FTE): float
+  Head count: float
+  Percentage of active population - numerator in full-time equivalent (FTE): float
+  Percentage of active population - numerator in head count (HC): float
+  Million euro: float

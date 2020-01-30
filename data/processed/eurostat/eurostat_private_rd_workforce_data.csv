@@ -1,4 +1,4 @@
-geo_name,geo,time,full time equivalent (FTE),head count(HC),percentage of active population- FTE,percentage of active population- HC
+geo_name,geo,time,Full-time equivalent (FTE),Head count,Percentage of active population - numerator in full-time equivalent (FTE),Percentage of active population - numerator in head count (HC)
 Bedfordshire and Hertfordshire,UKH2,2012,8936.0,10364.0,0.962,1.1158
 Bedfordshire and Hertfordshire,UKH2,2013,11516.0,13607.0,1.2277,1.4507
 Bedfordshire and Hertfordshire,UKH2,2014,10868.0,13114.0,1.1366,1.3714

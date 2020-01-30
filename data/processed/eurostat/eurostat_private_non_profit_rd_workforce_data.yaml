@@ -12,5 +12,5 @@ schema:
   time:
      type: integer
      description: year
-  euro per inhabitant: float
-  euros (Millions): float
+  Euro per inhabitant: float
+  Million euro: float
