@@ -1,6 +1,6 @@
 gravimetric:
   label: Gravimetric Units
   unit: ms^-2
-euros_millions:
-  label: Euros (Millions)
-  unit: €m
+euros:
+  label: Euros
+  unit: €
