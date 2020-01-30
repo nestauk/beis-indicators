@@ -1,0 +1,24 @@
+source: the data provider: Eurostat, NOMIS, etc.
+api: the type of API to be used to fetch data: REST, download etc.
+api_documentation: the URL of a documentation page with descriptions of the field meaning (if available)
+endpoint_source: the URL of the endpoint where to actually run queries or the network requests for dumping the whole dataset
+enpoint_static: S3 URL of the data file
+description: a brief description of the data source and transformations that have been applied
+framework_id: indicator framework id (from data/framework.json) 
+is_experimental: True/False depending on whether this indicator is experimental
+year_range: [2006, 2018] #min and max year values
+nuts_level: 2
+schema:
+  nuts_id:
+    type: string
+  nuts_year:
+    type: int
+  year:
+    type: int
+    label: Year
+  value: #rename with the actual field name of the indicator value
+    id: field/file name #the field and file names should be identical e.g. berd and berd.csv
+    type: int or float
+    label: the axis label for this field
+    description: a description of the value
+    unit_id: the id for the unit of this value (from data/units.json)
