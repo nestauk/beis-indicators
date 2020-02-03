@@ -1,0 +1,22 @@
+#################
+### GEOGRAPHY ###
+#################
+
+NutsRegion:
+  id: string # NUTS region ID e.g. UKF2 
+  label: string # short label for the UI, e.g. UKF2 NUTS2 region
+  description: string # long description for the UI, e.g. Leicestershire, Rutland and Northamptonshire, UKF2 NUTS2 region
+  level: int # e.g. 2
+  year_spec: int # year of specification release
+  year_enforced: int # year of spec being enforced
+
+#############
+### UNITS ###
+#############
+
+Unit:
+  kind: str
+  label: str
+  data_type: str
+  unit: str
+  description: str #optional
