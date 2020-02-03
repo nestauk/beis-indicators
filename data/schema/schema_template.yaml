@@ -1,24 +1,23 @@
-source: the data provider: Eurostat, NOMIS, etc.
-description: a brief description of the data source and transformations that have been applied
 api: the type of API to be used to fetch data: REST, download etc.
 api_documentation: the URL of a documentation page with descriptions of the field meaning (if available)
+description: a brief description of the data source and transformations that have been applied
 endpoint_source: the URL of the api endpoint at which queries or the network requests for dumping the whole dataset can be executed
 enpoint_static: S3 URL of the data file
-framework_id: indicator framework id (from data/framework.json) 
+framework_group: key for the framework group that contains this indicator (from data/aux/framework.json)  
 is_experimental: boolean, whether this indicator is experimental
-year_range: [min year, max year]
 nuts_level: int
+source: the data provider: Eurostat, NOMIS, etc.
+year_range: [min year, max year]
 schema:
   nuts_id:
-    data_type: string
-  nuts_year:
-    data_type: int
+    type: NutsRegion.id
+  nuts_year_spec:
+    type: NutsRegion.year_spec
+  value:
+    description: a description of the value
+    id: field name #the field and file names should be identical e.g. berd and berd.csv
+    label: the axis label for this field
+    type: choose a Type e.g. Euro
   year:
     data_type: int
     label: Year
-  value:
-    id: field name #the field and file names should be identical e.g. berd and berd.csv
-    data_type: int or float
-    label: the axis label for this field
-    description: a description of the value
-    type: choose a type from types.yaml e.g. Euro.1 

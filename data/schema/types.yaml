@@ -1,0 +1,16 @@
+#############
+### UNITS ###
+#############
+
+Euro:
+  kind: currency
+  label: Euros
+  data_type: int|float
+  unit: EUR
+  type: Unit
+Gravimetry:
+  kind: density
+  label: Gravimetric Units
+  data_type: int|float
+  unit: µg m^-3
+  type: Unit
