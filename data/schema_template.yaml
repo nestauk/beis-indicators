@@ -10,15 +10,15 @@ year_range: [min year, max year]
 nuts_level: int
 schema:
   nuts_id:
-    type: string
+    data_type: string
   nuts_year:
-    type: int
+    data_type: int
   year:
-    type: int
+    data_type: int
     label: Year
   value:
     id: field name #the field and file names should be identical e.g. berd and berd.csv
-    type: int or float
+    data_type: int or float
     label: the axis label for this field
     description: a description of the value
-    unit_id: the id for the unit of this value (from data/units.json)
+    type: choose a type from types.yaml e.g. Euro.1 
