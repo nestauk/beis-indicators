@@ -1,0 +1,22 @@
+api: REF website
+api_documentation: https://www.ref.ac.uk/2014/pubs/201401/
+description: A table with information about the Research Excellence Framework scores for UK departments submitted in various disciplines
+endpoint_source: https://results.ref.ac.uk/(S(hlvnuqzwkag44jp3df3d4q14))/DownloadFile/AllResults/xlsx
+framework_group: 1
+is_experimental: 0
+nuts_level: 2
+source: REF
+year_range: [2014,2014]
+schema:
+  nuts_id:
+    type: NutsRegion.id
+  nuts_year_spec:
+    type: NutsRegion.year_spec
+  value:
+    description: a description of the value
+    id: field name #the field and file names should be identical e.g. berd and berd.csv
+    label: the axis label for this field
+    type: choose a Type e.g. Euro
+  year:
+    data_type: int
+    label: Year

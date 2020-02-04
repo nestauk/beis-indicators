@@ -14,3 +14,15 @@ Gravimetry:
   data_type: int|float
   unit: µg m^-3
   type: Unit
+ref_score:
+  kind: score (continuous)
+  label: Mean REF score 
+  data_type: float
+  unit: REF Score (1-4)
+  type: Unit
+total_4_fte:
+  kind: count (not integer because some FTEs are fractional)
+  label: Full Time Equivalent excellent (4*) researchers
+  data_type: float
+  unit: Count (FTE)
+  type: Unit
