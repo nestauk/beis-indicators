@@ -12,7 +12,7 @@ NUTS_ENFORCED = {
     2016: 2018
 }
 
-NUTS_IDS ={
+NUTS2_UK_IDS ={
         2003: {'UKC2', 'UKK4', 'UKL2', 'UKG3', 'UKK2', 'UKD1', 'UKF2', 'UKG1', 
             'UKD3', 'UKH3', 'UKI1', 'UKJ4', 'UKM4', 'UKE2', 'UKI2', 'UKM1', 
             'UKJ1', 'UKJ3', 'UKM2', 'UKE4', 'UKE1', 'UKK1', 'UKE3', 'UKK3', 
@@ -59,7 +59,7 @@ def nuts_earliest(year):
             earliest = k
     return earliest
 
-def _detect_nuts(ids, year):
+def _detect_nuts2_uk(ids, year):
     '''detect_nuts
     Detects the most likely NUTS version based on the region IDs.
     '''
@@ -84,7 +84,7 @@ def _detect_nuts(ids, year):
         year_inferred = years[best[0]]
         return year_inferred
 
-def auto_nuts(df, year='year', nuts_id='nuts_id'):
+def auto_nuts2_uk(df, year='year', nuts_id='nuts_id'):
     '''auto_nuts
     Auto generates values for nuts_year_spec if they are not provided.
     
@@ -99,7 +99,7 @@ def auto_nuts(df, year='year', nuts_id='nuts_id'):
     '''
     dfs = []
     for year, group in df.groupby(year):
-        auto_nuts_year = _detect_nuts(group[nuts_id], year)
+        auto_nuts_year = _detect_nuts2_uk(group[nuts_id], year)
         group = group.assign(nuts_year_spec=auto_nuts_year)
         dfs.append(group)
 
