@@ -20,3 +20,10 @@ Unit:
   data_type: str
   unit: str
   description: str #optional
+
+Datestring:
+  date_type: string
+  format: YYYYMMDD
+  kind: date
+
+  

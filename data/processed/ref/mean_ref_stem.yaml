@@ -1,11 +1,11 @@
-api: https://results.ref.ac.uk
+api: fetch
 api_documentation: https://www.ref.ac.uk/2014/pubs/201401/
 description: These are the results of the Research Excellence Framework, where university departments in various disciplines are assessed on the quality of their research. The latest REF was conducted in 2014 so data is available only for one year
-endpoint_source: https://results.ref.ac.uk/(S(hlvnuqzwkag44jp3df3d4q14))/DownloadFile/AllResults/xlsx
+endpoint_static: https://results.ref.ac.uk/(S(hlvnuqzwkag44jp3df3d4q14))/DownloadFile/AllResults/xlsx
 framework_group: 1
 is_experimental: False
 nuts_level: 2
-source: the data provider: UKRI
+source: the data provider: UKRI (https://results.ref.ac.uk/)
 data_date: 20200204
 year_range: [2014, 2014]
 schema:
