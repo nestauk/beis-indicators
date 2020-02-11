@@ -6,6 +6,7 @@ enpoint_static: S3 URL of the data file
 framework_group: key for the framework group that contains this indicator (from data/aux/framework.json)  
 is_experimental: boolean, whether this indicator is experimental
 nuts_level: int
+order: [year, nuts_id, nuts_year_spec, value.id] # do not change; specifies the order of the exported indicator fields
 source: the data provider: Eurostat, NOMIS, etc.
 year_range: [min year, max year]
 schema:
