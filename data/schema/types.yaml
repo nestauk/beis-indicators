@@ -22,13 +22,13 @@ Area_hectare:
   type: Unit
 ref_score:
   kind: score
-  label: REF
+  label: Mean REF Score
   data_type: float
   unit: REF Score (1-4)
   type: Unit
 total_4_fte:
   kind: score
-  label: Full Time Equivalent excellent (4*) researchers
+  label: Full Time Equivalent
   data_type: float
   unit: FTE
   type: Unit

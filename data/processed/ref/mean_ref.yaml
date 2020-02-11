@@ -17,7 +17,7 @@ schema:
     description: The mean REF score for the NUTS2 area. This is the average of the scores in all departments weighted by the Full time equivalents submitted in each category (4*, 3*, 2* with higher scores representing better assessments)
     id: mean_ref
     label: Mean Research Excellence Framework Score
-    type: float
+    type: ref_score
   year:
     data_type: int
     label: Year

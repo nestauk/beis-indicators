@@ -5,7 +5,7 @@ endpoint_static: https://results.ref.ac.uk/(S(hlvnuqzwkag44jp3df3d4q14))/Downloa
 framework_group: 1
 is_experimental: False
 nuts_level: 2
-source: the data provider: UKRI (https://results.ref.ac.uk/)
+source: UKRI (https://results.ref.ac.uk/)
 data_date: 20200204
 year_range: [2014, 2014]
 schema:
@@ -17,7 +17,7 @@ schema:
     description: The total number of excellent researchers (4* score) submitted by universities in the NUTS-2 region for the 2014 REF
     id: mean_ref
     label: Total number of excellent researchers in REF (Full Time Equivalent)
-    type: fte
+    type: FTE
   year:
     data_type: int
     label: Year
