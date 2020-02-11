@@ -6,7 +6,7 @@ enpoint_static: Nesta data_getters lab
 framework_group: 1
 is_experimental: True
 nuts_level: 2
-source: the data provider: UKRI
+source: the data provider: https://gtr.ukri.org
 data_date: 20200204
 year_range: [2006, 2018]
 schema:
