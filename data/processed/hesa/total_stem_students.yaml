@@ -1,12 +1,12 @@
-api: the type of API to be used to fetch data: Download
-api_documentation: https://www.hesa.ac.uk/data-and-analysis/students/table-13#note
-description: Total number of students in STEM subjects
-endpoint_source: https://www.hesa.ac.uk/data-and-analysis/students/table-13.csv
+api: fetch
+api_documentation: https://www.hesa.ac.uk/data-and-analysis/students
+description: Data source with information about students enrolled in a university and their discipline
+endpoint_static: https://www.hesa.ac.uk/data-and-analysis/students/table-13.csv
 framework_group: 1
 is_experimental: False
 nuts_level: 2
-source: the data provider: HESA (Higher Education Statistical Agency) https://www.hesa.ac.uk/
-year_range: ['2014/2015', '2018/19']
+source: HESA (Higher Education Statistical Agency) https://www.hesa.ac.uk/
+year_range: [2014,2018]
 schema:
   nuts_id:
     type: NutsRegion.id
@@ -18,5 +18,5 @@ schema:
     label: Total number of students in STEM subjects
     type: int
   year:
-    data_type: str
-    label: Academic year
+    data_type: int
+    label: Academic year (start)

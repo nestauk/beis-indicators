@@ -14,3 +14,9 @@ Gravimetry:
   data_type: int|float
   unit: µg m^-3
   type: Unit
+Area_hectare:
+  kind: Area
+  label: Hectare
+  data_type: int|float
+  unit: hectare
+  type: Unit

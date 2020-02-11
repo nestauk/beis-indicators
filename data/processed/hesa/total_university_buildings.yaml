@@ -1,12 +1,12 @@
-api: the type of API to be used to fetch data: Download
+api: fetch
 api_documentation: https://www.hesa.ac.uk/data-and-analysis/estates/table-1
-description: Total number of university buildings in a NUTS2 region
-endpoint_source: https://www.hesa.ac.uk/data-and-analysis/estates/data.csv
+description: Information about finance and estates in UK universities
+endpoint_static: https://www.hesa.ac.uk/data-and-analysis/estates/data.csv
 framework_group: 1
 is_experimental: False
 nuts_level: 2
-source: the data provider: HESA (Higher Education Statistical Agency) https://www.hesa.ac.uk/
-year_range: ['2015/2016', '2017/18']
+source: HESA (Higher Education Statistical Agency) https://www.hesa.ac.uk/
+year_range: [2015,2017]
 schema:
   nuts_id:
     type: NutsRegion.id
@@ -18,5 +18,5 @@ schema:
     label: Total number of buildings
     type: int
   year:
-    data_type: str
-    label: Academic year
+    data_type: int
+    label: Academic year (start)
