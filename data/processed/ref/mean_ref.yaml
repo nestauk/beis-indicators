@@ -1,3 +1,4 @@
+
 api: fetch
 api_documentation: https://www.ref.ac.uk/2014/pubs/201401/
 description: These are the results of the Research Excellence Framework, where university departments in various disciplines are assessed on the quality of their research. The latest REF was conducted in 2014 so data is available only for one year
@@ -17,7 +18,7 @@ schema:
     description: The mean REF score for the NUTS2 area. This is the average of the scores in all departments weighted by the Full time equivalents submitted in each category (4*, 3*, 2* with higher scores representing better assessments)
     id: mean_ref
     label: Mean Research Excellence Framework Score
-    type: ref_score
+    type: REF
   year:
     data_type: int
     label: Year

@@ -20,13 +20,13 @@ Area_hectare:
   data_type: int|float
   unit: hectare
   type: Unit
-ref_score:
+REF:
   kind: score
-  label: Mean REF Score
-  data_type: float
+  label: REF score
+  data_type: int|float
   unit: REF Score (1-4)
   type: Unit
-total_4_fte:
+FTE:
   kind: score
   label: Full Time Equivalent
   data_type: float
