@@ -8,7 +8,7 @@ Euro:
   data_type: int|float
   unit: EUR
   type: Unit
-Gravimetry:
+GravimetricUnit:
   kind: density
   label: Gravimetric Units
   data_type: int|float
