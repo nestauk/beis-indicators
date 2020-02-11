@@ -1,0 +1,23 @@
+api: the type of API to be used to fetch data: fetch
+api_documentation: https://www.gov.uk/government/publications/about-the-uk-house-price-index/about-the-uk-house-price-index#monthly-revision for House Price Index and https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/adhocs/009571annualsurveyofhoursandearningsasheestimatesofannualandhourlyearningsforindustryandoccupationbynuts2andnuts3uk2011to2017 for ASHE
+description: We calculate house affordability in a NUTS2 region as the ratio between average house prices based on the House Pride index, and median salaries for science and technology occupations from ASHE. In order to calculate mean house prices at the NUTS2 level we needed to perform some transformations on the House Price Index data, which was only available at NUTS4. This is why we are labelling the indicator as experimental. Also note that the ASHE data was not available at the NUTS2 level from NOMIS so we had to use a data dump from ASHE. This has the advantage of being available at the NUTS2 level and by occupation, but cons around future maintenance.
+enpoint_static: http://publicdata.landregistry.gov.uk/market-trend-data/house-price-index-data/UK-HPI-full-file-2019-08.csv?utm_medium=GOV.UK&utm_source=datadownload&utm_campaign=full_fil&utm_term=9.30_16_10_19 (HPI) and https://www.ons.gov.uk/file?uri=/employmentandlabourmarket/peopleinwork/earningsandworkinghours/adhocs/009571annualsurveyofhoursandearningsasheestimatesofannualandhourlyearningsforindustryandoccupationbynuts2andnuts3uk2011to2017/k42forpublishing.zip (ASHE)
+framework_group: place_potential
+is_experimental: True
+nuts_level: 2
+source: the data provider: https://www.gov.uk/ (HPI) and https://www.ons.gov.uk/ (ASHE)
+year_range: [2010,2017]
+schema:
+  nuts_id:
+    type: NutsRegion.id
+  nuts_year_spec:
+    type: NutsRegion.year_spec
+  value:
+    format: .3f
+    description: Ratio of mean house prices to median salaries in science and technological occupations
+    id: ratio_house_price_salary
+    label: Housing affordability
+    type: float
+  year:
+    data_type: int
+    label: Year
