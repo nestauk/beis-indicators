@@ -5,7 +5,6 @@ enpoint_static: https://raw.githubusercontent.com/nestauk/beis-indicators/dev/da
 framework_group: place_potential
 is_experimental: False
 nuts_level: 2
-precision: .2f
 source: DEFRA
 year_range: [2007, 2018]
 schema:
@@ -14,10 +13,11 @@ schema:
   nuts_year_spec:
     type: NutsRegion.year_spec
   value:
-     description: mean pm10 particulate pollution value
+    description: mean pm10 particulate pollution value
+    format: .2f
     id: air_pollution_mean_pm10 
     label: Mean PM10 Pollution
-    type: Gravimetric
+    type: GravimetricUnit
   year:
     data_type: int
     label: Year
