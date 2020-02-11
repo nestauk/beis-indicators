@@ -5,6 +5,7 @@ enpoint_static: https://raw.githubusercontent.com/nestauk/beis-indicators/dev/da
 framework_group: place_potential
 is_experimental: False
 nuts_level: 2
+precision: .2f
 source: DEFRA
 year_range: [2007, 2018]
 schema:
