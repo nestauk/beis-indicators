@@ -6,6 +6,7 @@ enpoint_static: S3 URL of the data file
 framework_group: key for the framework group that contains this indicator (from data/aux/framework.json)  
 is_experimental: boolean, whether this indicator is experimental
 nuts_level: int
+precision: string # precision of values to show for viz purposes use D3/Python3 format e.g. .2f
 source: the data provider: Eurostat, NOMIS, etc.
 year_range: [min year, max year]
 schema:
