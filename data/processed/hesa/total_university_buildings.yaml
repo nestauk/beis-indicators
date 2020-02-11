@@ -1,6 +1,6 @@
 api: fetch
 api_documentation: https://www.hesa.ac.uk/data-and-analysis/estates/table-1
-description: Information about finance and estates in UK universities
+description: Number of university buildings in a NUTS2 region
 endpoint_static: https://www.hesa.ac.uk/data-and-analysis/estates/data.csv
 framework_group: 1
 is_experimental: False

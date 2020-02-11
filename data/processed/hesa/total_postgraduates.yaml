@@ -1,6 +1,6 @@
 api: fetch
 api_documentation: https://www.hesa.ac.uk/data-and-analysis/students
-description: Data source with information about students enrolled in a university and their discipline
+description: Number of postgraduate (research) students enrolled full-time in universities in a NUTS2 region in the starting academic year.
 endpoint_static: https://www.hesa.ac.uk/data-and-analysis/students/table-13.csv
 framework_group: 1
 is_experimental: False
