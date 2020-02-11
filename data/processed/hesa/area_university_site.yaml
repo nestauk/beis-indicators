@@ -3,17 +3,18 @@ api_documentation: https://www.hesa.ac.uk/data-and-analysis/estates/table-1
 description: Area of university sites for universities in the NUTS2 region
 endpoint_static: https://www.hesa.ac.uk/data-and-analysis/estates/data.csv
 framework_group: public_rnd_capability
-format: .3f
 is_experimental: False
 nuts_level: 2
 source: HESA (Higher Education Statistical Agency) https://www.hesa.ac.uk/
 year_range: [2015,2017]
+order: [year, nuts_id, nuts_year_spec, value.id]
 schema:
   nuts_id:
     type: NutsRegion.id
   nuts_year_spec:
     type: NutsRegion.year_spec
   value:
+    format: .3f
     description: Site Area (hectares) of university sites
     id: area_university_site
     label: Total area of university sites (Hectares)
