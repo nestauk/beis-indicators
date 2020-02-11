@@ -5,6 +5,7 @@ enpoint_static: https://raw.githubusercontent.com/nestauk/beis-indicators/dev/da
 framework_group: place_potential
 is_experimental: False
 nuts_level: 2
+order: [year, nuts_id, nuts_year_spec, value.id] # do not change; specifies the order of the exported indicator fields
 source: DEFRA
 year_range: [2007, 2018]
 schema:
