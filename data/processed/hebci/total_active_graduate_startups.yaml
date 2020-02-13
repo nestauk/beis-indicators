@@ -1,0 +1,23 @@
+api: fetch
+api_documentation: https://www.hesa.ac.uk/support/definitions/hebci
+description: HEBCI is a survey of universities in the UK with a focus on their knowledge exchange activities with the private sector, government etc. We have reverse geocoded each university in the sample and aggregated statistics over NUTS2 regions.
+enpoint_static: https://www.hesa.ac.uk/data-and-analysis/providers/business-community/table-4e.csv
+framework_group: knowledge_exchange
+is_experimental: False
+nuts_level: 2
+order: [year,nuts_id,nuts_year_spec,value]
+source: HESA (https://www.hesa.ac.uk/)
+year_range: [2014,2017]
+schema:
+  nuts_id:
+    type: NutsRegion.id
+  nuts_year_spec:
+    type: NutsRegion.year_spec
+  value:
+    description: Total number of active startup companies involving graduates from universities in the region in the academic year that starts in year 
+    id: total_active_graduate_spinouts
+    label: Total active graduate spinouts
+    type: count
+  year:
+    data_type: int
+    label: Year
