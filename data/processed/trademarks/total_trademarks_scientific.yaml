@@ -1,0 +1,27 @@
+api: fetch
+api_documentation: https://www.gov.uk/government/publications/ipo-trade-mark-data-release/ipo-data-explained-2016
+description: An open dataset with information about trademark applications and registrations in the UK
+endpoint_static: https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/680986/opendatadomestic.zip
+framework_group: knowledge_exchange
+is_experimental: False
+data_date: 20200214
+nuts_level: 2
+order: [year, nuts_id, nuts_year_spec, value.id] # do not change; specifies the order of the exported indicator fields
+source: https://www.gov.uk/
+year_range: [2010,2017]
+schema:
+  nuts_id:
+    type: NutsRegion.id
+  nuts_year_spec:
+    type: NutsRegion.year_spec
+  value:
+    description: Total trademarks published in scientific product codes by organisations in the NUTS2 region
+    id: total_trademarks_scientific.csv
+    label: Total number of trademarks in scientific product codes
+    type: int
+  year:
+    data_type: int
+    label: Year
+
+# [1] https://docs.python.org/3/library/string.html#format-specification-mini-language
+# [2] https://github.com/d3/d3-format
