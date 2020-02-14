@@ -5,6 +5,7 @@ enpoint_static: http://publicdata.landregistry.gov.uk/market-trend-data/house-pr
 framework_group: place_potential
 is_experimental: True
 nuts_level: 2
+order: [year, nuts_id, nuts_year_spec, value.id]
 source: the data provider: https://www.gov.uk/ (HPI) and https://www.ons.gov.uk/ (ASHE)
 year_range: [2010,2017]
 schema:
