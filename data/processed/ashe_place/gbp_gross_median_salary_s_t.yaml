@@ -1,0 +1,24 @@
+api: fetch
+api_documentation: https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/adhocs/009571annualsurveyofhoursandearningsasheestimatesofannualandhourlyearningsforindustryandoccupationbynuts2andnuts3uk2011to2017
+description: Median salaries for science and technology occupations from ASHE. This data was not available at the NUTS2 level from the NOMIS API so we had to use a data dump from ASHE. This has the advantage of being available at the NUTS2 level and by occupation, but cons around future maintenance.
+enpoint_static: https://www.ons.gov.uk/file?uri=/employmentandlabourmarket/peopleinwork/earningsandworkinghours/adhocs/009571annualsurveyofhoursandearningsasheestimatesofannualandhourlyearningsforindustryandoccupationbynuts2andnuts3uk2011to2017/k42forpublishing.zip
+framework_group: public_rnd_capability
+is_experimental: True
+nuts_level: 2
+order: [year, nuts_id, nuts_year_spec, value.id]
+source: https://www.ons.gov.uk/ (ASHE)
+year_range: [2012,2017]
+schema:
+  nuts_id:
+    type: NutsRegion.id
+  nuts_year_spec:
+    type: NutsRegion.year_spec
+  value:
+    format: .0f
+    description: Median salaries in science and technological occupations in the NUTS2 region
+    id: gbp_gross_median_salary_s_t
+    label: Gross median salary in Science and Technology occupations
+    type: GBP
+  year:
+    data_type: int
+    label: Year
