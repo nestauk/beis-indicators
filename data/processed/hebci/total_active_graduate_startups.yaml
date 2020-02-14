@@ -17,7 +17,7 @@ schema:
     description: Total number of active startup companies involving graduates from universities in the region in the academic year that starts in year 
     id: total_active_graduate_spinouts
     label: Total active graduate spinouts
-    type: count
+    type: int
   year:
     data_type: int
     label: Year

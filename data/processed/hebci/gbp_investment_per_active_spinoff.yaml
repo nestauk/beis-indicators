@@ -16,7 +16,7 @@ schema:
     type: NutsRegion.year_spec
   value:
     description: Total external investment in active spinoffs involving local universities in academic year starting in year
-    id: gbp_external_investment_per_active_spinoff
+    id: gbp_investment_per_active_spinoff
     label: External investment in active spinoffs
     type: GBP
   year:
