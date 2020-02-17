@@ -6,7 +6,7 @@ framework_group: public_rnd_capability
 is_experimental: False
 nuts_level: 2
 order: [year, nuts_id, nuts_year_spec, value.id]
-source: HESA (Higher Education Statistical Agency) https://www.hesa.ac.uk/
+source_name: HESA (Higher Education Statistical Agency) https://www.hesa.ac.uk/
 year_range: [2014,2018]
 schema:
   nuts_id:

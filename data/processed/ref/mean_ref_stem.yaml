@@ -5,7 +5,7 @@ endpoint_url: https://results.ref.ac.uk/(S(hlvnuqzwkag44jp3df3d4q14))/DownloadFi
 framework_group: 1
 is_experimental: False
 nuts_level: 2
-source: UKRI (https://results.ref.ac.uk/)
+source_name: UKRI (https://results.ref.ac.uk/)
 data_date: 20200204
 year_range: [2014, 2014]
 schema:
