@@ -1,4 +1,4 @@
-api: fetch
+api: FETCH
 description: Mean PM10 particulate background pollution data at NUTS 2 regions aggregated from 1km x 1km resolution UK data modelled by DEFRA.
 endpoint_source: https://uk-air.defra.gov.uk/data/pcm-data
 enpoint_static: https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/defra/air_pollution_mean_pm10.csv

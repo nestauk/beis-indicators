@@ -1,4 +1,4 @@
-api: fetch
+api: FETCH
 api_documentation: https://www.hesa.ac.uk/data-and-analysis/estates/table-1
 description: Research income received by universities in the NUTS2 region
 endpoint_static: https://www.hesa.ac.uk/data-and-analysis/estates/data.csv
