@@ -1,7 +1,6 @@
 api: FETCH
 description: Mean PM10 particulate background pollution data at NUTS 2 regions aggregated from 1km x 1km resolution UK data modelled by DEFRA.
-endpoint_source: https://uk-air.defra.gov.uk/data/pcm-data
-enpoint_static: https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/defra/air_pollution_mean_pm10.csv
+endpoint_url: https://uk-air.defra.gov.uk/data/pcm-data
 framework_group: place_potential
 is_experimental: False
 nuts_level: 2
@@ -16,7 +15,7 @@ schema:
   value:
     description: mean pm10 particulate pollution value
     format: .2f
-    id: air_pollution_mean_pm10 
+    id: air_pollution_mean_pm10
     label: Mean PM10 Pollution
     type: GravimetricUnit
   year:
