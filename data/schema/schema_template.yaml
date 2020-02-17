@@ -1,29 +1,43 @@
-api: the type of API to be used to fetch data: REST, download etc.
-api_documentation: the URL of a documentation page with descriptions of the field meaning (if available)
-description: a brief description of the data source and transformations that have been applied
-endpoint_source: the URL of the api endpoint at which queries or the network requests for dumping the whole dataset can be executed
-endpoint_static: S3 URL of the data file
-framework_group: key for the framework group that contains this indicator (from data/aux/framework.json)  
-is_experimental: boolean, whether this indicator is experimental
+api_doc_url: URL # the URL of a documentation page with descriptions of the field meaning (if available)
+api_type: string # the type of API
+   # FETCH: the dataset can be downloaded at a specific URL
+    # this can be a direct URL to a file (e.g. www.download.com/datasets/companies.csv)
+    # or, the URL to a GET REST API (e.g. GET www.api.com/companies/London, returning a json response)
+   # POST: the data is obtained by querying a POST REST API with a custom API (e.g. posting {city: 'London'} to www.foo.com/companies and getting a json response)
+   # ElasticSearch: the data is obtained by querying an ElasticSearch endpoint
+   # Neo4j: the data is obtained by querying a Neo4j endpoint
+   # MySQL: the data is obtained by querying a MySQL endpoint
 data_date: Datestring
-nuts_level: int
-order: [year, nuts_id, nuts_year_spec, value.id] # do not change; specifies the order of the exported indicator fields
-source: the data provider: Eurostat, NOMIS, etc.
-year_range: [min year, max year]
+description_short: string # a brief description of the indicator short enough to be used in menus or sidebars (~40 chars)
+description: string # a description of the indicator, of the data source and transformations that have been applied
+endpoint_url: URL
+  # for querying APIs: the URL of the api endpoint at which queries can be executed
+  # for fetching: the URL where to fetch the data
+derived_from: string[] # OPTIONAL - list of indicator keys this indicattor derives from
+framework_group: string # key for the framework group that contains this indicator (from data/aux/framework.json)
+is_experimental: boolean # whether this indicator is experimental
+order: [year, nuts_id, nuts_year_spec, value.id] # USE AS IS: it specifies the order of the exported indicator fields
+region:
+  type: string # the region type, e.g.  NutsRegion, LepRegion, etc
+  level: int # OPTIONAL - useful for NUTS
+  source_url: URL # url of the boundaries used for reverse geocoding
 schema:
-  nuts_id:
-    type: NutsRegion.id
-  nuts_year_spec:
-    type: NutsRegion.year_spec
+  region_id:
+    type: string # NutsRegion.id, LepRegion.id
+  region_year_spec:
+    type: string # NutsRegion.year_spec, LepRegion.year_spec
   value:
-    description: a description of the value
-    format: string # precision of values to show for viz purposes use D3/Python 3 format e.g. .2f (see [1] and [2])
-    id: field name #the field and file names should be identical e.g. berd and berd.csv
-    label: the axis label for this field
-    type: choose a Type e.g. Euro
+    description: string # a description of the value
+    format: string # OPTIONAL - the render format, useful for floats or dates (e.g. `.2f`), see [1] and [2]
+    id: string # indicator name, should be identical to the file name (e.g. `berd` and `berd.csv`)
+    label: string # a short text to be used as a label in charts
+    type: string # (XOR `data_type`) - the value Type (e.g. Euro). Consider using `data_type` first.
+    data_type: string # (XOR `type`) - use for native types like counts (int) or simple mean values (float). Consider using `type` if th unit has a well known Type (e.g. EUR, densities, etc.)
   year:
     data_type: int
     label: Year
+source_name: string # the name of the data provider (e.g. Eurostat, NOMIS, etc.)
+year_range: [int, int] # [min year, max year]
 
 # [1] https://docs.python.org/3/library/string.html#format-specification-mini-language
 # [2] https://github.com/d3/d3-format

@@ -1,35 +1,68 @@
-#############
-### UNITS ###
-#############
+# dates
 
-Euro:
+Date_YYYYMMDD:
+  format: YYYYMMDD
+  kind: date
+  type: Datestring
+
+# internet resources
+
+URL:
+  kind: uri
+  type: string
+
+# UNITS
+
+# currency
+
+EUR:
   kind: currency
-  label: Euros
+  label: Euro
   data_type: int|float
-  unit: EUR
+  unit_string: EUR
   type: Unit
+GBP:
+  kind: currency
+  label: British Pound
+  data_type: int|float
+  unit_string: GBP
+  type: Unit
+USD:
+  kind: currency
+  label: US Dollar
+  data_type: int|float
+  unit_string: USD
+  type: Unit
+
+# density
+
 GravimetricUnit:
   kind: density
   label: Gravimetric Units
   data_type: int|float
-  unit: µg m^-3
+  unit_string: µg m^-3
   type: Unit
+
+# area
+
 Area_hectare:
-  kind: Area
+  kind: area
   label: Hectare
   data_type: int|float
-  unit: hectare
+  unit_string: hectare
   type: Unit
+
+# score
+
 REF:
   kind: score
   label: REF score
   data_type: int|float
-  unit: REF Score (1-4)
+  unit_string: REF Score (1-4)
   type: Unit
 FTE:
   kind: score
   label: Full Time Equivalent
   data_type: float
-  unit: FTE
+  unit_string: FTE
   type: Unit
-  
