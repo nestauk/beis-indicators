@@ -1,7 +1,7 @@
 api_doc_url: https://uk-air.defra.gov.uk/data/pcm-data
 api_type: FETCH
-description: Mean PM10 particulate background pollution data at NUTS 2 regions aggregated from 1km x 1km resolution UK data modelled by DEFRA.
 description_short: # FIXME
+description: Mean PM10 particulate background pollution data at NUTS 2 regions aggregated from 1km x 1km resolution UK data modelled by DEFRA.
 endpoint_url:
   - https://uk-air.defra.gov.uk/datastore/pcm/mappm102007g.csv
   - https://uk-air.defra.gov.uk/datastore/pcm/mappm102008g.csv
@@ -23,8 +23,6 @@ region:
   type: NutsRegion
   level: 2
   source_url: URL # FIXME
-source_name: DEFRA
-year_range: [2007, 2018]
 schema:
   region_id:
     type: NutsRegion.id
@@ -39,3 +37,5 @@ schema:
   year:
     data_type: int
     label: Year
+source_name: DEFRA
+year_range: [2007, 2018]
