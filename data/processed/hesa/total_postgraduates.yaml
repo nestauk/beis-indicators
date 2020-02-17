@@ -1,6 +1,7 @@
-api: FETCH
+api_type: FETCH
 api_documentation: https://www.hesa.ac.uk/data-and-analysis/students
 description: Number of postgraduate (research) students enrolled full-time in universities in a NUTS2 region in the starting academic year.
+description_short: # FIXME
 endpoint_url: https://www.hesa.ac.uk/data-and-analysis/students/table-13.csv
 framework_group: public_rnd_capability
 is_experimental: False

@@ -1,6 +1,7 @@
-api: FETCH
+api_type: FETCH
 api_documentation: https://www.hesa.ac.uk/data-and-analysis/students
 description: Number of students enrolled full-time in STEM subjects in a NUTS2 region (definition of STEM subjects in aux folder) in the starting academic year.
+description_short: # FIXME
 endpoint_url: https://www.hesa.ac.uk/data-and-analysis/students/table-13.csv
 framework_group: public_rnd_capability
 is_experimental: False

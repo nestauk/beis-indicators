@@ -1,5 +1,6 @@
-api: FETCH
+api_type: FETCH
 description: Mean PM10 particulate background pollution data at NUTS 2 regions aggregated from 1km x 1km resolution UK data modelled by DEFRA.
+description_short: # FIXME
 endpoint_url: https://uk-air.defra.gov.uk/data/pcm-data
 framework_group: place_potential
 is_experimental: False
