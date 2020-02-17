@@ -5,13 +5,17 @@ endpoint_url: https://results.ref.ac.uk/(S(hlvnuqzwkag44jp3df3d4q14))/DownloadFi
 framework_group: 1
 is_experimental: False
 nuts_level: 2
+region:
+  type: NutsRegion
+  level: 2
+  source_url: URL # FIXME
 source_name: UKRI (https://results.ref.ac.uk/)
 year_range: [2014, 2014]
 data_date: 20200204
 schema:
-  nuts_id:
+  region_id:
     type: NutsRegion.id
-  nuts_year_spec:
+  region_year_spec:
     type: NutsRegion.year_spec
   value:
     description: The mean REF score for the NUTS2 area. This is the average of the scores in all departments weighted by the Full time equivalents submitted in each category (4*, 3*, 2* with higher scores representing better assessments)

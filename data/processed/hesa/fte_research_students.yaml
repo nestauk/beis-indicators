@@ -6,12 +6,16 @@ framework_group: public_rnd_capability
 is_experimental: False
 nuts_level: 2
 order: [year, nuts_id, nuts_year_spec, value.id]
+region:
+  type: NutsRegion
+  level: 2
+  source_url: URL # FIXME
 source_name: HESA (Higher Education Statistical Agency) https://www.hesa.ac.uk/
 year_range: [2015,2017]
 schema:
-  nuts_id:
+  region_id:
     type: NutsRegion.id
-  nuts_year_spec:
+  region_year_spec:
     type: NutsRegion.year_spec
   value:
     description: Full Time Equivalent (FTE) research students
