@@ -1,20 +1,24 @@
 # GEOGRAPHY
 
 NutsRegion:
-  id: string # NUTS region ID e.g. UKF2
-  label: string # short label for the UI, e.g. UKF2 NUTS2 region
-  description: string # long description for the UI, e.g. Leicestershire, Rutland and Northamptonshire, UKF2 NUTS2 region
+  id: GeoRegionint.id # e.g. UKF2
   level: int # e.g. 2
-  year_spec: int # year of specification release
-  year_enforced: int # OPTIONAL - year of spec being enforced
-  source_url: URL # url of the boundaries used for reverse geocoding
+  name: GeoRegionint.name # e.g. Leicestershire, Rutland and Northamptonshire
+  source_url: GeoRegionint.source_url
+  source: GeoRegionint.source
+  type: GeoRegion
+  year_enforced: GeoRegionint.year_enforced
+  year_spec: GeoRegionint.year_spec
 
 LepRegion:
-  id: string # equivalent of `lep17cd` e.g. E37000001
-  name: string # equivalent of `lep17nm` e.g. Black Country
-  year_spec: int # for example 2017
-  year_enforced: int # OPTIONAL - year of spec being enforced
-  source_url: URL # url of the boundaries used for reverse geocoding
+  id: GeoRegionint.id # e.g. E37000001
+  name: GeoRegionint.name # e.g. Black Country
+  source_url: GeoRegionint.source_url
+  source: GeoRegionint.source
+  type: GeoRegion
+  year_enforced: GeoRegionint.year_enforced
+  year_spec: GeoRegionint.year_spec
+
 
 # UNITS
 

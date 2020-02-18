@@ -11,6 +11,18 @@ URL:
   kind: uri
   type: string
 
+# GEOGRAPHY
+
+GeoRegion:
+  id: string # NUTS region ID e.g. UKF2
+  name: string # name of the region
+  level: int # e.g. 2
+  source_url: URL # OPTIONAL - url of the boundaries used for reverse geocoding, if known
+  source: string # OPTIONAL - use `PROVIDED` in case `source_url` is unknown because the data have already been reverse geocoded
+  year_enforced: int # OPTIONAL - year of spec being enforced
+  year_spec: int # year of specification release
+
+
 # UNITS
 
 # currency

@@ -18,14 +18,15 @@ framework_group: string # key for the framework group that contains this indica
 is_experimental: boolean # whether this indicator is experimental
 order: [year, nuts_id, nuts_year_spec, value.id] # USE AS IS: it specifies the order of the exported indicator fields
 region:
-  type: string # the region type, e.g.  NutsRegion, LepRegion, etc
+  type: string # the region type, e.g. NutsRegion or LepRegion
   level: int # OPTIONAL - useful for NUTS
-  source_url: URL # url of the boundaries used for reverse geocoding
+  source_url: GeoRegion.source_url # OPTIONAL - see GeoRegion in types.yaml
+  source: GeoRegion.source # OPTIONAL - see GeoRegion docs in types.yaml
 schema:
   region_id:
-    type: string # NutsRegion.id, LepRegion.id
+    type: string # NutsRegion.id or LepRegion.id
   region_year_spec:
-    type: string # NutsRegion.year_spec, LepRegion.year_spec
+    type: string # NutsRegion.year_spec or LepRegion.year_spec
   value:
     description: string # a description of the value
     format: string # OPTIONAL - the render format, useful for floats or dates (e.g. `.2f`), see [1] and [2]
