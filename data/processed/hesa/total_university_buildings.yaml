@@ -1,6 +1,6 @@
 api_doc_url: https://www.hesa.ac.uk/data-and-analysis/estates/table-1
 api_type: FETCH
-description_short: Total number of buildings
+description_short: Total number of university buildings
 description: Number of university buildings in a NUTS2 region
 endpoint_url: https://www.hesa.ac.uk/data-and-analysis/estates/data.csv
 framework_group: public_rnd_capability
