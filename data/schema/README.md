@@ -2,13 +2,15 @@
 
 ## Simple indicators
 
-For simple indicators obtained from a single source, please refer to [`data/schema_template.yaml`](./schema_template.yaml): for each field, substitute the type and the comment with an actual value, with the exception of:
+For simple indicators obtained from a single source, please refer to [`data/schema_template.yaml`](./schema_template.yaml): for each field, substitute type and comment with an actual value, with the exception of:
 
 ```yaml
 order: [year, nuts_id, nuts_year_spec, value.id]
 ```
 
 Keep this as is, eventually just remove the doc comment.
+
+Please remove any unneeded comments.
 
 ## Derived indicators
 
@@ -54,4 +56,4 @@ www.a-data-site.com/companies?year=2003&city=London
 
 The current aims is at documenting indicators using NUTS2 regions.
 
-To avoid confusion, please put datasets using LEPs (with the correspondent schema) in `processed/<dir>/LEP/*.yaml`
+To avoid confusion, please put datasets using LEPs (with the correspondent schema) in `processed/<indicator_dir>/LEP`

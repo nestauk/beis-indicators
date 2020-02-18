@@ -13,7 +13,7 @@ description: string # a description of the indicator, of the data source and tr
 endpoint_url: URL|URL[] # use and array of URLs if multiple files have been downloaded to build this indicator
   # for querying APIs: the URL of the api endpoint at which queries can be executed
   # for fetching: the URL where to fetch the data
-derived_from: string[] # OPTIONAL - list of indicator keys this indicattor derives from
+derived_from: string[] # OPTIONAL - list of indicator keys this indicator derives from
 framework_group: string # key for the framework group that contains this indicator (from data/aux/framework.json)
 is_experimental: boolean # whether this indicator is experimental
 order: [year, nuts_id, nuts_year_spec, value.id] # USE AS IS: it specifies the order of the exported indicator fields
