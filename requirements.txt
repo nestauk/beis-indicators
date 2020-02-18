@@ -7,7 +7,7 @@ jupyter
 ipython
 nuts-finder
 setuptools
-git+https://github.com/nestauk/data_getters.git
+git+ssh://git@github.com/nestauk/data_getters.git
 ratelim
 geopandas
 shapely

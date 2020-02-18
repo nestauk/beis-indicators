@@ -37,7 +37,7 @@ def make_nomis(geo_type, year_l, project_dir=None):
         project_dir = beis_indicators.project_dir
 
     # SIC4 <-> Nesta segement lookup
-    fin = f"{beis_indicators.project_dir}/data/raw/sector_lookup_sic4_nesta.csv"
+    fin = f"{beis_indicators.project_dir}/data/raw/sic_4_industry_segment_lookup.csv"
     segments = (
         read_csv(fin, usecols=["sic_4", "cluster"])
         .pipe(_zero_pad, "sic_4")
@@ -48,10 +48,10 @@ def make_nomis(geo_type, year_l, project_dir=None):
     for dataset in ["BRES", "IDBR"]:
         for year in year_l:
             raw_fout = (
-                f"{project_dir}/data/external/nomis_{dataset}_{year}_{geo_type}.csv"
+                f"{project_dir}/data/raw/industry/nomis_{dataset}_{year}_{geo_type}.csv"
             )
             tidy_fout = (
-                f"{project_dir}/data/processed/nomis_{dataset}_{year}_{geo_type}.csv"
+                f"{project_dir}/data/interim/industry/nomis_{dataset}_{year}_{geo_type}.csv"
             )
 
             # Fetch and save raw data if not present
