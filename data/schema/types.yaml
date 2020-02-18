@@ -8,9 +8,28 @@ Euro:
   data_type: int|float
   unit: EUR
   type: Unit
-Gravimetry:
+GravimetricUnit:
   kind: density
   label: Gravimetric Units
   data_type: int|float
   unit: µg m^-3
   type: Unit
+Area_hectare:
+  kind: Area
+  label: Hectare
+  data_type: int|float
+  unit: hectare
+  type: Unit
+REF:
+  kind: score
+  label: REF score
+  data_type: int|float
+  unit: REF Score (1-4)
+  type: Unit
+FTE:
+  kind: score
+  label: Full Time Equivalent
+  data_type: float
+  unit: FTE
+  type: Unit
+  

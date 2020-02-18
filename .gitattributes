@@ -1,4 +1,4 @@
-*.ipynb filter=nbstrip_full
+#*.ipynb filter=nbstrip_full
 
 ## Add the following to .git/config and install jq (https://stedolan.github.io/jq/download/)
 ## (This can also be done by running `make git` to add to the local .gitconfig and 

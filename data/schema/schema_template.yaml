@@ -2,10 +2,12 @@ api: the type of API to be used to fetch data: REST, download etc.
 api_documentation: the URL of a documentation page with descriptions of the field meaning (if available)
 description: a brief description of the data source and transformations that have been applied
 endpoint_source: the URL of the api endpoint at which queries or the network requests for dumping the whole dataset can be executed
-enpoint_static: S3 URL of the data file
+endpoint_static: S3 URL of the data file
 framework_group: key for the framework group that contains this indicator (from data/aux/framework.json)  
 is_experimental: boolean, whether this indicator is experimental
+data_date: Datestring
 nuts_level: int
+order: [year, nuts_id, nuts_year_spec, value.id] # do not change; specifies the order of the exported indicator fields
 source: the data provider: Eurostat, NOMIS, etc.
 year_range: [min year, max year]
 schema:
@@ -15,9 +17,13 @@ schema:
     type: NutsRegion.year_spec
   value:
     description: a description of the value
+    format: string # precision of values to show for viz purposes use D3/Python 3 format e.g. .2f (see [1] and [2])
     id: field name #the field and file names should be identical e.g. berd and berd.csv
     label: the axis label for this field
     type: choose a Type e.g. Euro
   year:
     data_type: int
     label: Year
+
+# [1] https://docs.python.org/3/library/string.html#format-specification-mini-language
+# [2] https://github.com/d3/d3-format
