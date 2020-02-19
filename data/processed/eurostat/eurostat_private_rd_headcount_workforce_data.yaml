@@ -1,8 +1,8 @@
 api_doc_url: https://ec.europa.eu/eurostat/cache/metadata/en/rd_esms.htm
 api_type: fetch
-description_short: Business enterprise R&D
-description: Business enterprise research & development (R&D) expenditure by NUTS 2 regions.
-endpoint_url: http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/rd_e_gerdreg?sinceTimePeriod=2012&geoLevel=nuts2&precision=6&sectperf=BES&unit=MIO_EUR
+description_short: HC of R&D workforce
+description: Head count (HC) OF private sector research & development (R&D) workforce by NUTS 2 regions.
+endpoint_url: http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/rd_p_persreg?sinceTimePeriod=2012&geoLevel=nuts2&precision=1&sex=T&sectperf=BES&prof_pos=TOTAL&unit=HC
 framework_group: 2
 is_experimental: False
 order: [year, nuts_id, nuts_year_spec, value.id] # do not change; specifies the order of the exported indicator fields
@@ -15,11 +15,10 @@ schema:
   nuts_year_spec:
     type: NutsRegion.year_spec
   value:
-    description: business enterprise R&D expenditure in euros (to the nearest 1000)
+    description: Head count of workforce
     format: string
-    label: Expenditure (to nearest 1000)
-    type: Euro
-    data_type: float
+    label: Head count
+    data_type: int
   year:
     data_type: int
     label: Year

@@ -1,0 +1,26 @@
+api_doc_url: https://www.nomisweb.co.uk/api/v01/help
+api_type: fetch
+description_short: Associated STEM professionals
+description: Number of Science, Research, Engineering and Technology associated professionals by NUTS 2 regions.
+endpoint_url: https://www.nomisweb.co.uk/api/v01/dataset/NM_17_1.jsonstat.json?geography=1837105153...1837105192&date=latestMINUS23,latestMINUS19,latestMINUS15,latestMINUS11,latestMINUS7,latestMINUS3&cell=404882177,404883201&measures=20100,20701
+framework_group: 1
+is_experimental: False
+order: [year, nuts_id, nuts_year_spec, value.id] # do not change; specifies the order of the exported indicator fields
+region:
+  type: NutsRegion
+  level: 2
+schema:
+  nuts_id:
+    type: NutsRegion.id
+  nuts_year_spec:
+    type: NutsRegion.year_spec
+  value:
+    description: Number of Science, Research, Engineering and Technology associated professionals.
+    format: string
+    label: Frequency
+    data_type: int
+  year:
+    data_type: int
+    label: Year
+source_name: NOMIS
+year_range: [2012, 2018]

@@ -1,15 +1,26 @@
-API: NOMIS API
-API documentation: https://www.nomisweb.co.uk/api/v01/help
-Dataset code: NM_17_5
-endpoint: https://www.nomisweb.co.uk/api/v01/dataset/NM_17_5.jsonstat.json?geography=1837105153...1837105192&date=latestMINUS23,latestMINUS19,latestMINUS15,latestMINUS11,latestMINUS7,latestMINUS3&variable=1543&measures=20599,21001,21002,21003
+api_doc_url: https://www.nomisweb.co.uk/api/v01/help
+api_type: fetch
+description_short: STEM employee density
+description: Percentage of population employed in science, research, engineering and technology professional by NUTS 2 regions.
+endpoint_url: https://www.nomisweb.co.uk/api/v01/dataset/NM_17_5.jsonstat.json?geography=1837105153...1837105192&date=latestMINUS23,latestMINUS19,latestMINUS15,latestMINUS11,latestMINUS7,latestMINUS3&variable=1543&measures=20599,21001,21002,21003
+framework_group: 2
+is_experimental: False
+order: [year, nuts_id, nuts_year_spec, value.id] # do not change; specifies the order of the exported indicator fields
+region:
+  type: NutsRegion
+  level: 2
 schema:
-  geography_name:
-    type: string
-    description: name of NUTS2 (2016) region
-  geography_code:
-    type: string
-    description: NUTS2 (2016) region code
-  date_code:
-     type: string
-     description: year and month
-  '% all in employment who are - 21: science, research, engineering and technology profs (SOC2010)': float
+  nuts_id:
+    type: NutsRegion.id
+  nuts_year_spec:
+    type: NutsRegion.year_spec
+  value:
+    description: Percentage of population employed in professional occupations.
+    format: string
+    label: Percentage
+    data_type: float
+  year:
+    data_type: int
+    label: Year
+source_name: NOMIS
+year_range: [2012, 2018]
