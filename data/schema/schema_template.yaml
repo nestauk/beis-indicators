@@ -25,9 +25,9 @@ region:
   source: GeoRegion.source # OPTIONAL - see GeoRegion docs in types.yaml
 schema:
   <region_type>_id: # change this key to `nuts_id` or `lep_id`
-    type: GeoRegion.<region_type>_id # change this key to `GeoRegion.nuts_id` or `GeoRegion.lep_id`
+    type: GeoRegion.<region_type>_id # change this key to `NutsRegion.nuts_id` or `LepRegion.lep_id`
   <region_type>_year_spec: # change this key to `nuts_year_spec` or `lep_year_spec`
-    type: GeoRegion.<region_type>_year_spec # change this key to `GeoRegion.nuts_year_spec` or `GeoRegion.lep_year_spec`
+    type: GeoRegion.<region_type>_year_spec # change this key to `NutsRegion.nuts_year_spec` or `LepRegion.lep_year_spec`
   value:
     description: string # a description of the value
     format: string # OPTIONAL - the render format, useful for floats or dates (e.g. `.2f`), see [1] and [2]
