@@ -39,12 +39,12 @@ NUTS2_UK_IDS ={
             'UKK3', 'UKG2', 'UKM5', 'UKL1', 'UKI4', 'UKD7', 'UKJ2', 'UKN0', 
             'UKH1', 'UKF3', 'UKH2', 'UKM6', 'UKD4', 'UKC1', 'UKI3', 'UKD6', 'UKF1'}}
 
-NUTS_YEARS = np.array(list(NUTS_IDS.keys()))
+NUTS_YEARS = np.array(list(NUTS2_UK_IDS.keys()))
 
 def _year_containments(ids, years):
     containments = []
     for year in years:
-        year_ids = NUTS_IDS[year]
+        year_ids = NUTS2_UK_IDS[year]
         containments.append(set_containment(ids, year_ids))
     containments = np.array(containments)
     return containments
