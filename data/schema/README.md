@@ -1,11 +1,11 @@
-# How to write a schema
+# How to provide schemas
 
 ## Simple indicators
 
 For simple indicators obtained from a single source, please refer to [`data/schema_template.yaml`](./schema_template.yaml): for each field, substitute type and comment with an actual value, with the exception of:
 
 ```yaml
-order: [year, nuts_id, nuts_year_spec, value.id]
+order: [year, <region_type>_id, <region_type>_year_spec, value.id]
 ```
 
 Keep this as is, eventually just remove the doc comment.

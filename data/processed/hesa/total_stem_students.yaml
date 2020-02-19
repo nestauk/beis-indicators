@@ -12,9 +12,9 @@ region:
   level: 2
   source_url: http://geoportal1-ons.opendata.arcgis.com/datasets/48b6b85bb7ea43699ee85f4ecd12fd36_0.zip?outSR=%7B%22latestWkid%22:27700,%22wkid%22:27700%7D
 schema:
-  region_id:
+  nuts_id:
     type: NutsRegion.id
-  region_year_spec:
+  nuts_year_spec:
     type: NutsRegion.year_spec
   value:
     description: Total number of full-time students enrolled in STEM subjects in the area

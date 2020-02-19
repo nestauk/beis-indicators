@@ -24,9 +24,9 @@ region:
   level: 2
   source_url: https://ec.europa.eu/eurostat/cache/GISCO/distribution/v2/nuts/download/ref-nuts-2016-01m.shp.zip
 schema:
-  region_id:
+  nuts_id:
     type: NutsRegion.id
-  region_year_spec:
+  nuts_year_spec:
     type: NutsRegion.year_spec
   value:
     description: mean pm10 particulate pollution value

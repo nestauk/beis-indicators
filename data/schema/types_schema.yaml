@@ -1,23 +1,25 @@
 # GEOGRAPHY
 
 NutsRegion:
-  id: GeoRegionint.id # e.g. UKF2
-  level: int # e.g. 2
-  name: GeoRegionint.name # e.g. Leicestershire, Rutland and Northamptonshire
-  source_url: GeoRegionint.source_url
-  source: GeoRegionint.source
+  level: int # e.g. 1|2|3
+  name: GeoRegion.name # e.g. Leicestershire, Rutland and Northamptonshire
+  nuts_id: GeoRegion.<region_type>_id # e.g. UKF2
+  nuts_year_enforced: GeoRegion.<region_type>_year_enforced
+  nuts_year_spec: GeoRegion.<region_type>_year_spec
+  region_type: nuts
+  source_url: GeoRegion.source_url
+  source: GeoRegion.source
   type: GeoRegion
-  year_enforced: GeoRegionint.year_enforced
-  year_spec: GeoRegionint.year_spec
 
 LepRegion:
-  id: GeoRegionint.id # e.g. E37000001
-  name: GeoRegionint.name # e.g. Black Country
-  source_url: GeoRegionint.source_url
-  source: GeoRegionint.source
+  lep_id: GeoRegion.id # e.g. E37000001
+  lep_year_enforced: GeoRegion.year_enforced
+  lep_year_spec: GeoRegion.year_spec
+  name: GeoRegion.name # e.g. Black Country
+  region_type: lep
+  source_url: GeoRegion.source_url
+  source: GeoRegion.source
   type: GeoRegion
-  year_enforced: GeoRegionint.year_enforced
-  year_spec: GeoRegionint.year_spec
 
 
 # UNITS
