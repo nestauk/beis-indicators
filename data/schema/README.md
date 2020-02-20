@@ -56,4 +56,4 @@ www.a-data-site.com/companies?year=2003&city=London
 
 The current aims is at documenting indicators using NUTS2 regions.
 
-To avoid confusion, please put datasets using LEPs (with the correspondent schema) in `processed/<indicator_dir>/LEP`
+To avoid confusion, please put datasets using LEPs (with the correspondent schema) in `data/processed/<indicator_dir>/LEP`
