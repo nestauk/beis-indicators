@@ -1,20 +1,20 @@
 api_doc_url: https://ec.europa.eu/eurostat/cache/metadata/en/rd_esms.htm
-api_type: fetch
+api_type: FETCH
 description_short: Government R&D
 description: Government performed research & development (R&D) expenditure by NUTS 2 regions.
 endpoint_url: http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/rd_e_gerdreg?sinceTimePeriod=2012&geoLevel=nuts2&precision=2&sectperf=GOV&unit=MIO_EUR
 framework_group: 1
 is_experimental: False
-nuts_level: 2
 order: [year, nuts_id, nuts_year_spec, value.id] # do not change; specifies the order of the exported indicator fields
 region:
   type: NutsRegion
   level: 2
+  source: PROVIDED
 schema:
   nuts_id:
-    type: NutsRegion.id
+    type: NutsRegion.nuts_id
   nuts_year_spec:
-    type: NutsRegion.year_spec
+    type: NutsRegion.nuts_year_spec
   value:
     description: government performed R&D expenditure in euros (to the nearest 1000)
     format: string

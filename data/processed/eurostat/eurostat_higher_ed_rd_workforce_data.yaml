@@ -1,5 +1,5 @@
 api_doc_url: https://ec.europa.eu/eurostat/cache/metadata/en/rd_esms.htm
-api_type: fetch
+api_type: FETCH
 description_short: Higher Edu R&D
 description: Higher education sector enterprise research & development (R&D) expenditure by NUTS 2 regions.
 endpoint_url: http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/rd_e_gerdreg?sinceTimePeriod=2012&geoLevel=nuts2&precision=6&sectperf=HES&unit=MIO_EUR'
@@ -9,11 +9,12 @@ order: [year, nuts_id, nuts_year_spec, value.id] # do not change; specifies the 
 region:
   type: NutsRegion
   level: 2
+  source: PROVIDED
 schema:
   nuts_id:
-    type: NutsRegion.id
+    type: NutsRegion.nuts_id
   nuts_year_spec:
-    type: NutsRegion.year_spec
+    type: NutsRegion.nuts_year_spec
   value:
     description: Higher education sector R&D expenditure in euros (to the nearest 1000)
     format: string

@@ -1,5 +1,5 @@
 api_doc_url: https://www.nomisweb.co.uk/api/v01/help
-api_type: fetch
+api_type: FETCH
 description_short: Economically active in professionals
 description: Percentage of economically active persons in professional occupations by NUTS 2 regions.
 endpoint_url: https://www.nomisweb.co.uk/api/v01/dataset/NM_17_5.jsonstat.json?geography=1837105153...1837105192&date=latestMINUS23,latestMINUS19,latestMINUS15,latestMINUS11,latestMINUS7,latestMINUS3&variable=353&measures=20599,21001,21002,21003
@@ -9,11 +9,12 @@ order: [year, nuts_id, nuts_year_spec, value.id] # do not change; specifies the 
 region:
   type: NutsRegion # the region type, e.g. NutsRegion or LepRegion
   level: 2
+  source: PROVIDED
 schema:
   nuts_id:
-    type: NutsRegion.id
+    type: NutsRegion.nuts_id
   nuts_year_spec:
-    type: NutsRegion.year_spec
+    type: NutsRegion.nuts_year_spec
   value:
     description: Percentage of population employed in professional occupations.
     format: string
