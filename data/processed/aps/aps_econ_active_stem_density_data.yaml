@@ -17,7 +17,7 @@ schema:
     type: NutsRegion.nuts_year_spec
   value:
     description: Percentage of population employed in professional occupations.
-    format: string
+    format: .1
     label: Percentage
     data_type: float
   year:

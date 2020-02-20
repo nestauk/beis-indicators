@@ -21,7 +21,7 @@ query: string # OPTIONAL - the query we POST-ed (not needed for FETCH), e.g. `{
 region:
   type: string # the region type, e.g. NutsRegion or LepRegion
   level: int # OPTIONAL - useful for NUTS
-  source_url: GeoRegion.source_url # OPTIONAL - see GeoRegion in types.yaml
+  source_url: GeoRegion.source_url # OPTIONAL - see GeoRegion docs in types.yaml
   source: GeoRegion.source # OPTIONAL - see GeoRegion docs in types.yaml
 schema:
   <region_type>_id: # change this key to `nuts_id` or `lep_id`
@@ -30,7 +30,7 @@ schema:
     type: GeoRegion.<region_type>_year_spec # change this key to `NutsRegion.nuts_year_spec` or `LepRegion.lep_year_spec`
   value:
     description: string # a description of the value
-    format: string # OPTIONAL - the render format, useful for floats or dates (e.g. `.2f`), see [1] and [2]
+    format: string # OPTIONAL - the render format, useful for floats or dates (e.g. `.2f`), see [1] and [2], not needed for intergers
     id: string # indicator name, should be identical to the file name (e.g. `berd` and `berd.csv`)
     label: string # a short text to be used as a label in charts
     type: string # (XOR `data_type`) - the value Type (e.g. Euro). Consider using `data_type` first.

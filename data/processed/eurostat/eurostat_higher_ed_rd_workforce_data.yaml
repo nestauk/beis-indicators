@@ -17,9 +17,9 @@ schema:
     type: NutsRegion.nuts_year_spec
   value:
     description: Higher education sector R&D expenditure in euros (to the nearest 1000)
-    format: string
+    format: d
     label: Expenditure (to nearest 1000)
-    type: Euro
+    type: EUR
     data_type: float
   year:
     data_type: int

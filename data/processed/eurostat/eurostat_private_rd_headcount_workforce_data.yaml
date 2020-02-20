@@ -17,7 +17,6 @@ schema:
     type: NutsRegion.nuts_year_spec
   value:
     description: Head count of workforce
-    format: string
     label: Head count
     data_type: int
   year:

@@ -17,7 +17,6 @@ schema:
     type: NutsRegion.nuts_year_spec
   value:
     description: Number of Science, Research, Engineering and Technology associated professionals.
-    format: string
     label: Frequency
     data_type: int
   year:

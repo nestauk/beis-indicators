@@ -17,7 +17,7 @@ schema:
     type: NutsRegion.nuts_year_spec
   value:
     description: Full time equivalent of workforce
-    format: string
+    format: .2
     label: Full Time Equivalent (FTE)
     data_type: float
   year:
