@@ -21,6 +21,7 @@ schema:
     id: gbp_business_consulting
     label: University income from business consulting
     type: GBP
+    data_type: int
   year:
     data_type: int
     label: Year

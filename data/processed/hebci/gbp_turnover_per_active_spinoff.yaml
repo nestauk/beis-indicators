@@ -21,6 +21,7 @@ schema:
     id: gbp_turnnover_per_active_spinoff
     label: Current turnover of active university spinoffs
     type: GBP
+    data_type: int
   year:
     data_type: int
     label: Year

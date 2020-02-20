@@ -21,6 +21,7 @@ schema:
     id: gbp_investment_per_active_spinoff
     label: External investment in active university spinoffs
     type: GBP
+    data_type: int
   year:
     data_type: int
     label: Year

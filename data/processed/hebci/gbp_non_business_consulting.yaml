@@ -21,6 +21,7 @@ schema:
     id: gbp_non_business_consulting
     label: University consultancy income with government and third sector
     type: GBP
+    data_type: int
   year:
     data_type: int
     label: Year

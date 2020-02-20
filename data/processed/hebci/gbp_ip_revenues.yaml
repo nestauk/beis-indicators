@@ -21,6 +21,7 @@ schema:
     id: gbp_ip_revenues
     label: University income from IP licensing
     type: GBP
+    data_type: int
   year:
     data_type: int
     label: Year

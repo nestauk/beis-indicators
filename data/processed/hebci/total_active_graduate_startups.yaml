@@ -20,7 +20,7 @@ schema:
     description: Contract research income with businesses for universities in the NUTS2 region in the academic year starting in year 
     id: total_active_graduate_spinouts
     label: Total active graduate university spinoffs
-    type: GBP
+    data_type: int
   year:
     data_type: int
     label: Year
