@@ -13,9 +13,9 @@ region:
   source: provider
 schema:
   nuts_id:
-    type: GeoRegion.nuts_id
+    type: NutsRegion.nuts_id
   nuts_year_spec:
-    type: GeoRegion.nuts_year_spec
+    type: NutsRegion.nuts_year_spec
   value:
     description: Total number of unique inventions involving organisations in the NUTS2 region in a year (we consider the earliest application year for all patents in the family)
     id: total_inventions
@@ -26,6 +26,3 @@ schema:
     label: Year
 source_name: PATSTAT (https://www.epo.org/searching-for-patents/business/patstat.html)
 year_range: [2013, 2018]
-
-# [1] https://docs.python.org/3/library/string.html#format-specification-mini-language
-# [2] https://github.com/d3/d3-format
