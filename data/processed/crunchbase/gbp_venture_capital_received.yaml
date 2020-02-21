@@ -1,5 +1,5 @@
 api_doc_url: https://github.com/nestauk/data_getters#crunchbase (schema here- https://docs.google.com/presentation/d/1e1aWpQ7M3klHc4iJXJhgpCD77uWFKaFTjVkyvdiNEXw/edit)
-api_type: MySQL
+api_type: FETCH
 auth_provider: Nesta
 data_date: 20200218
 description_short: Venture capital investment
