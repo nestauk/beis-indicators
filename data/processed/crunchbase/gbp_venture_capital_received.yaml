@@ -1,11 +1,13 @@
 api_doc_url: https://github.com/nestauk/data_getters#crunchbase (schema here- https://docs.google.com/presentation/d/1e1aWpQ7M3klHc4iJXJhgpCD77uWFKaFTjVkyvdiNEXw/edit)
 api_type: MySQL
+auth_provider: Nesta
 data_date: 20200218
 description_short: Venture capital investment
 description: Level of venture capital investment in ventures based on a region based on data from CrunchBase. A small number of deals have been converted to GBP at the date when they were announced.
-endpoint_url: https://github.com/nestauk/data_getters#crunchbase
+endpoint_url: https://crunchbase-export.s3.eu-west-2.amazonaws.com/organizations.csv
 framework_group: business_rnd_capacity
 is_experimental: True
+is_public: False
 order: [year, nuts_id, nuts_year_spec, value.id]
 region:
   type:  NutsRegion
