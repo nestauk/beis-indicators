@@ -1,14 +1,17 @@
-api: the type of API to be used to fetch data: gtr.ukri (but processed by Nesta and available from DAPS)
-api_documentation: https://github.com/nestauk/gtr_data_processing
-description: This dataset contains information about research projects funded by UK Research Councils and Innovate UK since ~ 2006. We have combined project and organisation data to analyse geographical activity and labelled projects with their probably discipline based on a semantic description of their abstract. 
-endpoint_source: https://github.com/nestauk/data_getters#gtr
-framework_group: public_rnd_capability
+api_doc_url: https://gtr.ukri.org/resources/GtR-2-API-v1.7.4.pdf
+api_type: MySQL
+data_date: 20200222
+description_short: STEM projects led by organisations in the region
+description: Total number of projects led by organisations in the NUTS area in STEM subjects (see aux/gtr_stem_disciplines for the stem disciplines we are considering)
+endpoint_url: https://github.com/nestauk/data_getters#gtr
+framework_group: 1
 is_experimental: True
 nuts_level: 2
 order: [year, nuts_id, nuts_year_spec, value.id]
-source: https://gtr.ukri.org
-data_date: 20200204
-year_range: [2006, 2018]
+region:
+  type: NutsRegion
+  level: 2
+  source_url: http://geoportal1-ons.opendata.arcgis.com/datasets/48b6b85bb7ea43699ee85f4ecd12fd36_0.zip?outSR=%7B%22latestWkid%22:27700,%22wkid%22:27700%7D
 schema:
   nuts_id:
     type: NutsRegion.id
@@ -17,8 +20,10 @@ schema:
   value:
     description: Total number of projects led by organisations in the NUTS area in STEM subjects (see aux/gtr_stem_disciplines for the stem disciplines we are considering)
     id: total_gtr_projects_stem
-    label: Number of projects in STEM disciplines led by organisations in the area
-    type: total_projects
+    label: Number of projects in STEM disciplines led by organisations in the region
+    data_type: int
   year:
     data_type: int
     label: Year
+source_name: UKRI (https://gtr.ukri.org)
+year_range: [2006, 2018]
