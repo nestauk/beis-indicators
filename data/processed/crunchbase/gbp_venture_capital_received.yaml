@@ -27,6 +27,3 @@ schema:
     label: Year
 source_name: https://www.crunchbase.com/
 year_range: [2011,2019]
-
-# [1] https://docs.python.org/3/library/string.html#format-specification-mini-language
-# [2] https://github.com/d3/d3-format
