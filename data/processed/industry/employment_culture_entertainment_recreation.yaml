@@ -6,15 +6,16 @@ description: This indicator measures level of employment in cultural, entertainm
 endpoint_url: http://www.nomisweb.co.uk/api/v01/dataset/
 framework_group: place_potential
 is_experimental: True
-order: [year, nuts_id, nuts_year_spec, value.id] # USE AS IS: it specifies the order of the exported indicator fields
+order: [year, nuts_id, nuts_year_spec, value.id]
 region:
   type: NutsRegion
   level: 2
+  source: provider
 schema:
   region_id:
-    type: NutsRegion.id
+    type: NutsRegion.nuts_id
   region_year_spec:
-    type: NutsRegion.year_spec
+    type: NutsRegion.nuts_year_spec
   value:
     description: Total employment in cultural, entertainment and leisure industries
     id: employment_culture_entertainment_recreation
@@ -25,6 +26,3 @@ schema:
     label: Year
 source_name: ONS (https://www.nomisweb.co.uk)
 year_range: [2016, 2018]
-
-# [1] https://docs.python.org/3/library/string.html#format-specification-mini-language
-# [2] https://github.com/d3/d3-format
