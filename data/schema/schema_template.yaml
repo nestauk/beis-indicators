@@ -7,6 +7,7 @@ api_type: string # the type of API
    # ElasticSearch: the data is obtained by querying an ElasticSearch endpoint
    # Neo4j: the data is obtained by querying a Neo4j endpoint
    # MySQL: the data is obtained by querying a MySQL endpoint
+auth_provider: string|URL # OPTIONAL – in case the source is not public, the name of the organization providing source access or a URL of a web page where to get or require access, e.g. Nesta, or https://www.foo.com/get_auth
 data_date: Date_YYYYMMDD # OPTIONAL - the date of the data processing, e.g. 20201213
 description_short: string # a brief description of the indicator short enough to be used in menus or sidebars (~40 chars)
 description: string # a description of the indicator, of the data source and transformations that have been applied
@@ -16,6 +17,7 @@ endpoint_url: URL|URL[] # use and array of URLs if multiple files have been down
 derived_from: string[] # OPTIONAL - list of indicator keys this indicator derives from
 framework_group: string # key for the framework group that contains this indicator (from data/aux/framework.json)
 is_experimental: boolean # whether this indicator is experimental
+is_public: boolean # OPTIONAL – provide this if False in case the source is not public
 order: [year, <region_type>_id, <region_type>_year_spec, value.id] # it specifies the order of the exported indicator fields, please substitute `<region_type>` with ` nuts` or `lep`, etc (see GeoRegion.region_type)
 query: string # OPTIONAL - the query we POST-ed (not needed for FETCH), e.g. `{city: 'London'}` in the POST example above, or the query sent to  ElasticSearch, etc.
 region:
@@ -40,6 +42,7 @@ schema:
     label: Year
 source_name: string # the name of the data provider (e.g. Eurostat, NOMIS, etc.)
 year_range: [int, int] # [min year, max year]
+
 
 # [1] https://docs.python.org/3/library/string.html#format-specification-mini-language
 # [2] https://github.com/d3/d3-format
