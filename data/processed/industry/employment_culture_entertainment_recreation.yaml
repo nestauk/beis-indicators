@@ -10,7 +10,7 @@ order: [year, nuts_id, nuts_year_spec, value.id]
 region:
   type: NutsRegion
   level: 2
-  source: provider
+  source: PROVIDED
 schema:
   region_id:
     type: NutsRegion.nuts_id
