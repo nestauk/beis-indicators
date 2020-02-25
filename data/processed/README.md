@@ -12,6 +12,30 @@ The full set of available indicators is listed below.
 Last updated: 02/25/20 UTC
 
 ## Existing capability to perform public R&D
+### The total number of excellent researchers (4* score) submitted by universities in the NUTS-2 region for the 2014 REF
+- **Description:** These are the results of the Research Excellence Framework, where university departments in various disciplines are assessed on the quality of their research. The latest REF was conducted in 2014 so data is available only for one year
+- **Source:** UKRI (https://results.ref.ac.uk/)
+- **Years Available:** 2014 - 2014
+- **Experimental:** Yes
+- [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/ref/mean_ref.csv)
+
+
+### The mean REF score for the NUTS2 area considering only STEM subjects (see aux/ref_stem.txt) for the subjects that we selected. This is the average of the scores in all departments weighted by the Full time equivalents submitted in each category (4*, 3*, 2* with higher scores representing better assessments)
+- **Description:** These are the results of the Research Excellence Framework, where university departments in various disciplines are assessed on the quality of their research. The latest REF was conducted in 2014 so data is available only for one year
+- **Source:** UKRI (https://results.ref.ac.uk/)
+- **Years Available:** 2014 - 2014
+- **Experimental:** Yes
+- [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/ref/mean_ref_stem.csv)
+
+
+### The mean REF score for the NUTS2 area. This is the average of the scores in all departments weighted by the Full time equivalents submitted in each category (4*, 3*, 2* with higher scores representing better assessments)
+- **Description:** These are the results of the Research Excellence Framework, where university departments in various disciplines are assessed on the quality of their research. The latest REF was conducted in 2014 so data is available only for one year
+- **Source:** UKRI (https://results.ref.ac.uk/)
+- **Years Available:** 2014 - 2014
+- **Experimental:** Yes
+- [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/ref/mean_ref.csv)
+
+
 ### Total number of full-time students enrolled in STEM subjects in the area
 - **Description:** Number of students enrolled full-time in STEM subjects in a NUTS2 region (definition of STEM subjects in aux folder) in the starting academic year.
 - **Source:** HESA (Higher Education Statistical Agency) https://www.hesa.ac.uk/
@@ -68,6 +92,70 @@ Last updated: 02/25/20 UTC
 - [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/hesa/total_stem_postgraduates.csv)
 
 
+### Total number of projects led by organisations in the NUTS area in STEM subjects (see aux/gtr_stem_disciplines for the stem disciplines we are considering)
+- **Description:** Total number of projects led by organisations in the NUTS area in STEM subjects (see aux/gtr_stem_disciplines for the stem disciplines we are considering)
+- **Source:** UKRI (https://gtr.ukri.org)
+- **Years Available:** 2006 - 2018
+- **Experimental:** Yes
+- [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/gtr/total_gtr_projects_stem.csv)
+
+
+### Number of Science, Research, Engineering and Technology professionals.
+- **Description:** Number of Science, Research, Engineering and Technology professionals by NUTS 2 regions.
+- **Source:** NOMIS
+- **Years Available:** 2012 - 2018
+- **Experimental:** Yes
+- [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/aps/aps_econ_active_stem_profs_data.csv)
+
+
+### Percentage of population employed in professional occupations.
+- **Description:** Percentage of population employed in professional occupations by NUTS 2 regions.
+- **Source:** NOMIS
+- **Years Available:** 2012 - 2018
+- **Experimental:** Yes
+- [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/aps/aps_pro_occupations_data.csv)
+
+
+### Percentage of population employed in professional occupations.
+- **Description:** Percentage of economically active persons in professional occupations by NUTS 2 regions.
+- **Source:** NOMIS
+- **Years Available:** 2012 - 2018
+- **Experimental:** Yes
+- [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/aps/aps_nvq4_education_data.csv)
+
+
+### Number of Science, Research, Engineering and Technology associated professionals.
+- **Description:** Number of Science, Research, Engineering and Technology associated professionals by NUTS 2 regions.
+- **Source:** NOMIS
+- **Years Available:** 2012 - 2018
+- **Experimental:** Yes
+- [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/aps/aps_econ_active_stem_associate_profs_data.csv)
+
+
+### Private non-profit sector R&D expenditure in euros (to the nearest 1000)
+- **Description:** Private non-profit sector enterprise research & development (R&D) expenditure by NUTS 2 regions.
+- **Source:** Eurostat
+- **Years Available:** 2012 - 2016
+- **Experimental:** Yes
+- [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/eurostat/eurostat_private_non_profit_rd_workforce_data.csv)
+
+
+### Higher education sector R&D expenditure in euros (to the nearest 1000)
+- **Description:** Higher education sector enterprise research & development (R&D) expenditure by NUTS 2 regions.
+- **Source:** Eurostat
+- **Years Available:** 2012 - 2016
+- **Experimental:** Yes
+- [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/eurostat/eurostat_higher_ed_rd_workforce_data.csv)
+
+
+### government performed R&D expenditure in euros (to the nearest 1000)
+- **Description:** Government performed research & development (R&D) expenditure by NUTS 2 regions.
+- **Source:** Eurostat
+- **Years Available:** 2012 - 2016
+- **Experimental:** Yes
+- [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/eurostat/eurostat_gov_rd_workforce_data.csv)
+
+
 ## Business absorptive capacity and private R&D investment
 ### Total amount of venture capital invested in organisations in the location
 - **Description:** Level of venture capital investment in ventures based on a region based on data from CrunchBase. A small number of deals have been converted to GBP at the date when they were announced.
@@ -75,6 +163,38 @@ Last updated: 02/25/20 UTC
 - **Years Available:** 2011 - 2019
 - **Experimental:** Yes
 - [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/crunchbase/gbp_venture_capital_received.csv)
+
+
+### Percentage of population employed in professional occupations.
+- **Description:** Percentage of population employed in science, research, engineering and technology professional by NUTS 2 regions.
+- **Source:** NOMIS
+- **Years Available:** 2012 - 2018
+- **Experimental:** Yes
+- [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/aps/aps_econ_active_stem_density_data.csv)
+
+
+### Full time equivalent of workforce
+- **Description:** Full time equivalent (FTE) of private sector research & development (R&D) workforce-  by NUTS 2 regions.
+- **Source:** Eurostat
+- **Years Available:** 2012 - 2016
+- **Experimental:** Yes
+- [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/eurostat/eurostat_private_rd_fte_workforce_data.csv)
+
+
+### business enterprise R&D expenditure in euros (to the nearest 1000)
+- **Description:** Business enterprise research & development (R&D) expenditure by NUTS 2 regions.
+- **Source:** Eurostat
+- **Years Available:** 2012 - 2016
+- **Experimental:** Yes
+- [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/eurostat/eurostat_berd_data.csv)
+
+
+### Head count of workforce
+- **Description:** Head count (HC) OF private sector research & development (R&D) workforce by NUTS 2 regions.
+- **Source:** Eurostat
+- **Years Available:** 2012 - 2016
+- **Experimental:** Yes
+- [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/eurostat/eurostat_private_rd_headcount_workforce_data.csv)
 
 
 ## Knowledge exchange and commercialisation
