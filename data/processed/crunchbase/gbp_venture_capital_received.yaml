@@ -10,10 +10,9 @@ is_experimental: True
 is_public: False
 order: [year, nuts_id, nuts_year_spec, value.id]
 region:
-  type:  NutsRegion
+  type: NutsRegion
   level: 2
   source_url: https://opendata.arcgis.com/datasets/48b6b85bb7ea43699ee85f4ecd12fd36_0.zip?outSR=%7B%22latestWkid%22%3A27700%2C%22wkid%22%3A27700%7D
-  source: ONS (https://geoportal.statistics.gov.uk/)
 schema:
   region_id:
     type: NutsRegion.id
@@ -24,6 +23,7 @@ schema:
     id: gbp_venture_capital_received
     label: Venture capital investment received
     type: GBP
+    data_type: int
   year:
     data_type: int
     label: Year
