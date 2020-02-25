@@ -1,0 +1,29 @@
+api_doc_url: https://www.hesa.ac.uk/support/definitions/hebci
+api_type: FETCH
+data_date: 20202002
+description_short: University consultancy income with government and third sector
+description: Consultancy income with public sector and third sector organisatoins involving universities in the NUTS2 region in the academic year starting in year 
+endpoint_url: https://www.hesa.ac.uk/data-and-analysis/providers/business-community/table-2a.csv
+framework_group: knowledge_exchange
+is_experimental: False
+order: [year, nuts_id, nuts_year_spec, value.id]
+region:
+  type: NutsRegion
+  level: 2
+  source_url: https://opendata.arcgis.com/datasets/48b6b85bb7ea43699ee85f4ecd12fd36_0.zip?outSR=%7B%22latestWkid%22%3A27700%2C%22wkid%22%3A27700%7D 
+schema:
+  nuts_id:
+    type: NutsRegion.nuts_id
+  nuts_year_spec:
+    type: NutsRegion.nuts_year_spec
+  value:
+    description: Consultancy income with public sector and third sector organisatoins involving universities in the NUTS2 region in the academic year starting in year 
+    id: gbp_non_business_consulting
+    label: University consultancy income with government and third sector
+    type: GBP
+    data_type: int
+  year:
+    data_type: int
+    label: Year
+source_name: HESA (https://www.hesa.ac.uk/)
+year_range: [2014,2017]

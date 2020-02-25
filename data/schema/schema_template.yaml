@@ -1,29 +1,48 @@
-api: the type of API to be used to fetch data: REST, download etc.
-api_documentation: the URL of a documentation page with descriptions of the field meaning (if available)
-description: a brief description of the data source and transformations that have been applied
-endpoint_source: the URL of the api endpoint at which queries or the network requests for dumping the whole dataset can be executed
-endpoint_static: S3 URL of the data file
-framework_group: key for the framework group that contains this indicator (from data/aux/framework.json)  
-is_experimental: boolean, whether this indicator is experimental
-data_date: Datestring
-nuts_level: int
-order: [year, nuts_id, nuts_year_spec, value.id] # do not change; specifies the order of the exported indicator fields
-source: the data provider: Eurostat, NOMIS, etc.
-year_range: [min year, max year]
+api_doc_url: URL # the URL of a documentation page with descriptions of the field meaning (if available)
+api_type: string # the type of API
+   # FETCH: the dataset can be downloaded at a specific URL; this can be:
+    # the URL of a file (e.g. www.download.com/datasets/companies.csv)
+    # or, the URL of a GET REST API (e.g. GET www.api.com/companies/London, returning a response in some format)
+   # POST: the data is obtained by querying a POST REST API with a custom API (e.g. POST-ing `{city: 'London'}` to www.foo.com/companies to get a json response)
+   # ElasticSearch: the data is obtained by querying an ElasticSearch endpoint
+   # Neo4j: the data is obtained by querying a Neo4j endpoint
+   # MySQL: the data is obtained by querying a MySQL endpoint
+auth_provider: string|URL # OPTIONAL – in case the source is not public, the name of the organization providing source access or a URL of a web page where to get or require access, e.g. Nesta, or https://www.foo.com/get_auth
+data_date: Date_YYYYMMDD # OPTIONAL - the date of the data processing, e.g. 20201213
+description_short: string # a brief description of the indicator short enough to be used in menus or sidebars (~40 chars)
+description: string # a description of the indicator, of the data source and transformations that have been applied
+endpoint_url: URL|URL[] # use and array of URLs if multiple files have been downloaded to build this indicator
+  # for querying APIs: the URL of the api endpoint at which queries can be executed
+  # for fetching: the URL where to fetch the data
+derived_from: string[] # OPTIONAL - list of indicator keys this indicator derives from
+framework_group: string # key for the framework group that contains this indicator (from data/aux/framework.json)
+is_experimental: boolean # whether this indicator is experimental
+is_public: boolean # OPTIONAL – provide this if False in case the source is not public
+order: [year, <region_type>_id, <region_type>_year_spec, value.id] # it specifies the order of the exported indicator fields, please substitute `<region_type>` with ` nuts` or `lep`, etc (see GeoRegion.region_type)
+query: string # OPTIONAL - the query we POST-ed (not needed for FETCH), e.g. `{city: 'London'}` in the POST example above, or the query sent to  ElasticSearch, etc.
+region:
+  type: string # the region type, e.g. NutsRegion or LepRegion
+  level: int # OPTIONAL - useful for NUTS
+  source_url: GeoRegion.source_url # OPTIONAL - see GeoRegion docs in types.yaml
+  source: GeoRegion.source # OPTIONAL - see GeoRegion docs in types.yaml
 schema:
-  nuts_id:
-    type: NutsRegion.id
-  nuts_year_spec:
-    type: NutsRegion.year_spec
+  <region_type>_id: # change this key to `nuts_id` or `lep_id`
+    type: GeoRegion.<region_type>_id # change this key to `NutsRegion.nuts_id` or `LepRegion.lep_id`
+  <region_type>_year_spec: # change this key to `nuts_year_spec` or `lep_year_spec`
+    type: GeoRegion.<region_type>_year_spec # change this key to `NutsRegion.nuts_year_spec` or `LepRegion.lep_year_spec`
   value:
-    description: a description of the value
-    format: string # precision of values to show for viz purposes use D3/Python 3 format e.g. .2f (see [1] and [2])
-    id: field name #the field and file names should be identical e.g. berd and berd.csv
-    label: the axis label for this field
-    type: choose a Type e.g. Euro
+    description: string # a description of the value
+    format: string # OPTIONAL - the render format, useful for floats or dates (e.g. `.2f`), see [1] and [2], not needed for intergers
+    id: string # indicator name, should be identical to the file name (e.g. `berd` and `berd.csv`)
+    label: string # a short text to be used as a label in charts
+    type: string # (XOR `data_type`) - the value Type (e.g. Euro). Consider using `data_type` first.
+    data_type: string # (XOR `type`) - use for native types like counts (int) or simple mean values (float). Consider using `type` if the unit has a well known Type (e.g. EUR, densities, etc.)
   year:
     data_type: int
     label: Year
+source_name: string # the name of the data provider (e.g. Eurostat, NOMIS, etc.)
+year_range: [int, int] # [min year, max year]
+
 
 # [1] https://docs.python.org/3/library/string.html#format-specification-mini-language
 # [2] https://github.com/d3/d3-format

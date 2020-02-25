@@ -1,14 +1,17 @@
-
-api: fetch
-api_documentation: https://www.ref.ac.uk/2014/pubs/201401/
+api_doc_url: https://www.ref.ac.uk/2014/pubs/201401/
+api_type: FETCH
+data_date: 20200204
+description_short: Mean REF score
 description: These are the results of the Research Excellence Framework, where university departments in various disciplines are assessed on the quality of their research. The latest REF was conducted in 2014 so data is available only for one year
-endpoint_static: https://results.ref.ac.uk/(S(hlvnuqzwkag44jp3df3d4q14))/DownloadFile/AllResults/xlsx
+endpoint_url: https://results.ref.ac.uk/(S(hlvnuqzwkag44jp3df3d4q14))/DownloadFile/AllResults/xlsx
 framework_group: 1
 is_experimental: False
 nuts_level: 2
-source: UKRI (https://results.ref.ac.uk/)
-year_range: [2014, 2014]
-data_date: 20200204
+order: [year, nuts_id, nuts_year_spec, value.id]
+region:
+  type: NutsRegion
+  level: 2
+  source_url: http://geoportal1-ons.opendata.arcgis.com/datasets/48b6b85bb7ea43699ee85f4ecd12fd36_0.zip?outSR=%7B%22latestWkid%22:27700,%22wkid%22:27700%7D
 schema:
   nuts_id:
     type: NutsRegion.id
@@ -22,3 +25,5 @@ schema:
   year:
     data_type: int
     label: Year
+source_name: UKRI (https://results.ref.ac.uk/)
+year_range: [2014, 2014]

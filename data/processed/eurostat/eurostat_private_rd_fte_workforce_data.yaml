@@ -1,0 +1,27 @@
+api_doc_url: https://ec.europa.eu/eurostat/cache/metadata/en/rd_esms.htm
+api_type: FETCH
+description_short: FTE of R&D workforce
+description: Full time equivalent (FTE) of private sector research & development (R&D) workforce-  by NUTS 2 regions.
+endpoint_url: http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/rd_p_persreg?sinceTimePeriod=2012&geoLevel=nuts2&precision=1&sex=T&sectperf=BES&prof_pos=TOTAL&unit=FTE
+framework_group: 2
+is_experimental: False
+order: [year, nuts_id, nuts_year_spec, value.id] # do not change; specifies the order of the exported indicator fields
+region:
+  type: NutsRegion
+  level: 2
+  source: PROVIDED
+schema:
+  nuts_id:
+    type: NutsRegion.nuts_id
+  nuts_year_spec:
+    type: NutsRegion.nuts_year_spec
+  value:
+    description: Full time equivalent of workforce
+    format: .2
+    label: Full Time Equivalent (FTE)
+    data_type: float
+  year:
+    data_type: int
+    label: Year
+source_name: Eurostat
+year_range: [2012, 2016]

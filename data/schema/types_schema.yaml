@@ -1,29 +1,38 @@
-#################
-### GEOGRAPHY ###
-#################
+# GEOGRAPHY
 
 NutsRegion:
-  id: string # NUTS region ID e.g. UKF2 
-  label: string # short label for the UI, e.g. UKF2 NUTS2 region
-  description: string # long description for the UI, e.g. Leicestershire, Rutland and Northamptonshire, UKF2 NUTS2 region
-  level: int # e.g. 2
-  year_spec: int # year of specification release
-  year_enforced: int # year of spec being enforced
+  level: int # e.g. 1|2|3
+  name: GeoRegion.name # e.g. Leicestershire, Rutland and Northamptonshire
+  nuts_id: GeoRegion.<region_type>_id # e.g. UKF2
+  nuts_year_enforced: GeoRegion.<region_type>_year_enforced
+  nuts_year_spec: GeoRegion.<region_type>_year_spec
+  region_type: nuts
+  source_url: GeoRegion.source_url
+  source: GeoRegion.source
+  type: GeoRegion
 
-#############
-### UNITS ###
-#############
+LepRegion:
+  lep_id: GeoRegion.id # e.g. E37000001
+  lep_year_enforced: GeoRegion.year_enforced
+  lep_year_spec: GeoRegion.year_spec
+  name: GeoRegion.name # e.g. Black Country
+  region_type: lep
+  source_url: GeoRegion.source_url
+  source: GeoRegion.source
+  type: GeoRegion
+
+
+# UNITS
 
 Unit:
-  kind: str
-  label: str
-  data_type: str
-  unit: str
-  description: str #optional
+  kind: string # e.g. density, currency
+  label: string # short text
+  data_type: string
+  unit_string: string # e.g. mg m^-3
+  unit_latex: string # e.g. \SI{32}{mg.m^{-3}}
+  description: string # OPTIONAL
 
 Datestring:
-  date_type: string
-  format: YYYYMMDD
-  kind: date
-
-  
+  data_type: string
+  format: string # e.g. YYYYMMDD
+  kind: string # date

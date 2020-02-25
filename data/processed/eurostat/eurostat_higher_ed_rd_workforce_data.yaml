@@ -1,16 +1,28 @@
-API: Eurostat API
-API documentation: https://ec.europa.eu/eurostat/cache/metadata/en/rd_esms.htm
-Dataset code: rd_e_gerdreg
-endpoint: http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/rd_e_gerdreg?sinceTimePeriod=2012&geoLevel=nuts2&precision=2&sectperf=HES&unit=EUR_HAB&unit=MIO_EUR'
+api_doc_url: https://ec.europa.eu/eurostat/cache/metadata/en/rd_esms.htm
+api_type: FETCH
+description_short: Higher Edu R&D
+description: Higher education sector enterprise research & development (R&D) expenditure by NUTS 2 regions.
+endpoint_url: http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/rd_e_gerdreg?sinceTimePeriod=2012&geoLevel=nuts2&precision=6&sectperf=HES&unit=MIO_EUR'
+framework_group: 1
+is_experimental: False
+order: [year, nuts_id, nuts_year_spec, value.id] # do not change; specifies the order of the exported indicator fields
+region:
+  type: NutsRegion
+  level: 2
+  source: PROVIDED
 schema:
-  geo_name:
-    type: string
-    description: name of NUTS2 (2013) region
-  geo:
-    type: string
-    description: NUTS2 (2013) region code
-  time:
-     type: integer
-     description: year
-  euro per inhabitant: float
-  euros (Millions): float
+  nuts_id:
+    type: NutsRegion.nuts_id
+  nuts_year_spec:
+    type: NutsRegion.nuts_year_spec
+  value:
+    description: Higher education sector R&D expenditure in euros (to the nearest 1000)
+    format: d
+    label: Expenditure (to nearest 1000)
+    type: EUR
+    data_type: float
+  year:
+    data_type: int
+    label: Year
+source_name: Eurostat
+year_range: [2012, 2016]

@@ -1,13 +1,16 @@
-api: fetch
-api_documentation: https://www.hesa.ac.uk/data-and-analysis/estates/table-1
+api_doc_url: https://www.hesa.ac.uk/data-and-analysis/estates/table-1
+api_type: FETCH
+description_short: Area of university site
 description: Area of university sites for universities in the NUTS2 region
-endpoint_static: https://www.hesa.ac.uk/data-and-analysis/estates/data.csv
+endpoint_url: https://www.hesa.ac.uk/data-and-analysis/estates/data.csv
 framework_group: public_rnd_capability
 is_experimental: False
 nuts_level: 2
 order: [year, nuts_id, nuts_year_spec, value.id]
-source: HESA (Higher Education Statistical Agency) https://www.hesa.ac.uk/
-year_range: [2015,2017]
+region:
+  type: NutsRegion
+  level: 2
+  source_url: http://geoportal1-ons.opendata.arcgis.com/datasets/48b6b85bb7ea43699ee85f4ecd12fd36_0.zip?outSR=%7B%22latestWkid%22:27700,%22wkid%22:27700%7D
 schema:
   nuts_id:
     type: NutsRegion.id
@@ -22,3 +25,5 @@ schema:
   year:
     data_type: int
     label: Academic year (start)
+source_name: HESA (Higher Education Statistical Agency) https://www.hesa.ac.uk/
+year_range: [2015,2017]
