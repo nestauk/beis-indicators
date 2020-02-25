@@ -43,8 +43,7 @@ def generate_indicator_text(processed_dir):
         schema_dirs = [os.path.join(subdir, f) for f in files if f[-4:] == 'yaml']
         for schema in schema_dirs:
             schema_md, framework_group = generate_dataset_entry(schema)
-            if type(framework_group) == str:
-                schema_groups[framework_group].append(schema_md)
+            schema_groups[framework_group].append(schema_md)
     
     md = ''
     for k, group in schema_groups.items():
