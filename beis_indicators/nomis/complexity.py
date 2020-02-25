@@ -30,9 +30,9 @@ def make_nomis_complexity(project_dir=None):
     logger.info(
         f"Calculating ECI&PCI for BRES and NOMIS. years: `{years}`, geo: `{geo_type}`"
     )
-    fin_stub = f"{project_dir}/data/processed/nomis"
-    eci_fout = f"{project_dir}/data/processed/nomis_ECI.csv"
-    pci_fout = f"{project_dir}/data/processed/nomis_PCI.csv"
+    fin_stub = f"{project_dir}/data/interim/industry/nomis"
+    eci_fout = f"{project_dir}/data/interim/industry/nomis_ECI.csv"
+    pci_fout = f"{project_dir}/data/interim/industry/nomis_PCI.csv"
 
     # Cartesian product: year x datset x taxonomy
     params = list(
