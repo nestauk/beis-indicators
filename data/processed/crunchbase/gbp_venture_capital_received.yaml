@@ -1,0 +1,31 @@
+api_doc_url: https://github.com/nestauk/data_getters#crunchbase (schema here- https://docs.google.com/presentation/d/1e1aWpQ7M3klHc4iJXJhgpCD77uWFKaFTjVkyvdiNEXw/edit)
+api_type: FETCH
+auth_provider: Nesta
+data_date: 20200218
+description_short: Venture capital investment
+description: Level of venture capital investment in ventures based on a region based on data from CrunchBase. A small number of deals have been converted to GBP at the date when they were announced.
+endpoint_url: https://crunchbase-export.s3.eu-west-2.amazonaws.com/organizations.csv
+framework_group: business_rnd_capacity
+is_experimental: True
+is_public: False
+order: [year, nuts_id, nuts_year_spec, value.id]
+region:
+  type: NutsRegion
+  level: 2
+  source_url: https://opendata.arcgis.com/datasets/48b6b85bb7ea43699ee85f4ecd12fd36_0.zip?outSR=%7B%22latestWkid%22%3A27700%2C%22wkid%22%3A27700%7D
+schema:
+  region_id:
+    type: NutsRegion.id
+  region_year_spec:
+    type: NutsRegion.year_spec
+  value:
+    description: Total amount of venture capital invested in organisations in the location
+    id: gbp_venture_capital_received
+    label: Venture capital investment received
+    type: GBP
+    data_type: int
+  year:
+    data_type: int
+    label: Year
+source_name: https://www.crunchbase.com/
+year_range: [2011,2019]

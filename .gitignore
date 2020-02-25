@@ -83,6 +83,7 @@ target/
 /data/raw/
 /data/external/
 /data/interim/
+/data/shapefiles
 
 # Mac OS-specific storage files
 .DS_Store

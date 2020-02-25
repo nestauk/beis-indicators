@@ -11,7 +11,7 @@ git+https://github.com/nestauk/data_getters.git
 ratelim
 geopandas
 shapely
-
+rtree
 
 # local package
 -e .
