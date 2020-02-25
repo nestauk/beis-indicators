@@ -18,6 +18,7 @@ schema:
   value:
     description: business enterprise R&D expenditure in euros (to the nearest 1000)
     format: d
+    id: eurostat_berd_data
     label: Expenditure (to nearest 1000)
     type: EUR
     data_type: float

@@ -17,6 +17,7 @@ schema:
     type: NutsRegion.nuts_year_spec
   value:
     description: Head count of workforce
+    id: eurostat_private_rd_headcount_workforce_data
     label: Head count
     data_type: int
   year:

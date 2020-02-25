@@ -18,6 +18,7 @@ schema:
   value:
     description: Full time equivalent of workforce
     format: .2
+    id: eurostat_private_rd_fte_workforce_data
     label: Full Time Equivalent (FTE)
     data_type: float
   year:
