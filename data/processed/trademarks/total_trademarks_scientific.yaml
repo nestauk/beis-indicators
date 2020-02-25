@@ -1,27 +1,28 @@
-api: fetch
-api_documentation: https://www.gov.uk/government/publications/ipo-trade-mark-data-release/ipo-data-explained-2016
-description: An open dataset with information about trademark applications and registrations in the UK
-endpoint_static: https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/680986/opendatadomestic.zip
+api_doc_url: https://www.gov.uk/government/publications/ipo-trade-mark-data-release/ipo-data-explained-2016
+api_type: FETCH
+data_date: 20200225
+description_short: Total number of trademarks in science and technology fields
+description: Total number of trademarks in scientific and technological product fields published by organisations in the region based on the IPO open trademark dataset
+endpoint_url: https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/680986/opendatadomestic.zip
 framework_group: knowledge_exchange
 is_experimental: False
-data_date: 20200214
-nuts_level: 2
-order: [year, nuts_id, nuts_year_spec, value.id] # do not change; specifies the order of the exported indicator fields
-source: https://www.gov.uk/
-year_range: [2010,2017]
+order: [year, nuts_id, nuts_year_spec, value.id]
+region:
+  type: NutsRegion
+  level: 2
+  source_url: http://geoportal1-ons.opendata.arcgis.com/datasets/48b6b85bb7ea43699ee85f4ecd12fd36_0.zip?outSR=%7B%22latestWkid%22:27700,%22wkid%22:27700%7D
 schema:
   nuts_id:
-    type: NutsRegion.id
-  nuts_year_spec:
-    type: NutsRegion.year_spec
+    type: NutsRegion.nuts_id
+  nuts_year_spec: nuts_year_spec
+    type: NutsRegion.nuts_year_spec
   value:
-    description: Total trademarks published in scientific product codes by organisations in the NUTS2 region
-    id: total_trademarks_scientific.csv
-    label: Total number of trademarks in scientific product codes
-    type: int
+    description: Total number of trademarks in scientific and technological product fields published by organisations in the region based on the IPO open trademark dataset
+    id: total_trademarks_scientific
+    label: Total number of trademarks in science and technology fields
+    data_type: int
   year:
     data_type: int
     label: Year
-
-# [1] https://docs.python.org/3/library/string.html#format-specification-mini-language
-# [2] https://github.com/d3/d3-format
+source_name: IPO (https://www.gov.uk/government/organisations/intellectual-property-office)
+year_range: [2010, 2027]
