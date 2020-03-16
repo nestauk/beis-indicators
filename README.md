@@ -1,4 +1,4 @@
-Beis Indicators 
+Beis Indicators
 ===============
 
 Regional indicators for BEIS to assess regional conditions needed for value for money of regional R&D spend.
@@ -6,9 +6,11 @@ Regional indicators for BEIS to assess regional conditions needed for value for 
 Project Organization
 ------------
 
-    ├── LICENSE
+├── LICENSE
+├── README.md              <- The top-level README for developers using this project.
+└── ds
     ├── Makefile           <- Makefile with commands like `make data` or `make dvc`
-    ├── README.md          <- The top-level README for developers using this project.
+    ├── README.md          <- The README for the analysis
     ├── data
     │   ├── README.md
     │   ├── external       <- Data from third party sources.
@@ -28,7 +30,7 @@ Project Organization
     ├── notebooks          <- Jupyter notebooks. Notebooks at the top level should have a markdown header
     │   │                     outlining the notebook and should avoid function calls in favour of factored out code.
     │   ├── notebook_preamble.ipy
-    │   │                     
+    │   │
     │   └── dev            <- Development notebooks. Naming convention is a number (for ordering),
     │                         the creator's initials, and a short `_` delimited description, e.g.
     │                         `01_jmg_eda.ipynb`.
