@@ -1,9 +1,10 @@
 {
   "dependencies": {},
-  "description": "Front-end of showing regional indicators for BEIS to assess regional conditions needed for value for money of regional R&D spend.",
+  "description": "Front-end for BEIS regional indicators",
   "devDependencies": {
     "@svizzle/dev": "^0.3.0",
     "@svizzle/file": "^0.6.0",
+    "@svizzle/utils": "^0.5.0",
     "eslint": "^6.8.0",
     "esm": "^3.0.84",
     "js-yaml": "^3.13.1",

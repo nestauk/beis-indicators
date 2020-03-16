@@ -40,7 +40,8 @@
     "year_range": [
       2012,
       2018
-    ]
+    ],
+    "url": "https://raw.githubusercontent.com/nestauk/beis-indicators/dev/ds/data/processed/aps/aps_econ_active_stem_associate_profs_data.csv"
   },
   {
     "api_doc_url": "https://www.nomisweb.co.uk/api/v01/help",
@@ -84,7 +85,8 @@
     "year_range": [
       2012,
       2018
-    ]
+    ],
+    "url": "https://raw.githubusercontent.com/nestauk/beis-indicators/dev/ds/data/processed/aps/aps_econ_active_stem_density_data.csv"
   },
   {
     "api_doc_url": "https://www.nomisweb.co.uk/api/v01/help",
@@ -127,7 +129,8 @@
     "year_range": [
       2012,
       2018
-    ]
+    ],
+    "url": "https://raw.githubusercontent.com/nestauk/beis-indicators/dev/ds/data/processed/aps/aps_econ_active_stem_profs_data.csv"
   },
   {
     "api_doc_url": "https://www.nomisweb.co.uk/api/v01/help",
@@ -171,7 +174,8 @@
     "year_range": [
       2012,
       2018
-    ]
+    ],
+    "url": "https://raw.githubusercontent.com/nestauk/beis-indicators/dev/ds/data/processed/aps/aps_nvq4_education_data.csv"
   },
   {
     "api_doc_url": "https://www.nomisweb.co.uk/api/v01/help",
@@ -215,7 +219,8 @@
     "year_range": [
       2012,
       2018
-    ]
+    ],
+    "url": "https://raw.githubusercontent.com/nestauk/beis-indicators/dev/ds/data/processed/aps/aps_pro_occupations_data.csv"
   },
   {
     "api_doc_url": "https://github.com/nestauk/data_getters#crunchbase (schema here- https://docs.google.com/presentation/d/1e1aWpQ7M3klHc4iJXJhgpCD77uWFKaFTjVkyvdiNEXw/edit)",
@@ -262,7 +267,8 @@
     "year_range": [
       2011,
       2019
-    ]
+    ],
+    "url": "https://raw.githubusercontent.com/nestauk/beis-indicators/dev/ds/data/processed/crunchbase/gbp_venture_capital_received.csv"
   },
   {
     "api_doc_url": "https://uk-air.defra.gov.uk/data/pcm-data",
@@ -320,7 +326,8 @@
     "year_range": [
       2007,
       2018
-    ]
+    ],
+    "url": "https://raw.githubusercontent.com/nestauk/beis-indicators/dev/ds/data/processed/defra/air_pollution_mean_pm10.csv"
   },
   {
     "api_doc_url": "https://ec.europa.eu/eurostat/cache/metadata/en/rd_esms.htm",
@@ -365,7 +372,8 @@
     "year_range": [
       2012,
       2016
-    ]
+    ],
+    "url": "https://raw.githubusercontent.com/nestauk/beis-indicators/dev/ds/data/processed/eurostat/eurostat_berd_data.csv"
   },
   {
     "api_doc_url": "https://ec.europa.eu/eurostat/cache/metadata/en/rd_esms.htm",
@@ -410,7 +418,8 @@
     "year_range": [
       2012,
       2016
-    ]
+    ],
+    "url": "https://raw.githubusercontent.com/nestauk/beis-indicators/dev/ds/data/processed/eurostat/eurostat_gov_rd_workforce_data.csv"
   },
   {
     "api_doc_url": "https://ec.europa.eu/eurostat/cache/metadata/en/rd_esms.htm",
@@ -455,7 +464,8 @@
     "year_range": [
       2012,
       2016
-    ]
+    ],
+    "url": "https://raw.githubusercontent.com/nestauk/beis-indicators/dev/ds/data/processed/eurostat/eurostat_higher_ed_rd_workforce_data.csv"
   },
   {
     "api_doc_url": "https://ec.europa.eu/eurostat/cache/metadata/en/rd_esms.htm",
@@ -500,7 +510,8 @@
     "year_range": [
       2012,
       2016
-    ]
+    ],
+    "url": "https://raw.githubusercontent.com/nestauk/beis-indicators/dev/ds/data/processed/eurostat/eurostat_private_non_profit_rd_workforce_data.csv"
   },
   {
     "api_doc_url": "https://ec.europa.eu/eurostat/cache/metadata/en/rd_esms.htm",
@@ -544,7 +555,8 @@
     "year_range": [
       2012,
       2016
-    ]
+    ],
+    "url": "https://raw.githubusercontent.com/nestauk/beis-indicators/dev/ds/data/processed/eurostat/eurostat_private_rd_fte_workforce_data.csv"
   },
   {
     "api_doc_url": "https://ec.europa.eu/eurostat/cache/metadata/en/rd_esms.htm",
@@ -587,7 +599,8 @@
     "year_range": [
       2012,
       2016
-    ]
+    ],
+    "url": "https://raw.githubusercontent.com/nestauk/beis-indicators/dev/ds/data/processed/eurostat/eurostat_private_rd_headcount_workforce_data.csv"
   },
   {
     "api_doc_url": "https://gtr.ukri.org/resources/GtR-2-API-v1.7.4.pdf",
@@ -634,7 +647,8 @@
     "year_range": [
       2006,
       2018
-    ]
+    ],
+    "url": "https://raw.githubusercontent.com/nestauk/beis-indicators/dev/ds/data/processed/gtr/total_gtr_projects_stem.csv"
   },
   {
     "api_doc_url": "https://www.hesa.ac.uk/support/definitions/hebci",
@@ -679,7 +693,8 @@
     "year_range": [
       2014,
       2017
-    ]
+    ],
+    "url": "https://raw.githubusercontent.com/nestauk/beis-indicators/dev/ds/data/processed/hebci/gbp_business_consulting.csv"
   },
   {
     "api_doc_url": "https://www.hesa.ac.uk/support/definitions/hebci",
@@ -724,7 +739,8 @@
     "year_range": [
       2014,
       2017
-    ]
+    ],
+    "url": "https://raw.githubusercontent.com/nestauk/beis-indicators/dev/ds/data/processed/hebci/gbp_business_contract_research.csv"
   },
   {
     "api_doc_url": "https://www.hesa.ac.uk/support/definitions/hebci",
@@ -769,7 +785,8 @@
     "year_range": [
       2014,
       2017
-    ]
+    ],
+    "url": "https://raw.githubusercontent.com/nestauk/beis-indicators/dev/ds/data/processed/hebci/gbp_investment_per_active_spinoff.csv"
   },
   {
     "api_doc_url": "https://www.hesa.ac.uk/support/definitions/hebci",
@@ -814,7 +831,8 @@
     "year_range": [
       2014,
       2017
-    ]
+    ],
+    "url": "https://raw.githubusercontent.com/nestauk/beis-indicators/dev/ds/data/processed/hebci/gbp_ip_revenues.csv"
   },
   {
     "api_doc_url": "https://www.hesa.ac.uk/support/definitions/hebci",
@@ -859,7 +877,8 @@
     "year_range": [
       2014,
       2017
-    ]
+    ],
+    "url": "https://raw.githubusercontent.com/nestauk/beis-indicators/dev/ds/data/processed/hebci/gbp_non_business_consulting.csv"
   },
   {
     "api_doc_url": "https://www.hesa.ac.uk/support/definitions/hebci",
@@ -904,7 +923,8 @@
     "year_range": [
       2014,
       2017
-    ]
+    ],
+    "url": "https://raw.githubusercontent.com/nestauk/beis-indicators/dev/ds/data/processed/hebci/gbp_turnover_per_active_spinoff.csv"
   },
   {
     "api_doc_url": "https://www.hesa.ac.uk/support/definitions/hebci",
@@ -948,7 +968,8 @@
     "year_range": [
       2014,
       2017
-    ]
+    ],
+    "url": "https://raw.githubusercontent.com/nestauk/beis-indicators/dev/ds/data/processed/hebci/total_active_graduate_startups.csv"
   },
   {
     "api_doc_url": "https://www.hesa.ac.uk/data-and-analysis/estates/table-1",
@@ -993,7 +1014,8 @@
     "year_range": [
       2015,
       2017
-    ]
+    ],
+    "url": "https://raw.githubusercontent.com/nestauk/beis-indicators/dev/ds/data/processed/hesa/area_university_site.csv"
   },
   {
     "api_doc_url": "https://www.hesa.ac.uk/data-and-analysis/estates/table-1",
@@ -1037,7 +1059,8 @@
     "year_range": [
       2015,
       2017
-    ]
+    ],
+    "url": "https://raw.githubusercontent.com/nestauk/beis-indicators/dev/ds/data/processed/hesa/fte_research_students.csv"
   },
   {
     "api_doc_url": "https://www.hesa.ac.uk/data-and-analysis/estates/table-1",
@@ -1081,7 +1104,8 @@
     "year_range": [
       2015,
       2017
-    ]
+    ],
+    "url": "https://raw.githubusercontent.com/nestauk/beis-indicators/dev/ds/data/processed/hesa/gbp_research_income.csv"
   },
   {
     "api_doc_url": "https://www.hesa.ac.uk/data-and-analysis/students",
@@ -1125,7 +1149,8 @@
     "year_range": [
       2014,
       2018
-    ]
+    ],
+    "url": "https://raw.githubusercontent.com/nestauk/beis-indicators/dev/ds/data/processed/hesa/total_postgraduates.csv"
   },
   {
     "api_doc_url": "https://www.hesa.ac.uk/data-and-analysis/students",
@@ -1169,7 +1194,8 @@
     "year_range": [
       2014,
       2018
-    ]
+    ],
+    "url": "https://raw.githubusercontent.com/nestauk/beis-indicators/dev/ds/data/processed/hesa/total_stem_postgraduates.csv"
   },
   {
     "api_doc_url": "https://www.hesa.ac.uk/data-and-analysis/students",
@@ -1213,7 +1239,8 @@
     "year_range": [
       2014,
       2018
-    ]
+    ],
+    "url": "https://raw.githubusercontent.com/nestauk/beis-indicators/dev/ds/data/processed/hesa/total_stem_students.csv"
   },
   {
     "api_doc_url": "https://www.hesa.ac.uk/data-and-analysis/estates/table-1",
@@ -1257,7 +1284,8 @@
     "year_range": [
       2015,
       2017
-    ]
+    ],
+    "url": "https://raw.githubusercontent.com/nestauk/beis-indicators/dev/ds/data/processed/hesa/total_university_buildings.csv"
   },
   {
     "api_doc_url": "https://www.nomisweb.co.uk/api/v01/help",
@@ -1301,7 +1329,8 @@
     "year_range": [
       2016,
       2018
-    ]
+    ],
+    "url": "https://raw.githubusercontent.com/nestauk/beis-indicators/dev/ds/data/processed/industry/employment_culture_entertainment_recreation.csv"
   },
   {
     "api_doc_url": "https://github.com/nestauk/patent_analysis/raw/master/references/patstat_data_dict.pdf",
@@ -1345,7 +1374,8 @@
     "year_range": [
       2013,
       2018
-    ]
+    ],
+    "url": "https://raw.githubusercontent.com/nestauk/beis-indicators/dev/ds/data/processed/patents/total_inventions.csv"
   },
   {
     "api_doc_url": "https://www.ref.ac.uk/2014/pubs/201401/",
@@ -1390,7 +1420,8 @@
     "year_range": [
       2014,
       2014
-    ]
+    ],
+    "url": "https://raw.githubusercontent.com/nestauk/beis-indicators/dev/ds/data/processed/ref/mean_ref.csv"
   },
   {
     "api_doc_url": "https://www.ref.ac.uk/2014/pubs/201401/",
@@ -1435,7 +1466,8 @@
     "year_range": [
       2014,
       2014
-    ]
+    ],
+    "url": "https://raw.githubusercontent.com/nestauk/beis-indicators/dev/ds/data/processed/ref/mean_ref_stem.csv"
   },
   {
     "api_doc_url": "https://www.ref.ac.uk/2014/pubs/201401/",
@@ -1480,7 +1512,8 @@
     "year_range": [
       2014,
       2014
-    ]
+    ],
+    "url": "https://raw.githubusercontent.com/nestauk/beis-indicators/dev/ds/data/processed/ref/total_4_fte.csv"
   },
   {
     "api_doc_url": "https://www.gov.uk/government/publications/ipo-trade-mark-data-release/ipo-data-explained-2016",
@@ -1524,7 +1557,8 @@
     "year_range": [
       2010,
       2027
-    ]
+    ],
+    "url": "https://raw.githubusercontent.com/nestauk/beis-indicators/dev/ds/data/processed/trademarks/total_trademarks.csv"
   },
   {
     "api_doc_url": "https://www.gov.uk/government/publications/ipo-trade-mark-data-release/ipo-data-explained-2016",
@@ -1568,6 +1602,7 @@
     "year_range": [
       2010,
       2027
-    ]
+    ],
+    "url": "https://raw.githubusercontent.com/nestauk/beis-indicators/dev/ds/data/processed/trademarks/total_trademarks_scientific.csv"
   }
 ]
