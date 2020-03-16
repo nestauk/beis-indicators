@@ -3,9 +3,9 @@ Beis Indicators
 
 Regional indicators for BEIS to assess regional conditions needed for value for money of regional R&D spend.
 
-Project Organization
-------------
+Project Organisation
 
+```
 ├── LICENSE
 ├── README.md              <- The top-level README for developers using this project.
 └── ds
@@ -65,8 +65,6 @@ Project Organization
     │       └── visualize.py
     │
     └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
-
-
---------
+```
 
 <p><small>Project based on the <a target="_blank" href="https://github.com/nestauk/cookiecutter-data-science-nesta">Nesta cookiecutter data science project template</a>.</small></p>

@@ -1,0 +1,1573 @@
+[
+  {
+    "api_doc_url": "https://www.nomisweb.co.uk/api/v01/help",
+    "api_type": "FETCH",
+    "description_short": "Associated STEM professionals",
+    "description": "Number of Science, Research, Engineering and Technology associated professionals by NUTS 2 regions.",
+    "endpoint_url": "https://www.nomisweb.co.uk/api/v01/dataset/NM_17_1.jsonstat.json?geography=1837105153...1837105192&date=latestMINUS23,latestMINUS19,latestMINUS15,latestMINUS11,latestMINUS7,latestMINUS3&cell=404882177,404883201&measures=20100,20701",
+    "framework_group": "public_rnd_capability",
+    "is_experimental": false,
+    "order": [
+      "year",
+      "nuts_id",
+      "nuts_year_spec",
+      "value.id"
+    ],
+    "region": {
+      "type": "NutsRegion",
+      "level": 2,
+      "source": "PROVIDED"
+    },
+    "schema": {
+      "nuts_id": {
+        "type": "NutsRegion.nuts_id"
+      },
+      "nuts_year_spec": {
+        "type": "NutsRegion.nuts_year_spec"
+      },
+      "value": {
+        "description": "Number of Science, Research, Engineering and Technology associated professionals.",
+        "id": "aps_econ_active_stem_associate_profs_data",
+        "label": "Frequency",
+        "data_type": "int"
+      },
+      "year": {
+        "data_type": "int",
+        "label": "Year"
+      }
+    },
+    "source_name": "NOMIS",
+    "year_range": [
+      2012,
+      2018
+    ]
+  },
+  {
+    "api_doc_url": "https://www.nomisweb.co.uk/api/v01/help",
+    "api_type": "FETCH",
+    "description_short": "STEM employee density",
+    "description": "Percentage of population employed in science, research, engineering and technology professional by NUTS 2 regions.",
+    "endpoint_url": "https://www.nomisweb.co.uk/api/v01/dataset/NM_17_5.jsonstat.json?geography=1837105153...1837105192&date=latestMINUS23,latestMINUS19,latestMINUS15,latestMINUS11,latestMINUS7,latestMINUS3&variable=1543&measures=20599,21001,21002,21003",
+    "framework_group": "business_rnd_capacity",
+    "is_experimental": false,
+    "order": [
+      "year",
+      "nuts_id",
+      "nuts_year_spec",
+      "value.id"
+    ],
+    "region": {
+      "type": "NutsRegion",
+      "level": 2,
+      "source": "PROVIDED"
+    },
+    "schema": {
+      "nuts_id": {
+        "type": "NutsRegion.nuts_id"
+      },
+      "nuts_year_spec": {
+        "type": "NutsRegion.nuts_year_spec"
+      },
+      "value": {
+        "description": "Percentage of population employed in professional occupations.",
+        "format": 0.1,
+        "id": "aps_econ_active_stem_density_data",
+        "label": "Percentage",
+        "data_type": "float"
+      },
+      "year": {
+        "data_type": "int",
+        "label": "Year"
+      }
+    },
+    "source_name": "NOMIS",
+    "year_range": [
+      2012,
+      2018
+    ]
+  },
+  {
+    "api_doc_url": "https://www.nomisweb.co.uk/api/v01/help",
+    "api_type": "FETCH",
+    "description_short": "STEM professionals",
+    "description": "Number of Science, Research, Engineering and Technology professionals by NUTS 2 regions.",
+    "endpoint_url": "https://www.nomisweb.co.uk/api/v01/dataset/NM_17_1.jsonstat.json?geography=1837105153...1837105192&date=latestMINUS23,latestMINUS19,latestMINUS15,latestMINUS11,latestMINUS7,latestMINUS3&cell=404882177,404883201&measures=20100,20701",
+    "framework_group": "public_rnd_capability",
+    "is_experimental": false,
+    "order": [
+      "year",
+      "nuts_id",
+      "nuts_year_spec",
+      "value.id"
+    ],
+    "region": {
+      "type": "NutsRegion",
+      "level": 2,
+      "source": "PROVIDED"
+    },
+    "schema": {
+      "nuts_id": {
+        "type": "NutsRegion.nuts_id"
+      },
+      "nuts_year_spec": {
+        "type": "NutsRegion.nuts_year_spec"
+      },
+      "value": {
+        "description": "Number of Science, Research, Engineering and Technology professionals.",
+        "id": "aps_econ_active_stem_profs_data",
+        "label": "Frequency",
+        "data_type": "int"
+      },
+      "year": {
+        "data_type": "int",
+        "label": "Year"
+      }
+    },
+    "source_name": "NOMIS",
+    "year_range": [
+      2012,
+      2018
+    ]
+  },
+  {
+    "api_doc_url": "https://www.nomisweb.co.uk/api/v01/help",
+    "api_type": "FETCH",
+    "description_short": "Economically active in professionals",
+    "description": "Percentage of economically active persons in professional occupations by NUTS 2 regions.",
+    "endpoint_url": "https://www.nomisweb.co.uk/api/v01/dataset/NM_17_5.jsonstat.json?geography=1837105153...1837105192&date=latestMINUS23,latestMINUS19,latestMINUS15,latestMINUS11,latestMINUS7,latestMINUS3&variable=353&measures=20599,21001,21002,21003",
+    "framework_group": "public_rnd_capability",
+    "is_experimental": false,
+    "order": [
+      "year",
+      "nuts_id",
+      "nuts_year_spec",
+      "value.id"
+    ],
+    "region": {
+      "type": "NutsRegion",
+      "level": 2,
+      "source": "PROVIDED"
+    },
+    "schema": {
+      "nuts_id": {
+        "type": "NutsRegion.nuts_id"
+      },
+      "nuts_year_spec": {
+        "type": "NutsRegion.nuts_year_spec"
+      },
+      "value": {
+        "description": "Percentage of population employed in professional occupations.",
+        "format": 0.1,
+        "id": "aps_nvq4_education_data",
+        "label": "Percentage",
+        "data_type": "float"
+      },
+      "year": {
+        "data_type": "int",
+        "label": "Year"
+      }
+    },
+    "source_name": "NOMIS",
+    "year_range": [
+      2012,
+      2018
+    ]
+  },
+  {
+    "api_doc_url": "https://www.nomisweb.co.uk/api/v01/help",
+    "api_type": "FETCH",
+    "description_short": "Professional occupations employment",
+    "description": "Percentage of population employed in professional occupations by NUTS 2 regions.",
+    "endpoint_url": "https://www.nomisweb.co.uk/api/v01/dataset/NM_17_5.jsonstat.json?geography=1837105153...1837105192&date=latestMINUS23,latestMINUS19,latestMINUS15,latestMINUS11,latestMINUS7,latestMINUS3&variable=1533&measures=20599,21001,21002,21003",
+    "framework_group": "public_rnd_capability",
+    "is_experimental": false,
+    "order": [
+      "year",
+      "nuts_id",
+      "nuts_year_spec",
+      "value.id"
+    ],
+    "region": {
+      "type": "NutsRegion",
+      "level": 2,
+      "source": "PROVIDED"
+    },
+    "schema": {
+      "nuts_id": {
+        "type": "NutsRegion.nuts_id"
+      },
+      "nuts_year_spec": {
+        "type": "NutsRegion.nuts_year_spec"
+      },
+      "value": {
+        "description": "Percentage of population employed in professional occupations.",
+        "format": 0.1,
+        "id": "aps_pro_occupations_data",
+        "label": "Percentage",
+        "data_type": "float"
+      },
+      "year": {
+        "data_type": "int",
+        "label": "Year"
+      }
+    },
+    "source_name": "NOMIS",
+    "year_range": [
+      2012,
+      2018
+    ]
+  },
+  {
+    "api_doc_url": "https://github.com/nestauk/data_getters#crunchbase (schema here- https://docs.google.com/presentation/d/1e1aWpQ7M3klHc4iJXJhgpCD77uWFKaFTjVkyvdiNEXw/edit)",
+    "api_type": "FETCH",
+    "auth_provider": "Nesta",
+    "data_date": 20200218,
+    "description_short": "Venture capital investment",
+    "description": "Level of venture capital investment in ventures based on a region based on data from CrunchBase. A small number of deals have been converted to GBP at the date when they were announced.",
+    "endpoint_url": "https://crunchbase-export.s3.eu-west-2.amazonaws.com/organizations.csv",
+    "framework_group": "business_rnd_capacity",
+    "is_experimental": true,
+    "is_public": false,
+    "order": [
+      "year",
+      "nuts_id",
+      "nuts_year_spec",
+      "value.id"
+    ],
+    "region": {
+      "type": "NutsRegion",
+      "level": 2,
+      "source_url": "https://opendata.arcgis.com/datasets/48b6b85bb7ea43699ee85f4ecd12fd36_0.zip?outSR=%7B%22latestWkid%22%3A27700%2C%22wkid%22%3A27700%7D"
+    },
+    "schema": {
+      "region_id": {
+        "type": "NutsRegion.id"
+      },
+      "region_year_spec": {
+        "type": "NutsRegion.year_spec"
+      },
+      "value": {
+        "description": "Total amount of venture capital invested in organisations in the location",
+        "id": "gbp_venture_capital_received",
+        "label": "Venture capital investment received",
+        "type": "GBP",
+        "data_type": "int"
+      },
+      "year": {
+        "data_type": "int",
+        "label": "Year"
+      }
+    },
+    "source_name": "https://www.crunchbase.com/",
+    "year_range": [
+      2011,
+      2019
+    ]
+  },
+  {
+    "api_doc_url": "https://uk-air.defra.gov.uk/data/pcm-data",
+    "api_type": "FETCH",
+    "description_short": "Mean PM10 particulate background pollution",
+    "description": "Mean PM10 particulate background pollution data at NUTS 2 regions aggregated from 1km x 1km resolution UK data modelled by DEFRA.",
+    "endpoint_url": [
+      "https://uk-air.defra.gov.uk/datastore/pcm/mappm102007g.csv",
+      "https://uk-air.defra.gov.uk/datastore/pcm/mappm102008g.csv",
+      "https://uk-air.defra.gov.uk/datastore/pcm/mappm102009g.csv",
+      "https://uk-air.defra.gov.uk/datastore/pcm/mappm102010g.csv",
+      "https://uk-air.defra.gov.uk/datastore/pcm/mappm102011g.csv",
+      "https://uk-air.defra.gov.uk/datastore/pcm/mappm102012g.csv",
+      "https://uk-air.defra.gov.uk/datastore/pcm/mappm102013g.csv",
+      "https://uk-air.defra.gov.uk/datastore/pcm/mappm102014g.csv",
+      "https://uk-air.defra.gov.uk/datastore/pcm/mappm102015g.csv",
+      "https://uk-air.defra.gov.uk/datastore/pcm/mappm102016g.csv",
+      "https://uk-air.defra.gov.uk/datastore/pcm/mappm102017g.csv",
+      "https://uk-air.defra.gov.uk/datastore/pcm/mappm102018g.csv"
+    ],
+    "framework_group": "place_potential",
+    "is_experimental": false,
+    "nuts_level": 2,
+    "order": [
+      "year",
+      "nuts_id",
+      "nuts_year_spec",
+      "value.id"
+    ],
+    "region": {
+      "type": "NutsRegion",
+      "level": 2,
+      "source_url": "https://ec.europa.eu/eurostat/cache/GISCO/distribution/v2/nuts/download/ref-nuts-2016-01m.shp.zip"
+    },
+    "schema": {
+      "nuts_id": {
+        "type": "NutsRegion.id"
+      },
+      "nuts_year_spec": {
+        "type": "NutsRegion.year_spec"
+      },
+      "value": {
+        "description": "mean pm10 particulate pollution value",
+        "format": ".2f",
+        "id": "air_pollution_mean_pm10",
+        "label": "Mean PM10 Pollution",
+        "type": "GravimetricUnit"
+      },
+      "year": {
+        "data_type": "int",
+        "label": "Year"
+      }
+    },
+    "source_name": "DEFRA",
+    "year_range": [
+      2007,
+      2018
+    ]
+  },
+  {
+    "api_doc_url": "https://ec.europa.eu/eurostat/cache/metadata/en/rd_esms.htm",
+    "api_type": "FETCH",
+    "description_short": "Business enterprise R&D",
+    "description": "Business enterprise research & development (R&D) expenditure by NUTS 2 regions.",
+    "endpoint_url": "http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/rd_e_gerdreg?sinceTimePeriod=2012&geoLevel=nuts2&precision=6&sectperf=BES&unit=MIO_EUR",
+    "framework_group": "business_rnd_capacity",
+    "is_experimental": false,
+    "order": [
+      "year",
+      "nuts_id",
+      "nuts_year_spec",
+      "value.id"
+    ],
+    "region": {
+      "type": "NutsRegion",
+      "level": 2,
+      "source": "PROVIDED"
+    },
+    "schema": {
+      "nuts_id": {
+        "type": "NutsRegion.nuts_id"
+      },
+      "nuts_year_spec": {
+        "type": "NutsRegion.nuts_year_spec"
+      },
+      "value": {
+        "description": "business enterprise R&D expenditure in euros (to the nearest 1000)",
+        "format": "d",
+        "id": "eurostat_berd_data",
+        "label": "Expenditure (to nearest 1000)",
+        "type": "EUR",
+        "data_type": "float"
+      },
+      "year": {
+        "data_type": "int",
+        "label": "Year"
+      }
+    },
+    "source_name": "Eurostat",
+    "year_range": [
+      2012,
+      2016
+    ]
+  },
+  {
+    "api_doc_url": "https://ec.europa.eu/eurostat/cache/metadata/en/rd_esms.htm",
+    "api_type": "FETCH",
+    "description_short": "Government R&D",
+    "description": "Government performed research & development (R&D) expenditure by NUTS 2 regions.",
+    "endpoint_url": "http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/rd_e_gerdreg?sinceTimePeriod=2012&geoLevel=nuts2&precision=2&sectperf=GOV&unit=MIO_EUR",
+    "framework_group": "public_rnd_capability",
+    "is_experimental": false,
+    "order": [
+      "year",
+      "nuts_id",
+      "nuts_year_spec",
+      "value.id"
+    ],
+    "region": {
+      "type": "NutsRegion",
+      "level": 2,
+      "source": "PROVIDED"
+    },
+    "schema": {
+      "nuts_id": {
+        "type": "NutsRegion.nuts_id"
+      },
+      "nuts_year_spec": {
+        "type": "NutsRegion.nuts_year_spec"
+      },
+      "value": {
+        "description": "government performed R&D expenditure in euros (to the nearest 1000)",
+        "format": "d",
+        "id": "eurostat_gov_rd_workforce_data",
+        "label": "Expenditure (to nearest 1000)",
+        "type": "EUR",
+        "data_type": "float"
+      },
+      "year": {
+        "data_type": "int",
+        "label": "Year"
+      }
+    },
+    "source_name": "Eurostat",
+    "year_range": [
+      2012,
+      2016
+    ]
+  },
+  {
+    "api_doc_url": "https://ec.europa.eu/eurostat/cache/metadata/en/rd_esms.htm",
+    "api_type": "FETCH",
+    "description_short": "Higher Edu R&D",
+    "description": "Higher education sector enterprise research & development (R&D) expenditure by NUTS 2 regions.",
+    "endpoint_url": "http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/rd_e_gerdreg?sinceTimePeriod=2012&geoLevel=nuts2&precision=6&sectperf=HES&unit=MIO_EUR'",
+    "framework_group": "public_rnd_capability",
+    "is_experimental": false,
+    "order": [
+      "year",
+      "nuts_id",
+      "nuts_year_spec",
+      "value.id"
+    ],
+    "region": {
+      "type": "NutsRegion",
+      "level": 2,
+      "source": "PROVIDED"
+    },
+    "schema": {
+      "nuts_id": {
+        "type": "NutsRegion.nuts_id"
+      },
+      "nuts_year_spec": {
+        "type": "NutsRegion.nuts_year_spec"
+      },
+      "value": {
+        "description": "Higher education sector R&D expenditure in euros (to the nearest 1000)",
+        "format": "d",
+        "id": "eurostat_higher_ed_rd_workforce_data",
+        "label": "Expenditure (to nearest 1000)",
+        "type": "EUR",
+        "data_type": "float"
+      },
+      "year": {
+        "data_type": "int",
+        "label": "Year"
+      }
+    },
+    "source_name": "Eurostat",
+    "year_range": [
+      2012,
+      2016
+    ]
+  },
+  {
+    "api_doc_url": "https://ec.europa.eu/eurostat/cache/metadata/en/rd_esms.htm",
+    "api_type": "FETCH",
+    "description_short": "Private non-profit R&D",
+    "description": "Private non-profit sector enterprise research & development (R&D) expenditure by NUTS 2 regions.",
+    "endpoint_url": "http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/rd_e_gerdreg?sinceTimePeriod=2012&geoLevel=nuts2&precision=6&sectperf=PNP&unit=MIO_EUR'",
+    "framework_group": "public_rnd_capability",
+    "is_experimental": false,
+    "order": [
+      "year",
+      "nuts_id",
+      "nuts_year_spec",
+      "value.id"
+    ],
+    "region": {
+      "type": "NutsRegion",
+      "level": 2,
+      "source": "PROVIDED"
+    },
+    "schema": {
+      "nuts_id": {
+        "type": "NutsRegion.nuts_id"
+      },
+      "nuts_year_spec": {
+        "type": "NutsRegion.nuts_year_spec"
+      },
+      "value": {
+        "description": "Private non-profit sector R&D expenditure in euros (to the nearest 1000)",
+        "format": "d",
+        "id": "eurostat_private_non_profit_rd_workforce_data",
+        "label": "Expenditure (to nearest 1000)",
+        "type": "EUR",
+        "data_type": "float"
+      },
+      "year": {
+        "data_type": "int",
+        "label": "Year"
+      }
+    },
+    "source_name": "Eurostat",
+    "year_range": [
+      2012,
+      2016
+    ]
+  },
+  {
+    "api_doc_url": "https://ec.europa.eu/eurostat/cache/metadata/en/rd_esms.htm",
+    "api_type": "FETCH",
+    "description_short": "FTE of R&D workforce",
+    "description": "Full time equivalent (FTE) of private sector research & development (R&D) workforce-  by NUTS 2 regions.",
+    "endpoint_url": "http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/rd_p_persreg?sinceTimePeriod=2012&geoLevel=nuts2&precision=1&sex=T&sectperf=BES&prof_pos=TOTAL&unit=FTE",
+    "framework_group": "business_rnd_capacity",
+    "is_experimental": false,
+    "order": [
+      "year",
+      "nuts_id",
+      "nuts_year_spec",
+      "value.id"
+    ],
+    "region": {
+      "type": "NutsRegion",
+      "level": 2,
+      "source": "PROVIDED"
+    },
+    "schema": {
+      "nuts_id": {
+        "type": "NutsRegion.nuts_id"
+      },
+      "nuts_year_spec": {
+        "type": "NutsRegion.nuts_year_spec"
+      },
+      "value": {
+        "description": "Full time equivalent of workforce",
+        "format": 0.2,
+        "id": "eurostat_private_rd_fte_workforce_data",
+        "label": "Full Time Equivalent (FTE)",
+        "data_type": "float"
+      },
+      "year": {
+        "data_type": "int",
+        "label": "Year"
+      }
+    },
+    "source_name": "Eurostat",
+    "year_range": [
+      2012,
+      2016
+    ]
+  },
+  {
+    "api_doc_url": "https://ec.europa.eu/eurostat/cache/metadata/en/rd_esms.htm",
+    "api_type": "FETCH",
+    "description_short": "HC of R&D workforce",
+    "description": "Head count (HC) OF private sector research & development (R&D) workforce by NUTS 2 regions.",
+    "endpoint_url": "http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/rd_p_persreg?sinceTimePeriod=2012&geoLevel=nuts2&precision=1&sex=T&sectperf=BES&prof_pos=TOTAL&unit=HC",
+    "framework_group": "business_rnd_capacity",
+    "is_experimental": false,
+    "order": [
+      "year",
+      "nuts_id",
+      "nuts_year_spec",
+      "value.id"
+    ],
+    "region": {
+      "type": "NutsRegion",
+      "level": 2,
+      "source": "PROVIDED"
+    },
+    "schema": {
+      "nuts_id": {
+        "type": "NutsRegion.nuts_id"
+      },
+      "nuts_year_spec": {
+        "type": "NutsRegion.nuts_year_spec"
+      },
+      "value": {
+        "description": "Head count of workforce",
+        "id": "eurostat_private_rd_headcount_workforce_data",
+        "label": "Head count",
+        "data_type": "int"
+      },
+      "year": {
+        "data_type": "int",
+        "label": "Year"
+      }
+    },
+    "source_name": "Eurostat",
+    "year_range": [
+      2012,
+      2016
+    ]
+  },
+  {
+    "api_doc_url": "https://gtr.ukri.org/resources/GtR-2-API-v1.7.4.pdf",
+    "api_type": "FETCH",
+    "auth_provider": "Nesta",
+    "data_date": 20200222,
+    "description_short": "STEM projects led by organisations in the region",
+    "description": "Total number of projects led by organisations in the NUTS area in STEM subjects (see aux/gtr_stem_disciplines for the stem disciplines we are considering)",
+    "endpoint_url": "https://s3.console.aws.amazon.com/s3/object/nesta-data-getters/17_9_2019_gtr_orgs.csv",
+    "framework_group": "public_rnd_capability",
+    "is_experimental": true,
+    "is_public": false,
+    "nuts_level": 2,
+    "order": [
+      "year",
+      "nuts_id",
+      "nuts_year_spec",
+      "value.id"
+    ],
+    "region": {
+      "type": "NutsRegion",
+      "level": 2,
+      "source_url": "http://geoportal1-ons.opendata.arcgis.com/datasets/48b6b85bb7ea43699ee85f4ecd12fd36_0.zip?outSR=%7B%22latestWkid%22:27700,%22wkid%22:27700%7D"
+    },
+    "schema": {
+      "nuts_id": {
+        "type": "NutsRegion.id"
+      },
+      "nuts_year_spec": {
+        "type": "NutsRegion.year_spec"
+      },
+      "value": {
+        "description": "Total number of projects led by organisations in the NUTS area in STEM subjects (see aux/gtr_stem_disciplines for the stem disciplines we are considering)",
+        "id": "total_gtr_projects_stem",
+        "label": "Number of projects in STEM disciplines led by organisations in the region",
+        "data_type": "int"
+      },
+      "year": {
+        "data_type": "int",
+        "label": "Year"
+      }
+    },
+    "source_name": "UKRI (https://gtr.ukri.org)",
+    "year_range": [
+      2006,
+      2018
+    ]
+  },
+  {
+    "api_doc_url": "https://www.hesa.ac.uk/support/definitions/hebci",
+    "api_type": "FETCH",
+    "data_date": 20202002,
+    "description_short": "University income from business consulting",
+    "description": "Consultancy income with businesses for universities in the NUTS2 region in the academic year starting in year",
+    "endpoint_url": "https://www.hesa.ac.uk/data-and-analysis/providers/business-community/table-2a.csv",
+    "framework_group": "knowledge_exchange",
+    "is_experimental": false,
+    "order": [
+      "year",
+      "nuts_id",
+      "nuts_year_spec",
+      "value.id"
+    ],
+    "region": {
+      "type": "NutsRegion",
+      "level": 2,
+      "source_url": "https://opendata.arcgis.com/datasets/48b6b85bb7ea43699ee85f4ecd12fd36_0.zip?outSR=%7B%22latestWkid%22%3A27700%2C%22wkid%22%3A27700%7D"
+    },
+    "schema": {
+      "nuts_id": {
+        "type": "NutsRegion.nuts_id"
+      },
+      "nuts_year_spec": {
+        "type": "NutsRegion.nuts_year_spec"
+      },
+      "value": {
+        "description": "Consultancy income with businesses for universities in the NUTS2 region in the academic year starting in year",
+        "id": "gbp_business_consulting",
+        "label": "University income from business consulting",
+        "type": "GBP",
+        "data_type": "int"
+      },
+      "year": {
+        "data_type": "int",
+        "label": "Year"
+      }
+    },
+    "source_name": "HESA (https://www.hesa.ac.uk/)",
+    "year_range": [
+      2014,
+      2017
+    ]
+  },
+  {
+    "api_doc_url": "https://www.hesa.ac.uk/support/definitions/hebci",
+    "api_type": "FETCH",
+    "data_date": 20202002,
+    "description_short": "University income from contract research with businesses",
+    "description": "Contract research income with businesses for universities in the NUTS2 region in the academic year starting in year",
+    "endpoint_url": "https://www.hesa.ac.uk/data-and-analysis/providers/business-community/table-2a.csv",
+    "framework_group": "knowledge_exchange",
+    "is_experimental": false,
+    "order": [
+      "year",
+      "nuts_id",
+      "nuts_year_spec",
+      "value.id"
+    ],
+    "region": {
+      "type": "NutsRegion",
+      "level": 2,
+      "source_url": "https://opendata.arcgis.com/datasets/48b6b85bb7ea43699ee85f4ecd12fd36_0.zip?outSR=%7B%22latestWkid%22%3A27700%2C%22wkid%22%3A27700%7D"
+    },
+    "schema": {
+      "nuts_id": {
+        "type": "NutsRegion.nuts_id"
+      },
+      "nuts_year_spec": {
+        "type": "NutsRegion.nuts_year_spec"
+      },
+      "value": {
+        "description": "Contract research income with businesses for universities in the NUTS2 region in the academic year starting in year",
+        "id": "gbp_business_contract_research",
+        "label": "Contract research income with businesses",
+        "type": "GBP",
+        "data_type": "int"
+      },
+      "year": {
+        "data_type": "int",
+        "label": "Year"
+      }
+    },
+    "source_name": "HESA (https://www.hesa.ac.uk/)",
+    "year_range": [
+      2014,
+      2017
+    ]
+  },
+  {
+    "api_doc_url": "https://www.hesa.ac.uk/support/definitions/hebci",
+    "api_type": "FETCH",
+    "data_date": 20202002,
+    "description_short": "External investment in active university spinoffs",
+    "description": "Total external investment in active spinoffs involving local universities in academic year starting in year",
+    "endpoint_url": "https://www.hesa.ac.uk/data-and-analysis/providers/business-community/table-4e.csv",
+    "framework_group": "knowledge_exchange",
+    "is_experimental": false,
+    "order": [
+      "year",
+      "nuts_id",
+      "nuts_year_spec",
+      "value.id"
+    ],
+    "region": {
+      "type": "NutsRegion",
+      "level": 2,
+      "source_url": "https://opendata.arcgis.com/datasets/48b6b85bb7ea43699ee85f4ecd12fd36_0.zip?outSR=%7B%22latestWkid%22%3A27700%2C%22wkid%22%3A27700%7D"
+    },
+    "schema": {
+      "nuts_id": {
+        "type": "NutsRegion.nuts_id"
+      },
+      "nuts_year_spec": {
+        "type": "NutsRegion.nuts_year_spec"
+      },
+      "value": {
+        "description": "Contract research income with businesses for universities in the NUTS2 region in the academic year starting in year",
+        "id": "gbp_investment_per_active_spinoff",
+        "label": "External investment in active university spinoffs",
+        "type": "GBP",
+        "data_type": "int"
+      },
+      "year": {
+        "data_type": "int",
+        "label": "Year"
+      }
+    },
+    "source_name": "HESA (https://www.hesa.ac.uk/)",
+    "year_range": [
+      2014,
+      2017
+    ]
+  },
+  {
+    "api_doc_url": "https://www.hesa.ac.uk/support/definitions/hebci",
+    "api_type": "FETCH",
+    "data_date": 20202002,
+    "description_short": "University income from IP licensing",
+    "description": "Total income from IP licensing in universities located in the NUTS2 region in the academic year starting in year",
+    "endpoint_url": "https://www.hesa.ac.uk/data-and-analysis/providers/business-community/table-4d.csv",
+    "framework_group": "knowledge_exchange",
+    "is_experimental": false,
+    "order": [
+      "year",
+      "nuts_id",
+      "nuts_year_spec",
+      "value.id"
+    ],
+    "region": {
+      "type": "NutsRegion",
+      "level": 2,
+      "source_url": "https://opendata.arcgis.com/datasets/48b6b85bb7ea43699ee85f4ecd12fd36_0.zip?outSR=%7B%22latestWkid%22%3A27700%2C%22wkid%22%3A27700%7D"
+    },
+    "schema": {
+      "nuts_id": {
+        "type": "NutsRegion.nuts_id"
+      },
+      "nuts_year_spec": {
+        "type": "NutsRegion.nuts_year_spec"
+      },
+      "value": {
+        "description": "Total income from IP licensing in universities located in the NUTS2 region in the academic year starting in year",
+        "id": "gbp_ip_revenues",
+        "label": "University income from IP licensing",
+        "type": "GBP",
+        "data_type": "int"
+      },
+      "year": {
+        "data_type": "int",
+        "label": "Year"
+      }
+    },
+    "source_name": "HESA (https://www.hesa.ac.uk/)",
+    "year_range": [
+      2014,
+      2017
+    ]
+  },
+  {
+    "api_doc_url": "https://www.hesa.ac.uk/support/definitions/hebci",
+    "api_type": "FETCH",
+    "data_date": 20202002,
+    "description_short": "University consultancy income with government and third sector",
+    "description": "Consultancy income with public sector and third sector organisatoins involving universities in the NUTS2 region in the academic year starting in year",
+    "endpoint_url": "https://www.hesa.ac.uk/data-and-analysis/providers/business-community/table-2a.csv",
+    "framework_group": "knowledge_exchange",
+    "is_experimental": false,
+    "order": [
+      "year",
+      "nuts_id",
+      "nuts_year_spec",
+      "value.id"
+    ],
+    "region": {
+      "type": "NutsRegion",
+      "level": 2,
+      "source_url": "https://opendata.arcgis.com/datasets/48b6b85bb7ea43699ee85f4ecd12fd36_0.zip?outSR=%7B%22latestWkid%22%3A27700%2C%22wkid%22%3A27700%7D"
+    },
+    "schema": {
+      "nuts_id": {
+        "type": "NutsRegion.nuts_id"
+      },
+      "nuts_year_spec": {
+        "type": "NutsRegion.nuts_year_spec"
+      },
+      "value": {
+        "description": "Consultancy income with public sector and third sector organisatoins involving universities in the NUTS2 region in the academic year starting in year",
+        "id": "gbp_non_business_consulting",
+        "label": "University consultancy income with government and third sector",
+        "type": "GBP",
+        "data_type": "int"
+      },
+      "year": {
+        "data_type": "int",
+        "label": "Year"
+      }
+    },
+    "source_name": "HESA (https://www.hesa.ac.uk/)",
+    "year_range": [
+      2014,
+      2017
+    ]
+  },
+  {
+    "api_doc_url": "https://www.hesa.ac.uk/support/definitions/hebci",
+    "api_type": "FETCH",
+    "data_date": 20202002,
+    "description_short": "Current turnover of active university spinoffs",
+    "description": "Total current turnover of active spinoffs involving local universities in academic year starting in year",
+    "endpoint_url": "https://www.hesa.ac.uk/data-and-analysis/providers/business-community/table-4e.csv",
+    "framework_group": "knowledge_exchange",
+    "is_experimental": false,
+    "order": [
+      "year",
+      "nuts_id",
+      "nuts_year_spec",
+      "value.id"
+    ],
+    "region": {
+      "type": "NutsRegion",
+      "level": 2,
+      "source_url": "https://opendata.arcgis.com/datasets/48b6b85bb7ea43699ee85f4ecd12fd36_0.zip?outSR=%7B%22latestWkid%22%3A27700%2C%22wkid%22%3A27700%7D"
+    },
+    "schema": {
+      "nuts_id": {
+        "type": "NutsRegion.nuts_id"
+      },
+      "nuts_year_spec": {
+        "type": "NutsRegion.nuts_year_spec"
+      },
+      "value": {
+        "description": "Total current turnover of active spinoffs involving local universities in academic year starting in year",
+        "id": "gbp_turnnover_per_active_spinoff",
+        "label": "Current turnover of active university spinoffs",
+        "type": "GBP",
+        "data_type": "int"
+      },
+      "year": {
+        "data_type": "int",
+        "label": "Year"
+      }
+    },
+    "source_name": "HESA (https://www.hesa.ac.uk/)",
+    "year_range": [
+      2014,
+      2017
+    ]
+  },
+  {
+    "api_doc_url": "https://www.hesa.ac.uk/support/definitions/hebci",
+    "api_type": "FETCH",
+    "data_date": 20202002,
+    "description_short": "Total active graduate university spinoffs",
+    "description": "Total number of active startup companies involving graduates from universities in the region in the academic year that starts in year",
+    "endpoint_url": "https://www.hesa.ac.uk/data-and-analysis/providers/business-community/table-4e.csv",
+    "framework_group": "knowledge_exchange",
+    "is_experimental": false,
+    "order": [
+      "year",
+      "nuts_id",
+      "nuts_year_spec",
+      "value.id"
+    ],
+    "region": {
+      "type": "NutsRegion",
+      "level": 2,
+      "source_url": "https://opendata.arcgis.com/datasets/48b6b85bb7ea43699ee85f4ecd12fd36_0.zip?outSR=%7B%22latestWkid%22%3A27700%2C%22wkid%22%3A27700%7D"
+    },
+    "schema": {
+      "nuts_id": {
+        "type": "NutsRegion.nuts_id"
+      },
+      "nuts_year_spec": {
+        "type": "NutsRegion.nuts_year_spec"
+      },
+      "value": {
+        "description": "Contract research income with businesses for universities in the NUTS2 region in the academic year starting in year",
+        "id": "total_active_graduate_spinouts",
+        "label": "Total active graduate university spinoffs",
+        "data_type": "int"
+      },
+      "year": {
+        "data_type": "int",
+        "label": "Year"
+      }
+    },
+    "source_name": "HESA (https://www.hesa.ac.uk/)",
+    "year_range": [
+      2014,
+      2017
+    ]
+  },
+  {
+    "api_doc_url": "https://www.hesa.ac.uk/data-and-analysis/estates/table-1",
+    "api_type": "FETCH",
+    "description_short": "Area of university site",
+    "description": "Area of university sites for universities in the NUTS2 region",
+    "endpoint_url": "https://www.hesa.ac.uk/data-and-analysis/estates/data.csv",
+    "framework_group": "public_rnd_capability",
+    "is_experimental": false,
+    "nuts_level": 2,
+    "order": [
+      "year",
+      "nuts_id",
+      "nuts_year_spec",
+      "value.id"
+    ],
+    "region": {
+      "type": "NutsRegion",
+      "level": 2,
+      "source_url": "http://geoportal1-ons.opendata.arcgis.com/datasets/48b6b85bb7ea43699ee85f4ecd12fd36_0.zip?outSR=%7B%22latestWkid%22:27700,%22wkid%22:27700%7D"
+    },
+    "schema": {
+      "nuts_id": {
+        "type": "NutsRegion.id"
+      },
+      "nuts_year_spec": {
+        "type": "NutsRegion.year_spec"
+      },
+      "value": {
+        "format": ".3f",
+        "description": "Site Area (hectares) of university sites",
+        "id": "area_university_site",
+        "label": "Total area of university sites (Hectares)",
+        "type": "area_hectare"
+      },
+      "year": {
+        "data_type": "int",
+        "label": "Academic year (start)"
+      }
+    },
+    "source_name": "HESA (Higher Education Statistical Agency) https://www.hesa.ac.uk/",
+    "year_range": [
+      2015,
+      2017
+    ]
+  },
+  {
+    "api_doc_url": "https://www.hesa.ac.uk/data-and-analysis/estates/table-1",
+    "api_type": "FETCH",
+    "description_short": "Number of research students (FTE)",
+    "description": "Aggregate of Full Time Equivalent (FTE) of research students enrolled in universities in the NUTS2 region",
+    "endpoint_url": "https://www.hesa.ac.uk/data-and-analysis/estates/data.csv",
+    "framework_group": "public_rnd_capability",
+    "is_experimental": false,
+    "nuts_level": 2,
+    "order": [
+      "year",
+      "nuts_id",
+      "nuts_year_spec",
+      "value.id"
+    ],
+    "region": {
+      "type": "NutsRegion",
+      "level": 2,
+      "source_url": "http://geoportal1-ons.opendata.arcgis.com/datasets/48b6b85bb7ea43699ee85f4ecd12fd36_0.zip?outSR=%7B%22latestWkid%22:27700,%22wkid%22:27700%7D"
+    },
+    "schema": {
+      "nuts_id": {
+        "type": "NutsRegion.id"
+      },
+      "nuts_year_spec": {
+        "type": "NutsRegion.year_spec"
+      },
+      "value": {
+        "description": "Full Time Equivalent (FTE) research students",
+        "id": "fte_research_students",
+        "label": "Research students (Full Time Equivalent)",
+        "type": "FTE"
+      },
+      "year": {
+        "data_type": "int",
+        "label": "Academic year (start)"
+      }
+    },
+    "source_name": "HESA (Higher Education Statistical Agency) https://www.hesa.ac.uk/",
+    "year_range": [
+      2015,
+      2017
+    ]
+  },
+  {
+    "api_doc_url": "https://www.hesa.ac.uk/data-and-analysis/estates/table-1",
+    "api_type": "FETCH",
+    "description_short": "Research income (GBP)",
+    "description": "Research income received by universities in the NUTS2 region",
+    "endpoint_url": "https://www.hesa.ac.uk/data-and-analysis/estates/data.csv",
+    "framework_group": "public_rnd_capability",
+    "is_experimental": false,
+    "nuts_level": 2,
+    "order": [
+      "year",
+      "nuts_id",
+      "nuts_year_spec",
+      "value.id"
+    ],
+    "region": {
+      "type": "NutsRegion",
+      "level": 2,
+      "source_url": "http://geoportal1-ons.opendata.arcgis.com/datasets/48b6b85bb7ea43699ee85f4ecd12fd36_0.zip?outSR=%7B%22latestWkid%22:27700,%22wkid%22:27700%7D"
+    },
+    "schema": {
+      "nuts_id": {
+        "type": "NutsRegion.id"
+      },
+      "nuts_year_spec": {
+        "type": "NutsRegion.year_spec"
+      },
+      "value": {
+        "description": "Research income for universities in the region",
+        "id": "gbp_research_income",
+        "label": "Research income (GBP)",
+        "type": "GPB"
+      },
+      "year": {
+        "data_type": "int",
+        "label": "Academic year (start)"
+      }
+    },
+    "source_name": "HESA (Higher Education Statistical Agency) https://www.hesa.ac.uk/",
+    "year_range": [
+      2015,
+      2017
+    ]
+  },
+  {
+    "api_doc_url": "https://www.hesa.ac.uk/data-and-analysis/students",
+    "api_type": "FETCH",
+    "description_short": "Total number of postgraduates",
+    "description": "Number of postgraduate (research) students enrolled full-time in universities in a NUTS2 region in the starting academic year.",
+    "endpoint_url": "https://www.hesa.ac.uk/data-and-analysis/students/table-13.csv",
+    "framework_group": "public_rnd_capability",
+    "is_experimental": false,
+    "nuts_level": 2,
+    "order": [
+      "year",
+      "nuts_id",
+      "nuts_year_spec",
+      "value.id"
+    ],
+    "region": {
+      "type": "NutsRegion",
+      "level": 2,
+      "source_url": "http://geoportal1-ons.opendata.arcgis.com/datasets/48b6b85bb7ea43699ee85f4ecd12fd36_0.zip?outSR=%7B%22latestWkid%22:27700,%22wkid%22:27700%7D"
+    },
+    "schema": {
+      "nuts_id": {
+        "type": "NutsRegion.id"
+      },
+      "nuts_year_spec": {
+        "type": "NutsRegion.year_spec"
+      },
+      "value": {
+        "description": "Total number of full-time students enrolled for postgraduate qualifications in universities in the area",
+        "id": "total_postgraduates",
+        "label": "Total number of postgraduate students",
+        "type": "int"
+      },
+      "year": {
+        "data_type": "int",
+        "label": "Academic year (start)"
+      }
+    },
+    "source_name": "HESA (Higher Education Statistical Agency) https://www.hesa.ac.uk/",
+    "year_range": [
+      2014,
+      2018
+    ]
+  },
+  {
+    "api_doc_url": "https://www.hesa.ac.uk/data-and-analysis/students",
+    "api_type": "FETCH",
+    "description_short": "Total number of STEM postgraduates",
+    "description": "Number of postgraduate (research) students enrolled full-time in STEM subjects in a NUTS2 region (definition of STEM subjects in aux folder) in the starting academic year.",
+    "endpoint_url": "https://www.hesa.ac.uk/data-and-analysis/students/table-13.csv",
+    "framework_group": "public_rnd_capability",
+    "is_experimental": false,
+    "nuts_level": 2,
+    "order": [
+      "year",
+      "nuts_id",
+      "nuts_year_spec",
+      "value.id"
+    ],
+    "region": {
+      "type": "NutsRegion",
+      "level": 2,
+      "source_url": "http://geoportal1-ons.opendata.arcgis.com/datasets/48b6b85bb7ea43699ee85f4ecd12fd36_0.zip?outSR=%7B%22latestWkid%22:27700,%22wkid%22:27700%7D"
+    },
+    "schema": {
+      "nuts_id": {
+        "type": "NutsRegion.id"
+      },
+      "nuts_year_spec": {
+        "type": "NutsRegion.year_spec"
+      },
+      "value": {
+        "description": "Total number of full-time postgraduate students enrolled in STEM subjects in the area (definition of STEM subjects in aux folder)",
+        "id": "total_stem_postgraduates",
+        "label": "Total number of postgraduate students in STEM subjects",
+        "type": "int"
+      },
+      "year": {
+        "data_type": "int",
+        "label": "Academic year (start)"
+      }
+    },
+    "source_name": "HESA (Higher Education Statistical Agency) https://www.hesa.ac.uk/",
+    "year_range": [
+      2014,
+      2018
+    ]
+  },
+  {
+    "api_doc_url": "https://www.hesa.ac.uk/data-and-analysis/students",
+    "api_type": "FETCH",
+    "description_short": "Total number of STEM students",
+    "description": "Number of students enrolled full-time in STEM subjects in a NUTS2 region (definition of STEM subjects in aux folder) in the starting academic year.",
+    "endpoint_url": "https://www.hesa.ac.uk/data-and-analysis/students/table-13.csv",
+    "framework_group": "public_rnd_capability",
+    "is_experimental": false,
+    "nuts_level": 2,
+    "order": [
+      "year",
+      "nuts_id",
+      "nuts_year_spec",
+      "value.id"
+    ],
+    "region": {
+      "type": "NutsRegion",
+      "level": 2,
+      "source_url": "http://geoportal1-ons.opendata.arcgis.com/datasets/48b6b85bb7ea43699ee85f4ecd12fd36_0.zip?outSR=%7B%22latestWkid%22:27700,%22wkid%22:27700%7D"
+    },
+    "schema": {
+      "nuts_id": {
+        "type": "NutsRegion.id"
+      },
+      "nuts_year_spec": {
+        "type": "NutsRegion.year_spec"
+      },
+      "value": {
+        "description": "Total number of full-time students enrolled in STEM subjects in the area",
+        "id": "total_stem_students",
+        "label": "Total number of students in STEM subjects",
+        "type": "int"
+      },
+      "year": {
+        "data_type": "int",
+        "label": "Academic year (start)"
+      }
+    },
+    "source_name": "HESA (Higher Education Statistical Agency) https://www.hesa.ac.uk/",
+    "year_range": [
+      2014,
+      2018
+    ]
+  },
+  {
+    "api_doc_url": "https://www.hesa.ac.uk/data-and-analysis/estates/table-1",
+    "api_type": "FETCH",
+    "description_short": "Total number of university buildings",
+    "description": "Number of university buildings in a NUTS2 region",
+    "endpoint_url": "https://www.hesa.ac.uk/data-and-analysis/estates/data.csv",
+    "framework_group": "public_rnd_capability",
+    "is_experimental": false,
+    "nuts_level": 2,
+    "order": [
+      "year",
+      "nuts_id",
+      "nuts_year_spec",
+      "value.id"
+    ],
+    "region": {
+      "type": "NutsRegion",
+      "level": 2,
+      "source_url": "http://geoportal1-ons.opendata.arcgis.com/datasets/48b6b85bb7ea43699ee85f4ecd12fd36_0.zip?outSR=%7B%22latestWkid%22:27700,%22wkid%22:27700%7D"
+    },
+    "schema": {
+      "nuts_id": {
+        "type": "NutsRegion.id"
+      },
+      "nuts_year_spec": {
+        "type": "NutsRegion.year_spec"
+      },
+      "value": {
+        "description": "Total number of buildings in the area",
+        "id": "total_university_buildings",
+        "label": "Total number of buildings",
+        "type": "int"
+      },
+      "year": {
+        "data_type": "int",
+        "label": "Academic year (start)"
+      }
+    },
+    "source_name": "HESA (Higher Education Statistical Agency) https://www.hesa.ac.uk/",
+    "year_range": [
+      2015,
+      2017
+    ]
+  },
+  {
+    "api_doc_url": "https://www.nomisweb.co.uk/api/v01/help",
+    "api_type": "POST",
+    "data_date": 20200218,
+    "description_short": "Employment in cultural, entertainment and leisure industries",
+    "description": "This indicator measures level of employment in cultural, entertainment and leisure industries based on the Business Register Employment Survey. Those sectors are identified as clusters of SIC-4 (industry) codes",
+    "endpoint_url": "http://www.nomisweb.co.uk/api/v01/dataset/",
+    "framework_group": "place_potential",
+    "is_experimental": true,
+    "order": [
+      "year",
+      "nuts_id",
+      "nuts_year_spec",
+      "value.id"
+    ],
+    "region": {
+      "type": "NutsRegion",
+      "level": 2,
+      "source": "PROVIDED"
+    },
+    "schema": {
+      "region_id": {
+        "type": "NutsRegion.nuts_id"
+      },
+      "region_year_spec": {
+        "type": "NutsRegion.nuts_year_spec"
+      },
+      "value": {
+        "description": "Total employment in cultural, entertainment and leisure industries",
+        "id": "employment_culture_entertainment_recreation",
+        "label": "Employment in cultural, entertainment and leisure industries",
+        "data_type": "int"
+      },
+      "year": {
+        "data_type": "int",
+        "label": "Year"
+      }
+    },
+    "source_name": "ONS (https://www.nomisweb.co.uk)",
+    "year_range": [
+      2016,
+      2018
+    ]
+  },
+  {
+    "api_doc_url": "https://github.com/nestauk/patent_analysis/raw/master/references/patstat_data_dict.pdf",
+    "api_type": "MySQL",
+    "data_date": 20202002,
+    "description_short": "Total unique inventions",
+    "description": "Total number of unique inventions involving organisations in the NUTS2 region in a year (we consider the earliest application year for all patents in the family)",
+    "endpoint_url": "https://github.com/nestauk/imt_playbook/blob/dev/daps/sql.md",
+    "framework_group": "knowledge_exchange",
+    "is_experimental": true,
+    "order": [
+      "year",
+      "nuts_id",
+      "nuts_year_spec",
+      "value.id"
+    ],
+    "region": {
+      "type": "NutsRegion",
+      "level": 2,
+      "source": "provider"
+    },
+    "schema": {
+      "nuts_id": {
+        "type": "NutsRegion.nuts_id"
+      },
+      "nuts_year_spec": {
+        "type": "NutsRegion.nuts_year_spec"
+      },
+      "value": {
+        "description": "Total number of unique inventions involving organisations in the NUTS2 region in a year (we consider the earliest application year for all patents in the family)",
+        "id": "total_inventions",
+        "label": "Total unique inventions",
+        "data_type": "int"
+      },
+      "year": {
+        "data_type": "int",
+        "label": "Year"
+      }
+    },
+    "source_name": "PATSTAT (https://www.epo.org/searching-for-patents/business/patstat.html)",
+    "year_range": [
+      2013,
+      2018
+    ]
+  },
+  {
+    "api_doc_url": "https://www.ref.ac.uk/2014/pubs/201401/",
+    "api_type": "FETCH",
+    "data_date": 20200204,
+    "description_short": "Mean REF score",
+    "description": "These are the results of the Research Excellence Framework, where university departments in various disciplines are assessed on the quality of their research. The latest REF was conducted in 2014 so data is available only for one year",
+    "endpoint_url": "https://results.ref.ac.uk/(S(hlvnuqzwkag44jp3df3d4q14))/DownloadFile/AllResults/xlsx",
+    "framework_group": "public_rnd_capability",
+    "is_experimental": false,
+    "nuts_level": 2,
+    "order": [
+      "year",
+      "nuts_id",
+      "nuts_year_spec",
+      "value.id"
+    ],
+    "region": {
+      "type": "NutsRegion",
+      "level": 2,
+      "source_url": "http://geoportal1-ons.opendata.arcgis.com/datasets/48b6b85bb7ea43699ee85f4ecd12fd36_0.zip?outSR=%7B%22latestWkid%22:27700,%22wkid%22:27700%7D"
+    },
+    "schema": {
+      "nuts_id": {
+        "type": "NutsRegion.id"
+      },
+      "nuts_year_spec": {
+        "type": "NutsRegion.year_spec"
+      },
+      "value": {
+        "description": "The mean REF score for the NUTS2 area. This is the average of the scores in all departments weighted by the Full time equivalents submitted in each category (4*, 3*, 2* with higher scores representing better assessments)",
+        "id": "mean_ref",
+        "label": "Mean Research Excellence Framework Score",
+        "type": "REF"
+      },
+      "year": {
+        "data_type": "int",
+        "label": "Year"
+      }
+    },
+    "source_name": "UKRI (https://results.ref.ac.uk/)",
+    "year_range": [
+      2014,
+      2014
+    ]
+  },
+  {
+    "api_doc_url": "https://www.ref.ac.uk/2014/pubs/201401/",
+    "api_type": "FETCH",
+    "data_date": 20200204,
+    "description_short": "Mean REF Score in STEM disciplines",
+    "description": "These are the results of the Research Excellence Framework, where university departments in various disciplines are assessed on the quality of their research. The latest REF was conducted in 2014 so data is available only for one year",
+    "endpoint_url": "https://results.ref.ac.uk/(S(hlvnuqzwkag44jp3df3d4q14))/DownloadFile/AllResults/xlsx",
+    "framework_group": "public_rnd_capability",
+    "is_experimental": false,
+    "nuts_level": 2,
+    "order": [
+      "year",
+      "nuts_id",
+      "nuts_year_spec",
+      "value.id"
+    ],
+    "region": {
+      "type": "NutsRegion",
+      "level": 2,
+      "source_url": "http://geoportal1-ons.opendata.arcgis.com/datasets/48b6b85bb7ea43699ee85f4ecd12fd36_0.zip?outSR=%7B%22latestWkid%22:27700,%22wkid%22:27700%7D"
+    },
+    "schema": {
+      "nuts_id": {
+        "type": "NutsRegion.id"
+      },
+      "nuts_year_spec": {
+        "type": "NutsRegion.year_spec"
+      },
+      "value": {
+        "description": "The mean REF score for the NUTS2 area considering only STEM subjects (see aux/ref_stem.txt) for the subjects that we selected. This is the average of the scores in all departments weighted by the Full time equivalents submitted in each category (4*, 3*, 2* with higher scores representing better assessments)",
+        "id": "mean_ref_stem",
+        "label": "Mean Research Excellence Framework Score",
+        "type": "REF"
+      },
+      "year": {
+        "data_type": "int",
+        "label": "Year"
+      }
+    },
+    "source_name": "UKRI (https://results.ref.ac.uk/)",
+    "year_range": [
+      2014,
+      2014
+    ]
+  },
+  {
+    "api_doc_url": "https://www.ref.ac.uk/2014/pubs/201401/",
+    "api_type": "FETCH",
+    "data_date": 20200204,
+    "description_short": "Total number of researchers assessed as excellent",
+    "description": "These are the results of the Research Excellence Framework, where university departments in various disciplines are assessed on the quality of their research. The latest REF was conducted in 2014 so data is available only for one year",
+    "endpoint_url": "https://results.ref.ac.uk/(S(hlvnuqzwkag44jp3df3d4q14))/DownloadFile/AllResults/xlsx",
+    "framework_group": "public_rnd_capability",
+    "is_experimental": false,
+    "nuts_level": 2,
+    "order": [
+      "year",
+      "nuts_id",
+      "nuts_year_spec",
+      "value.id"
+    ],
+    "region": {
+      "type": "NutsRegion",
+      "level": 2,
+      "source_url": "http://geoportal1-ons.opendata.arcgis.com/datasets/48b6b85bb7ea43699ee85f4ecd12fd36_0.zip?outSR=%7B%22latestWkid%22:27700,%22wkid%22:27700%7D"
+    },
+    "schema": {
+      "nuts_id": {
+        "type": "NutsRegion.id"
+      },
+      "nuts_year_spec": {
+        "type": "NutsRegion.year_spec"
+      },
+      "value": {
+        "description": "The total number of excellent researchers (4* score) submitted by universities in the NUTS-2 region for the 2014 REF",
+        "id": "mean_ref",
+        "label": "Total number of excellent researchers in REF (Full Time Equivalent)",
+        "type": "FTE"
+      },
+      "year": {
+        "data_type": "int",
+        "label": "Year"
+      }
+    },
+    "source_name": "UKRI (https://results.ref.ac.uk/)",
+    "year_range": [
+      2014,
+      2014
+    ]
+  },
+  {
+    "api_doc_url": "https://www.gov.uk/government/publications/ipo-trade-mark-data-release/ipo-data-explained-2016",
+    "api_type": "FETCH",
+    "data_date": 20200225,
+    "description_short": "Total number of trademarks",
+    "description": "Total number of trademarks published by organisations in the region based on the IPO open trademark dataset",
+    "endpoint_url": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/680986/opendatadomestic.zip",
+    "framework_group": "knowledge_exchange",
+    "is_experimental": false,
+    "order": [
+      "year",
+      "nuts_id",
+      "nuts_year_spec",
+      "value.id"
+    ],
+    "region": {
+      "type": "NutsRegion",
+      "level": 2,
+      "source_url": "http://geoportal1-ons.opendata.arcgis.com/datasets/48b6b85bb7ea43699ee85f4ecd12fd36_0.zip?outSR=%7B%22latestWkid%22:27700,%22wkid%22:27700%7D"
+    },
+    "schema": {
+      "nuts_id": {
+        "type": "NutsRegion.nuts_id"
+      },
+      "nuts_year_spec": {
+        "type": "NutsRegion.nuts_year_spec"
+      },
+      "value": {
+        "description": "Total number of trademarks published by organisations in the region based on the IPO open trademark dataset",
+        "id": "total_trademarks",
+        "label": "Total trademarks",
+        "data_type": "int"
+      },
+      "year": {
+        "data_type": "int",
+        "label": "Year"
+      }
+    },
+    "source_name": "IPO (https://www.gov.uk/government/organisations/intellectual-property-office)",
+    "year_range": [
+      2010,
+      2027
+    ]
+  },
+  {
+    "api_doc_url": "https://www.gov.uk/government/publications/ipo-trade-mark-data-release/ipo-data-explained-2016",
+    "api_type": "FETCH",
+    "data_date": 20200225,
+    "description_short": "Total number of trademarks in science and technology fields",
+    "description": "Total number of trademarks in scientific and technological product fields published by organisations in the region based on the IPO open trademark dataset",
+    "endpoint_url": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/680986/opendatadomestic.zip",
+    "framework_group": "knowledge_exchange",
+    "is_experimental": false,
+    "order": [
+      "year",
+      "nuts_id",
+      "nuts_year_spec",
+      "value.id"
+    ],
+    "region": {
+      "type": "NutsRegion",
+      "level": 2,
+      "source_url": "http://geoportal1-ons.opendata.arcgis.com/datasets/48b6b85bb7ea43699ee85f4ecd12fd36_0.zip?outSR=%7B%22latestWkid%22:27700,%22wkid%22:27700%7D"
+    },
+    "schema": {
+      "nuts_id": {
+        "type": "NutsRegion.nuts_id"
+      },
+      "nuts_year_spec": {
+        "type": "NutsRegion.nuts_year_spec"
+      },
+      "value": {
+        "description": "Total number of trademarks in scientific and technological product fields published by organisations in the region based on the IPO open trademark dataset",
+        "id": "total_trademarks_scientific",
+        "label": "Total number of trademarks in science and technology fields",
+        "data_type": "int"
+      },
+      "year": {
+        "data_type": "int",
+        "label": "Year"
+      }
+    },
+    "source_name": "IPO (https://www.gov.uk/government/organisations/intellectual-property-office)",
+    "year_range": [
+      2010,
+      2027
+    ]
+  }
+]
