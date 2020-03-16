@@ -14,7 +14,7 @@ region:
 schema:
   nuts_id:
     type: NutsRegion.nuts_id
-  nuts_year_spec: nuts_year_spec
+  nuts_year_spec:
     type: NutsRegion.nuts_year_spec
   value:
     description: Total number of trademarks published by organisations in the region based on the IPO open trademark dataset

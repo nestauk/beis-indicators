@@ -17,6 +17,7 @@ schema:
     type: NutsRegion.nuts_year_spec
   value:
     description: Number of Science, Research, Engineering and Technology professionals.
+    id: aps_econ_active_stem_profs_data
     label: Frequency
     data_type: int
   year:

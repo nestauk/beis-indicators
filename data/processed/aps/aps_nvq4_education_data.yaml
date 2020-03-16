@@ -18,6 +18,7 @@ schema:
   value:
     description: Percentage of population employed in professional occupations.
     format: .1
+    id: aps_nvq4_education_data
     label: Percentage
     data_type: float
   year:

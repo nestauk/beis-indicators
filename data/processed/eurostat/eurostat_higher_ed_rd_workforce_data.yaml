@@ -18,6 +18,7 @@ schema:
   value:
     description: Higher education sector R&D expenditure in euros (to the nearest 1000)
     format: d
+    id: eurostat_higher_ed_rd_workforce_data
     label: Expenditure (to nearest 1000)
     type: EUR
     data_type: float
