@@ -44,7 +44,7 @@
 </script>
 
 <svelte:head>
-	<title>Svizzle components</title>
+	<title>BEIS indicators - Timelines</title>
 </svelte:head>
 
 <div class="container">
@@ -60,12 +60,12 @@
 		<ul>
 			{#each groups as {id, label, indicators}}
 			<div class="group">
-				<a
+				<!-- <a
 					rel='prefetch'
 					href="group/{id}"
-				>
+				> -->
 					<h2>{label}</h2>
-				</a>
+				<!-- </a> -->
 
 				{#if width}
 				<svg
@@ -106,7 +106,6 @@
 						<circle
 							cx='{scaleX(year)}'
 							r={radius}
-							on:click='{selectIndicatorYear(year)}'
 						/>
 						<a
 							rel='prefetch'
