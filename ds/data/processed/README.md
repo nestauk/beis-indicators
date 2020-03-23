@@ -265,7 +265,7 @@ Last updated: 02/25/20 UTC
 ### Total number of trademarks in scientific and technological product fields published by organisations in the region based on the IPO open trademark dataset
 - **Description:** Total number of trademarks in scientific and technological product fields published by organisations in the region based on the IPO open trademark dataset
 - **Source:** IPO (https://www.gov.uk/government/organisations/intellectual-property-office)
-- **Years Available:** 2010 - 2027
+- **Years Available:** 2010 - 2017
 - **Experimental:** Yes
 - [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/trademarks/total_trademarks_scientific.csv)
 
@@ -273,7 +273,7 @@ Last updated: 02/25/20 UTC
 ### Total number of trademarks published by organisations in the region based on the IPO open trademark dataset
 - **Description:** Total number of trademarks published by organisations in the region based on the IPO open trademark dataset
 - **Source:** IPO (https://www.gov.uk/government/organisations/intellectual-property-office)
-- **Years Available:** 2010 - 2027
+- **Years Available:** 2010 - 2017
 - **Experimental:** Yes
 - [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/trademarks/total_trademarks.csv)
 
