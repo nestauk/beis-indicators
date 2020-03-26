@@ -16,17 +16,18 @@ from beis_indicators.geo.reverse_geocoder import *
 project_dir = beis_indicators.project_dir
 
 #Load the shapefile lookup
-with open(f'{project_dir}/data/raw/shapefile_urls.json','r') as infile:
+with open(f'{project_dir}/data/aux/shapefile_urls.json','r') as infile:
     shape_lookup = json.load(infile)
 
 #Get all the shapefiles
 for name in shape_lookup.keys():
-    get_shape(name,path=f'{project_dir}/data/raw/shapefiles/')
+    get_shape(name,path=f'{project_dir}/data/aux/shapefiles/')
 
 #University metadata
 uni_meta = pd.read_csv(
                        'http://learning-provider.data.ac.uk/data/learning-providers-plus.csv')
 #Reverse geocoding
+#We focus on the last 2 periods as those are the ones for which we have data
 rcs = [reverse_geocode(place_df=uni_meta,
                         shape_name=shape_n,
                         shape_file=shape_f,
