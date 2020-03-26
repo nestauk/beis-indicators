@@ -1,5 +1,6 @@
 import { terser } from 'rollup-plugin-terser';
 import babel from 'rollup-plugin-babel';
+import cleanup from "rollup-plugin-cleanup";
 import commonjs from '@rollup/plugin-commonjs';
 import dsv from '@rollup/plugin-dsv';
 import json from '@rollup/plugin-json';
@@ -40,6 +41,7 @@ export default {
 			commonjs(),
 			dsv(),
 			json(),
+			cleanup(),
 
 			legacy && babel({
 				extensions: ['.js', '.mjs', '.html', '.svelte'],
@@ -84,15 +86,13 @@ export default {
 			commonjs(),
 			dsv(),
 			json(),
+			cleanup(),
 		],
 		external:
 			Object.keys(pkg.dependencies)
 			.filter(name => ![
-				'@svizzle/BarchartV',
-				'@svizzle/Choropleth',
-				'@svizzle/utils',
-				'd3-geo',
-				'svelte-json-tree',
+				'@svizzle/barchart',
+				'@svizzle/choropleth',
 			].includes(name))
 			.concat(
 				require('module').builtinModules ||
@@ -114,6 +114,7 @@ export default {
 			commonjs(),
 			dsv(),
 			json(),
+			cleanup(),
 			!dev && terser()
 		],
 
