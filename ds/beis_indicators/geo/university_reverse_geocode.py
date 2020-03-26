@@ -13,6 +13,9 @@ project_dir = beis_indicators.project_dir
 #Import the functions for reverse geocoding
 from beis_indicators.geo.reverse_geocoder import *
 
+if 'shapefiles' not in os.listdir(f'{project_dir}/data/raw'):
+    os.mkdir(f'{project_dir}/data/raw/shapefiles')
+
 
 #Load the shapefile lookup
 with open(f'{project_dir}/data/aux/shapefile_urls.json','r') as infile:
@@ -20,7 +23,7 @@ with open(f'{project_dir}/data/aux/shapefile_urls.json','r') as infile:
 
 #Get all the shapefiles
 for name in shape_lookup.keys():
-    get_shape(name,path=f'{project_dir}/data/aux/shapefiles/')
+    get_shape(name,path=f'{project_dir}/data/raw/shapefiles/')
 
 #University metadata
 uni_meta = pd.read_csv(
@@ -37,7 +40,7 @@ zip(['nuts2_2013','nuts2_2016'],
 
 uni_nuts = pd.concat(rcs,axis=1)
 
-uni_nuts.columns = ['nuts2_2013','nuts_2016']
+uni_nuts.columns = ['nuts2_2013','nuts2_2016']
 
 with open(f'{project_dir}/data/interim/uni_geos.json','w') as outfile:
     json.dump(uni_nuts.to_dict(orient='index'),outfile)

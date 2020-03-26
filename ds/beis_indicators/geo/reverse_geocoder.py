@@ -8,6 +8,14 @@ import json
 from io import StringIO, BytesIO
 from shapely.geometry import Point
 
+import beis_indicators
+project_dir = beis_indicators.project_dir
+
+#Load the shapefile lookup
+with open(f'{project_dir}/data/aux/shapefile_urls.json','r') as infile:
+    shape_lookup = json.load(infile)
+
+
 def get_shape(file_name,path):
     '''
     Utility function to extract and the shapefile
@@ -107,4 +115,6 @@ def reverse_geocode(place_df,shape_name,
     
     #Return the joined df
     return(joined)
+
+#get_shape('nuts2_2010',f'{project_dir}/data/shapefiles/')
 
