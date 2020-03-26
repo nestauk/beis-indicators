@@ -5,11 +5,8 @@ import pandas as pd
 from zipfile import ZipFile
 import beis_indicators
 import json
-import os
 from io import StringIO, BytesIO
 from shapely.geometry import Point
-
-project_dir = beis_indicators.project_dir
 
 def get_shape(file_name,path):
     '''

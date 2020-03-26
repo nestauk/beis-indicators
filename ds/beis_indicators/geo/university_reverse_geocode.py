@@ -1,19 +1,18 @@
 # Script to reverse geocode universities
-
-import requests
-import geopandas as gp
-import pandas as pd 
-from zipfile import ZipFile
-import beis_indicators
-import json
 import os
+import requests
 from io import StringIO, BytesIO
+from zipfile import ZipFile
+import json
+import geopandas as gp
 from shapely.geometry import Point
+import pandas as pd 
 
+import beis_indicators
+project_dir = beis_indicators.project_dir
 #Import the functions for reverse geocoding
 from beis_indicators.geo.reverse_geocoder import *
 
-project_dir = beis_indicators.project_dir
 
 #Load the shapefile lookup
 with open(f'{project_dir}/data/aux/shapefile_urls.json','r') as infile:
