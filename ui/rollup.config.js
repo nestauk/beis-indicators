@@ -1,10 +1,11 @@
-import json from '@rollup/plugin-json';
-import resolve from '@rollup/plugin-node-resolve';
-import replace from '@rollup/plugin-replace';
-import commonjs from '@rollup/plugin-commonjs';
-import svelte from 'rollup-plugin-svelte';
-import babel from 'rollup-plugin-babel';
 import { terser } from 'rollup-plugin-terser';
+import babel from 'rollup-plugin-babel';
+import commonjs from '@rollup/plugin-commonjs';
+import dsv from '@rollup/plugin-dsv';
+import json from '@rollup/plugin-json';
+import replace from '@rollup/plugin-replace';
+import resolve from '@rollup/plugin-node-resolve';
+import svelte from 'rollup-plugin-svelte';
 
 import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
@@ -37,6 +38,7 @@ export default {
 				dedupe: ['svelte']
 			}),
 			commonjs(),
+			dsv(),
 			json(),
 
 			legacy && babel({
@@ -80,6 +82,7 @@ export default {
 				dedupe: ['svelte']
 			}),
 			commonjs(),
+			dsv(),
 			json(),
 		],
 		external:
@@ -109,6 +112,7 @@ export default {
 				'process.env.NODE_ENV': JSON.stringify(mode)
 			}),
 			commonjs(),
+			dsv(),
 			json(),
 			!dev && terser()
 		],

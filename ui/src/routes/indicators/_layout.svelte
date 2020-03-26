@@ -1,21 +1,8 @@
-<script context="module">
-	export function preload() {
-		return this.fetch('indicatorsIndex.json')
-			.then(r => r.json())
-			.then(groups => ({groups}));
-	}
-</script>
-
 <script>
-	import * as _ from 'lamb';
+	import groups from 'app/data/indicatorsGroups.json';
+	export let segment;
 
-	export let groups;
-	export let segment; // e.g. 'aps_econ_active_stem_associate_profs_data--2014'
-
-	let indicatorId, year;
-	$: if (segment){
-		[indicatorId, year] = segment.split('--')
-	}
+	console.log('indicators/_layout.svelte: segment =', segment)
 </script>
 
 <section>
@@ -75,7 +62,7 @@
 	}
 
 	nav p.selected {
-		background-color: var(--color-main-lighter) !important;
+		background-color: var(--color-main-desat-50) !important;
 	}
 
 	nav p:hover {

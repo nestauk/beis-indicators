@@ -35,26 +35,12 @@ a {
 	color: inherit;
 }
 
-code {
-	background-color: #f0f0f0;
-	border-radius: 2px;
-	color: #555;
-	font-family: menlo, inconsolata, monospace;
-	font-size: calc(1em - 2px);
-	padding: 0.2em 0.4em;
-}
-
-pre {
-	background-color: var(--color-grey-lighter);
-	border: 1px solid var(--color-main-lighter);
-	padding: 0.5rem;
-}
-
 .distancer {
 	margin-bottom: 1rem;
 }
 
 :root {
+	--color-main-desat-50: hsla(199, 50%, 52%, 1);
 	--color-main-lighter: rgb(157, 219, 249);
 	--color-main: rgb(16, 174, 249);
 	--color-selected: dodgerblue;
@@ -63,7 +49,4 @@ pre {
 	--dim-main-height: calc(100% - var(--dim-header-height));
 	--dim-padding-minor: 0.5rem;
 	--dim-padding: 1rem;
-
-	/* svelte-json-tree  */
-	--json-tree-font-size: 1.1rem;
 }

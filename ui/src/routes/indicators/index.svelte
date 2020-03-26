@@ -1,30 +1,10 @@
-<script context="module">
-	export function preload() {
-		return this.fetch('indicatorsIndex.json')
-			.then(r => r.json())
-			.then(groups => ({groups}));
-	}
-</script>
-
 <script>
 	import * as _ from 'lamb';
 	import { linearScale } from 'yootils';
-	import {
-		arrayMin,
-		arrayMax,
-		makeArrayTransformer
-	} from '@svizzle/utils';
 	import {tapValue} from '@svizzle/dev';
 
-	import { inclusiveRange } from 'app/utils';
-
-	const getYearExtent = _.pipe([
-		_.pluckKey('indicators'),
-		_.flatten,
-		_.pluckKey('year_range'),
-		_.transpose,
-		makeArrayTransformer([arrayMin, arrayMax]),
-	]);
+	import { getYearExtent, inclusiveRange } from 'app/utils';
+	import groups from 'app/data/indicatorsGroups.json';
 
 	const radius = 5;
 	const fontSize = 10;
@@ -33,7 +13,6 @@
 	const vStep = 2 * radius + 3 * gap + fontSize;
 	const vHalfStep = vStep / 2;
 
-	export let groups;
 	export let height;
 	export let width;
 
@@ -109,7 +88,7 @@
 						/>
 						<a
 							rel='prefetch'
-							href="indicators/{schema.value.id}--{year}"
+							href="indicators/{schema.value.id}/{year}"
 						>
 							<circle
 								cx='{scaleX(year)}'

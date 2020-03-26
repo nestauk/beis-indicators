@@ -6,13 +6,13 @@ import * as _ from 'lamb';
 import yaml from 'js-yaml';
 import {readDir, readFile, readJson, saveObj} from '@svizzle/file';
 import {tapMessage} from '@svizzle/dev';
-import {applyFnMap, isNotNil} from '@svizzle/utils';
+import {applyFnMap} from '@svizzle/utils';
 
 const DATA_DIR = path.resolve(__dirname, '../../ds/data/processed');
 const FRAMEWORK_PATH = path.resolve(__dirname, '../../ds/data/aux/framework.json');
 const GITHUB_RAW_BASEURL =
   'https://raw.githubusercontent.com/nestauk/beis-indicators/dev/ds/data/processed';
-const INDEX_PATH = path.resolve(__dirname, '../static/indicatorsIndex.json');
+const GROUPS_PATH = path.resolve(__dirname, '../src/node_modules/app/data/indicatorsGroups.json');
 
 const isDir = name => !name.startsWith('.') && path.parse(name).ext === '';
 const isYaml = name => path.parse(name).ext === '.yaml';
@@ -27,7 +27,7 @@ const makeCsvUrl = dirName => filename => {
   return `${GITHUB_RAW_BASEURL}/${dirName}/${name}.csv`;
 }
 const setUrl = url => obj => _.setIn(obj, 'url', url);
-const saveIndex = saveObj(INDEX_PATH, 2);
+const saveIndex = saveObj(GROUPS_PATH, 2);
 
 const process = async () => {
   // FIXME use a proper walker
@@ -63,7 +63,7 @@ const process = async () => {
 
   console.log(index);
 
-  await saveIndex(index).then(tapMessage(`Saved ${INDEX_PATH}`));
+  await saveIndex(index).then(tapMessage(`Saved ${GROUPS_PATH}`));
 }
 
 process().then(tapMessage('Done'))
