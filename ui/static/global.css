@@ -43,8 +43,9 @@ a {
 	--color-main-desat-50: hsla(199, 50%, 52%, 1);
 	--color-main-lighter: rgb(157, 219, 249);
 	--color-main: rgb(16, 174, 249);
-	--color-selected: dodgerblue;
+	--color-selected: lightseagreen; /* dodgerblue */
 	--color-grey-lighter: #f7f7f7;
+	--color-grey-70: rgb(70, 70, 70);
 	--dim-header-height: 3rem;
 	--dim-main-height: calc(100% - var(--dim-header-height));
 	--dim-padding-minor: 0.5rem;

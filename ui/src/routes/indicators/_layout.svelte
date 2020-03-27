@@ -1,11 +1,30 @@
 <script>
+	import { setContext } from 'svelte';
+	import { writable } from 'svelte/store';
+
 	import groups from 'app/data/indicatorsGroups.json';
+	import Timeline from 'app/components/Timeline.svelte';
+	import {
+		availableYearsStore,
+		selectedYearStore,
+		timelineHeightStore,
+		timelineLayoutStore,
+		timelineWidthStore,
+	} from 'app/stores';
+	import { inclusiveRange } from 'app/utils';
+
+	setContext('layout', {
+		timelineHeightStore,
+		timelineWidthStore,
+		timelineLayoutStore
+	});
+
 	export let segment;
 
 	console.log('indicators/_layout.svelte: segment =', segment)
 </script>
 
-<section>
+<section class="container">
 	<nav>
 		{#each groups as {label, indicators}}
 		<div class="distancer">
@@ -13,7 +32,7 @@
 			{#each indicators as {description_short, schema}}
 			<a
 				rel='prefetch'
-				href="indicators/{schema.value.id}"
+				href='indicators/{schema.value.id}'
 			>
 				<p class:selected='{schema.value.id === segment}'>
 					{description_short}
@@ -23,13 +42,24 @@
 		</div>
 		{/each}
 	</nav>
-	<main>
-		<slot></slot>
-	</main>
+	<section class="content">
+		<section>
+			<slot></slot>
+		</section>
+		<nav>
+			<Timeline
+				availableYears={$availableYearsStore}
+				bind:height={$timelineHeightStore}
+				bind:width={$timelineWidthStore}
+				indicatorId={segment}
+				selectedYear={$selectedYearStore}
+			/>
+		</nav>
+	</section>
 </section>
 
 <style>
-	section {
+	.container {
 		height: 100%;
 		width: 100%;
 
@@ -37,8 +67,7 @@
 		grid-template-columns: 20% 80%;
 		grid-template-rows: 100%;
 	}
-
-	nav {
+	.container > nav {
 		height: 100%;
 		width: 100%;
 		padding: var(--dim-padding);
@@ -49,32 +78,39 @@
 		color: white;
 		font-weight: 200;
 	}
-
-	nav a {
+	.container > nav a {
 		text-decoration: none;
 	}
-
-	nav p {
+	.container > nav p {
 		line-height: 1.75rem;
 		display: flex;
 		align-items: center;
 		padding-left: 0.5rem;
 	}
-
-	nav p.selected {
+	.container > nav p.selected {
 		background-color: var(--color-main-desat-50) !important;
 	}
-
-	nav p:hover {
+	.container > nav p:hover {
 		cursor: pointer;
-		background-color: lightseagreen;
+		background-color: var(--color-selected);
 		/* font-weight: 600; */
 		/* background-color: var(--color-grey-lighter); */
 	}
 
-	main {
+	.content {
+		display: grid;
+		grid-template-rows: calc(100% - 60px) 60px;
+		grid-template-columns: 100%;
+	}
+	.content section {
 		height: 100%;
 		width: 100%;
-		padding: var(--dim-padding);
+		padding: var(--dim-padding) var(--dim-padding) 0 var(--dim-padding);
+	}
+	.content nav {
+		height: 100%;
+		width: 100%;
+		background-color: #f9f7dd !important;
+		padding: 0 var(--dim-padding);
 	}
 </style>

@@ -3,23 +3,24 @@
 	import { linearScale } from 'yootils';
 	import {tapValue} from '@svizzle/dev';
 
-	import { getYearExtent, inclusiveRange } from 'app/utils';
+	import { goto } from '@sapper/app';
+	import { yearExtent, yearRange } from 'app/data/groups';
 	import groups from 'app/data/indicatorsGroups.json';
+	import {resetSelection} from 'app/stores';
+	import {inclusiveRange} from 'app/utils';
 
-	const radius = 5;
-	const fontSize = 10;
+	import { getContext } from 'svelte';
+
+	const {timelineLayoutStore} = getContext('layout');
 	const gap = 7;
-	const start = radius + gap;
-	const vStep = 2 * radius + 3 * gap + fontSize;
-	const vHalfStep = vStep / 2;
 
-	export let height;
-	export let width;
+	resetSelection();
 
-	$: end = width - start;
-	$: yearExtent = getYearExtent(groups);
-	$: scaleX = linearScale(yearExtent, [start, end]);
-	$: yearRange = inclusiveRange(yearExtent);
+	let height;
+	let width;
+
+	$: layout = $timelineLayoutStore;
+	$: vStep = 2 * layout.radius + 3 * gap + layout.fontSize;
 </script>
 
 <svelte:head>
@@ -39,29 +40,24 @@
 		<ul>
 			{#each groups as {id, label, indicators}}
 			<div class="group">
-				<!-- <a
-					rel='prefetch'
-					href="group/{id}"
-				> -->
-					<h2>{label}</h2>
-				<!-- </a> -->
+				<h2>{label}</h2>
 
 				{#if width}
 				<svg
 					{width}
-					height='{4 * start + vStep * indicators.length}'
+					height='{4 * layout.start + vStep * indicators.length}'
 				>
 					{#each yearRange as year}
 					<g
 						class='xref'
-						transform='translate({scaleX(year)},0)'
+						transform='translate({layout.scaleX(year)},0)'
 					>
 						<line
-							y1='{start}'
-							y2='{start + vStep * indicators.length}'
+							y1='{layout.start}'
+							y2='{layout.start + vStep * indicators.length}'
 						/>
 						<text
-							y='{2 * start + vStep * indicators.length + gap}'
+							y='{2 * layout.start + vStep * indicators.length + gap}'
 						> {year}
 						</text>
 					</g>
@@ -73,28 +69,26 @@
 						transform='translate(0,{vStep * (y + 1)})'
 					>
 						<text
-							x='{(scaleX(year_range[0]) + scaleX(year_range[1])) / 2}'
-							dy='{-(fontSize + gap)}'
-							font-size={fontSize}
+							x='{(layout.scaleX(year_range[0]) + layout.scaleX(year_range[1])) / 2}'
+							dy='{-(layout.fontSize + gap)}'
+							font-size={layout.fontSize}
 						>{description_short}</text>
 						<line
-							x1='{scaleX(year_range[0]) + radius}'
-							x2='{scaleX(year_range[1]) - radius}'
+							x1='{layout.scaleX(year_range[0]) + layout.radius}'
+							x2='{layout.scaleX(year_range[1]) - layout.radius}'
 						/>
 						{#each inclusiveRange(year_range) as year}
-						<circle
-							cx='{scaleX(year)}'
-							r={radius}
-						/>
-						<a
+						<!-- FIXME using <a> in svg seems to give a bad URL hence reloading the page -->
+						<!-- <a
 							rel='prefetch'
-							href="indicators/{schema.value.id}/{year}"
-						>
+							href='indicators/{schema.value.id}/{year}'
+						> -->
 							<circle
-								cx='{scaleX(year)}'
-								r={radius}
+								cx='{layout.scaleX(year)}'
+								r={layout.radius}
+								on:click='{() => goto(`indicators/${schema.value.id}/${year}`)}'
 							/>
-						</a>
+						<!-- </a> -->
 						{/each}
 					</g>
 					{/each}

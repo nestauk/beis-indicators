@@ -29,6 +29,7 @@
     "eslint": "^6.8.0",
     "esm": "^3.0.84",
     "js-yaml": "^3.13.1",
+    "mocha": "^7.1.1",
     "npm-run-all": "^4.1.5",
     "rollup-plugin-babel": "^4.0.2",
     "rollup-plugin-cleanup": "^3.1.1",
@@ -46,7 +47,8 @@
     "export": "sapper export --legacy",
     "makeIndex": "npm run chmod && ./bin/make_index.js",
     "start": "node __sapper__/build",
-    "test": "run-p --race dev cy:run"
+    "test": "run-p --race dev cy:run",
+    "unittest": "mocha -r esm --spec src/**/*.spec.js"
   },
   "version": "0.0.1"
 }

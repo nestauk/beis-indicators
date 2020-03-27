@@ -33,6 +33,8 @@
 
 	import yearlyKeyToLabel from 'app/data/NUTS2_UK_labels';
 	import topos from 'app/data/topojson';
+	import {availableYearsStore, selectedYearStore} from 'app/stores';
+	import {inclusiveRange} from 'app/utils';
 
 	const makeItemsWithId = id => _.pipe([
 		_.mapWith(applyFnMap({
@@ -46,6 +48,8 @@
 	export let id;
 	export let year;
 
+	$: $selectedYearStore = Number(year);
+	$: $availableYearsStore = inclusiveRange($lookupStore[id].year_range)
 	$: data && lookupStore.update(_.setPath(`${id}.data`, data));
 	$: description_short = $lookupStore[id].description_short;
 	$: indicatorData = $lookupStore[id].data;
@@ -55,14 +59,6 @@
 	$: nuts_year_spec = yearData && yearData[0].nuts_year_spec
 	$: topojson = nuts_year_spec && topos[`NUTS_RG_03M_${nuts_year_spec}_4326_LEVL_2_UK`];
 	$: keyToLabel = yearlyKeyToLabel[nuts_year_spec];
-
-	/*
-	TODO
-	$: colorScale
-	$: keyToColor(colorScale)
-
-	mouseover -> tooltip
-	*/
 </script>
 
 <svelte:head>
