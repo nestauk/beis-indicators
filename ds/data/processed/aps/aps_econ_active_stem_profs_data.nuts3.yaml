@@ -1,0 +1,30 @@
+api_doc_url: https://www.nomisweb.co.uk/api/v01/help
+api_type: FETCH
+description_short: STEM professionals
+description: Number of Science, Research, Engineering and Technology professionals by NUTS 3 regions.
+endpoint_url: {
+  2010: https://www.nomisweb.co.uk/api/v01/dataset/NM_17_1.jsonstat.json?geography=1912602625...1912602758&date=latestMINUS27,latestMINUS23,latestMINUS19&cell=404882177,404883201&measures=20100,20701,
+  2013: https://www.nomisweb.co.uk/api/v01/dataset/NM_17_1.jsonstat.json?geography=1883242497...1883242664&date=latestMINUS15,latestMINUS11,latestMINUS7&cell=404882177,404883201&measures=20100,20701,
+  2016: https://www.nomisweb.co.uk/api/v01/dataset/NM_17_1.jsonstat.json?geography=1832910849...1832911016&date=latestMINUS3&cell=404882177,404883201&measures=20100,20701
+  } # nuts_spec_year: endpoint_url
+framework_group: public_rnd_capability
+is_experimental: False
+order: [year, nuts_id, nuts_year_spec, value.id] # do not change; specifies the order of the exported indicator fields
+region:
+  type: NutsRegion
+  level: 3
+  source: PROVIDED
+schema:
+  nuts_id:
+    type: NutsRegion.nuts_id
+  nuts_year_spec:
+    type: NutsRegion.nuts_year_spec
+  value:
+    description: Number of Science, Research, Engineering and Technology professionals.
+    label: Frequency
+    data_type: int
+  year:
+    data_type: int
+    label: Year
+source_name: NOMIS
+year_range: [2012, 2018]
