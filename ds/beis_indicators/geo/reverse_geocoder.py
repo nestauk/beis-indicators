@@ -116,5 +116,3 @@ def reverse_geocode(place_df,shape_name,
     #Return the joined df
     return(joined)
 
-#get_shape('nuts2_2010',f'{project_dir}/data/shapefiles/')
-
