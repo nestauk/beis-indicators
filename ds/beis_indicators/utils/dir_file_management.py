@@ -88,6 +88,6 @@ def make_indicator(table,target_path,var_lookup,year_var,nuts_var='nuts_code',nu
     print(t.head())
     
     #Save in the processed folder
-    t.to_csv(f'{project_dir}/data/processed/{target_path}/{var_code}.csv')
+    t.to_csv(f'{project_dir}/data/processed/{target_path}/{var_code}.csv',index=False)
     
     

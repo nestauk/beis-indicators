@@ -14,7 +14,6 @@ from beis_indicators.hesa.hesa_processing import *
 
 project_dir = beis_indicators.project_dir
 
-
 #Make directories
 make_dirs('hesa',['raw','processed','interim'])
 
@@ -28,14 +27,11 @@ with open(f'{project_dir}/data/aux/stem_hesa.txt','r') as infile:
     stem_hesa = infile.read().split('\n')
 
 #Collect data if necessary
-#Staff
 
 res_staff = hesa_parser('https://www.hesa.ac.uk/data-and-analysis/staff/table-1.csv','staff',skip=28)
 
-#Staff qualifications
 qual_staff = hesa_parser('https://www.hesa.ac.uk/data-and-analysis/staff/table-8.csv','qual_staff',skip=18)
 
-#Spaces
 spaces = hesa_parser('https://www.hesa.ac.uk/data-and-analysis/estates/data.csv','spaces',11)
 
 #STEM graduates
@@ -44,7 +40,6 @@ make_student_table('https://www.hesa.ac.uk/data-and-analysis/students/table-13.c
 
 graduates_all_years = pd.read_csv(f'{project_dir}/data/raw/hesa/students.csv',dtype={'ukprn':str})
 
-
 ########
 #Process the data
 #######
@@ -52,13 +47,11 @@ graduates_all_years = pd.read_csv(f'{project_dir}/data/raw/hesa/students.csv',dt
 #We filter the graduate data to focus on the full-time students. 
 grad_short = graduates_all_years.loc[(graduates_all_years['level_of_study']=='All')&((graduates_all_years['mode_of_study']=='Full-time'))]
 
-
 ###########
 #Produce indicators
 ###########
 
 #Research staff
-
 res_staff_filter = {'mode_of_employment':'All','contract_marker':'Academic',
                    'activity_standard_occupational_classification':'Total academic staff',
                    'country_of_he_provider':'All','region_of_he_provider':'All'}
@@ -136,7 +129,3 @@ make_indicator(nuts_spaces,'hesa',{'Total site area (hectares)':'area_university
 
 #Number of buildings
 make_indicator(nuts_spaces,'hesa',{'Total number of buildings':'total_university_buildings'},'academic_year')
-
-
-
-
