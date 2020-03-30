@@ -67,13 +67,6 @@ def hesa_parser(url,out_name,skip=16,encoding='utf-8'):
 
         return(out)
 
-def parse_academic_year(year):
-    '''
-    Parses an academic year eg 2014/15 into an int with the first year
-
-    '''
-    return(int(year.split('/')[0]))
-
 def make_nuts_estimate(data,nuts_lookup,counter,name,year_var=None,method='time_consistent'):
     '''
     This function takes hesa data and creates a nuts estimate
@@ -114,7 +107,7 @@ def make_nuts_estimate(data,nuts_lookup,counter,name,year_var=None,method='time_
     
     return(out)
 
-def multiple_nuts_estimates(data,nuts_lookup,variables,select_var,value,year_var=None):
+def multiple_nuts_estimates(data,nuts_lookup,variables,select_var,value,year_var=None,method='time_consistent'):
     '''
     Creates NUTS estimates for multiple variables.
     
@@ -128,7 +121,7 @@ def multiple_nuts_estimates(data,nuts_lookup,variables,select_var,value,year_var
     
     '''
     if year_var==None:
-        concat = pd.concat([make_nuts_estimate(data.loc[data[select_var]==m],nuts_lookup,value,m) for m in 
+        concat = pd.concat([make_nuts_estimate(data.loc[data[select_var]==m],nuts_lookup,value,m,method=method) for m in 
                   variables],axis=1)
     #If we want to do this by year then we will create aggregates by nuts name and code and year and then concatenate over columns 
     else:
@@ -137,7 +130,7 @@ def multiple_nuts_estimates(data,nuts_lookup,variables,select_var,value,year_var
         
         for m in variables:
             
-            y = make_nuts_estimate(data.loc[data[select_var]==m],nuts_lookup,value,m,year_var='academic_year')
+            y = make_nuts_estimate(data.loc[data[select_var]==m],nuts_lookup,value,m,method=method,year_var='academic_year')
             
             year_store.append(y)
             
@@ -179,4 +172,80 @@ def make_student_table(url):
         graduates_all_years.to_csv(f'{project_dir}/data/raw/hesa/students.csv',index=False)
 
         print('parsed collected and parsed students')
+
+def calculate_perf(table,perf,nuts_lookup,norm=False,sp_def='all',value='currency',method='time-consistent'):
+    '''
+    Function that calculates performance with HEBCI data (employment, turnover, investment, active firms...) 
+    
+    Args:
+        table (df) long table with the performance and spinoff category information
+        #nuts_lookup (dict) is the lookup we use for the nuts.
+        perf (str) measure of performance
+        sp_def (str) definition of spinoff
+        norm (str) if we want to normalise by the number of entities in the category
+        value (str) if currency multiply by 1000 to extract gpbs
+        method (str) whether we are reverse geocodign variables in a time-consistent way
+    
+    Returns a clean indicator
+    
+    '''
+    t = table.copy()
+    
+    #First get the financials
+    #Create a dict to filter the data
+    p_filter = {'metric':perf}
+    
+    #Extract the estimates
+    t_filt= multiple_nuts_estimates(filter_data(t,p_filter),nuts_lookup,set(table['category_marker']),
+                                    'category_marker','value',year_var='academic_year',method=method)
+    
+    #Are we subsetting by a category?
+    if sp_def == 'all':
+        t_filt = t_filt.sum(axis=1)
+    
+    else:
+        t_filt = t_filt[sp_def]
+    
+    #Tidy columns
+    t_filt.name = sp_def
+
+    #Scale if the value is a currency
+    if value=='currency':
+        t_filt = t_filt*1000
+        t_filt.name = 'gbp_'+t_filt.name
+    
+    #Do the same with the totals
+    if norm == True:
+        
+        unit_filter = {'metric':'Number of active firms'}
+        
+        u_filt= multiple_nuts_estimates(filter_data(t,unit_filter),nuts_lookup,set(table['category_marker']),
+                                        'category_marker','value',year_var='academic_year',method=method)
+        
+        #Are we subsetting by a category?
+        if sp_def == 'all':
+            u_filt = u_filt.sum(axis=1)
+
+        else:
+            u_filt = u_filt[sp_def]
+
+        #Tidy columns
+        u_filt.name = 'all_comps'
+        
+        comb = pd.concat([t_filt,u_filt],axis=1)
+        
+        comb[f'{t_filt.name}_by_company']= comb[t_filt.name]/comb['all_comps']
+        
+        #Zeroes are nans (this is to avoid division by zero)
+        comb.fillna(0,inplace=True)
+        
+        return(comb)
+    
+    else:
+        return(t_filt)
+
+
+        
+        
+    
         

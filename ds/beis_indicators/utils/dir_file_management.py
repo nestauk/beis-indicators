@@ -4,6 +4,7 @@ import os
 import pandas as pd 
 import re
 import beis_indicators
+import numpy as np
 
 project_dir = beis_indicators.project_dir
 
@@ -42,7 +43,14 @@ def get_nuts_spec(year):
         if year >=t:
             return(t)
 
-def make_indicator(table,target_path,var_lookup,year_var,nuts_var='nuts_code',nuts_spec='flex'):
+def parse_academic_year(year):
+    '''
+    Parses an academic year eg 2014/15 into an int with the first year
+
+    '''
+    return(int(year.split('/')[0]))
+
+def make_indicator(table,target_path,var_lookup,year_var,nuts_var='nuts_code',nuts_spec='flex',decimals=0):
     '''
     We use this function to create and save indicators using our standardised format.
     
@@ -54,6 +62,7 @@ def make_indicator(table,target_path,var_lookup,year_var,nuts_var='nuts_code',nu
         nuts_var (str) is the name of the NUTS code variable. We assume it is nuts_code
         nuts_spec (str) is the method to set up the nuts specification. If flex, this means that we adapt it to the year.
         if not flex then it is the year we specify as a value.
+        decimals (int) number of decimals (0 if an int)
     
     '''
     #Copy
@@ -81,7 +90,13 @@ def make_indicator(table,target_path,var_lookup,year_var,nuts_var='nuts_code',nu
     #Rename variables
     t.rename(columns={var_name:var_code,year_var:'year',nuts_var:'nuts_id'},inplace=True)
 
-    
+    #Round variables
+    t[var_code] = [np.round(x,decimals) if decimals>0 else int(x) for x in t[var_code]]
+
+    # #If we are dealing with academic years then we need to parse them
+    # if year =='academic_year':
+    #     t[year]=[parse_academic_year(y) for y in t[year]]
+
     #Reorder variables
     t = t[['year','nuts_id','nuts_year_spec',var_code]]
     
