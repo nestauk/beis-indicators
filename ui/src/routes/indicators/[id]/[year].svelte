@@ -4,14 +4,9 @@
 
 	import {lookupStore} from 'app/stores';
 
-	const log = x => console.log(`indicators/[id]/[year].svelte: ${x} =`, x);
-
 	export async function preload({ params: {id, year}, query }) {
-		log('year, id', id, year);
-
 		const lookup = get(lookupStore);
 		const indicator = lookup[id];
-		log('indicator.data', indicator.data);
 
 		// if (indicator.data) {
 		//	 return Promise.resolve({id, year})
@@ -26,10 +21,12 @@
 
 <script>
 	import * as _ from 'lamb';
-
+	import {extent} from 'd3-array';
+	import {scaleQuantize} from 'd3-scale';
+	import {schemeRdYlBu} from 'd3-scale-chromatic';
 	import ChoroplethDiv from '@svizzle/choropleth/src/ChoroplethDiv.svelte';
 	import BarchartV from '@svizzle/barchart/src/BarchartV.svelte';
-	import {applyFnMap, getValue} from '@svizzle/utils';
+	import {applyFnMap, getValue, keyValueArrayToObject} from '@svizzle/utils';
 
 	import yearlyKeyToLabel from 'app/data/NUTS2_UK_labels';
 	import topos from 'app/data/topojson';
@@ -44,9 +41,12 @@
 		_.sortWith([_.sorterDesc(getValue)])
 	]);
 
+	let colorScale = scaleQuantize().range(schemeRdYlBu[4]);
+
 	export let data;
 	export let id;
 	export let year;
+
 
 	$: $selectedYearStore = Number(year);
 	$: $availableYearsStore = inclusiveRange($lookupStore[id].year_range)
@@ -59,6 +59,14 @@
 	$: nuts_year_spec = yearData && yearData[0].nuts_year_spec
 	$: topojson = nuts_year_spec && topos[`NUTS_RG_03M_${nuts_year_spec}_4326_LEVL_2_UK`];
 	$: keyToLabel = yearlyKeyToLabel[nuts_year_spec];
+
+	$: valueExtext = extent(items, getValue);
+	$: colorScale = colorScale.domain(valueExtext);
+	$: makeKeyToColor = _.pipe([
+		keyValueArrayToObject,
+		_.mapValuesWith(colorScale)
+	]);
+	$: keyToColor = makeKeyToColor(items);
 </script>
 
 <svelte:head>
@@ -72,20 +80,21 @@
 	<div class="col col1">
 		{#if topojson}
 		<ChoroplethDiv
+			{keyToColor}
 			{topojson}
 			colorDefaultFill='lightgrey'
 			colorStroke='black'
+			key='NUTS_ID'
 			projection='geoEqualEarth'
 			sizeStroke=0.5
 			topojsonId='NUTS'
 		/>
-		<!-- key='NUTS_ID' -->
-		<!-- {keyToColor} -->
 		{/if}
 	</div>
 	<div class="col col2">
 		<BarchartV
 			{items}
+			{keyToColor}
 			{keyToLabel}
 		/>
 	</div>

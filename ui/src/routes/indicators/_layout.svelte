@@ -20,8 +20,6 @@
 	});
 
 	export let segment;
-
-	console.log('indicators/_layout.svelte: segment =', segment)
 </script>
 
 <section class="container">

@@ -18,8 +18,6 @@
     _.mapWith(year => [year, `/indicators/${id}/${year}`])
   ]);
   $: routes = makeRoutes(lookup[id].year_range);
-
-  $: console.log('indicators/[id]/index.svelte: id =', id)
 </script>
 
 <ul>
