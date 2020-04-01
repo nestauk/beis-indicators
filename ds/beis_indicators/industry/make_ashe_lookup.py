@@ -26,7 +26,6 @@ project_dir = beis_indicators.project_dir
 def get_ashe_data(path,ons_path):
     '''
     Function to collect the ASHE data from the ONS website.
-    
     Arguments:
         path (str) is the path for the file we are interested in
         ons_path (str) is the parent for all ashe files
@@ -34,8 +33,8 @@ def get_ashe_data(path,ons_path):
     This will return a doanloaded and parsed file
     
     '''
-    
     file = requests.get(ons_path+path)
+    logger.info(path)
     
     #Create a zipfile with its content
     z = ZipFile(BytesIO(file.content))
@@ -43,26 +42,19 @@ def get_ashe_data(path,ons_path):
     #Extract names
     names = z.namelist()
     
-    #Select the names (they will meantion hourly gross but not the confidence intervals)
-    
+    #Select the names (they will meantion hourly gross but not the confidence intervals)    
     my_name = [x for x in names if (all(names in x for names in ['Annual','Gross'])) & ('CV' not in x)]
-    
-    print(my_name)
 
-    #if len(my_name)>1:
-    #    print('Too many options')
-    #    break
-    
     #Read into excel
-    infile = pd.read_excel(BytesIO(z.open(my_name[0]).read()),sheet_name=1,skiprows=4,
+    #Decode first
+    decoded_zip = BytesIO(z.open(my_name[0]).read())
+
+    infile = pd.read_excel(decoded_zip,sheet_name=1,skiprows=4,
                       na_values=['x','..',':'])
-    
     #Drop missing values in the matching code or median (these don't interest us)
     infile.dropna(axis=0,subset=['Code'],inplace=True)
     
     infile['Code'] = [x.strip() for x in infile['Code']]
-    
-    #container.append(infile.reset_index(drop=True))
     
     return(infile.reset_index(drop=True))
 
@@ -73,7 +65,6 @@ def add_zeros(container):
     
     Args:
         Container (df) is one of the dataframes we have created before
-    
     ''' 
     new_cont = container.copy()
     
@@ -83,8 +74,6 @@ def add_zeros(container):
             break
         else:
             if row['Code'] not in ['A','B']:
-            
-            #print(row['Code'])
                 new_cont.loc[pid,'Code']='0'+row['Code']
         
     return(new_cont)
@@ -144,28 +133,37 @@ def map_salaries(lookup,four_digit, ashe):
     ''' 
     cont = []
 
-    #Is loo
+    #Is the sic in the lookup at the highest level of resolution?
     for sic in lookup[four_digit]:
         
         if sic in ashe[0].keys():
-            #cont.append({sic:ashe_lookups[0][sic]})
             cont.append([sic,ashe[0][sic]])
             
         elif sic[:-1] in ashe[1].keys():
-            
-            #cont.append({sic:ashe_lookups[1][sic[:-1]]})
             cont.append([sic,ashe[1][sic[:-1]]])
         
         elif sic[:-2] in ashe[2].keys():
-            #cont.append({sic:ashe_lookups[2][sic[:-2]]})
             cont.append([sic,ashe[2][sic[:-2]]])
         
         else:
-            #cont.append({sic:np.nan})
             cont.append([sic,np.nan])
-    
-    return(pd.DataFrame(cont,columns=['sic_4','median_salary_thGBP']).set_index('sic_4'))
-        
+
+    sic_median_df = pd.DataFrame(cont,columns=['sic_4','median_salary_thGBP']).set_index('sic_4')
+    return(sic_median_df)
+
+def _read_bres_year(y):
+    '''
+    Reads the BREs data for one year
+    '''
+    df = pd.read_csv(f'{project_dir}/data/interim/industry/nomis_BRES_{y}_TYPE450.csv',
+                                   dtype={'SIC4':str})
+    return(df)
+
+def _make_median_salary(x):
+    '''
+    Calculates the weighted median salary for a row
+    '''
+    return(np.sum(x['median_salary']*x['employment'])/np.sum(x['employment']))
 
 ##########
 #1. Collect data
@@ -174,8 +172,11 @@ def map_salaries(lookup,four_digit, ashe):
 standard_path = 'https://www.ons.gov.uk/file?uri=/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/industry4digitsic2007ashetable16/'
 
 #Ashe paths
-ashe_paths = ['2018provisional/table162018provisional.zip', '2017revised/table162017revised.zip',
-            '2016revised/table162016revised.zip','2015/table162015revised.zip']
+ashe_paths = [
+'2018provisional/table162018provisional.zip', 
+'2017revised/table162017revised.zip',
+'2016revised/table162016revised.zip',
+'2015/table162015revised.zip']
 
 #Collect data
 ashes = [get_ashe_data(p,standard_path) for p in ashe_paths]
@@ -197,12 +198,16 @@ all_salaries.columns = [2018,2017,2016,2015]
 
 #Create weighted medians
 #Melt the salaries file
-salaries_long = all_salaries.reset_index(drop=False).melt(id_vars=['sic_4'],var_name='year',value_name='median_salary')
+salaries_long = all_salaries.reset_index(
+                                         drop=False).melt(
+                                            id_vars=['sic_4'],
+                                            var_name='year',
+                                            value_name='median_salary')
 
-#REad BRES data for the four years
-#We read for the four years
-bres_data = pd.concat([pd.read_csv(f'{project_dir}/data/interim/industry/nomis_BRES_{y}_TYPE450.csv',
-                                   dtype={'SIC4':str}) for y in [2016,2017,2018]],axis=0)
+#Read BRES data for the four years
+#We read the data for three years
+
+bres_data = pd.concat([_read_bres_year(y) for y in [2016,2017,2018]],axis=0)
 
 #Group them by year to get the total level of employment by SIC4
 sic_yearly_long = bres_data.groupby(['year','SIC4'])['value'].sum().reset_index(drop=False)
@@ -213,9 +218,9 @@ salary_empl_merge = pd.merge(salaries_long,sic_yearly_long,left_on=['sic_4','yea
 
 segment_merged = pd.merge(cl[['sic_4','cluster']],salary_empl_merge,left_on='sic_4',right_on='sic_4')
 
-#Weighted salary: takes all the sics in a segment and applies a weight based on their importance in the segment
+#Weighted salary: 
 weighted_sal = segment_merged.groupby(
-    ['cluster','year']).apply(lambda x: np.sum(x['median_salary']*x['employment'])/np.sum(x['employment'])).reset_index(
+    ['cluster','year']).apply(lambda x: _make_median_salary(x)).reset_index(
     drop=False)
 
 ashe_out = weighted_sal.rename(columns={0:'weighted_median_salary'})
@@ -232,10 +237,8 @@ for pid,row in ashe_out.iterrows():
 #Calculate averages for all years
 ashe_out_grouped = pd.DataFrame(ashe_out.groupby(['cluster'])['weighted_median_salary'].mean())
 
-ashe_out_grouped['ashe_median_salary_rank'] = pd.qcut(ashe_out_grouped['weighted_median_salary'],np.arange(0,1.1,0.1),
-                                                      labels=False)
-
-#ashe_out_grouped.sort_values('ashe_median_salary_rank',ascending=False).tail()
+ashe_out_grouped['ashe_median_salary_rank'] = pd.qcut(
+            ashe_out_grouped['weighted_median_salary'],np.arange(0,1.1,0.1),labels=False)
 
 ashe_out_grouped.to_csv(f'{project_dir}/data/interim/industry/ashe_rankings.csv')
 

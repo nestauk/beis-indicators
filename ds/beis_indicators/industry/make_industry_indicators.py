@@ -47,6 +47,15 @@ def extract_segment(path,sector_list,sector_variable,sector_name):
     sector_agg.name = sector_name
     
     return(pd.DataFrame(sector_agg))
+
+
+def _read_bres_file(y):
+  '''
+  Reads the bres file for one year
+  '''
+
+  return(f'{project_dir}/data/interim/industry/nomis_BRES_{y}_TYPE450.csv')
+
     
 #Cultural industries 
 cultural = ['services_cultural','services_recreation','services_entertainment']
@@ -61,7 +70,8 @@ ashe = pd.read_csv(f'{project_dir}/data/interim/industry/ashe_rankings.csv')
 ashe_lookup = ashe.set_index('cluster')['ashe_median_salary_rank'].to_dict()
 
 #bres
-bres_2018 = pd.read_csv(f'{project_dir}/data/interim/industry/nomis_BRES_2018_TYPE450.csv',dtype={'SIC4':str},
+bres_path = f'{project_dir}/data/interim/industry/nomis_BRES_2018_TYPE450.csv'
+bres_2018 = pd.read_csv(bres_path,dtype={'SIC4':str},
                        index_col=None)
 
 bres_2018['sal'] = bres_2018['cluster_name'].map(ashe_lookup)
@@ -69,10 +79,9 @@ bres_2018['sal'] = bres_2018['cluster_name'].map(ashe_lookup)
 #############
 #2. Make indicators
 #############
-
 #Cultural employment etc
 bres_cult = pd.concat([extract_segment(
-    f'{project_dir}/data/interim/industry/nomis_BRES_{y}_TYPE450.csv',cultural,'cluster_name',
+    _read_bres_file(y),cultural,'cluster_name',
     'culture_entertainment_recreation') for y in [2016,2017,2018]])
 
 make_indicator(bres_cult,
