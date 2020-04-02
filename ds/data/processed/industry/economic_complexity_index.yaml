@@ -18,6 +18,7 @@ schema:
     type: NutsRegion.nuts_year_spec
   value:
     description: Economic complexity Index
+    format: .4f
     id: economic_complexity_index
     label: Economic complexity Index
     data_type: float
