@@ -96,8 +96,4 @@ make_indicator(compl.loc[compl['source']=='IDBR'],
               'industry',
               {'eci':'economic_complexity_index'},year_var='year',nuts_spec=2013,nuts_var='geo_cd',
               decimals=4)
-
-
-
-    
     
