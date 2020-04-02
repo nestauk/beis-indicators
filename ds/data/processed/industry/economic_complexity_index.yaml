@@ -1,0 +1,29 @@
+api_doc_url: https://www.nomisweb.co.uk/api/v01/help
+api_type: POST
+data_date: 20200218
+description_short: Economic Complexity Index
+description: This indicator measures the economic complexity of a location based on an analysis of its industrial composition
+endpoint_url: http://www.nomisweb.co.uk/api/v01/dataset/
+framework_group: business_rnd_capacity
+is_experimental: True
+order: [year, nuts_id, nuts_year_spec, value.id]
+region:
+  type: NutsRegion
+  level: 2
+  source: PROVIDED
+schema:
+  region_id:
+    type: NutsRegion.nuts_id
+  region_year_spec:
+    type: NutsRegion.nuts_year_spec
+  value:
+    description: Economic complexity Index
+    format: .4f
+    id: economic_complexity_index
+    label: Economic complexity Index
+    data_type: float
+  year:
+    data_type: int
+    label: Year
+source_name: ONS (https://www.nomisweb.co.uk)
+year_range: [2016, 2019]

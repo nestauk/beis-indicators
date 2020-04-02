@@ -87,8 +87,10 @@ def _main(data_path):
         return f"http://www.nomisweb.co.uk/api/v01/dataset/NM_{data_id}_1.data.csv"
 
     # LAD, TTWA geography queries of API
-    API_lad = "?geography=TYPE464"
-    API_ttwa = "?geography=TYPE447"
+    #API_lad = "?geography=TYPE464"
+    #API_ttwa = "?geography=TYPE447"
+    NUTS_code = "TYPE450"
+    API_nuts = f"?geography={NUTS_code}"
 
     # 4 digit SIC
     with open(f'{data_path}/aux/NOMIS_industry_4SIC_codes.txt') as f:
@@ -108,20 +110,20 @@ def _main(data_path):
 
     for data_id in IDBR_ids:
         # LAD
-        dfi = QueryNomis(API_start(data_id)+API_lad+API_4SIC+API_IDBR_cols).query_nomis().pipe(rename_cols)
-        dfi.to_csv(f'{data_path}/external/IDBR_LAD_{data_id}.csv')
+        dfi = QueryNomis(API_start(data_id)+API_nuts+API_4SIC+API_IDBR_cols).query_nomis().pipe(rename_cols)
+        dfi.to_csv(f'{data_path}/raw/industry/IDBR_{NUTS_code}_{data_id}.csv')
         # TTWA
         # dfi = QueryNomis(API_start(data_id)+API_ttwa+API_4SIC+API_IDBR_cols+"&date=2016,2017").query_nomis().pipe(rename_cols)
-        dfi = QueryNomis(API_start(data_id)+API_ttwa+API_4SIC+API_IDBR_cols).query_nomis().pipe(rename_cols)
-        dfi.to_csv(f'{data_path}/external/IDBR_TTWA_{data_id}.csv')
+        #dfi = QueryNomis(API_start(data_id)+API_ttwa+API_4SIC+API_IDBR_cols).query_nomis().pipe(rename_cols)
+        #dfi.to_csv(f'{data_path}/raw/industry/IDBR_TTWA_{data_id}.csv')
 
     for data_id in BRES_ids:
         # LAD
-        dfi = QueryNomis(API_start(data_id)+API_lad+API_4SIC+API_BRES_cols).query_nomis().pipe(rename_cols)
-        dfi.to_csv(f'{data_path}/external/BRES_LAD_{data_id}.csv')
+        dfi = QueryNomis(API_start(data_id)+API_nuts+API_4SIC+API_BRES_cols).query_nomis().pipe(rename_cols)
+        dfi.to_csv(f'{data_path}/raw/industry/BRES_{NUTS_code}_{data_id}.csv')
         # TTWA
-        dfi = QueryNomis(API_start(data_id)+API_ttwa+API_4SIC+API_BRES_cols).query_nomis().pipe(rename_cols)
-        dfi.to_csv(f'{data_path}/external/BRES_TTWA_{data_id}.csv')
+        #dfi = QueryNomis(API_start(data_id)+API_ttwa+API_4SIC+API_BRES_cols).query_nomis().pipe(rename_cols)
+        #dfi.to_csv(f'{data_path}/raw/industry/BRES_TTWA_{data_id}.csv')
 
 if __name__ == '__main__':
     project_dir = Path(__file__).resolve().parents[2]
