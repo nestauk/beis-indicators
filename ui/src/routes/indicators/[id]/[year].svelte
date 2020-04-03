@@ -26,12 +26,16 @@
 	import {schemeRdYlBu} from 'd3-scale-chromatic';
 	import ChoroplethDiv from '@svizzle/choropleth/src/ChoroplethDiv.svelte';
 	import BarchartV from '@svizzle/barchart/src/BarchartV.svelte';
-	import {applyFnMap, getValue, keyValueArrayToObject} from '@svizzle/utils';
+	import {
+		applyFnMap,
+		getValue,
+		inclusiveRange,
+		keyValueArrayToObject
+	} from '@svizzle/utils';
 
 	import yearlyKeyToLabel from 'app/data/NUTS2_UK_labels';
 	import topos from 'app/data/topojson';
 	import {availableYearsStore, selectedYearStore} from 'app/stores';
-	import {inclusiveRange} from 'app/utils';
 
 	const makeItemsWithId = id => _.pipe([
 		_.mapWith(applyFnMap({
