@@ -19,7 +19,7 @@ schema:
     type: NutsRegion.year_spec
   value:
     description: The total number of excellent researchers (4* score) submitted by universities in the NUTS-2 region for the 2014 REF
-    id: mean_ref
+    id: total_4_fte
     label: Total number of excellent researchers in REF (Full Time Equivalent)
     type: FTE
   year:

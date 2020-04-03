@@ -18,7 +18,7 @@ schema:
     type: NutsRegion.nuts_year_spec
   value:
     description: Total current turnover of active spinoffs involving local universities in academic year starting in year
-    id: gbp_turnnover_per_active_spinoff
+    id: gbp_turnover_per_active_spinoff
     label: Current turnover of active university spinoffs
     type: GBP
     data_type: int
