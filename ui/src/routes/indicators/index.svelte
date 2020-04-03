@@ -121,9 +121,9 @@
 		line-height: 1.5;
 	}
 
-	a {
+	/* a {
 		text-decoration: none;
-	}
+	} */
 
 	.group {
 		margin-top: 1rem;
