@@ -127,6 +127,10 @@
 		width: 100%;
 	}
 
+	.distancer {
+		margin-bottom: 1rem;
+	}
+
 	h1 {
 		grid-column: 1 / span 2;
 		grid-row: 1 / span 1;
@@ -141,41 +145,6 @@
 	.col1 {
 		grid-column: 1 / span 1;
 		overflow-y: auto;
-	}
-
-	.distancer {
-		margin-bottom: 1rem;
-	}
-
-	.row {
-		display: flex;
-		align-items: center;
-		width: 100%;
-		height: 2rem;
-		margin-bottom: 1rem;
-	}
-
-	.row span:nth-child(1) {
-		flex: 0 0 15%;
-	}
-	.row span:nth-child(2) {
-		flex: 1;
-	}
-
-	button {
-		padding: 0.5rem;
-		margin-right: 0.5rem;
-		font-size: 1.05rem;
-	}
-
-	button.active {
-		background-color: var(--color-main);
-		color: white;
-		outline: 0 none; /* used for accessibility FIXME */
-	}
-
-	pre {
-		width: 100%;
 	}
 
 	.col2 {
