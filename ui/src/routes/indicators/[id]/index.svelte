@@ -6,9 +6,10 @@
 
 <script>
   import * as _ from 'lamb';
+  import {inclusiveRange} from '@svizzle/utils';
+
   import {lookup} from 'app/data/groups';
   import {availableYearsStore, lookupStore} from 'app/stores';
-  import {inclusiveRange} from 'app/utils';
 
   export let id;
 

@@ -2,12 +2,12 @@
 	import * as _ from 'lamb';
 	import { linearScale } from 'yootils';
 	import {tapValue} from '@svizzle/dev';
+	import {inclusiveRange} from '@svizzle/utils';
 
 	import { goto } from '@sapper/app';
 	import { yearExtent, yearRange } from 'app/data/groups';
 	import groups from 'app/data/indicatorsGroups.json';
 	import {resetSelection} from 'app/stores';
-	import {inclusiveRange} from 'app/utils';
 
 	import { getContext } from 'svelte';
 

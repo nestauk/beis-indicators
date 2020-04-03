@@ -11,7 +11,6 @@
 		timelineLayoutStore,
 		timelineWidthStore,
 	} from 'app/stores';
-	import { inclusiveRange } from 'app/utils';
 
 	setContext('layout', {
 		timelineHeightStore,
