@@ -10,14 +10,15 @@ order: [year, nuts_id, nuts_year_spec, value.id]
 region:
   type: NutsRegion
   level: 2
-  source_url: https://opendata.arcgis.com/datasets/48b6b85bb7ea43699ee85f4ecd12fd36_0.zip?outSR=%7B%22latestWkid%22%3A27700%2C%22wkid%22%3A27700%7D 
+  source_url: https://opendata.arcgis.com/datasets/48b6b85bb7ea43699ee85f4ecd12fd36_0.zip?outSR=%7B%22latestWkid%22%3A27700%2C%22wkid%22%3A27700%7D
 schema:
   nuts_id:
     type: NutsRegion.nuts_id
   nuts_year_spec:
     type: NutsRegion.nuts_year_spec
   value:
-    description: Contract research income with businesses for universities in the NUTS2 region in the academic year starting in year 
+    description: Contract research income with businesses for universities in the NUTS2 region in the academic year starting in year
+    format: ','
     id: gbp_investment_per_active_spinoff
     label: External investment in active university spinoffs
     type: GBP

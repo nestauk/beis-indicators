@@ -5,10 +5,11 @@ import path from 'path';
 import * as _ from 'lamb';
 import yaml from 'js-yaml';
 import {readDir, readFile, readJson, saveObj} from '@svizzle/file';
-import {tapMessage} from '@svizzle/dev';
-import {applyFnMap} from '@svizzle/utils';
+import {tapMessage, tapWith} from '@svizzle/dev';
+import {applyFnMap, isKeyOf} from '@svizzle/utils';
 
 const DATA_DIR = path.resolve(__dirname, '../../ds/data/processed');
+const TYPES_PATH = path.resolve(__dirname, '../../ds/data/schema/types.yaml');
 const FRAMEWORK_PATH = path.resolve(__dirname, '../../ds/data/aux/framework.json');
 const GITHUB_RAW_BASEURL =
   'https://raw.githubusercontent.com/nestauk/beis-indicators/dev/ds/data/processed';
@@ -29,7 +30,51 @@ const makeCsvUrl = dirName => filename => {
 const setUrl = url => obj => _.setIn(obj, 'url', url);
 const saveIndex = saveObj(GROUPS_PATH, 2);
 
+const isFloatNoFormat = obj =>
+  !obj.format &&
+  obj.data_type &&
+  obj.data_type === 'float';
+
+const datatypeIsNotInt = obj =>
+  obj.data_type &&
+  obj.data_type !== 'int';
+
+const hasNoDatatype = _.not(_.hasKey('data_type'));
+
+const makeTypeIsFloatNoFormat = types => _.allOf([
+  _.not(_.hasKey('format')),
+  _.hasKey('type'),
+  _.pipe([
+    _.getKey('type'),
+    _.allOf([
+      isKeyOf(types),
+      _.pipe([
+        type => types[type].data_type,
+        data_type => data_type.includes('float'),
+      ]),
+    ]),
+  ]),
+]);
+
+const makeNeedsFormat = types => _.pipe([
+  _.getPath('schema.value'),
+  _.anyOf([
+    isFloatNoFormat,
+    _.allOf([
+      hasNoDatatype,
+      makeTypeIsFloatNoFormat(types),
+    ]),
+    _.allOf([
+      datatypeIsNotInt,
+      makeTypeIsFloatNoFormat(types),
+    ]),
+  ])
+]);
+
 const process = async () => {
+  const types = await readFile(TYPES_PATH, 'utf-8').then(yaml.safeLoad);
+  const needsFormat = makeNeedsFormat(types);
+
   // FIXME use a proper walker
   const dirNames = await readDir(DATA_DIR).then(_.filterWith(isDir));
   const refs = await Promise.all(
@@ -49,6 +94,7 @@ const process = async () => {
     .map(({filepath, url}) =>
       readFile(filepath, 'utf-8')
       .then(yaml.safeLoad)
+      .then(tapWith([needsFormat, `needsFormat? ${filepath}`]))
       .then(setUrl(url))
     )
   ).then(_.groupBy(_.getKey('framework_group')));

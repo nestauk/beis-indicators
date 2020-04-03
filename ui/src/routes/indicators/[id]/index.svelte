@@ -9,11 +9,12 @@
   import {inclusiveRange} from '@svizzle/utils';
 
   import {lookup} from 'app/data/groups';
-  import {availableYearsStore, lookupStore} from 'app/stores';
+  import {availableYearsStore, resetSelectedYear} from 'app/stores';
 
   export let id;
 
-  $: $availableYearsStore = inclusiveRange($lookupStore[id].year_range)
+  $: id && resetSelectedYear();
+  $: $availableYearsStore = inclusiveRange(lookup[id].year_range)
   $: makeRoutes = _.pipe([
     inclusiveRange,
     _.mapWith(year => [year, `/indicators/${id}/${year}`])

@@ -17,7 +17,7 @@ schema:
     type: NutsRegion.nuts_year_spec
   value:
     description: government performed R&D expenditure in euros (to the nearest 1000)
-    format: d
+    format: ','
     id: eurostat_gov_rd_workforce_data
     label: Expenditure (to nearest 1000)
     type: EUR

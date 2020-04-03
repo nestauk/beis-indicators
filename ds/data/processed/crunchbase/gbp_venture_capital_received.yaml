@@ -20,6 +20,7 @@ schema:
     type: NutsRegion.year_spec
   value:
     description: Total amount of venture capital invested in organisations in the location
+    format: ','
     id: gbp_venture_capital_received
     label: Venture capital investment received
     type: GBP

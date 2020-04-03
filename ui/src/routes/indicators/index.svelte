@@ -1,7 +1,6 @@
 <script>
 	import * as _ from 'lamb';
 	import { linearScale } from 'yootils';
-	import {tapValue} from '@svizzle/dev';
 	import {inclusiveRange} from '@svizzle/utils';
 
 	import { goto } from '@sapper/app';

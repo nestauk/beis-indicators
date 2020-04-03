@@ -17,7 +17,7 @@ schema:
     type: NutsRegion.nuts_year_spec
   value:
     description: Percentage of population employed in professional occupations.
-    format: .1
+    format: .1f
     id: aps_econ_active_stem_density_data
     label: Percentage
     data_type: float

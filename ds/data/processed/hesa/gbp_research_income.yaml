@@ -18,6 +18,7 @@ schema:
     type: NutsRegion.year_spec
   value:
     description: Research income for universities in the region
+    format: ','
     id: gbp_research_income
     label: Research income (GBP)
     type: GPB

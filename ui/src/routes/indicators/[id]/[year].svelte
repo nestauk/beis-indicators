@@ -3,9 +3,10 @@
 	import {csvParse} from 'd3-dsv';
 
 	import {lookupStore} from 'app/stores';
+	// import {lookup} from 'app/data/groups';
 
 	export async function preload({ params: {id, year}, query }) {
-		const lookup = get(lookupStore);
+		// const lookup = get(lookupStore);
 		const indicator = lookup[id];
 
 		// if (indicator.data) {
@@ -22,8 +23,9 @@
 <script>
 	import * as _ from 'lamb';
 	import {extent} from 'd3-array';
+	import {format} from 'd3-format';
 	import {scaleQuantize} from 'd3-scale';
-	import {schemeRdYlBu} from 'd3-scale-chromatic';
+	import {interpolateWarm} from 'd3-scale-chromatic';
 	import ChoroplethDiv from '@svizzle/choropleth/src/ChoroplethDiv.svelte';
 	import BarchartV from '@svizzle/barchart/src/BarchartV.svelte';
 	import {
@@ -34,8 +36,18 @@
 	} from '@svizzle/utils';
 
 	import yearlyKeyToLabel from 'app/data/NUTS2_UK_labels';
+	import {lookup} from 'app/data/groups';
 	import topos from 'app/data/topojson';
 	import {availableYearsStore, selectedYearStore} from 'app/stores';
+
+	const getIndicatorFormat = id => _.pipe([
+	  _.getPath(`${id}.schema.value`),
+		_.condition(
+			_.hasKey('format'),
+			value => format(value.format),
+			value => _.identity,
+		)
+  ])(lookup);
 
 	const makeItemsWithId = id => _.pipe([
 		_.mapWith(applyFnMap({
@@ -45,12 +57,12 @@
 		_.sortWith([_.sorterDesc(getValue)])
 	]);
 
-	let colorScale = scaleQuantize().range(schemeRdYlBu[4]);
+	const colorRange = _.map(inclusiveRange([0, 1, 0.2]), interpolateWarm);
+	let colorScale = scaleQuantize().range(colorRange);
 
 	export let data;
 	export let id;
 	export let year;
-
 
 	$: $selectedYearStore = Number(year);
 	$: $availableYearsStore = inclusiveRange($lookupStore[id].year_range)
@@ -63,9 +75,10 @@
 	$: nuts_year_spec = yearData && yearData[0].nuts_year_spec
 	$: topojson = nuts_year_spec && topos[`NUTS_RG_03M_${nuts_year_spec}_4326_LEVL_2_UK`];
 	$: keyToLabel = yearlyKeyToLabel[nuts_year_spec];
+	$: formatFn = getIndicatorFormat(id);
 
 	$: valueExtext = extent(items, getValue);
-	$: colorScale = colorScale.domain(valueExtext);
+	$: colorScale = colorScale.domain([0, valueExtext[1]]);
 	$: makeKeyToColor = _.pipe([
 		keyValueArrayToObject,
 		_.mapValuesWith(colorScale)
@@ -97,6 +110,7 @@
 	</div>
 	<div class="col col2">
 		<BarchartV
+			{formatFn}
 			{items}
 			{keyToColor}
 			{keyToLabel}

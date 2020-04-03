@@ -17,7 +17,7 @@ schema:
   nuts_year_spec:
     type: NutsRegion.year_spec
   value:
-    format: .3f
+    format: .2f
     description: Site Area (hectares) of university sites
     id: area_university_site
     label: Total area of university sites (Hectares)
