@@ -104,8 +104,7 @@ def geocode_trademarks(df, geo_code=['long','lat']):
     """
     df_c = df.copy()
     # We have trailing spaces in the postcodes
-
-
+    
     df_c["postcode"] = [
         x.strip() if pd.isnull(x) is False else np.nan for x in df_c['postcode']]
 
