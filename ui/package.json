@@ -12,7 +12,7 @@
     "d3-scale-chromatic": "^1.5.0",
     "lamb": "^0.58.0",
     "polka": "^0.5.2",
-    "rollup": "^2.3.2",
+    "rollup": "^2.3.3",
     "sirv": "^0.4.2",
     "yootils": "0.0.16"
   },

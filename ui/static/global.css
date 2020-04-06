@@ -46,6 +46,7 @@ a {
 	--color-selected: lightseagreen; /* dodgerblue */
 	--color-grey-lighter: #f7f7f7;
 	--color-grey-70: rgb(70, 70, 70);
+	--color-grey-40: rgb(40, 40, 40);
 	--dim-header-height: 3rem;
 	--dim-main-height: calc(100% - var(--dim-header-height));
 	--dim-padding-minor: 0.5rem;
