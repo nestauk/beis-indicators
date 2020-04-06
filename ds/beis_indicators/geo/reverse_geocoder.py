@@ -9,6 +9,7 @@ from io import StringIO, BytesIO
 from shapely.geometry import Point
 
 import beis_indicators
+
 project_dir = beis_indicators.project_dir
 
 #Load the shapefile lookup
@@ -71,7 +72,6 @@ def reverse_geocode(place_df,shape_name,
     
     
     '''
-    
     #Read the shapefile    
     print('Reading shapefile...')
     
@@ -96,11 +96,9 @@ def reverse_geocode(place_df,shape_name,
     else:
         shape = gp.read_file(f'{target}/{sh}')
         
-              
     
     #Change its projection so it can deal with lats and lons
     shape = shape.to_crs("EPSG:4326")
-    
     
     #Create a place_holder df (ho ho) where the index is the place id
     place_holder = gp.GeoDataFrame(index=place_df[place_id],crs="EPSG:4326")
