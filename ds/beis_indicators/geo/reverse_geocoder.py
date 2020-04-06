@@ -9,7 +9,6 @@ from io import StringIO, BytesIO
 from shapely.geometry import Point
 
 import beis_indicators
-from beis_indicators.geo.reverse_geocoder import *
 
 project_dir = beis_indicators.project_dir
 

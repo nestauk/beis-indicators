@@ -8,7 +8,6 @@ import pandas as pd
 import numpy as np
 import logging
 
-
 import beis_indicators
 from beis_indicators.geo.reverse_geocoder import *
 from beis_indicators.utils.dir_file_management import *
@@ -19,8 +18,10 @@ logger = logging.getLogger(__name__)
 # Define project base directory
 project_dir = beis_indicators.project_dir
 
-# Tradematks URL
+# URLS and Paths
 URL = "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/680986/opendatadomestic.zip"
+DATA_RAW = f'{project_dir}/data/raw/'
+TRADE_RAW = f"{project_dir}/data/raw/trademarks/"
 
 # Load the shapefile lookup
 with open(f'{project_dir}/data/aux/shapefile_urls.json', 'r') as infile:
@@ -28,7 +29,7 @@ with open(f'{project_dir}/data/aux/shapefile_urls.json', 'r') as infile:
 
 # Get all the shapefiles
 for name in shape_lookup.keys():
-    get_shape(name, path=f'{project_dir}/data/raw/shapefiles/')
+    get_shape(name, path=f"{DATA_RAW}/shapefiles")
 
 # Functions
 def _tidy_columns(columns):
@@ -41,7 +42,7 @@ def get_trademarks(url):
     Args:
         url (str) is the link for the data
     """
-    if  os.path.exists(f"{project_dir}/data/raw/trademarks/OpenDataDomestic.txt"):
+    if  os.path.exists(f"{TRADE_RAW}/OpenDataDomestic.txt"):
         logger.info("Already collected the data")
 
     else:
@@ -51,20 +52,20 @@ def get_trademarks(url):
         logger.info("Saving the raw data")
 
         ZipFile(BytesIO(req.content)).extract(
-            "OpenDataDomestic.txt", path=f"{project_dir}/data/raw/trademarks/"
+            "OpenDataDomestic.txt", path=f"{TRADE_RAW}/"
         )
 
-    if os.path.exists(f"{project_dir}/data/raw/trademarks/trademarks_processed.df"):
+    if os.path.exists(f"{TRADE_RAW}/trademarks_processed_df.csv"):
 
         logger.info("Already processed the data")
-        text_df = pd.read_csv(f"{project_dir}/data/raw/trademarks/trademarks_processed.df")
+        text_df = pd.read_csv(f"{TRADE_RAW}/trademarks_processed_df.csv")
 
     else:
         logger.info("Creating dataframe")
 
         # Reads the text file
         with open(
-            f"{project_dir}/data/raw/trademarks/OpenDataDomestic.txt",
+            f"{TRADE_RAW}/OpenDataDomestic.txt",
             "r",
             encoding="utf-16",
         ) as infile:
@@ -87,12 +88,12 @@ def get_trademarks(url):
         # Tidy the columns
         text_df.columns = _tidy_columns(text_df.columns)
 
-        text_df.to_csv(f"{project_dir}/data/raw/trademarks/trademarks_processed.df",
+        text_df.to_csv(f"{TRADE_RAW}/trademarks_processed_df.csv",
                        index=False)
 
     return text_df
 
-def geocode_trademarks(df, geo_code=['long','lat']): ##CHANGETHIS
+def geocode_trademarks(df, geo_code=['long','lat']):
     """
     This function reverse geocodes a trademark df using the postcode of the applicant.
     It returns the lat and lon for each trademark
@@ -101,13 +102,15 @@ def geocode_trademarks(df, geo_code=['long','lat']): ##CHANGETHIS
         df (df) is a dataframe with organisation postcodes
         geo_code (str) is the geocode in the NSPL database that we want to use
     """
+    df_c = df.copy()
     # We have trailing spaces in the postcodes
-    df["postcode"] = [
-        x.strip() if pd.isnull(x) is False else np.nan for x in df.postcode
-    ]
+
+
+    df_c["postcode"] = [
+        x.strip() if pd.isnull(x) is False else np.nan for x in df_c['postcode']]
 
     # Read nspl
-    nspl = pd.read_csv(f"{project_dir}/data/raw/nspl/Data/NSPL_FEB_2020_UK.csv") 
+    nspl = pd.read_csv(f"{DATA_RAW}/nspl/Data/NSPL_FEB_2020_UK.csv") 
 
     # The trademark dataset only provides information for the first part of the postcode
     # We split the nspl postcodes to merge on a smaller dataset
@@ -115,7 +118,7 @@ def geocode_trademarks(df, geo_code=['long','lat']): ##CHANGETHIS
 
     nspl_short = nspl.drop_duplicates("pcds_1st")[["pcds_1st"]+geo_code]
 
-    merged = pd.merge(df, nspl_short, left_on="postcode", right_on="pcds_1st")
+    merged = pd.merge(df_c, nspl_short, left_on="postcode", right_on="pcds_1st")
 
     return merged
 
@@ -222,8 +225,6 @@ def make_trademarks(URL,detailed_classes):
 
     logger.info("Reverse geocoding the data")
     tm_df_nuts = reverse_geocode_trademarks(tm_df_geo)
-
-    print(tm_df_nuts.head())
 
     for x in tm_df_nuts.columns:
         if "class" in x:
