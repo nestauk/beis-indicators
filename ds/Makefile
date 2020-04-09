@@ -93,17 +93,15 @@ endif
 
 ## Set up python interpreter environment
 create_environment:
-ifeq (True,$(HAS_CONDA))
-		@echo ">>> Detected conda, creating conda environment."
-	conda create --name $(PROJECT_NAME) python=3
-		@echo ">>> New conda env created. Activate with:\nsource activate $(PROJECT_NAME)"
-else
-	$(PYTHON_INTERPRETER) -m pip install -q virtualenv virtualenvwrapper
-	@echo ">>> Installing virtualenvwrapper if not already intalled.\nMake sure the following lines are in shell startup file\n\
-	export WORKON_HOME=$$HOME/.virtualenvs\nexport PROJECT_HOME=$$HOME/Devel\nsource /usr/local/bin/virtualenvwrapper.sh\n"
-	@bash -c "source `which virtualenvwrapper.sh`;mkvirtualenv $(PROJECT_NAME) --python=$(PYTHON_INTERPRETER)"
-	@echo ">>> New virtualenv created. Activate with:\nworkon $(PROJECT_NAME)"
-endif
+	conda env create -f conda_environment.yaml
+	$(call execute_in_env, pip install -e .)
+	$(call execute_in_env, jupyter contrib nbextension install --user)
+	$(call execute_in_env, jupyter-nbextensions_configurator enable --user)
+	@echo ">>> New conda env created. Activate with:\nsource activate $(PROJECT_NAME)"
+
+requirements:
+	$(call execute_in_env, conda env update -f conda_environment.yaml)
+	$(call execute_in_env, pip install -e .)
 
 ## Test python environment is setup correctly
 test_environment:

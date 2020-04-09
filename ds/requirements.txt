@@ -1,17 +1,5 @@
-numpy
-scipy
-pandas
-pyproj
-matplotlib
-jupyter
 ipython
-nuts-finder
 setuptools
-git+ssh://git@github.com/nestauk/data_getters.git
-ratelim
-geopandas
-shapely
-rtree
 
 # local package
 -e .

@@ -1,16 +1,33 @@
-# Organisation of the analysis section
+# BEIS Indicators Data Collection and Processing
+
+This directory contains the indicator data and the scripts required to make them.
+
+To create a `conda` environment for collecting and processing data to create the indicators,
+you can run:
+
+```
+make create_environment
+```
+
+To create a simpler deployment and documentation environment, simply use the `requirements.txt` file:
+
+```
+pip install -r requirements.txt
+```
+
+## Organisation this section
 
 ```
 ds
 ├── Makefile           <- Makefile with commands like `make data` or `make dvc`
 ├── README.md          <- The README for the analysis
 ├── data
-│   ├── README.md
-│   ├── external       <- Data from third party sources.
-│   ├── interim        <- Intermediate data that has been transformed.
-│   ├── processed      <- The final, canonical data sets for modeling.
-│   ├── aux            <- Non-automatable human interventions, e.g. hand selected record ID's to ignore
-│   └── raw            <- The original, immutable data dump.
+│   ├── README.md
+│   ├── external       <- Data from third party sources.
+│   ├── interim        <- Intermediate data that has been transformed.
+│   ├── processed      <- The final, canonical data sets for modeling.
+│   ├── aux            <- Non-automatable human interventions, e.g. hand selected record ID's to ignore
+│   └── raw            <- The original, immutable data dump.
 │
 ├── docs               <- A default Sphinx project; see sphinx-doc.org for details
 │
@@ -22,9 +39,9 @@ ds
 │
 ├── notebooks          <- Jupyter notebooks. Notebooks at the top level should have a markdown header
 │   │                     outlining the notebook and should avoid function calls in favour of factored out code.
-│   ├── notebook_preamble.ipy
+│   ├── notebook_preamble.ipy
 │   │
-│   └── dev            <- Development notebooks. Naming convention is a number (for ordering),
+│   └── dev            <- Development notebooks. Naming convention is a number (for ordering),
 │                         the creator's initials, and a short `_` delimited description, e.g.
 │                         `01_jmg_eda.ipynb`.
 │
@@ -33,7 +50,7 @@ ds
 ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
 │
 ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-│   └── figures        <- Generated graphics and figures to be used in reporting
+│   └── figures        <- Generated graphics and figures to be used in reporting
 │
 ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
 │                         generated with `pip freeze > requirements.txt`
@@ -41,21 +58,21 @@ ds
 ├── setup.py           <- makes project pip installable (pip install -e .) so beis_indicators can be imported
 │
 ├── beis_indicators                <- Source code for use in this project.
-│   ├── __init__.py    <- Makes beis_indicators a Python module
+│   ├── __init__.py    <- Makes beis_indicators a Python module
 │   │
-│   ├── data           <- Scripts to download or generate data
-│   │   └── make_dataset.py
+│   ├── data           <- Scripts to download or generate data
+│   │   └── make_dataset.py
 │   │
-│   ├── features       <- Scripts to turn raw data into features for modeling
-│   │   └── build_features.py
+│   ├── features       <- Scripts to turn raw data into features for modeling
+│   │   └── build_features.py
 │   │
-│   ├── models         <- Scripts to train models and then use trained models to make
+│   ├── models         <- Scripts to train models and then use trained models to make
 │   │   │                 predictions
-│   │   ├── predict_model.py
-│   │   └── train_model.py
+│   │   ├── predict_model.py
+│   │   └── train_model.py
 │   │
-│   └── visualization  <- Scripts to create exploratory and results oriented visualizations
-│       └── visualize.py
+│   └── visualization  <- Scripts to create exploratory and results oriented visualizations
+│       └── visualize.py
 │
 └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
 ```

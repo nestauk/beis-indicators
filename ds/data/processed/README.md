@@ -9,20 +9,20 @@ Each indicator csv contains four columns, with each row representing the indicat
 
 The full set of available indicators is listed below.
 
-Last updated: 02/25/20 UTC
+Last updated: 04/30/20 UTC
 
-## Existing capability to perform public R&D
+## Public R&D capability
 ### The total number of excellent researchers (4* score) submitted by universities in the NUTS-2 region for the 2014 REF
 - **Description:** These are the results of the Research Excellence Framework, where university departments in various disciplines are assessed on the quality of their research. The latest REF was conducted in 2014 so data is available only for one year
-- **Source:** UKRI (https://results.ref.ac.uk/)
+- **Source:** REF (Research Excellence Framework)
 - **Years Available:** 2014 - 2014
 - **Experimental:** Yes
-- [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/ref/mean_ref.csv)
+- [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/ref/total_4_fte.csv)
 
 
 ### The mean REF score for the NUTS2 area considering only STEM subjects (see aux/ref_stem.txt) for the subjects that we selected. This is the average of the scores in all departments weighted by the Full time equivalents submitted in each category (4*, 3*, 2* with higher scores representing better assessments)
 - **Description:** These are the results of the Research Excellence Framework, where university departments in various disciplines are assessed on the quality of their research. The latest REF was conducted in 2014 so data is available only for one year
-- **Source:** UKRI (https://results.ref.ac.uk/)
+- **Source:** REF (Research Excellence Framework)
 - **Years Available:** 2014 - 2014
 - **Experimental:** Yes
 - [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/ref/mean_ref_stem.csv)
@@ -30,7 +30,7 @@ Last updated: 02/25/20 UTC
 
 ### The mean REF score for the NUTS2 area. This is the average of the scores in all departments weighted by the Full time equivalents submitted in each category (4*, 3*, 2* with higher scores representing better assessments)
 - **Description:** These are the results of the Research Excellence Framework, where university departments in various disciplines are assessed on the quality of their research. The latest REF was conducted in 2014 so data is available only for one year
-- **Source:** UKRI (https://results.ref.ac.uk/)
+- **Source:** REF (Research Excellence Framework)
 - **Years Available:** 2014 - 2014
 - **Experimental:** Yes
 - [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/ref/mean_ref.csv)
@@ -38,7 +38,7 @@ Last updated: 02/25/20 UTC
 
 ### Total number of full-time students enrolled in STEM subjects in the area
 - **Description:** Number of students enrolled full-time in STEM subjects in a NUTS2 region (definition of STEM subjects in aux folder) in the starting academic year.
-- **Source:** HESA (Higher Education Statistical Agency) https://www.hesa.ac.uk/
+- **Source:** HESA (Higher Education Statistical Agency)
 - **Years Available:** 2014 - 2018
 - **Experimental:** Yes
 - [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/hesa/total_stem_students.csv)
@@ -46,7 +46,7 @@ Last updated: 02/25/20 UTC
 
 ### Total number of buildings in the area
 - **Description:** Number of university buildings in a NUTS2 region
-- **Source:** HESA (Higher Education Statistical Agency) https://www.hesa.ac.uk/
+- **Source:** HESA (Higher Education Statistical Agency)
 - **Years Available:** 2015 - 2017
 - **Experimental:** Yes
 - [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/hesa/total_university_buildings.csv)
@@ -54,7 +54,7 @@ Last updated: 02/25/20 UTC
 
 ### Total number of full-time students enrolled for postgraduate qualifications in universities in the area
 - **Description:** Number of postgraduate (research) students enrolled full-time in universities in a NUTS2 region in the starting academic year.
-- **Source:** HESA (Higher Education Statistical Agency) https://www.hesa.ac.uk/
+- **Source:** HESA (Higher Education Statistical Agency)
 - **Years Available:** 2014 - 2018
 - **Experimental:** Yes
 - [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/hesa/total_postgraduates.csv)
@@ -62,7 +62,7 @@ Last updated: 02/25/20 UTC
 
 ### Research income for universities in the region
 - **Description:** Research income received by universities in the NUTS2 region
-- **Source:** HESA (Higher Education Statistical Agency) https://www.hesa.ac.uk/
+- **Source:** HESA (Higher Education Statistical Agency)
 - **Years Available:** 2015 - 2017
 - **Experimental:** Yes
 - [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/hesa/gbp_research_income.csv)
@@ -70,7 +70,7 @@ Last updated: 02/25/20 UTC
 
 ### Full Time Equivalent (FTE) research students
 - **Description:** Aggregate of Full Time Equivalent (FTE) of research students enrolled in universities in the NUTS2 region
-- **Source:** HESA (Higher Education Statistical Agency) https://www.hesa.ac.uk/
+- **Source:** HESA (Higher Education Statistical Agency)
 - **Years Available:** 2015 - 2017
 - **Experimental:** Yes
 - [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/hesa/fte_research_students.csv)
@@ -78,7 +78,7 @@ Last updated: 02/25/20 UTC
 
 ### Site Area (hectares) of university sites
 - **Description:** Area of university sites for universities in the NUTS2 region
-- **Source:** HESA (Higher Education Statistical Agency) https://www.hesa.ac.uk/
+- **Source:** HESA (Higher Education Statistical Agency)
 - **Years Available:** 2015 - 2017
 - **Experimental:** Yes
 - [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/hesa/area_university_site.csv)
@@ -86,7 +86,7 @@ Last updated: 02/25/20 UTC
 
 ### Total number of full-time postgraduate students enrolled in STEM subjects in the area (definition of STEM subjects in aux folder)
 - **Description:** Number of postgraduate (research) students enrolled full-time in STEM subjects in a NUTS2 region (definition of STEM subjects in aux folder) in the starting academic year.
-- **Source:** HESA (Higher Education Statistical Agency) https://www.hesa.ac.uk/
+- **Source:** HESA (Higher Education Statistical Agency)
 - **Years Available:** 2014 - 2018
 - **Experimental:** Yes
 - [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/hesa/total_stem_postgraduates.csv)
@@ -94,23 +94,23 @@ Last updated: 02/25/20 UTC
 
 ### Total number of projects led by organisations in the NUTS area in STEM subjects (see aux/gtr_stem_disciplines for the stem disciplines we are considering)
 - **Description:** Total number of projects led by organisations in the NUTS area in STEM subjects (see aux/gtr_stem_disciplines for the stem disciplines we are considering)
-- **Source:** UKRI (https://gtr.ukri.org)
-- **Years Available:** 2006 - 2018
+- **Source:** UKRI (UK Research and Innovation)
+- **Years Available:** 2010 - 2018
 - **Experimental:** Yes
 - [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/gtr/total_gtr_projects_stem.csv)
 
 
-### Number of Science, Research, Engineering and Technology professionals.
-- **Description:** Number of Science, Research, Engineering and Technology professionals by NUTS 2 regions.
-- **Source:** NOMIS
+### Percentage of population employed in professional occupations.
+- **Description:** Percentage of population employed in professional occupations by NUTS 3 regions.
+- **Source:** NOMIS (official labour market statistics)
 - **Years Available:** 2012 - 2018
 - **Experimental:** Yes
-- [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/aps/aps_econ_active_stem_profs_data.csv)
+- [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/aps/aps_pro_occupations_data.csv)
 
 
 ### Percentage of population employed in professional occupations.
 - **Description:** Percentage of population employed in professional occupations by NUTS 2 regions.
-- **Source:** NOMIS
+- **Source:** NOMIS (official labour market statistics)
 - **Years Available:** 2012 - 2018
 - **Experimental:** Yes
 - [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/aps/aps_pro_occupations_data.csv)
@@ -118,7 +118,7 @@ Last updated: 02/25/20 UTC
 
 ### Percentage of population employed in professional occupations.
 - **Description:** Percentage of economically active persons in professional occupations by NUTS 2 regions.
-- **Source:** NOMIS
+- **Source:** NOMIS (official labour market statistics)
 - **Years Available:** 2012 - 2018
 - **Experimental:** Yes
 - [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/aps/aps_nvq4_education_data.csv)
@@ -126,23 +126,55 @@ Last updated: 02/25/20 UTC
 
 ### Number of Science, Research, Engineering and Technology associated professionals.
 - **Description:** Number of Science, Research, Engineering and Technology associated professionals by NUTS 2 regions.
-- **Source:** NOMIS
+- **Source:** NOMIS (official labour market statistics)
 - **Years Available:** 2012 - 2018
 - **Experimental:** Yes
 - [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/aps/aps_econ_active_stem_associate_profs_data.csv)
 
 
+### Number of Science, Research, Engineering and Technology associated professionals.
+- **Description:** Number of Science, Research, Engineering and Technology associated professionals by NUTS 3 regions.
+- **Source:** NOMIS (official labour market statistics)
+- **Years Available:** 2012 - 2018
+- **Experimental:** Yes
+- [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/aps/aps_econ_active_stem_associate_profs_data.csv)
+
+
+### Percentage of population employed in professional occupations.
+- **Description:** Percentage of economically active persons in professional occupations by NUTS 3 regions.
+- **Source:** NOMIS (official labour market statistics)
+- **Years Available:** 2012 - 2018
+- **Experimental:** Yes
+- [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/aps/aps_nvq4_education_data.csv)
+
+
+### Number of Science, Research, Engineering and Technology professionals.
+- **Description:** Number of Science, Research, Engineering and Technology professionals by NUTS 2 regions.
+- **Source:** NOMIS (official labour market statistics)
+- **Years Available:** 2012 - 2018
+- **Experimental:** Yes
+- [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/aps/aps_econ_active_stem_profs_data.csv)
+
+
+### Number of Science, Research, Engineering and Technology professionals.
+- **Description:** Number of Science, Research, Engineering and Technology professionals by NUTS 3 regions.
+- **Source:** NOMIS (official labour market statistics)
+- **Years Available:** 2012 - 2018
+- **Experimental:** Yes
+- [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/aps/aps_econ_active_stem_profs_data.csv)
+
+
 ### Private non-profit sector R&D expenditure in euros (to the nearest 1000)
 - **Description:** Private non-profit sector enterprise research & development (R&D) expenditure by NUTS 2 regions.
-- **Source:** Eurostat
-- **Years Available:** 2012 - 2016
+- **Source:** Eurostat (European Statistical Office)
+- **Years Available:** 2012 - 2017
 - **Experimental:** Yes
 - [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/eurostat/eurostat_private_non_profit_rd_workforce_data.csv)
 
 
 ### Higher education sector R&D expenditure in euros (to the nearest 1000)
 - **Description:** Higher education sector enterprise research & development (R&D) expenditure by NUTS 2 regions.
-- **Source:** Eurostat
+- **Source:** Eurostat (European Statistical Office)
 - **Years Available:** 2012 - 2016
 - **Experimental:** Yes
 - [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/eurostat/eurostat_higher_ed_rd_workforce_data.csv)
@@ -150,32 +182,48 @@ Last updated: 02/25/20 UTC
 
 ### government performed R&D expenditure in euros (to the nearest 1000)
 - **Description:** Government performed research & development (R&D) expenditure by NUTS 2 regions.
-- **Source:** Eurostat
+- **Source:** Eurostat (European Statistical Office)
 - **Years Available:** 2012 - 2016
 - **Experimental:** Yes
 - [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/eurostat/eurostat_gov_rd_workforce_data.csv)
 
 
-## Business absorptive capacity and private R&D investment
+## Business R&D capacity
 ### Total amount of venture capital invested in organisations in the location
 - **Description:** Level of venture capital investment in ventures based on a region based on data from CrunchBase. A small number of deals have been converted to GBP at the date when they were announced.
-- **Source:** https://www.crunchbase.com/
-- **Years Available:** 2011 - 2019
+- **Source:** Crunchbase (business information about companies)
+- **Years Available:** 2010 - 2019
 - **Experimental:** Yes
 - [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/crunchbase/gbp_venture_capital_received.csv)
 
 
 ### Percentage of population employed in professional occupations.
-- **Description:** Percentage of population employed in science, research, engineering and technology professional by NUTS 2 regions.
-- **Source:** NOMIS
+- **Description:** Percentage of population employed in science, research, engineering and technology professional by NUTS 3 regions.
+- **Source:** NOMIS (official labour market statistics)
 - **Years Available:** 2012 - 2018
 - **Experimental:** Yes
 - [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/aps/aps_econ_active_stem_density_data.csv)
 
 
+### Percentage of population employed in professional occupations.
+- **Description:** Percentage of population employed in science, research, engineering and technology professional by NUTS 2 regions.
+- **Source:** NOMIS (official labour market statistics)
+- **Years Available:** 2012 - 2018
+- **Experimental:** Yes
+- [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/aps/aps_econ_active_stem_density_data.csv)
+
+
+### Economic complexity Index
+- **Description:** This indicator measures the economic complexity of a location based on an analysis of its industrial composition ((based on Nesta sectoral definition, which clusters 4-digit SIC codes based on their similarity))
+- **Source:** NOMIS (official labour market statistics)
+- **Years Available:** 2016 - 2019
+- **Experimental:** Yes
+- [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/industry/economic_complexity_index.csv)
+
+
 ### Full time equivalent of workforce
 - **Description:** Full time equivalent (FTE) of private sector research & development (R&D) workforce-  by NUTS 2 regions.
-- **Source:** Eurostat
+- **Source:** Eurostat (European Statistical Office)
 - **Years Available:** 2012 - 2016
 - **Experimental:** Yes
 - [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/eurostat/eurostat_private_rd_fte_workforce_data.csv)
@@ -183,7 +231,7 @@ Last updated: 02/25/20 UTC
 
 ### business enterprise R&D expenditure in euros (to the nearest 1000)
 - **Description:** Business enterprise research & development (R&D) expenditure by NUTS 2 regions.
-- **Source:** Eurostat
+- **Source:** Eurostat (European Statistical Office)
 - **Years Available:** 2012 - 2016
 - **Experimental:** Yes
 - [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/eurostat/eurostat_berd_data.csv)
@@ -191,16 +239,16 @@ Last updated: 02/25/20 UTC
 
 ### Head count of workforce
 - **Description:** Head count (HC) OF private sector research & development (R&D) workforce by NUTS 2 regions.
-- **Source:** Eurostat
+- **Source:** Eurostat (European Statistical Office)
 - **Years Available:** 2012 - 2016
 - **Experimental:** Yes
 - [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/eurostat/eurostat_private_rd_headcount_workforce_data.csv)
 
 
-## Knowledge exchange and commercialisation
+## Knowledge exchange
 ### Total number of unique inventions involving organisations in the NUTS2 region in a year (we consider the earliest application year for all patents in the family)
 - **Description:** Total number of unique inventions involving organisations in the NUTS2 region in a year (we consider the earliest application year for all patents in the family)
-- **Source:** PATSTAT (https://www.epo.org/searching-for-patents/business/patstat.html)
+- **Source:** EPO (European Patent Office)
 - **Years Available:** 2013 - 2018
 - **Experimental:** Yes
 - [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/patents/total_inventions.csv)
@@ -208,7 +256,7 @@ Last updated: 02/25/20 UTC
 
 ### Total income from IP licensing in universities located in the NUTS2 region in the academic year starting in year
 - **Description:** Total income from IP licensing in universities located in the NUTS2 region in the academic year starting in year
-- **Source:** HESA (https://www.hesa.ac.uk/)
+- **Source:** HESA (Higher Education Statistical Agency)
 - **Years Available:** 2014 - 2017
 - **Experimental:** Yes
 - [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/hebci/gbp_ip_revenues.csv)
@@ -216,7 +264,7 @@ Last updated: 02/25/20 UTC
 
 ### Contract research income with businesses for universities in the NUTS2 region in the academic year starting in year
 - **Description:** Contract research income with businesses for universities in the NUTS2 region in the academic year starting in year
-- **Source:** HESA (https://www.hesa.ac.uk/)
+- **Source:** HESA (Higher Education Statistical Agency)
 - **Years Available:** 2014 - 2017
 - **Experimental:** Yes
 - [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/hebci/gbp_business_contract_research.csv)
@@ -224,7 +272,7 @@ Last updated: 02/25/20 UTC
 
 ### Consultancy income with businesses for universities in the NUTS2 region in the academic year starting in year
 - **Description:** Consultancy income with businesses for universities in the NUTS2 region in the academic year starting in year
-- **Source:** HESA (https://www.hesa.ac.uk/)
+- **Source:** HESA (Higher Education Statistical Agency)
 - **Years Available:** 2014 - 2017
 - **Experimental:** Yes
 - [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/hebci/gbp_business_consulting.csv)
@@ -232,7 +280,7 @@ Last updated: 02/25/20 UTC
 
 ### Contract research income with businesses for universities in the NUTS2 region in the academic year starting in year
 - **Description:** Total external investment in active spinoffs involving local universities in academic year starting in year
-- **Source:** HESA (https://www.hesa.ac.uk/)
+- **Source:** HESA (Higher Education Statistical Agency)
 - **Years Available:** 2014 - 2017
 - **Experimental:** Yes
 - [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/hebci/gbp_investment_per_active_spinoff.csv)
@@ -240,23 +288,23 @@ Last updated: 02/25/20 UTC
 
 ### Total current turnover of active spinoffs involving local universities in academic year starting in year
 - **Description:** Total current turnover of active spinoffs involving local universities in academic year starting in year
-- **Source:** HESA (https://www.hesa.ac.uk/)
+- **Source:** HESA (Higher Education Statistical Agency)
 - **Years Available:** 2014 - 2017
 - **Experimental:** Yes
-- [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/hebci/gbp_turnnover_per_active_spinoff.csv)
+- [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/hebci/gbp_turnover_per_active_spinoff.csv)
 
 
 ### Contract research income with businesses for universities in the NUTS2 region in the academic year starting in year
 - **Description:** Total number of active startup companies involving graduates from universities in the region in the academic year that starts in year
-- **Source:** HESA (https://www.hesa.ac.uk/)
+- **Source:** HESA (Higher Education Statistical Agency)
 - **Years Available:** 2014 - 2017
 - **Experimental:** Yes
-- [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/hebci/total_active_graduate_spinouts.csv)
+- [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/hebci/total_active_graduate_startups.csv)
 
 
 ### Consultancy income with public sector and third sector organisatoins involving universities in the NUTS2 region in the academic year starting in year
 - **Description:** Consultancy income with public sector and third sector organisatoins involving universities in the NUTS2 region in the academic year starting in year
-- **Source:** HESA (https://www.hesa.ac.uk/)
+- **Source:** HESA (Higher Education Statistical Agency)
 - **Years Available:** 2014 - 2017
 - **Experimental:** Yes
 - [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/hebci/gbp_non_business_consulting.csv)
@@ -264,23 +312,39 @@ Last updated: 02/25/20 UTC
 
 ### Total number of trademarks in scientific and technological product fields published by organisations in the region based on the IPO open trademark dataset
 - **Description:** Total number of trademarks in scientific and technological product fields published by organisations in the region based on the IPO open trademark dataset
-- **Source:** IPO (https://www.gov.uk/government/organisations/intellectual-property-office)
-- **Years Available:** 2010 - 2017
+- **Source:** IPO (Intellectual Property Office)
+- **Years Available:** 2010 - 2018
 - **Experimental:** Yes
 - [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/trademarks/total_trademarks_scientific.csv)
 
 
 ### Total number of trademarks published by organisations in the region based on the IPO open trademark dataset
 - **Description:** Total number of trademarks published by organisations in the region based on the IPO open trademark dataset
-- **Source:** IPO (https://www.gov.uk/government/organisations/intellectual-property-office)
-- **Years Available:** 2010 - 2017
+- **Source:** IPO (Intellectual Property Office)
+- **Years Available:** 2010 - 2018
 - **Experimental:** Yes
 - [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/trademarks/total_trademarks.csv)
 
 
-## Place potential to attract researchers and innovators
+## Place potential
 ### mean pm10 particulate pollution value
 - **Description:** Mean PM10 particulate background pollution data at NUTS 2 regions aggregated from 1km x 1km resolution UK data modelled by DEFRA.
+- **Source:** DEFRA (Department for Environment Food & Rural Affairs)
+- **Years Available:** 2007 - 2018
+- **Experimental:** Yes
+- [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/defra/air_pollution_mean_pm10.csv)
+
+
+### mean pm10 particulate pollution value
+- **Description:** Mean PM10 particulate background pollution data at NUTS 3 regions aggregated from 1km x 1km resolution UK data modelled by DEFRA.
+- **Source:** DEFRA
+- **Years Available:** 2007 - 2018
+- **Experimental:** Yes
+- [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/defra/air_pollution_mean_pm10.csv)
+
+
+### mean pm10 particulate pollution value
+- **Description:** Mean PM10 particulate background pollution data for LEP regions aggregated from 1km x 1km resolution UK data modelled by DEFRA.
 - **Source:** DEFRA
 - **Years Available:** 2007 - 2018
 - **Experimental:** Yes
@@ -289,7 +353,7 @@ Last updated: 02/25/20 UTC
 
 ### Total employment in cultural, entertainment and leisure industries
 - **Description:** This indicator measures level of employment in cultural, entertainment and leisure industries based on the Business Register Employment Survey. Those sectors are identified as clusters of SIC-4 (industry) codes
-- **Source:** ONS (https://www.nomisweb.co.uk)
+- **Source:** NOMIS (official labour market statistics)
 - **Years Available:** 2016 - 2018
 - **Experimental:** Yes
 - [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/industry/employment_culture_entertainment_recreation.csv)

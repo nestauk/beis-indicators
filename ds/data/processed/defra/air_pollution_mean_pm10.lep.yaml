@@ -1,7 +1,7 @@
 api_doc_url: https://uk-air.defra.gov.uk/data/pcm-data
 api_type: FETCH
 description_short: Mean PM10 particulate background pollution
-description: Mean PM10 particulate background pollution data at NUTS 2 regions aggregated from 1km x 1km resolution UK data modelled by DEFRA.
+description: Mean PM10 particulate background pollution data for LEP regions aggregated from 1km x 1km resolution UK data modelled by DEFRA.
 endpoint_url:
   2007: https://uk-air.defra.gov.uk/datastore/pcm/mappm102007g.csv
   2008: https://uk-air.defra.gov.uk/datastore/pcm/mappm102008g.csv
@@ -17,17 +17,15 @@ endpoint_url:
   2018: https://uk-air.defra.gov.uk/datastore/pcm/mappm102018g.csv
 framework_group: place_potential
 is_experimental: False
-nuts_level: 2
-order: [year, nuts_id, nuts_year_spec, value.id] # do not change; specifies the order of the exported indicator fields
+order: [year, lep_id, lep_year_spec, value.id] # do not change; specifies the order of the exported indicator fields
 region:
-  type: NutsRegion
-  level: 2
-  source_url: https://ec.europa.eu/eurostat/cache/GISCO/distribution/v2/nuts/download/ref-nuts-2016-01m.shp.zip
+  type: LepRegion
+  source_url: https://geoportal.statistics.gov.uk/search?collection=Dataset&sort=name&tags=all(BDY_LEP) 
 schema:
-  nuts_id:
-    type: NutsRegion.id
-  nuts_year_spec:
-    type: NutsRegion.year_spec
+  lep_id:
+    type: LepRegion.id
+  lep_year_spec:
+    type: LepRegion.year_spec
   value:
     description: mean pm10 particulate pollution value
     format: .2f
@@ -37,6 +35,5 @@ schema:
   year:
     data_type: int
     label: Year
-source_name: DEFRA (Department for Environment Food & Rural Affairs)
-source_url: https://uk-air.defra.gov.uk
+source_name: DEFRA
 year_range: [2007, 2018]

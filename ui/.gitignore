@@ -2,5 +2,3 @@
 /cypress/screenshots/
 /node_modules/
 /src/node_modules/@sapper/
-
-.DS_Store
