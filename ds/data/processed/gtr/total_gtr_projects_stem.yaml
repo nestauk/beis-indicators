@@ -21,6 +21,7 @@ schema:
     type: NutsRegion.year_spec
   value:
     description: Total number of projects led by organisations in the NUTS area in STEM subjects (see aux/gtr_stem_disciplines for the stem disciplines we are considering)
+    format: ','
     id: total_gtr_projects_stem
     label: Number of projects in STEM disciplines led by organisations in the region
     data_type: int

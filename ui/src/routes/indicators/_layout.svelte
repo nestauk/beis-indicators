@@ -12,11 +12,7 @@
 		timelineWidthStore,
 	} from 'app/stores';
 
-	setContext('layout', {
-		timelineHeightStore,
-		timelineWidthStore,
-		timelineLayoutStore
-	});
+	setContext('layout', {timelineLayoutStore});
 
 	export let segment;
 </script>
@@ -73,7 +69,7 @@
 		background-color: var(--color-main);
 		border-right: 1px solid var(--color-main-lighter);
 		color: white;
-		font-weight: 200;
+		font-weight: var(--dim-fontsize-light);
 	}
 	.container > nav a {
 		text-decoration: none;
@@ -90,8 +86,6 @@
 	.container > nav p:hover {
 		cursor: pointer;
 		background-color: var(--color-selected);
-		/* font-weight: 600; */
-		/* background-color: var(--color-grey-lighter); */
 	}
 
 	.content {

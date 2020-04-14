@@ -1,9 +1,11 @@
 <script>
+	const crunchbaseUrl = 'https://www.crunchbase.com/';
 	const eurostatUrl = 'https://ec.europa.eu/eurostat';
 	const hesaUrl = 'https://www.hesa.ac.uk';
 	const lepUrl = 'https://geoportal.statistics.gov.uk/search?collection=Dataset&sort=name&tags=all(BDY_LEP)';
 	const nutsUrl = 'https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/nuts';
 	const onsUrl = 'https://ons.gov.uk';
+	const patstatUrl = 'https://www.epo.org/searching-for-patents/business/patstat.html';
 	const ukriUrl = 'https://www.ukri.org/';
 </script>
 
@@ -18,7 +20,7 @@
 		<h2>Data sources</h2>
 
 		<p>As much as possible we have used data from official sources such as <a href={onsUrl}>ONS</a>, <a href={eurostatUrl}>Eurostat</a>, <a href={hesaUrl}>HESA</a> or <a href={ukriUrl}>UKRI</a>. One reason to do this is to enable the reproducibility of our analysis, and to remove the reliance of the tool on proprietary sources.<p>
-		<p>Having said this, in a small number of instances we have used proprietary data sources such as PATSTAT for the analysis of patenting, and CrunchBase for the analysis of venture capital investment.<p>
+		<p>Having said this, in a small number of instances we have used proprietary data sources such as <a href={patstatUrl}>PATSTAT</a> for the analysis of patenting, and <a href={crunchbaseUrl}>Crunchbase</a> for the analysis of venture capital investment.<p>
 
 		<h2>Geographies</h2>
 

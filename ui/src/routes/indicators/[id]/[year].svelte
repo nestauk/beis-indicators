@@ -1,34 +1,19 @@
 <script context="module">
-	import {get} from 'svelte/store';
-	import {csvParse} from 'd3-dsv';
-
-	import {lookupStore} from 'app/stores';
-	// import {lookup} from 'app/data/groups';
-
-	export async function preload({ params: {id, year}, query }) {
-		// const lookup = get(lookupStore);
-		const indicator = lookup[id];
-
-		// if (indicator.data) {
-		//	 return Promise.resolve({id, year})
-		// } else {
-			return this.fetch(indicator.url)
-				.then(r => r.text())
-				.then(csvParse)
-				.then(data => ({data, id, year}))
-		// }
+	export function preload({ params: {id, year}, query }) {
+		return this.fetch(lookup[id].url)
+			.then(r => r.text())
+			.then(parseCSV(id))
+			.then(data => ({data, id, year}))
 	}
 </script>
 
 <script>
 	import * as _ from 'lamb';
 	import {extent} from 'd3-array';
-	import {format} from 'd3-format';
-	import {scaleQuantize} from 'd3-scale';
-	import {interpolateWarm} from 'd3-scale-chromatic';
 	import {writable} from 'svelte/store';
 	import ChoroplethDiv from '@svizzle/choropleth/src/ChoroplethDiv.svelte';
 	import BarchartV from '@svizzle/barchart/src/BarchartV.svelte';
+	import {makeStyle, toPx} from '@svizzle/dom';
 	import {
 		applyFnMap,
 		getValue,
@@ -36,36 +21,25 @@
 		keyValueArrayToObject,
 		mergeObj
 	} from '@svizzle/utils';
-	import {makeStyle, toPx} from '@svizzle/dom';
 
-	import yearlyKeyToLabel from 'app/data/NUTS2_UK_labels';
 	import {lookup} from 'app/data/groups';
+	import yearlyKeyToLabel from 'app/data/NUTS2_UK_labels';
+	import {
+		availableYearsStore,
+		lookupStore,
+		resetSafetyStore,
+		selectedYearStore
+	} from 'app/stores';
 	import topos from 'app/data/topojson';
-	import {availableYearsStore, selectedYearStore} from 'app/stores';
+	import {
+		getIndicatorFormat,
+		getNutsId,
+		makeColorScale,
+		makeValueAccessor,
+		parseCSV,
+	} from 'app/utils';
 
-	const getIndicatorFormat = id => _.pipe([
-	  _.getPath(`${id}.schema.value`),
-		_.condition(
-			_.hasKey('format'),
-			value => format(value.format),
-			value => _.identity,
-		)
-  ])(lookup);
-
-	const getNutsId = _.getKey('nuts_id');
-
-	const makeValueAccessor = id => _.pipe([_.getKey(id), Number]);
-	const makeItemsWithId = id => _.pipe([
-		_.mapWith(applyFnMap({
-			key: getNutsId,
-			value: makeValueAccessor(id)
-		})),
-		_.sortWith([_.sorterDesc(getValue)])
-	]);
-
-	const colorRange = _.map(inclusiveRange([0, 1, 0.2]), interpolateWarm);
-	let colorScale = scaleQuantize().range(colorRange);
-	let selectedKeys = [];
+	resetSafetyStore();
 
 	export let data;
 	export let id;
@@ -73,28 +47,36 @@
 	export let width;
 	export let height;
 
+	let selectedKeys = [];
+
 	$: $selectedYearStore = Number(year);
+	$: formatFn = getIndicatorFormat(id, lookup);
 	$: getIndicatorValue = makeValueAccessor(id);
-	$: $availableYearsStore = inclusiveRange($lookupStore[id].year_range)
+	$: ({description_short, year_range} = $lookupStore[id] || {});
+	$: $availableYearsStore = inclusiveRange(year_range);
 	$: data && lookupStore.update(_.setPath(`${id}.data`, data));
-	$: description_short = $lookupStore[id].description_short;
-	$: indicatorData = $lookupStore[id].data;
-	$: yearData = indicatorData && indicatorData.filter(obj => obj.year === year);
+	// $: indicatorData = $lookupStore[id].data;
+	$: yearData = data && data.filter(obj => obj.year === year);
 	$: makeKeyToValue = _.pipe([
 		_.indexBy(getNutsId),
 		_.mapValuesWith(getIndicatorValue)
 	]);
 	$: keyToValue = yearData && makeKeyToValue(yearData);
 
-	$: makeItems = makeItemsWithId(id);
+	$: makeItems = _.pipe([
+		_.mapWith(applyFnMap({
+			key: getNutsId,
+			value: getIndicatorValue
+		})),
+		_.sortWith([_.sorterDesc(getValue)])
+	]);
 	$: items = yearData && makeItems(yearData);
 	$: nuts_year_spec = yearData && yearData[0].nuts_year_spec
 	$: topojson = nuts_year_spec && topos[`NUTS_RG_03M_${nuts_year_spec}_4326_LEVL_2_UK`];
 	$: keyToLabel = yearlyKeyToLabel[nuts_year_spec];
-	$: formatFn = getIndicatorFormat(id);
 
-	$: valueExtext = extent(items, getValue);
-	$: colorScale = colorScale.domain([0, valueExtext[1]]);
+	$: valueExtext = extent(data, getIndicatorValue);
+	$: colorScale = makeColorScale(valueExtext);
 	$: makeKeyToColor = _.pipe([
 		keyValueArrayToObject,
 		_.mapValuesWith(colorScale)
@@ -102,6 +84,8 @@
 	$: keyToColor = makeKeyToColor(items);
 	$: focusedKey = $tooltip.isVisible ? $tooltip.nuts_id : undefined;
 	$: selectedKeys = $tooltip.isVisible ? [$tooltip.nuts_id] : [];
+
+	/* map tooltip */
 
 	const tooltip = writable({isVisible: false});
 
@@ -125,7 +109,7 @@
 			nuts_id: event.detail,
 			nuts_label: keyToLabel[event.detail],
 			style: makeTooltipStyle(event),
-			value: keyToValue[event.detail]
+			value: _.has(keyToValue, event.detail)
 				? formatFn(keyToValue[event.detail])
 				: undefined
 		}))
@@ -142,6 +126,8 @@
 		}));
 	};
 
+	/* barchart hovering */
+
 	const onEnteredBar = ({detail: {id: focusedBarKey}}) => {
 		selectedKeys = [focusedBarKey];
 	}
@@ -151,7 +137,7 @@
 </script>
 
 <svelte:head>
-	<title>BEIS indicators - {description_short}</title>
+	<title>BEIS indicators - {description_short} ({year})</title>
 </svelte:head>
 
 <main>
@@ -208,6 +194,7 @@
 			isInteractive={true}
 			on:entered={onEnteredBar}
 			on:exited={onExitedBar}
+			shouldResetScroll={true}
 		/>
 	</div>
 </main>

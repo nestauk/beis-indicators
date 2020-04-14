@@ -1,12 +1,11 @@
 <script>
 	import * as _ from 'lamb';
-	import { linearScale } from 'yootils';
 	import {inclusiveRange} from '@svizzle/utils';
 
 	import { goto } from '@sapper/app';
 	import { yearExtent, yearRange } from 'app/data/groups';
 	import groups from 'app/data/indicatorsGroups.json';
-	import {resetSelection} from 'app/stores';
+	import {resetSafetyStore, resetSelection} from 'app/stores';
 
 	import { getContext } from 'svelte';
 
@@ -14,6 +13,7 @@
 	const gap = 7;
 
 	resetSelection();
+	resetSafetyStore();
 
 	let height;
 	let width;
@@ -44,7 +44,7 @@
 				{#if width}
 				<svg
 					{width}
-					height='{4 * layout.start + vStep * indicators.length}'
+					height='{4 * gap + layout.fontSize + vStep * indicators.length}'
 				>
 					{#each yearRange as year}
 					<g
@@ -52,11 +52,12 @@
 						transform='translate({layout.scaleX(year)},0)'
 					>
 						<line
-							y1='{layout.start}'
-							y2='{layout.start + vStep * indicators.length}'
+							y1='{gap}'
+							y2='{gap + vStep * indicators.length}'
 						/>
 						<text
-							y='{2 * layout.start + vStep * indicators.length + gap}'
+							font-size={layout.fontSize}
+							y='{2 * gap + vStep * indicators.length + layout.fontSize / 2}'
 						> {year}
 						</text>
 					</g>
@@ -67,6 +68,12 @@
 						class='indicatorsrange'
 						transform='translate(0,{vStep * (y + 1)})'
 					>
+						<text
+							class='bkg'
+							x='{(layout.scaleX(year_range[0]) + layout.scaleX(year_range[1])) / 2}'
+							dy='{-(layout.fontSize + gap)}'
+							font-size={layout.fontSize}
+						>{description_short}</text>
 						<text
 							x='{(layout.scaleX(year_range[0]) + layout.scaleX(year_range[1])) / 2}'
 							dy='{-(layout.fontSize + gap)}'
@@ -155,6 +162,10 @@
 		dominant-baseline: middle;
 		text-anchor: middle;
 		pointer-events: none;
+	}
+	svg .indicatorsrange text.bkg {
+		stroke: white;
+		stroke-width: 5;
 	}
 
 	svg .indicatorsrange circle {

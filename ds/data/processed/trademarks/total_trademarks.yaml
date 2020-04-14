@@ -25,4 +25,4 @@ schema:
     data_type: int
     label: Year
 source_name: IPO (https://www.gov.uk/government/organisations/intellectual-property-office)
-year_range: [2010, 2017]
+year_range: [2010, 2018]
