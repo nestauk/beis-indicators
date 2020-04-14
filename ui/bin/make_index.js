@@ -13,10 +13,12 @@ const TYPES_PATH = path.resolve(__dirname, '../../ds/data/schema/types.yaml');
 const FRAMEWORK_PATH = path.resolve(__dirname, '../../ds/data/aux/framework.json');
 const GITHUB_RAW_BASEURL =
   'https://raw.githubusercontent.com/nestauk/beis-indicators/dev/ds/data/processed';
-const GROUPS_PATH = path.resolve(__dirname, '../src/node_modules/app/data/indicatorsGroups.json');
+const GROUPS_PATH =
+  path.resolve(__dirname, '../src/node_modules/app/data/indicatorsGroups.json');
 
 const isDir = name => !name.startsWith('.') && path.parse(name).ext === '';
-const isYaml = name => path.parse(name).ext === '.yaml';
+const isYamlFile = name => path.parse(name).ext === '.yaml';
+const isNotNuts3File = name => !path.parse(name).name.endsWith('.nuts3');
 const makePath = dirName => filename => path.resolve(
   DATA_DIR,
   dirName,
@@ -81,7 +83,7 @@ const process = async () => {
     _.map(dirNames, dirName =>
       readDir(path.resolve(DATA_DIR, dirName))
       .then(_.pipe([
-        _.filterWith(isYaml),
+        _.filterWith(_.allOf([isYamlFile, isNotNuts3File])),
         _.mapWith(applyFnMap({
           filepath: makePath(dirName),
           url: makeCsvUrl(dirName),
