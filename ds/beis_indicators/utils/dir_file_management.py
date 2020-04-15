@@ -13,7 +13,6 @@ def make_dirs(name,dirs = ['raw','processed']):
     Utility that creates directories to save the data
     
     '''
-    
     for d in dirs:
         if name not in os.listdir(f'{project_dir}/data/{d}'):
             os.mkdir(f'{project_dir}/data/{d}/{name}')
@@ -23,9 +22,7 @@ def tidy_cols(my_csv):
     Tidies column names ie lower and replace spaces with underscores
     
     '''
-    
     return([re.sub(' ','_',col.lower()) for col in my_csv.columns])
-
 
 def get_nuts_category(year):
     '''
@@ -50,13 +47,12 @@ def parse_academic_year(year):
     '''
     return(int(year.split('/')[0]))
 
-def make_indicator(table,target_path,var_lookup,year_var,nuts_var='nuts_code',nuts_spec='flex',decimals=0):
+def make_indicator(table,var_lookup,year_var,nuts_var='nuts_code',nuts_spec='flex',decimals=0):
     '''
-    We use this function to create and save indicators using our standardised format.
+    We use this function to create indicators using our standardised format.
     
     Args:
         table (df) is a df with relevant information
-        target_path (str) is the location of the directory where we want to save the data (includes interim and processed)
         var_lookup (dict) is a lookup to rename the variable into our standardised name
         year (str) is the name of the year variable
         nuts_var (str) is the name of the NUTS code variable. We assume it is nuts_code
@@ -69,8 +65,6 @@ def make_indicator(table,target_path,var_lookup,year_var,nuts_var='nuts_code',nu
     t = table.reset_index(drop=False)
     
     #Reset index (we assume that the index is the nuts code, var name and year - this might need to be changed)
-    
-    
     #Process the interim data into an indicator
     
     #This is the variable name and code
@@ -101,8 +95,17 @@ def make_indicator(table,target_path,var_lookup,year_var,nuts_var='nuts_code',nu
     t = t[['year','nuts_id','nuts_year_spec',var_code]]
     
     print(t.head())
-    
-    #Save in the processed folder
-    t.to_csv(f'{project_dir}/data/processed/{target_path}/{var_code}.csv',index=False)
-    
-    
+
+    return(t)
+
+def save_indicator(table,target_path,var_name):
+    '''
+    Function to save an indicator
+
+    Args:
+        table (pandas.DataFrame)
+        path (str)
+        var_name (variable name)
+
+    '''
+    table.to_csv(f'{project_dir}/data/processed/{target_path}/{var_name}.csv',index=False)    
