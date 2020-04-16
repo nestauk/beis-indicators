@@ -15,14 +15,9 @@ import re
 import datetime
 from ast import literal_eval
 
-#Web fetching
-import csv
-import zipfile
-import io
 
 
 logger = logging.getLogger()
-
 
 ## Paths
 # project directory e.g. `/home/user/GIT/nesta`
@@ -73,7 +68,6 @@ for x in ['4*','3*','2*','1*','unclassified']:
 ref_3 = ref_2.loc[ref['profile']=='Overall']
 
 #Create tidy dataset
-#Now we melt the ref df so it is easier to create the aggregations later.
 focus_vars_2 = ['institution_code_(ukprn)','institution_name',
 'unit_of_assessment_name',
 '4*_fte','3*_fte','2*_fte','1*_fte','unclassified_fte']
@@ -90,8 +84,10 @@ ref_long = ref_long.loc[ref_long['ukprn']!='ZZZZZZZZ']
 
 ref_long['ukprn'] = ref_long['ukprn'].astype('str')
 
+#This is the year of the REF. We need it to assign nuts codes.
 ref_long['year'] = 2013
 
+#Calculate aggregations for each indicator
 out = []
 
 #For each unique discipline
@@ -100,9 +96,6 @@ for disc in set(ref_long['unit_of_assessment_name']):
     #Subset by that discipline
     df_in_unit = ref_long.loc[ref_long['unit_of_assessment_name']==disc]
 
-    #print(len(df_in_unit))
-    #print(df_in_unit.head)
-    
     #Aggregate over nuts
     nuts_in_unit = multiple_nuts_estimates(df_in_unit,unis_geos,set(df_in_unit['variable']),
                                            'variable','value',
@@ -128,7 +121,6 @@ nuts_ref_ftes['total_fte'] = nuts_ref_ftes[fte_vars].sum(axis=1)
 #############
 #Create the indicators
 ##############
-
 ref_melted = pd.melt(nuts_ref_ftes.reset_index(drop=False),
                      id_vars=['nuts_code','unit_of_assessment_name','total_fte','year'])
 
@@ -164,8 +156,3 @@ for table,name in zip([ref_weighted_scores,ref_stem_weighted_scores,ref_excellen
     ind = make_indicator(table,{name:name},'year','nuts_code',decimals=2)
 
     save_indicator(ind,target_path,name)
-      
-
-
-
-
