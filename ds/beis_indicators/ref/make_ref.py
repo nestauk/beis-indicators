@@ -85,7 +85,7 @@ ref_long = ref_long.loc[ref_long['ukprn']!='ZZZZZZZZ']
 ref_long['ukprn'] = ref_long['ukprn'].astype('str')
 
 #This is the year of the REF. We need it to assign nuts codes.
-ref_long['year'] = 2013
+ref_long['year'] = 2014
 
 #Calculate aggregations for each indicator
 out = []
@@ -146,7 +146,6 @@ ref_excellent = nuts_ref_ftes.groupby(
 #################
 #Save the indicators
 #################
-
 #We use a loop
 for table,name in zip([ref_weighted_scores,ref_stem_weighted_scores,ref_excellent],
                  ['mean_ref','mean_ref_stem','total_4_fte']):
