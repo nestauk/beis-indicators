@@ -70,8 +70,6 @@ ip_filter = {'category_marker':'Total IP revenues'}
 #Multiply by 1000 to convert into GBP
 income_nuts = 1000*make_nuts_estimate(filter_data(ip,ip_filter),uni_nuts,'value','total_ip_revenues',year_var='academic_year')
 
-# make_indicator(income_nuts,'hebci',{'total_ip_revenues':'gbp_ip_revenues'},year_var='academic_year',decimals=0)
-
 #Services related
 services_filter = {'type_of_service':'Consultancy','number/value_marker':'Value'}
 
