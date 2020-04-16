@@ -108,4 +108,4 @@ def save_indicator(table,target_path,var_name):
         var_name (variable name)
 
     '''
-    table.to_csv(f'{project_dir}/data/processed/{target_path}/{var_name}.csv',index=False)    
+    table.to_csv(f'{target_path}/{var_name}.csv',index=False)    

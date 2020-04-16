@@ -17,6 +17,9 @@ c = CurrencyRates()
 
 project_dir = beis_indicators.project_dir
 
+#Create indicator path to output indicators
+indicator_path = os.path.join(project_dir,'data/processed')
+
 #Get config path to work with daps data
 load_dotenv()
 
@@ -41,8 +44,9 @@ def make_conversion(x,tid):
     else:
         try:
             out = x['raised_amount']*c.get_rate(
-                x['raised_amount_currency_code'],'GBP',x['announced_on']) if 
-                    x['raised_amount_currency_code']!='GBP' else x['raised_amount']
+                                                x['raised_amount_currency_code'],'GBP',x[
+                                                'announced_on']) if x[
+            'raised_amount_currency_code']!='GBP' else x['raised_amount']
             return(out)
 
         except: 
@@ -144,4 +148,4 @@ out = make_indicator(inv_venture,
                      {'venture_capital_investment':'gbp_venture_capital_received'},
               year_var='year',nuts_spec='flex',nuts_var='nuts_code',decimals=0)
 
-save_indicator(out,'crunchbase','gbp_venture_capital_received')
+save_indicator(out,f"{indicator_path}/crunchbase",'gbp_venture_capital_received')
