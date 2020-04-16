@@ -84,16 +84,18 @@ bres_cult = pd.concat([extract_segment(
     _read_bres_file(y),cultural,'cluster_name',
     'culture_entertainment_recreation') for y in [2016,2017,2018]])
 
-make_indicator(bres_cult,
-               'industry',
+ind_cult = make_indicator(bres_cult,
                {'culture_entertainment_recreation':'employment_culture_entertainment_recreation'},year_var='year',
               nuts_spec=2013,nuts_var='geo_cd',decimals=0)
+
+save_indicator(ind_cult,f'{project_dir}/data/processed/industry','employment_culture_entertainment_recreation')
 
 #Economic complexity based on IDBR data
 compl= pd.read_csv(f'{project_dir}/data/interim/industry/nomis_ECI.csv')
 
-make_indicator(compl.loc[(compl['source']=='IDBR')&(compl['sector_type']=='cluster_name')],
-              'industry',
+ind_compl = make_indicator(compl.loc[(compl['source']=='IDBR')&(compl['sector_type']=='cluster_name')],
               {'eci':'economic_complexity_index'},year_var='year',nuts_spec=2013,nuts_var='geo_cd',
               decimals=4)
+
+save_indicator(ind_compl,f'{project_dir}/data/processed/industry','economic_complexity_index')
     

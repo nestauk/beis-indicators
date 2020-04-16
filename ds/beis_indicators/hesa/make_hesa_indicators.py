@@ -112,20 +112,21 @@ stem_postgraduates.name = 'stem_postgraduate_students'
 #Output indicators
 ################
 
-#FTE res students
-make_indicator(nuts_spaces,'hesa',{'Research student FTE':'fte_research_students'},'academic_year')
+target_path = f"{project_dir}/data/processed/hesa"
 
-#Research income
-make_indicator(nuts_spaces,'hesa',{'Research income (£)':'gbp_research_income'},'academic_year')
+hesa_dfs = [nuts_spaces,nuts_spaces,
+    stem_students,stem_postgraduates,
+    nuts_spaces,nuts_spaces]
 
-#Students in STEM disciplines
-make_indicator(stem_students,'hesa',{'stem_students':'total_stem_students'},'academic_year')
+name_lookups = [{'Research student FTE':'fte_research_students'},
+    {'Research income (£)':'gbp_research_income'},
+    {'stem_students':'total_stem_students'},
+    {'stem_postgraduate_students':'total_stem_postgraduates'},
+    {'Total site area (hectares)':'area_university_site'},
+    {'Total number of buildings':'total_university_buildings'}]
 
-#STEM postgraduates
-make_indicator(stem_postgraduates,'hesa',{'stem_postgraduate_students':'total_stem_postgraduates'},'academic_year')
 
-#Site areas
-make_indicator(nuts_spaces,'hesa',{'Total site area (hectares)':'area_university_site'},'academic_year')
+for df,name_lookup in zip(hesa_dfs,name_lookups):
 
-#Number of buildings
-make_indicator(nuts_spaces,'hesa',{'Total number of buildings':'total_university_buildings'},'academic_year')
+    ind = make_indicator(df,name_lookup,'academic_year')
+    save_indicator(ind,target_path,list(name_lookup.values())[0])

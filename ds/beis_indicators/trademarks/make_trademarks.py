@@ -234,20 +234,22 @@ def make_trademarks(URL,detailed_classes):
     all_trademarks = tm_df_nuts.groupby(['nuts_code','year']).size()
     all_trademarks.name = 'total_trademarks'
 
-    make_indicator(all_trademarks,
-                   "trademarks",
+    tm = make_indicator(all_trademarks,
                    {'total_trademarks':'total_trademarks'},
                    'year')
+
+    save_indicator(tm,f"{project_dir}/data/processed/trademarks",'total_trademarks')
 
     #Create specialised trademarks
     for k,v in detailed_classes.items():
         sel = subset_trademark_category(tm_df_nuts,v)
         sel_grouped = sel.groupby(['nuts_code','year']).size()
         sel_grouped.name = k
-        make_indicator(sel_grouped,
-                   "trademarks",
-                   {k:f"total_trademarks_{k}"},
-                   "year")
+        stm = make_indicator(sel_grouped,
+                             {k:f"total_trademarks_{k}"},
+                             "year")
+        save_indicator(stm,f"{project_dir}/data/processed/trademarks",
+                       f"total_trademarks_{k}")
 
 if __name__ == "__main__":
     make_trademarks(URL,{'scientific':['class42']})
