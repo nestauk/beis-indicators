@@ -86,7 +86,7 @@ def make_nuts_estimate(data,nuts_lookup,counter,name,year_var=None,method='time_
     #If time consistent...
     if method == 'time_consistent':
         d['nuts_code'] = [nuts_lookup[row['ukprn']][get_nuts_category(
-                                row['academic_year'])] 
+                                row[year_var])] 
             if row['ukprn'] in nuts_lookup.keys() else np.nan for rid,row in data.iterrows()]
     else:
         d['nuts_code'] = [nuts_lookup[row['ukprn']]['nuts2_2016'] if 
@@ -130,7 +130,7 @@ def multiple_nuts_estimates(data,nuts_lookup,variables,select_var,value,year_var
         
         for m in variables:
             
-            y = make_nuts_estimate(data.loc[data[select_var]==m],nuts_lookup,value,m,method=method,year_var='academic_year')
+            y = make_nuts_estimate(data.loc[data[select_var]==m],nuts_lookup,value,m,method=method,year_var=year_var)
             
             year_store.append(y)
             
