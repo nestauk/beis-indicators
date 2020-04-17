@@ -1,19 +1,20 @@
 #Script to make HESA indicators
 
 import csv
-import zipfile
 import io
-import os
-import requests
-import beis_indicators
-import numpy as np
 import json
-from data_getters.labs.core import download_file
+import numpy as np
+import os
 import random
+import requests
+import zipfile
+
 from ast import literal_eval
 
-from beis_indicators.utils.dir_file_management import *
+from data_getters.labs.core import download_file
 
+import beis_indicators
+from beis_indicators.utils.dir_file_management import *
 project_dir = beis_indicators.project_dir
 
 #Make directories
@@ -25,7 +26,8 @@ def flatten_list(a_list):
 
 #Download data from nesta data getters
 def patent_download(file_path=None, progress=True):
-    """ Fetch patent data
+    '''
+    Fetch patent data
 
     Repo: http://github.com/nestauk/patent_analysis
     Commit: cb11b3f
@@ -35,9 +37,9 @@ def patent_download(file_path=None, progress=True):
         file_path (`str`, optional): Path to download to. If None, stream file.
         progress (`bool`, optional): If `True` and `file_path` is not `None`,
             display download progress.
-    """
-    itemname = "Scotland_temp/15_10_2019_patents_combined.csv"
-    return download_file(itemname, file_path, progress)
+    '''
+    item_name = "Scotland_temp/15_10_2019_patents_combined.csv"
+    return download_file(item_name, file_path, progress)
 
 
 def count_patenting_in_nuts(df,variable,nuts_lookup,pat_fam_id='docdb_family_id'):
