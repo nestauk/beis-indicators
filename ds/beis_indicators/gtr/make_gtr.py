@@ -1,9 +1,9 @@
 import pandas as pd
 import numpy as np
 import json
-import beis_indicators
 from dotenv import load_dotenv
 
+import beis_indicators
 from beis_indicators.utils.dir_file_management import *
 from beis_indicators.geo.reverse_geocoder import *
 from beis_indicators.hesa.hesa_processing import *
@@ -13,7 +13,8 @@ from data_getters.core import get_engine
 from data_getters.labs.core import download_file
 
 def get_gtr(file,file_path,progress=True):
-    """ Fetch Gateway To Research predicted industries
+    '''
+    Fetch Gateway To Research predicted industries
 
     Repo: https://github.com/nestauk/gtr_data_processing
     Commit: cd3cddb
@@ -23,7 +24,7 @@ def get_gtr(file,file_path,progress=True):
         file_path (`str`, optional): Path to download to. If None, stream file.
         progress (`bool`, optional): If `True` and `file_path` is not `None`,
             display download progress.
-    """
+    '''
     return download_file(file_to_fetch=file, download_path=file_path+file, progress=progress)
 
 def multi_geocode(source_df,lon_lat,ent_id,years):
@@ -109,7 +110,6 @@ orgs_nuts = multi_geocode(org_locs_lead,['longitude','latitude'],'id',
 proj_org = pd.merge(
     gtr_proj_short,link_orgs[['project_id','id']],
     left_on='project_id',right_on='project_id').query('year >= 2010')
-
 
 ##############
 #3. CREATE AND SAVE INDICATORS
