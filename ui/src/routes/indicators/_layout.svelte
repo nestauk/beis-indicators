@@ -107,7 +107,7 @@
 	.content nav {
 		height: 100%;
 		width: 100%;
-		background-color: #f9f7dd !important;
+		background-color: var(--color-paleyellow) !important;
 		padding: 0 var(--dim-padding);
 	}
 </style>

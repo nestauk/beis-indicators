@@ -1,7 +1,14 @@
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/font/OpenSans-Light.ttf');
+}
+
 * {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
 }
 
 html, body, #app {
@@ -47,6 +54,9 @@ a {
 	--color-grey-lighter: #f7f7f7;
 	--color-grey-70: rgb(70, 70, 70);
 	--color-grey-40: rgb(40, 40, 40);
+	--color-paleyellow: #f9f7dd;
+	--color-link: var(--color-main);
+	--color-background: var(--color-main-lighter);
 	--dim-header-height: 3rem;
 	--dim-main-height: calc(100% - var(--dim-header-height));
 	--dim-padding-minor: 0.5rem;

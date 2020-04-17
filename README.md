@@ -1,70 +1,43 @@
-Beis Indicators
-===============
+# BEIS Indicators
 
 Regional indicators for BEIS to assess regional conditions needed for value for money of regional R&D spend.
 
-Project Organisation
+## Introduction
 
-```
-├── LICENSE
-├── README.md              <- The top-level README for developers using this project.
-└── ds
-    ├── Makefile           <- Makefile with commands like `make data` or `make dvc`
-    ├── README.md          <- The README for the analysis
-    ├── data
-    │   ├── README.md
-    │   ├── external       <- Data from third party sources.
-    │   ├── interim        <- Intermediate data that has been transformed.
-    │   ├── processed      <- The final, canonical data sets for modeling.
-    │   ├── aux            <- Non-automatable human interventions, e.g. hand selected record ID's to ignore
-    │   └── raw            <- The original, immutable data dump.
-    │
-    ├── docs               <- A default Sphinx project; see sphinx-doc.org for details
-    │
-    ├── logging.yaml       <- Logging config
-    │
-    ├── models             <- Trained and serialized models, model predictions, or model summaries
-    │
-    ├── model_config.yaml  <- Model configuration parameters
-    │
-    ├── notebooks          <- Jupyter notebooks. Notebooks at the top level should have a markdown header
-    │   │                     outlining the notebook and should avoid function calls in favour of factored out code.
-    │   ├── notebook_preamble.ipy
-    │   │
-    │   └── dev            <- Development notebooks. Naming convention is a number (for ordering),
-    │                         the creator's initials, and a short `_` delimited description, e.g.
-    │                         `01_jmg_eda.ipynb`.
-    │
-    ├── pipe               <- Contains DVC pipeline files
-    │
-    ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-    │
-    ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-    │   └── figures        <- Generated graphics and figures to be used in reporting
-    │
-    ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-    │                         generated with `pip freeze > requirements.txt`
-    │
-    ├── setup.py           <- makes project pip installable (pip install -e .) so beis_indicators can be imported
-    │
-    ├── beis_indicators                <- Source code for use in this project.
-    │   ├── __init__.py    <- Makes beis_indicators a Python module
-    │   │
-    │   ├── data           <- Scripts to download or generate data
-    │   │   └── make_dataset.py
-    │   │
-    │   ├── features       <- Scripts to turn raw data into features for modeling
-    │   │   └── build_features.py
-    │   │
-    │   ├── models         <- Scripts to train models and then use trained models to make
-    │   │   │                 predictions
-    │   │   ├── predict_model.py
-    │   │   └── train_model.py
-    │   │
-    │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
-    │       └── visualize.py
-    │
-    └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
-```
+In this project, Nesta have worked closely with BEIS to create an open repository of indicators capturing various dimensions of innovation and its drivers in regions across the UK.
+​
+We have also built a tool to visualise and explore these indicators with the goal of informing policies to drive innovation and growth across all of the UK.
+​
+All this work has been performed with support from BEIS.
+​
+Our indicators are arranged in four broad categories:
+​
+* Public R&D Capability, measuring the quantity and excellence of R&D activity taking place in higher education institutions in a region.
+* Business R&D Capability, measuring the level of R&D activity and innovative outputs in the private sector in a region
+* Knowledge exchange, measuring the connectivity between higher education institutions in a region and the wider economy
+* Place potential, measuring wider infrastructures and framework conditions in a region that might drive - or hinder - its innovative performance.
+Collapse
 
-<p><small>Project based on the <a target="_blank" href="https://github.com/nestauk/cookiecutter-data-science-nesta">Nesta cookiecutter data science project template</a>.</small></p>
+## Methodology
+
+### Data sources
+​
+As much as possible we have used data from official sources such as ONS, Eurostat, HESA or UKRI. One reason to do this is to enable the reproducibility of our analysis, and to remove the reliance of the tool on proprietary sources.
+​
+Having said this, in a small number of instances we have used proprietary data sources such as PATSTAT for the analysis of patenting, and CrunchBase for the analysis of venture capital investment.
+​
+### Geographies
+​
+We use NUTS2 regions as our geographical unit of analysis. This has allowed us to collect data about regional R&D activity which is only available at that level. We note that were possible we have also calculated indicators at a higher level of granularity (NUTS3) as well as using policy-relevant LEPs boundaries. These will be released when the tool is published later in 2020.
+​
+In many cases we have reverse geocoded observations available at high level of geographical resolution (for example, the geographical coordinates of a higher education institution) using NUTS2 boundary files available from Eurostat. When doing this, we have assigned observations to regions in the NUTS2 version that was in use at the time when the data were collected / when the events captured in the data took place.
+​
+### Data processing
+​
+In general, we have avoided complex data processing beyond what was required to aggregate data at our preferred level of geographical resolution. There are however a couple of exceptions to this:
+​
+* We have calculated indices of economic complexity for UK regions used the algorithm developed by Hausman and Hidalgo (2009)
+* We have measured levels of employment in entertainment and cultural sectors using an industrial segmentation based on the methodology developed by Delgado et al (2015)
+* We have identified UKRI-funded research projects in STEM disciplines using a machine learning analysis of project descriptions presented in Mateos-Garcia (2017)
+​
+We indicate those indicators based on experimental methodologies or data sources where relevant.
