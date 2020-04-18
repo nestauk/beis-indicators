@@ -15,15 +15,13 @@ import re
 import datetime
 from ast import literal_eval
 
-
-
 logger = logging.getLogger()
 
 ## Paths
 # project directory e.g. `/home/user/GIT/nesta`
 project_dir = beis_indicators.project_dir
 data_path = f'{project_dir}/data'
-target_path = os.path.join(data_path,'processed')
+target_path = os.path.join(data_path,'processed','ref')
 
 #Make directory (if needed)
 make_dirs('ref')
@@ -60,7 +58,7 @@ ref_2 = ref[focus_vars]
 
 #Create the full time estimate equivalents in each category
 for x in ['4*','3*','2*','1*','unclassified']:
-    
+
     ref_2[x+'_fte'] = [fte*star/100 for fte,star in zip(ref_2['fte_category_a_staff_submitted'],
                                                         ref_2[x])]
 
@@ -92,7 +90,7 @@ out = []
 
 #For each unique discipline
 for disc in set(ref_long['unit_of_assessment_name']):
-    
+
     #Subset by that discipline
     df_in_unit = ref_long.loc[ref_long['unit_of_assessment_name']==disc]
 
@@ -101,10 +99,10 @@ for disc in set(ref_long['unit_of_assessment_name']):
                                            'variable','value',
                                            year_var='year',
                                            method='time_consistent')
-    
+
     #Add the discipline (unit of assessment) name so we know what everything is when we concatenate
     nuts_in_unit['unit_of_assessment_name'] = disc
-    
+
     #Put in the list
     out.append(nuts_in_unit)
 
@@ -149,9 +147,9 @@ ref_excellent = nuts_ref_ftes.groupby(
 #We use a loop
 for table,name in zip([ref_weighted_scores,ref_stem_weighted_scores,ref_excellent],
                  ['mean_ref','mean_ref_stem','total_4_fte']):
-    
+
     table.name = name
-    
+
     ind = make_indicator(table,{name:name},'year','nuts_code',decimals=2)
 
     save_indicator(ind,target_path,name)
