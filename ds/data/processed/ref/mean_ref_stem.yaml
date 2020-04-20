@@ -26,5 +26,6 @@ schema:
   year:
     data_type: int
     label: Year
-source_name: UKRI (https://results.ref.ac.uk/)
+source_name: REF (Research Excellence Framework)
+source_url: https://results.ref.ac.uk/
 year_range: [2014, 2014]

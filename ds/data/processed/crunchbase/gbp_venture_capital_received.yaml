@@ -28,5 +28,6 @@ schema:
   year:
     data_type: int
     label: Year
-source_name: https://www.crunchbase.com/
+source_name: Crunchbase (business information about companies)
+source_url: https://www.crunchbase.com/
 year_range: [2010,2019]

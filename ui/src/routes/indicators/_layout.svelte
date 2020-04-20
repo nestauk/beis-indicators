@@ -75,10 +75,11 @@
 		text-decoration: none;
 	}
 	.container > nav p {
-		line-height: 1.75rem;
+		line-height: 1.5rem;
 		display: flex;
 		align-items: center;
 		padding-left: 0.5rem;
+    margin-bottom: 0.5rem;
 	}
 	.container > nav p.selected {
 		background-color: var(--color-main-desat-50) !important;

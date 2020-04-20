@@ -56,5 +56,5 @@
     "test": "run-p --race dev cy:run",
     "unittest": "mocha -r esm --spec src/**/*.spec.js"
   },
-  "version": "0.0.3"
+  "version": "0.0.4"
 }

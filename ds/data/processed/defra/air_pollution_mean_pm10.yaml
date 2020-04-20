@@ -3,18 +3,18 @@ api_type: FETCH
 description_short: Mean PM10 particulate background pollution
 description: Mean PM10 particulate background pollution data at NUTS 2 regions aggregated from 1km x 1km resolution UK data modelled by DEFRA.
 endpoint_url:
-  - https://uk-air.defra.gov.uk/datastore/pcm/mappm102007g.csv
-  - https://uk-air.defra.gov.uk/datastore/pcm/mappm102008g.csv
-  - https://uk-air.defra.gov.uk/datastore/pcm/mappm102009g.csv
-  - https://uk-air.defra.gov.uk/datastore/pcm/mappm102010g.csv
-  - https://uk-air.defra.gov.uk/datastore/pcm/mappm102011g.csv
-  - https://uk-air.defra.gov.uk/datastore/pcm/mappm102012g.csv
-  - https://uk-air.defra.gov.uk/datastore/pcm/mappm102013g.csv
-  - https://uk-air.defra.gov.uk/datastore/pcm/mappm102014g.csv
-  - https://uk-air.defra.gov.uk/datastore/pcm/mappm102015g.csv
-  - https://uk-air.defra.gov.uk/datastore/pcm/mappm102016g.csv
-  - https://uk-air.defra.gov.uk/datastore/pcm/mappm102017g.csv
-  - https://uk-air.defra.gov.uk/datastore/pcm/mappm102018g.csv
+  2007: https://uk-air.defra.gov.uk/datastore/pcm/mappm102007g.csv
+  2008: https://uk-air.defra.gov.uk/datastore/pcm/mappm102008g.csv
+  2009: https://uk-air.defra.gov.uk/datastore/pcm/mappm102009g.csv
+  2010: https://uk-air.defra.gov.uk/datastore/pcm/mappm102010g.csv
+  2011: https://uk-air.defra.gov.uk/datastore/pcm/mappm102011g.csv
+  2012: https://uk-air.defra.gov.uk/datastore/pcm/mappm102012g.csv
+  2013: https://uk-air.defra.gov.uk/datastore/pcm/mappm102013g.csv
+  2014: https://uk-air.defra.gov.uk/datastore/pcm/mappm102014g.csv
+  2015: https://uk-air.defra.gov.uk/datastore/pcm/mappm102015g.csv
+  2016: https://uk-air.defra.gov.uk/datastore/pcm/mappm102016g.csv
+  2017: https://uk-air.defra.gov.uk/datastore/pcm/mappm102017g.csv
+  2018: https://uk-air.defra.gov.uk/datastore/pcm/mappm102018g.csv
 framework_group: place_potential
 is_experimental: False
 nuts_level: 2
@@ -37,5 +37,6 @@ schema:
   year:
     data_type: int
     label: Year
-source_name: DEFRA
+source_name: DEFRA (Department for Environment Food & Rural Affairs)
+source_url: https://uk-air.defra.gov.uk
 year_range: [2007, 2018]

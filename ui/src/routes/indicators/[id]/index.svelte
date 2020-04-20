@@ -20,19 +20,25 @@
 		inclusiveRange,
 		mergeObj,
 		objectToKeyValueArray,
-		transformValues
+		transformValues,
 	} from '@svizzle/utils';
 
 	import { goto } from '@sapper/app';
+
+	import Modal from 'app/components/Modal.svelte';
+	import IconInfo from 'app/components/icons/IconInfo.svelte';
 	import { lookup, yearExtent, yearRange } from 'app/data/groups';
 	import groups from 'app/data/indicatorsGroups.json';
 	import yearlyKeyToLabel from 'app/data/NUTS2_UK_labels';
 	import {
 		availableYearsStore,
 		lookupStore,
+		modalStore,
+		resetModal,
 		resetSelectedYear,
 		safetyStore,
-		timelineLayoutStore
+		timelineLayoutStore,
+		toggleModal,
 	} from 'app/stores';
 	import {
 		getIndicatorFormat,
@@ -76,9 +82,25 @@
 	let useOrderScale = false;
 
 	$: id && resetSelectedYear();
+	$: id && resetModal();
 	$: data && lookupStore.update(_.setPath(`${id}.data`, data));
 
-	$: ({description, description_short, year_range} = $lookupStore[id] || {});
+	$: ({
+		api_doc_url,
+		api_type,
+		auth_provider,
+		data_date,
+		description_short,
+		description,
+		endpoint_url,
+		is_public,
+		query,
+		region,
+		source_name,
+		source_url,
+		year_range,
+	} = $lookupStore[id] || {});
+
 	$: formatFn = getIndicatorFormat(id, lookup);
 	$: $availableYearsStore = inclusiveRange(year_range)
 	$: layout = $timelineLayoutStore;
@@ -173,8 +195,17 @@
 
 <div class='container'>
 	<header>
-		<h1>{description_short}</h1>
-		<h2>{description}</h2>
+		<div>
+			<h1>{description_short}</h1>
+			<p>{description}</p>
+		</div>
+		<div on:click={toggleModal}>
+			<IconInfo
+				width=30
+				height=30
+				strokeWidth=1.5
+			/>
+		</div>
 	</header>
 
 	<section>
@@ -288,6 +319,22 @@
 			</svg>
 			{/if}
 		</div>
+		{#if $modalStore.isVisible}
+		<Modal
+			{api_doc_url}
+			{api_type}
+			{auth_provider}
+			{data_date}
+			{endpoint_url}
+			{is_public}
+			{query}
+			{region}
+			{source_name}
+			{source_url}
+			{year_range}
+			on:click={toggleModal}
+		/>
+		{/if}
 	</section>
 </div>
 
@@ -296,10 +343,32 @@
 		--indicators-h1-height: 4.5rem;
 		height: 100%;
 		width: 100%;
+		user-select: none;
 	}
 
 	header {
 		height: var(--indicators-h1-height);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	header div:nth-child(1) {
+		flex: 1;
+	}
+	header div:nth-child(1) h1 {
+		margin: 0;
+	}
+	header div:nth-child(1) p {
+		font-style: italic;
+		font-size: 1rem;
+		color: grey;
+	}
+	header div:nth-child(2) {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		cursor: pointer;
 	}
 
 	section {
@@ -309,12 +378,7 @@
 		display: grid;
 		grid-template-columns: 100%;
 		grid-template-rows: 3rem calc(100% - 3rem);
-	}
-
-	h2 {
-		font-style: italic;
-		font-size: 1rem;
-		color: grey;
+		position: relative;
 	}
 
 	.controls {
@@ -330,9 +394,9 @@
 		border: 1px solid var(--color-main);
 		cursor: pointer;
 		font-size: 1rem;
-		margin-right: 1rem;
 		padding: 0.5rem;
 		user-select: none;
+		margin-left: 1rem;
 	}
 	button.selected {
 		background-color: var(--color-selected);
@@ -357,7 +421,7 @@
 		pointer-events: none;
 	}
 	svg text {
-		fill: var(--color-grey-180);
+		fill: var(--color-grey-70);
 		dominant-baseline: middle;
 		font-weight: var(--dim-fontsize-light);
 		stroke: none;
@@ -373,7 +437,6 @@
 	svg path {
 		fill: none;
 		pointer-events: none;
-		/* stroke-width: 0.7; */
 	}
 	svg path.focused {
 		stroke-width: 3;

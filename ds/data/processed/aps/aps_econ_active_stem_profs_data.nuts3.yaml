@@ -27,5 +27,6 @@ schema:
   year:
     data_type: int
     label: Year
-source_name: NOMIS
+source_name: NOMIS (official labour market statistics)
+source_url: https://www.nomisweb.co.uk
 year_range: [2012, 2018]

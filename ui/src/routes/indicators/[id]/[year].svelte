@@ -22,13 +22,18 @@
 		mergeObj
 	} from '@svizzle/utils';
 
+	import Modal from 'app/components/Modal.svelte';
+	import IconInfo from 'app/components/icons/IconInfo.svelte';
 	import {lookup} from 'app/data/groups';
 	import yearlyKeyToLabel from 'app/data/NUTS2_UK_labels';
 	import {
 		availableYearsStore,
 		lookupStore,
+		modalStore,
+		resetModal,
 		resetSafetyStore,
-		selectedYearStore
+		selectedYearStore,
+		toggleModal,
 	} from 'app/stores';
 	import topos from 'app/data/topojson';
 	import {
@@ -49,12 +54,28 @@
 
 	let selectedKeys = [];
 
+	$: id && year && resetModal();
 	$: $selectedYearStore = Number(year);
 	$: formatFn = getIndicatorFormat(id, lookup);
 	$: getIndicatorValue = makeValueAccessor(id);
-	$: ({description_short, year_range} = $lookupStore[id] || {});
 	$: $availableYearsStore = inclusiveRange(year_range);
 	$: data && lookupStore.update(_.setPath(`${id}.data`, data));
+	$: ({
+		api_doc_url,
+		api_type,
+		auth_provider,
+		data_date,
+		description_short,
+		description,
+		endpoint_url,
+		is_public,
+		query,
+		region,
+		source_name,
+		source_url,
+		year_range,
+	} = $lookupStore[id] || {});
+
 	// $: indicatorData = $lookupStore[id].data;
 	$: yearData = data && data.filter(obj => obj.year === year);
 	$: makeKeyToValue = _.pipe([
@@ -140,87 +161,137 @@
 	<title>BEIS indicators - {description_short} ({year})</title>
 </svelte:head>
 
-<main>
-	<div class="distancer">
-		<h1>{description_short} ({year})</h1>
-	</div>
-	<div
-		class="col col1"
-		on:mousemove={onMousemoved}
-		bind:clientWidth={width}
-		bind:clientHeight={height}
-	>
-		{#if topojson}
-		<ChoroplethDiv
-			{keyToColor}
-			{selectedKeys}
-			{topojson}
-			colorDefaultFill='lightgrey'
-			colorStroke='black'
-			isInteractive={true}
-			key='NUTS_ID'
-			on:entered={onEntered}
-			on:exited={onExited}
-			projection='geoEqualEarth'
-			sizeStroke=0.5
-			topojsonId='NUTS'
-		/>
-		{/if}
-		{#if $tooltip.isVisible}
-		<div
-			class="tooltip"
-			style={$tooltip.style}
-		>
-			<header>
-				<span>{$tooltip.nuts_id}</span>
-				{#if $tooltip.value}
-				<span>{$tooltip.value}</span>
-				{/if}
-			</header>
-			<div>
-				<span>{$tooltip.nuts_label}</span>
-			</div>
+<div class='container'>
+	<header>
+		<div>
+			<h1>{description_short} ({year})</h1>
+			<p>{description}</p>
 		</div>
-		{/if}
-	</div>
-	<div class="col col2">
-		<BarchartV
-			{focusedKey}
-			{formatFn}
-			{items}
-			{keyToColor}
-			{keyToLabel}
-			focusedKeyColor='rgb(196, 236, 255)'
-			isInteractive={true}
-			on:entered={onEnteredBar}
-			on:exited={onExitedBar}
-			shouldResetScroll={true}
+		<div on:click={toggleModal}>
+			<IconInfo
+				width=30
+				height=30
+				strokeWidth=1.5
+			/>
+		</div>
+	</header>
+	<section>
+		<div
+			class="col col1"
+			on:mousemove={onMousemoved}
+			bind:clientWidth={width}
+			bind:clientHeight={height}
+		>
+			{#if topojson}
+			<ChoroplethDiv
+				{keyToColor}
+				{selectedKeys}
+				{topojson}
+				colorDefaultFill='lightgrey'
+				colorStroke='black'
+				isInteractive={true}
+				key='NUTS_ID'
+				on:entered={onEntered}
+				on:exited={onExited}
+				projection='geoEqualEarth'
+				sizeStroke=0.5
+				topojsonId='NUTS'
+			/>
+			{/if}
+			{#if $tooltip.isVisible}
+			<div
+				class="tooltip"
+				style={$tooltip.style}
+			>
+				<header>
+					<span>{$tooltip.nuts_id}</span>
+					{#if $tooltip.value}
+					<span>{$tooltip.value}</span>
+					{/if}
+				</header>
+				<div>
+					<span>{$tooltip.nuts_label}</span>
+				</div>
+			</div>
+			{/if}
+		</div>
+		<div class="col col2">
+			<BarchartV
+				{focusedKey}
+				{formatFn}
+				{items}
+				{keyToColor}
+				{keyToLabel}
+				focusedKeyColor='rgb(196, 236, 255)'
+				isInteractive={true}
+				on:entered={onEnteredBar}
+				on:exited={onExitedBar}
+				shouldResetScroll={true}
+			/>
+		</div>
+		{#if $modalStore.isVisible}
+		<Modal
+			{api_doc_url}
+			{api_type}
+			{auth_provider}
+			{data_date}
+			{endpoint_url}
+			{is_public}
+			{query}
+			{region}
+			{source_name}
+			{source_url}
+			{year_range}
+			on:click={toggleModal}
 		/>
-	</div>
-</main>
+		{/if}
+	</section>
+</div>
 
 <style>
-	main {
-		display: grid;
-		grid-template-columns: 65% 35%;
-		grid-template-rows: 3rem calc(100% - 3rem);
+	.container {
+		--indicators-h1-height: 4.5rem;
 		height: 100%;
 		width: 100%;
+		user-select: none;
 	}
 
-	.distancer {
-		margin-bottom: 1rem;
+	.container > header {
+		height: var(--indicators-h1-height);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
 	}
 
-	h1 {
-		grid-column: 1 / span 2;
-		grid-row: 1 / span 1;
+	.container > header div:nth-child(1) {
+		flex: 1;
+	}
+	.container > header div:nth-child(1) h1 {
 		margin: 0;
+	}
+	.container > header div:nth-child(1) p {
+		font-style: italic;
+		font-size: 1rem;
+		color: grey;
+	}
+	.container > header div:nth-child(2) {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		cursor: pointer;
+	}
+
+	section {
+		height: calc(100% - var(--indicators-h1-height));
 		width: 100%;
+		overflow-y: auto;
+		display: grid;
+		grid-template-columns: 65% 35%;
+		grid-template-rows: 100%;
+		position: relative;
 	}
 
 	.col {
-		grid-row: 2 / span 1;
 		padding: var(--dim-padding-minor);
 	}
 	.col1 {
@@ -232,6 +303,8 @@
 	.col2 {
 		grid-column: 2 / span 1;
 	}
+
+	/* tooltip */
 
 	.tooltip {
 		position: absolute;

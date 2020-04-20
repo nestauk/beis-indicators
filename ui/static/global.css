@@ -1,14 +1,18 @@
 @font-face {
-  font-family: 'Open Sans';
-  src: url('/font/OpenSans-Light.ttf');
+  font-family: 'Open Sans Light';
+  src: url('/font/OpenSans-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans Regular';
+  src: url('/font/OpenSans-Regular.ttf') format('truetype');
 }
 
 * {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 300;
+	font-family: 'Open Sans Light', sans-serif;
+	font-weight: 400;
 }
 
 html, body, #app {
@@ -47,6 +51,8 @@ a {
 }
 
 :root {
+	--box-shadow-y: 0px 8px 9px -4px lightgrey;
+	--box-shadow-xy: 2px 8px 9px -4px lightgrey;
 	--color-main-desat-50: hsla(199, 50%, 52%, 1);
 	--color-main-lighter: rgb(157, 219, 249);
 	--color-main: rgb(16, 174, 249);

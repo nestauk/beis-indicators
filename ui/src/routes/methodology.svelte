@@ -80,7 +80,7 @@
 		padding: 2rem;
 		overflow-y: auto;
 		background-color: white;
-		box-shadow: 0px 8px 9px -4px lightgrey;
+		box-shadow: var(--box-shadow-y);
 	}
 
 	ul {
@@ -110,6 +110,6 @@
 		color: white;
 		padding: 1rem;
 		font-size: 1.2rem;
-		box-shadow: 2px 8px 9px -4px lightgrey;
+		box-shadow: var(--box-shadow-xy);
 	}
 </style>

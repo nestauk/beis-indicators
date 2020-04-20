@@ -11,7 +11,7 @@ framework_group: public_rnd_capability
 is_experimental: False
 order: [year, nuts_id, nuts_year_spec, value.id] # do not change; specifies the order of the exported indicator fields
 region:
-  type: NutsRegion # the region type, e.g. NutsRegion or LepRegion
+  type: NutsRegion
   level: 2
   source: PROVIDED
 schema:
@@ -28,5 +28,6 @@ schema:
   year:
     data_type: int
     label: Year
-source_name: NOMIS # the name of the data provider (e.g. Eurostat, NOMIS, etc.)
+source_name: NOMIS (official labour market statistics)
+source_url: https://www.nomisweb.co.uk
 year_range: [2012, 2018]

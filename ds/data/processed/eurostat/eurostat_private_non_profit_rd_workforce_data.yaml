@@ -25,5 +25,6 @@ schema:
   year:
     data_type: int
     label: Year
-source_name: Eurostat
+source_name: Eurostat (European Statistical Office)
+source_url: https://ec.europa.eu/eurostat/
 year_range: [2012, 2017]

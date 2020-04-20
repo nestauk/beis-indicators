@@ -37,9 +37,10 @@
 		bind:clientWidth={width}
 	>
 		<ul>
-			{#each groups as {id, label, indicators}}
+			{#each groups as {description, id, indicators, label}}
 			<div class="group">
 				<h2>{label}</h2>
+				<p>{description}</p>
 
 				{#if width}
 				<svg
