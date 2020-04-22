@@ -36,6 +36,7 @@
 		toggleModal,
 	} from 'app/stores';
 	import topos from 'app/data/topojson';
+	import types from 'app/data/types';
 	import {
 		getIndicatorFormat,
 		getNutsId,
@@ -71,10 +72,18 @@
 		is_public,
 		query,
 		region,
+		schema,
 		source_name,
 		source_url,
 		year_range,
 	} = $lookupStore[id] || {});
+
+	$: labelUnit =
+		schema.value.type &&
+		_.has(types, schema.value.type) &&
+		_.has(types[schema.value.type], 'unit_string') &&
+		types[schema.value.type].unit_string;
+	$: barchartTitle = schema.value.label + (labelUnit ? ` [${labelUnit}]` : '');
 
 	// $: indicatorData = $lookupStore[id].data;
 	$: yearData = data && data.filter(obj => obj.year === year);
@@ -134,6 +143,7 @@
 			style: makeTooltipStyle(event),
 			value: _.has(keyToValue, event.detail)
 				? formatFn(keyToValue[event.detail])
+					+ (labelUnit ? ` ${labelUnit}` : '')
 				: undefined
 		}))
 	};
@@ -228,6 +238,7 @@
 				isInteractive={true}
 				on:entered={onEnteredBar}
 				on:exited={onExitedBar}
+				title={barchartTitle}
 				shouldResetScroll={true}
 			/>
 		</div>
@@ -304,6 +315,11 @@
 
 	.col2 {
 		grid-column: 2 / span 1;
+	}
+
+	:global(.col2 .BarchartV header h2) {
+		font-size: 1rem;
+		margin-bottom: 1rem;
 	}
 
 	/* tooltip */

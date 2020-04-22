@@ -20,8 +20,8 @@ schema:
     description: Research income for universities in the region
     format: ','
     id: gbp_research_income
-    label: Research income (GBP)
-    type: GPB
+    label: Research income
+    type: GBP
   year:
     data_type: int
     label: Academic year (start)

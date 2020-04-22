@@ -30,6 +30,7 @@
 	import { lookup, yearExtent, yearRange } from 'app/data/groups';
 	import groups from 'app/data/indicatorsGroups.json';
 	import yearlyKeyToLabel from 'app/data/NUTS2_UK_labels';
+	import types from 'app/data/types';
 	import {
 		availableYearsStore,
 		lookupStore,
@@ -68,7 +69,8 @@
 	const getOrder = _.getKey('order');
 
 	const gap = 4;
-	const labelSafety = 75;
+	const labelFontSize = 14;
+	const axisFontSize = 12;
 	const tooltipFontSize = 10;
 	const tooltipPadding = 5;
 	const tooltipShift = 1.5 * tooltipPadding + 0.5 * tooltipFontSize;
@@ -96,6 +98,7 @@
 		is_public,
 		query,
 		region,
+		schema,
 		source_name,
 		source_url,
 		year_range,
@@ -112,8 +115,14 @@
 	$: valueExtext = extent(data, getIndicatorValue);
 	$: trends = makeTrends(rankedData);
 	$: radius = Math.min(layout.radius, 0.5 * (height / maxOrder) - gap);
-	$: yMin = radius + gap;
-	$: yMax = height - radius - gap;
+	$: yMin = radius + 2 * gap + labelFontSize;
+	$: yMax = height - Math.max(radius, axisFontSize / 2) - gap;
+	$: yLabel = gap + labelFontSize / 2;
+	$: labelUnit =
+		schema.value.type &&
+		_.has(types, schema.value.type) &&
+		_.has(types[schema.value.type], 'unit_string') &&
+		types[schema.value.type].unit_string;
 	$: scaleY = useOrderScale
 		? scaleLinear().domain([0, maxOrder]).range([yMin, yMax])
 		: scaleLinear().domain(valueExtext).range([yMax, yMin]);
@@ -142,6 +151,7 @@
 	$: X2 = layout.fullScaleX(year_range[1]);
 	$: x1 = layout.scaleX(year_range[0]);
 	$: x2 = layout.scaleX(year_range[1]);
+	$: xMed = (x1 + x2) / 2;
 
 	/* tooltip */
 
@@ -245,31 +255,43 @@
 
 				<!-- axes -->
 				<g>
+					<text
+						class='label'
+						x='{xMed}'
+						y={yLabel}
+						font-size={labelFontSize}
+					>
+						<tspan>{schema.value.label}</tspan>
+						{#if labelUnit}<tspan>[{labelUnit}]</tspan>{/if}
+					</text>
 					<g class='ref x'>
 						{#each $availableYearsStore as year}
 						<line
 							x1={layout.scaleX(year)}
 							x2={layout.scaleX(year)}
-							y2={height}
+							y1={yMin}
+							y2={yMax}
 						/>
 						{/each}
 					</g>
-					{#each ticks as {label, y}}
 					<g
 						class='ref left'
 						transform='translate({x1},0)'
 					>
+						{#each ticks as {label, y}}
 						<line x2='-10' y1={y} y2={y}/>
-						<text dx='-15' dy={y}>{label}</text>
+						<text dx='-15' dy={y} font-size={axisFontSize}>{label}</text>
+						{/each}
 					</g>
 					<g
 						class='ref right'
 						transform='translate({x2},0)'
 					>
+						{#each ticks as {label, y}}
 						<line x2='10' y1={y} y2={y}/>
-						<text dx='15' dy={y}>{label}</text>
+						<text dx='15' dy={y} font-size={axisFontSize}>{label}</text>
+						{/each}
 					</g>
-					{/each}
 				</g>
 
 				<!-- curves -->
@@ -426,6 +448,16 @@
 		font-weight: var(--dim-fontsize-light);
 		stroke: none;
 		pointer-events: none;
+	}
+	svg text.label {
+		text-anchor: middle;
+		dominant-baseline: middle;
+	}
+	svg text.label tspan:nth-child(1) {
+		font-weight: bold;
+	}
+	svg text.label tspan:nth-child(2) {
+		font-style: italic;
 	}
 	svg .left text {
 		text-anchor: end;

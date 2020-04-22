@@ -7,6 +7,7 @@ import json from '@rollup/plugin-json';
 import replace from '@rollup/plugin-replace';
 import resolve from '@rollup/plugin-node-resolve';
 import svelte from 'rollup-plugin-svelte';
+import yaml from '@rollup/plugin-yaml';
 
 import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
@@ -39,6 +40,7 @@ export default {
 			commonjs(),
 			dsv(),
 			json(),
+			yaml(),
 			cleanup(),
 
 			legacy && babel({
@@ -84,6 +86,7 @@ export default {
 			commonjs(),
 			dsv(),
 			json(),
+			yaml(),
 			cleanup(),
 		],
 		external:
@@ -112,6 +115,7 @@ export default {
 			commonjs(),
 			dsv(),
 			json(),
+			yaml(),
 			cleanup(),
 			!dev && terser()
 		],
