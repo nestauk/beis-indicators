@@ -88,12 +88,6 @@
 		margin-left: 20px;
 	}
 
-	h3 span {
-		background-color: var(--color-main);
-		color: white;
-		padding: 0.3rem;
-	}
-
 	.cta {
 		display: flex;
 		justify-content: space-around;

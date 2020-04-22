@@ -352,7 +352,6 @@
 		align-items: center;
 		justify-content: space-between;
 	}
-
 	header div:nth-child(1) {
 		flex: 1;
 	}
@@ -365,10 +364,11 @@
 		color: grey;
 	}
 	header div:nth-child(2) {
-		display: flex;
 		align-items: center;
-		justify-content: space-between;
 		cursor: pointer;
+		display: flex;
+		justify-content: space-between;
+		margin-left: 1rem;
 	}
 
 	section {

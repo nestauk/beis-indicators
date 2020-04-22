@@ -111,12 +111,14 @@
 	const tooltip = writable({isVisible: false});
 
 	const makeTooltipStyle = event => {
-		const x = event.offsetX < width / 2
-		 	? {key: 'left', value: event.offsetX + 20}
-			: {key: 'right', value: width - event.offsetX + 10};
-		const y = event.offsetY < height / 2
-		 	? {key: 'top', value: event.offsetY + 20}
-			: {key: 'bottom', value: height - event.offsetY + 10};
+		const {layerX: X, layerY: Y} = event;
+
+		const x = X < width / 2
+		 	? {key: 'left', value: X + 20}
+			: {key: 'right', value: width - X + 10};
+		const y = Y < height / 2
+		 	? {key: 'top', value: Y + 20}
+			: {key: 'bottom', value: height - Y + 10};
 
 		return makeStyle({
 			[x.key]: toPx(x.value),
