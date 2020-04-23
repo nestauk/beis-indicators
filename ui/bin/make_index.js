@@ -11,8 +11,6 @@ import {applyFnMap, isKeyOf} from '@svizzle/utils';
 const DATA_DIR = path.resolve(__dirname, '../../ds/data/processed');
 const TYPES_PATH = path.resolve(__dirname, '../../ds/data/schema/types.yaml');
 const FRAMEWORK_PATH = path.resolve(__dirname, '../../ds/data/aux/framework.json');
-const GITHUB_RAW_BASEURL =
-  'https://raw.githubusercontent.com/nestauk/beis-indicators/dev/ds/data/processed';
 const GROUPS_PATH =
   path.resolve(__dirname, '../src/node_modules/app/data/indicatorsGroups.json');
 
@@ -24,10 +22,10 @@ const makePath = dirName => filename => path.resolve(
   dirName,
   filename
 );
-const makeCsvUrl = dirName => filename => {
+const makeCsvUrl = filename => {
   const {name} = path.parse(filename);
 
-  return `${GITHUB_RAW_BASEURL}/${dirName}/${name}.csv`;
+  return `/data/${name}.csv`;
 }
 const setUrl = url => obj => _.setIn(obj, 'url', url);
 const saveIndex = saveObj(GROUPS_PATH, 2);
@@ -86,7 +84,7 @@ const process = async () => {
         _.filterWith(_.allOf([isYamlFile, isNotNuts3File])),
         _.mapWith(applyFnMap({
           filepath: makePath(dirName),
-          url: makeCsvUrl(dirName),
+          url: makeCsvUrl,
         }))
       ]))
     )

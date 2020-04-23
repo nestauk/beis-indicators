@@ -15,8 +15,9 @@
 	resetSelection();
 	resetSafetyStore();
 
+	// when exporting, to crawl links in the svg, we need to have width defined
+	let width = process.env.SAPPER_EXPORT && 1000;
 	let height;
-	let width;
 
 	$: layout = $timelineLayoutStore;
 	$: vStep = 2 * layout.radius + 3 * gap + layout.fontSize;
@@ -85,17 +86,20 @@
 							x2='{layout.scaleX(year_range[1]) - layout.radius}'
 						/>
 						{#each inclusiveRange(year_range) as year}
-						<!-- FIXME using <a> in svg seems to give a bad URL hence reloading the page -->
-						<!-- <a
-							rel='prefetch'
-							href='indicators/{schema.value.id}/{year}'
-						> -->
+						{#if process.env.SAPPER_EXPORT}
+						<a rel='prefetch' href='/indicators/{schema.value.id}/{year}'>
+							<circle
+								cx='{layout.scaleX(year)}'
+								r={layout.radius}
+							/>
+						</a>
+						{:else}
 							<circle
 								cx='{layout.scaleX(year)}'
 								r={layout.radius}
 								on:click='{() => goto(`indicators/${schema.value.id}/${year}`)}'
 							/>
-						<!-- </a> -->
+						{/if}
 						{/each}
 					</g>
 					{/each}

@@ -13,6 +13,7 @@ import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
 
 const mode = process.env.NODE_ENV;
+const isExported = process.env.SAPPER_EXPORT;
 const dev = mode === 'development';
 const legacy = Boolean(process.env.SAPPER_LEGACY_BUILD);
 
@@ -26,7 +27,8 @@ export default {
 		plugins: [
 			replace({
 				'process.browser': true,
-				'process.env.NODE_ENV': JSON.stringify(mode)
+				'process.env.NODE_ENV': JSON.stringify(mode),
+				'process.env.SAPPER_EXPORT': JSON.stringify(isExported)
 			}),
 			svelte({
 				dev,
@@ -74,7 +76,8 @@ export default {
 		plugins: [
 			replace({
 				'process.browser': false,
-				'process.env.NODE_ENV': JSON.stringify(mode)
+				'process.env.NODE_ENV': JSON.stringify(mode),
+				'process.env.SAPPER_EXPORT': JSON.stringify(isExported)
 			}),
 			svelte({
 				generate: 'ssr',
@@ -110,7 +113,8 @@ export default {
 			resolve(),
 			replace({
 				'process.browser': true,
-				'process.env.NODE_ENV': JSON.stringify(mode)
+				'process.env.NODE_ENV': JSON.stringify(mode),
+				'process.env.SAPPER_EXPORT': JSON.stringify(isExported)
 			}),
 			commonjs(),
 			dsv(),
