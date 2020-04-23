@@ -79,6 +79,7 @@
 	} = $lookupStore[id] || {});
 
 	$: labelUnit =
+		schema.value.unit_string ||
 		schema.value.type &&
 		_.has(types, schema.value.type) &&
 		_.has(types[schema.value.type], 'unit_string') &&

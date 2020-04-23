@@ -25,6 +25,7 @@ schema:
     id: aps_econ_active_stem_density_data
     label: Percentage
     data_type: float
+    unit_string: '%'
   year:
     data_type: int
     label: Year

@@ -24,6 +24,7 @@ export default {
 	client: {
 		input: config.client.input(),
 		output: config.client.output(),
+		preserveEntrySignatures: false,
 		plugins: [
 			replace({
 				'process.browser': true,
@@ -73,6 +74,7 @@ export default {
 	server: {
 		input: config.server.input(),
 		output: config.server.output(),
+		preserveEntrySignatures: false,
 		plugins: [
 			replace({
 				'process.browser': false,
@@ -109,6 +111,7 @@ export default {
 	serviceworker: {
 		input: config.serviceworker.input(),
 		output: config.serviceworker.output(),
+		preserveEntrySignatures: false,
 		plugins: [
 			resolve(),
 			replace({
