@@ -8,6 +8,8 @@ import {readDir, readFile, readJson, saveObj} from '@svizzle/file';
 import {tapMessage, tapWith} from '@svizzle/dev';
 import {applyFnMap, isKeyOf} from '@svizzle/utils';
 
+import {isNotLepFile, isNotNuts3File} from './utils';
+
 const DATA_DIR = path.resolve(__dirname, '../../ds/data/processed');
 const TYPES_PATH = path.resolve(__dirname, '../../ds/data/schema/types.yaml');
 const FRAMEWORK_PATH = path.resolve(__dirname, '../../ds/data/aux/framework.json');
@@ -16,7 +18,6 @@ const GROUPS_PATH =
 
 const isDir = name => !name.startsWith('.') && path.parse(name).ext === '';
 const isYamlFile = name => path.parse(name).ext === '.yaml';
-const isNotNuts3File = name => !path.parse(name).name.endsWith('.nuts3');
 const makePath = dirName => filename => path.resolve(
   DATA_DIR,
   dirName,
@@ -81,7 +82,7 @@ const process = async () => {
     _.map(dirNames, dirName =>
       readDir(path.resolve(DATA_DIR, dirName))
       .then(_.pipe([
-        _.filterWith(_.allOf([isYamlFile, isNotNuts3File])),
+        _.filterWith(_.allOf([isYamlFile, isNotNuts3File, isNotLepFile])),
         _.mapWith(applyFnMap({
           filepath: makePath(dirName),
           url: makeCsvUrl,
