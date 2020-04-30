@@ -1,0 +1,36 @@
+api_type: FETCH
+description_short: Broadband speed
+description: Broadband download speed by NUTS 3 regions.
+endpoint_url:
+  2010: https://webarchive.nationalarchives.gov.uk/20160703065525/http://www.ofcom.org.uk/static/research/ir/Fixed_postcode.zip
+  2013:
+    - http://www.ofcom.org.uk/static/research/connected-nations2015/Fixed_Postcode_2015.zip
+    - https://www.ofcom.org.uk/static/research/connected-nations2016/2016_fixed_pc_r01.zip
+    - https://www.ofcom.org.uk/static/research/connected-nations2017/fixed-postcode-2017.zip
+  2016:
+    - https://www.ofcom.org.uk/__data/assets/file/0011/131042/201809_fixed_pc_r03.zip
+    - https://www.ofcom.org.uk/__data/assets/file/0036/186678/connected-nations-2019-fixed-postcode-data.zip
+# nuts_spec_year: endpoint_url
+framework_group: place_potential
+is_experimental: False
+order: [year, nuts_id, nuts_year_spec, value.id] # do not change; specifies the order of the exported indicator fields
+region:
+  type: NutsRegion # the region type, e.g. NutsRegion or LepRegion
+  level: 3
+  source: PROVIDED
+schema:
+  nuts_id:
+    type: NutsRegion.nuts_id
+  nuts_year_spec:
+    type: NutsRegion.nuts_year_spec
+  value:
+    description: Broadband download speed.
+    format: .3f
+    id: broadband_download_speed_data
+    label: Download Speed
+    data_type: float
+  year:
+    data_type: int
+    label: Year
+source_name: NOMIS # the name of the data provider (e.g. Eurostat, NOMIS, etc.)
+year_range: [2014, 2019]
