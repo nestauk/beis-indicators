@@ -28,7 +28,7 @@ schema:
     format: .3f
     id: broadband_download_speed_data
     label: Download Speed
-    data_type: float
+    type: BitTransferRate
   year:
     data_type: int
     label: Year
