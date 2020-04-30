@@ -79,3 +79,11 @@ FTE:
   data_type: float
   unit_string: FTE
   type: Unit
+
+# digital infrastructure
+
+BitTransferRate:
+  kind: bit transfer rate
+  data_type: float
+  unit_string: Mb/s
+  type: Unit
