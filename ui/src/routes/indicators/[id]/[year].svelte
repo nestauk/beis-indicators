@@ -75,6 +75,7 @@
 		schema,
 		source_name,
 		source_url,
+		url,
 		year_range,
 	} = $lookupStore[id] || {});
 
@@ -255,6 +256,7 @@
 			{region}
 			{source_name}
 			{source_url}
+			{url}
 			{year_range}
 			on:click={toggleModal}
 		/>
