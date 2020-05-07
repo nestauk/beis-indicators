@@ -183,8 +183,7 @@
 		</div>
 		<div on:click={toggleModal}>
 			<IconInfo
-				width=30
-				height=30
+				size=30
 				strokeWidth=1.5
 			/>
 		</div>

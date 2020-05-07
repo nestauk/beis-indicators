@@ -73,9 +73,8 @@
 	}
 
 	h3 span {
-		background-color: var(--color-main);
-		color: white;
-		padding: 0.3rem;
+		font-weight: bold;
+		color: var(--color-main);
 	}
 
 	.cta {

@@ -1,4 +1,7 @@
 <script>
+	import {zipUrl} from 'app/utils';
+	import IconDownload from 'app/components/icons/IconDownload.svelte';
+
 	const crunchbaseUrl = 'https://www.crunchbase.com/';
 	const eurostatUrl = 'https://ec.europa.eu/eurostat';
 	const hesaUrl = 'https://www.hesa.ac.uk';
@@ -46,8 +49,27 @@
 		<p>We indicate those indicators based on experimental methodologies or data sources where relevant.<p>
 
 		<div class="cta">
-			<a href='/indicators'><span>Explore the indicators</span></a>
-			</div>
+			<a href={zipUrl}>
+				<div>
+					<span>
+						Download the indicators
+					</span>
+					<span>
+						<IconDownload
+							size=30
+							strokeWidth=1.5
+						/>
+					</span>
+				</div>
+			</a>
+		</div>
+		<div class="cta">
+			<a href='/indicators'>
+				<div>
+					<span>Explore the indicators</span>
+				</div>
+			</a>
+		</div>
 	</section>
 </main>
 
@@ -63,24 +85,29 @@
 		background-color: var(--color-background);
 	}
 
-	p {
-		margin-bottom: 1.5rem;
-	}
-
-	a {
-		padding: 0.1rem;
-		border-bottom: 1px solid var(--color-link);
-		color: var(--color-link);
-		text-decoration: none;
-		font-weight: bold;
-	}
-
 	section {
 		max-width: 800px;
 		padding: 2rem;
 		overflow-y: auto;
 		background-color: white;
 		box-shadow: var(--box-shadow-y);
+	}
+
+	p {
+		margin-bottom: 1.5rem;
+	}
+
+	a {
+		text-decoration: none;
+		font-weight: bold;
+	}
+
+	p a {
+		padding: 0.1rem;
+		border-bottom: 1px solid var(--color-link);
+		color: var(--color-link);
+		text-decoration: none;
+		font-weight: bold;
 	}
 
 	ul {
@@ -96,14 +123,22 @@
 
 	.cta a {
 		border-bottom: none;
-		margin: 2rem 0;
+		margin: 1rem 0;
 	}
-	.cta a span {
+	.cta a div {
 		font-weight: bold;
 		background-color: var(--color-link);
 		color: white;
 		padding: 1rem;
 		font-size: 1.2rem;
 		box-shadow: var(--box-shadow-xy);
+		cursor: pointer;
+	}
+	.cta a div {
+		display: flex;
+		align-items: center;
+	}
+	.cta a div span:nth-child(2) {
+		margin-left: 1rem;
 	}
 </style>
