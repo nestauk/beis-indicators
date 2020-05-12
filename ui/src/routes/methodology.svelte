@@ -1,6 +1,7 @@
 <script>
 	import {zipUrl} from 'app/utils';
 	import IconDownload from 'app/components/icons/IconDownload.svelte';
+	import ExternalLink from 'app/components/ExternalLink.svelte';
 
 	const crunchbaseUrl = 'https://www.crunchbase.com/';
 	const eurostatUrl = 'https://ec.europa.eu/eurostat';
@@ -10,6 +11,9 @@
 	const onsUrl = 'https://ons.gov.uk';
 	const patstatUrl = 'https://www.epo.org/searching-for-patents/business/patstat.html';
 	const ukriUrl = 'https://www.ukri.org/';
+	const HausmanAndHidalgoUrl = 'https://www.pnas.org/content/106/26/10570';
+	const DelgadoEtAlUrl = 'https://www.nber.org/papers/w20375.pdf';
+	const MateosGarciaUrl = 'https://osf.io/preprints/socarxiv/3cu67';
 </script>
 
 <svelte:head>
@@ -36,13 +40,13 @@
 
 		<ul>
 			<li>
-				<p>We have calculated indices of economic complexity for UK regions used the algorithm developed by Hausman and Hidalgo (2009).<p>
+				<p>We have calculated indices of economic complexity for UK regions used the algorithm developed by <ExternalLink href={HausmanAndHidalgoUrl} text='Hausman and Hidalgo (2009)'/>.<p>
 			</li>
 			<li>
-				<p>We have measured levels of employment in entertainment and cultural sectors using an industrial segmentation based on the methodology developed by Delgado et al (2015).<p>
+				<p>We have measured levels of employment in entertainment and cultural sectors using an industrial segmentation based on the methodology developed by <ExternalLink href={DelgadoEtAlUrl} text='Delgado et al (2015)'/>.<p>
 			</li>
 			<li>
-				<p>We have identified UKRI-funded research projects in STEM disciplines using a machine learning analysis of project descriptions presented in Mateos-Garcia (2017).<p>
+				<p>We have identified UKRI-funded research projects in STEM disciplines using a machine learning analysis of project descriptions presented in <ExternalLink href={MateosGarciaUrl} text='Mateos-Garcia (2017)'/>.<p>
 			</li>
 		</ul>
 

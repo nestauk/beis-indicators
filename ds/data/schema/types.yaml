@@ -13,15 +13,26 @@ URL:
 
 # GEOGRAPHY
 
-GeoRegion:
-  <region_type>_id: string # the region id e.g. UKF2 (here the key can be `nuts_id`, `lep_id`, etc)
-  <region_type>_year_enforced: int # OPTIONAL - year of spec being enforced (here the key can be `nuts_year_enforced`, `lep_year_enforced`, etc)
-  <region_type>_year_spec: int # year of specification release (here the key can be `nuts_year_spec`, `lep_year_spec`, etc)
-  level: int # OPTIONAL – used for NUTS, e.g. 2
-  name: string # name of the region, e.g. Cornwall, France
-  region_type: string # the region type (e.g. `nuts`, `lep`, etc)
-  source_url: URL # OPTIONAL - url of the boundaries used for reverse geocoding, if known
-  source: string # OPTIONAL - use `PROVIDED` in case `source_url` is unknown because the data have already been reverse geocoded
+NutsRegion:
+  level: int # e.g. 1|2|3
+  name: GeoRegion.name # e.g. Leicestershire, Rutland and Northamptonshire
+  nuts_id: GeoRegion.<region_type>_id # e.g. UKF2
+  nuts_year_enforced: GeoRegion.<region_type>_year_enforced
+  nuts_year_spec: GeoRegion.<region_type>_year_spec
+  region_type: nuts
+  source_url: GeoRegion.source_url
+  source: GeoRegion.source
+  type: GeoRegion
+
+LepRegion:
+  lep_id: GeoRegion.id # e.g. E37000001
+  lep_year_enforced: GeoRegion.year_enforced
+  lep_year_spec: GeoRegion.year_spec
+  name: GeoRegion.name # e.g. Black Country
+  region_type: lep
+  source_url: GeoRegion.source_url
+  source: GeoRegion.source
+  type: GeoRegion
 
 
 # UNITS
@@ -80,7 +91,7 @@ FTE:
   unit_string: FTE
   type: Unit
 
-# digital infrastructure
+# digital signals
 
 BitTransferRate:
   kind: bit transfer rate

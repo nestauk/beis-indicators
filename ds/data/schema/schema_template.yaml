@@ -34,7 +34,7 @@ schema:
   value:
     data_type: string # (XOR `type`) - use for native types like counts (int) or simple mean values (float). Consider using `type` if the unit has a well known Type (e.g. EUR, densities, etc.)
     description: string # a description of the value
-    format: string # OPTIONAL - the render format, useful for floats or dates (e.g. `.2f`), see [1] and [2], not needed for intergers
+    format: string # OPTIONAL - the render format, useful for floats or dates (e.g. `.2f`), see [1] and [2], not needed for integers
     id: string # indicator name, should be identical to the file name (e.g. `berd` and `berd.csv`)
     label: string # a short text to be used as a label in charts
     type: string # (XOR `data_type`) - the value Type (e.g. Euro). Consider using `data_type` first.
