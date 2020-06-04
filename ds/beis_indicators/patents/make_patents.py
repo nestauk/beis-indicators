@@ -175,6 +175,7 @@ pat_nuts = pd.concat(
 
 ind = make_indicator(
                      pat_nuts,{'inv_nuts_n':'total_inventions'},
-                     'earliest_publn_year',nuts_var='nuts_2',nuts_spec='flex')
+                     'earliest_publn_year',nuts_var='nuts_2',nuts_spec=2013,
+                     )
 
 save_indicator(ind,f'{project_dir}/data/processed/patents','total_inventions')
