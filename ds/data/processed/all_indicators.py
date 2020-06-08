@@ -58,7 +58,7 @@ def generate_indicator_tables(processed_dir):
         indicator_dirs = []
         schema_dirs = []
         skips = [
-#                 'broadband', 
+#                'broadband', 
 #                 'total_inventions',
 #                 'total_active_graduate_startups',
 #                 'gbp_turnover_per_active_spinoff',
