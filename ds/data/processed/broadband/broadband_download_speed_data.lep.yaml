@@ -1,0 +1,33 @@
+api_type: FETCH
+description_short: Broadband speed
+description: Broadband download speed by LEP regions.
+endpoint_url:
+  2014: https://webarchive.nationalarchives.gov.uk/20160703065525/http://www.ofcom.org.uk/static/research/ir/Fixed_postcode.zip
+  2015: http://www.ofcom.org.uk/static/research/connected-nations2015/Fixed_Postcode_2015.zip
+  2016: https://www.ofcom.org.uk/static/research/connected-nations2016/2016_fixed_pc_r01.zip
+  2017: https://www.ofcom.org.uk/static/research/connected-nations2017/fixed-postcode-2017.zip
+  2018: https://www.ofcom.org.uk/__data/assets/file/0011/131042/201809_fixed_pc_r03.zip
+  2019: https://www.ofcom.org.uk/__data/assets/file/0036/186678/connected-nations-2019-fixed-postcode-data.zip
+# lep_spec_year: endpoint_url
+framework_group: place_potential
+is_experimental: False
+order: [year, lep_id, lep_year_spec, value.id] # do not change; specifies the order of the exported indicator fields
+region:
+  type: LepRegion # the region type, e.g. NutsRegion or LepRegion
+  source: PROVIDED
+schema:
+  nuts_id:
+    type: LepRegion.lep_id
+  nuts_year_spec:
+    type: LepRegion.lep_year_spec
+  value:
+    description: Broadband download speed.
+    format: .3f
+    id: broadband_download_speed_data
+    label: Download Speed
+    type: BitTransferRate
+  year:
+    data_type: int
+    label: Year
+source_name: OFCOM
+year_range: [2014, 2019]

@@ -32,5 +32,5 @@ schema:
   year:
     data_type: int
     label: Year
-source_name: NOMIS (official labour market statistics)
+source_name: OFCOM
 year_range: [2014, 2019]
