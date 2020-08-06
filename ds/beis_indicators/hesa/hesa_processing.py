@@ -82,7 +82,6 @@ def make_nuts_estimate(data,nuts_lookup,counter,name,year_var=None,method='time_
     
     ''' 
     d = data.copy()
-    
     #Add the nuts names and codes
 
     #If time consistent...
@@ -96,19 +95,21 @@ def make_nuts_estimate(data,nuts_lookup,counter,name,year_var=None,method='time_
             row[my_id] in nuts_lookup.keys() else np.nan for rid,row in d.iterrows()]
 
     #We are focusing on numbers    
+    d[counter] = d[counter].astype(float)
     #Group results by year?
     if year_var == None:
         out = d.groupby('nuts_code')[counter].sum()
 
     else:  
-        out = d.groupby(['nuts_code',year_var])[counter].sum()
+        out = d.groupby(['nuts_code', year_var])[counter].sum()
 
         
     out.name = name
     
     return(out)
 
-def multiple_nuts_estimates(data,nuts_lookup,variables,select_var,value,year_var=None,method='time_consistent',my_id='ukprn'):
+def multiple_nuts_estimates(data, nuts_lookup, variables, select_var, value,
+        year_var=None, method='time_consistent', my_id='ukprn'):
     '''
     Creates NUTS estimates for multiple variables.
     
@@ -124,8 +125,11 @@ def multiple_nuts_estimates(data,nuts_lookup,variables,select_var,value,year_var
     
     '''
     if year_var==None:
-        concat = pd.concat([make_nuts_estimate(data.loc[data[select_var]==m],nuts_lookup,value,m,method=method) for m in 
-                  variables],axis=1)
+        concat = pd.concat(
+                [make_nuts_estimate(
+                    data.loc[data[select_var] == m], nuts_lookup, value, m, method=method) 
+                 for m in variables], 
+                axis=1)
     #If we want to do this by year then we will create aggregates by nuts name and code and year and then concatenate over columns 
     else:
         
