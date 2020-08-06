@@ -8,7 +8,7 @@ import numpy as np
 
 project_dir = beis_indicators.project_dir
 
-def make_dirs(name,dirs = ['raw','processed']):
+def make_dirs(name, dirs=['raw', 'processed']):
     '''
     Utility that creates directories to save the data
     
@@ -22,7 +22,7 @@ def tidy_cols(my_csv):
     Tidies column names ie lower and replace spaces with underscores
     
     '''
-    return([re.sub(' ','_',col.lower()) for col in my_csv.columns])
+    return([re.sub(' ', '_', col.lower()) for col in my_csv.columns])
 
 def get_nuts_category(year):
     '''
@@ -49,7 +49,7 @@ def get_nuts_spec(year):
     '''
     Function that returns the nuts2 year in place for a year
     '''
-    for t in [2016,2013,2010,2006,2003]:
+    for t in [2016, 2013, 2010, 2006, 2003]:
         if year >=t:
             return(t)
 
@@ -60,7 +60,7 @@ def parse_academic_year(year):
     '''
     return(int(year.split('/')[0]))
 
-def make_indicator(table,var_lookup,year_var,nuts_var='nuts_code',nuts_spec='flex',decimals=0):
+def make_indicator(table, var_lookup, year_var, nuts_var='nuts_code', nuts_spec='flex', decimals=0):
     '''
     We use this function to create indicators using our standardised format.
     
@@ -86,7 +86,7 @@ def make_indicator(table,var_lookup,year_var,nuts_var='nuts_code',nuts_spec='fle
     var_code = list(var_lookup.values())[0]
     
     #Focus on those
-    t = t[[year_var,nuts_var,var_name]]
+    t = t[[year_var, nuts_var, var_name]]
     
     #Add the nuts specification
     if nuts_spec=='flex':
@@ -95,7 +95,10 @@ def make_indicator(table,var_lookup,year_var,nuts_var='nuts_code',nuts_spec='fle
         t['nuts_year_spec'] = nuts_spec
     
     #Rename variables
-    t.rename(columns={var_name:var_code,year_var:'year',nuts_var:'nuts_id'},inplace=True)
+    t.rename(columns={
+        var_name: var_code, 
+        year_var: 'year', 
+        nuts_var: 'nuts_id'}, inplace=True)
 
     #Round variables
     t[var_code] = [np.round(x,decimals) if decimals>0 else int(x) for x in t[var_code]]
@@ -105,13 +108,13 @@ def make_indicator(table,var_lookup,year_var,nuts_var='nuts_code',nuts_spec='fle
     #     t[year]=[parse_academic_year(y) for y in t[year]]
 
     #Reorder variables
-    t = t[['year','nuts_id','nuts_year_spec',var_code]]
+    t = t[['year', 'nuts_id', 'nuts_year_spec', var_code]]
     
     print(t.head())
 
     return(t)
 
-def save_indicator(table,target_path,var_name):
+def save_indicator(table, target_path, var_name):
     '''
     Function to save an indicator
 
