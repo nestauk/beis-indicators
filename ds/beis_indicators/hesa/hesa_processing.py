@@ -89,21 +89,20 @@ def make_nuts_estimate(data,nuts_lookup,counter,name,year_var=None,method='time_
     if method == 'time_consistent':
         d['nuts_code'] = [nuts_lookup[row[my_id]][get_nuts_category(
                                 row[year_var])] 
-            if row[my_id] in nuts_lookup.keys() else np.nan for rid,row in data.iterrows()]
+            if row[my_id] in nuts_lookup.keys() else np.nan for rid,row in d.iterrows()]
+
     else:
         d['nuts_code'] = [nuts_lookup[row[my_id]]['nuts2_2016'] if 
-            row[my_id] in nuts_lookup.keys() else np.nan for rid,row in data.iterrows()]
+            row[my_id] in nuts_lookup.keys() else np.nan for rid,row in d.iterrows()]
 
-    #We are focusing on numbers
-    d[counter] = d[counter].astype(float)
-    
+    #We are focusing on numbers    
     #Group results by year?
     if year_var == None:
         out = d.groupby('nuts_code')[counter].sum()
-        
-    else:
-        
+
+    else:  
         out = d.groupby(['nuts_code',year_var])[counter].sum()
+
         
     out.name = name
     
@@ -203,6 +202,7 @@ def calculate_perf(table,perf,nuts_lookup,norm=False,sp_def='all',value='currenc
     t_filt= multiple_nuts_estimates(filter_data(t,p_filter),nuts_lookup,set(table['category_marker']),
                                     'category_marker','value',year_var='academic_year',method=method)
     
+
     #Are we subsetting by a category?
     if sp_def == 'all':
         t_filt = t_filt.sum(axis=1)

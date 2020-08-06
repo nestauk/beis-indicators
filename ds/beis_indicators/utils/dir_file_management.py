@@ -28,9 +28,22 @@ def get_nuts_category(year):
     '''
     Function that returns the nuts2 year in place for a year
     '''
-    for t in [2016,2013,2010,2006,2003]:
-        if year >=t:
-            return(f'nuts2_{str(t)}')
+    if year >= 2016:
+        return(f'nuts2_2016')
+    elif year >=2013:
+        return(f'nuts2_2013')
+    elif year >= 2010:
+        return(f'nuts2_2010')
+    elif year >= 2006:
+        return(f'nuts2_2006')
+    else:
+        return(f'nuts2_2003')
+
+
+
+    # for t in [2016,2013,2010,2006,2003]:
+    #     if year >=t:
+    #         return(f'nuts2_{str(t)}')
 
 def get_nuts_spec(year):
     '''

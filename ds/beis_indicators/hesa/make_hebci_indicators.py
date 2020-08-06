@@ -22,6 +22,7 @@ make_dirs('hebci',['raw','processed','interim'])
 with open(f'{project_dir}/data/interim/uni_geos.json','r') as infile:
     uni_nuts = json.load(infile)
 
+
 ################
 #1. Collect data
 ################
@@ -49,13 +50,14 @@ collab = hesa_parser(url_4,'collab',skip=11)
 target_path = f"{project_dir}/data/processed/hebci"
 
 #Graduate startup rate
-startup_rate = calculate_perf(spin,'Number of active firms',nuts_lookup=uni_nuts,sp_def='Graduate start-ups',value='count')
+startup_rate = calculate_perf(spin,'Number of active firms',nuts_lookup=uni_nuts,sp_def='Graduate start-ups',
+                              value='count',method='time_consistent')
 
 
 #Turnover per spinout
 turn_per_startup = calculate_perf(spin,'Estimated current turnover of all active firms (£ thousands)',
                                   nuts_lookup=uni_nuts,norm=True,
-                                  sp_def='all',value='currency')
+                                  sp_def='all',value='currency',method='time_consistent')
 
 #Average external investment per spinout
 #This is the same as above but with investment instead of turnover. 
@@ -63,7 +65,8 @@ turn_per_startup = calculate_perf(spin,'Estimated current turnover of all active
 #For example, Cranfield university has recorded £500K of investment recorded vs formal spinoffs, but no active companies.
 
 inv_per_formal = calculate_perf(spin,'Estimated external investment received (£ thousands)',norm=True,
-                                nuts_lookup=uni_nuts,sp_def='all',value='currency')
+                                nuts_lookup=uni_nuts,sp_def='all',value='currency',
+                                method='time_consistent')
 #Licensed income related
 ip_filter = {'category_marker':'Total IP revenues'}
 
