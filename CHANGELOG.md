@@ -1,3 +1,8 @@
+# 0.0.11
+
+- Fixed code and data for broadband data (#250)
+- Fixed code and data for HEBCI (#249)
+
 # 0.0.10
 
 - add buttons to download the complete dataset (#239)
