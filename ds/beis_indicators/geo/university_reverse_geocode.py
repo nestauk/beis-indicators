@@ -13,7 +13,7 @@ import beis_indicators
 project_dir = beis_indicators.project_dir
 
 # from beis_indicators.geo.reverse_geocoder import *
-from beis_indicators.utils.nuts_utils import NUTS_YEARS
+from beis_indicators.utils.nuts_utils import NUTS_YEARS, NUTS_ENFORCED
 from beis_indicators.utils.geo_utils import (load_nuts_regions, load_leps_regions, 
         reverse_geocode, coordinates_to_points)
 
@@ -75,29 +75,29 @@ def reverse_geocode_unis(uni_meta):
     uni_meta = coordinates_to_points(uni_meta, 'LONGITUDE', 'LATITUDE')
 
     for level in [2, 3]:
-        uni_nuts_regions = defaultdict(dict)
+        uni_nuts_regions = []
         for year in NUTS_YEARS:
             nuts = load_nuts_regions(year, shapefile_dir, level=level)
             joined = reverse_geocode(uni_meta, nuts, 'EPSG:4326')
-            nuts_ver = f'nuts{level}_{year}'
-            for uni_id, nuts_id in zip(joined['UKPRN'], joined['NUTS_ID']):
-                uni_nuts_regions[uni_id][nuts_ver] = nuts_id
+            joined['nuts_year_spec'] = year
+            joined = joined.rename(columns={'NUTS_ID': 'nuts_id', 'UKPRN': 'ukprn'})
+            joined = joined[['ukprn', 'nuts_id', 'nuts_year_spec']]
+            joined['nuts_enforced'] = joined['nuts_year_spec'].map(NUTS_ENFORCED)
+            uni_nuts_regions.append(joined)
 
-        with open(f'{project_dir}/data/interim/uni_nuts{level}_geos.json', 'w') as outfile:
-            json.dump(uni_nuts_regions, outfile)
-    # TODO
-    # This doesn't work because LEP regions overlap meaning that a university 
-    # can be within more than one boundary. We would probably need to store them
-    # in records format to achieve this.
-    uni_leps_regions = defaultdict(dict)
+        uni_nuts_df = pd.concat(uni_nuts_regions)
+        uni_nuts_df.to_csv(f'{project_dir}/data/interim/hesa/uni_nuts{level}_geos.csv', index=False)
+    
+    uni_leps_regions = []
     for year in [2014, 2017]:
         leps = load_leps_regions(year, shapefile_dir)
         joined = reverse_geocode(uni_meta, leps, 'EPSG:4326')
         col = f'lep{str(year)[-2:]}cd'
         lep_ver = f'lep_{year}'
-        for uni_id, lep_id in zip(joined['UKPRN'], joined[col]):
-            uni_leps_regions[uni_id][lep_ver] = lep_id
+        joined = joined.rename(columns={col: 'lep_id', 'UKPRN': 'ukprn'})
+        joined['lep_year_spec'] = year
+        uni_leps_regions.append(joined)
 
-    with open(f'{project_dir}/data/interim/uni_lep_geos.json', 'w') as outfile:
-        json.dump(uni_leps_regions, outfile)
+    uni_leps_df = pd.concat(uni_leps_regions)
+    uni_leps_df.to_csv(f'{project_dir}/data/interim/hesa/uni_lep_geos.csv')
 
