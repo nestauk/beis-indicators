@@ -12,7 +12,7 @@
 	import {extent} from 'd3-array';
 	import {writable} from 'svelte/store';
 	import ChoroplethDiv from '@svizzle/choropleth/src/ChoroplethDiv.svelte';
-	import BarchartV from '@svizzle/barchart/src/BarchartV.svelte';
+	import BarchartVDiv from '@svizzle/barchart/src/BarchartVDiv.svelte';
 	import {makeStyle, toPx} from '@svizzle/dom';
 	import {
 		applyFnMap,
@@ -229,7 +229,7 @@
 			{/if}
 		</div>
 		<div class="col col2">
-			<BarchartV
+			<BarchartVDiv
 				{focusedKey}
 				{formatFn}
 				{items}
@@ -319,7 +319,7 @@
 		grid-column: 2 / span 1;
 	}
 
-	:global(.col2 .BarchartV header h2) {
+	:global(.col2 .BarchartVDiv header h2) {
 		font-size: 1rem;
 		margin-bottom: 1rem;
 	}

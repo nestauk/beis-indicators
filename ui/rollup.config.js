@@ -16,6 +16,9 @@ const mode = process.env.NODE_ENV;
 const isExported = process.env.SAPPER_EXPORT;
 const dev = mode === 'development';
 const legacy = Boolean(process.env.SAPPER_LEGACY_BUILD);
+const removeComments = cleanup({
+	extensions: ['js', 'mjs']
+});
 
 const onwarn = (warning, _onwarn) =>
 	warning.code !== 'CIRCULAR_DEPENDENCY' && _onwarn(warning);
@@ -44,7 +47,7 @@ export default {
 			dsv(),
 			json(),
 			yaml(),
-			cleanup(),
+			removeComments,
 
 			legacy && babel({
 				extensions: ['.js', '.mjs', '.html', '.svelte'],
@@ -92,7 +95,7 @@ export default {
 			dsv(),
 			json(),
 			yaml(),
-			cleanup(),
+			removeComments,
 		],
 		external:
 			Object.keys(pkg.dependencies)
@@ -123,7 +126,7 @@ export default {
 			dsv(),
 			json(),
 			yaml(),
-			cleanup(),
+			removeComments,
 			!dev && terser()
 		],
 
