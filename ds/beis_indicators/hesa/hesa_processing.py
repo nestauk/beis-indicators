@@ -69,45 +69,6 @@ def hesa_parser(url, out_name, skip=16, encoding='utf-8'):
 
         return out
 
-def make_nuts_estimate(data, nuts_lookup, counter, name, year_var=None,
-        method='time_consistent', my_id='ukprn'):
-    '''
-    This function takes hesa data and creates a nuts estimate
-    
-    Args:
-        data (df) where we have already selected variables of interest eg mode of employment
-        nuts (dict) is the ukprn - nuts name and code lookup
-        counter (str) is the variable with counts that we are interested in
-        year_var (str) is the variable containing the years we want to group by. If None, then we are not grouping by year
-        method (str) is whether we are creating the indicator using a time consistent 
-        approach (each year in its NUTS category) or using the latest nuts
-        my_id (str) is the variable with the plade id. Defaults to the university id
-    
-    ''' 
-    d = data.copy()
-    #Add the nuts names and codes
-
-    #If time consistent...
-    if method == 'time_consistent':
-        d['nuts_code'] = [nuts_lookup[row[my_id]][get_nuts_category(row[year_var])] 
-            if row[my_id] in nuts_lookup.keys() else np.nan for rid, row in d.iterrows()]
-
-    else:
-        d['nuts_code'] = [nuts_lookup[row[my_id]]['nuts2_2016'] if 
-            row[my_id] in nuts_lookup.keys() else np.nan for rid, row in d.iterrows()]
-
-    #We are focusing on numbers    
-    d[counter] = d[counter].astype(float)
-    #Group results by year?
-    if year_var == None:
-        out = d.groupby('nuts_code')[counter].sum()
-
-    else:  
-        out = d.groupby(['nuts_code', year_var])[counter].sum() 
-    out.name = name
-    return out
-
-
 def university_indicator(data, geo_data, region_type, value_header, value='number', category=None, category_col=None):
     """university_indicator
 
@@ -148,43 +109,6 @@ def university_indicator(data, geo_data, region_type, value_header, value='numbe
     df = df [['year', region_id_col, groupby_year_col, value_header]]
     df = df.sort_values(by=[region_id_col, 'year'])
     return df
-
-def multiple_nuts_estimates(data, nuts_lookup, variables, select_var, value,
-        year_var=None, method='time_consistent', my_id='ukprn'):
-    '''
-    Creates NUTS estimates for multiple variables.
-    
-    Args:
-        data (df) is the filtered dataframe
-        select_var (str) is the variable we want to use to select values
-        nuts_lookup (dict) is the lookup between universities and nuts
-        variables (list) is the list of variables for which we want to generate the analysis
-        value (str) is the field that contains the numerical value we want to aggregate in the dataframe
-        year_var (str) is the year_variable. If none, then we are not interested in years
-        my_id (str) is the variable with the plade id. Defaults to the university id
-        
-    
-    '''
-    if year_var==None:
-        concat = pd.concat(
-                [make_nuts_estimate(
-                    data.loc[data[select_var] == m], nuts_lookup, value, m, method=method) 
-                 for m in variables], 
-                axis=1)
-    #If we want to do this by year then we will create aggregates by nuts name and code and year and then concatenate over columns 
-    else:
-        
-        year_store = []
-        
-        for m in variables:
-            
-            y = make_nuts_estimate(data.loc[data[select_var]==m],nuts_lookup,value,m,method=method,year_var=year_var,my_id=my_id)
-            
-            year_store.append(y)
-            
-        concat = pd.concat(year_store,axis=1)
-                
-    return concat
 
 def make_student_table(url):
     '''
@@ -292,9 +216,4 @@ def calculate_perf(table,perf,nuts_lookup,norm=False,sp_def='all',value='currenc
     
     else:
         return(t_filt)
-
-
-        
-        
-    
         
