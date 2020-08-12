@@ -348,17 +348,17 @@ if __name__ == "__main__":
     make_nomis(geo_type, years)
 
     # Test pivot
-    f_test = (
-        f"{beis_indicators.project_dir}/data/processed/nomis_BRES_{years[0]}_{geo_type}.csv"
-    )
-    (
-        read_csv(f_test).fillna(0)
-        # Pivot to [areas x sectors]
-        .pivot_table(
-            index=["geo_cd", "geo_nm"],
-            columns="cluster_name",
-            values="value",
-            fill_value=0,
-            aggfunc="sum",
-        )
-    )
+    # f_test = (
+    #     f"{beis_indicators.project_dir}/data/processed/nomis_BRES_{years[0]}_{geo_type}.csv"
+    # )
+    # (
+    #     read_csv(f_test).fillna(0)
+    #     # Pivot to [areas x sectors]
+    #     .pivot_table(
+    #         index=["geo_cd", "geo_nm"],
+    #         columns="cluster_name",
+    #         values="value",
+    #         fill_value=0,
+    #         aggfunc="sum",
+    #     )
+    # )
