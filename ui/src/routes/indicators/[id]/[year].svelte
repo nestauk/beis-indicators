@@ -239,8 +239,9 @@
 				isInteractive={true}
 				on:entered={onEnteredBar}
 				on:exited={onExitedBar}
-				title={barchartTitle}
 				shouldResetScroll={true}
+				shouldScrollToFocusedKey={true}
+				title={barchartTitle}
 			/>
 		</div>
 		{#if $modalStore.isVisible}

@@ -1,3 +1,7 @@
+# 0.0.12 (next)
+
+- Barchart to automatically scroll to the focused key (#275)
+
 # 0.0.11
 
 - Fixed code and data for broadband data (#250)
