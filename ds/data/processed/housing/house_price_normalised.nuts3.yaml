@@ -28,7 +28,7 @@ schema:
   nuts_year_spec: 
     type: NutsRegion.nuts_year_spec
   value:
-    data_type: Ratio
+    data_type: float
     description: Mean housing prices normalised by mean salaries of full time 
     format: `3.f`
     id: house_price_normalised

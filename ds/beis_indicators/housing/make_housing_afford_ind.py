@@ -125,7 +125,7 @@ for sal,med,code,suffix in zip([nuts_2_mean_salary,nuts_3_mean_salary],
     # Make the indicator
     ind = make_indicator(m,
                          {'house_price_norm':'house_price_normalised'},
-                        'year',nuts_var=code,nuts_spec=2015,decimals=3)
+                        'year',nuts_var=code,nuts_spec=2016,decimals=3)
     
     # Save the indicator
     save_indicator(ind,TARGET_PATH,f'house_price_normalised.{suffix}')
