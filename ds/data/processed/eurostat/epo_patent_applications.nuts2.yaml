@@ -9,7 +9,6 @@ framework_group: knowledge_exchange
 is_experimental: False
 is_public: True
 order: [year, nuts_id, nuts_year_spec, value.id]
-query: 
 region:
   type: NutsRegion
   level: 2
@@ -23,7 +22,6 @@ schema:
     description: Count of patent applications
     id: epo_patent_applications
     label: Patent applications
-    type: count
   year:
     data_type: int
     label: Year
