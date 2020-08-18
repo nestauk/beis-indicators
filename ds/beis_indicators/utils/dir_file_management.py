@@ -5,6 +5,7 @@ import pandas as pd
 import re
 import beis_indicators
 import numpy as np
+import logging
 
 project_dir = beis_indicators.project_dir
 
@@ -97,8 +98,24 @@ def make_indicator(table,var_lookup,year_var,nuts_var='nuts_code',nuts_spec='fle
     #Rename variables
     t.rename(columns={var_name:var_code,year_var:'year',nuts_var:'nuts_id'},inplace=True)
 
-    #Round variables
-    t[var_code] = [np.round(x,decimals) if decimals>0 else int(x) for x in t[var_code]]
+    #Round variables (and warn if there are missing values)
+    round_results = []
+
+    for x in t[var_code]:
+        if pd.isnull(x)==True:
+            round_results.append(np.nan)
+        elif decimals > 0:
+            round_results.append(np.round(x,decimals))
+        else:
+            round_results.append(int(x))
+
+    if np.nan in round_results:
+        logging.info(
+        f"There are {sum([pd.isnull(x) for x in round_results])} missing values")
+
+    t[var_code] = round_results
+
+#    t[var_code] = [np.round(x,decimals) if decimals>0 else int(x) for x in t[var_code]]
 
     # #If we are dealing with academic years then we need to parse them
     # if year =='academic_year':
