@@ -1,0 +1,49 @@
+api_doc_url: 
+  - https://www.nomisweb.co.uk/sources/ashe (Annual Survey of Hours and Earnings resident data)
+  - https://www.nomisweb.co.uk/sources/bres (Business Register Employment Survey)
+  - https://www.gov.uk/government/statistical-data-sets/uk-house-price-index-data-downloads-march-2020 (House price index)
+api_type:
+  - POST (ASHE)
+  - POST (BRES)
+  - FETCH (HPI) 
+data_date: 20201808
+description_long: This indicator captures housing costs in a location. It takes the mean price of a house in a location and normalises it by the mean salary of its residents. Higher values represent lower house affordability for residents
+description_short: Housing prices normalised by resident salaries
+description: Salary and Housing price data is available at the Local Authority District levels so we had to convert mean salaries (house prices) into volumes taking into account the number of people employed (transactions undertaken) in a location and aggregate at the NUTS level through a lookup table. 
+endpoint_url: 
+  - https://www.nomisweb.co.uk/api/v01/dataset/NM_30_1.data.csv (ASHE)
+  - https://www.nomisweb.co.uk/api/v01/dataset/NM_189_1.data.csv (BRES)
+  - https://www.gov.uk/government/statistical-data-sets/uk-house-price-index-data-downloads-march-2020?utm_medium=GOV.UK&utm_source=summary&utm_campaign=UK_HPI_Summary&utm_term=9.30_20_05_20&utm_content=download_data (HPI)
+framework_group: place_potential
+is_experimental: True
+is_public: True
+order: [year, nuts_id, nuts_year_spec, value.id]
+query: See script for geography and variable names
+region:
+  type: NutsRegion
+  level: 3
+schema:
+  nuts_id:
+    type: NutsRegion.nuts_id 
+  nuts_year_spec: 
+    type: NutsRegion.nuts_year_spec
+  value:
+    data_type: float
+    description: Mean housing prices normalised by mean salaries of full time 
+    format: `3.f`
+    id: house_price_normalised
+    label: Housing prices normalised by regional salaries
+  year:
+    data_type: int
+    label: Year
+source_name: 
+  - Nomis (ASHE and BRES)
+  - Gov.uk (HPI)
+source_url: 
+  - https://www.nomisweb.co.uk (ASHE and BRES)
+  - https.//www.gov.uk (HPI)
+year_range: [2010,2018]
+
+
+# [1] https://docs.python.org/3/library/string.html#format-specification-mini-language
+# [2] https://github.com/d3/d3-format
