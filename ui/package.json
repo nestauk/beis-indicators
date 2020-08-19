@@ -5,6 +5,7 @@
     "@svizzle/choropleth": "^0.3.0",
     "@svizzle/dev": "^0.4.1",
     "@svizzle/file": "^0.8.1",
+    "@svizzle/legend": "^0.1.0",
     "@svizzle/utils": "^0.8.1",
     "compression": "^1.7.4",
     "d3-array": "^2.4.0",

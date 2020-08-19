@@ -11,7 +11,8 @@
 	import * as _ from 'lamb';
 	import {extent} from 'd3-array';
 	import {writable} from 'svelte/store';
-	import ChoroplethDiv from '@svizzle/choropleth/src/ChoroplethDiv.svelte';
+	import ChoroplethG from '@svizzle/choropleth/src/ChoroplethG.svelte';
+	import ColorBinsG from '@svizzle/legend/src/ColorBinsG.svelte';
 	import BarchartVDiv from '@svizzle/barchart/src/BarchartVDiv.svelte';
 	import {makeStyle, toPx} from '@svizzle/dom';
 	import {
@@ -40,6 +41,7 @@
 	import {
 		getIndicatorFormat,
 		getNutsId,
+		makeColorBins,
 		makeColorScale,
 		makeValueAccessor,
 		parseCSV,
@@ -54,6 +56,9 @@
 	export let height;
 
 	let selectedKeys = [];
+	const legendBarThickness = 40;
+
+	$: legendHeight = height / 3;
 
 	$: id && year && resetModal();
 	$: $selectedYearStore = Number(year);
@@ -109,6 +114,8 @@
 
 	$: valueExtext = extent(data, getIndicatorValue);
 	$: colorScale = makeColorScale(valueExtext);
+	$: colorBins = makeColorBins(colorScale);
+
 	$: makeKeyToColor = _.pipe([
 		keyValueArrayToObject,
 		_.mapValuesWith(colorScale)
@@ -196,20 +203,43 @@
 			bind:clientHeight={height}
 		>
 			{#if topojson}
-			<ChoroplethDiv
-				{keyToColor}
-				{selectedKeys}
-				{topojson}
-				colorDefaultFill='lightgrey'
-				colorStroke='black'
-				isInteractive={true}
-				key='NUTS_ID'
-				on:entered={onEntered}
-				on:exited={onExited}
-				projection='geoEqualEarth'
-				sizeStroke=0.5
-				topojsonId='NUTS'
-			/>
+			<svg
+				{width}
+				{height}
+			>
+				<ChoroplethG
+					{height}
+					{keyToColor}
+					{selectedKeys}
+					{topojson}
+					{width}
+					geometry={{
+						left: legendBarThickness * 2,
+					}}
+					isInteractive={true}
+					key='NUTS_ID'
+					on:entered={onEntered}
+					on:exited={onExited}
+					projection='geoEqualEarth'
+					theme={{
+						defaultFill: 'lightgrey',
+						defaultStroke: 'black',
+						defaultStrokeWidth: 0.5
+					}}
+					topojsonId='NUTS'
+				/>
+				<g transform='translate(0,{legendHeight})'>
+					<ColorBinsG
+						width={legendBarThickness}
+						height={legendHeight}
+						bins={colorBins}
+						flags={{
+							isVertical: true
+						}}
+						ticksFormatFn={formatFn}
+					/>
+				</g>
+			</svg>
 			{/if}
 			{#if $tooltip.isVisible}
 			<div
