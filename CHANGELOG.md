@@ -6,6 +6,7 @@
 - UI:
 	- Barchart to automatically scroll to the focused key (#275)
 	- Add a color legend to the map view (#269)
+	- Add major cities labels (#286)
 
 # 0.0.11
 
