@@ -1,7 +1,9 @@
 # 0.0.12 (next)
 
 - Add `description_long` to the spec template (#272)
-- UI: Barchart to automatically scroll to the focused key (#275)
+- UI:
+	- Barchart to automatically scroll to the focused key (#275)
+	- Add a color legend to the map view (#269)
 
 # 0.0.11
 
