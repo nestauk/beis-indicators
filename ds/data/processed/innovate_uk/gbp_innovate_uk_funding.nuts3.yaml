@@ -29,3 +29,10 @@ schema:
     label: Year
 source_name: Innovate UK (via gov.uk)
 source_url: https://www.gov.uk/
+<<<<<<< HEAD
+=======
+year_range: [2010,2020]
+
+# [1] https://docs.python.org/3/library/string.html#format-specification-mini-language
+# [2] https://github.com/d3/d3-format
+>>>>>>> 9f11f8c... Added script, indicator and schema for Innovate UK funding
