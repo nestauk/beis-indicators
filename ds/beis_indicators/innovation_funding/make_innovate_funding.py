@@ -44,6 +44,7 @@ iuk['year'] = [int(x.split('/')[0]) for x in iuk['Competition Year']]
 
 iuk_recent = iuk.query("year >= 2010").dropna(
                             axis=0,subset=['year','Postcode'])
+# Remove Withdrawn and on hold projects
 
 iuk_recent = iuk_recent.loc[~iuk_recent['Project Status'].isin(
                                                     ['Withdrawn','On Hold'])]
