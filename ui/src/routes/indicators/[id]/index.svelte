@@ -18,6 +18,7 @@
 	import {
 		applyFnMap,
 		inclusiveRange,
+		makeKeyed,
 		mergeObj,
 		objectToKeyValueArray,
 		transformValues,
@@ -25,22 +26,32 @@
 
 	import { goto } from '@sapper/app';
 
-	import Modal from 'app/components/Modal.svelte';
+	import InfoModal from 'app/components/InfoModal.svelte';
+	import GeoFilterModal from 'app/components/GeoFilterModal.svelte';
+	import IconChevronDown from 'app/components/icons/IconChevronDown.svelte';
+	import IconChevronUp from 'app/components/icons/IconChevronUp.svelte';
+	import IconGlobe from 'app/components/icons/IconGlobe.svelte';
 	import IconInfo from 'app/components/icons/IconInfo.svelte';
 	import Switch from 'app/components/Switch.svelte';
-	import { lookup, yearExtent, yearRange } from 'app/data/groups';
+	import {lookup, yearExtent, yearRange} from 'app/data/groups';
 	import groups from 'app/data/indicatorsGroups.json';
 	import yearlyKeyToLabel from 'app/data/NUTS2_UK_labels';
 	import types from 'app/data/types';
 	import {
 		availableYearsStore,
+		doFilterRegionsStore,
+		geoModalStore,
+		hideGeoModal,
+		hideInfoModal,
+		infoModalStore,
 		lookupStore,
-		modalStore,
-		resetModal,
+		nutsSelectionStore,
+		preselectedNUTS2IdsStore,
 		resetSelectedYear,
-		safetyStore,
+		selectedNUT2IdsStore,
 		timelineLayoutStore,
-		toggleModal,
+		toggleGeoModal,
+		toggleInfoModal,
 	} from 'app/stores';
 	import {
 		getIndicatorFormat,
@@ -56,18 +67,18 @@
 		_.groupBy(_.getKey('year')),
 		_.mapValuesWith(_.pipe([
 			_.sortWith([_.sorterDesc(accessor)]),
-			setIndexAsKey('order')
+			setIndexAsKey('order'),
 		])),
 		_.values,
 		_.flatten,
 	]);
-
 	const makeTrends = _.pipe([
 		_.groupBy(getNutsId),
 		_.mapValuesWith(sortAscByYear),
 		objectToKeyValueArray
 	]);
 	const getOrder = _.getKey('order');
+	const makeKeyedTrue = makeKeyed(true);
 
 	const gap = 4;
 	const labelFontSize = 14;
@@ -85,7 +96,7 @@
 	let useOrderScale = false;
 
 	$: id && resetSelectedYear();
-	$: id && resetModal();
+	$: id && hideInfoModal();
 	$: data && lookupStore.update(_.setPath(`${id}.data`, data));
 
 	$: ({
@@ -110,13 +121,24 @@
 	$: formatFn = getIndicatorFormat(id, lookup);
 	$: $availableYearsStore = inclusiveRange(year_range)
 	$: layout = $timelineLayoutStore;
-
 	$: getIndicatorValue = makeValueAccessor(id);
 	$: setOrder = makeSetOrderWith(getIndicatorValue);
+	$: selectedRegionsObj = makeKeyedTrue($selectedNUT2IdsStore);
+	$: preselectedRegionsObj = makeKeyedTrue($preselectedNUTS2IdsStore);
 	$: rankedData = setOrder(data);
+	$: filteredData = $doFilterRegionsStore
+		? _.filter(rankedData, ({nuts_id}) =>
+			_.has(selectedRegionsObj, nuts_id) || _.has(preselectedRegionsObj, nuts_id)
+		)
+		: rankedData;
+	$: valueExtext = extent(filteredData, getIndicatorValue);
 	$: maxOrder = max(rankedData, getOrder);
-	$: valueExtext = extent(data, getIndicatorValue);
-	$: trends = makeTrends(rankedData);
+	$: trends = makeTrends(filteredData);
+	$: taggedTrends = _.map(trends, item => ({
+		...item,
+		preselected: _.has(preselectedRegionsObj, item.key),
+		selected: _.has(selectedRegionsObj, item.key),
+	}));
 	$: radius = Math.min(layout.radius, 0.5 * (height / maxOrder) - gap);
 	$: yMin = radius + 2 * gap + labelFontSize;
 	$: yMax = height - Math.max(radius, axisFontSize / 2) - gap;
@@ -131,7 +153,7 @@
 		? scaleLinear().domain([0, maxOrder]).range([yMin, yMax])
 		: scaleLinear().domain(valueExtext).range([yMax, yMin]);
 	$: ticks = scaleY && scaleY.ticks().map(value => ({
-		label: useOrderScale ? value : formatFn(value),
+		label: useOrderScale ? value + 1 : formatFn(value),
 		y: scaleY(value)
 	}));
 	$: getX = d => layout.scaleX(d.year);
@@ -141,10 +163,10 @@
 		.x(getX)
 		.y(getY)
 		.curve(curveMonotoneX);
-	$: trendLines = _.map(trends, transformValues({value: lineGenerator}));
+	$: trendLines = _.map(taggedTrends, transformValues({value: lineGenerator}));
 	$: colorScale = makeColorScale(valueExtext);
 	$: getStopOffset = d => `${100 * layout.scaleX(d.year) / width}%`;
-	$: gradients = _.map(trends, transformValues({
+	$: gradients = _.map(taggedTrends, transformValues({
 		value: _.mapWith(applyFnMap({
 			offset: getStopOffset,
 			stopColor: _.pipe([getIndicatorValue, colorScale])
@@ -161,17 +183,17 @@
 
 	/* tooltip */
 
-	$: quadTree = rankedData &&
+	$: quadTree = filteredData &&
 		quadtree()
 		.x(getX)
 		.y(getY)
-		.addAll(rankedData)
+		.addAll(filteredData)
 		.extent([[x1, 0],[x2, height]]);
 
 	const tooltipDefault = {isVisible: false};
 	const tooltip = writable(tooltipDefault);
 
-	const onMousemoved = event => {
+	const onMouseMove = event => {
 		const {offsetX, offsetY} = event;
 
 		if (offsetX < x1 || offsetX > x2) {
@@ -202,7 +224,11 @@
 			shiftX,
 			shiftY,
 		}));
-	};
+	}
+
+	const onMouseLeave = event => {
+		tooltip.set(tooltipDefault);
+	}
 </script>
 
 <svelte:head>
@@ -215,10 +241,10 @@
 			<h1>{description_short}</h1>
 			<p>{description}</p>
 		</div>
-		<div on:click={toggleModal}>
+		<div on:click={toggleInfoModal}>
 			<IconInfo
-				size=30
-				strokeWidth=1.5
+				size={30}
+				strokeWidth={1.5}
 			/>
 		</div>
 	</header>
@@ -226,8 +252,30 @@
 	<section>
 		<div class='controls'>
 			<div class='optgroup'>
+				<div
+					class='globe clickable'
+					on:click={toggleGeoModal}
+				>
+					<IconGlobe strokeWidth={1.5} size={28} />
+					{#if $geoModalStore.isVisible}
+					<IconChevronUp strokeWidth={1} size={24} />
+					{:else}
+					<IconChevronDown strokeWidth={1} size={24} />
+					{/if}
+				</div>
+
 				<Switch
-					current={'Absolute'}
+					initial={'Highlight'}
+					values={['Highlight', 'Filter']}
+					on:toggled={event => {
+						$doFilterRegionsStore = event.detail === 'Filter'
+					}}
+				/>
+			</div>
+
+			<div class='optgroup'>
+				<Switch
+					initial={'Absolute'}
 					values={['Absolute', 'Ranking']}
 					on:toggled={event => {
 						useOrderScale = event.detail === 'Ranking'
@@ -235,11 +283,13 @@
 				/>
 			</div>
 		</div>
+
 		<div
 			class='trends'
 			bind:clientHeight={height}
 			bind:clientWidth={width}
-			on:mousemove={onMousemoved}
+			on:mousemove={onMouseMove}
+			on:mouseleave={onMouseLeave}
 		>
 			{#if width && trends}
 			<svg
@@ -302,12 +352,14 @@
 
 				<!-- curves -->
 				<g>
-					{#each trendLines as {key, value}}
+					{#each trendLines as {key, value, preselected, selected}}
 					<path
-						class:focused='{$tooltip.isVisible && highlightedKey === key}'
+						class:deselected={!selected}
+						class:preselected={preselected}
 						class:dimmed='{$tooltip.isVisible && highlightedKey !== key}'
-						stroke='url(#{key})'
+						class:focused='{$tooltip.isVisible && highlightedKey === key}'
 						d={value}
+						stroke='url(#{key})'
 					/>
 					{/each}
 				</g>
@@ -327,6 +379,7 @@
 				</g>
 				{/if}
 
+				<!-- tooltip -->
 				{#if $tooltip.isVisible}
 				<g
 					class='marker'
@@ -344,11 +397,21 @@
 					</g>
 				</g>
 				{/if}
+
 			</svg>
 			{/if}
+
+			{#if $geoModalStore.isVisible}
+			<GeoFilterModal
+				{nutsSelectionStore}
+				on:click={toggleGeoModal}
+			/>
+			{/if}
 		</div>
-		{#if $modalStore.isVisible}
-		<Modal
+
+		<!-- modal -->
+		{#if $infoModalStore.isVisible}
+		<InfoModal
 			{api_doc_url}
 			{api_type}
 			{auth_provider}
@@ -362,7 +425,7 @@
 			{source_url}
 			{url}
 			{year_range}
-			on:click={toggleModal}
+			on:click={toggleInfoModal}
 		/>
 		{/if}
 	</section>
@@ -402,27 +465,32 @@
 	}
 
 	section {
-		height: calc(100% - var(--indicators-h1-height));
-		width: 100%;
-		overflow-y: auto;
 		display: grid;
 		grid-template-columns: 100%;
-		grid-template-rows: 3rem calc(100% - 3rem);
+		grid-template-rows: 4rem calc(100% - 4rem);
+		height: calc(100% - var(--indicators-h1-height));
+		overflow-y: auto;
 		position: relative;
+		width: 100%;
 	}
 
 	.controls {
-		height: 100%;
-		width: 100%;
-		display: flex;
 		align-items: center;
-		justify-content: flex-end;
+		display: flex;
+		height: 100%;
+		justify-content: space-between;
+		width: 100%;
 	}
 
 	.controls > div:not(:last-child) {
 		margin-right: 0.5rem;
 	}
 
+	.globe {
+		border: 1px solid lightgrey;
+		margin-right: 0.25rem;
+		padding: 0.25rem;
+	}
 	.optgroup {
 		display: flex;
 		align-items: center;
@@ -432,7 +500,6 @@
 	.trends {
 		position: relative;
 	}
-
 	.trends, svg {
 		height: 100%;
 		width: 100%;
@@ -476,9 +543,20 @@
 	}
 	svg path.focused {
 		stroke-width: 3;
+		stroke-opacity: 1 !important;
+		stroke-dasharray: 10 4;
+	}
+	svg path.preselected {
+		stroke-width: 2;
+		stroke-opacity: 1 !important;
+		stroke-dasharray: 10 4;
 	}
 	svg path.dimmed {
-		stroke-opacity: 0.5;
+		stroke-opacity: 0.6;
+	}
+	svg path.deselected {
+		stroke-width: 0.75;
+		stroke-opacity: 0.25;
 	}
 
 	svg circle {

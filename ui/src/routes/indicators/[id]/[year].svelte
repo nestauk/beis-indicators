@@ -27,18 +27,18 @@
 	import {feature} from 'topojson-client';
 	import {setGeometryPrecision} from '@svizzle/geo';
 
-	import Modal from 'app/components/Modal.svelte';
+	import InfoModal from 'app/components/InfoModal.svelte';
 	import IconInfo from 'app/components/icons/IconInfo.svelte';
 	import {lookup} from 'app/data/groups';
 	import yearlyKeyToLabel from 'app/data/NUTS2_UK_labels';
 	import {
 		availableYearsStore,
 		lookupStore,
-		modalStore,
-		resetModal,
+		infoModalStore,
+		hideInfoModal,
 		resetSafetyStore,
 		selectedYearStore,
-		toggleModal,
+		toggleInfoModal,
 	} from 'app/stores';
 	import majorCities from 'app/data/majorCities';
 	import topos from 'app/data/topojson';
@@ -83,7 +83,7 @@
 
 	$: legendHeight = height / 3;
 	$: choroplethSafety = {...defaultGeometry, left: legendBarThickness * 2};
-	$: id && year && resetModal();
+	$: id && year && hideInfoModal();
 	$: $selectedYearStore = Number(year);
 	$: formatFn = getIndicatorFormat(id, lookup);
 	$: getIndicatorValue = makeValueAccessor(id);
@@ -241,7 +241,7 @@
 			<h1>{description_short} ({year})</h1>
 			<p>{description}</p>
 		</div>
-		<div on:click={toggleModal}>
+		<div on:click={toggleInfoModal}>
 			<IconInfo
 				size=30
 				strokeWidth=1.5
@@ -342,8 +342,8 @@
 				title={barchartTitle}
 			/>
 		</div>
-		{#if $modalStore.isVisible}
-		<Modal
+		{#if $infoModalStore.isVisible}
+		<InfoModal
 			{api_doc_url}
 			{api_type}
 			{auth_provider}
@@ -357,7 +357,7 @@
 			{source_url}
 			{url}
 			{year_range}
-			on:click={toggleModal}
+			on:click={toggleInfoModal}
 		/>
 		{/if}
 	</section>

@@ -9,6 +9,7 @@
 	- Add a color legend to the map view (#269)
 	- Add major cities labels (#286)
 	- Automatically scroll the sidebar to the current indicator (#219)
+	- Implement regional selection for the trends route (#298)
 
 # 0.0.11
 

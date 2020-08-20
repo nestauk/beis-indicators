@@ -19,6 +19,7 @@
     "lamb": "^0.59.2",
     "polka": "^0.5.2",
     "sirv": "^0.4.2",
+    "uid": "^1.0.0",
     "yootils": "0.0.16"
   },
   "description": "Front-end for BEIS regional indicators",
@@ -60,9 +61,10 @@
     "copydata": "npm run chmod && node -r esm ./bin/copy_data.js",
     "dev": "sapper dev",
     "export": "export SAPPER_EXPORT=true && sapper export --legacy",
-    "makeIndex": "npm run chmod && node -r esm ./bin/make_index.js",
+    "makedata": "npm run makeindex && npm run rmdata && npm run copydata",
+    "makeindex": "npm run chmod && node -r esm ./bin/make_index.js",
     "rmdata": "rimraf static/data",
-    "setdata": "npm run rmdata && npm run copydata",
+    "rmsappers": "rimraf __sapper__ src/node_modules/@sapper",
     "start": "node __sapper__/build",
     "test": "run-p --race dev cy:run",
     "unittest": "mocha -r esm --spec src/**/*.spec.js"
