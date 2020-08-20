@@ -1,21 +1,20 @@
 api_doc_url: https://www.hesa.ac.uk/data-and-analysis/estates/table-1
 api_type: FETCH
+data_date: 20200820
 description_short: Area of university site
-description: Area of university sites for universities in the NUTS2 region
+description: Area of university sites for universities in the LEP region
 endpoint_url: https://www.hesa.ac.uk/data-and-analysis/estates/data.csv
 framework_group: public_rnd_capability
 is_experimental: False
-nuts_level: 2
-order: [year, nuts_id, nuts_year_spec, value.id]
+order: [year, lep_id, lep_year_spec, value.id]
 region:
-  type: NutsRegion
-  level: 2
-  source_url: http://geoportal1-ons.opendata.arcgis.com/datasets/48b6b85bb7ea43699ee85f4ecd12fd36_0.zip?outSR=%7B%22latestWkid%22:27700,%22wkid%22:27700%7D
+  type: LepRegion
+  source_url: https://geoportal.statistics.gov.uk/search?collection=Dataset&sort=name&tags=all(BDY_LEP) 
 schema:
-  nuts_id:
-    type: NutsRegion.id
-  nuts_year_spec:
-    type: NutsRegion.year_spec
+  lep_id:
+    type: LepRegion.id
+  lep_year_spec:
+    type: LepRegion.year_spec
   value:
     format: .2f
     description: Site Area (hectares) of university sites
@@ -27,4 +26,4 @@ schema:
     label: Academic year (start)
 source_name: HESA (Higher Education Statistical Agency)
 source_url: https://www.hesa.ac.uk/
-year_range: [2015,2017]
+year_range: [2015, 2017]

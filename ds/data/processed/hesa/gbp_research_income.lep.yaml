@@ -1,0 +1,28 @@
+api_doc_url: https://www.hesa.ac.uk/data-and-analysis/estates/table-1
+api_type: FETCH
+description_short: Research income (GBP)
+description: Research income received by universities in the LEP region
+endpoint_url: https://www.hesa.ac.uk/data-and-analysis/estates/data.csv
+framework_group: public_rnd_capability
+is_experimental: False
+order: [year, lep_id, lep_year_spec, value.id]
+region:
+  type: LepRegion
+  source_url: https://geoportal.statistics.gov.uk/search?collection=Dataset&sort=name&tags=all(BDY_LEP) 
+schema:
+  lep_id:
+    type: LepRegion.id
+  lep_year_spec:
+    type: LepRegion.year_spec
+  value:
+    description: Research income for universities in the region
+    format: ','
+    id: gbp_research_income
+    label: Research income
+    type: GBP
+  year:
+    data_type: int
+    label: Academic year (start)
+source_name: HESA (Higher Education Statistical Agency)
+source_url: https://www.hesa.ac.uk/
+year_range: [2015, 2017]
