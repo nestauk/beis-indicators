@@ -1,6 +1,8 @@
 # 0.0.12 (next)
 
 - Add `description_long` to the spec template (#272)
+- add patent and trademark indicators based on Eurostat data (#282)
+- add housing cost indicator (#285)
 - UI:
 	- Barchart to automatically scroll to the focused key (#275)
 	- Add a color legend to the map view (#269)
