@@ -10,6 +10,7 @@
 <script>
 	import * as _ from 'lamb';
 	import {extent} from 'd3-array';
+	import {geoEqualEarth} from 'd3-geo';
 	import {writable} from 'svelte/store';
 	import ChoroplethG from '@svizzle/choropleth/src/ChoroplethG.svelte';
 	import ColorBinsG from '@svizzle/legend/src/ColorBinsG.svelte';
@@ -22,6 +23,9 @@
 		keyValueArrayToObject,
 		mergeObj
 	} from '@svizzle/utils';
+
+	import {feature} from 'topojson-client';
+	import {setGeometryPrecision} from '@svizzle/geo';
 
 	import Modal from 'app/components/Modal.svelte';
 	import IconInfo from 'app/components/icons/IconInfo.svelte';
@@ -36,6 +40,7 @@
 		selectedYearStore,
 		toggleModal,
 	} from 'app/stores';
+	import majorCities from 'app/data/majorCities';
 	import topos from 'app/data/topojson';
 	import types from 'app/data/types';
 	import {
@@ -55,11 +60,29 @@
 	export let width;
 	export let height;
 
-	let selectedKeys = [];
+	const markerRadius = 4;
+	const labelsFontSize = 13;
+	const labelPadding = labelsFontSize / 2;
+	const labelDx = markerRadius + labelPadding;
 	const legendBarThickness = 40;
+	const projection = geoEqualEarth();
+	const topojsonId = 'NUTS'; // TODO pass this via data when we'll have LEPs
+
+	/* TODO import {topoToGeo, defaultGeometry} from '@svizzle/choropleth/src/utils' @0.4.0 */
+	const truncateGeojson = setGeometryPrecision(4);
+	const topoToGeo = (topojson, id) =>
+		truncateGeojson(feature(topojson, topojson.objects[id]));
+	const defaultGeometry = {
+		bottom: 10,
+		left: 10,
+		right: 10,
+		top: 10,
+	};
+
+	let selectedKeys = [];
 
 	$: legendHeight = height / 3;
-
+	$: choroplethSafety = {...defaultGeometry, left: legendBarThickness * 2};
 	$: id && year && resetModal();
 	$: $selectedYearStore = Number(year);
 	$: formatFn = getIndicatorFormat(id, lookup);
@@ -109,8 +132,37 @@
 	]);
 	$: items = yearData && makeItems(yearData);
 	$: nuts_year_spec = yearData && yearData[0].nuts_year_spec
-	$: topojson = nuts_year_spec && topos[`NUTS_RG_03M_${nuts_year_spec}_4326_LEVL_2_UK`];
-	$: keyToLabel = yearlyKeyToLabel[nuts_year_spec];
+	$: keyToLabel = nuts_year_spec && yearlyKeyToLabel[nuts_year_spec];
+	$: topojson =
+		nuts_year_spec && topos[`NUTS_RG_03M_${nuts_year_spec}_4326_LEVL_2_UK`];
+	$: geojson = topojson && topoToGeo(topojson, topojsonId);
+	$: choroplethInnerHeight =
+		height - choroplethSafety.top - choroplethSafety.bottom;
+	$: choroplethInnerWidth =
+		width - choroplethSafety.left - choroplethSafety.right;
+	$: fitProjection =
+		geojson &&
+		projection.fitSize([choroplethInnerWidth, choroplethInnerHeight], geojson);
+	$: places = _.map(majorCities, obj => {
+		const [x, y] = fitProjection([obj.lng, obj.lat]);
+		const X = x + choroplethSafety.left;
+		const length = obj.name.length * labelsFontSize * 0.6;
+		const isLeft =
+			obj.isLeft && X - labelDx - length < choroplethSafety.left
+				? isLeft = false
+				: X + labelDx + length > width - choroplethSafety.right
+					? true
+					: obj.isLeft;
+		const dx = isLeft ? -labelDx : labelDx;
+
+		return {
+			...obj,
+			dx,
+			isLeft,
+			X,
+			Y: y + choroplethSafety.top,
+		}
+	});
 
 	$: valueExtext = extent(data, getIndicatorValue);
 	$: colorScale = makeColorScale(valueExtext);
@@ -207,15 +259,15 @@
 				{width}
 				{height}
 			>
+				<!-- TODO /chropleth 0.4.0: projectionFn=fitProjection -->
 				<ChoroplethG
 					{height}
 					{keyToColor}
 					{selectedKeys}
 					{topojson}
+					{topojsonId}
 					{width}
-					geometry={{
-						left: legendBarThickness * 2,
-					}}
+					geometry={{left: choroplethSafety.left}}
 					isInteractive={true}
 					key='NUTS_ID'
 					on:entered={onEntered}
@@ -226,16 +278,31 @@
 						defaultStroke: 'black',
 						defaultStrokeWidth: 0.5
 					}}
-					topojsonId='NUTS'
 				/>
+				<g class='places'>
+					{#each places as {isLeft, name, X, Y, dx}}
+						<g transform='translate({X},{Y})'>
+							<circle r={markerRadius}/>
+							<text
+								{dx}
+								class:isLeft
+								class='background'
+								font-size={labelsFontSize}
+							>{name}</text>
+							<text
+								{dx}
+								class:isLeft
+								font-size={labelsFontSize}
+							>{name}</text>
+						</g>
+					{/each}
+				</g>
 				<g transform='translate(0,{legendHeight})'>
 					<ColorBinsG
 						width={legendBarThickness}
 						height={legendHeight}
 						bins={colorBins}
-						flags={{
-							isVertical: true
-						}}
+						flags={{isVertical: true}}
 						ticksFormatFn={formatFn}
 					/>
 				</g>
@@ -350,9 +417,35 @@
 		grid-column: 2 / span 1;
 	}
 
+	/* TODO use `titleFontSize` with next @svizzle/barchart */
 	:global(.col2 .BarchartVDiv header h2) {
 		font-size: 1rem;
 		margin-bottom: 1rem;
+	}
+
+	/* places */
+
+	.places {
+		pointer-events: none;
+	}
+	.places circle {
+		fill: white;
+		stroke: black;
+	}
+	.places text {
+		dominant-baseline: middle;
+		fill: black;
+		stroke: none;
+	}
+	.places text.isLeft {
+		text-anchor: end;
+	}
+	.places text.background {
+		fill: white;
+		fill-opacity: 0.8;
+		stroke: white;
+		stroke-opacity: 0.8;
+		stroke-width: 5;
 	}
 
 	/* tooltip */
