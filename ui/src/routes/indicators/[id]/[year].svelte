@@ -94,6 +94,7 @@
 		api_type,
 		auth_provider,
 		data_date,
+		description_long,
 		description_short,
 		description,
 		endpoint_url,
@@ -347,6 +348,7 @@
 			{api_type}
 			{auth_provider}
 			{data_date}
+			{description_long}
 			{endpoint_url}
 			{is_public}
 			{query}

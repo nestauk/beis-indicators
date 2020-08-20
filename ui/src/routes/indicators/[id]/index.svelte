@@ -93,6 +93,7 @@
 		auth_provider,
 		data_date,
 		description_short,
+		description_long,
 		description,
 		endpoint_url,
 		is_public,
@@ -202,7 +203,7 @@
 </script>
 
 <svelte:head>
-	<title>{description_short}</title>
+	<title>BEIS indicators - {description_short}</title>
 </svelte:head>
 
 <div class='container'>
@@ -348,6 +349,7 @@
 			{api_type}
 			{auth_provider}
 			{data_date}
+			{description_long}
 			{endpoint_url}
 			{is_public}
 			{query}
