@@ -44,9 +44,13 @@ iuk['year'] = [int(x.split('/')[0]) for x in iuk['Competition Year']]
 
 iuk_recent = iuk.query("year >= 2010").dropna(
                             axis=0,subset=['year','Postcode'])
+# Remove Withdrawn and on hold projects
+
+iuk_recent = iuk_recent.loc[~iuk_recent['Project Status'].isin(
+                                                    ['Withdrawn','On Hold'])]
 
 # These are all the innovate UK postcodes
-iuk_postcodes = set(iuk['Postcode'])
+iuk_postcodes = set(iuk_recent ['Postcode'])
 
 # Extract their lat, lon from nspl
 iuk_pcs = nspl.loc[nspl['pcds'].isin(iuk_postcodes)]
