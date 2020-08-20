@@ -27,8 +27,8 @@ schema:
     label: Year
 source_name: Eurostat
 source_url: https://ec.europa.eu/eurostat
-year_range: [1996,2016]
 warning: The regional breakdown of the EU Member States is based on the Nomenclature of Territorial Units for Statistics – NUTS 2010 level 3
+year_range: [1996,2016]
 
 
 # [1] https://docs.python.org/3/library/string.html#format-specification-mini-language
