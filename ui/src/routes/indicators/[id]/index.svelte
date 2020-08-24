@@ -27,6 +27,7 @@
 
 	import Modal from 'app/components/Modal.svelte';
 	import IconInfo from 'app/components/icons/IconInfo.svelte';
+	import Switch from 'app/components/Switch.svelte';
 	import { lookup, yearExtent, yearRange } from 'app/data/groups';
 	import groups from 'app/data/indicatorsGroups.json';
 	import yearlyKeyToLabel from 'app/data/NUTS2_UK_labels';
@@ -156,6 +157,8 @@
 	$: x2 = layout.scaleX(year_range[1]);
 	$: xMed = (x1 + x2) / 2;
 
+	$: chartTitle = `${useOrderScale ? 'Ranking by' : ''} ${schema.value.label}`;
+
 	/* tooltip */
 
 	$: quadTree = rankedData &&
@@ -222,14 +225,15 @@
 
 	<section>
 		<div class='controls'>
-			<button
-				on:click='{() => {useOrderScale = true}}'
-				class:selected={useOrderScale}
-			>Relative</button>
-			<button
-				class:selected={!useOrderScale}
-				on:click='{() => {useOrderScale = false}}'
-			>Absolute</button>
+			<div class='optgroup'>
+				<Switch
+					current={'Absolute'}
+					values={['Absolute', 'Ranking']}
+					on:toggled={event => {
+						useOrderScale = event.detail === 'Ranking'
+					}}
+				/>
+			</div>
 		</div>
 		<div
 			class='trends'
@@ -263,7 +267,7 @@
 						y={yLabel}
 						font-size={labelFontSize}
 					>
-						<tspan>{schema.value.label}</tspan>
+						<tspan>{chartTitle}</tspan>
 						{#if labelUnit}<tspan>[{labelUnit}]</tspan>{/if}
 					</text>
 					<g class='ref x'>
@@ -415,18 +419,14 @@
 		justify-content: flex-end;
 	}
 
-	button {
-		background-color: white;
-		border: 1px solid var(--color-main);
-		cursor: pointer;
-		font-size: 1rem;
-		padding: 0.5rem;
-		user-select: none;
-		margin-left: 1rem;
+	.controls > div:not(:last-child) {
+		margin-right: 0.5rem;
 	}
-	button.selected {
-		background-color: var(--color-selected);
-		color: white;
+
+	.optgroup {
+		display: flex;
+		align-items: center;
+		padding: 0.25rem;
 	}
 
 	.trends {
