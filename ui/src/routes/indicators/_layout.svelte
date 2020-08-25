@@ -15,7 +15,7 @@
 	setContext('layout', {timelineLayoutStore});
 
 	onMount(() => {
-		current.scrollIntoView({
+		current && current.scrollIntoView({
 			block: 'nearest',
 			behavior: 'smooth'
 		});
