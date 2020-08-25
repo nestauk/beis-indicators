@@ -10,11 +10,11 @@ from beis_indicators.utils.dir_file_management import make_indicator,save_indica
 
 PROJECT_DIR = beis_indicators.project_dir
 TARGET_PATH = f"{PROJECT_DIR}/data/processed/eurostat"
-NUTS_FILE = 'NUTS_2010.xls'
+NUTS_FILE = 'NUTS_2013.xls'
 
 # Collect a table with NUTS names and codes
 nuts = requests.get(
-        'https://ec.europa.eu/eurostat/ramon/documents/nuts/NUTS_2010.zip')
+        'https://ec.europa.eu/eurostat/ramon/documents/nuts/NUTS_2013.zip')
 
 # Unzip and save
 z = ZipFile(BytesIO(nuts.content))
@@ -23,11 +23,11 @@ if os.path.exists(f'{PROJECT_DIR}/data/aux/{NUTS_FILE}')==False:
     z.extract(file,path=f'{PROJECT_DIR}/data/aux/')
 
 # Extract NUTS codes
-nuts_2010 = pd.read_excel(f'{PROJECT_DIR}/data/aux/{NUTS_FILE}')
+nuts_2013 = pd.read_excel(f'{PROJECT_DIR}/data/aux/{NUTS_FILE}')
 
 nuts_2,nuts_3 = [
-        set(nuts_2010.loc[(nuts_2010['COUNTRY CODE']=='UK'
-                           )&(nuts_2010['NUTS LEVEL']==l)]['NUTS CODE']) 
+        set(nuts_2013.loc[(nuts_2013['COUNTRY CODE']=='UK'
+                           )&(nuts_2013['NUTS LEVEL']==l)]['NUTS CODE']) 
                  for l in [2,3]]
 
 # Collect the patent and trademark data from Eurostat
@@ -48,7 +48,7 @@ for nuts_list,level in zip([nuts_2,nuts_3],['nuts2','nuts3']):
         ind = make_indicator(sel,{'value':name},
                              year_var='variable',
                              nuts_var='geo\\time',
-                             nuts_spec=2010)
+                             nuts_spec=2013)
         # Print years (for the schema)
         logging.info(ind['year'].min())
         logging.info(ind['year'].max())
