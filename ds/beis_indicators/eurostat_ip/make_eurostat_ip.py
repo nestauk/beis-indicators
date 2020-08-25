@@ -54,8 +54,13 @@ for nuts_level,level in zip([2,3],['nuts2','nuts3']):
             "variable > 2005")
         
         # Make indicator
+        if 'patent' in name:
+            nuts_spec =2010
+        else:
+            nuts_spec =2013
+
         ind = make_indicator(sel,{'value':name},year_var='variable',nuts_var='geo\\time',
-                    nuts_spec=2013)
+                    nuts_spec=nuts_spec)
     
         logging.info(str(min(ind['year'])))
         logging.info(str(max(ind['year'])))
