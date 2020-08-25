@@ -57,10 +57,10 @@
   "scripts": {
     "build": "sapper build --legacy",
     "chmod": "chmod u+x bin/*",
-    "copydata": "npm run chmod && ./bin/copy_data.js",
+    "copydata": "npm run chmod && node -r esm ./bin/copy_data.js",
     "dev": "sapper dev",
     "export": "export SAPPER_EXPORT=true && sapper export --legacy",
-    "makeIndex": "npm run chmod && ./bin/make_index.js",
+    "makeIndex": "npm run chmod && node -r esm ./bin/make_index.js",
     "rmdata": "rimraf static/data",
     "setdata": "npm run rmdata && npm run copydata",
     "start": "node __sapper__/build",

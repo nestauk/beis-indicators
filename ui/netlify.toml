@@ -1,4 +1,0 @@
-[build]
-  base = "ui/"
-  publish = "__sapper__/export/"
-  command = "npm run export"

@@ -1,0 +1,9 @@
+{
+  "description": "BEIS regional indicators",
+  "license": "MIT",
+  "name": "beis_indicators",
+  "scripts": {
+    "deploy": "cd ui && npm run makeIndex && npm run copydata && npm run export",
+    "postinstall": "cd ui && npm install"
+  }
+}
