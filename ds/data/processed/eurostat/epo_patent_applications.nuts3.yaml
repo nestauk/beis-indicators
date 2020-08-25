@@ -28,3 +28,11 @@ schema:
 source_name: Eurostat
 source_url: https://ec.europa.eu/eurostat
 warning: The regional breakdown of the EU Member States is based on the Nomenclature of Territorial Units for Statistics – NUTS 2010 level 3
+<<<<<<< HEAD
+=======
+year_range: [2006,2012]
+
+
+# [1] https://docs.python.org/3/library/string.html#format-specification-mini-language
+# [2] https://github.com/d3/d3-format
+>>>>>>> 407f24a... Fixed mistake with the patent data

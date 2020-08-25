@@ -10,48 +10,56 @@ from beis_indicators.utils.dir_file_management import make_indicator,save_indica
 
 PROJECT_DIR = beis_indicators.project_dir
 TARGET_PATH = f"{PROJECT_DIR}/data/processed/eurostat"
-NUTS_FILE = 'NUTS_2013.xls'
 
-# Collect a table with NUTS names and codes
-nuts = requests.get(
-        'https://ec.europa.eu/eurostat/ramon/documents/nuts/NUTS_2013.zip')
+# We need to collect NUTS tables for 2010 (patents) and 2013 (trademarks)
+nuts_codes = {'2010':{},'2013':{}}
 
-# Unzip and save
-z = ZipFile(BytesIO(nuts.content))
+# Only get the data if we don't have it already
+for y in ['2010','2013']:
+    file = f'NUTS_{y}.xls'
+    if os.path.exists(f'{PROJECT_DIR}/data/aux/{file}')==False:
+        nuts = requests.get(
+            'https://ec.europa.eu/eurostat/ramon/documents/nuts/NUTS_{y}.zip')
+        z = ZipFile(BytesIO(nuts.content))
+        z.extract(file,path=f'{PROJECT_DIR}/data/aux/')
 
-if os.path.exists(f'{PROJECT_DIR}/data/aux/{NUTS_FILE}')==False:
-    z.extract(file,path=f'{PROJECT_DIR}/data/aux/')
+    nuts_table = pd.read_excel(f'{PROJECT_DIR}/data/aux/{file}')
 
-# Extract NUTS codes
-nuts_2013 = pd.read_excel(f'{PROJECT_DIR}/data/aux/{NUTS_FILE}')
-
-nuts_2,nuts_3 = [
-        set(nuts_2013.loc[(nuts_2013['COUNTRY CODE']=='UK'
-                           )&(nuts_2013['NUTS LEVEL']==l)]['NUTS CODE']) 
-                 for l in [2,3]]
+    for l in [2,3]:
+        nuts_codes[y][l]=set(
+            nuts_table.loc[(nuts_table['COUNTRY CODE']=='UK')&(
+                                nuts_table['NUTS LEVEL']==l)]['NUTS CODE'])
 
 # Collect the patent and trademark data from Eurostat
-pats = es.get_data_df('ipr_ta_reg')
+pats = es.get_data_df('pat_ep_rtot').query("unit == 'NR'")
 trades = es.get_data_df('ipr_ta_reg')
 
 # For each NUTS codes list and name
-for nuts_list,level in zip([nuts_2,nuts_3],['nuts2','nuts3']):
+for nuts_level,level in zip([2,3],['nuts2','nuts3']):
     
-    # For each data source and indicator name
+    # For each table and variable name
     for d,name in zip([pats,trades],
                       ['epo_patent_applications','eu_trademark_applications']):
-        # Filter by NUTS codes
+        
+        # Extract nuts codes depending on the variable (patents are 2010)
+        if 'patent' in name:
+            nuts_list = nuts_codes['2010'][nuts_level]
+        else:
+            nuts_list = nuts_codes['2013'][nuts_level]
+            
+        # Select the data. We will focus on activity after 2005
         sel = d.loc[
-            [x in nuts_list for x in pats['geo\\time']]].reset_index(
-            drop=True).drop('unit',1).melt(id_vars='geo\\time')
-        # Create indicator
-        ind = make_indicator(sel,{'value':name},
-                             year_var='variable',
-                             nuts_var='geo\\time',
-                             nuts_spec=2013)
-        # Print years (for the schema)
-        logging.info(ind['year'].min())
-        logging.info(ind['year'].max())
-
+            [x in nuts_list for x in d['geo\\time']]].reset_index(
+            drop=True).drop('unit',1).melt(id_vars='geo\\time').query(
+            "variable > 2005")
+        
+        # Make indicator
+        ind = make_indicator(sel,{'value':name},year_var='variable',nuts_var='geo\\time',
+                    nuts_spec=2013)
+    
+        logging.info(str(min(ind['year'])))
+        logging.info(str(max(ind['year'])))
+        
         # Save indicator
         save_indicator(ind,TARGET_PATH,f"{name}.{level}")
+    
