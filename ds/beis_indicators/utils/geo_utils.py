@@ -5,6 +5,9 @@ from urllib.request import urlretrieve
 from zipfile import ZipFile
 
 
+LEP_YEARS = [2014, 2017, 2020]
+NUTS_YEARS = [2003, 2006, 2010, 2013, 2016]
+
 def reverse_geocode(points, shape, shape_crs=None):
     '''reverse_geocode
 
@@ -16,7 +19,7 @@ def reverse_geocode(points, shape, shape_crs=None):
     if shape_crs is not None:
         shape = shape.to_crs(shape_crs)
 
-    joined = gpd.sjoin(points, shape, op='within')
+    joined = gpd.sjoin(points, shape, op='within', how='right')
 
     return joined
 
@@ -124,6 +127,8 @@ def leps_year_spec(year):
         return 2014
     elif year >= 2017:
         return 2017
+    elif year >= 2020:
+        return 2020
 
 
 def get_nuts_shape(year, shapefile_dir, resolution=1):
@@ -197,3 +202,48 @@ def get_shape(file_name, path):
 
     else:
         print(f'{file_name} already collected')
+
+
+def nuts_year_spec(year, mode='introduced'):
+    '''nuts_earliest
+    Returns the earliest possible NUTS version for a year
+    based on the enforcement date.
+
+    Args:
+        year (int): A year
+        mode (str): Choose whether to map years against the year that a NUTS
+            version was enforced or introduced: Options:
+                - `introduced` (default)
+                - `enforced`
+    Returns:
+        earliest (int): The closest possible NUTS version year
+    '''
+    if mode == 'introduced':
+        mapping = NUTS_INTRODUCED
+    elif mode == 'enforced':
+        mapping = NUTS_ENFORCED
+
+    for k, v in mapping.items():
+        if year >= v:
+            earliest = k
+    return earliest
+
+
+def generate_year_spec(data, geography='nuts', mode='introduced'):
+    '''generate_year_spec
+    Args:
+        data (pd.DataFrame):
+        geography (str):
+        mode (str):
+
+    Returns:
+        year_spec_map (pd.Series):
+    '''
+    years = data['year'].unique()
+    if geography == 'nuts':
+        year_spec_map = {y: nuts_year_spec(y, mode) for y in years}
+    elif geography == 'lep':
+        year_spec_map = {y: leps_year_spec(y) for y in years}
+    
+    year_spec = data['year'].map(year_spec_map)
+    return year_spec
