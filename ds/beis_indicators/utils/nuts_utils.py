@@ -10,6 +10,16 @@ NUTS_ENFORCED = {
     2010: 2012,
     2013: 2015,
     2016: 2018,
+    2021: 2021,
+}
+
+NUTS_ENFORCED = {
+    2003: 2003,
+    2006: 2006,
+    2010: 2010,
+    2013: 2013,
+    2016: 2016,
+    2021: 2021,
 }
 
 NUTS2_UK_IDS ={
@@ -49,12 +59,26 @@ def _year_containments(ids, years):
     containments = np.array(containments)
     return containments
 
-def nuts_earliest(year):
+def nuts_earliest(year, mode='introduced'):
     '''nuts_earliest
     Returns the earliest possible NUTS version for a year
     based on the enforcement date.
+
+    Args:
+        year (int): A year
+        mode (str): Choose whether to map years against the year that a NUTS
+            version was enforced or introduced: Options:
+                - `introduced` (default)
+                - `enforced`
+    Returns:
+        earliest (int): The closest possible NUTS version year
     '''
-    for k, v in NUTS_ENFORCED.items():
+    if mode == 'introduced':
+        mapping = NUTS_INTRODUCED
+    elif mode == 'enforced':
+        mapping = NUTS_ENFORCED
+
+    for k, v in mapping.items():
         if year >= v:
             earliest = k
     return earliest
