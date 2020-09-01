@@ -265,7 +265,7 @@
 				</div>
 
 				<Switch
-					initial={'Highlight'}
+					initial={$doFilterRegionsStore ? 'Filter' : 'Highlight'}
 					values={['Highlight', 'Filter']}
 					on:toggled={event => {
 						$doFilterRegionsStore = event.detail === 'Filter'
