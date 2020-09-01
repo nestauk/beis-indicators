@@ -16,7 +16,7 @@ import datetime
 
 import beis_indicators
 from beis_indicators.data import make_dataset
-from beis_indicators.utils.dir_file_management import *
+from beis_indicators.utils.dir_file_management_bres import *
 
 project_dir = beis_indicators.project_dir
 data_path = f'{project_dir}/data'
