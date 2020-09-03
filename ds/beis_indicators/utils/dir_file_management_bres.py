@@ -9,6 +9,8 @@ import logging
 
 from beis_indicators.utils.nuts_utils import *
 
+from beis_indicators.utils.nuts_utils import *
+
 project_dir = beis_indicators.project_dir
 
 def make_dirs(name, dirs=['raw', 'processed']):
@@ -63,7 +65,7 @@ def parse_academic_year(year):
     '''
     return(int(year.split('/')[0]))
 
-def make_indicator(table, var_lookup, year_var, nuts_var='nuts_code', nuts_spec='flex', decimals=0):
+def make_indicator(table,var_lookup,year_var,geo_type, geo_var='nuts_code',geo_spec='flex',decimals=0):
     '''
     We use this function to create indicators using our standardised format.
 
@@ -89,7 +91,7 @@ def make_indicator(table, var_lookup, year_var, nuts_var='nuts_code', nuts_spec=
     var_code = list(var_lookup.values())[0]
 
     #Focus on those
-    t = t[[year_var, nuts_var, var_name]]
+    t = t[[year_var,geo_var,var_name]]
 
     #Add the nuts specification
     if geo_type == 'nuts':
@@ -110,45 +112,22 @@ def make_indicator(table, var_lookup, year_var, nuts_var='nuts_code', nuts_spec=
             #Reorder variables
             t = t[['year','nuts_id','nuts_year_spec',var_code]]
     else:
-        t['nuts_year_spec'] = nuts_spec
-
-    #Rename variables
-    t.rename(columns={
-        var_name: var_code,
-        year_var: 'year',
-        nuts_var: 'nuts_id'}, inplace=True)
-
-    #Round variables (and warn if there are missing values)
-    round_results = []
-
-    for x in t[var_code]:
-        if pd.isnull(x)==True:
-            round_results.append(np.nan)
-        elif decimals > 0:
-            round_results.append(np.round(x,decimals))
-        else:
-            round_results.append(int(x))
-
-    if np.nan in round_results:
-        logging.info(
-        f"There are {sum([pd.isnull(x) for x in round_results])} missing values")
-
-    t[var_code] = round_results
-
-#    t[var_code] = [np.round(x,decimals) if decimals>0 else int(x) for x in t[var_code]]
+        t['lep_year_spec'] = geo_spec
+        t.rename(columns={var_name:var_code,year_var:'year',geo_var:'lep_id'},inplace=True)
+        #Round variables
+        t[var_code] = [np.round(x,decimals) if decimals>0 else int(x) for x in t[var_code]]
+        #Reorder variables
+        t = t[['year','lep_id','lep_year_spec',var_code]]
 
     # #If we are dealing with academic years then we need to parse them
     # if year =='academic_year':
     #     t[year]=[parse_academic_year(y) for y in t[year]]
 
-    #Reorder variables
-    t = t[['year', 'nuts_id', 'nuts_year_spec', var_code]]
-
     print(t.head())
 
     return(t)
 
-def save_indicator(table, target_path, var_name):
+def save_indicator(table,target_path,var_name,geo):
     '''
     Function to save an indicator
 
@@ -158,4 +137,4 @@ def save_indicator(table, target_path, var_name):
         var_name (variable name)
 
     '''
-    table.to_csv(f'{target_path}/{var_name}.csv',index=False)
+    table.to_csv(f'{target_path}/{var_name}.{geo}.csv',index=False)
