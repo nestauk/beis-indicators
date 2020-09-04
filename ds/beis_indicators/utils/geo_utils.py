@@ -3,10 +3,8 @@ import os
 import pyproj
 from urllib.request import urlretrieve
 from zipfile import ZipFile
+from beis_indicators.utils.nuts_utils import NUTS_INTRODUCED, NUTS_ENFORCED
 
-
-LEP_YEARS = [2014, 2017, 2020]
-NUTS_YEARS = [2003, 2006, 2010, 2013, 2016]
 
 def reverse_geocode(points, shape, shape_crs=None):
     '''reverse_geocode
@@ -20,8 +18,8 @@ def reverse_geocode(points, shape, shape_crs=None):
         shape = shape.to_crs(shape_crs)
 
     joined = gpd.sjoin(points, shape, op='within', how='right')
-
     return joined
+
 
 def coordinates_to_points(df, x_coord_name, y_coord_name):
     '''coordinates_to_points

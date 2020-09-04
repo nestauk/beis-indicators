@@ -1,13 +1,159 @@
 import os
-import geopandas as pd
+import re
+import requests
+import geopandas as gpd
 import pandas as pd
 import numpy as np
+from urllib.request import urlretrieve
+from zipfile import ZipFile
+import logging
 
-from beis_indicators.utils.geo_utils import (load_nuts_regions, load_leps_regions,
-        generate_year_spec, NUTS_YEARS, LEP_YEARS)
+
+from beis_indicators.utils.geo_utils import generate_year_spec
+from beis_indicators import project_dir
 
 
-def points_to_indicator(data, value_col, boundaries, geography='nuts',
+def _setattr(obj, value, value_name, regex, url):
+    allowed_values = _get_available(regex, url)
+    if value not in allowed_values:
+        raise ValueError(f"'{value_name}' must be one of {allowed_values}")
+    setattr(obj, value_name, value)
+
+
+def _get_available(regex, url):
+    r = requests.get(url)
+    values = set(int(yr) for yr in
+                 re.findall(regex, r.text))
+    return values
+
+class Coder:
+    def __init__(self):
+        pass
+
+    def _load_shapes(self):
+        pass
+
+    def code_points(self):
+        pass
+
+    def _reverse_geocode(self, points, year):
+        """_reverse_geocode
+        """
+        shape = self.shapes[year].to_crs(self.PROJECTION)
+        joined = gpd.sjoin(points, shape, op='within', how='right')
+        return joined
+
+    def _coordinates_to_points(self, x, y, data=None):
+        """_coordinates_to_points
+        """
+        return gpd.GeoDataFrame(data=data,
+                geometry=gpd.points_from_xy(x, y))
+
+
+class NutsCoder(Coder):
+    YEAR_REGEX = 'NUTS ([0-9]+)'
+    RES_REGEX = '1:([0-9]+) Million'
+    TOP_URL = ("https://gisco-services.ec.europa.eu/"
+               "distribution/v2/nuts/download")
+    SHAPE_URL = (f"{TOP_URL}/"
+               "ref-nuts-{year}-{resolution}m.geojson.zip")
+    NESTED_FILE = 'NUTS_RG_{resolution}M_{year}_4326_LEVL_{level}.geojson'
+    PROJECTION = 'EPSG:4326'
+    GEOGRAPHY = 'nuts'
+    SHAPE_DIR = (f'{project_dir}/data/raw/shapefiles/')
+
+    def _get_shape(self, year):
+        """_get_shape
+        """
+        resolution = str(self.resolution).zfill(2)
+        url = self.SHAPE_URL.format(year=year, resolution=resolution)
+        fname = url.split('/')[-1]
+        fout = f'{self.SHAPE_DIR}/{fname}'
+        urlretrieve(url, fout)
+
+    def __init__(self, resolution=1, level=2, nuts_countries=['UK']):
+        _setattr(self, resolution, 'resolution', self.RES_REGEX, self.TOP_URL)
+        self.nuts_countries = nuts_countries
+        self.level = level
+        self._load_shapes()
+
+    def _load_shapes(self):
+        self.shapes = {}
+        years_available = _get_available(self.YEAR_REGEX, self.TOP_URL)
+        resolution = str(self.resolution).zfill(2)
+        for year in years_available:
+            shape_zip_dir = os.path.join(self.SHAPE_DIR, 
+                                    f'ref-nuts-{year}-{resolution}m.geojson.zip')
+            exists = os.path.isfile(shape_zip_dir)
+            if not exists:
+                self._get_shape(year)
+            gdf = gpd.read_file(zipfile.open(nested))
+            if self.nuts_countries is not None:
+                gdf = (gdf.set_index('CNTR_CODE')
+                          .loc[self.nuts_countries]
+                          .reset_index())
+            self.shapes[year] = gdf
+
+    def code_points(self, x, y, year, projection, data=None):
+        """code_points
+        """
+        shape = self.shapes[year]
+        if projection != self.PROJECTION:
+            # reverse x and y because eurostat uses lat, lon for polygons
+            # rather than lon, lat
+            y, x = translate_coordinates(np.array(x), np.array(y),
+                    projection, self.PROJECTION)
+        points = self._coordinates_to_points(x, y, data=data)
+        joined = self._reverse_geocode(points, year)
+        joined = joined.rename(columns={'NUTS_ID': 'nuts_id'})
+        return joined
+
+class LepCoder(Coder):
+    TOP_URL = "https://opendata.arcgis.com/datasets/"
+    YEAR_URLS = {
+            2014: "17c92615a55f4dbf945e8eaf642eaa87_0.geojson",
+            2017: "ca2ff82048594beca3b67688814e8fe4_0.geojson",
+            2020: "0af0f6e04abf44f48868b441afd67e0e_0.geojson",
+            }
+    FILE = 'lep_{year}.geojson'
+    PROJECTION = 'EPSG:27700'
+    GEOGRAPHY = 'lep'
+    SHAPE_DIR = (f'{project_dir}/data/raw/shapefiles/')
+
+    def __init__(self):
+        self._load_shapes()
+
+    def _get_shape(self, year, url):
+        """_get_shape
+        """
+        fname = self.FILE.format(year=year)
+        fout = f'{self.SHAPE_DIR}/{fname}'
+        urlretrieve(url, fout)
+
+    def _load_shapes(self):
+        self.shapes = {}
+        for year, file_url in self.YEAR_URLS.items():
+            fname = self.FILE.format(year=year)
+            shape_dir = os.path.join(self.SHAPE_DIR, fname)
+            exists = os.path.isfile(shape_dir)
+            if not exists:
+                self._get_shape(year, f"{self.TOP_URL}{file_url}")
+            gdf = gpd.read_file(shape_dir)
+            self.shapes[year] = gdf
+
+    def code_points(self, x, y, year, projection, data=None):
+        """code_points
+        """
+        shape = self.shapes[year]
+        if projection != self.PROJECTION:
+            x, y = translate_coordinates(np.array(x), np.array(y),
+                    projection, self.PROJECTION)
+        points = self._coordinates_to_points(x, y, data=data)
+        joined = self._reverse_geocode(points, year)
+        joined = joined.rename(columns={f'lep{year}cd': 'lep_id'})
+        return joined
+
+def points_to_indicator(data, value_col, coder, 
         aggfunc=np.mean, value_rename=None, projection=None, 
         x_col='lon', y_col='lat', dp=2):
     """points_to_indicator
@@ -41,37 +187,30 @@ def points_to_indicator(data, value_col, boundaries, geography='nuts',
             - <geography>_id: region code
             - <geography>_year_spec: specification year of the boundaries
             - <value_col> or <rename_value>: the indicator values
-    """    
-    geo_type = ''.join(i for i in geog if i.isdigit())
+    """
+    geo_type = coder.GEOGRAPHY
     year_spec_col = f'{geo_type}_year_spec'
     id_col = f'{geo_type}_id'
-    if year_spec_col not in data.columns:
-        data[year_spec_col] = generate_year_spec(data, geo_type)
-
-    if geo_type == 'nuts':
-        geo_projection = 'EPSG:4326'
-    elif geo_type == 'lep':
-        geo_projection = 'EPSG:27700'
-    
-    if projection != geo_projection:
-        data['x'], data['y'] = translate_coordinates(data[x_col].values, 
-                data[y_col].values, projection, geo_projection)
-    data = coordinates_to_points(data, 'x', 'y')
+    data[year_spec_col] = generate_year_spec(data, geo_type)
     
     aggregated = []
     for year, group in data.groupby('year'):
         year_spec = np.abs(group[year_spec_col].max())
-        joined = reverse_geocode(group, boundaries[year_spec], geo_projection)
+        joined = coder.code_points(
+                group[x_col], group[y_col], year_spec, projection, group)
         agg_cols = [id_col, 'year', year_spec_col]
         agg = (joined
-                .groupby(agg_cols, asindex=False)[value_col]
-                .apply(aggfunc))
+                .groupby(agg_cols, as_index=False)[value_col]
+                .apply(aggfunc)
+                .reset_index())
         aggregated.append(agg)
     indicator = pd.concat(aggregated)
     
     if value_rename is not None:
-        indicator = indicator.rename(columns={value_col: value_rename})
+        indicator = indicator.rename(columns={0: value_rename})
         value_col = value_rename
+    else:
+        indicator = indicator.rename(columns={0:value_col})
 
     indicator = indicator[['year', id_col, year_spec_col, value_col]]
     indicator['year'] = indicator['year'].astype(int)
@@ -81,32 +220,3 @@ def points_to_indicator(data, value_col, boundaries, geography='nuts',
     
     return indicator
 
-def load_regions(geography, years=None, nuts_level=2):
-    """load_regions
-    Loads regions for a particular geography (and level if required) across 
-    multiple years.
-
-    Args:
-        geo_type (str): 'nuts' or 'lep'
-        years (`iter` of `int`): If None, all possible boundaries will be loaded.
-        nuts_level (int): If using geo_type 'nuts' this level will be loaded.
-
-    Returns:
-        boundary_pack (dict): A dictionary where keys are years and values are
-            `geopandas` dataframes of boundaries.
-    """
-    geo_type = ''.join(i for i in geog if i.isdigit())
-    if years is not None:
-        if geo_type == 'nuts':
-            years = NUTS_YEARS
-        elif geo_type == 'lep':
-            years = LEP_YEARS
-    
-    boundary_pack = {}
-    for year in years:
-        if geo_type == 'nuts':
-            boundaries = load_nuts_regions(year, shapefile_dir, level=level)
-        elif geo_type == 'lep':
-            boundaries = load_leps_regions(year, shapefile_dir)
-        boundary_pack[year] = boundaries
-    return boundary_pack
