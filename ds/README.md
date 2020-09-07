@@ -17,11 +17,8 @@ pip install -r requirements.txt
 
 ## Creating Indicators
 
-Creating indicators for NUTS and LEP regions is easy.
+Let's say you have some dataframe, `data`, with some values of pollution data (`pm10`) spanning different years (`year`) with x (`x`) and y (`y`) coordinates with EPSG projection 27700 that you want to aggregate to NUTS 2, NUTS 3 and LEP regions. The reverse geocoding, indicator aggregation and saving can be done for all region types in a few easy steps:
 
-Let's say you have some dataframe, `data`, with some values of pollution data (`pollution_lvl`) spanning different years (`year`) with x (`x`) and y (`y`) coordinates with EPSG projection 27700 that you want to aggregate to NUTS 2 regions.
-
-This can be done with a `NutsCoder` and `points_to_indicator`.
 
 ```python
 import numpy as np
@@ -31,11 +28,20 @@ from beis_indicators.indicators import points_to_indicators
 
 data = pd.read_csv('../path/to/data.csv')
 
-nuts = NutsCoder() #this may take a moment, especially if you have not downloaded the shapefiles
+# this may take a moment, especially if you have not downloaded the shapefiles
+coders = {
+    'nuts2': NutsCoder(level=2)
+    'nuts3': NutsCoder(level=2)
+    'lep': LepCoder()
+    }
 
-indicator = points_to_indicator(data, value_col='pollution_lvl', coder=nuts,
-                                aggfunc=np.mean, value_rename='mean_pollution',
-                                projection='EPSG:27700', x_col='x', y_col='y')
+pollution = load_pollution_data(year, raw_data_dir, pollution_type)
+
+for geo, coder in coders.items():
+    mean_pm10 = points_to_indicator(data, value_col='pm10', coder=nuts,
+                    aggfunc=np.mean, value_rename=var_name,
+                    projection='EPSG:27700', x_col='x', y_col='y')
+    save_indicator(mean_pm10, 'defra', geo)
 
 ```
 
