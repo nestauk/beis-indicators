@@ -1,6 +1,7 @@
+import logging
 import pandas as pd
 import numpy as np
-import logging
+import os
 
 from beis_indicators import project_dir
 
@@ -73,7 +74,7 @@ def points_to_indicator(data, value_col, coder,
     indicator['year'] = indicator['year'].astype(int)
     indicator[year_spec_col] = indicator[year_spec_col].astype(int)
     if fillna is not None:
-        indicator['value_col'].fillna(fillna, inplace=True)
+        indicator[value_col].fillna(fillna, inplace=True)
     if dp is not None:
         indicator[value_col] = np.round(indicator[value_col], dp)
     

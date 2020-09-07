@@ -30,16 +30,16 @@ data = pd.read_csv('../path/to/data.csv')
 
 # this may take a moment, especially if you have not downloaded the shapefiles
 coders = {
-    'nuts2': NutsCoder(level=2)
-    'nuts3': NutsCoder(level=2)
+    'nuts2': NutsCoder(level=2),
+    'nuts3': NutsCoder(level=3),
     'lep': LepCoder()
     }
 
 pollution = load_pollution_data(year, raw_data_dir, pollution_type)
 
 for geo, coder in coders.items():
-    mean_pm10 = points_to_indicator(data, value_col='pm10', coder=nuts,
-                    aggfunc=np.mean, value_rename=var_name,
+    mean_pm10 = points_to_indicator(data, value_col='pm10', coder=coder,
+                    aggfunc=np.mean, value_rename='mean_pm10',
                     projection='EPSG:27700', x_col='x', y_col='y')
     save_indicator(mean_pm10, 'defra', geo)
 

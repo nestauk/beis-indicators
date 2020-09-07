@@ -9,8 +9,10 @@ from urllib.request import urlretrieve
 from zipfile import ZipFile
 import logging
 
-
 from beis_indicators import project_dir
+
+
+logger = logging.getLogger(__name__)
 
 
 def _setattr(obj, value, value_name, regex, url):
@@ -109,6 +111,7 @@ class NutsCoder(_Coder):
         years_available = _get_available(self.YEAR_REGEX, self.TOP_URL)
         resolution = str(self.resolution).zfill(2)
         for year in years_available:
+            logger.info(f'Loading NUTS {self.level} {year} boundaries')
             shape_zip_dir = os.path.join(self.SHAPE_DIR, 
                                     f'ref-nuts-{year}-{resolution}m.geojson.zip')
             exists = os.path.isfile(shape_zip_dir)
@@ -163,13 +166,17 @@ class LepCoder(_Coder):
     def _load_shapes(self):
         self.shapes = {}
         for year, file_url in self.YEAR_URLS.items():
+            logger.info(f'Loading LEP {year} boundaries')
             fname = self.FILE.format(year=year)
             shape_dir = os.path.join(self.SHAPE_DIR, fname)
             exists = os.path.isfile(shape_dir)
             if not exists:
                 self._get_shape(year, f"{self.TOP_URL}{file_url}")
             gdf = gpd.read_file(shape_dir)
+            lep_id_col = f'lep{str(year)[-2:]}cd'
+            gdf = gdf.rename(columns={lep_id_col: 'lep_id'})
             self.shapes[year] = gdf
+
 
     def code_points(self, x, y, year, projection, data=None):
         """code_points

@@ -8,7 +8,7 @@ from zipfile import ZipFile
 from beis_indicators import project_dir
 from beis_indicators.utils.dir_file_management import save_indicator
 from beis_indicators.geo import NutsCoder, LepCoder
-from beis_indicators.indicator import points_to_indicator, save_indicator
+from beis_indicators.indicators import points_to_indicator, save_indicator
 
 logger = logging.getLogger(__name__)
 
@@ -190,15 +190,20 @@ out_dir = f'{project_dir}/data/processed/defra'
 var_name = f'air_pollution_{aggfunc.__name__}_{pollution_type}'
 
 coders = {
-    'nuts2': NutsCoder(level=2)
-    'nuts3': NutsCoder(level=2)
+    'nuts2': NutsCoder(level=2),
+    'nuts3': NutsCoder(level=3),
     'lep': LepCoder()
     }
 
-pollution = load_pollution_data(year, raw_data_dir, pollution_type)
+pollution = []
+for year in years:
+    p = load_pollution_data(year, raw_data_dir, pollution_type)
+    p['year'] = year
+    pollution.append(p)
+pollution = pd.concat(pollution)
 
 for geo, coder in coders.items():
-    mean_pm10 = points_to_indicator(data, value_col='pm10', coder=nuts,
+    mean_pm10 = points_to_indicator(pollution, value_col='pm10', coder=coder,
                     aggfunc=np.mean, value_rename=var_name,
                     projection='EPSG:27700', x_col='x', y_col='y')
     save_indicator(mean_pm10, 'defra', geo)
