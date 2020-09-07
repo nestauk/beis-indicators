@@ -21,6 +21,7 @@
 		makeKeyed,
 		mergeObj,
 		objectToKeyValueArray,
+		setIndexAsKey,
 		transformValues,
 	} from '@svizzle/utils';
 
@@ -59,7 +60,6 @@
 		makeColorScale,
 		makeValueAccessor,
 		parseCSV,
-		setIndexAsKey,
 		sortAscByYear,
 	} from 'app/utils';
 
