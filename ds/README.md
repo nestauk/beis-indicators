@@ -15,7 +15,31 @@ To create a simpler deployment and documentation environment, simply use the `re
 pip install -r requirements.txt
 ```
 
-## Organisation this section
+## Creating Indicators
+
+Creating indicators for NUTS and LEP regions is easy.
+
+Let's say you have some dataframe, `data`, with some values of pollution data (`pollution_lvl`) spanning different years (`year`) with x (`x`) and y (`y`) coordinates with EPSG projection 27700 that you want to aggregate to NUTS 2 regions.
+
+This can be done with a `NutsCoder` and `points_to_indicator`.
+
+```python
+import numpy as np
+import pandas as pd
+from beis_indicators.geo import NutsCoder
+from beis_indicators.indicators import points_to_indicators
+
+data = pd.read_csv('../path/to/data.csv')
+
+nuts = NutsCoder() #this may take a moment, especially if you have not downloaded the shapefiles
+
+indicator = points_to_indicator(data, value_col='pollution_lvl', coder=nuts,
+                                aggfunc=np.mean, value_rename='mean_pollution',
+                                projection='EPSG:27700', x_col='x', y_col='y')
+
+```
+
+## Organisation of this section
 
 ```
 ds
