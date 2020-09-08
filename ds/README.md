@@ -24,7 +24,7 @@ Let's say you have some dataframe, `data`, with some values of pollution data (`
 import numpy as np
 import pandas as pd
 from beis_indicators.geo import NutsCoder
-from beis_indicators.indicators import points_to_indicators
+from beis_indicators.indicators import points_to_indicator
 
 data = pd.read_csv('../path/to/data.csv')
 
