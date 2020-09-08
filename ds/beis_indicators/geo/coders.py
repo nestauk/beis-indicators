@@ -97,7 +97,7 @@ class NutsCoder(_Coder):
         resolution = str(self.resolution).zfill(2)
         url = self.SHAPE_URL.format(year=year, resolution=resolution)
         fname = url.split('/')[-1]
-        fout = os.path.join(self.SHAPE_DIR}, fname)
+        fout = os.path.join(self.SHAPE_DIR, fname)
         urlretrieve(url, fout)
 
     def __init__(self, resolution=1, level=2, nuts_countries=['UK']):
