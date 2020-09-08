@@ -94,6 +94,8 @@ class NutsCoder(_Coder):
     def _get_shape(self, year):
         """_get_shape
         """
+        if not os.path.isdir(self.SHAPE_DIR):
+            os.mkdir(self.SHAPE_DIR)
         resolution = str(self.resolution).zfill(2)
         url = self.SHAPE_URL.format(year=year, resolution=resolution)
         fname = url.split('/')[-1]
@@ -159,6 +161,8 @@ class LepCoder(_Coder):
     def _get_shape(self, year, url):
         """_get_shape
         """
+        if not os.path.isdir(self.SHAPE_DIR):
+            os.mkdir(self.SHAPE_DIR)
         fname = self.FILE.format(year=year)
         fout = os.path.join(self.SHAPE_DIR, fname)
         urlretrieve(url, fout)
