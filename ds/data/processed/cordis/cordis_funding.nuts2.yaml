@@ -1,0 +1,35 @@
+api_doc_url: https://data.europa.eu/euodp/en/data/dataset/cordisH2020projects 
+api_type: FETCH
+data_date: 20200909 
+description_long: Total amount of funding (in Euros) awarded by the European Commission for research, development and innovation projects carried out during the Horizon 2020 funding programme (2014 - 2020). Organisations that recieve such funding include (but are not limited to) higher education establishments, private companies, public institutions and research centres. The funding is grouped by the start year of the project.
+description_short: Horizon 2020 funding
+description: Sum of all European Commission funding awarded to organisations as part of Horizon 2020 projects. Years prior to 2014 and after 2020 have been excluded.
+endpoint_url:
+  h2020_projects: https://cordis.europa.eu/data/cordis-h2020projects-xml.zip
+  h2020_project_descriptions: https://cordis.europa.eu/data/cordis-h2020projects.csv
+framework_group: public_rnd_capability 
+is_experimental: False
+is_public: True
+order: [year, nuts_id, nuts_year_spec, value.id] 
+region:
+  type: NutsRegion
+  level: 2 
+schema:
+  nuts_id: # change this key to `nuts_id` or `lep_id`
+    type: NutsRegion.nuts_id # change this key to `NutsRegion.nuts_id` or `LepRegion.lep_id`
+  nuts_year_spec: # change this key to `nuts_year_spec` or `lep_year_spec`
+    type: NutsRegion.nuts_year_spec # change this key to `NutsRegion.nuts_year_spec` or `LepRegion.lep_year_spec`
+  value:
+    data_type: EUR 
+    description: total Horizon 2020 funding
+    format: .2f 
+    id: cordis_funding
+    label: Total Funding
+    type: Euro
+  year:
+    data_type: int
+    label: Year
+source_name: EU Open Data Portal
+source_url: https://data.europa.eu/
+year_range: [2014, 2020] # [min year, max year]
+
