@@ -135,6 +135,10 @@ class NutsCoder(_Coder):
             # rather than lon, lat
             y, x = self._translate_coordinates(np.array(x), np.array(y),
                     projection, self.PROJECTION)
+        else:
+            x, y = self._translate_coordinates(np.array(x), np.array(y),
+                    projection, self.PROJECTION)
+
         points = self._coordinates_to_points(x, y, data=data)
         joined = self._reverse_geocode(points, year)
         joined = joined.rename(columns={'NUTS_ID': 'nuts_id'})
@@ -149,7 +153,7 @@ class LepCoder(_Coder):
             2020: "0af0f6e04abf44f48868b441afd67e0e_0.geojson",
             }
     FILE = 'lep_{year}.geojson'
-    PROJECTION = 'EPSG:27700'
+    PROJECTION = 'EPSG:4326'
     GEOGRAPHY = 'lep'
     SHAPE_DIR = (f'{project_dir}/data/raw/shapefiles/')
 
@@ -177,15 +181,18 @@ class LepCoder(_Coder):
             gdf = gdf.rename(columns={lep_id_col: 'lep_id'})
             self.shapes[year] = gdf
 
-
     def code_points(self, x, y, year, projection, data=None):
         """code_points
         """
         shape = self.shapes[year]
         if projection != self.PROJECTION:
+            y, x = self._translate_coordinates(np.array(x), np.array(y),
+                    projection, self.PROJECTION)
+        else:
             x, y = self._translate_coordinates(np.array(x), np.array(y),
                     projection, self.PROJECTION)
         points = self._coordinates_to_points(x, y, data=data)
         joined = self._reverse_geocode(points, year)
         joined = joined.rename(columns={f'lep{year}cd': 'lep_id'})
         return joined
+
