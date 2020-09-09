@@ -6,10 +6,9 @@ import pandas as pd
 from zipfile import ZipFile
 
 from beis_indicators import project_dir
-from beis_indicators.utils.nuts_utils import nuts_earliest
 from beis_indicators.utils.dir_file_management import save_indicator
-from beis_indicators.defra.defra_processing import (coordinates_to_points, 
-        translate_coordinates)
+from beis_indicators.geo import NutsCoder, LepCoder
+from beis_indicators.indicators import points_to_indicator, save_indicator
 
 logger = logging.getLogger(__name__)
 
@@ -62,78 +61,6 @@ def load_pollution_data(year, raw_data_dir, pollution_type='pm10'):
         get_pollution_data(year, pollution_type)
         
     return pd.read_csv(fin)
-
-
-def load_nuts_regions(year, shapefile_dir, level=2, projection=4326, resolution=1, countries=['UK']):
-    '''load_nuts_regions
-    Loads NUTS shapefiles.
-
-    Args:
-        year (int): NUTS version year.
-        shapefile_dir (str): Directory where shapefiles are stored. 
-        projection (int): Coordinate projection of shapefile. 
-            Choice of EPSG 3035, 3857 or 4326. Default is 4326
-        resolution (int): Shapefile resolution in metres.
-        countries (list): List of 2 letter country codes to filter by. If None, 
-            all regions will be returned. Default is `["UK"]`.
-    '''
-    
-    resolution = str(resolution).zfill(2)
-
-    nuts_dir = (f'{shapefile_dir}/'
-                f'ref-nuts-{year}-{resolution}m.shp/'
-                f'NUTS_RG_{resolution}M_{year}_{projection}_LEVL_{level}.shp')
-    
-    if not os.path.isdir(nuts_dir):
-        with ZipFile(f'{nuts_dir}.zip','r') as archive:
-            archive.extractall(nuts_dir)
-        
-    nuts_fin = (f'{nuts_dir}/'
-                f'NUTS_RG_{resolution}M_{year}_{projection}_LEVL_{level}.shp')
-    nuts_gdf = gpd.read_file(nuts_fin)
-    
-    if countries is not None:
-        nuts_gdf = nuts_gdf.set_index('CNTR_CODE').loc[countries].reset_index()
-        
-    return nuts_gdf
-
-
-def load_leps_regions(year, shapefile_dir):
-    '''load_leps_regions
-    Loads LEP shapefiles.
-    
-    Args:
-        year (int): LEP version year.
-        shapefile_dir (str): Directory where shapefiles are stored. 
-    '''
-    year = abs(year)
-    if year == 2014:
-        fin = 'Local_Enterprise_Partnerships_December_2014_Full_Clipped_Boundaries_in_England'
-    elif year == 2017:
-        fin = 'Local_Enterprise_Partnerships_April_2017_EN_BFC_V3'
-        
-    leps_dir = f'{shapefile_dir}/{fin}/{fin}.shp'
-    leps_gdf = gpd.read_file(leps_dir)
-    return leps_gdf
-
-
-def leps_year_spec(year):
-    '''leps_year_spec
-    Return earliest possible year for the LEP boundaries based
-    on a given year.
-    
-    Args:
-        year (int): Year of data.
-        
-    Returns:
-        (int): LEP boundary year specification.
-    '''
-    if year < 2014:
-        return -2014
-    elif 2014 <= year < 2017:
-        return 2014
-    elif year >= 2017:
-        return 2017
 
 
 def make_air_pollution_nuts(years, raw_data_dir, shapefile_dir,
@@ -262,12 +189,22 @@ pollution_type = 'pm10'
 out_dir = f'{project_dir}/data/processed/defra'
 var_name = f'air_pollution_{aggfunc.__name__}_{pollution_type}'
 
-mean_pm10_nuts2 = make_air_pollution_nuts(years, raw_data_dir, shapefile_dir, 
-        pollution_type='pm10', nuts_level=2)
-save_indicator(mean_pm10_nuts2, out_dir, f'{var_name}.nuts2')
-mean_pm10_nuts3 = make_air_pollution_nuts(years, raw_data_dir, shapefile_dir,
-        pollution_type='pm10', nuts_level=3)
-save_indicator(mean_pm10_nuts3, out_dir, f'{var_name}.nuts3')
-mean_pm10_leps = make_air_pollution_leps(years, raw_data_dir, shapefile_dir,
-        pollution_type='pm10')
-save_indicator(mean_pm10_leps, out_dir, f'{var_name}.lep')
+coders = {
+    'nuts2': NutsCoder(level=2),
+    'nuts3': NutsCoder(level=3),
+    'lep': LepCoder()
+    }
+
+pollution = []
+for year in years:
+    p = load_pollution_data(year, raw_data_dir, pollution_type)
+    p['year'] = year
+    pollution.append(p)
+pollution = pd.concat(pollution)
+
+for geo, coder in coders.items():
+    mean_pm10 = points_to_indicator(pollution, value_col='pm10', coder=coder,
+                    aggfunc=np.mean, value_rename=var_name,
+                    projection='EPSG:27700', x_col='x', y_col='y')
+    save_indicator(mean_pm10, 'defra', geo)
+

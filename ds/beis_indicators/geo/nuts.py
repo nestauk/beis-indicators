@@ -2,7 +2,6 @@ import json
 import pandas as pd
 import numpy as np
 
-from beis_indicators.utils.set_utils import set_containment
 
 NUTS_ENFORCED = {
     2003: 2003,
@@ -10,6 +9,16 @@ NUTS_ENFORCED = {
     2010: 2012,
     2013: 2015,
     2016: 2018,
+    2021: 2021,
+}
+
+NUTS_INTRODUCED = {
+    2003: 2003,
+    2006: 2006,
+    2010: 2010,
+    2013: 2013,
+    2016: 2016,
+    2021: 2021,
 }
 
 NUTS2_UK_IDS ={
@@ -41,23 +50,40 @@ NUTS2_UK_IDS ={
 
 NUTS_YEARS = np.array(list(NUTS2_UK_IDS.keys()))
 
+
 def _year_containments(ids, years):
     containments = []
     for year in years:
         year_ids = NUTS2_UK_IDS[year]
-        containments.append(set_containment(ids, year_ids))
+        containments.append(_set_containment(ids, year_ids))
     containments = np.array(containments)
     return containments
 
-def nuts_earliest(year):
+
+def nuts_earliest(year, mode='introduced'):
     '''nuts_earliest
     Returns the earliest possible NUTS version for a year
     based on the enforcement date.
+
+    Args:
+        year (int): A year
+        mode (str): Choose whether to map years against the year that a NUTS
+            version was enforced or introduced: Options:
+                - `introduced` (default)
+                - `enforced`
+    Returns:
+        earliest (int): The closest possible NUTS version year
     '''
-    for k, v in NUTS_ENFORCED.items():
+    if mode == 'introduced':
+        mapping = NUTS_INTRODUCED
+    elif mode == 'enforced':
+        mapping = NUTS_ENFORCED
+
+    for k, v in mapping.items():
         if year >= v:
             earliest = k
     return earliest
+
 
 def _detect_nuts2_uk(ids, year):
     '''detect_nuts
@@ -84,6 +110,7 @@ def _detect_nuts2_uk(ids, year):
         year_inferred = years[best[0]]
         return year_inferred
 
+
 def auto_nuts2_uk(df, year='year', nuts_id='nuts_id'):
     '''auto_nuts
     Auto generates values for nuts_year_spec if they are not provided.
@@ -105,3 +132,89 @@ def auto_nuts2_uk(df, year='year', nuts_id='nuts_id'):
 
     df = pd.concat(dfs, axis=0)
     return df
+
+
+def load_nuts_regions(year, shapefile_dir, level=2, projection=4326, resolution=1, countries=['UK']):
+    '''load_nuts_regions
+    Loads NUTS shapefiles.
+
+    Args:
+        year (int): NUTS version year.
+        shapefile_dir (str): Directory where shapefiles are stored. 
+        projection (int): Coordinate projection of shapefile. 
+            Choice of EPSG 3035, 3857 or 4326. Default is 4326
+        resolution (int): Shapefile resolution in metres.
+        countries (list): List of 2 letter country codes to filter by. If None, 
+            all regions will be returned. Default is `["UK"]`.
+    '''
+    
+    resolution = str(resolution).zfill(2)
+
+    nuts_dir = (f'{shapefile_dir}/'
+                f'ref-nuts-{year}-{resolution}m.shp/'
+                f'NUTS_RG_{resolution}M_{year}_{projection}_LEVL_{level}.shp')
+    
+    if not os.path.isdir(nuts_dir):
+        with ZipFile(f'{nuts_dir}.zip','r') as archive:
+            archive.extractall(nuts_dir)
+        
+    nuts_fin = (f'{nuts_dir}/'
+                f'NUTS_RG_{resolution}M_{year}_{projection}_LEVL_{level}.shp')
+    nuts_gdf = gpd.read_file(nuts_fin)
+    
+    if countries is not None:
+        nuts_gdf = nuts_gdf.set_index('CNTR_CODE').loc[countries].reset_index()
+        
+    return nuts_gdf
+
+
+def get_nuts_shape(year, shapefile_dir, resolution=1):
+    """get_nuts_shape
+
+    Args:
+        year (int): NUTS version year. Options are 2021, 2016, 2013,
+            2010, 2006 and 2003.
+        shapefile_dir (str): Directory where shapefiles are stored. 
+        resolution (int): Shapefile resolution in metres. Default is 1.
+            Options are 1, 3, 10, 20 and 60.
+    """
+    
+    resolution = str(resolution).zfill(2)
+
+    url = ('http://gisco-services.ec.europa.eu/distribution/'
+           f'v2/nuts/download/ref-nuts-{year}-{resolution}m.shp.zip')
+    fname = base_url.split('/')[-1]
+    fout = f'{shapefile_dir}/{fname}'
+
+    urlretrieve(url, fout)
+
+
+def nuts_year_spec(year, mode='introduced'):
+    '''nuts_earliest
+    Returns the earliest possible NUTS version for a year
+    based on the enforcement date.
+
+    Args:
+        year (int): A year
+        mode (str): Choose whether to map years against the year that a NUTS
+            version was enforced or introduced: Options:
+                - `introduced` (default)
+                - `enforced`
+    Returns:
+        earliest (int): The closest possible NUTS version year
+    '''
+    if mode == 'introduced':
+        mapping = NUTS_INTRODUCED
+    elif mode == 'enforced':
+        mapping = NUTS_ENFORCED
+
+    for k, v in mapping.items():
+        if year >= v:
+            earliest = k
+    return earliest
+
+
+def _set_containment(a, b):
+    i = len(set(a).intersection(set(b)))
+    c = i / len(a)
+    return c
