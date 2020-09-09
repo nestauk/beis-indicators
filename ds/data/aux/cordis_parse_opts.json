@@ -1,0 +1,1 @@
+{"projects": {"list_sep": ";", "list_cols": ["participants", "participantCountries", "programme"], "drop_cols": ["subjects"]}, "organizations": {"list_sep": ";", "list_cols": ["programme"], "drop_cols": []}, "sdgs": {}}
