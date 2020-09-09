@@ -94,10 +94,12 @@ class NutsCoder(_Coder):
     def _get_shape(self, year):
         """_get_shape
         """
+        if not os.path.isdir(self.SHAPE_DIR):
+            os.mkdir(self.SHAPE_DIR)
         resolution = str(self.resolution).zfill(2)
         url = self.SHAPE_URL.format(year=year, resolution=resolution)
         fname = url.split('/')[-1]
-        fout = f'{self.SHAPE_DIR}/{fname}'
+        fout = os.path.join(self.SHAPE_DIR, fname)
         urlretrieve(url, fout)
 
     def __init__(self, resolution=1, level=2, nuts_countries=['UK']):
@@ -138,7 +140,6 @@ class NutsCoder(_Coder):
         else:
             x, y = self._translate_coordinates(np.array(x), np.array(y),
                     projection, self.PROJECTION)
-
         points = self._coordinates_to_points(x, y, data=data)
         joined = self._reverse_geocode(points, year)
         joined = joined.rename(columns={'NUTS_ID': 'nuts_id'})
@@ -163,8 +164,10 @@ class LepCoder(_Coder):
     def _get_shape(self, year, url):
         """_get_shape
         """
+        if not os.path.isdir(self.SHAPE_DIR):
+            os.mkdir(self.SHAPE_DIR)
         fname = self.FILE.format(year=year)
-        fout = f'{self.SHAPE_DIR}/{fname}'
+        fout = os.path.join(self.SHAPE_DIR, fname)
         urlretrieve(url, fout)
 
     def _load_shapes(self):

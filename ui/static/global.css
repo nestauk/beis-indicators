@@ -50,6 +50,10 @@ a {
 	margin-bottom: 1rem;
 }
 
+.clickable {
+	cursor: pointer;
+}
+
 :root {
 	--box-shadow-y: 0px 8px 9px -4px lightgrey;
 	--box-shadow-xy: 2px 8px 9px -4px lightgrey;

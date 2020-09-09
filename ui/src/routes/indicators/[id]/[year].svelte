@@ -10,8 +10,9 @@
 <script>
 	import * as _ from 'lamb';
 	import {extent} from 'd3-array';
-	import {geoEqualEarth} from 'd3-geo';
+	import {geoEqualEarth as projectionFn} from 'd3-geo';
 	import {writable} from 'svelte/store';
+	import {topoToGeo, defaultGeometry} from '@svizzle/choropleth/src/utils';
 	import ChoroplethG from '@svizzle/choropleth/src/ChoroplethG.svelte';
 	import ColorBinsG from '@svizzle/legend/src/ColorBinsG.svelte';
 	import BarchartVDiv from '@svizzle/barchart/src/BarchartVDiv.svelte';
@@ -27,18 +28,18 @@
 	import {feature} from 'topojson-client';
 	import {setGeometryPrecision} from '@svizzle/geo';
 
-	import Modal from 'app/components/Modal.svelte';
+	import InfoModal from 'app/components/InfoModal.svelte';
 	import IconInfo from 'app/components/icons/IconInfo.svelte';
 	import {lookup} from 'app/data/groups';
 	import yearlyKeyToLabel from 'app/data/NUTS2_UK_labels';
 	import {
 		availableYearsStore,
 		lookupStore,
-		modalStore,
-		resetModal,
+		infoModalStore,
+		hideInfoModal,
 		resetSafetyStore,
 		selectedYearStore,
-		toggleModal,
+		toggleInfoModal,
 	} from 'app/stores';
 	import majorCities from 'app/data/majorCities';
 	import topos from 'app/data/topojson';
@@ -65,25 +66,13 @@
 	const labelPadding = labelsFontSize / 2;
 	const labelDx = markerRadius + labelPadding;
 	const legendBarThickness = 40;
-	const projection = geoEqualEarth();
 	const topojsonId = 'NUTS'; // TODO pass this via data when we'll have LEPs
-
-	/* TODO import {topoToGeo, defaultGeometry} from '@svizzle/choropleth/src/utils' @0.4.0 */
-	const truncateGeojson = setGeometryPrecision(4);
-	const topoToGeo = (topojson, id) =>
-		truncateGeojson(feature(topojson, topojson.objects[id]));
-	const defaultGeometry = {
-		bottom: 10,
-		left: 10,
-		right: 10,
-		top: 10,
-	};
 
 	let selectedKeys = [];
 
 	$: legendHeight = height / 3;
 	$: choroplethSafety = {...defaultGeometry, left: legendBarThickness * 2};
-	$: id && year && resetModal();
+	$: id && year && hideInfoModal();
 	$: $selectedYearStore = Number(year);
 	$: formatFn = getIndicatorFormat(id, lookup);
 	$: getIndicatorValue = makeValueAccessor(id);
@@ -143,14 +132,14 @@
 		width - choroplethSafety.left - choroplethSafety.right;
 	$: fitProjection =
 		geojson &&
-		projection.fitSize([choroplethInnerWidth, choroplethInnerHeight], geojson);
+		projectionFn().fitSize([choroplethInnerWidth, choroplethInnerHeight], geojson);
 	$: places = _.map(majorCities, obj => {
 		const [x, y] = fitProjection([obj.lng, obj.lat]);
 		const X = x + choroplethSafety.left;
 		const length = obj.name.length * labelsFontSize * 0.6;
 		const isLeft =
 			obj.isLeft && X - labelDx - length < choroplethSafety.left
-				? isLeft = false
+				? false
 				: X + labelDx + length > width - choroplethSafety.right
 					? true
 					: obj.isLeft;
@@ -241,7 +230,7 @@
 			<h1>{description_short} ({year})</h1>
 			<p>{description}</p>
 		</div>
-		<div on:click={toggleModal}>
+		<div on:click={toggleInfoModal}>
 			<IconInfo
 				size=30
 				strokeWidth=1.5
@@ -260,10 +249,10 @@
 				{width}
 				{height}
 			>
-				<!-- TODO /chropleth 0.4.0: projectionFn=fitProjection -->
 				<ChoroplethG
 					{height}
 					{keyToColor}
+					{projectionFn}
 					{selectedKeys}
 					{topojson}
 					{topojsonId}
@@ -273,7 +262,6 @@
 					key='NUTS_ID'
 					on:entered={onEntered}
 					on:exited={onExited}
-					projection='geoEqualEarth'
 					theme={{
 						defaultFill: 'lightgrey',
 						defaultStroke: 'black',
@@ -339,11 +327,12 @@
 				on:exited={onExitedBar}
 				shouldResetScroll={true}
 				shouldScrollToFocusedKey={true}
+				theme={{titleFontSize: '1.2rem'}}
 				title={barchartTitle}
 			/>
 		</div>
-		{#if $modalStore.isVisible}
-		<Modal
+		{#if $infoModalStore.isVisible}
+		<InfoModal
 			{api_doc_url}
 			{api_type}
 			{auth_provider}
@@ -357,7 +346,7 @@
 			{source_url}
 			{url}
 			{year_range}
-			on:click={toggleModal}
+			on:click={toggleInfoModal}
 		/>
 		{/if}
 	</section>
@@ -419,9 +408,8 @@
 		grid-column: 2 / span 1;
 	}
 
-	/* TODO use `titleFontSize` with next @svizzle/barchart */
+
 	:global(.col2 .BarchartVDiv header h2) {
-		font-size: 1rem;
 		margin-bottom: 1rem;
 	}
 
