@@ -19,7 +19,7 @@ schema:
   value:
     description: Private household income in euros (to the nearest 100)
     format: ','
-    id: eurostat_private_income_households
+    id: eurostat_private_households_income
     label: Income (to nearest 100)
     type: EUR
     data_type: float
