@@ -19,12 +19,11 @@ schema:
   lep_year_spec: # change this key to `lep_year_spec` or `lep_year_spec`
     type: LepRegion.lep_year_spec # change this key to `LepRegion.lep_year_spec` or `LepRegion.lep_year_spec`
   value:
-    data_type: EUR 
     description: total Horizon 2020 funding
     format: .2f 
     id: cordis_funding
     label: Total Funding
-    type: Euro
+    type: EUR
   year:
     data_type: int
     label: Year
