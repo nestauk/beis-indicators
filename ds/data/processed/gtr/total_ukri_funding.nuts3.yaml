@@ -1,0 +1,30 @@
+api_doc_url: https://gtr.ukri.org/resources/GtR-2-API-v1.7.4.pdf
+api_type: MySQL
+auth_provider: Nesta
+data_date: 20200910
+description_long: Total amount of funding (GBP) awarded by UK Research and Innovation (UKRI) for research and innovation projects. Organisations that recieve funding include universities and private companies. Some projects have multiple organisations who may have been awarded funding, however due to limitations with the data provided by Gateway to Research we have attributed the total funding for a project to the lead organisation.
+description_short: Total funding (GBP) for research awarded by UKRI
+description: Sum of all research funding (GBP) awarded by UK Research and Innovation (UKRI) 
+framework_group: public_rnd_capability
+is_experimental: False
+is_public: False
+order: [year, nuts_id, nuts_year_spec, value.id]
+region:
+  type: NutsRegion
+  level: 3
+schema:
+  nuts_id:
+    type: NutsRegion.id
+  nuts_year_spec:
+    type: NutsRegion.year_spec
+  value:
+    description: Total funding (GBP) for research awarded by UKRI 
+    format: .2f
+    id: total_ukri_funding
+    label: Total Funding
+    type: GBP
+  year:
+    data_type: int
+    label: Year
+source_name: UKRI (UK Research and Innovation)
+source_url: https://gtr.ukri.org
