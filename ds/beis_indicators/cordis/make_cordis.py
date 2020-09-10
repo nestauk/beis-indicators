@@ -14,7 +14,7 @@ var_name = f'cordis_funding'
 aggfunc = np.sum
 out_dir = 'cordis'
 min_year = 2014
-max_year = 2021
+max_year = 2020
 
 coders = {
     'nuts2': NutsCoder(level=2),
