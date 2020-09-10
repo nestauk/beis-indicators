@@ -5,6 +5,7 @@
 - add Number of technology companies (Crunchbase) (#63)
 - add additional HE-BCI indicators (#347)
 - add Travel connectivity indicators: to airport, to rail station, road junction times (#329)
+- add international and internal migration indicator (#327)
 
 ## Tool
 
