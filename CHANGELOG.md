@@ -4,7 +4,7 @@
 - add patent and trademark indicators based on Eurostat data (#282)
 - add Innovate UK funding data (#295)
 - add housing cost indicator (#285)
-- add Horizon 2020 funding data (#321)
+- add Horizon 2020 funding data (#326)
 - UI:
 	- Barchart to automatically scroll to the focused key (#275)
 	- Add a color legend to the map view (#269)
