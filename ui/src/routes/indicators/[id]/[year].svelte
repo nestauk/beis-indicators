@@ -21,12 +21,12 @@
 		applyFnMap,
 		getValue,
 		inclusiveRange,
+		keyValueArrayAverage,
 		keyValueArrayToObject,
 		mergeObj,
 	} from '@svizzle/utils';
 
 	import {feature} from 'topojson-client';
-	import {setGeometryPrecision} from '@svizzle/geo';
 
 	import GeoFilterModal from 'app/components/GeoFilterModal.svelte';
 	import InfoModal from 'app/components/InfoModal.svelte';
@@ -58,6 +58,7 @@
 	import {
 		getIndicatorFormat,
 		getNutsId,
+		getRefFormat,
 		makeColorBins,
 		makeColorScale,
 		makeValueAccessor,
@@ -87,6 +88,7 @@
 	$: id && year && hideInfoModal();
 	$: $selectedYearStore = Number(year);
 	$: formatFn = getIndicatorFormat(id, lookup);
+	$: refFormatFn = getRefFormat(id, lookup);
 	$: getIndicatorValue = makeValueAccessor(id);
 	$: $availableYearsStore = inclusiveRange(year_range);
 	$: data && lookupStore.update(_.setPath(`${id}.data`, data));
@@ -136,6 +138,12 @@
 	$: filteredItems = _.filter(items, ({key}) =>
 		_.isIn($selectedNUT2IdsStore, key) || _.isIn($preselectedNUTS2IdsStore, key)
 	);
+	$: refs = [{
+		key: 'National average',
+		keyAbbr: 'Nat. avg.',
+		value: keyValueArrayAverage(items),
+		formatFn: refFormatFn
+	}];
 
 	// colors
 	$: valueExtext = extent(data, getIndicatorValue);
@@ -411,6 +419,7 @@
 				{focusedKey}
 				{formatFn}
 				{keyToLabel}
+				{refs}
 				{selectedKeys}
 				isInteractive={true}
 				items={$doFilterRegionsStore ? filteredItems : items}
