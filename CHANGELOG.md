@@ -8,7 +8,7 @@
 - UI:
 	- Barchart to automatically scroll to the focused key (#275)
 	- Add a color legend to the map view (#269)
-	- Add major cities labels (#286)
+	- Add major cities labels (#286, #335)
 	- Automatically scroll the sidebar to the current indicator (#219)
 	- Added regional selection for the trends route (#298)
 	- Added regional selection for the year route (#316)

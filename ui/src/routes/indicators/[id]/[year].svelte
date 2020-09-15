@@ -200,10 +200,12 @@
 					? true
 					: obj.isLeft;
 		const dx = isLeft ? -labelDx : labelDx;
+		const dy = obj.isBottom ? 2 * markerRadius : obj.isTop ? -2 * markerRadius : 0;
 
 		return {
 			...obj,
 			dx,
+			dy,
 			isLeft,
 			X,
 			Y: y + choroplethSafety.top,
@@ -355,17 +357,19 @@
 				<!-- cities -->
 				{#if cities}
 				<g class='cities'>
-					{#each cities as {isLeft, name, X, Y, dx}}
+					{#each cities as {isLeft, name, X, Y, dx, dy}}
 						<g transform='translate({X},{Y})'>
 							<circle r={markerRadius}/>
 							<text
 								{dx}
+								{dy}
 								class:isLeft
 								class='background'
 								font-size={labelsFontSize}
 							>{name}</text>
 							<text
 								{dx}
+								{dy}
 								class:isLeft
 								font-size={labelsFontSize}
 							>{name}</text>
@@ -584,7 +588,7 @@
 		fill-opacity: 0.8;
 		stroke: white;
 		stroke-opacity: 0.8;
-		stroke-width: 5;
+		stroke-width: 4;
 	}
 
 	/* tooltip */
