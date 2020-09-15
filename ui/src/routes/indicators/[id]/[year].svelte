@@ -90,7 +90,7 @@
 	$: formatFn = getIndicatorFormat(id, lookup);
 	$: refFormatFn = getRefFormat(id, lookup);
 	$: getIndicatorValue = makeValueAccessor(id);
-	$: $availableYearsStore = inclusiveRange(year_range);
+	$: $availableYearsStore = inclusiveRange(year_extent);
 	$: data && lookupStore.update(_.setPath(`${id}.data`, data));
 	$: ({
 		api_doc_url,
@@ -109,7 +109,7 @@
 		source_url,
 		url,
 		warning,
-		year_range,
+		year_extent,
 	} = $lookupStore[id] || {});
 
 	$: labelUnit =
@@ -466,7 +466,7 @@
 			{source_name}
 			{source_url}
 			{url}
-			{year_range}
+			{year_extent}
 			{warning}
 			on:click={toggleInfoModal}
 		/>

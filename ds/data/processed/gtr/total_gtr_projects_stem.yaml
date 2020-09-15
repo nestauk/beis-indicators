@@ -30,4 +30,3 @@ schema:
     label: Year
 source_name: UKRI (UK Research and Innovation)
 source_url: https://gtr.ukri.org
-year_range: [2010, 2018]

@@ -28,4 +28,3 @@ schema:
     label: Academic year (start)
 source_name: HESA (Higher Education Statistical Agency)
 source_url: https://www.hesa.ac.uk/
-year_range: [2015,2018]

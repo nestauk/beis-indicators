@@ -33,4 +33,3 @@ schema:
     data_type: int
     label: Year
 source_name: OFCOM
-year_range: [2014, 2019]

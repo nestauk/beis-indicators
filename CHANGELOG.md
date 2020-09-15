@@ -18,6 +18,7 @@
 - Specs:
 	- Add the `description_long` field to the spec template (#272)
 	- Add the `warning` field to the spec template (#288)
+	- Removed the `year_range` field, now derived automatically (#218)
 
 # 0.0.11
 

@@ -38,4 +38,3 @@ schema:
     data_type: int
     label: Year
 source_name: DEFRA
-year_range: [2007, 2018]

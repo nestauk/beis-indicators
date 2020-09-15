@@ -29,4 +29,3 @@ schema:
     label: Year
 source_name: Innovate UK (via gov.uk)
 source_url: https://www.gov.uk/
-year_range: [2010,2020]

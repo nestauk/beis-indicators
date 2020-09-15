@@ -31,4 +31,3 @@ schema:
     label: Year
 source_name: EU Open Data Portal
 source_url: https://data.europa.eu/
-year_range: [2014, 2020] # [min year, max year]

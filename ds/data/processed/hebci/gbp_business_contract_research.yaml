@@ -28,4 +28,3 @@ schema:
     label: Year
 source_name: HESA (Higher Education Statistical Agency)
 source_url: https://www.hesa.ac.uk/
-year_range: [2014,2017]

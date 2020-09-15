@@ -4,9 +4,16 @@ import path from 'path';
 
 import * as _ from 'lamb';
 import yaml from 'js-yaml';
-import {readDir, readFile, readJson, saveObj} from '@svizzle/file';
+import {extent} from 'd3-array';
+import {
+	readDir,
+	readCsv,
+	readFile,
+	readJson,
+	saveObj
+} from '@svizzle/file';
 import {tapMessage, tapWith} from '@svizzle/dev';
-import {applyFnMap, isKeyOf} from '@svizzle/utils';
+import {applyFnMap, isKeyOf, transformValues} from '@svizzle/utils';
 
 import {isNotLepFile, isNotNuts3File} from './utils';
 
@@ -16,6 +23,7 @@ const FRAMEWORK_PATH = path.resolve(__dirname, '../../ds/data/aux/framework.json
 const GROUPS_PATH =
 	path.resolve(__dirname, '../src/node_modules/app/data/indicatorsGroups.json');
 
+const saveIndex = saveObj(GROUPS_PATH, 2);
 const isDir = name => !name.startsWith('.') && path.parse(name).ext === '';
 const isYamlFile = name => path.parse(name).ext === '.yaml';
 const makePath = dirName => filename => path.resolve(
@@ -29,7 +37,7 @@ const makeCsvUrl = filename => {
 	return `/data/${name}.csv`;
 }
 const setUrl = url => obj => _.setIn(obj, 'url', url);
-const saveIndex = saveObj(GROUPS_PATH, 2);
+const yamlToCsvPath = filepath => filepath.replace('.yaml', '.csv')
 
 const isFloatNoFormat = obj =>
 	!obj.format &&
@@ -93,10 +101,16 @@ const process = async () => {
 	const indicatorsGroups = await Promise.all(
 		_.flatten(refs)
 		.map(({filepath, url}) =>
-			readFile(filepath, 'utf-8')
-			.then(yaml.safeLoad)
-			.then(tapWith([needsFormat, `needsFormat? ${filepath}`]))
-			.then(setUrl(url))
+			Promise.all([
+				readFile(filepath, 'utf-8')
+				.then(yaml.safeLoad)
+				.then(tapWith([needsFormat, `needsFormat? ${filepath}`]))
+				.then(setUrl(url)),
+
+				readCsv(yamlToCsvPath(filepath), transformValues({year: Number}))
+				.then(csv => extent(csv, _.getKey('year')))
+			])
+			.then(([spec, year_extent]) => _.setIn(spec, 'year_extent', year_extent))
 		)
 	).then(_.groupBy(_.getKey('framework_group')));
 

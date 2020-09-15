@@ -42,8 +42,3 @@ source_name:
 source_url:
   - https://www.nomisweb.co.uk (ASHE and BRES)
   - https.//www.gov.uk (HPI)
-year_range: [2018,2018]
-
-
-# [1] https://docs.python.org/3/library/string.html#format-specification-mini-language
-# [2] https://github.com/d3/d3-format

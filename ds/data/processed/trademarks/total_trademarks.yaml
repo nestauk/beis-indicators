@@ -26,4 +26,3 @@ schema:
     label: Year
 source_name: IPO (Intellectual Property Office)
 source_url: https://www.gov.uk/government/organisations/intellectual-property-office
-year_range: [2010, 2018]

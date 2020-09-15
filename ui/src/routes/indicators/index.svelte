@@ -65,27 +65,27 @@
 					</g>
 					{/each}
 
-					{#each indicators as {description_short, schema, year_range}, y}
+					{#each indicators as {description_short, schema, year_extent}, y}
 					<g
 						class='indicatorsrange'
 						transform='translate(0,{vStep * (y + 1)})'
 					>
 						<text
 							class='bkg'
-							x='{(layout.scaleX(year_range[0]) + layout.scaleX(year_range[1])) / 2}'
+							x='{(layout.scaleX(year_extent[0]) + layout.scaleX(year_extent[1])) / 2}'
 							dy='{-(layout.fontSize + gap)}'
 							font-size={layout.fontSize}
 						>{description_short}</text>
 						<text
-							x='{(layout.scaleX(year_range[0]) + layout.scaleX(year_range[1])) / 2}'
+							x='{(layout.scaleX(year_extent[0]) + layout.scaleX(year_extent[1])) / 2}'
 							dy='{-(layout.fontSize + gap)}'
 							font-size={layout.fontSize}
 						>{description_short}</text>
 						<line
-							x1='{layout.scaleX(year_range[0]) + layout.radius}'
-							x2='{layout.scaleX(year_range[1]) - layout.radius}'
+							x1='{layout.scaleX(year_extent[0]) + layout.radius}'
+							x2='{layout.scaleX(year_extent[1]) - layout.radius}'
 						/>
-						{#each inclusiveRange(year_range) as year}
+						{#each inclusiveRange(year_extent) as year}
 						{#if process.env.SAPPER_EXPORT}
 						<a rel='prefetch' href='/indicators/{schema.value.id}/{year}'>
 							<circle

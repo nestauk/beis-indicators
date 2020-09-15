@@ -116,11 +116,11 @@
 		source_url,
 		url,
 		warning,
-		year_range,
+		year_extent,
 	} = $lookupStore[id] || {});
 
 	$: formatFn = getIndicatorFormat(id, lookup);
-	$: $availableYearsStore = inclusiveRange(year_range)
+	$: $availableYearsStore = inclusiveRange(year_extent)
 	$: layout = $timelineLayoutStore;
 	$: getIndicatorValue = makeValueAccessor(id);
 	$: setOrder = makeSetOrderWith(getIndicatorValue);
@@ -174,10 +174,10 @@
 		}))
 	}));
 
-	$: X1 = layout.fullScaleX(year_range[0]);
-	$: X2 = layout.fullScaleX(year_range[1]);
-	$: x1 = layout.scaleX(year_range[0]);
-	$: x2 = layout.scaleX(year_range[1]);
+	$: X1 = layout.fullScaleX(year_extent[0]);
+	$: X2 = layout.fullScaleX(year_extent[1]);
+	$: x1 = layout.scaleX(year_extent[0]);
+	$: x2 = layout.scaleX(year_extent[1]);
 	$: xMed = (x1 + x2) / 2;
 
 	$: chartTitle = `${useOrderScale ? 'Ranking by' : ''} ${schema.value.label}`;
@@ -426,7 +426,7 @@
 			{source_url}
 			{url}
 			{warning}
-			{year_range}
+			{year_extent}
 			on:click={toggleInfoModal}
 		/>
 		{/if}
