@@ -18,7 +18,9 @@ schema:
   nuts_year_spec: # change this key to `nuts_year_spec` or `lep_year_spec`
     type: NutsRegion.nuts_year_spec
   value:
+    data_type: int
     description: Funding received from innovate UK
+    format: ','
     id: gbp_innovate_uk_funding
     label: Funding received from Innovate UK
     type: GBP

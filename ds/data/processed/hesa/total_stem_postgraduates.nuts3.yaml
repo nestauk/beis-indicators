@@ -16,10 +16,10 @@ schema:
   nuts_year_spec:
     type: NutsRegion.year_spec
   value:
+    data_type: int
     description: Total number of full-time postgraduate students enrolled in STEM subjects in the area (definition of STEM subjects in aux folder)
     id: total_stem_postgraduates
     label: Total number of postgraduate students in STEM subjects
-    type: int
   year:
     data_type: int
     label: Academic year (start)

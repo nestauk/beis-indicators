@@ -16,6 +16,7 @@ schema:
   nuts_year_spec:
     type: NutsRegion.year_spec
   value:
+    data_type: int
     description: Research income for universities in the region
     format: ','
     id: gbp_research_income

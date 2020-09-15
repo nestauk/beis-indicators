@@ -8,17 +8,17 @@ is_experimental: False
 order: [year, lep_id, lep_year_spec, value.id]
 region:
   type: LepRegion
-  source_url: https://geoportal.statistics.gov.uk/search?collection=Dataset&sort=name&tags=all(BDY_LEP) 
+  source_url: https://geoportal.statistics.gov.uk/search?collection=Dataset&sort=name&tags=all(BDY_LEP)
 schema:
   lep_id:
     type: LepRegion.id
   lep_year_spec:
     type: LepRegion.year_spec
   value:
+    data_type: int
     description: Total number of full-time students enrolled in STEM subjects in the area
     id: total_stem_students
     label: Total number of students in STEM subjects
-    type: int
   year:
     data_type: int
     label: Academic year (start)

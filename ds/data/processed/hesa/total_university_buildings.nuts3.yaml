@@ -16,10 +16,10 @@ schema:
   nuts_year_spec:
     type: NutsRegion.year_spec
   value:
+    data_type: int
     description: Total number of buildings in the area
     id: total_university_buildings
     label: Total number of buildings
-    type: int
   year:
     data_type: int
     label: Academic year (start)

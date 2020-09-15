@@ -16,10 +16,10 @@ schema:
   nuts_year_spec:
     type: NutsRegion.year_spec
   value:
+    data_type: int
     description: Total number of full-time students enrolled in STEM subjects in the area
     id: total_stem_students
     label: Total number of students in STEM subjects
-    type: int
   year:
     data_type: int
     label: Academic year (start)
