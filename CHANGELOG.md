@@ -14,8 +14,10 @@
 	- Added regional selection for the year route (#316)
 	- Show national average on the barchart (#290)
 	- Show long descriptions in the info panel (#273)
+	- Show the `warning` field in the info panel (#288)
 - Specs:
-	- Add `description_long` to the spec template (#272)
+	- Add the `description_long` field to the spec template (#272)
+	- Add the `warning` field to the spec template (#288)
 
 # 0.0.11
 

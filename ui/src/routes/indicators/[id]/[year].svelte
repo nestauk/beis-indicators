@@ -108,6 +108,7 @@
 		source_name,
 		source_url,
 		url,
+		warning,
 		year_range,
 	} = $lookupStore[id] || {});
 
@@ -466,6 +467,7 @@
 			{source_url}
 			{url}
 			{year_range}
+			{warning}
 			on:click={toggleInfoModal}
 		/>
 		{/if}
