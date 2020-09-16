@@ -169,8 +169,6 @@ def load_nuts_regions(year, shapefile_dir, level=2, projection=4326, resolution=
         nuts_gdf = nuts_gdf.set_index('CNTR_CODE').loc[countries].reset_index()
         
     return nuts_gdf
-<<<<<<< HEAD:ds/beis_indicators/utils/nuts_utils.py
-=======
 
 
 def get_nuts_shape(year, shapefile_dir, resolution=1):
