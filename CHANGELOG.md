@@ -1,3 +1,23 @@
+# 0.0.12 (next)
+
+- Add `description_long` to the spec template (#272)
+- add patent and trademark indicators based on Eurostat data (#282)
+- add Innovate UK funding data (#295)
+- add housing cost indicator (#285)
+- add Horizon 2020 funding data (#326)
+- UI:
+	- Barchart to automatically scroll to the focused key (#275)
+	- Add a color legend to the map view (#269)
+	- Add major cities labels (#286)
+	- Automatically scroll the sidebar to the current indicator (#219)
+	- Added regional selection for the trends route (#298)
+	- Added regional selection for the year route (#316)
+
+# 0.0.11
+
+- Fixed code and data for broadband data (#250)
+- Fixed code and data for HEBCI (#249)
+
 # 0.0.10
 
 - add buttons to download the complete dataset (#239)

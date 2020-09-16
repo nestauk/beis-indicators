@@ -19,39 +19,39 @@ const DATA_DIR_STATIC = path.resolve(__dirname, '../static/data');
 const isDir = name => !name.startsWith('.') && path.parse(name).ext === '';
 const isCsvFile = name => path.parse(name).ext === '.csv';
 const makePath = dirName => filename => path.resolve(
-  DATA_DIR,
-  dirName,
-  filename
+	DATA_DIR,
+	dirName,
+	filename
 );
 
 const process = async () => {
 
-  /* delete the data dir */
+	/* delete the data dir */
 
-  await del([DATA_DIR_STATIC]);
+	await del([DATA_DIR_STATIC]);
 
-  /* copy the files */
+	/* copy the files */
 
-  // FIXME use a proper walker
-  const dirNames = await readDir(DATA_DIR).then(_.filterWith(isDir));
-  const refs = await Promise.all(
-    _.map(dirNames, dirName =>
-      readDir(path.resolve(DATA_DIR, dirName))
-      .then(_.pipe([
-        _.filterWith(_.allOf([isCsvFile, isNotNuts3File, isNotLepFile])),
-        _.mapWith(makePath(dirName))
-      ]))
-    )
-  )
-  .then(_.flatten);
+	// FIXME use a proper walker
+	const dirNames = await readDir(DATA_DIR).then(_.filterWith(isDir));
+	const refs = await Promise.all(
+		_.map(dirNames, dirName =>
+			readDir(path.resolve(DATA_DIR, dirName))
+			.then(_.pipe([
+				_.filterWith(_.allOf([isCsvFile, isNotNuts3File, isNotLepFile])),
+				_.mapWith(makePath(dirName))
+			]))
+		)
+	)
+	.then(_.flatten);
 
-  await cpy(refs, DATA_DIR_STATIC);
+	await cpy(refs, DATA_DIR_STATIC);
 
-  /* zip them */
+	/* zip them */
 
-  const tmpZipPath = tempy.file({name: zipName});
-  await zip(DATA_DIR_STATIC, tmpZipPath);
-  await cpy(tmpZipPath, DATA_DIR_STATIC);
+	const tmpZipPath = tempy.file({name: zipName});
+	await zip(DATA_DIR_STATIC, tmpZipPath);
+	await cpy(tmpZipPath, DATA_DIR_STATIC);
 }
 
 process().then(tapMessage(`Copied data to ${DATA_DIR_STATIC}`))

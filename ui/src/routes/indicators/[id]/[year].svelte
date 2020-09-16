@@ -10,36 +10,55 @@
 <script>
 	import * as _ from 'lamb';
 	import {extent} from 'd3-array';
+	import {geoEqualEarth as projectionFn} from 'd3-geo';
 	import {writable} from 'svelte/store';
-	import ChoroplethDiv from '@svizzle/choropleth/src/ChoroplethDiv.svelte';
-	import BarchartV from '@svizzle/barchart/src/BarchartV.svelte';
+	import {topoToGeo, defaultGeometry} from '@svizzle/choropleth/src/utils';
+	import ChoroplethG from '@svizzle/choropleth/src/ChoroplethG.svelte';
+	import ColorBinsG from '@svizzle/legend/src/ColorBinsG.svelte';
+	import BarchartVDiv from '@svizzle/barchart/src/BarchartVDiv.svelte';
 	import {makeStyle, toPx} from '@svizzle/dom';
 	import {
 		applyFnMap,
 		getValue,
 		inclusiveRange,
 		keyValueArrayToObject,
-		mergeObj
+		mergeObj,
 	} from '@svizzle/utils';
 
-	import Modal from 'app/components/Modal.svelte';
+	import {feature} from 'topojson-client';
+	import {setGeometryPrecision} from '@svizzle/geo';
+
+	import GeoFilterModal from 'app/components/GeoFilterModal.svelte';
+	import InfoModal from 'app/components/InfoModal.svelte';
+	import IconChevronDown from 'app/components/icons/IconChevronDown.svelte';
+	import IconChevronUp from 'app/components/icons/IconChevronUp.svelte';
+	import IconGlobe from 'app/components/icons/IconGlobe.svelte';
 	import IconInfo from 'app/components/icons/IconInfo.svelte';
+	import Switch from 'app/components/Switch.svelte';
 	import {lookup} from 'app/data/groups';
 	import yearlyKeyToLabel from 'app/data/NUTS2_UK_labels';
 	import {
 		availableYearsStore,
+		doFilterRegionsStore,
+		geoModalStore,
+		hideInfoModal,
+		infoModalStore,
 		lookupStore,
-		modalStore,
-		resetModal,
+		nutsSelectionStore,
+		preselectedNUTS2IdsStore,
 		resetSafetyStore,
+		selectedNUT2IdsStore,
 		selectedYearStore,
-		toggleModal,
+		toggleGeoModal,
+		toggleInfoModal,
 	} from 'app/stores';
+	import majorCities from 'app/data/majorCities';
 	import topos from 'app/data/topojson';
 	import types from 'app/data/types';
 	import {
 		getIndicatorFormat,
 		getNutsId,
+		makeColorBins,
 		makeColorScale,
 		makeValueAccessor,
 		parseCSV,
@@ -53,9 +72,19 @@
 	export let width;
 	export let height;
 
+	const defaultGray = '#f3f3f3';
+	const markerRadius = 4;
+	const labelsFontSize = 13;
+	const labelPadding = labelsFontSize / 2;
+	const labelDx = markerRadius + labelPadding;
+	const legendBarThickness = 40;
+	const topojsonId = 'NUTS'; // TODO pass this via data when we'll have LEPs
+
 	let selectedKeys = [];
 
-	$: id && year && resetModal();
+	$: legendHeight = height / 3;
+	$: choroplethSafety = {...defaultGeometry, left: legendBarThickness * 2};
+	$: id && year && hideInfoModal();
 	$: $selectedYearStore = Number(year);
 	$: formatFn = getIndicatorFormat(id, lookup);
 	$: getIndicatorValue = makeValueAccessor(id);
@@ -66,6 +95,7 @@
 		api_type,
 		auth_provider,
 		data_date,
+		description_long,
 		description_short,
 		description,
 		endpoint_url,
@@ -103,19 +133,74 @@
 		_.sortWith([_.sorterDesc(getValue)])
 	]);
 	$: items = yearData && makeItems(yearData);
-	$: nuts_year_spec = yearData && yearData[0].nuts_year_spec
-	$: topojson = nuts_year_spec && topos[`NUTS_RG_03M_${nuts_year_spec}_4326_LEVL_2_UK`];
-	$: keyToLabel = yearlyKeyToLabel[nuts_year_spec];
+	$: filteredItems = _.filter(items, ({key}) =>
+		_.isIn($selectedNUT2IdsStore, key) || _.isIn($preselectedNUTS2IdsStore, key)
+	);
 
+	// colors
 	$: valueExtext = extent(data, getIndicatorValue);
 	$: colorScale = makeColorScale(valueExtext);
+	$: colorBins = makeColorBins(colorScale);
 	$: makeKeyToColor = _.pipe([
 		keyValueArrayToObject,
 		_.mapValuesWith(colorScale)
 	]);
-	$: keyToColor = makeKeyToColor(items);
-	$: focusedKey = $tooltip.isVisible ? $tooltip.nuts_id : undefined;
-	$: selectedKeys = $tooltip.isVisible ? [$tooltip.nuts_id] : [];
+	$: keyToColorAll = makeKeyToColor(items);
+	$: keyToColorFiltered = makeKeyToColor(filteredItems);
+
+	// map
+	$: nuts_year_spec = yearData && yearData[0].nuts_year_spec
+	$: keyToLabel = nuts_year_spec && yearlyKeyToLabel[nuts_year_spec];
+	$: topojson =
+		nuts_year_spec && topos[`NUTS_RG_03M_${nuts_year_spec}_4326_LEVL_2_UK`];
+	$: baseGeojson = topojson && topoToGeo(topojson, topojsonId);
+	$: featuresIndex = baseGeojson &&
+		_.index(baseGeojson.features, _.getPath('properties.NUTS_ID'));
+	$: filteredGeojson = baseGeojson && _.setPathIn(baseGeojson, 'features',
+		_.reduce(selectedKeys, (acc, key) => {
+			featuresIndex[key] && acc.push(featuresIndex[key]);
+			return acc;
+		}, [])
+	);
+	$: choroplethInnerHeight =
+		height - choroplethSafety.top - choroplethSafety.bottom;
+	$: choroplethInnerWidth =
+		width - choroplethSafety.left - choroplethSafety.right;
+	$: baseProjection = baseGeojson &&
+		projectionFn()
+		.fitSize([choroplethInnerWidth, choroplethInnerHeight], baseGeojson);
+	$: filterProjection =
+		filteredGeojson &&
+		filteredGeojson.features.length &&
+		projectionFn()
+		.fitSize([choroplethInnerWidth, choroplethInnerHeight], filteredGeojson);
+	$: projection = $doFilterRegionsStore ? filterProjection : baseProjection;
+
+	// focus
+	$: selectedKeys = $preselectedNUTS2IdsStore.concat($selectedNUT2IdsStore)
+	$: focusedKey = $tooltip.isVisible ? $tooltip.regionId : undefined;
+
+	// cities
+	$: cities = selectedKeys.length > 0 && _.map(majorCities, obj => {
+		const [x, y] = projection([obj.lng, obj.lat]);
+		const X = x + choroplethSafety.left;
+		const length = obj.name.length * labelsFontSize * 0.6;
+		const isLeft =
+			obj.isLeft && X - labelDx - length < choroplethSafety.left
+				? false
+				: X + labelDx + length > width - choroplethSafety.right
+					? true
+					: obj.isLeft;
+		const dx = isLeft ? -labelDx : labelDx;
+
+		return {
+			...obj,
+			dx,
+			isLeft,
+			X,
+			Y: y + choroplethSafety.top,
+		}
+	});
 
 	/* map tooltip */
 
@@ -137,19 +222,25 @@
 			visibility: 'visible'
 		});
 	}
-	const onEntered = event => {
+	const onEnteredRegion = ({detail: regionId}) => {
+		const hasValue = _.has(keyToValue, regionId);
+		const shouldShowValue = $doFilterRegionsStore
+			? _.isIn(selectedKeys, regionId)
+			: true;
+
+		const value = shouldShowValue && hasValue
+			? formatFn(keyToValue[regionId]) + (labelUnit ? ` ${labelUnit}` : '')
+			: undefined;
+
 		tooltip.update(mergeObj({
 			isVisible: true,
-			nuts_id: event.detail,
-			nuts_label: keyToLabel[event.detail],
+			regionId,
+			nuts_label: keyToLabel[regionId],
 			style: makeTooltipStyle(event),
-			value: _.has(keyToValue, event.detail)
-				? formatFn(keyToValue[event.detail])
-					+ (labelUnit ? ` ${labelUnit}` : '')
-				: undefined
+			value
 		}))
 	};
-	const onExited = ({detail}) => {
+	const onExitedRegion = ({detail}) => {
 		tooltip.update(mergeObj({
 			isVisible: false,
 			style: 'visibility: hidden'
@@ -164,10 +255,10 @@
 	/* barchart hovering */
 
 	const onEnteredBar = ({detail: {id: focusedBarKey}}) => {
-		selectedKeys = [focusedBarKey];
+		focusedKey = focusedBarKey;
 	}
 	const onExitedBar = ({detail: {id: focusedBarKey}}) => {
-		selectedKeys = [];
+		focusedKey = null;
 	}
 </script>
 
@@ -181,14 +272,42 @@
 			<h1>{description_short} ({year})</h1>
 			<p>{description}</p>
 		</div>
-		<div on:click={toggleModal}>
+		<div on:click={toggleInfoModal}>
 			<IconInfo
 				size=30
 				strokeWidth=1.5
 			/>
 		</div>
 	</header>
+
 	<section>
+		<div class='controls'>
+			<div class='optgroup'>
+				<div
+					class='globe clickable'
+					on:click={toggleGeoModal}
+				>
+					<IconGlobe strokeWidth={1.5} size={28} />
+					{#if $geoModalStore.isVisible}
+					<IconChevronUp strokeWidth={1} size={24} />
+					{:else}
+					<IconChevronDown strokeWidth={1} size={24} />
+					{/if}
+				</div>
+
+				<Switch
+					initial={$doFilterRegionsStore ? 'Filter' : 'Highlight'}
+					values={['Highlight', 'Filter']}
+					on:toggled={event => {
+						$doFilterRegionsStore = event.detail === 'Filter'
+					}}
+				/>
+			</div>
+		</div>
+
+		<div class='geodistro'>
+
+		<!-- col1 -->
 		<div
 			class="col col1"
 			on:mousemove={onMousemoved}
@@ -196,28 +315,85 @@
 			bind:clientHeight={height}
 		>
 			{#if topojson}
-			<ChoroplethDiv
-				{keyToColor}
-				{selectedKeys}
-				{topojson}
-				colorDefaultFill='lightgrey'
-				colorStroke='black'
-				isInteractive={true}
-				key='NUTS_ID'
-				on:entered={onEntered}
-				on:exited={onExited}
-				projection='geoEqualEarth'
-				sizeStroke=0.5
-				topojsonId='NUTS'
-			/>
+			<svg
+				{width}
+				{height}
+			>
+				<ChoroplethG
+					{focusedKey}
+					{height}
+					{projection}
+					{selectedKeys}
+					{topojson}
+					{topojsonId}
+					{width}
+					geometry={{left: choroplethSafety.left}}
+					isInteractive={true}
+					key='NUTS_ID'
+					keyToColor={$doFilterRegionsStore ? keyToColorFiltered : keyToColorAll}
+					on:entered={onEnteredRegion}
+					on:exited={onExitedRegion}
+					theme={{
+						defaultFill: defaultGray,
+						defaultStroke: 'gray',
+						defaultStrokeWidth: 0.25,
+						focusedStroke: 'dodgerblue',
+						focusedStrokeWidth: 1.5,
+						selectedStroke: 'black',
+						selectedStrokeWidth: 0.5,
+					}}
+				/>
+
+				<!-- cities -->
+				{#if cities}
+				<g class='cities'>
+					{#each cities as {isLeft, name, X, Y, dx}}
+						<g transform='translate({X},{Y})'>
+							<circle r={markerRadius}/>
+							<text
+								{dx}
+								class:isLeft
+								class='background'
+								font-size={labelsFontSize}
+							>{name}</text>
+							<text
+								{dx}
+								class:isLeft
+								font-size={labelsFontSize}
+							>{name}</text>
+						</g>
+					{/each}
+				</g>
+				{/if}
+
+				<!-- legend -->
+				<g transform='translate(0,{legendHeight})'>
+					<ColorBinsG
+						width={legendBarThickness}
+						height={legendHeight}
+						bins={colorBins}
+						flags={{
+							isVertical: true,
+							withBackground: true,
+						}}
+						theme={{
+							backgroundColor: 'white',
+							backgroundOpacity: 0.5,
+						}}
+						ticksFormatFn={formatFn}
+					/>
+				</g>
+			</svg>
 			{/if}
+
+			<!-- tooltip -->
 			{#if $tooltip.isVisible}
 			<div
 				class="tooltip"
 				style={$tooltip.style}
 			>
 				<header>
-					<span>{$tooltip.nuts_id}</span>
+					<span>{$tooltip.regionId}</span>
 					{#if $tooltip.value}
 					<span>{$tooltip.value}</span>
 					{/if}
@@ -228,27 +404,47 @@
 			</div>
 			{/if}
 		</div>
+
+		<!-- col2 -->
 		<div class="col col2">
-			<BarchartV
+			<BarchartVDiv
 				{focusedKey}
 				{formatFn}
-				{items}
-				{keyToColor}
 				{keyToLabel}
-				focusedKeyColor='rgb(196, 236, 255)'
+				{selectedKeys}
 				isInteractive={true}
+				items={$doFilterRegionsStore ? filteredItems : items}
+				keyToColor={keyToColorAll}
 				on:entered={onEnteredBar}
 				on:exited={onExitedBar}
-				title={barchartTitle}
 				shouldResetScroll={true}
+				shouldScrollToFocusedKey={true}
+				theme={{
+					barDefaultColor: defaultGray,
+					focusedKeyColor: 'rgb(211, 238, 253)',
+					titleFontSize: '1.2rem',
+				}}
+				title={barchartTitle}
 			/>
 		</div>
-		{#if $modalStore.isVisible}
-		<Modal
+
+		<!-- geo modal -->
+		{#if $geoModalStore.isVisible}
+		<GeoFilterModal
+			{nutsSelectionStore}
+			on:click={toggleGeoModal}
+		/>
+		{/if}
+
+		</div>
+
+		{#if $infoModalStore.isVisible}
+		<InfoModal
 			{api_doc_url}
 			{api_type}
 			{auth_provider}
 			{data_date}
+			{description_long}
 			{endpoint_url}
 			{is_public}
 			{query}
@@ -257,7 +453,7 @@
 			{source_url}
 			{url}
 			{year_range}
-			on:click={toggleModal}
+			on:click={toggleInfoModal}
 		/>
 		{/if}
 	</section>
@@ -297,13 +493,46 @@
 	}
 
 	section {
+		display: grid;
+		grid-template-columns: 100%;
+		grid-template-rows: 4rem calc(100% - 4rem);
 		height: calc(100% - var(--indicators-h1-height));
-		width: 100%;
 		overflow-y: auto;
+		position: relative;
+		width: 100%;
+	}
+
+	.controls {
+		align-items: center;
+		display: flex;
+		height: 100%;
+		justify-content: space-between;
+		width: 100%;
+	}
+
+	.controls > div:not(:last-child) {
+		margin-right: 0.5rem;
+	}
+
+	.globe {
+		border: 1px solid lightgrey;
+		margin-right: 0.25rem;
+		padding: 0.25rem;
+	}
+	.optgroup {
+		display: flex;
+		align-items: center;
+		padding: 0.25rem;
+	}
+
+	.geodistro {
 		display: grid;
 		grid-template-columns: 65% 35%;
 		grid-template-rows: 100%;
+		height: 100%;
+		overflow-y: auto;
 		position: relative;
+		width: 100%;
 	}
 
 	.col {
@@ -311,7 +540,7 @@
 	}
 	.col1 {
 		grid-column: 1 / span 1;
-		overflow-y: auto;
+		overflow-y: hidden;
 		position: relative;
 	}
 
@@ -319,9 +548,34 @@
 		grid-column: 2 / span 1;
 	}
 
-	:global(.col2 .BarchartV header h2) {
-		font-size: 1rem;
+
+	:global(.col2 .BarchartVDiv header h2) {
 		margin-bottom: 1rem;
+	}
+
+	/* cities */
+
+	.cities {
+		pointer-events: none;
+	}
+	.cities circle {
+		fill: white;
+		stroke: black;
+	}
+	.cities text {
+		dominant-baseline: middle;
+		fill: black;
+		stroke: none;
+	}
+	.cities text.isLeft {
+		text-anchor: end;
+	}
+	.cities text.background {
+		fill: white;
+		fill-opacity: 0.8;
+		stroke: white;
+		stroke-opacity: 0.8;
+		stroke-width: 5;
 	}
 
 	/* tooltip */

@@ -1,0 +1,27 @@
+api_doc_url: https://www.nomisweb.co.uk/api/v01/help
+api_type: FETCH
+description_short: STEM professionals
+description: Number of Science, Research, Engineering and Technology professionals by LEP regions.
+endpoint_url: https://www.nomisweb.co.uk/api/v01/dataset/NM_17_1.jsonstat.json?geography=1925185537,1925185575,1925185538...1925185543,1925185572,1925185544,1925185570,1925185545,1925185577,1925185553,1925185547...1925185549,1925185571,1925185569,1925185551,1925185552,1925185554,1925185558,1925185555...1925185557,1925185559,1925185560,1925185550,1925185576,1925185562,1925185573,1925185563...192518556&date=latestMINUS25,latestMINUS21,latestMINUS17,latestMINUS13,latestMINUS9,latestMINUS5&cell=404882177,404883201&measures=20100,20701
+framework_group: public_rnd_capability
+is_experimental: False
+order: [year, lep_id, lep_year_spec, value.id] # do not change; specifies the order of the exported indicator fields
+region:
+  type: LepRegion
+  source: PROVIDED
+schema:
+  nuts_id:
+    type: LepRegion.lep_id
+  nuts_year_spec:
+    type: LepRegion.lep_year_spec
+  value:
+    description: Number of Science, Research, Engineering and Technology professionals.
+    id: aps_econ_active_stem_profs_data
+    label: Frequency
+    data_type: int
+  year:
+    data_type: int
+    label: Year
+source_name: NOMIS (official labour market statistics)
+source_url: https://www.nomisweb.co.uk
+year_range: [2012, 2018]

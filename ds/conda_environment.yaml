@@ -16,12 +16,14 @@ dependencies:
   - rtree
   - scikit-learn
   - seaborn
+  - xlrd 
   - pip:
     - geopandas
     - shapely
     - descartes
     - mapclassify
     - ratelim
+    - eurostat
 
   # Tooling requirements
     - tqdm

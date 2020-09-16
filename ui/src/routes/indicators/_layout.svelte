@@ -1,6 +1,6 @@
 <script>
-	import { setContext } from 'svelte';
-	import { writable } from 'svelte/store';
+	import {setContext, onMount} from 'svelte';
+	import {writable} from 'svelte/store';
 
 	import groups from 'app/data/indicatorsGroups.json';
 	import Timeline from 'app/components/Timeline.svelte';
@@ -14,11 +14,47 @@
 
 	setContext('layout', {timelineLayoutStore});
 
+	onMount(() => {
+		current && current.scrollIntoView({
+			block: 'nearest',
+			behavior: 'smooth'
+		});
+	})
+
+	export let current;
+	export let scrollable;
+	export let scrollableHeight;
 	export let segment;
+
+	function keepOnScreen(node, {id, segment, scrollableHeight}) {
+		if (id === segment) {
+			current = node;
+		}
+
+		return {
+			update({id, segment, scrollableHeight}) {
+				if (id === segment) {
+					const {y: Y} = scrollable.getBoundingClientRect();
+					const {y} = node.getBoundingClientRect();
+					const yRel = y - Y;
+
+					if (yRel < 0 || yRel > scrollableHeight) {
+						scrollable.scrollTo({
+							top: yRel,
+							behavior: 'smooth'
+						});
+					}
+				}
+			}
+		};
+	}
 </script>
 
 <section class="container">
-	<nav>
+	<nav
+		bind:this={scrollable}
+		bind:clientHeight={scrollableHeight}
+	>
 		{#each groups as {label, indicators}}
 		<div class="distancer">
 			<h2>{label}</h2>
@@ -27,8 +63,15 @@
 				rel='prefetch'
 				href='indicators/{schema.value.id}'
 			>
-				<p class:selected='{schema.value.id === segment}'>
-					{description_short}
+				<p
+					class:selected='{schema.value.id === segment}'
+					use:keepOnScreen={{
+						id: schema.value.id,
+						segment,
+						scrollableHeight
+					}}
+				>
+				{description_short}
 				</p>
 			</a>
 			{/each}

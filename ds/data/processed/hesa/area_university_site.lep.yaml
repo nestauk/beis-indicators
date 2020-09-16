@@ -1,0 +1,29 @@
+api_doc_url: https://www.hesa.ac.uk/data-and-analysis/estates/table-1
+api_type: FETCH
+data_date: 20200820
+description_short: Area of university site
+description: Area of university sites for universities in the LEP region
+endpoint_url: https://www.hesa.ac.uk/data-and-analysis/estates/data.csv
+framework_group: public_rnd_capability
+is_experimental: False
+order: [year, lep_id, lep_year_spec, value.id]
+region:
+  type: LepRegion
+  source_url: https://geoportal.statistics.gov.uk/search?collection=Dataset&sort=name&tags=all(BDY_LEP) 
+schema:
+  lep_id:
+    type: LepRegion.id
+  lep_year_spec:
+    type: LepRegion.year_spec
+  value:
+    format: .2f
+    description: Site Area (hectares) of university sites
+    id: area_university_site
+    label: Total area of university sites
+    type: Area_hectare
+  year:
+    data_type: int
+    label: Academic year (start)
+source_name: HESA (Higher Education Statistical Agency)
+source_url: https://www.hesa.ac.uk/
+year_range: [2015, 2017]

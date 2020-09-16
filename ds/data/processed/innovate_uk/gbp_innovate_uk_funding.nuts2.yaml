@@ -1,0 +1,30 @@
+api_doc_url: https://www.gov.uk/government/publications/innovate-uk-funded-projects
+api_type: FETCH
+data_date: 20200821
+description_long: Level of funding awarded by Innovate UK to organisations in a region. Only includes awards that have not been withdrawn are not on hold.
+description_short: Funding received from Innovate UK
+description: This indicator aggregates all funding awarded by Innovate UK to organisations in a location according to the open IUK transparency dataset. It was not possible to match a small fraction of the awards due to issues with the postcodes.
+endpoint_url: https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/909140/20200801_Innovate_UK_Funded_Projects.xlsx
+framework_group: public_rnd_capability
+is_experimental: False
+is_public: True
+order: [year, <region_type>_id, <region_type>_year_spec, value.id]
+region:
+  type: NutsRegion
+  level: 2
+schema:
+  nuts_id:
+    type: NutsRegion.nuts_id
+  nuts_year_spec: # change this key to `nuts_year_spec` or `lep_year_spec`
+    type: NutsRegion.nuts_year_spec
+  value:
+    description: Funding received from innovate UK
+    id: gbp_innovate_uk_funding
+    label: Funding received from Innovate UK
+    type: GBP
+  year:
+    data_type: int
+    label: Year
+source_name: Innovate UK (via gov.uk)
+source_url: https://www.gov.uk/
+year_range: [2010,2020]

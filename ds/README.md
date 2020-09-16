@@ -15,7 +15,37 @@ To create a simpler deployment and documentation environment, simply use the `re
 pip install -r requirements.txt
 ```
 
-## Organisation this section
+## Creating Indicators
+
+Let's say you have some dataframe, `data`, with some values of pollution data (`pm10`) spanning different years (`year`) with x (`x`) and y (`y`) coordinates with EPSG projection 27700 that you want to aggregate to NUTS 2, NUTS 3 and LEP regions. The reverse geocoding, indicator aggregation and saving can be done for all region types in a few easy steps:
+
+
+```python
+import numpy as np
+import pandas as pd
+from beis_indicators.geo import NutsCoder
+from beis_indicators.indicators import points_to_indicator
+
+data = pd.read_csv('../path/to/data.csv')
+
+# this may take a moment, especially if you have not downloaded the shapefiles
+coders = {
+    'nuts2': NutsCoder(level=2),
+    'nuts3': NutsCoder(level=3),
+    'lep': LepCoder()
+    }
+
+pollution = load_pollution_data(year, raw_data_dir, pollution_type)
+
+for geo, coder in coders.items():
+    mean_pm10 = points_to_indicator(data, value_col='pm10', coder=coder,
+                    aggfunc=np.mean, value_rename='mean_pm10',
+                    projection='EPSG:27700', x_col='x', y_col='y')
+    save_indicator(mean_pm10, 'defra', geo)
+
+```
+
+## Organisation of this section
 
 ```
 ds

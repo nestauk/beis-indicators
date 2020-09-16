@@ -9,6 +9,8 @@ import numpy as np
 import json
 
 from beis_indicators.utils.dir_file_management import *
+from beis_indicators.utils.geo_utils import leps_year_spec
+from beis_indicators.utils.nuts_utils import nuts_earliest
 
 project_dir = beis_indicators.project_dir
 
@@ -25,9 +27,9 @@ def filter_data(data,var_val_pairs):
     for k,v in var_val_pairs.items():
         d = d.loc[d[k]==v]
         
-    return(d.reset_index(drop=True))
+    return d.reset_index(drop=True)
     
-def hesa_parser(url,out_name,skip=16,encoding='utf-8'):
+def hesa_parser(url, out_name, skip=16, encoding='utf-8'):
     '''
     Function to obtain and parse data from the HESA website 
     
@@ -54,7 +56,7 @@ def hesa_parser(url,out_name,skip=16,encoding='utf-8'):
         #Clean column names
         my_csv.columns = tidy_cols(my_csv)
         
-        return(my_csv)
+        return my_csv
 
     else:
         print(f'Already collected {out_name}')
@@ -65,81 +67,48 @@ def hesa_parser(url,out_name,skip=16,encoding='utf-8'):
         #Turn the academic year into int year
         out['academic_year'] = [parse_academic_year(x) for x in out['academic_year']]
 
-        return(out)
+        return out
 
-def make_nuts_estimate(data,nuts_lookup,counter,name,year_var=None,method='time_consistent',my_id='ukprn'):
-    '''
-    This function takes hesa data and creates a nuts estimate
-    
+def university_indicator(data, geo_data, region_type, value_header, value='number', category=None, category_col=None):
+    """university_indicator
+
     Args:
-        data (df) where we have already selected variables of interest eg mode of employment
-        nuts (dict) is the ukprn - nuts name and code lookup
-        counter (str) is the variable with counts that we are interested in
-        year_var (str) is the variable containing the years we want to group by. If None, then we are not grouping by year
-        method (str) is whether we are creating the indicator using a time consistent 
-        approach (each year in its NUTS category) or using the latest nuts
-        my_id (str) is the variable with the plade id. Defaults to the university id
+        data (pd.DataFrame):
+        geo_data (pd.DataFrame):
+        variable (str):
+        select_variable (str):
+        value_name (str):
     
-    ''' 
-    d = data.copy()
-    
-    #Add the nuts names and codes
-
-    #If time consistent...
-    if method == 'time_consistent':
-        d['nuts_code'] = [nuts_lookup[row[my_id]][get_nuts_category(
-                                row[year_var])] 
-            if row[my_id] in nuts_lookup.keys() else np.nan for rid,row in d.iterrows()]
-
-    else:
-        d['nuts_code'] = [nuts_lookup[row[my_id]]['nuts2_2016'] if 
-            row[my_id] in nuts_lookup.keys() else np.nan for rid,row in d.iterrows()]
-
-    #We are focusing on numbers    
-    #Group results by year?
-    if year_var == None:
-        out = d.groupby('nuts_code')[counter].sum()
-
-    else:  
-        out = d.groupby(['nuts_code',year_var])[counter].sum()
-
+    Returns:
         
-    out.name = name
-    
-    return(out)
+    """
+    if category is not None:
+        data = data[data[category_col] == category]
 
-def multiple_nuts_estimates(data,nuts_lookup,variables,select_var,value,year_var=None,method='time_consistent',my_id='ukprn'):
-    '''
-    Creates NUTS estimates for multiple variables.
+    geo_data['ukprn'] = pd.to_numeric(geo_data['ukprn'])
+    data['ukprn'] = pd.to_numeric(data['ukprn'], errors='coerce')
+    data[value] = data[value].astype('float')
+    data = data.dropna(subset=['ukprn'])
+
+    if 'nuts' in region_type:
+        year_col = 'nuts_year_spec'
+        region_id_col = 'nuts_id'
+        groupby_year_col = 'nuts_year_spec'
+        data['year_regions'] = data['academic_year'].apply(nuts_earliest)
+    elif region_type == 'lep':
+        year_col = 'lep_year_spec'
+        groupby_year_col = 'lep_year_spec'
+        region_id_col = 'lep_id'
+        data['year_regions'] = data['academic_year'].apply(leps_year_spec)
     
-    Args:
-        data (df) is the filtered dataframe
-        select_var (str) is the variable we want to use to select values
-        nuts_lookup (dict) is the lookup between universities and nuts
-        variables (list) is the list of variables for which we want to generate the analysis
-        value (str) is the field that contains the numerical value we want to aggregate in the dataframe
-        year_var (str) is the year_variable. If none, then we are not interested in years
-        my_id (str) is the variable with the plade id. Defaults to the university id
-        
-    
-    '''
-    if year_var==None:
-        concat = pd.concat([make_nuts_estimate(data.loc[data[select_var]==m],nuts_lookup,value,m,method=method) for m in 
-                  variables],axis=1)
-    #If we want to do this by year then we will create aggregates by nuts name and code and year and then concatenate over columns 
-    else:
-        
-        year_store = []
-        
-        for m in variables:
-            
-            y = make_nuts_estimate(data.loc[data[select_var]==m],nuts_lookup,value,m,method=method,year_var=year_var,my_id=my_id)
-            
-            year_store.append(y)
-            
-        concat = pd.concat(year_store,axis=1)
-                
-    return(concat)
+    df = pd.merge(data, geo_data, left_on=['year_regions', 'ukprn'], 
+            right_on=[year_col, 'ukprn'])
+    df = df.groupby(['academic_year', region_id_col, groupby_year_col], as_index=False)[value].sum()
+
+    df = df.rename(columns={value: value_header, 'academic_year': 'year'})
+    df = df [['year', region_id_col, groupby_year_col, value_header]]
+    df = df.sort_values(by=[region_id_col, 'year'])
+    return df
 
 def make_student_table(url):
     '''
@@ -247,9 +216,4 @@ def calculate_perf(table,perf,nuts_lookup,norm=False,sp_def='all',value='currenc
     
     else:
         return(t_filt)
-
-
-        
-        
-    
         
