@@ -17,12 +17,12 @@ schema:
   nuts_year_spec:
     type: NutsRegion.nuts_year_spec
   value:
+    data_type: int
     description: Total income from IP licensing in universities located in the NUTS2 region in the academic year starting in year
     format: ','
     id: gbp_ip_revenues
     label: University income from IP licensing
     type: GBP
-    data_type: int
   year:
     data_type: int
     label: Year

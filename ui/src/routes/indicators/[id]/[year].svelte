@@ -29,7 +29,7 @@
 	import {feature} from 'topojson-client';
 
 	import GeoFilterModal from 'app/components/GeoFilterModal.svelte';
-	import InfoModal from 'app/components/InfoModal.svelte';
+	import InfoModal from 'app/components/InfoModal/InfoModal.svelte';
 	import IconChevronDown from 'app/components/icons/IconChevronDown.svelte';
 	import IconChevronUp from 'app/components/icons/IconChevronUp.svelte';
 	import IconGlobe from 'app/components/icons/IconGlobe.svelte';

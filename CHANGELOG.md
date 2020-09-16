@@ -19,6 +19,7 @@
 	- Add the `description_long` field to the spec template (#272)
 	- Add the `warning` field to the spec template (#288)
 	- Removed the `year_range` field, now derived automatically (#218)
+	- Some more field can have different shape: `api_type`, `source_name`, `source_url` (#287)
 
 # 0.0.11
 

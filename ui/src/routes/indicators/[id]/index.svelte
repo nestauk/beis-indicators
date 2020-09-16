@@ -27,7 +27,7 @@
 
 	import { goto } from '@sapper/app';
 
-	import InfoModal from 'app/components/InfoModal.svelte';
+	import InfoModal from 'app/components/InfoModal/InfoModal.svelte';
 	import GeoFilterModal from 'app/components/GeoFilterModal.svelte';
 	import IconChevronDown from 'app/components/icons/IconChevronDown.svelte';
 	import IconChevronUp from 'app/components/icons/IconChevronUp.svelte';

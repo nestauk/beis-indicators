@@ -16,12 +16,12 @@ schema:
   nuts_year_spec:
     type: NutsRegion.nuts_year_spec
   value:
+    data_type: int
     description: business enterprise R&D expenditure in euros (to the nearest 1000)
     format: ','
     id: eurostat_berd_data
     label: Expenditure (to nearest 1000)
     type: EUR
-    data_type: float
   year:
     data_type: int
     label: Year

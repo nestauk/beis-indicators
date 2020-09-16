@@ -5,8 +5,8 @@ description_long: Total amount of funding (in Euros) awarded by the European Com
 description_short: Horizon 2020 funding
 description: Sum of all European Commission funding awarded to organisations as part of Horizon 2020 projects. Years prior to 2014 and after 2020 have been excluded.
 endpoint_url:
-  h2020_projects: https://cordis.europa.eu/data/cordis-h2020projects-xml.zip
-  h2020_project_descriptions: https://cordis.europa.eu/data/cordis-h2020projects.csv
+  H2020 projects: https://cordis.europa.eu/data/cordis-h2020projects-xml.zip
+  H2020 project descriptions: https://cordis.europa.eu/data/cordis-h2020projects.csv
 framework_group: public_rnd_capability
 is_experimental: False
 is_public: True
@@ -19,8 +19,9 @@ schema:
   lep_year_spec: # change this key to `lep_year_spec` or `lep_year_spec`
     type: LepRegion.lep_year_spec # change this key to `LepRegion.lep_year_spec` or `LepRegion.lep_year_spec`
   value:
+    data_type: int
     description: total Horizon 2020 funding
-    format: .2f
+    format: ','
     id: cordis_funding
     label: Total Funding
     type: EUR

@@ -17,12 +17,12 @@ schema:
   nuts_year_spec:
     type: NutsRegion.nuts_year_spec
   value:
+    data_type: int
     description: Consultancy income with businesses for universities in the NUTS2 region in the academic year starting in year
     format: ','
     id: gbp_business_consulting
     label: University income from business consulting
     type: GBP
-    data_type: int
   year:
     data_type: int
     label: Year
