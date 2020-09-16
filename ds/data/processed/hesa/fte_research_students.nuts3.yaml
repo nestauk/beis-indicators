@@ -16,14 +16,13 @@ schema:
   nuts_year_spec:
     type: NutsRegion.year_spec
   value:
+    data_type: int
     description: Full Time Equivalent (FTE) research students
     id: fte_research_students
     label: Research students (Full Time Equivalent)
     type: FTE
-    data_type: int
   year:
     data_type: int
     label: Academic year (start)
 source_name: HESA (Higher Education Statistical Agency)
 source_url: https://www.hesa.ac.uk/
-year_range: [2015,2017]

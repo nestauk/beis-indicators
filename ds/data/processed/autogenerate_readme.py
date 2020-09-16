@@ -35,7 +35,7 @@ def generate_indicator_text(processed_dir):
     for group in framework:
         schema_groups[group['id']] = []
 
-    framework_labels = {f['id']: f['label'] for f in framework} 
+    framework_labels = {f['id']: f['label'] for f in framework}
 
     subdirs = list_subdirs(processed_dir)
     for subdir in subdirs:
@@ -44,7 +44,7 @@ def generate_indicator_text(processed_dir):
         for schema in schema_dirs:
             schema_md, framework_group = generate_dataset_entry(schema)
             schema_groups[framework_group].append(schema_md)
-    
+
     md = ''
     for k, group in schema_groups.items():
         md = md + f'## {framework_labels[k]}\n'
@@ -66,7 +66,7 @@ def generate_header_text():
             'Each indicator csv contains four columns, with each row '
             'representing the indicator value for a specific region and point '
             'in time. The fields are:\n\n'
-            
+
             '- `year`: the year for this indicator value\n'
             '- `<region_id>`: the code of the region for this indicator value '
             'e.g. UKI1'
@@ -95,13 +95,12 @@ def load_framework():
 
 def parse_schema(schema):
     '''parse_schema
-    Extracts, formats and returns field content for each indicator entry in 
+    Extracts, formats and returns field content for each indicator entry in
     readme.
     '''
     readme_fields = dict(
         title=schema['schema']['value']['description'],
         source=schema['source_name'],
-        years=parse_year_range(schema['year_range']),
         long_description=schema['description'],
         experimental=parse_experimental(schema['is_experimental'])
         )
@@ -127,14 +126,10 @@ def generate_dataset_entry(schema_dir):
             f"### {fields['title']}\n"
             f"- **Description:** {fields['long_description']}\n"
             f"- **Source:** {fields['source']}\n"
-            f"- **Years Available:** {fields['years']}\n"
             f"- **Experimental:** {fields['experimental']}\n"
             f"- [Download]({link})\n\n"
             )
     return dataset_entry, framework_group
-
-def parse_year_range(years):
-    return f'{years[0]} - {years[1]}'
 
 def parse_experimental(experimental):
     if True:

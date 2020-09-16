@@ -26,4 +26,3 @@ schema:
     label: Year
 source_name: EPO (European Patent Office)
 source_url: https://www.epo.org/searching-for-patents/business/patstat.html
-year_range: [2013, 2018]

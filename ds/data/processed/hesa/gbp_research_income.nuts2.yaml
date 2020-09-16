@@ -17,6 +17,7 @@ schema:
   nuts_year_spec:
     type: NutsRegion.year_spec
   value:
+    data_type: int
     description: Research income for universities in the region
     format: ','
     id: gbp_research_income
@@ -27,4 +28,3 @@ schema:
     label: Academic year (start)
 source_name: HESA (Higher Education Statistical Agency)
 source_url: https://www.hesa.ac.uk/
-year_range: [2015,2017]

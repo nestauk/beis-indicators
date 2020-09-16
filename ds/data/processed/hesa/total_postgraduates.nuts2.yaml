@@ -16,13 +16,12 @@ schema:
   nuts_year_spec:
     type: NutsRegion.year_spec
   value:
+    data_type: int
     description: Total number of full-time students enrolled for postgraduate qualifications in universities in the area
     id: total_postgraduates
     label: Total number of postgraduate students
-    type: int
   year:
     data_type: int
     label: Academic year (start)
 source_name: HESA (Higher Education Statistical Agency)
 source_url: https://www.hesa.ac.uk/
-year_range: [2014, 2018]

@@ -21,12 +21,12 @@
 		applyFnMap,
 		getValue,
 		inclusiveRange,
+		keyValueArrayAverage,
 		keyValueArrayToObject,
 		mergeObj,
 	} from '@svizzle/utils';
 
 	import {feature} from 'topojson-client';
-	import {setGeometryPrecision} from '@svizzle/geo';
 
 	import GeoFilterModal from 'app/components/GeoFilterModal.svelte';
 	import InfoModal from 'app/components/InfoModal.svelte';
@@ -58,6 +58,7 @@
 	import {
 		getIndicatorFormat,
 		getNutsId,
+		getRefFormat,
 		makeColorBins,
 		makeColorScale,
 		makeValueAccessor,
@@ -87,8 +88,9 @@
 	$: id && year && hideInfoModal();
 	$: $selectedYearStore = Number(year);
 	$: formatFn = getIndicatorFormat(id, lookup);
+	$: refFormatFn = getRefFormat(id, lookup);
 	$: getIndicatorValue = makeValueAccessor(id);
-	$: $availableYearsStore = inclusiveRange(year_range);
+	$: $availableYearsStore = inclusiveRange(year_extent);
 	$: data && lookupStore.update(_.setPath(`${id}.data`, data));
 	$: ({
 		api_doc_url,
@@ -106,7 +108,8 @@
 		source_name,
 		source_url,
 		url,
-		year_range,
+		warning,
+		year_extent,
 	} = $lookupStore[id] || {});
 
 	$: labelUnit =
@@ -136,6 +139,12 @@
 	$: filteredItems = _.filter(items, ({key}) =>
 		_.isIn($selectedNUT2IdsStore, key) || _.isIn($preselectedNUTS2IdsStore, key)
 	);
+	$: refs = [{
+		key: 'National average',
+		keyAbbr: 'Nat. avg.',
+		value: keyValueArrayAverage(items),
+		formatFn: refFormatFn
+	}];
 
 	// colors
 	$: valueExtext = extent(data, getIndicatorValue);
@@ -192,10 +201,12 @@
 					? true
 					: obj.isLeft;
 		const dx = isLeft ? -labelDx : labelDx;
+		const dy = obj.isBottom ? 2 * markerRadius : obj.isTop ? -2 * markerRadius : 0;
 
 		return {
 			...obj,
 			dx,
+			dy,
 			isLeft,
 			X,
 			Y: y + choroplethSafety.top,
@@ -347,17 +358,19 @@
 				<!-- cities -->
 				{#if cities}
 				<g class='cities'>
-					{#each cities as {isLeft, name, X, Y, dx}}
+					{#each cities as {isLeft, name, X, Y, dx, dy}}
 						<g transform='translate({X},{Y})'>
 							<circle r={markerRadius}/>
 							<text
 								{dx}
+								{dy}
 								class:isLeft
 								class='background'
 								font-size={labelsFontSize}
 							>{name}</text>
 							<text
 								{dx}
+								{dy}
 								class:isLeft
 								font-size={labelsFontSize}
 							>{name}</text>
@@ -411,6 +424,7 @@
 				{focusedKey}
 				{formatFn}
 				{keyToLabel}
+				{refs}
 				{selectedKeys}
 				isInteractive={true}
 				items={$doFilterRegionsStore ? filteredItems : items}
@@ -452,7 +466,8 @@
 			{source_name}
 			{source_url}
 			{url}
-			{year_range}
+			{year_extent}
+			{warning}
 			on:click={toggleInfoModal}
 		/>
 		{/if}
@@ -575,7 +590,7 @@
 		fill-opacity: 0.8;
 		stroke: white;
 		stroke-opacity: 0.8;
-		stroke-width: 5;
+		stroke-width: 4;
 	}
 
 	/* tooltip */

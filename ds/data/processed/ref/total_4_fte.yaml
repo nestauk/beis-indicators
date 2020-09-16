@@ -28,4 +28,3 @@ schema:
     label: Year
 source_name: REF (Research Excellence Framework)
 source_url: https://results.ref.ac.uk/
-year_range: [2014, 2014]

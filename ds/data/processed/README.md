@@ -302,8 +302,8 @@ Last updated: 04/30/20 UTC
 - [Download](https://raw.githubusercontent.com/nestauk/beis-indicators/dev/data/processed/hebci/total_active_graduate_startups.csv)
 
 
-### Consultancy income with public sector and third sector organisatoins involving universities in the NUTS2 region in the academic year starting in year
-- **Description:** Consultancy income with public sector and third sector organisatoins involving universities in the NUTS2 region in the academic year starting in year
+### Consultancy income with public sector and third sector organisations involving universities in the NUTS2 region in the academic year starting in year
+- **Description:** Consultancy income with public sector and third sector organisations involving universities in the NUTS2 region in the academic year starting in year
 - **Source:** HESA (Higher Education Statistical Agency)
 - **Years Available:** 2014 - 2017
 - **Experimental:** Yes

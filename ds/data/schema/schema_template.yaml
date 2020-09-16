@@ -45,7 +45,7 @@ schema:
     label: Year
 source_name: string # the name of the data provider (e.g. Eurostat, NOMIS, etc.)
 source_url: URL # the URL of the data provider (e.g. https://gtr.ukri.org)
-year_range: [int, int] # [min year, max year]
+warning: string # OPTIONAL - a note the user to be shown in the indicator info panel
 
 
 # [1] https://docs.python.org/3/library/string.html#format-specification-mini-language

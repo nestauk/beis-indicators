@@ -22,7 +22,7 @@ order: [year, nuts_id, nuts_year_spec, value.id] # do not change; specifies the 
 region:
   type: NutsRegion
   level: 2
-  source_url: https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/nuts 
+  source_url: https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/nuts
 schema:
   nuts_id:
     type: NutsRegion.id
@@ -39,4 +39,3 @@ schema:
     label: Year
 source_name: DEFRA (Department for Environment Food & Rural Affairs)
 source_url: https://uk-air.defra.gov.uk
-year_range: [2007, 2018]

@@ -20,7 +20,7 @@ is_experimental: False
 order: [year, lep_id, lep_year_spec, value.id] # do not change; specifies the order of the exported indicator fields
 region:
   type: LepRegion
-  source_url: https://geoportal.statistics.gov.uk/search?collection=Dataset&sort=name&tags=all(BDY_LEP) 
+  source_url: https://geoportal.statistics.gov.uk/search?collection=Dataset&sort=name&tags=all(BDY_LEP)
 schema:
   lep_id:
     type: LepRegion.id
@@ -36,4 +36,3 @@ schema:
     data_type: int
     label: Year
 source_name: DEFRA
-year_range: [2007, 2018]
