@@ -1,6 +1,9 @@
+import geopandas as gpd
 import json
 import pandas as pd
 import numpy as np
+import os
+from zipfile import ZipFile
 
 
 NUTS_ENFORCED = {
@@ -218,3 +221,4 @@ def _set_containment(a, b):
     i = len(set(a).intersection(set(b)))
     c = i / len(a)
     return c
+>>>>>>> dev:ds/beis_indicators/geo/nuts.py
