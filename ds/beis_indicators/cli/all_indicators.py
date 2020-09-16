@@ -15,9 +15,8 @@ from beis_indicators.geo import NutsCoder, LepCoder
 
 
 @click.command()
-@click.option('--test', type=bool, help='Output test readme', default=True)
 @click.option('--geography', type=str, help='One of lep, nuts2 or nuts3', default='nuts2')
-def generate(test, geography):
+def generate(geography):
     processed_dir = f'{project_dir}/data/processed/'
 
     dfs = list(generate_indicator_tables(processed_dir, geography))
@@ -30,10 +29,7 @@ def generate(test, geography):
         df = apply_lep_codes(df)
     
     date = time_now()
-    if test:
-        fout = f'{processed_dir}/all_indicators_test_{date}.{geography}.csv'
-    else:
-        fout = f'{processed_dir}/all_indicators_{date}.{geography}.csv'
+    fout = f'{processed_dir}/all/all_indicators_{date}.{geography}.csv'
 
     df.to_csv(fout, index=False)
 
@@ -61,7 +57,7 @@ def skip_by_geography(fname, geography):
     if f'.{geography}.' in fname:
         return False
     elif geography == 'nuts2':
-        if ('.nuts3.' in f) or ('.lep.' in f):
+        if ('.nuts3.' in fname) or ('.lep.' in fname):
             return True
         else:
             return False
@@ -124,10 +120,7 @@ def create_indicator_table(indicator_dir, schema_dir, geography):
     df['unit'] = unit
 
     df = df.rename(columns={var_name: 'value', f'{geo}_year_spec': f'{geo}_year'})
-    try:
-        df = df[[f'{geo}_id', f'{geo}_year', 'year', 'value', 'variable', 'description', 'unit']]
-    except:
-        print(schema_dir)
+    df = df[[f'{geo}_id', f'{geo}_year', 'year', 'value', 'variable', 'description', 'unit']]
 
     return df
 
