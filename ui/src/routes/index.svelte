@@ -1,4 +1,6 @@
 <script>
+	import LinkButton from 'app/components/LinkButton.svelte';
+
 	const beisUrl = 'https://www.gov.uk/government/organisations/department-for-business-energy-and-industrial-strategy';
 	const nestaUrl = 'https://www.nesta.org.uk';
 	const repoUrl = 'https://github.com/nestauk/beis-indicators';
@@ -34,9 +36,7 @@
 		<h3><span>Place potential</span></h3>
 		<p>Measuring wider infrastructures and framework conditions in a region that might drive - or hinder - its innovative performance.<p>
 
-		<div class="cta">
-			<a href='/methodology'><span>Read more about our methodology</span></a>
-			</div>
+		<LinkButton url='/methodology' text='Read more about our methodology' />
 	</section>
 </main>
 
@@ -75,24 +75,5 @@
 	h3 span {
 		font-weight: bold;
 		color: var(--color-main);
-	}
-
-	.cta {
-		display: flex;
-		justify-content: space-around;
-		align-items: center;
-	}
-
-	.cta a {
-		border-bottom: none;
-		margin: 2rem 0;
-	}
-	.cta a span {
-		font-weight: bold;
-		background-color: var(--color-link);
-		color: white;
-		padding: 1rem;
-		font-size: 1.2rem;
-		box-shadow: 2px 8px 9px -4px lightgrey;
 	}
 </style>
