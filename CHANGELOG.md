@@ -15,6 +15,7 @@
 	- Show national average on the barchart (#290)
 	- Show long descriptions in the info panel (#273)
 	- Show the `warning` field in the info panel (#288)
+	- The downloadable zip contains a CSV file with all the datapoints of all of the indicators (#243)
 - Specs:
 	- Add the `description_long` field to the spec template (#272)
 	- Add the `warning` field to the spec template (#288)

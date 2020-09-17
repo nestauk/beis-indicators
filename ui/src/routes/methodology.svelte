@@ -1,6 +1,6 @@
 <script>
 	import {zipUrl} from 'app/utils';
-	import IconDownload from 'app/components/icons/IconDownload.svelte';
+	import LinkButton from 'app/components/LinkButton.svelte';
 	import ExternalLink from 'app/components/ExternalLink.svelte';
 
 	const crunchbaseUrl = 'https://www.crunchbase.com/';
@@ -52,28 +52,13 @@
 
 		<p>We indicate those indicators based on experimental methodologies or data sources where relevant.<p>
 
-		<div class="cta">
-			<a href={zipUrl}>
-				<div>
-					<span>
-						Download the indicators
-					</span>
-					<span>
-						<IconDownload
-							size=30
-							strokeWidth=1.5
-						/>
-					</span>
-				</div>
-			</a>
-		</div>
-		<div class="cta">
-			<a href='/indicators'>
-				<div>
-					<span>Explore the indicators</span>
-				</div>
-			</a>
-		</div>
+		<LinkButton
+			url={zipUrl}
+			text='Download all indicators'
+			withDownloadIcon={true}
+		/>
+
+		<LinkButton url='/indicators' text='Explore the indicators' />
 	</section>
 </main>
 
@@ -117,32 +102,5 @@
 	ul {
 		list-style: initial;
 		margin-left: 20px;
-	}
-
-	.cta {
-		display: flex;
-		justify-content: space-around;
-		align-items: center;
-	}
-
-	.cta a {
-		border-bottom: none;
-		margin: 1rem 0;
-	}
-	.cta a div {
-		font-weight: bold;
-		background-color: var(--color-link);
-		color: white;
-		padding: 1rem;
-		font-size: 1.2rem;
-		box-shadow: var(--box-shadow-xy);
-		cursor: pointer;
-	}
-	.cta a div {
-		display: flex;
-		align-items: center;
-	}
-	.cta a div span:nth-child(2) {
-		margin-left: 1rem;
 	}
 </style>

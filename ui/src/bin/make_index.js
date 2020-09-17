@@ -17,9 +17,10 @@ import {applyFnMap, isKeyOf, transformValues} from '@svizzle/utils';
 
 import {isNotLepFile, isNotNuts3File} from './utils';
 
-const DATA_DIR = path.resolve(__dirname, '../../ds/data/processed');
-const TYPES_PATH = path.resolve(__dirname, '../../ds/data/schema/types.yaml');
-const FRAMEWORK_PATH = path.resolve(__dirname, '../../ds/data/aux/framework.json');
+const DS_DATA_REL_PATH = '../../../ds/data';
+const DATA_DIR = path.resolve(__dirname, DS_DATA_REL_PATH, 'processed');
+const TYPES_PATH = path.resolve(__dirname, DS_DATA_REL_PATH, 'schema/types.yaml');
+const FRAMEWORK_PATH = path.resolve(__dirname, DS_DATA_REL_PATH, 'aux/framework.json');
 const GROUPS_PATH =
 	path.resolve(__dirname, '../src/node_modules/app/data/indicatorsGroups.json');
 
@@ -80,7 +81,7 @@ const makeNeedsFormat = types => _.pipe([
 	])
 ]);
 
-const process = async () => {
+const run = async () => {
 	const types = await readFile(TYPES_PATH, 'utf-8').then(yaml.safeLoad);
 	const needsFormat = makeNeedsFormat(types);
 
@@ -127,4 +128,4 @@ const process = async () => {
 	await saveIndex(index).then(tapMessage(`Saved ${GROUPS_PATH}`));
 }
 
-process().then(tapMessage('Done'))
+run().then(tapMessage('Done'))
