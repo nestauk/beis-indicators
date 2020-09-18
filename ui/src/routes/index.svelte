@@ -24,16 +24,16 @@
 
 		<p>Our indicators are arranged in four broad categories.<p>
 
-		<h3><span>Public R&D Capability</span></h3>
+		<h3>Public R&D Capability</h3>
 		<p>Measuring the quantity and excellence of R&D activity taking place in higher education institutions in a region.<p>
 
-		<h3><span>Business R&D Capability</span></h3>
+		<h3>Business R&D Capability</h3>
 		<p>Measuring the level of R&D activity and innovative outputs in the private sector in a region.<p>
 
-		<h3><span>Knowledge exchange</span></h3>
+		<h3>Knowledge exchange</h3>
 		<p>Measuring the connectivity between higher education institutions in a region and the wider economy.<p>
 
-		<h3><span>Place potential</span></h3>
+		<h3>Place potential</h3>
 		<p>Measuring wider infrastructures and framework conditions in a region that might drive - or hinder - its innovative performance.<p>
 
 		<LinkButton url='/methodology' text='Read more about our methodology' />
@@ -72,8 +72,16 @@
 		box-shadow: 0px 8px 9px -4px lightgrey;
 	}
 
-	h3 span {
-		font-weight: bold;
-		color: var(--color-main);
+	h1 {
+		font-family: 'Open Sans Semibold', sans-serif;
+	}
+	h2 {
+		margin-bottom: 1.5rem;
+		margin-top: 1.5rem;
+		font-family: 'Open Sans Regular', sans-serif;
+	}
+	h3 {
+		margin-top: 1.5rem;
+		font-family: 'Open Sans Regular', sans-serif;
 	}
 </style>

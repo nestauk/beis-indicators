@@ -58,7 +58,7 @@
 			withDownloadIcon={true}
 		/>
 
-		<LinkButton url='/indicators' text='Explore the indicators' />
+		<LinkButton url='/guide' text='Read the app guide' />
 	</section>
 </main>
 
@@ -80,6 +80,15 @@
 		overflow-y: auto;
 		background-color: white;
 		box-shadow: var(--box-shadow-y);
+	}
+
+	h1 {
+		font-family: 'Open Sans Semibold', sans-serif;
+	}
+	h2 {
+		margin-bottom: 1.5rem;
+		margin-top: 1.5rem;
+		font-family: 'Open Sans Regular', sans-serif;
 	}
 
 	p {

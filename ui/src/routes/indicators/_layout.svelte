@@ -128,7 +128,7 @@
 	}
 
 	nav h2 {
-		font-family: 'Open Sans Semibold', sans-serif ;
+		font-family: 'Open Sans Semibold', sans-serif;
 		margin-bottom: 1rem;
 	}
 	nav a {
@@ -138,12 +138,12 @@
 		line-height: 1.5rem;
 		display: flex;
 		align-items: center;
-		padding: 0.4rem 0 0.4rem 0;
+		padding: 0.4rem;
 		margin-bottom: 0.5rem;
 	}
 	nav p.selected {
 		background-color: var(--color-main-desat-50) !important;
-		font-family: 'Open Sans Regular', sans-serif ;
+		font-family: 'Open Sans Regular', sans-serif;
 	}
 	nav p:hover {
 		cursor: pointer;
