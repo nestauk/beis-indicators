@@ -1,26 +1,32 @@
 # 0.0.12 (next)
 
-- Indicators:
-	- add patent and trademark indicators based on Eurostat data (#282)
-	- add Innovate UK funding data (#295)
-	- add housing cost indicator (#285)
-	- add Horizon 2020 funding data (#326)
-- UI:
-	- Barchart to automatically scroll to the focused key (#275)
-	- Add a color legend to the map view (#269)
-	- Add major cities labels (#286, #335)
-	- Automatically scroll the sidebar to the current indicator (#219)
-	- Added regional selection for the trends route (#298)
-	- Added regional selection for the year route (#316)
-	- Show national average on the barchart (#290)
-	- Show long descriptions in the info panel (#273)
-	- Show the `warning` field in the info panel (#288)
-	- The downloadable zip contains a CSV file with all the datapoints of all of the indicators (#243)
-- Specs:
-	- Add the `description_long` field to the spec template (#272)
-	- Add the `warning` field to the spec template (#288)
-	- Removed the `year_range` field, now derived automatically (#218)
-	- Some more field can have different shape: `api_type`, `source_name`, `source_url` (#287)
+## Indicators
+
+- add patent and trademark indicators based on Eurostat data (#282)
+- add Innovate UK funding data (#295)
+- add housing cost indicator (#285)
+- add Horizon 2020 funding data (#326)
+
+## UI
+
+- Barchart to automatically scroll to the focused key (#275)
+- Add a color legend to the map view (#269)
+- Add major cities labels (#286, #335)
+- Automatically scroll the sidebar to the current indicator (#219)
+- Added regional selection for the trends route (#298)
+- Added regional selection for the year route (#316)
+- Show national average on the barchart (#290)
+- Show long descriptions in the info panel (#273)
+- Show the `warning` field in the info panel (#288)
+- The downloadable zip contains a CSV file with all the datapoints of all of the indicators (#243)
+- Add a color scale to the trends page (#268)
+
+## Specs
+
+- Add the `description_long` field to the spec template (#272)
+- Add the `warning` field to the spec template (#288)
+- Removed the `year_range` field, now derived automatically (#218)
+- Some more field can have different shape: `api_type`, `source_name`, `source_url` (#287)
 
 # 0.0.11
 

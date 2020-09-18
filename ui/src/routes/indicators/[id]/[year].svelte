@@ -146,8 +146,15 @@
 		formatFn: refFormatFn
 	}];
 
+	$: filteredData = $doFilterRegionsStore
+		? _.filter(yearData, ({nuts_id}) =>
+			$selectedNUT2IdsStore.includes(nuts_id) ||
+			$preselectedNUTS2IdsStore.includes(nuts_id)
+		)
+		: yearData;
+
 	// colors
-	$: valueExtext = extent(data, getIndicatorValue);
+	$: valueExtext = extent(filteredData, getIndicatorValue);
 	$: colorScale = makeColorScale(valueExtext);
 	$: colorBins = makeColorBins(colorScale);
 	$: makeKeyToColor = _.pipe([
@@ -550,9 +557,6 @@
 		width: 100%;
 	}
 
-	.col {
-		padding: var(--dim-padding-minor);
-	}
 	.col1 {
 		grid-column: 1 / span 1;
 		overflow-y: hidden;
