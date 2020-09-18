@@ -1,4 +1,4 @@
-year,lep_id,lep_year_spec,economic_complexity_index
+year,nuts_id,nuts_year_spec,economic_complexity_index
 2019,UKC11,2013,-0.0272
 2019,UKC12,2013,-0.0348
 2019,UKC13,2013,-0.04
