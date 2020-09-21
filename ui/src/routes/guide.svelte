@@ -24,10 +24,10 @@
 
 		<h3>Sidebar</h3>
 		<p>Here you will find a list of indicators, grouped by theme sections. These are:<p>
-		<li> Public R&D capability
-		<li> Business R&D capacity
-		<li> Knowledge exchange
-		<li> Place potential
+		<li>Public R&D capability</li>
+		<li>Business R&D capacity</li>
+		<li>Knowledge exchange</li>
+		<li>Place potential</li>
 		<p>Clicking on a title will navigate to the trend view for that indicator.<p>
 
 		<h2>Indicator trends</h2>
