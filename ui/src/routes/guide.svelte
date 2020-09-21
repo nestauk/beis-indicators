@@ -38,7 +38,7 @@
 		<h3>Trends</h3>
 		<p>Here you will see a set of trend lines, with each line showing the indicator value for one NUTS2 region over time (where data is available).</p>
 		<p>Hovering over a trend line highlights the trend and shows the value of the data point nearest to the pointer.</p>
-		<p>Please use the switch on the top-right corner to choose between showing trends with absolute or ranked values.</p>
+		<p>You can use the toggle in the top-right corner to choose between showing actual values or the rank of each region.</p>
 
 		<h3>Regional selection</h3>
 		<p>It is possible to select NUTS1 regions to inherently select its contained NUTS2 region. This is particularly useful because NUTS1 regions don't vary over the years whereas NUTS2 regions do.</p>
