@@ -23,7 +23,11 @@
 		<p>The timeline below shows a list of all years where there is data available for at least one indicator.<p>
 
 		<h3>Sidebar</h3>
-		<p>Here you find a list of indicators, grouped in various thematic sections.<p>
+		<p>Here you will find a list of indicators, grouped by theme sections. These are:<p>
+		<li> Public R&D capability
+		<li> Business R&D capacity
+		<li> Knowledge exchange
+		<li> Place potential
 		<p>Clicking on a title will navigate to the trend view for that indicator.<p>
 
 		<h2>Indicator trends</h2>
