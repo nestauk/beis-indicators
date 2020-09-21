@@ -66,7 +66,7 @@
 		<p>The national average is also shown, represented by a vertical dashed line. This is calculated as the mean of all available values within the year shown.<p>
 
 		<h3>Regional selection</h3>
-		<p>As for the trends view, it ir porrible toi highlight or filter the NUTS2 regions for a certain year by selecting a NUTS1 region and using the switch to change selection mode.</p>
+		<p>As in the trends view, it is possible to highlight or filter the NUTS2 regions within a certain year by selecting a NUTS1 region and using the switch to change selection mode.</p>
 		<p>When filtering the map zooms on the currently selected regions.</p>
 
 		<h3>Indicator info and download</h3>
