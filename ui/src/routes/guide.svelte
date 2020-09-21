@@ -57,7 +57,7 @@
 		<p>This page can be reached either by clicking on a dot in the Indicators page or by clicking on one of the dots of the timeline when looking at the trend for a particular indicator.<p></p>
 
 		<h3>Map</h3>
-		<p>On the left there is a choropleth showing the indicator values on the map of UK NUTS2 regions.</p>
+		<p>On the left there is a choropleth showing the indicator values on a map of the UK for the NUTS2 regions in that year.</p>
 		<p>Gray regions indicate that there is no data available for that region.</p>
 		<p>The map shows cities with the most research intensive universities (those in "TRAC peer group A"). This group has been chosen due to its key relevance for BEIS regional policies.</p>
 
