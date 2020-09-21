@@ -61,7 +61,7 @@
 		<p>Gray regions indicate that there is no data available for that region.</p>
 		<p>The map shows cities with the most research intensive universities (those in "TRAC peer group A"). This group has been chosen due to its key relevance for BEIS regional policies.</p>
 
-		<h3>Barchart</h3>
+		<h3>Bar chart</h3>
 		<p>On the rightleft there is a barchart showing the disrtibution of the indicator values in various NUTS2 regions, sorted by value in descendent order.</p>
 
 		<h3>Regional selection</h3>
