@@ -20,10 +20,7 @@
 		<p>On the right you will find a representation of the temporal coverage for each available indicator.<p>
 		<p>Each circle represents that data for an indicator is available for that year.<p>
 		<p>Click on it to the navigate to that indicator for that specific year.<p>
-
-		<h3>Timeline</h3>
-		<p>Here you find a list of all the years where there's data available for at least one indicator.<p>
-		<p>In this page, the timeline is not interactive.<p>
+		<p>The timeline below shows a list of all years where there is data available for at least one indicator.<p>
 
 		<h3>Sidebar</h3>
 		<p>Here you find a list of indicators, grouped in various thematic sections.<p>
