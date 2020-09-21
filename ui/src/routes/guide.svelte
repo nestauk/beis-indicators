@@ -54,7 +54,7 @@
 
 		<h2>Geographic distribution</h2>
 
-		<p>This page cak be reached either by clicking on a dot in the index page or by clicking on one of the dots of the timeline in the trend of a certain indicator.<p></p>
+		<p>This page can be reached either by clicking on a dot in the Indicators page or by clicking on one of the dots of the timeline when looking at the trend for a particular indicator.<p></p>
 
 		<h3>Sidebar</h3>
 		<p>The sidebar has the same function described above: you can use it to navigate indicators trend page.<p></p>
