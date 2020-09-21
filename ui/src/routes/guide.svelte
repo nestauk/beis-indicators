@@ -16,7 +16,7 @@
 
 		<h2>Main page</h2>
 
-		<h3>Temporal ditribution</h3>
+		<h3>Time coverage</h3>
 		<p>On the right you find a representation of temporal ditribution or the available indicators.<p>
 		<p>Each circle represents data for an indicator being available for that year.<p>
 		<p>Click on it to the navigate to that indicator for that specific year.<p>
