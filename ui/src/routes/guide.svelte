@@ -36,7 +36,7 @@
 		<p>The Timeline shows one white dot for each year that the indicator is available. In this view, the timeline is interactive. Clicking on a dot navigates to a map showing the geographic distribution of the indicator for that year.<p>
 
 		<h3>Trends</h3>
-		<p>Here you find a set of trend lines, one for each selected NUTS2 regions.</p>
+		<p>Here you will see a set of trend lines, with each line showing the indicator value for one NUTS2 region over time (where data is available).</p>
 		<p>Hovering trends, highlights the trend and the data point nearest to the pointer.</p>
 		<p>Please use the switch on the top-right corner to choose between showing trends with absolute or ranked values.</p>
 
