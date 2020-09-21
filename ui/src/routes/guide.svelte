@@ -48,7 +48,7 @@
 		<p>Filtering is useful to isolate trends for the desired regions. When filtering, the colour scale on the left is updated to reflect only the values of the active trends.</p>
 
 		<h3>Indicator info and download</h3>
-		<p>Clicking in the "i" icon at the right of the page title shows an info panel reporting the indicator metadata (data provenance, date of processing, etc).</p>
+		<p>Clicking on the "i" icon at the right of the page title shows an info panel reporting the indicator metadata (data provenance, date of processing, etc).</p>
 		<p>In that same panel there is a button to download the <a href={csvWikiURL}>CSV file</a> of the current indicator.</p>
 		<p>The panel cak be dismissed by clicking iot the page background.</p>
 
