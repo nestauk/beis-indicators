@@ -73,7 +73,9 @@
 		<p>The "i" icon at the right of the page title has the same function described in the Trends section above.</p>
 
 		<h2>Downloading all indicators</h2>
-		<p>Please click on "download" icon on the top-right of the website header to download a zip file containing the CSV files of all all the indicators.</p>
+                 <p>It is possible to download all data in the tool for your own use.<p>
+		<p>Please click on the download icon at the top-right corner of the website header to download a zip file containing the CSV files of all of the indicators.</p>
+		
 		<p>That zip file also contains an extra CSV file (titled <code>beis_indicators_{version}.csv</code>) containing all datapoints of all indicators in a single place.</p>
 
 		<LinkButton url='/indicators' text='Explore the indicators' />
