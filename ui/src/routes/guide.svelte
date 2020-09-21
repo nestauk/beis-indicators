@@ -67,7 +67,7 @@
 
 		<h3>Regional selection</h3>
 		<p>As in the trends view, it is possible to highlight or filter the NUTS2 regions within a certain year by selecting a NUTS1 region and using the switch to change selection mode.</p>
-		<p>When filtering the map zooms on the currently selected regions.</p>
+		<p>When the 'Filter' option is selected, the map zooms in on the currently selected regions.</p>
 
 		<h3>Indicator info and download</h3>
 		<p>The "i" icon at the right of the page title has the very same function described above.</p>
