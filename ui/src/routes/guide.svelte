@@ -62,7 +62,8 @@
 		<p>The map shows cities with the most research intensive universities (those in "TRAC peer group A"). This group has been chosen due to its key relevance for BEIS regional policies.</p>
 
 		<h3>Bar chart</h3>
-		<p>On the rightleft there is a barchart showing the disrtibution of the indicator values in various NUTS2 regions, sorted by value in descendent order.</p>
+		<p>On the right there is a bar chart showing the distribution of the indicator values for each NUTS2 region in descending order.</p>
+		<p>The national average is also shown, represented by a vertical dashed line. This is calculated as the mean of all available values within the year shown.<p>
 
 		<h3>Regional selection</h3>
 		<p>As for the trends view, it ir porrible toi highlight or filter the NUTS2 regions for a certain year by selecting a NUTS1 region and using the switch to change selection mode.</p>
