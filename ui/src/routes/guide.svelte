@@ -70,7 +70,7 @@
 		<p>When the 'Filter' option is selected, the map zooms in on the currently selected regions.</p>
 
 		<h3>Indicator info and download</h3>
-		<p>The "i" icon at the right of the page title has the very same function described above.</p>
+		<p>The "i" icon at the right of the page title has the same function described in the Trends section above.</p>
 
 		<h2>Downloading all the indicators at once</h2>
 		<p>Please click on "download" icon on the top-right of the website header to download a zip file containing the CSV files of all all the indicators.</p>
