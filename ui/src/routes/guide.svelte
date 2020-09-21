@@ -52,7 +52,7 @@
 		<p>In that same panel there is a button to download a <a href={csvWikiURL}>CSV file</a> of the current indicator.</p>
 		<p>The panel can be dismissed by clicking on the page background.</p>
 
-		<h2>Indicator yearly data</h2>
+		<h2>Geographic distribution</h2>
 
 		<p>This page cak be reached either by clicking on a dot in the index page or by clicking on one of the dots of the timeline in the trend of a certain indicator.<p></p>
 
