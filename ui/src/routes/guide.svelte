@@ -56,9 +56,6 @@
 
 		<p>This page can be reached either by clicking on a dot in the Indicators page or by clicking on one of the dots of the timeline when looking at the trend for a particular indicator.<p></p>
 
-		<h3>Sidebar</h3>
-		<p>The sidebar has the same function described above: you can use it to navigate indicators trend page.<p></p>
-
 		<h3>Map</h3>
 		<p>On the left there is a choropleth showing the indicator values on the map of UK NUTS2 regions.</p>
 		<p>Gray regions indicate that there is no data available for that region.</p>
