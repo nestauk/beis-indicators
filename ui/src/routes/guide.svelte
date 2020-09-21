@@ -35,9 +35,6 @@
 		<h3>Timeline</h3>
 		<p>The Timeline shows one white dot for each year that the indicator is available. In this view, the timeline is interactive. Clicking on a dot navigates to a map showing the geographic distribution of the indicator for that year.<p>
 
-		<h3>Sidebar</h3>
-		<p>The sidebar has the same function described above: you can use it to navigate to the trends page of the available indicators.<p></p>
-
 		<h3>Trends</h3>
 		<p>Here you find a set of trend lines, one for each selected NUTS2 regions.</p>
 		<p>Hovering trends, highlights the trend and the data point nearest to the pointer.</p>
