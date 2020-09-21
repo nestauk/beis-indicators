@@ -45,7 +45,7 @@
 		<p>By default all NUTS2 regions are selected. The globe button toggles a menu where you can select which NUTS1 regions you want to show or filter out.</p>
 		<p>The selected NUTS2 regions can be highlighted or filtered using the toggle next to the globe icon.</p>
 		<p>Highlighting is useful to focus the attention on the trends for the desired regions while still being able to see them all.</p>
-		<p>Filtering is useful to isolate trends for the desired regions: when filtering, the color scale on the left gets updated only considering the values of the active trends.</p>
+		<p>Filtering is useful to isolate trends for the desired regions. When filtering, the colour scale on the left is updated to reflect only the values of the active trends.</p>
 
 		<h3>indicator info and download</h3>
 		<p>Clicking in the "i" icon at the right of the page title shows an info panel reporting the indicator metadata (data provenance, date of processing, etc).</p>
