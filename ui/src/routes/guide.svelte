@@ -14,7 +14,7 @@
 	<section>
 		<h1>How to explore the indicators</h1>
 
-		<h2>Main page</h2>
+		<h2>Indicators page</h2>
 
 		<h3>Time coverage</h3>
 		<p>On the right you will find a representation of the temporal coverage for each available indicator.<p>
