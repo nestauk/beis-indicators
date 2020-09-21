@@ -33,7 +33,7 @@
 		<h2>Indicator trends</h2>
 
 		<h3>Timeline</h3>
-		<p>The Timeline shows one white dot for each available year. It is now interactive in that by clicking on a dot lets you navigate to the indicator yearly view for that year.<p>
+		<p>The Timeline shows one white dot for each year that the indicator is available. In this view, the timeline is interactive. Clicking on a dot navigates to a map showing the geographic distribution of the indicator for that year.<p>
 		<p>In this page, the timeline is not interactive.<p>
 
 		<h3>Sidebar</h3>
