@@ -41,7 +41,7 @@
 		<p>You can use the toggle in the top-right corner to choose between showing actual values or the rank of each region.</p>
 
 		<h3>Regional selection</h3>
-		<p>It is possible to select NUTS1 regions to inherently select its contained NUTS2 region. This is particularly useful because NUTS1 regions don't vary over the years whereas NUTS2 regions do.</p>
+		<p>The trend lines shown correspond to NUTS2 regions, however it is possible to select and filter regions based on the larger NUTS1 regions, of which they are a part. This is particularly useful for clarity when focusing on specific regions and also because NUTS1 regions don't vary over time whereas NUTS2 regions do.</p>
 		<p>By default all NUTS2 regions are selected. The "globe" button toggles the menu where you can select the NUTS1 regions.</p>
 		<p>The selected NUTS2 regions can be highlighted or filtered.</p>
 		<p>Highlighting is useful to focus the attention on the trends for the desired regions while still being able to see them all.</p>
