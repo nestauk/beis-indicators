@@ -43,7 +43,7 @@
 		<h3>Regional selection</h3>
 		<p>The trend lines shown correspond to NUTS2 regions, however it is possible to select and filter regions based on the larger NUTS1 regions, of which they are a part. This is particularly useful for clarity when focusing on specific regions and also because NUTS1 regions don't vary over time whereas NUTS2 regions do.</p>
 		<p>By default all NUTS2 regions are selected. The globe button toggles a menu where you can select which NUTS1 regions you want to show or filter out.</p>
-		<p>The selected NUTS2 regions can be highlighted or filtered.</p>
+		<p>The selected NUTS2 regions can be highlighted or filtered using the toggle next to the globe icon.</p>
 		<p>Highlighting is useful to focus the attention on the trends for the desired regions while still being able to see them all.</p>
 		<p>Filtering is useful to isolate trends for the desired regions: when filtering, the color scale on the left gets updated only considering the values of the active trends.</p>
 
