@@ -50,7 +50,7 @@
 		<h3>Indicator info and download</h3>
 		<p>Clicking on the "i" icon at the right of the page title shows an info panel reporting the indicator metadata (data provenance, date of processing, etc).</p>
 		<p>In that same panel there is a button to download a <a href={csvWikiURL}>CSV file</a> of the current indicator.</p>
-		<p>The panel cak be dismissed by clicking iot the page background.</p>
+		<p>The panel can be dismissed by clicking on the page background.</p>
 
 		<h2>Indicator yearly data</h2>
 
