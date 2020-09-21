@@ -18,7 +18,7 @@
 
 		<h3>Time coverage</h3>
 		<p>On the right you will find a representation of the temporal coverage for each available indicator.<p>
-		<p>Each circle represents data for an indicator being available for that year.<p>
+		<p>Each circle represents that data for an indicator is available for that year.<p>
 		<p>Click on it to the navigate to that indicator for that specific year.<p>
 
 		<h3>Timeline</h3>
