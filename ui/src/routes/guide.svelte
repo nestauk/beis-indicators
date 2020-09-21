@@ -1,6 +1,5 @@
 <script>
 	import LinkButton from 'app/components/LinkButton.svelte';
-	import ExternalLink from 'app/components/ExternalLink.svelte';
 	import {version} from 'app/utils';
 
 	const csvWikiURL = 'https://en.wikipedia.org/wiki/Comma-separated_values';
@@ -24,10 +23,12 @@
 
 		<h3>Sidebar</h3>
 		<p>Here you will find a list of indicators, grouped by theme sections. These are:<p>
-		<li>Public R&D capability</li>
-		<li>Business R&D capacity</li>
-		<li>Knowledge exchange</li>
-		<li>Place potential</li>
+		<ul>
+			<li>Public R&D capability</li>
+			<li>Business R&D capacity</li>
+			<li>Knowledge exchange</li>
+			<li>Place potential</li>
+		</ul>
 		<p>Clicking on the name of an indicator will navigate to the trend view for that indicator.<p>
 
 		<h2>Indicator trends</h2>
@@ -75,7 +76,7 @@
 		<h2>Downloading all indicators</h2>
                  <p>It is possible to download all data in the tool for your own use.<p>
 		<p>Please click on the download icon at the top-right corner of the website header to download a zip file containing the CSV files of all of the indicators.</p>
-		
+
 		<p>That zip file also contains an extra CSV file (titled <code>beis_indicators_{version}.csv</code>) containing all datapoints of all indicators in a single file.</p>
 
 		<LinkButton url='/indicators' text='Explore the indicators' />
@@ -114,7 +115,12 @@
 		margin-top: 1.5rem;
 		font-family: 'Open Sans Regular', sans-serif;
 	}
-	p {
+
+	ul {
+		padding: 0.5rem 0 0.5rem 2rem;
+	}
+
+	p, ul {
 		line-height: 2rem;
 	}
 
