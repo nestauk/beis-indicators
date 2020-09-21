@@ -28,7 +28,7 @@
 		<li>Business R&D capacity</li>
 		<li>Knowledge exchange</li>
 		<li>Place potential</li>
-		<p>Clicking on a title will navigate to the trend view for that indicator.<p>
+		<p>Clicking on the name of an indicator will navigate to the trend view for that indicator.<p>
 
 		<h2>Indicator trends</h2>
 
