@@ -18,6 +18,6 @@ founded = load_org_founded_counts()
 for geo, coder in coders.items():
     total_companies = points_to_indicator(founded, value_col='companies_founded', 
             coder=coder, aggfunc=np.sum, projection='EPSG:4326', 
-            x_col='longitude', y_col='latitude')
+            x_col='longitude', y_col='latitude', astype=int)
     save_indicator(total_companies, 'crunchbase', geo)
 

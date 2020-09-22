@@ -18,7 +18,7 @@ schema:
   lep_year_spec: 
     type: LepRegion.lep_year_spec 
   value:
-    data_type: in
+    data_type: int
     description: Total number of technology companies founded.
     id: companies_founded
     label: Number of companies founded
