@@ -7,7 +7,7 @@
 - add housing cost indicator (#285)
 - add Horizon 2020 funding data (#326)
 
-## UI
+## Tool
 
 - Barchart to automatically scroll to the focused key (#275)
 - Add a color legend to the map view (#269)
@@ -20,6 +20,7 @@
 - Show the `warning` field in the info panel (#288)
 - The downloadable zip contains a CSV file with all the datapoints of all of the indicators (#243)
 - Add a color scale to the trends page (#268)
+- Add a guide page (#268)
 
 ## Specs
 

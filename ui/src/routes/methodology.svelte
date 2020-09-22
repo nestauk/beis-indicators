@@ -52,13 +52,15 @@
 
 		<p>We indicate those indicators based on experimental methodologies or data sources where relevant.<p>
 
-		<LinkButton
-			url={zipUrl}
-			text='Download all indicators'
-			withDownloadIcon={true}
-		/>
+		<div class='cta'>
+			<LinkButton
+				url={zipUrl}
+				text='Download all indicators'
+				withDownloadIcon={true}
+			/>
 
-		<LinkButton url='/indicators' text='Explore the indicators' />
+			<LinkButton url='/guide' text='Read the app guide' />
+		</div>
 	</section>
 </main>
 
@@ -82,6 +84,15 @@
 		box-shadow: var(--box-shadow-y);
 	}
 
+	h1 {
+		font-family: 'Open Sans Semibold', sans-serif;
+	}
+	h2 {
+		margin-bottom: 1.5rem;
+		margin-top: 1.5rem;
+		font-family: 'Open Sans Regular', sans-serif;
+	}
+
 	p {
 		margin-bottom: 1.5rem;
 	}
@@ -102,5 +113,11 @@
 	ul {
 		list-style: initial;
 		margin-left: 20px;
+	}
+
+	.cta {
+		margin: 4rem 0 3rem 0;
+		display: flex;
+		justify-content: space-around;
 	}
 </style>

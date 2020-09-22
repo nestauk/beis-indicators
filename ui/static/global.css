@@ -66,7 +66,7 @@ a {
 	--color-grey-40: rgb(40, 40, 40);
 	--color-paleyellow: #f9f7dd;
 	--color-link: var(--color-main);
-	--color-background: var(--color-main-lighter);
+	--color-background: var(--color-main);
 	--dim-fontsize-light: 200;
 	--dim-header-height: 3rem;
 	--dim-main-height: calc(100% - var(--dim-header-height));
