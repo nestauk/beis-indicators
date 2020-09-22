@@ -86,7 +86,7 @@
 		<!-- feedback -->
 		<h2>Version, changelog and feedback</h2>
 
-		<p>In the top-right corner, you'll find the tool version (currently <code>{version}</code>).</p>
+		<p>In the top-right corner, you will find the version number of the tool (currently <code>{version}</code>).</p>
 		<p>Click on it to navigate to the tool changelog, where you can read about the changes introduced in each version of the tool.</p>
 		<p>Also, should you find bugs or have ideas about how to enhance this tool, please don't hesitate to send your feedback: click on the "Feedback" link to navigate to a short survey, where you can also find our contacts.</p>
 
