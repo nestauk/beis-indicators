@@ -13,6 +13,7 @@
 	<section>
 		<h1>How to explore the indicators</h1>
 
+		<!-- main -->
 		<h2>Indicators page</h2>
 
 		<h3>Time coverage</h3>
@@ -31,6 +32,7 @@
 		</ul>
 		<p>Clicking on the name of an indicator will navigate to the trend view for that indicator.<p>
 
+		<!-- trends -->
 		<h2>Indicator trends</h2>
 
 		<h3>Timeline</h3>
@@ -53,6 +55,7 @@
 		<p>In that same panel there is a button to download a <a href={csvWikiURL}>CSV file</a> of the current indicator.</p>
 		<p>The panel can be dismissed by clicking on the page background.</p>
 
+		<!-- map -->
 		<h2>Geographic distribution</h2>
 
 		<p>This page can be reached either by clicking on a dot in the Indicators page or by clicking on one of the dots of the timeline when looking at the trend for a particular indicator.<p></p>
@@ -73,11 +76,19 @@
 		<h3>Indicator info and download</h3>
 		<p>The "i" icon at the right of the page title has the same function described in the Trends section above.</p>
 
+		<!-- download -->
 		<h2>Downloading all indicators</h2>
-                 <p>It is possible to download all data in the tool for your own use.<p>
-		<p>Please click on the download icon at the top-right corner of the website header to download a zip file containing the CSV files of all of the indicators.</p>
 
+		<p>You can download all data in the tool for your own use.<p>
+		<p>Please click on the download icon at the top-right corner of the website header to download a zip file containing the CSV files of all of the indicators.</p>
 		<p>That zip file also contains an extra CSV file (titled <code>beis_indicators_{version}.csv</code>) containing all datapoints of all indicators in a single file.</p>
+
+		<!-- feedback -->
+		<h2>Version, changelog and feedback</h2>
+
+		<p>In the top-right corner, you'll find the tool version (currently <code>{version}</code>).</p>
+		<p>Click on it to navigate to the tool changelog, where you can read about the changes introduced in each version of the tool.</p>
+		<p>Also, should you find bugs or have ideas about how to enhance this tool, please don't hesitate to send your feedback: click on the "Feedback" link to navigate to a short survey, where you can also find our contacts.</p>
 
 		<LinkButton url='/indicators' text='Explore the indicators' />
 	</section>
