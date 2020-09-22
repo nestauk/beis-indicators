@@ -34,9 +34,11 @@
 		<p>Measuring the connectivity between higher education institutions in a region and the wider economy.<p>
 
 		<h3>Place potential</h3>
-		<p>Measuring wider infrastructures and framework conditions in a region that might drive - or hinder - its innovative performance.<p>
+		<p>Measuring wider infrastructures and framework conditions in a region that might drive - or hinder - its innovative performance.</p>
 
-		<LinkButton url='/methodology' text='Read more about our methodology' />
+		<div class='cta'>
+			<LinkButton url='/methodology' text='Read more about the methodology' />
+		</div>
 	</section>
 </main>
 
@@ -52,24 +54,12 @@
 		background-color: var(--color-background);
 	}
 
-	p {
-		margin-bottom: 1.5rem;
-	}
-
-	a {
-		padding: 0.1rem;
-		border-bottom: 1px solid var(--color-link);
-		color: var(--color-link);
-		text-decoration: none;
-		font-weight: bold;
-	}
-
 	section {
 		max-width: 800px;
 		padding: 2rem;
 		overflow-y: auto;
 		background-color: white;
-		box-shadow: 0px 8px 9px -4px lightgrey;
+		box-shadow: var(--box-shadow-y);
 	}
 
 	h1 {
@@ -83,5 +73,21 @@
 	h3 {
 		margin-top: 1.5rem;
 		font-family: 'Open Sans Regular', sans-serif;
+	}
+
+	p {
+		margin-bottom: 1.5rem;
+	}
+
+	a {
+		padding: 0.1rem;
+		border-bottom: 1px solid var(--color-link);
+		color: var(--color-link);
+		text-decoration: none;
+		font-weight: bold;
+	}
+
+	.cta {
+		margin: 4rem 0 3rem 0;
 	}
 </style>

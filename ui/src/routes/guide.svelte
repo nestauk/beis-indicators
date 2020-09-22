@@ -88,9 +88,11 @@
 
 		<p>In the top-right corner, you will find the version number of the tool (currently <code>{version}</code>).</p>
 		<p>Clicking on the version number will navigate to a list of all the notable changes introduced in each version of the tool.</p>
-		<p>Also, should you find bugs or have ideas about how to enhance this tool, please don't hesitate to send your feedback: click on the "Feedback" link to navigate to a short survey, where you can also find our contacts.</p>
+		<p>Should you find bugs or have ideas about how to enhance this tool, please don't hesitate to send your feedback: click on the "Feedback" link to navigate to a short survey and our contact details.</p>
 
-		<LinkButton url='/indicators' text='Explore the indicators' />
+		<div class='cta'>
+			<LinkButton url='/indicators' text='Explore the indicators' />
+		</div>
 	</section>
 </main>
 
@@ -149,7 +151,10 @@
 	}
 
 	code {
-		font-weight: bold;
 		font-family: 'Courier new', monospace;
+	}
+
+	.cta {
+		margin: 4rem 0 3rem 0;
 	}
 </style>
