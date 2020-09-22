@@ -109,7 +109,7 @@
 	}
 
 	section {
-		max-width: 800px;
+		max-width: 900px;
 		padding: 2rem;
 		overflow-y: auto;
 		background-color: white;

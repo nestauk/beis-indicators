@@ -58,8 +58,8 @@
 				text='Download all indicators'
 				withDownloadIcon={true}
 			/>
-
-			<LinkButton url='/guide' text='Read the app guide' />
+			<LinkButton url='/guide' text='Read the guide' />
+			<LinkButton url='/indicators' text='Explore the indicators' />
 		</div>
 	</section>
 </main>
@@ -77,7 +77,7 @@
 	}
 
 	section {
-		max-width: 800px;
+		max-width: 900px;
 		padding: 2rem;
 		overflow-y: auto;
 		background-color: white;

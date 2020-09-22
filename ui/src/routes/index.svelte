@@ -38,6 +38,7 @@
 
 		<div class='cta'>
 			<LinkButton url='/methodology' text='Read more about the methodology' />
+			<LinkButton url='/indicators' text='Explore the indicators' />
 		</div>
 	</section>
 </main>
@@ -55,7 +56,7 @@
 	}
 
 	section {
-		max-width: 800px;
+		max-width: 900px;
 		padding: 2rem;
 		overflow-y: auto;
 		background-color: white;
@@ -89,5 +90,8 @@
 
 	.cta {
 		margin: 4rem 0 3rem 0;
+		display: flex;
+		justify-content: space-around;
+		align-content: center;
 	}
 </style>
