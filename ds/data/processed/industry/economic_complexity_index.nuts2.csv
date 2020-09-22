@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-year,lep_id,lep_year_spec,economic_complexity_index
-=======
 year,nuts_id,nuts_year_spec,economic_complexity_index
->>>>>>> Add bres version of files needed to create nuts and lep files, removed data files not needed
 2019,UKC1,2013,-0.0832
 2019,UKC2,2013,-0.0885
 2019,UKD1,2013,-0.0772
