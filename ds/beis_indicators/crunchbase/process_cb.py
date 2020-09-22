@@ -50,7 +50,7 @@ def get_cb_uk_org_locs():
         "INNER JOIN "
         "(SELECT id, location_id, founded_on FROM crunchbase_organizations "
 #       "WHERE closed_on IS NULL AND location_id IS NOT NULL AND roles = 'company') AS org "
-        "WHERE location_id IS NOT NULL AND roles = 'company') AS org "
+        "WHERE location_id IS NOT NULL AND primary_role = 'company') AS org "
         "ON (loc.id = org.location_id)")
     org_locs = pd.read_sql(org_loc_query, con=engine)
     org_locs = org_locs.set_index('id')
