@@ -1,7 +1,7 @@
 api_type: MySQL
 auth_provider: Nesta 
 data_date: 20200922
-description_long: The total number of technology companies founded according to Crunchbase. Technology companies were identified using their industry sector group labels provided by Crunchbase. In this case, the companies must belong to one of: Apps, Artificial Intelligence, Biotechnology, Consumer Electronics, Data and Analytics, Energy, Gaming, Hardware, Information Technology, Internet Services, Manufacturing, Mobile, Platforms, Science and Engineering or Software. These sectors represent groupings of the 700+ more granular sector labels that Crunchbase uses to categorise companies. The number of companies in this indicator is likely to be an underestimate due to the methods that Crunchbase uses to collect data (a mix of data sharing agreements with venture programmes, community crowdsourcing, machine learning and in-house data collection methods). In addition, some companies in Crunchbase are not associated with a location.
+description_long: 'The total number of technology companies founded according to Crunchbase. Technology companies were identified using their industry sector group labels provided by Crunchbase. In this case, the companies must belong to one of: Apps, Artificial Intelligence, Biotechnology, Consumer Electronics, Data and Analytics, Energy, Gaming, Hardware, Information Technology, Internet Services, Manufacturing, Mobile, Platforms, Science and Engineering or Software. These sectors represent groupings of the 700+ more granular sector labels that Crunchbase uses to categorise companies. The number of companies in this indicator is likely to be an underestimate due to the methods that Crunchbase uses to collect data (a mix of data sharing agreements with venture programmes, community crowdsourcing, machine learning and in-house data collection methods). In addition, some companies in Crunchbase are not associated with a location.'
 description_short: Total tech companies founded
 description: The total numer of technology companies founded according to Crunchbase.
 framework_group: business_rnd_capacity 
@@ -28,4 +28,3 @@ schema:
 source_name: Crunchbase 
 source_url: https://crunchbase.com/ 
 warning: Crunchbase is not a comprehensive survey of all companies that have been founded and its coverage varies from place to place.
-
