@@ -6,7 +6,6 @@ from beis_indicators import project_dir
 from beis_indicators.utils import camel_to_snake
 
 
-
 BASE_URL = ('https://www.hesa.ac.uk/data-and-analysis'
             '/providers/business-community')
 
@@ -30,6 +29,7 @@ def get_table(table_name, **read_opts):
     df['year'] = df['Academic Year'].str[:4].astype(int)
     return df
 
+
 def _load_consultancy_facilities_sme(df):
     """_load_consultancy_facilities_sme
     
@@ -44,6 +44,7 @@ def _load_consultancy_facilities_sme(df):
         (df['Type of organisation'] == "SME's") 
         & ((df['Type of service'] == 'Facilities and equipment related')
             | (df['Type of service'] == 'Consultancy'))]
+    df['Value'] = (df['Value'] * 1000).astype(int)
     return df
 
 
@@ -61,6 +62,7 @@ def _load_consultancy_facilities_non_sme(df):
         (df['Type of organisation'] == "Other (non-SME) commercial businesses") 
         & ((df['Type of service'] == 'Facilities and equipment related')
             | (df['Type of service'] == 'Consultancy'))]
+    df['Value'] = (df['Value'] * 1000).astype(int)
     return df
 
 
@@ -79,6 +81,7 @@ def _load_consultancy_facilities_public_third(df):
         (df['Type of organisation'] == "Non-commercial organisations") 
         & ((df['Type of service'] == 'Facilities and equipment related')
             | (df['Type of service'] == 'Consultancy'))])
+    df['Value'] = (df['Value'] * 1000).astype(int)
     return df
 
 
@@ -95,6 +98,7 @@ def _load_contract_research_sme(df):
     df = df[
         (df['Type of organisation'] == "SME's") 
         & (df['Type of service'] == 'Contract research')]
+    df['Value'] = (df['Value'] * 1000).astype(int)
     return df
 
 
@@ -112,6 +116,7 @@ def _load_contract_research_non_sme(df):
     df = df[
         (df['Type of organisation'] == "Other (non-SME) commercial businesses") 
         & (df['Type of service'] == 'Contract research')]
+    df['Value'] = (df['Value'] * 1000).astype(int)
     return df
 
 
@@ -129,6 +134,7 @@ def _load_contract_research_public_third(df):
     df = df[
         (df['Type of organisation'] == "Non-commercial organisations") 
         & (df['Type of service'] == 'Contract research')]
+    df['Value'] = (df['Value'] * 1000).astype(int)
     return df
 
 
@@ -149,8 +155,13 @@ def _load_cash(df):
     public_fund = df[
             (df['Type of income'] == 'Public funding')
             & (df['Source of public funding'] == 'All')]
+    
+    cash = cash.set_index(['UKPRN', 'year'])
+    public_fund = public_fund.set_index(['UKPRN', 'year'])
 
     cash['Value'] = cash['Value'] / public_fund['Value']
+    cash = cash.dropna(subset=['Value'])
+    cash = cash.reset_index()
     return cash
 
 
@@ -164,16 +175,17 @@ def _load_regen_development(df):
     Returns:
         df (pd.DataFrame): Regeneration and development income from all sources.
     """
-    df = df[df['Programme' == 'Total programmes']]
+    df = df[df['Programme'] == 'Total programmes']
+    df['Value'] = (df['Value'] * 1000).astype(int)
     return df
-
 
 
 def load_hebci():
     read_opts = {'header': 11}
-    df_service = get_table('table-2a', **read_opts)
+    df_service = get_table('table-2a.csv', **read_opts)
+    df_service.rename(columns={'Number/Value': 'Value'}, inplace=True)
     df_collab = get_table('table-1.csv', **read_opts)
-    df_regen = get_table('table-3', **read_opts)
+    df_regen = get_table('table-3.csv', **read_opts)
 
     dfs = {
         'consultancy_facilities_sme': _load_consultancy_facilities_sme(df_service),
