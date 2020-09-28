@@ -2,13 +2,15 @@
 
 ## Indicators
 
-- add number of technology companies (Crunchbase) (#63)
+- add Number of technology companies (Crunchbase) (#63)
 - add additional HE-BCI indicators (#347)
 
 ## Tool
 
 - Add a link to the indicators page in all pages (#335)
 - Update Svizzle packages (#364)
+- Update the color scale to blue-yellow-red (#358)
+
 
 # 0.0.12
 
