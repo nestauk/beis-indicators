@@ -138,8 +138,8 @@ def _load_contract_research_public_third(df):
     return df
 
 
-def _load_cash(df):
-    """_load_cash
+def _load_collaborative_research(df):
+    """_load_collaborative_research
 
     Args:
         df (pd.DataFrame): Collaborative research funding table from HESA (table-1).
@@ -149,20 +149,11 @@ def _load_cash(df):
             funding.
     """
 
-    cash = df[
+    df = df[
             (df['Type of income'] == 'Collaborative contribution - Cash')
             & (df['Source of public funding'] == 'All')]
-    public_fund = df[
-            (df['Type of income'] == 'Public funding')
-            & (df['Source of public funding'] == 'All')]
-    
-    cash = cash.set_index(['UKPRN', 'year'])
-    public_fund = public_fund.set_index(['UKPRN', 'year'])
-
-    cash['Value'] = cash['Value'] / public_fund['Value']
-    cash = cash.dropna(subset=['Value'])
-    cash = cash.reset_index()
-    return cash
+    df['Value'] = (df['Value'] * 1000).astype(int)
+    return df
 
 
 def _load_regen_development(df):
@@ -180,12 +171,76 @@ def _load_regen_development(df):
     return df
 
 
+def _load_ip_revenue(df):
+    """_load_ip_revenue
+    Args:
+        df (pd.DataFrame): Intellectual property revenue table from HESA (table-4).
+
+    Returns:
+        df (pd.DataFrame): IP revenue from all sources.
+    """
+    df = df[df['Category Marker'] == 'Total IP revenues']
+    df['Value'] = (df['Value'] * 1000).astype(int)
+    return df
+
+
+def _load_spinoff_revenue(df):
+    """_load_spinoff_revenue
+    Args:
+        df (pd.DataFrame): Intellectual property revenue table from HESA (table-4).
+
+    Returns:
+        df (pd.DataFrame): IP revenue from all sources.
+    """
+    df = df[df['Metric'] == 'Estimated current turnover of all active firms (£ thousands)']
+    df = df.groupby(['UKPRN', 'year']).sum().reset_index()
+    df['Value'] = (df['Value'] * 1000).astype(int)
+    return df
+
+
+def _load_spinoff_investment(df):
+    """_load_spinoff_turnover
+    Args:
+        df (pd.DataFrame): Intellectual property revenue table from HESA (table-4).
+
+    Returns:
+        df (pd.DataFrame): IP revenue from all sources.
+    """
+    df = df[df['Metric'] == 'Estimated external investment received (£ thousands)']
+    df = df.groupby(['UKPRN', 'year']).sum().reset_index()
+    df['Value'] = (df['Value'] * 1000).astype(int)
+    return df
+
+
+def _load_graduate_startups(df):
+    df = df[
+            (df['Metric'] == 'Number of active firms')
+            & (df['Category Marker'] == 'Graduate start-ups')]
+    df['Value'] = df['Value'].astype(int)
+    return df
+
+def _load_ce_cpd(df):
+    df = df[df['Category Marker'] == 'Total revenue']
+    df['Value'] = (df['Value'] * 1000).astype(int)
+    return df
+
+
+def _load_ce_cpd_days(df):
+    df = df[df['Category Marker'] == 'Total learner days of CPD/CE courses delivered']
+    df['Value'] = (df['Value'] * 1000).astype(int)
+    return df
+
+
 def load_hebci():
     read_opts = {'header': 11}
     df_service = get_table('table-2a.csv', **read_opts)
     df_service.rename(columns={'Number/Value': 'Value'}, inplace=True)
     df_collab = get_table('table-1.csv', **read_opts)
     df_regen = get_table('table-3.csv', **read_opts)
+    df_ip = get_table('table-4d.csv', **read_opts)
+    df_spinoff = get_table('table-4e.csv', **read_opts)
+    df_ce_cpd = get_table('table-2b.csv', **read_opts)
+
 
     dfs = {
         'consultancy_facilities_sme': _load_consultancy_facilities_sme(df_service),
@@ -194,8 +249,14 @@ def load_hebci():
         'contract_research_sme': _load_contract_research_sme(df_service),
         'contract_research_non_sme': _load_contract_research_non_sme(df_service),
         'contract_research_public_third': _load_contract_research_public_third(df_service),
-        'cash_as_proportion_public_funding': _load_cash(df_collab),
+        'collaborative_research_cash': _load_collaborative_research(df_collab),
         'regeneration_development': _load_regen_development(df_regen),
+        'ip_revenue': _load_ip_revenue(df_ip),
+        'spinoff_revenue': _load_spinoff_revenue(df_spinoff),
+        'spinoff_investment': _load_spinoff_investment(df_spinoff),
+        'graduate_startups': _load_graduate_startups(df_spinoff),
+        'ce_cpd_income': _load_ce_cpd(df_ce_cpd),
+        'ce_cpd_learner_days': _load_ce_cpd_days(df_ce_cpd)
             }
 
     for name, df in dfs.items():
