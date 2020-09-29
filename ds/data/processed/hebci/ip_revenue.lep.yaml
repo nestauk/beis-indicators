@@ -2,8 +2,8 @@ api_doc_url: https://www.hesa.ac.uk/data-and-analysis/providers/business-communi
 api_type: FETCH
 data_date: 20200924 
 description_long: Income from intellectual property (including patents, copyright, design, registration and trade marks) by higher education providers.
-description_short: Income from intellectual property by higher education providers.
-description: HE intellectual property income
+description_short: HE intellectual property income
+description: Income from intellectual property by higher education providers.
 endpoint_url: https://www.hesa.ac.uk/data-and-analysis/providers/business-community/table-4d.csv 
 framework_group: knowledge_exchange
 is_experimental: False
