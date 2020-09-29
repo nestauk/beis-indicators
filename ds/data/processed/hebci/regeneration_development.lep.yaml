@@ -19,13 +19,13 @@ schema:
   lep_year_spec: 
     type: LepRegion.lep_year_spec 
   value:
-    data_type: GBP
+    data_type: int
     description: Regeneration and development income
     id: regeneration_development 
     label: Income from regeneration and development
+    type: GBP
   year:
     data_type: int
     label: Year
 source_name: HESA (Higher Education Statistical Agency)
 source_url: https://www.hesa.ac.uk/
-
