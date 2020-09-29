@@ -1,17 +1,17 @@
 api_doc_url: https://www.hesa.ac.uk/data-and-analysis/providers/business-community/
 api_type: FETCH
 data_date: 20200924 
-description_long: Value of collaborations with non-academic partners. This indicator only considers the value of collaborations in cash and excludes the value of in-kind collaboration.
-description_short: Cash value of collaborations with non-academic parterns.  
-description: Collaborative research funding
-endpoint_url: https://www.hesa.ac.uk/data-and-analysis/providers/business-community/table-1.csv
+description_long: Income from intellectual property (including patents, copyright, design, registration and trade marks) by higher education providers.
+description_short: Income from intellectual property by higher education providers.
+description: HE intellectual property income
+endpoint_url: https://www.hesa.ac.uk/data-and-analysis/providers/business-community/table-4d.csv 
 framework_group: knowledge_exchange
 is_experimental: False
 is_public: True 
 order: [year, nuts_id, nuts_year_spec, value.id] 
 region:
-  level: 3
   type: NutsRegion
+  level: 2
   source_url: NutsRegion.source_url 
   source: NutsRegion.source 
 schema:
@@ -20,10 +20,10 @@ schema:
   nuts_year_spec: 
     type: NutsRegion.nuts_year_spec 
   value:
-    description: Collaborative research funding
-    id: collaborative_research_cash
-    label: Collaborative research income
-    type: GBP
+    data_type: GBP
+    description: HE intellectual property income
+    id: ip_revenue
+    label: Income
   year:
     data_type: int
     label: Year

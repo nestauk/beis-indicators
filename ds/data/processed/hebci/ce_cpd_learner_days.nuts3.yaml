@@ -1,10 +1,10 @@
 api_doc_url: https://www.hesa.ac.uk/data-and-analysis/providers/business-community/
 api_type: FETCH
-data_date: 20200924 
-description_long: Value of collaborations with non-academic partners. This indicator only considers the value of collaborations in cash and excludes the value of in-kind collaboration.
-description_short: Cash value of collaborations with non-academic parterns.  
-description: Collaborative research funding
-endpoint_url: https://www.hesa.ac.uk/data-and-analysis/providers/business-community/table-1.csv
+data_date: 20200928 
+description_long: Number of continuing professional development and continuing education learner days
+description_short: Number of continuing professional development and continuing education learner days
+description: Continuing professional development and education learner days
+endpoint_url: https://www.hesa.ac.uk/data-and-analysis/providers/business-community/table-2b.csv
 framework_group: knowledge_exchange
 is_experimental: False
 is_public: True 
@@ -20,10 +20,10 @@ schema:
   nuts_year_spec: 
     type: NutsRegion.nuts_year_spec 
   value:
-    description: Collaborative research funding
-    id: collaborative_research_cash
-    label: Collaborative research income
-    type: GBP
+    data_type: int
+    description: Continuing professional development and education learner days
+    id: ce_cpd_learner_days
+    label: Days
   year:
     data_type: int
     label: Year
