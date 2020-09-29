@@ -20,7 +20,7 @@ schema:
   nuts_year_spec: 
     type: NutsRegion.nuts_year_spec 
   value:
-    data_type: float
+    data_type: int
     description: Continuing professional development and education learner days
     id: ce_cpd_learner_days
     label: Days

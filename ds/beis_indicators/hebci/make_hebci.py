@@ -18,7 +18,8 @@ coders = {
 for name, data in hebci_data.items():
     for geo, coder in coders.items():
         indicator = points_to_indicator(data, value_col='Value', coder=coder,
-                        aggfunc=np.sum, value_rename=name,
+                        aggfunc=np.sum, value_rename=name, dp=0,
                         projection='EPSG:4326', x_col='longitude', y_col='latitude')
+        indicator[name] = indicator[name].astype(int)
         save_indicator(indicator, 'hebci', geo)
 
