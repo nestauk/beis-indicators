@@ -20,6 +20,7 @@ schema:
   nuts_year_spec: 
     type: NutsRegion.nuts_year_spec 
   value:
+    data_type: int
     description: Collaborative research funding
     id: collaborative_research_cash
     label: Collaborative research income

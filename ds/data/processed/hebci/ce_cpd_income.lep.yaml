@@ -19,6 +19,7 @@ schema:
   lep_year_spec: 
     type: LepRegion.lep_year_spec 
   value:
+    data_type: int
     description: Continuing professional development and education income
     id: ce_cpd_income
     label: Income

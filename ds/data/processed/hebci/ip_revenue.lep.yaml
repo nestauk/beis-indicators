@@ -19,10 +19,11 @@ schema:
   lep_year_spec: 
     type: LepRegion.lep_year_spec 
   value:
-    data_type: GBP
+    data_type: int
     description: HE intellectual property income
     id: ip_revenue
     label: Income
+    type: GBP
   year:
     data_type: int
     label: Year

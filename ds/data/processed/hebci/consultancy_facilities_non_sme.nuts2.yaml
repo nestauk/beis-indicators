@@ -20,6 +20,7 @@ schema:
   nuts_year_spec: 
     type: NutsRegion.nuts_year_spec 
   value:
+    data_type: int
     data_type: GBP
     description: Contract research income
     id: consultancy_facilities_non_sme

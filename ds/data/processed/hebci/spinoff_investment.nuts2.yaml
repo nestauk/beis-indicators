@@ -20,6 +20,7 @@ schema:
   nuts_year_spec: 
     type: NutsRegion.nuts_year_spec 
   value:
+    data_type: int
     description: Investment in higher education spin-offs
     id: spinoff_investment
     label: Investment

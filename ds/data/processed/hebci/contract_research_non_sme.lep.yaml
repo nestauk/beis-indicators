@@ -19,10 +19,11 @@ schema:
   lep_year_spec: 
     type: LepRegion.lep_year_spec 
   value:
-    data_type: GBP
+    data_type: int
     description: Contract research income
     id: contract_research_non_sme
     label: Income from contract research
+    type: GBP
   year:
     data_type: int
     label: Year

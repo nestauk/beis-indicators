@@ -20,10 +20,11 @@ schema:
   lep_year_spec: 
     type: LepRegion.lep_year_spec 
   value:
-    data_type: GBP
+    data_type: int
     description: Contract research income
     id: consultancy_facilities_sme
     label: Income from consultancy and facilities
+    type: GBP
   year:
     data_type: int
     label: Year
