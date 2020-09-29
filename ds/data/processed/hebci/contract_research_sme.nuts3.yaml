@@ -20,13 +20,13 @@ schema:
   nuts_year_spec: 
     type: NutsRegion.nuts_year_spec 
   value:
-    data_type: GBP
+    data_type: int
     description: Contract research income
     id: contract_research_sme 
     label: Income from contract research
+    type: GBP
   year:
     data_type: int
     label: Year
 source_name: HESA (Higher Education Statistical Agency)
 source_url: https://www.hesa.ac.uk/
-
