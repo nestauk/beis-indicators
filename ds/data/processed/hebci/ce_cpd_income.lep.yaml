@@ -2,8 +2,8 @@ api_doc_url: https://www.hesa.ac.uk/data-and-analysis/providers/business-communi
 api_type: FETCH
 data_date: 20200928 
 description_long: Income from continuing professional development and continuing education.
-description_short: Income from continuing professional development and continuing education.
-description: Continuing professional development and education income
+description_short: Continuing professional development and education income
+description: Income from continuing professional development and continuing education.
 endpoint_url: https://www.hesa.ac.uk/data-and-analysis/providers/business-community/table-2b.csv
 framework_group: knowledge_exchange
 is_experimental: False
