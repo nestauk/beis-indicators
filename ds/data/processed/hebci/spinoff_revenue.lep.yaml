@@ -1,0 +1,32 @@
+api_doc_url: https://www.hesa.ac.uk/data-and-analysis/providers/business-community/
+api_type: FETCH
+data_date: 20200928 
+description_long: Total turnover of all active spin-off activities associated with higher education institutions (spin-offs with some HEP ownership, formal spin-offs not HEP owned, staff start-ups, graduate start-ups and social enterprises).
+description_short: Total turnover of higher education spin-offs
+description: Total turnover of all spin-off activities associated with higher education institutions.
+endpoint_url: https://www.hesa.ac.uk/data-and-analysis/providers/business-community/table-4e.csv
+framework_group: knowledge_exchange
+is_experimental: False
+is_public: True 
+order: [year, lep_id, lep_year_spec, value.id] 
+region:
+  type: LepRegion
+  source_url: LepRegion.source_url 
+  source: LepRegion.source 
+schema:
+  lep_id: 
+    type: LepRegion.lep_id 
+  lep_year_spec: 
+    type: LepRegion.lep_year_spec 
+  value:
+    data_type: int
+    description: Total turnover of higher education spin-offs
+    id: spinoff_revenue
+    label: Turnover
+    type: GBP
+  year:
+    data_type: int
+    label: Year
+source_name: HESA (Higher Education Statistical Agency)
+source_url: https://www.hesa.ac.uk/
+
