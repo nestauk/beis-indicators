@@ -198,7 +198,7 @@
 	$: focusedKey = $tooltip.isVisible ? $tooltip.regionId : undefined;
 
 	// cities
-	$: cities = selectedKeys.length > 0 && _.map(majorCities, obj => {
+	$: cities = projection && _.map(majorCities, obj => {
 		const [x, y] = projection([obj.lng, obj.lat]);
 		const X = x + choroplethSafety.left;
 		const length = obj.name.length * labelsFontSize * 0.6;

@@ -10,6 +10,7 @@
 - Add a link to the indicators page in all pages (#335)
 - Update Svizzle packages (#364)
 - Update the color scale to blue-yellow-red (#358)
+- Fix: deselecting all regions was hiding cities (#366)
 
 ## Specs
 
