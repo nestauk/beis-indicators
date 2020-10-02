@@ -1,26 +1,25 @@
 api_doc_url: https://www.hesa.ac.uk/data-and-analysis/providers/business-community/
 api_type: FETCH
-data_date: 20200928 
-description_long: Income from continuing professional development and continuing education.
-description_short: Continuing professional development and education income
+data_date: 20200928
 description: Income from continuing professional development and continuing education.
+subtitle: Continuing professional development and education income
+title: Income from continuing professional development and continuing education.
 endpoint_url: https://www.hesa.ac.uk/data-and-analysis/providers/business-community/table-2b.csv
 framework_group: knowledge_exchange
 is_experimental: False
-is_public: True 
-order: [year, lep_id, lep_year_spec, value.id] 
+is_public: True
+order: [year, lep_id, lep_year_spec, value.id]
 region:
   type: LepRegion
-  source_url: LepRegion.source_url 
-  source: LepRegion.source 
+  source_url: LepRegion.source_url
+  source: LepRegion.source
 schema:
-  lep_id: 
-    type: LepRegion.lep_id 
-  lep_year_spec: 
-    type: LepRegion.lep_year_spec 
+  lep_id:
+    type: LepRegion.lep_id
+  lep_year_spec:
+    type: LepRegion.lep_year_spec
   value:
     data_type: int
-    description: Continuing professional development and education income
     id: ce_cpd_income
     label: Income
     type: GBP
@@ -29,4 +28,3 @@ schema:
     label: Year
 source_name: HESA (Higher Education Statistical Agency)
 source_url: https://www.hesa.ac.uk/
-

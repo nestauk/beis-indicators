@@ -1,7 +1,7 @@
 api_doc_url: https://www.hesa.ac.uk/data-and-analysis/estates/table-1
 api_type: FETCH
-description_short: Research income (GBP)
-description: Research income received by universities in the NUTS2 region
+subtitle: Research income (GBP)
+title: Research income received by universities in the NUTS2 region
 endpoint_url: https://www.hesa.ac.uk/data-and-analysis/estates/data.csv
 framework_group: public_rnd_capability
 is_experimental: False
@@ -18,7 +18,6 @@ schema:
     type: NutsRegion.year_spec
   value:
     data_type: int
-    description: Research income for universities in the region
     format: ','
     id: gbp_research_income
     label: Research income

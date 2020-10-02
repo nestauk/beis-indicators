@@ -1,27 +1,26 @@
 api_doc_url: https://www.hesa.ac.uk/data-and-analysis/providers/business-community/
 api_type: FETCH
-data_date: 20200924 
-description_long: Income for higher education institutions from providing consultancy and facilities services to SMEs
-description_short: HE consultancy and facilities income from SMEs
+data_date: 20200924
 description: Income for higher education institutions from providing consultancy and facilities services to SMEs
-endpoint_url: https://www.hesa.ac.uk/data-and-analysis/providers/business-community/table-2a.csv 
+subtitle: HE consultancy and facilities income from SMEs
+title: Income for higher education institutions from providing consultancy and facilities services to SMEs
+endpoint_url: https://www.hesa.ac.uk/data-and-analysis/providers/business-community/table-2a.csv
 framework_group: knowledge_exchange
 is_experimental: False
-is_public: True 
-order: [year, nuts_id, nuts_year_spec, value.id] 
+is_public: True
+order: [year, nuts_id, nuts_year_spec, value.id]
 region:
   type: NutsRegion
-  level: 2 
-  source_url: NutsRegion.source_url 
-  source: NutsRegion.source 
+  level: 2
+  source_url: NutsRegion.source_url
+  source: NutsRegion.source
 schema:
-  nuts_id: 
-    type: NutsRegion.nuts_id 
-  nuts_year_spec: 
-    type: NutsRegion.nuts_year_spec 
+  nuts_id:
+    type: NutsRegion.nuts_id
+  nuts_year_spec:
+    type: NutsRegion.nuts_year_spec
   value:
     data_type: int
-    description: Contract research income
     id: consultancy_facilities_sme
     label: Income from consultancy and facilities
     type: GBP
@@ -30,4 +29,3 @@ schema:
     label: Year
 source_name: HESA (Higher Education Statistical Agency)
 source_url: https://www.hesa.ac.uk/
-

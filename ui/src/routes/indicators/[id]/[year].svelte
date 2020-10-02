@@ -97,9 +97,8 @@
 		api_type,
 		auth_provider,
 		data_date,
-		description_long,
-		description_short,
 		description,
+		title,
 		endpoint_url,
 		is_public,
 		query,
@@ -107,6 +106,7 @@
 		schema,
 		source_name,
 		source_url,
+		subtitle,
 		url,
 		warning,
 		year_extent,
@@ -282,14 +282,14 @@
 </script>
 
 <svelte:head>
-	<title>BEIS indicators - {description_short} ({year})</title>
+	<title>BEIS indicators - {subtitle} ({year})</title>
 </svelte:head>
 
 <div class='container'>
 	<header>
 		<div>
-			<h1>{description_short} ({year})</h1>
-			<p>{description}</p>
+			<h1>{subtitle} ({year})</h1>
+			<p>{title}</p>
 		</div>
 		<div on:click={toggleInfoModal}>
 			<IconInfo
@@ -475,7 +475,7 @@
 			{api_type}
 			{auth_provider}
 			{data_date}
-			{description_long}
+			{description}
 			{endpoint_url}
 			{is_public}
 			{query}

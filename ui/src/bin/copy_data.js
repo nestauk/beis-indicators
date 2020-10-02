@@ -90,8 +90,8 @@ const run = async () => {
 						types[spec.schema.value.type].unit_string,
 					_.always('')
 				]),
-				description_short: () => spec.description_short,
-				description: () => spec.description,
+				subtitle: () => spec.subtitle,
+				title: () => spec.title,
 			})))
 		)
 	)

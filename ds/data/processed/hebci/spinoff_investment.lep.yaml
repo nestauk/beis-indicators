@@ -1,26 +1,25 @@
 api_doc_url: https://www.hesa.ac.uk/data-and-analysis/providers/business-community/
 api_type: FETCH
-data_date: 20200928 
-description_long: Total external investment in all spin-off activities associated with higher education institutions (spin-offs with some HEP ownership, formal spin-offs not HEP owned, staff start-ups, graduate start-ups and social enterprises).
-description: Total external investment in all spin-off activities associated with higher education institutions.
-description_short: Investment in higher education spin-offs
+data_date: 20200928
+description: Total external investment in all spin-off activities associated with higher education institutions (spin-offs with some HEP ownership, formal spin-offs not HEP owned, staff start-ups, graduate start-ups and social enterprises).
+title: Total external investment in all spin-off activities associated with higher education institutions.
+subtitle: Investment in higher education spin-offs
 endpoint_url: https://www.hesa.ac.uk/data-and-analysis/providers/business-community/table-4e.csv
 framework_group: knowledge_exchange
 is_experimental: False
-is_public: True 
-order: [year, lep_id, lep_year_spec, value.id] 
+is_public: True
+order: [year, lep_id, lep_year_spec, value.id]
 region:
   type: LepRegion
-  source_url: LepRegion.source_url 
-  source: LepRegion.source 
+  source_url: LepRegion.source_url
+  source: LepRegion.source
 schema:
-  lep_id: 
-    type: LepRegion.lep_id 
-  lep_year_spec: 
-    type: LepRegion.lep_year_spec 
+  lep_id:
+    type: LepRegion.lep_id
+  lep_year_spec:
+    type: LepRegion.lep_year_spec
   value:
     data_type: int
-    description: Investment in higher education spin-offs
     id: spinoff_investment
     label: Investment
     type: GBP
@@ -29,4 +28,3 @@ schema:
     label: Year
 source_name: HESA (Higher Education Statistical Agency)
 source_url: https://www.hesa.ac.uk/
-

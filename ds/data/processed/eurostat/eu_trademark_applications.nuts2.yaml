@@ -1,9 +1,9 @@
 api_doc_url: https://ec.europa.eu/eurostat/cache/metadata/en/ipr_t_esms.htm
 api_type: FETCH
 data_date: 20200818
-description_long: Trademark applications are a proxy for commercialisation. This indiator captures trademark registrations in the EU.
-description_short: Trademark
-description: Count of trademark applications
+description: Trademark applications are a proxy for commercialisation. This indiator captures trademark registrations in the EU.
+subtitle: Trademark
+title: Count of trademark applications
 endpoint_url: https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=ipr_ta_reg&lang=en
 framework_group: knowledge_exchange
 is_experimental: False
@@ -19,7 +19,6 @@ schema:
     type: NutsRegion.nuts_year_spec
   value:
     data_type: int
-    description: Count of trademark applications
     id: eu_trademark_applications
     label: Trademark applications
   year:

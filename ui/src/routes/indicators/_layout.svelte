@@ -58,7 +58,7 @@
 		{#each groups as {label, indicators}}
 		<div class='group'>
 			<h2>{label}</h2>
-			{#each indicators as {description_short, schema}}
+			{#each indicators as {subtitle, schema}}
 			<a
 				rel='prefetch'
 				href='indicators/{schema.value.id}'
@@ -71,7 +71,7 @@
 						scrollableHeight
 					}}
 				>
-				{description_short}
+				{subtitle}
 				</p>
 			</a>
 			{/each}

@@ -1,7 +1,7 @@
 api_doc_url: https://www.hesa.ac.uk/data-and-analysis/estates/table-1
 api_type: FETCH
-description_short: Total number of university buildings
-description: Number of university buildings in a LEP region
+subtitle: Total number of university buildings
+title: Number of university buildings in a LEP region
 endpoint_url: https://www.hesa.ac.uk/data-and-analysis/estates/data.csv
 framework_group: public_rnd_capability
 is_experimental: False
@@ -16,7 +16,6 @@ schema:
     type: LepRegion.year_spec
   value:
     data_type: int
-    description: Total number of buildings in the area
     id: total_university_buildings
     label: Total number of buildings
   year:

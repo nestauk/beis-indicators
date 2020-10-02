@@ -1,7 +1,7 @@
 api_doc_url: https://ec.europa.eu/eurostat/cache/metadata/en/rd_esms.htm
 api_type: FETCH
-description_short: Private non-profit R&D
-description: Private non-profit sector enterprise research & development (R&D) expenditure by NUTS 2 regions.
+subtitle: Private non-profit R&D
+title: Private non-profit sector enterprise research & development (R&D) expenditure by NUTS 2 regions.
 endpoint_url: http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/rd_e_gerdreg?sinceTimePeriod=2012&geoLevel=nuts2&precision=6&sectperf=PNP&unit=MIO_EUR'
 framework_group: public_rnd_capability
 is_experimental: False
@@ -17,7 +17,6 @@ schema:
     type: NutsRegion.nuts_year_spec
   value:
     data_type: int
-    description: Private non-profit sector R&D expenditure in euros (to the nearest 1000)
     format: ','
     id: eurostat_private_non_profit_rd_workforce_data
     label: Expenditure (to nearest 1000)

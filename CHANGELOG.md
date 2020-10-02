@@ -11,6 +11,13 @@
 - Update Svizzle packages (#364)
 - Update the color scale to blue-yellow-red (#358)
 
+## Specs
+
+- Description* fields (#365)
+	- renamed `description_long` -> `description`
+	- renamed `description_short` -> `subtitle`
+	- renamed `description` -> `title`
+	- removed `schema.value.description`
 
 # 0.0.12
 
