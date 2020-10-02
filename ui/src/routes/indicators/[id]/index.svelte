@@ -274,7 +274,7 @@
 				</div>
 
 				<Switch
-					initial={$doFilterRegionsStore ? 'Filter' : 'Highlight'}
+					value={$doFilterRegionsStore ? 'Filter' : 'Highlight'}
 					values={['Highlight', 'Filter']}
 					on:toggled={event => {
 						$doFilterRegionsStore = event.detail === 'Filter'
@@ -284,7 +284,7 @@
 
 			<div class='optgroup'>
 				<Switch
-					initial={'Absolute'}
+					value={'Absolute'}
 					values={['Absolute', 'Ranking']}
 					on:toggled={event => {
 						useOrderScale = event.detail === 'Ranking'

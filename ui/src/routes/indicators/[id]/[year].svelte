@@ -315,7 +315,7 @@
 				</div>
 
 				<Switch
-					initial={$doFilterRegionsStore ? 'Filter' : 'Highlight'}
+					value={$doFilterRegionsStore ? 'Filter' : 'Highlight'}
 					values={['Highlight', 'Filter']}
 					on:toggled={event => {
 						$doFilterRegionsStore = event.detail === 'Filter'
@@ -451,14 +451,6 @@
 					/>
 				</div>
 
-				<!-- geo modal -->
-				{#if $geoModalStore.isVisible}
-				<GeoFilterModal
-					{nutsSelectionStore}
-					on:click={toggleGeoModal}
-				/>
-				{/if}
-
 			</div>
 
 		{:else}
@@ -468,6 +460,14 @@
 			</div>
 
 		{/if} <!-- filteredData.length  -->
+
+		<!-- geo modal -->
+		{#if $geoModalStore.isVisible}
+		<GeoFilterModal
+			{nutsSelectionStore}
+			on:click={toggleGeoModal}
+		/>
+		{/if}
 
 		{#if $infoModalStore.isVisible}
 		<InfoModal
