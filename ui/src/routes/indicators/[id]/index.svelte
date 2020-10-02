@@ -26,6 +26,7 @@
 		transformValues,
 	} from '@svizzle/utils';
 	import ColorBinsG from '@svizzle/legend/src/ColorBinsG.svelte';
+	import Switch from '@svizzle/ui/src/Switch.svelte';
 
 	import { goto } from '@sapper/app';
 
@@ -35,7 +36,6 @@
 	import IconChevronUp from 'app/components/icons/IconChevronUp.svelte';
 	import IconGlobe from 'app/components/icons/IconGlobe.svelte';
 	import IconInfo from 'app/components/icons/IconInfo.svelte';
-	import Switch from 'app/components/Switch.svelte';
 	import {lookup, yearExtent, yearRange} from 'app/data/groups';
 	import groups from 'app/data/indicatorsGroups.json';
 	import yearlyKeyToLabel from 'app/data/NUTS2_UK_labels';

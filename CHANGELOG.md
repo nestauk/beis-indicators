@@ -1,3 +1,15 @@
+# 0.0.13 (next)
+
+## Indicators
+
+- add number of technology companies (Crunchbase) (#63)
+- add additional HE-BCI indicators (#347)
+
+## Tool
+
+- Add a link to the indicators page in all pages (#335)
+- Update Svizzle packages (#364)
+
 # 0.0.12
 
 ## Indicators

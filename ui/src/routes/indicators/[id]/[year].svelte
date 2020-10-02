@@ -12,10 +12,11 @@
 	import {extent} from 'd3-array';
 	import {geoEqualEarth as projectionFn} from 'd3-geo';
 	import {writable} from 'svelte/store';
-	import {topoToGeo, defaultGeometry} from '@svizzle/choropleth/src/utils';
-	import ChoroplethG from '@svizzle/choropleth/src/ChoroplethG.svelte';
-	import ColorBinsG from '@svizzle/legend/src/ColorBinsG.svelte';
 	import BarchartVDiv from '@svizzle/barchart/src/BarchartVDiv.svelte';
+	import ChoroplethG from '@svizzle/choropleth/src/ChoroplethG.svelte';
+	import {topoToGeo, defaultGeometry} from '@svizzle/choropleth/src/utils';
+	import ColorBinsG from '@svizzle/legend/src/ColorBinsG.svelte';
+	import Switch from '@svizzle/ui/src/Switch.svelte';
 	import {makeStyle, toPx} from '@svizzle/dom';
 	import {
 		applyFnMap,
@@ -34,7 +35,6 @@
 	import IconChevronUp from 'app/components/icons/IconChevronUp.svelte';
 	import IconGlobe from 'app/components/icons/IconGlobe.svelte';
 	import IconInfo from 'app/components/icons/IconInfo.svelte';
-	import Switch from 'app/components/Switch.svelte';
 	import {lookup} from 'app/data/groups';
 	import yearlyKeyToLabel from 'app/data/NUTS2_UK_labels';
 	import {
@@ -154,15 +154,16 @@
 		: yearData;
 
 	// colors
-	$: valueExtext = extent(filteredData, getIndicatorValue);
-	$: colorScale = makeColorScale(valueExtext);
-	$: colorBins = makeColorBins(colorScale);
+	$: valueExtext = filteredData.length && extent(filteredData, getIndicatorValue);
+	$: colorScale = filteredData.length && makeColorScale(valueExtext);
+	$: colorBins = filteredData.length && makeColorBins(colorScale);
+	$: console.log(filteredData, valueExtext, colorBins);
 	$: makeKeyToColor = _.pipe([
 		keyValueArrayToObject,
 		_.mapValuesWith(colorScale)
 	]);
-	$: keyToColorAll = makeKeyToColor(items);
-	$: keyToColorFiltered = makeKeyToColor(filteredItems);
+	$: keyToColorAll = filteredData.length && makeKeyToColor(items);
+	$: keyToColorFiltered = filteredData.length && makeKeyToColor(filteredItems);
 
 	// map
 	$: nuts_year_spec = yearData && yearData[0].nuts_year_spec
@@ -323,141 +324,150 @@
 			</div>
 		</div>
 
-		<div class='geodistro'>
+		{#if filteredData.length}
+			<div class='geodistro'>
 
-		<!-- col1 -->
-		<div
-			class="col col1"
-			on:mousemove={onMousemoved}
-			bind:clientWidth={width}
-			bind:clientHeight={height}
-		>
-			{#if topojson}
-			<svg
-				{width}
-				{height}
-			>
-				<ChoroplethG
-					{focusedKey}
-					{height}
-					{projection}
-					{selectedKeys}
-					{topojson}
-					{topojsonId}
-					{width}
-					geometry={{left: choroplethSafety.left}}
-					isInteractive={true}
-					key='NUTS_ID'
-					keyToColor={$doFilterRegionsStore ? keyToColorFiltered : keyToColorAll}
-					on:entered={onEnteredRegion}
-					on:exited={onExitedRegion}
-					theme={{
-						defaultFill: defaultGray,
-						defaultStroke: 'gray',
-						defaultStrokeWidth: 0.25,
-						focusedStroke: 'dodgerblue',
-						focusedStrokeWidth: 1.5,
-						selectedStroke: 'black',
-						selectedStrokeWidth: 0.5,
-					}}
+				<!-- col1 -->
+				<div
+					class="col col1"
+					on:mousemove={onMousemoved}
+					bind:clientWidth={width}
+					bind:clientHeight={height}
+				>
+					{#if topojson}
+						<svg
+							{width}
+							{height}
+						>
+							<ChoroplethG
+								{focusedKey}
+								{height}
+								{projection}
+								{selectedKeys}
+								{topojson}
+								{topojsonId}
+								{width}
+								geometry={{left: choroplethSafety.left}}
+								isInteractive={true}
+								key='NUTS_ID'
+								keyToColor={$doFilterRegionsStore ? keyToColorFiltered : keyToColorAll}
+								on:entered={onEnteredRegion}
+								on:exited={onExitedRegion}
+								theme={{
+									defaultFill: defaultGray,
+									defaultStroke: 'gray',
+									defaultStrokeWidth: 0.25,
+									focusedStroke: 'dodgerblue',
+									focusedStrokeWidth: 1.5,
+									selectedStroke: 'black',
+									selectedStrokeWidth: 0.5,
+								}}
+							/>
+
+							<!-- cities -->
+							{#if cities}
+							<g class='cities'>
+								{#each cities as {isLeft, name, X, Y, dx, dy}}
+									<g transform='translate({X},{Y})'>
+										<circle r={markerRadius}/>
+										<text
+											{dx}
+											{dy}
+											class:isLeft
+											class='background'
+											font-size={labelsFontSize}
+										>{name}</text>
+										<text
+											{dx}
+											{dy}
+											class:isLeft
+											font-size={labelsFontSize}
+										>{name}</text>
+									</g>
+								{/each}
+							</g>
+							{/if}
+
+							<!-- legend -->
+							<g transform='translate(0,{legendHeight})'>
+								<ColorBinsG
+									width={legendBarThickness}
+									height={legendHeight}
+									bins={colorBins}
+									flags={{
+										isVertical: true,
+										withBackground: true,
+									}}
+									theme={{
+										backgroundColor: 'white',
+										backgroundOpacity: 0.5,
+									}}
+									ticksFormatFn={formatFn}
+								/>
+							</g>
+						</svg>
+					{/if}
+
+					<!-- tooltip -->
+					{#if $tooltip.isVisible}
+					<div
+						class="tooltip"
+						style={$tooltip.style}
+					>
+						<header>
+							<span>{$tooltip.regionId}</span>
+							{#if $tooltip.value}
+							<span>{$tooltip.value}</span>
+							{/if}
+						</header>
+						<div>
+							<span>{$tooltip.nuts_label}</span>
+						</div>
+					</div>
+					{/if}
+				</div>
+
+				<!-- col2 -->
+				<div class="col col2">
+					<BarchartVDiv
+						{focusedKey}
+						{formatFn}
+						{keyToLabel}
+						{refs}
+						{selectedKeys}
+						isInteractive={true}
+						items={$doFilterRegionsStore ? filteredItems : items}
+						keyToColor={keyToColorAll}
+						on:entered={onEnteredBar}
+						on:exited={onExitedBar}
+						shouldResetScroll={true}
+						shouldScrollToFocusedKey={true}
+						theme={{
+							barDefaultColor: defaultGray,
+							focusedKeyColor: 'rgb(211, 238, 253)',
+							titleFontSize: '1.2rem',
+						}}
+						title={barchartTitle}
+					/>
+				</div>
+
+				<!-- geo modal -->
+				{#if $geoModalStore.isVisible}
+				<GeoFilterModal
+					{nutsSelectionStore}
+					on:click={toggleGeoModal}
 				/>
-
-				<!-- cities -->
-				{#if cities}
-				<g class='cities'>
-					{#each cities as {isLeft, name, X, Y, dx, dy}}
-						<g transform='translate({X},{Y})'>
-							<circle r={markerRadius}/>
-							<text
-								{dx}
-								{dy}
-								class:isLeft
-								class='background'
-								font-size={labelsFontSize}
-							>{name}</text>
-							<text
-								{dx}
-								{dy}
-								class:isLeft
-								font-size={labelsFontSize}
-							>{name}</text>
-						</g>
-					{/each}
-				</g>
 				{/if}
 
-				<!-- legend -->
-				<g transform='translate(0,{legendHeight})'>
-					<ColorBinsG
-						width={legendBarThickness}
-						height={legendHeight}
-						bins={colorBins}
-						flags={{
-							isVertical: true,
-							withBackground: true,
-						}}
-						theme={{
-							backgroundColor: 'white',
-							backgroundOpacity: 0.5,
-						}}
-						ticksFormatFn={formatFn}
-					/>
-				</g>
-			</svg>
-			{/if}
-
-			<!-- tooltip -->
-			{#if $tooltip.isVisible}
-			<div
-				class="tooltip"
-				style={$tooltip.style}
-			>
-				<header>
-					<span>{$tooltip.regionId}</span>
-					{#if $tooltip.value}
-					<span>{$tooltip.value}</span>
-					{/if}
-				</header>
-				<div>
-					<span>{$tooltip.nuts_label}</span>
-				</div>
 			</div>
-			{/if}
-		</div>
 
-		<!-- col2 -->
-		<div class="col col2">
-			<BarchartVDiv
-				{focusedKey}
-				{formatFn}
-				{keyToLabel}
-				{refs}
-				{selectedKeys}
-				isInteractive={true}
-				items={$doFilterRegionsStore ? filteredItems : items}
-				keyToColor={keyToColorAll}
-				on:entered={onEnteredBar}
-				on:exited={onExitedBar}
-				shouldResetScroll={true}
-				shouldScrollToFocusedKey={true}
-				theme={{
-					barDefaultColor: defaultGray,
-					focusedKeyColor: 'rgb(211, 238, 253)',
-					titleFontSize: '1.2rem',
-				}}
-				title={barchartTitle}
-			/>
-		</div>
+		{:else}
 
-		<!-- geo modal -->
-		{#if $geoModalStore.isVisible}
-		<GeoFilterModal
-			{nutsSelectionStore}
-			on:click={toggleGeoModal}
-		/>
-		{/if}
+			<div class='message'>
+				<span>No data</span>
+			</div>
 
-		</div>
+		{/if} <!-- filteredData.length  -->
 
 		{#if $infoModalStore.isVisible}
 		<InfoModal
@@ -621,5 +631,19 @@
 		display: flex;
 		align-items: center;
 		padding: 0.3rem;
+	}
+
+	/* no data message */
+
+	.message {
+		align-items: center;
+		display: flex;
+		height: 100%;
+		justify-content: center;
+		width: 100%;
+	}
+	.message span {
+		font-size: var(--messageFontSize);
+		color: var(--messageColor);
 	}
 </style>

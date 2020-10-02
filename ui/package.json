@@ -1,11 +1,12 @@
 {
   "dependencies": {
     "@svizzle/atlas": "^0.3.0",
-    "@svizzle/barchart": "^0.6.3",
-    "@svizzle/choropleth": "^0.6.1",
+    "@svizzle/barchart": "^0.6.4",
+    "@svizzle/choropleth": "^0.6.2",
     "@svizzle/file": "^0.9.0",
-    "@svizzle/legend": "^0.1.0",
-    "@svizzle/utils": "^0.11.0",
+    "@svizzle/legend": "^0.1.1",
+    "@svizzle/ui": "^0.1.0",
+    "@svizzle/utils": "^0.11.1",
     "compression": "^1.7.4",
     "d3-array": "^2.4.0",
     "d3-dsv": "^1.2.0",
