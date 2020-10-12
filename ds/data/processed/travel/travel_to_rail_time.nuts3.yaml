@@ -1,6 +1,6 @@
 api_type: FETCH
 subtitle: Travel time to rail station
-title: Minimum travel time to nearest rail station from a NUTS 3 regions
+title: Minimum travel time to nearest rail station from a NUTS 3 regions for England (2011 & 2013) and Wales (2011 only)
 endpoint_url:
   2011: http://data.dft.gov.uk.s3.amazonaws.com/connectivity-data/Rail-stations-travel-times.zip
   2013: http://data.dft.gov.uk.s3.amazonaws.com/connectivity-data/2013-travel-times.zip
