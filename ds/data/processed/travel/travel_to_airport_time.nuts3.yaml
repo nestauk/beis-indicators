@@ -1,0 +1,28 @@
+api_type: FETCH
+subtitle: Travel time to airport
+title: Minimum travel time to nearest airport from a NUTS 3 regions
+endpoint_url:
+  2011: http://data.dft.gov.uk.s3.amazonaws.com/connectivity-data/Airports-travel-times.zip
+  2013: http://data.dft.gov.uk.s3.amazonaws.com/connectivity-data/2013-travel-times.zip
+# lep_spec_year: endpoint_url
+framework_group: place_potential
+is_experimental: False
+order: [year, nuts_id, nuts_year_spec, value.id] # do not change; specifies the order of the exported indicator fields
+region:
+  type: NutsRegion # the region type, e.g. NutsRegion or LepRegion
+  level: 3
+  source: PROVIDED
+schema:
+  nuts_id:
+    type: NutsRegion.nuts_id
+  nuts_year_spec:
+    type: NutsRegion.nuts_year_spec
+  value:
+    format: .2f
+    id: travel_to_airport_time
+    label: Time (Minutes)
+    type: float
+  year:
+    data_type: int
+    label: Year
+source_name: Department for Transport
