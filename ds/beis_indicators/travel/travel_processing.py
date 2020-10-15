@@ -25,8 +25,9 @@ TRAVEL_YEARS_URL = {
     }
 
 LSOA_SHAPEFILES = {
-    2001: 'https://opendata.arcgis.com/datasets/180a5c44cfc643c0848813f0a81c1bd1_0.zip?outSR=%7B%22latestWkid%22%3A27700%2C%22wkid%22%3A27700%7D',
-    2011: 'https://opendata.arcgis.com/datasets/f213065139e3441195803b4155e71e00_0.zip?outSR=%7B%22latestWkid%22%3A27700%2C%22wkid%22%3A27700%7D'
+    2001: 'https://opendata.arcgis.com/datasets/ad424e56810f41b1a646e07f7c0fbec6_0.zip?outSR=%7B%22latestWkid%22%3A27700%2C%22wkid%22%3A27700%7D',
+    2011: 'https://opendata.arcgis.com/datasets/fd7e9e6e82584a54b06aae40b8ca6988_0.zip?outSR=%7B%22latestWkid%22%3A27700%2C%22wkid%22%3A27700%7D'
+
 }
 
 MYDIR = (f'{project_dir}/data/raw/travel')
@@ -135,8 +136,8 @@ def retrieve_shape_files():
 
 def read_shp_files():
 
-    lsoa_shp_01 = gpd.read_file(f'{project_dir}/data/raw/travel/lsoa_latlon_2001/Lower_Layer_Super_Output_Areas__December_2001__EW_BGC.shp')
-    lsoa_shp_11 = gpd.read_file(f'{project_dir}/data/raw/travel/lsoa_latlon_2011/Lower_Layer_Super_Output_Areas__December_2011__Boundaries_EW_BSC_v2.shp')
+    lsoa_shp_01 = gpd.read_file(f'{project_dir}/data/raw/travel/lsoa_latlon_2001/Lower_Layer_Super_Output_Areas__December_2001__Boundaries_EW_BFC.shp')
+    lsoa_shp_11 = gpd.read_file(f'{project_dir}/data/raw/travel/lsoa_latlon_2011/Lower_Layer_Super_Output_Areas__December_2011__Boundaries_EW_BFC_v3.shp')
 
     lsoa_shp_geo_01 = lsoa_shp_01.to_crs(epsg=4326)
     lsoa_shp_geo_11 = lsoa_shp_11.to_crs(epsg=4326)
