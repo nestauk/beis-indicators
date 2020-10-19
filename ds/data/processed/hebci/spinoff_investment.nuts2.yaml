@@ -1,0 +1,31 @@
+api_doc_url: https://www.hesa.ac.uk/data-and-analysis/providers/business-community/
+api_type: FETCH
+data_date: 20200928
+description: Total external investment in all spin-off activities associated with higher education institutions (spin-offs with some HEP ownership, formal spin-offs not HEP owned, staff start-ups, graduate start-ups and social enterprises).
+title: Total external investment in all spin-off activities associated with higher education institutions.
+subtitle: Investment in higher education spin-offs
+endpoint_url: https://www.hesa.ac.uk/data-and-analysis/providers/business-community/table-4e.csv
+framework_group: knowledge_exchange
+is_experimental: False
+is_public: True
+order: [year, nuts_id, nuts_year_spec, value.id]
+region:
+  level: 2
+  type: NutsRegion
+  source_url: NutsRegion.source_url
+  source: NutsRegion.source
+schema:
+  nuts_id:
+    type: NutsRegion.nuts_id
+  nuts_year_spec:
+    type: NutsRegion.nuts_year_spec
+  value:
+    data_type: int
+    id: spinoff_investment
+    label: Investment
+    type: GBP
+  year:
+    data_type: int
+    label: Year
+source_name: HESA (Higher Education Statistical Agency)
+source_url: https://www.hesa.ac.uk/

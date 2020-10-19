@@ -50,7 +50,7 @@ iuk_recent = iuk_recent.loc[~iuk_recent['Project Status'].isin(
                                                     ['Withdrawn','On Hold'])]
 
 # These are all the innovate UK postcodes
-iuk_postcodes = set(iuk_recent ['Postcode'])
+iuk_postcodes = set(iuk_recent['Postcode'])
 
 # Extract their lat, lon from nspl
 iuk_pcs = nspl.loc[nspl['pcds'].isin(iuk_postcodes)]

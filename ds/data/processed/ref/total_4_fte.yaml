@@ -1,8 +1,8 @@
 api_doc_url: https://www.ref.ac.uk/2014/pubs/201401/
 api_type: FETCH
 data_date: 20200204
-description_short: Total number of researchers assessed as excellent
-description: These are the results of the Research Excellence Framework, where university departments in various disciplines are assessed on the quality of their research. The latest REF was conducted in 2014 so data is available only for one year
+subtitle: Total number of researchers assessed as excellent
+title: These are the results of the Research Excellence Framework, where university departments in various disciplines are assessed on the quality of their research. The latest REF was conducted in 2014 so data is available only for one year
 endpoint_url: https://results.ref.ac.uk/(S(hlvnuqzwkag44jp3df3d4q14))/DownloadFile/AllResults/xlsx
 framework_group: public_rnd_capability
 is_experimental: False
@@ -18,7 +18,6 @@ schema:
   nuts_year_spec:
     type: NutsRegion.year_spec
   value:
-    description: The total number of excellent researchers (4* score) submitted by universities in the NUTS-2 region for the 2014 REF
     format: .2f
     id: total_4_fte
     label: Total number of excellent researchers in REF (Full Time Equivalent)

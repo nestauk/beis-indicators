@@ -8,7 +8,7 @@ from beis_indicators import project_dir
 
 def points_to_indicator(data, value_col, coder, 
         aggfunc=np.mean, value_rename=None, projection=None, 
-        x_col='lon', y_col='lat', dp=2, fillna=0):
+        x_col='lon', y_col='lat', dp=2, fillna=0, astype=None):
     """points_to_indicator
 
     Args
@@ -77,6 +77,8 @@ def points_to_indicator(data, value_col, coder,
         indicator[value_col].fillna(fillna, inplace=True)
     if dp is not None:
         indicator[value_col] = np.round(indicator[value_col], dp)
+    if astype is not None:
+        indicator[value_col] = indicator[value_col].astype(astype)
     
     return indicator
 

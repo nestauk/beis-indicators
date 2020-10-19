@@ -1,7 +1,7 @@
 api_doc_url: https://www.hesa.ac.uk/data-and-analysis/estates/table-1
 api_type: FETCH
-description_short: Number of research students (FTE)
-description: Aggregate of Full Time Equivalent (FTE) of research students enrolled in universities in the LEP region
+subtitle: Number of research students (FTE)
+title: Aggregate of Full Time Equivalent (FTE) of research students enrolled in universities in the LEP region
 endpoint_url: https://www.hesa.ac.uk/data-and-analysis/estates/data.csv
 framework_group: public_rnd_capability
 is_experimental: False
@@ -15,7 +15,6 @@ schema:
   lep_year_spec:
     type: LepRegion.year_spec
   value:
-    description: Full Time Equivalent (FTE) research students
     id: fte_research_students
     label: Research students (Full Time Equivalent)
     type: FTE

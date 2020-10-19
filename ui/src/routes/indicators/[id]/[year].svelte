@@ -12,10 +12,11 @@
 	import {extent} from 'd3-array';
 	import {geoEqualEarth as projectionFn} from 'd3-geo';
 	import {writable} from 'svelte/store';
-	import {topoToGeo, defaultGeometry} from '@svizzle/choropleth/src/utils';
-	import ChoroplethG from '@svizzle/choropleth/src/ChoroplethG.svelte';
-	import ColorBinsG from '@svizzle/legend/src/ColorBinsG.svelte';
 	import BarchartVDiv from '@svizzle/barchart/src/BarchartVDiv.svelte';
+	import ChoroplethG from '@svizzle/choropleth/src/ChoroplethG.svelte';
+	import {topoToGeo, defaultGeometry} from '@svizzle/choropleth/src/utils';
+	import ColorBinsG from '@svizzle/legend/src/ColorBinsG.svelte';
+	import Switch from '@svizzle/ui/src/Switch.svelte';
 	import {makeStyle, toPx} from '@svizzle/dom';
 	import {
 		applyFnMap,
@@ -29,12 +30,11 @@
 	import {feature} from 'topojson-client';
 
 	import GeoFilterModal from 'app/components/GeoFilterModal.svelte';
-	import InfoModal from 'app/components/InfoModal.svelte';
+	import InfoModal from 'app/components/InfoModal/InfoModal.svelte';
 	import IconChevronDown from 'app/components/icons/IconChevronDown.svelte';
 	import IconChevronUp from 'app/components/icons/IconChevronUp.svelte';
 	import IconGlobe from 'app/components/icons/IconGlobe.svelte';
 	import IconInfo from 'app/components/icons/IconInfo.svelte';
-	import Switch from 'app/components/Switch.svelte';
 	import {lookup} from 'app/data/groups';
 	import yearlyKeyToLabel from 'app/data/NUTS2_UK_labels';
 	import {
@@ -97,9 +97,8 @@
 		api_type,
 		auth_provider,
 		data_date,
-		description_long,
-		description_short,
 		description,
+		title,
 		endpoint_url,
 		is_public,
 		query,
@@ -107,6 +106,7 @@
 		schema,
 		source_name,
 		source_url,
+		subtitle,
 		url,
 		warning,
 		year_extent,
@@ -146,16 +146,24 @@
 		formatFn: refFormatFn
 	}];
 
+	$: filteredData = $doFilterRegionsStore
+		? _.filter(yearData, ({nuts_id}) =>
+			$selectedNUT2IdsStore.includes(nuts_id) ||
+			$preselectedNUTS2IdsStore.includes(nuts_id)
+		)
+		: yearData;
+
 	// colors
-	$: valueExtext = extent(data, getIndicatorValue);
-	$: colorScale = makeColorScale(valueExtext);
-	$: colorBins = makeColorBins(colorScale);
+	$: valueExtext = filteredData.length && extent(filteredData, getIndicatorValue);
+	$: colorScale = filteredData.length && makeColorScale(valueExtext);
+	$: colorBins = filteredData.length && makeColorBins(colorScale);
+	$: console.log(filteredData, valueExtext, colorBins);
 	$: makeKeyToColor = _.pipe([
 		keyValueArrayToObject,
 		_.mapValuesWith(colorScale)
 	]);
-	$: keyToColorAll = makeKeyToColor(items);
-	$: keyToColorFiltered = makeKeyToColor(filteredItems);
+	$: keyToColorAll = filteredData.length && makeKeyToColor(items);
+	$: keyToColorFiltered = filteredData.length && makeKeyToColor(filteredItems);
 
 	// map
 	$: nuts_year_spec = yearData && yearData[0].nuts_year_spec
@@ -190,7 +198,7 @@
 	$: focusedKey = $tooltip.isVisible ? $tooltip.regionId : undefined;
 
 	// cities
-	$: cities = selectedKeys.length > 0 && _.map(majorCities, obj => {
+	$: cities = projection && _.map(majorCities, obj => {
 		const [x, y] = projection([obj.lng, obj.lat]);
 		const X = x + choroplethSafety.left;
 		const length = obj.name.length * labelsFontSize * 0.6;
@@ -274,14 +282,14 @@
 </script>
 
 <svelte:head>
-	<title>BEIS indicators - {description_short} ({year})</title>
+	<title>BEIS indicators - {subtitle} ({year})</title>
 </svelte:head>
 
 <div class='container'>
 	<header>
 		<div>
-			<h1>{description_short} ({year})</h1>
-			<p>{description}</p>
+			<h1>{subtitle} ({year})</h1>
+			<p>{title}</p>
 		</div>
 		<div on:click={toggleInfoModal}>
 			<IconInfo
@@ -307,7 +315,7 @@
 				</div>
 
 				<Switch
-					initial={$doFilterRegionsStore ? 'Filter' : 'Highlight'}
+					value={$doFilterRegionsStore ? 'Filter' : 'Highlight'}
 					values={['Highlight', 'Filter']}
 					on:toggled={event => {
 						$doFilterRegionsStore = event.detail === 'Filter'
@@ -316,131 +324,142 @@
 			</div>
 		</div>
 
-		<div class='geodistro'>
+		{#if filteredData.length}
+			<div class='geodistro'>
 
-		<!-- col1 -->
-		<div
-			class="col col1"
-			on:mousemove={onMousemoved}
-			bind:clientWidth={width}
-			bind:clientHeight={height}
-		>
-			{#if topojson}
-			<svg
-				{width}
-				{height}
-			>
-				<ChoroplethG
-					{focusedKey}
-					{height}
-					{projection}
-					{selectedKeys}
-					{topojson}
-					{topojsonId}
-					{width}
-					geometry={{left: choroplethSafety.left}}
-					isInteractive={true}
-					key='NUTS_ID'
-					keyToColor={$doFilterRegionsStore ? keyToColorFiltered : keyToColorAll}
-					on:entered={onEnteredRegion}
-					on:exited={onExitedRegion}
-					theme={{
-						defaultFill: defaultGray,
-						defaultStroke: 'gray',
-						defaultStrokeWidth: 0.25,
-						focusedStroke: 'dodgerblue',
-						focusedStrokeWidth: 1.5,
-						selectedStroke: 'black',
-						selectedStrokeWidth: 0.5,
-					}}
-				/>
+				<!-- col1 -->
+				<div
+					class="col col1"
+					on:mousemove={onMousemoved}
+					bind:clientWidth={width}
+					bind:clientHeight={height}
+				>
+					{#if topojson}
+						<svg
+							{width}
+							{height}
+						>
+							<ChoroplethG
+								{focusedKey}
+								{height}
+								{projection}
+								{selectedKeys}
+								{topojson}
+								{topojsonId}
+								{width}
+								geometry={{left: choroplethSafety.left}}
+								isInteractive={true}
+								key='NUTS_ID'
+								keyToColor={$doFilterRegionsStore ? keyToColorFiltered : keyToColorAll}
+								on:entered={onEnteredRegion}
+								on:exited={onExitedRegion}
+								theme={{
+									defaultFill: defaultGray,
+									defaultStroke: 'gray',
+									defaultStrokeWidth: 0.25,
+									focusedStroke: 'dodgerblue',
+									focusedStrokeWidth: 1.5,
+									selectedStroke: 'black',
+									selectedStrokeWidth: 0.5,
+								}}
+							/>
 
-				<!-- cities -->
-				{#if cities}
-				<g class='cities'>
-					{#each cities as {isLeft, name, X, Y, dx, dy}}
-						<g transform='translate({X},{Y})'>
-							<circle r={markerRadius}/>
-							<text
-								{dx}
-								{dy}
-								class:isLeft
-								class='background'
-								font-size={labelsFontSize}
-							>{name}</text>
-							<text
-								{dx}
-								{dy}
-								class:isLeft
-								font-size={labelsFontSize}
-							>{name}</text>
-						</g>
-					{/each}
-				</g>
-				{/if}
+							<!-- cities -->
+							{#if cities}
+							<g class='cities'>
+								{#each cities as {isLeft, name, X, Y, dx, dy}}
+									<g transform='translate({X},{Y})'>
+										<circle r={markerRadius}/>
+										<text
+											{dx}
+											{dy}
+											class:isLeft
+											class='background'
+											font-size={labelsFontSize}
+										>{name}</text>
+										<text
+											{dx}
+											{dy}
+											class:isLeft
+											font-size={labelsFontSize}
+										>{name}</text>
+									</g>
+								{/each}
+							</g>
+							{/if}
 
-				<!-- legend -->
-				<g transform='translate(0,{legendHeight})'>
-					<ColorBinsG
-						width={legendBarThickness}
-						height={legendHeight}
-						bins={colorBins}
-						flags={{
-							isVertical: true,
-							withBackground: true,
-						}}
-						theme={{
-							backgroundColor: 'white',
-							backgroundOpacity: 0.5,
-						}}
-						ticksFormatFn={formatFn}
-					/>
-				</g>
-			</svg>
-			{/if}
-
-			<!-- tooltip -->
-			{#if $tooltip.isVisible}
-			<div
-				class="tooltip"
-				style={$tooltip.style}
-			>
-				<header>
-					<span>{$tooltip.regionId}</span>
-					{#if $tooltip.value}
-					<span>{$tooltip.value}</span>
+							<!-- legend -->
+							<g transform='translate(0,{legendHeight})'>
+								<ColorBinsG
+									width={legendBarThickness}
+									height={legendHeight}
+									bins={colorBins}
+									flags={{
+										isVertical: true,
+										withBackground: true,
+									}}
+									theme={{
+										backgroundColor: 'white',
+										backgroundOpacity: 0.5,
+									}}
+									ticksFormatFn={formatFn}
+								/>
+							</g>
+						</svg>
 					{/if}
-				</header>
-				<div>
-					<span>{$tooltip.nuts_label}</span>
-				</div>
-			</div>
-			{/if}
-		</div>
 
-		<!-- col2 -->
-		<div class="col col2">
-			<BarchartVDiv
-				{focusedKey}
-				{formatFn}
-				{keyToLabel}
-				{refs}
-				{selectedKeys}
-				isInteractive={true}
-				items={$doFilterRegionsStore ? filteredItems : items}
-				keyToColor={keyToColorAll}
-				on:entered={onEnteredBar}
-				on:exited={onExitedBar}
-				shouldResetScroll={true}
-				shouldScrollToFocusedKey={true}
-				theme={{
-					barDefaultColor: defaultGray,
-					focusedKeyColor: 'rgb(211, 238, 253)',
-					titleFontSize: '1.2rem',
-				}}
-				title={barchartTitle}
-			/>
-		</div>
+					<!-- tooltip -->
+					{#if $tooltip.isVisible}
+					<div
+						class="tooltip"
+						style={$tooltip.style}
+					>
+						<header>
+							<span>{$tooltip.regionId}</span>
+							{#if $tooltip.value}
+							<span>{$tooltip.value}</span>
+							{/if}
+						</header>
+						<div>
+							<span>{$tooltip.nuts_label}</span>
+						</div>
+					</div>
+					{/if}
+				</div>
+
+				<!-- col2 -->
+				<div class="col col2">
+					<BarchartVDiv
+						{focusedKey}
+						{formatFn}
+						{keyToLabel}
+						{refs}
+						{selectedKeys}
+						isInteractive={true}
+						items={$doFilterRegionsStore ? filteredItems : items}
+						keyToColor={keyToColorAll}
+						on:entered={onEnteredBar}
+						on:exited={onExitedBar}
+						shouldResetScroll={true}
+						shouldScrollToFocusedKey={true}
+						theme={{
+							barDefaultColor: defaultGray,
+							focusedKeyColor: 'rgb(211, 238, 253)',
+							titleFontSize: '1.2rem',
+						}}
+						title={barchartTitle}
+					/>
+				</div>
+
+			</div>
+
+		{:else}
+
+			<div class='message'>
+				<span>No data</span>
+			</div>
+
+		{/if} <!-- filteredData.length  -->
 
 		<!-- geo modal -->
 		{#if $geoModalStore.isVisible}
@@ -450,15 +469,13 @@
 		/>
 		{/if}
 
-		</div>
-
 		{#if $infoModalStore.isVisible}
 		<InfoModal
 			{api_doc_url}
 			{api_type}
 			{auth_provider}
 			{data_date}
-			{description_long}
+			{description}
 			{endpoint_url}
 			{is_public}
 			{query}
@@ -550,9 +567,6 @@
 		width: 100%;
 	}
 
-	.col {
-		padding: var(--dim-padding-minor);
-	}
 	.col1 {
 		grid-column: 1 / span 1;
 		overflow-y: hidden;
@@ -617,5 +631,19 @@
 		display: flex;
 		align-items: center;
 		padding: 0.3rem;
+	}
+
+	/* no data message */
+
+	.message {
+		align-items: center;
+		display: flex;
+		height: 100%;
+		justify-content: center;
+		width: 100%;
+	}
+	.message span {
+		font-size: var(--messageFontSize);
+		color: var(--messageColor);
 	}
 </style>

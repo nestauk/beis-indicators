@@ -1,6 +1,6 @@
 api_type: FETCH
-description_short: Broadband speed
-description: Broadband download speed by LEP regions.
+subtitle: Broadband speed
+title: Broadband download speed by LEP regions.
 endpoint_url:
   2014: https://webarchive.nationalarchives.gov.uk/20160703065525/http://www.ofcom.org.uk/static/research/ir/Fixed_postcode.zip
   2015: http://www.ofcom.org.uk/static/research/connected-nations2015/Fixed_Postcode_2015.zip
@@ -21,7 +21,6 @@ schema:
   nuts_year_spec:
     type: LepRegion.lep_year_spec
   value:
-    description: Broadband download speed.
     format: .3f
     id: broadband_download_speed_data
     label: Download Speed

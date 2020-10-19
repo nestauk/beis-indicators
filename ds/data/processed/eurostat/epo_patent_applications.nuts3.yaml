@@ -1,9 +1,9 @@
 api_doc_url: https://ec.europa.eu/eurostat/cache/metadata/en/pat_esms.htm
 api_type: FETCH
 data_date: 20200818
-description_long: Patent applications are a proxy for inventions. We focus on applications to the European Patent Office (EPO). The year is the priority year for the patent i.e. the first year that the patent was filed with any patenting authority. There are significant lags between patent applications and publication, which explains the low timeliness of the data.
-description_short: Patent applications (EPO)
-description: Count of patent applications normalised by the number of applicants in a patent if there are more than one
+description: Patent applications are a proxy for inventions. We focus on applications to the European Patent Office (EPO). The year is the priority year for the patent i.e. the first year that the patent was filed with any patenting authority. There are significant lags between patent applications and publication, which explains the low timeliness of the data.
+subtitle: Patent applications (EPO)
+title: Count of patent applications normalised by the number of applicants in a patent if there are more than one
 endpoint_url: https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=pat_ep_rtot&lang=en
 framework_group: knowledge_exchange
 is_experimental: False
@@ -19,7 +19,6 @@ schema:
     type: NutsRegion.nuts_year_spec
   value:
     data_type: int
-    description: Count of patent applications
     id: epo_patent_applications
     label: Patent applications
   year:

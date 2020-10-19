@@ -1,7 +1,7 @@
 api_doc_url: https://www.hesa.ac.uk/data-and-analysis/students
 api_type: FETCH
-description_short: Total number of postgraduates
-description: Number of postgraduate (research) students enrolled full-time in universities in a NUTS2 region in the starting academic year.
+subtitle: Total number of postgraduates
+title: Number of postgraduate (research) students enrolled full-time in universities in a NUTS2 region in the starting academic year.
 endpoint_url: https://www.hesa.ac.uk/data-and-analysis/students/table-13.csv
 framework_group: public_rnd_capability
 is_experimental: False
@@ -17,7 +17,6 @@ schema:
     type: NutsRegion.year_spec
   value:
     data_type: int
-    description: Total number of full-time students enrolled for postgraduate qualifications in universities in the area
     id: total_postgraduates
     label: Total number of postgraduate students
   year:

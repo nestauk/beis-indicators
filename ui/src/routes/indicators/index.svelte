@@ -38,10 +38,10 @@
 		bind:clientWidth={width}
 	>
 		<ul>
-			{#each groups as {description, id, indicators, label}}
+			{#each groups as {title, id, indicators, label}}
 			<div class="group">
 				<h2>{label}</h2>
-				<p>{description}</p>
+				<p>{title}</p>
 
 				{#if width}
 				<svg
@@ -65,7 +65,7 @@
 					</g>
 					{/each}
 
-					{#each indicators as {description_short, schema, year_extent}, y}
+					{#each indicators as {subtitle, schema, year_extent}, y}
 					<g
 						class='indicatorsrange'
 						transform='translate(0,{vStep * (y + 1)})'
@@ -75,12 +75,12 @@
 							x='{(layout.scaleX(year_extent[0]) + layout.scaleX(year_extent[1])) / 2}'
 							dy='{-(layout.fontSize + gap)}'
 							font-size={layout.fontSize}
-						>{description_short}</text>
+						>{subtitle}</text>
 						<text
 							x='{(layout.scaleX(year_extent[0]) + layout.scaleX(year_extent[1])) / 2}'
 							dy='{-(layout.fontSize + gap)}'
 							font-size={layout.fontSize}
-						>{description_short}</text>
+						>{subtitle}</text>
 						<line
 							x1='{layout.scaleX(year_extent[0]) + layout.radius}'
 							x2='{layout.scaleX(year_extent[1]) - layout.radius}'

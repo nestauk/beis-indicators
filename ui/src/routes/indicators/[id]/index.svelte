@@ -1,9 +1,9 @@
 <script context='module'>
 	export function preload({ params: {id}, query }) {
 		return this.fetch(lookup[id].url)
-			.then(r => r.text())
-			.then(parseCSV(id))
-			.then(data => ({data, id}))
+		.then(r => r.text())
+		.then(parseCSV(id))
+		.then(data => ({data, id}))
 	}
 </script>
 
@@ -18,22 +18,24 @@
 	import {
 		applyFnMap,
 		inclusiveRange,
+		isIterableNotEmpty,
 		makeKeyed,
 		mergeObj,
 		objectToKeyValueArray,
 		setIndexAsKey,
 		transformValues,
 	} from '@svizzle/utils';
+	import ColorBinsG from '@svizzle/legend/src/ColorBinsG.svelte';
+	import Switch from '@svizzle/ui/src/Switch.svelte';
 
 	import { goto } from '@sapper/app';
 
-	import InfoModal from 'app/components/InfoModal.svelte';
+	import InfoModal from 'app/components/InfoModal/InfoModal.svelte';
 	import GeoFilterModal from 'app/components/GeoFilterModal.svelte';
 	import IconChevronDown from 'app/components/icons/IconChevronDown.svelte';
 	import IconChevronUp from 'app/components/icons/IconChevronUp.svelte';
 	import IconGlobe from 'app/components/icons/IconGlobe.svelte';
 	import IconInfo from 'app/components/icons/IconInfo.svelte';
-	import Switch from 'app/components/Switch.svelte';
 	import {lookup, yearExtent, yearRange} from 'app/data/groups';
 	import groups from 'app/data/indicatorsGroups.json';
 	import yearlyKeyToLabel from 'app/data/NUTS2_UK_labels';
@@ -57,6 +59,7 @@
 	import {
 		getIndicatorFormat,
 		getNutsId,
+		makeColorBins,
 		makeColorScale,
 		makeValueAccessor,
 		parseCSV,
@@ -86,6 +89,7 @@
 	const tooltipFontSize = 10;
 	const tooltipPadding = 5;
 	const tooltipShift = 1.5 * tooltipPadding + 0.5 * tooltipFontSize;
+	const legendBarThickness = 40;
 
   export let data;
 	export let id;
@@ -104,9 +108,8 @@
 		api_type,
 		auth_provider,
 		data_date,
-		description_short,
-		description_long,
 		description,
+		title,
 		endpoint_url,
 		is_public,
 		query,
@@ -114,10 +117,13 @@
 		schema,
 		source_name,
 		source_url,
+		subtitle,
 		url,
 		warning,
 		year_extent,
 	} = $lookupStore[id] || {});
+
+	$: legendHeight = height / 3;
 
 	$: formatFn = getIndicatorFormat(id, lookup);
 	$: $availableYearsStore = inclusiveRange(year_extent)
@@ -182,9 +188,11 @@
 
 	$: chartTitle = `${useOrderScale ? 'Ranking by' : ''} ${schema.value.label}`;
 
-	/* tooltip */
+	// legend
+	$: colorBins = makeColorBins(colorScale);
 
-	$: quadTree = filteredData &&
+	/* tooltip */
+	$: quadTree = isIterableNotEmpty(filteredData) &&
 		quadtree()
 		.x(getX)
 		.y(getY)
@@ -197,7 +205,7 @@
 	const onMouseMove = event => {
 		const {offsetX, offsetY} = event;
 
-		if (offsetX < x1 || offsetX > x2) {
+		if (offsetX < x1 || offsetX > x2 || !quadTree) {
 			tooltip.set(tooltipDefault);
 			return;
 		}
@@ -233,14 +241,14 @@
 </script>
 
 <svelte:head>
-	<title>BEIS indicators - {description_short}</title>
+	<title>BEIS indicators - {subtitle}</title>
 </svelte:head>
 
 <div class='container'>
 	<header>
 		<div>
-			<h1>{description_short}</h1>
-			<p>{description}</p>
+			<h1>{subtitle}</h1>
+			<p>{title}</p>
 		</div>
 		<div on:click={toggleInfoModal}>
 			<IconInfo
@@ -266,7 +274,7 @@
 				</div>
 
 				<Switch
-					initial={$doFilterRegionsStore ? 'Filter' : 'Highlight'}
+					value={$doFilterRegionsStore ? 'Filter' : 'Highlight'}
 					values={['Highlight', 'Filter']}
 					on:toggled={event => {
 						$doFilterRegionsStore = event.detail === 'Filter'
@@ -276,7 +284,7 @@
 
 			<div class='optgroup'>
 				<Switch
-					initial={'Absolute'}
+					value={'Absolute'}
 					values={['Absolute', 'Ranking']}
 					on:toggled={event => {
 						useOrderScale = event.detail === 'Ranking'
@@ -292,114 +300,140 @@
 			on:mousemove={onMouseMove}
 			on:mouseleave={onMouseLeave}
 		>
-			{#if width && trends}
-			<svg
-				{width}
-				{height}
-			>
-				<defs>
-					{#each gradients as {key, value}}
-					<linearGradient
-						id={key}
-						gradientUnits='userSpaceOnUse'
-					>
-						{#each value as {offset, stopColor}}
-						<stop {offset} stop-color={stopColor} />
-						{/each}
-					</linearGradient>
-					{/each}
-				</defs>
-
-				<!-- axes -->
-				<g>
-					<text
-						class='label'
-						x='{xMed}'
-						y={yLabel}
-						font-size={labelFontSize}
-					>
-						<tspan>{chartTitle}</tspan>
-						{#if labelUnit}<tspan>[{labelUnit}]</tspan>{/if}
-					</text>
-					<g class='ref x'>
-						{#each $availableYearsStore as year}
-						<line
-							x1={layout.scaleX(year)}
-							x2={layout.scaleX(year)}
-							y1={yMin}
-							y2={yMax}
-						/>
-						{/each}
-					</g>
-					<g
-						class='ref left'
-						transform='translate({x1},0)'
-					>
-						{#each ticks as {label, y}}
-						<line x2='-10' y1={y} y2={y}/>
-						<text dx='-15' dy={y} font-size={axisFontSize}>{label}</text>
-						{/each}
-					</g>
-					<g
-						class='ref right'
-						transform='translate({x2},0)'
-					>
-						{#each ticks as {label, y}}
-						<line x2='10' y1={y} y2={y}/>
-						<text dx='15' dy={y} font-size={axisFontSize}>{label}</text>
-						{/each}
-					</g>
-				</g>
-
-				<!-- curves -->
-				<g>
-					{#each trendLines as {key, value, preselected, selected}}
-					<path
-						class:deselected={!selected}
-						class:preselected={preselected}
-						class:dimmed='{$tooltip.isVisible && highlightedKey !== key}'
-						class:focused='{$tooltip.isVisible && highlightedKey === key}'
-						d={value}
-						stroke='url(#{key})'
-					/>
-					{/each}
-				</g>
-
-				<!-- single year: dots -->
-				{#if $availableYearsStore.length === 1}
-				<g>
-				{#each trends as {key, value}}
-					{#each value as d}
-						<circle
-							cx={getX(d)}
-							cy={getY(d)}
-							r={radius}
-						/>
-					{/each}
-				{/each}
-				</g>
-				{/if}
-
-				<!-- tooltip -->
-				{#if $tooltip.isVisible}
-				<g
-					class='marker'
-					transform='translate({$tooltip.dotX},{$tooltip.dotY})'
+			{#if width && height}
+				<svg
+					{width}
+					{height}
 				>
-					<circle r={radius} />
-					<g
-						class:right={$tooltip.isRight}
-						transform='translate({$tooltip.shiftX},{$tooltip.shiftY})'
-					>
-						<text dy={-tooltipShift} class='bkg'>{$tooltip.value}</text>
-						<text dy={-tooltipShift}>{$tooltip.value}</text>
-						<text dy={tooltipShift} class='bkg'>{$tooltip.nuts_label}</text>
-						<text dy={tooltipShift}>{$tooltip.nuts_label}</text>
-					</g>
-				</g>
-				{/if}
+					{#if trends.length}
+						<defs>
+							{#each gradients as {key, value}}
+								<linearGradient
+									id={key}
+									gradientUnits='userSpaceOnUse'
+								>
+									{#each value as {offset, stopColor}}
+										<stop {offset} stop-color={stopColor} />
+									{/each}
+								</linearGradient>
+							{/each}
+						</defs>
 
-			</svg>
+						<!-- axes -->
+						<g>
+							<text
+								class='label'
+								x='{xMed}'
+								y={yLabel}
+								font-size={labelFontSize}
+							>
+								<tspan>{chartTitle}</tspan>
+								{#if labelUnit}<tspan>[{labelUnit}]</tspan>{/if}
+							</text>
+							<g class='ref x'>
+								{#each $availableYearsStore as year}
+									<line
+										x1={layout.scaleX(year)}
+										x2={layout.scaleX(year)}
+										y1={yMin}
+										y2={yMax}
+									/>
+								{/each}
+							</g>
+							<g
+								class='ref left'
+								transform='translate({x1},0)'
+							>
+								{#each ticks as {label, y}}
+									<line x2='-10' y1={y} y2={y}/>
+									<text dx='-15' dy={y} font-size={axisFontSize}>{label}</text>
+								{/each}
+							</g>
+							<g
+								class='ref right'
+								transform='translate({x2},0)'
+							>
+								{#each ticks as {label, y}}
+									<line x2='10' y1={y} y2={y}/>
+									<text dx='15' dy={y} font-size={axisFontSize}>{label}</text>
+								{/each}
+							</g>
+						</g>
+
+						<!-- curves -->
+						<g>
+							{#each trendLines as {key, value, preselected, selected}}
+							<path
+								class:deselected={!selected}
+								class:preselected={preselected}
+								class:dimmed='{$tooltip.isVisible && highlightedKey !== key}'
+								class:focused='{$tooltip.isVisible && highlightedKey === key}'
+								d={value}
+								stroke='url(#{key})'
+							/>
+							{/each}
+						</g>
+
+						<!-- single year: dots -->
+						{#if $availableYearsStore.length === 1}
+						<g>
+						{#each trends as {key, value}}
+							{#each value as d}
+								<circle
+									cx={getX(d)}
+									cy={getY(d)}
+									r={radius}
+								/>
+							{/each}
+						{/each}
+						</g>
+						{/if}
+
+						<!-- legend -->
+						<g transform='translate(0,{legendHeight})'>
+							<ColorBinsG
+								width={legendBarThickness}
+								height={legendHeight}
+								bins={colorBins}
+								flags={{
+									isVertical: true,
+									withBackground: true,
+								}}
+								theme={{
+									backgroundColor: 'white',
+									backgroundOpacity: 0.5,
+								}}
+								ticksFormatFn={formatFn}
+							/>
+						</g>
+
+						<!-- tooltip -->
+						{#if $tooltip.isVisible}
+							<g
+								class='marker'
+								transform='translate({$tooltip.dotX},{$tooltip.dotY})'
+							>
+								<circle r={radius} />
+								<g
+									class:right={$tooltip.isRight}
+									transform='translate({$tooltip.shiftX},{$tooltip.shiftY})'
+								>
+									<text dy={-tooltipShift} class='bkg'>{$tooltip.value}</text>
+									<text dy={-tooltipShift}>{$tooltip.value}</text>
+									<text dy={tooltipShift} class='bkg'>{$tooltip.nuts_label}</text>
+									<text dy={tooltipShift}>{$tooltip.nuts_label}</text>
+								</g>
+							</g>
+						{/if}
+
+					{:else}
+						<text
+							class='message'
+							x={width / 2}
+							y={height / 2}
+						>No data</text>
+					{/if}
+				</svg>
 			{/if}
 
 			{#if $geoModalStore.isVisible}
@@ -417,7 +451,7 @@
 			{api_type}
 			{auth_provider}
 			{data_date}
-			{description_long}
+			{description}
 			{endpoint_url}
 			{is_public}
 			{query}
@@ -522,7 +556,8 @@
 		stroke: none;
 		pointer-events: none;
 	}
-	svg text.label {
+	svg text.label,
+	svg text.message {
 		text-anchor: middle;
 		dominant-baseline: middle;
 	}
