@@ -17,7 +17,7 @@ from beis_indicators.geo import NutsCoder, LepCoder
 @click.command()
 @click.option('--geography', type=str, help='One of lep, nuts2 or nuts3', default='nuts2')
 def generate(geography):
-    processed_dir = f'{project_dir}/data/processed/'
+    processed_dir = f'{project_dir}/data/processed'
 
     dfs = list(generate_indicator_tables(processed_dir, geography))
     df = pd.concat(dfs, axis=0)
@@ -135,8 +135,11 @@ def apply_nuts_codes(df, level):
         nuts[year] = code_name_map
 
     def map_nuts_codes(year, code, var):
-        year = np.abs(year)
-        return nuts[year][code]
+        if 'UKZZ' in code:
+            return 'Extra-region'
+        else:
+            year = np.abs(year)
+            return nuts[year][code]
 
     df['nuts_name'] = df.apply(
             lambda row: map_nuts_codes(row['nuts_year'], row['nuts_id'], row['variable']),
@@ -185,9 +188,9 @@ def parse_schema(schema):
         unit = None
 
     readme_fields = dict(
-        title=value['description'],
+        title=schema['subtitle'],
         source=schema['source_name'],
-        long_description=schema['description'],
+        long_description=schema['title'],
         unit=unit,
         label=value['label']
         )
