@@ -2,8 +2,8 @@ api_doc_url: https://www.gov.uk/government/publications/innovate-uk-funded-proje
 api_type: FETCH
 data_date: 20200821
 description: Level of funding awarded by Innovate UK to organisations in a region. Only includes awards that have not been withdrawn are not on hold.
-subtitle: Funding received from Innovate UK
-title: This indicator aggregates all funding awarded by Innovate UK to organisations in a location according to the open IUK transparency dataset. It was not possible to match a small fraction of the awards due to issues with the postcodes.
+title: Funding received from Innovate UK
+subtitle: This indicator aggregates all funding awarded by Innovate UK to organisations in a location according to the open IUK transparency dataset. It was not possible to match a small fraction of the awards due to issues with the postcodes.
 endpoint_url: https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/909140/20200801_Innovate_UK_Funded_Projects.xlsx
 framework_group: public_rnd_capability
 is_experimental: False

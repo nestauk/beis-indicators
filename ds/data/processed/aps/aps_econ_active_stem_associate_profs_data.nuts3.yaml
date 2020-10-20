@@ -1,7 +1,7 @@
 api_doc_url: https://www.nomisweb.co.uk/api/v01/help
 api_type: FETCH
-subtitle: Associated STEM professionals
-title: Number of Science, Research, Engineering and Technology associated professionals by NUTS 3 regions.
+title: Associated STEM professionals
+subtitle: Number of Science, Research, Engineering and Technology associated professionals by NUTS 3 regions.
 endpoint_url:
   2010: https://www.nomisweb.co.uk/api/v01/dataset/NM_17_1.jsonstat.json?geography=1912602625...1912602758&date=latestMINUS29&cell=404882177,404883201&measures=20100,20701,
   2013: https://www.nomisweb.co.uk/api/v01/dataset/NM_17_1.jsonstat.json?geography=1883242497...1883242664&date=latestMINUS25,latestMINUS21,latestMINUS17&cell=404882177,404883201&measures=20100,20701,

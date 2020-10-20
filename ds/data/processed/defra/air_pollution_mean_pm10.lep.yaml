@@ -1,7 +1,7 @@
 api_doc_url: https://uk-air.defra.gov.uk/data/pcm-data
 api_type: FETCH
-subtitle: Mean PM10 particulate background pollution
-title: Mean PM10 particulate background pollution data for LEP regions aggregated from 1km x 1km resolution UK data modelled by DEFRA.
+title: Mean PM10 particulate background pollution
+subtitle: Mean PM10 particulate background pollution data for LEP regions aggregated from 1km x 1km resolution UK data modelled by DEFRA.
 endpoint_url:
   2007: https://uk-air.defra.gov.uk/datastore/pcm/mappm102007g.csv
   2008: https://uk-air.defra.gov.uk/datastore/pcm/mappm102008g.csv

@@ -2,8 +2,8 @@ api_doc_url: https://www.hesa.ac.uk/data-and-analysis/providers/business-communi
 api_type: FETCH
 data_date: 20200928
 description: Number of active startups founded by higher education graduates.
-subtitle: Active graduate startups
-title: Number of active startups founded by higher education graduates.
+title: Active graduate startups
+subtitle: Number of active startups founded by higher education graduates.
 endpoint_url: https://www.hesa.ac.uk/data-and-analysis/providers/business-community/table-4e.csv
 framework_group: knowledge_exchange
 is_experimental: False

@@ -1,8 +1,8 @@
 api_doc_url: https://www.gov.uk/government/publications/ipo-trade-mark-data-release/ipo-data-explained-2016
 api_type: FETCH
 data_date: 20200225
-subtitle: Total number of trademarks in science and technology fields
-title: Total number of trademarks in scientific and technological product fields published by organisations in the region based on the IPO open trademark dataset
+title: Total number of trademarks in science and technology fields
+subtitle: Total number of trademarks in scientific and technological product fields published by organisations in the region based on the IPO open trademark dataset
 endpoint_url: https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/680986/opendatadomestic.zip
 framework_group: knowledge_exchange
 is_experimental: False

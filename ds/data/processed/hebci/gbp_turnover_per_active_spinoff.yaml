@@ -1,8 +1,8 @@
 api_doc_url: https://www.hesa.ac.uk/support/definitions/hebci
 api_type: FETCH
 data_date: 20202002
-subtitle: Current turnover of active university spinoffs
-title: Total current turnover of active spinoffs involving local universities in academic year starting in year
+title: Current turnover of active university spinoffs
+subtitle: Total current turnover of active spinoffs involving local universities in academic year starting in year
 endpoint_url: https://www.hesa.ac.uk/data-and-analysis/providers/business-community/table-4e.csv
 framework_group: knowledge_exchange
 is_experimental: False

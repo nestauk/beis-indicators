@@ -1,7 +1,7 @@
 api_doc_url: https://ec.europa.eu/eurostat/cache/metadata/en/rd_esms.htm
 api_type: FETCH
-subtitle: Business enterprise R&D
-title: Business enterprise research & development (R&D) expenditure by NUTS 2 regions.
+title: Business enterprise R&D
+subtitle: Business enterprise research & development (R&D) expenditure by NUTS 2 regions.
 endpoint_url: http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/rd_e_gerdreg?sinceTimePeriod=2012&geoLevel=nuts2&precision=6&sectperf=BES&unit=MIO_EUR
 framework_group: business_rnd_capacity
 is_experimental: False

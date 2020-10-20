@@ -1,13 +1,12 @@
 <script>
 	import * as _ from 'lamb';
+	import {getContext} from 'svelte';
 	import {inclusiveRange} from '@svizzle/utils';
 
 	import { goto } from '@sapper/app';
 	import { yearExtent, yearRange } from 'app/data/groups';
 	import groups from 'app/data/indicatorsGroups.json';
 	import {resetSafetyStore, resetSelection} from 'app/stores';
-
-	import { getContext } from 'svelte';
 
 	const {timelineLayoutStore} = getContext('layout');
 	const gap = 7;
@@ -38,10 +37,10 @@
 		bind:clientWidth={width}
 	>
 		<ul>
-			{#each groups as {title, id, indicators, label}}
+			{#each groups as {description, indicators, label}}
 			<div class="group">
 				<h2>{label}</h2>
-				<p>{title}</p>
+				<p>{description}</p>
 
 				{#if width}
 				<svg
@@ -65,7 +64,7 @@
 					</g>
 					{/each}
 
-					{#each indicators as {subtitle, schema, year_extent}, y}
+					{#each indicators as {title, schema, year_extent}, y}
 					<g
 						class='indicatorsrange'
 						transform='translate(0,{vStep * (y + 1)})'
@@ -75,12 +74,12 @@
 							x='{(layout.scaleX(year_extent[0]) + layout.scaleX(year_extent[1])) / 2}'
 							dy='{-(layout.fontSize + gap)}'
 							font-size={layout.fontSize}
-						>{subtitle}</text>
+						>{title}</text>
 						<text
 							x='{(layout.scaleX(year_extent[0]) + layout.scaleX(year_extent[1])) / 2}'
 							dy='{-(layout.fontSize + gap)}'
 							font-size={layout.fontSize}
-						>{subtitle}</text>
+						>{title}</text>
 						<line
 							x1='{layout.scaleX(year_extent[0]) + layout.radius}'
 							x2='{layout.scaleX(year_extent[1]) - layout.radius}'

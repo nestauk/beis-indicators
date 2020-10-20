@@ -4,6 +4,7 @@
 
 - add Number of technology companies (Crunchbase) (#63)
 - add additional HE-BCI indicators (#347)
+- add Travel connectivity indicators: to airport, to rail station, road junction times (#329)
 
 ## Tool
 
@@ -14,10 +15,10 @@
 
 ## Specs
 
-- Description* fields (#365)
+- Description* fields (#365, #377)
 	- renamed `description_long` -> `description`
-	- renamed `description_short` -> `subtitle`
-	- renamed `description` -> `title`
+	- renamed `description_short` -> `title`
+	- renamed `description` -> `subtitle`
 	- removed `schema.value.description`
 
 # 0.0.12

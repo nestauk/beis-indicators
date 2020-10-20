@@ -109,7 +109,6 @@
 		auth_provider,
 		data_date,
 		description,
-		title,
 		endpoint_url,
 		is_public,
 		query,
@@ -118,6 +117,7 @@
 		source_name,
 		source_url,
 		subtitle,
+		title,
 		url,
 		warning,
 		year_extent,
@@ -241,14 +241,14 @@
 </script>
 
 <svelte:head>
-	<title>BEIS indicators - {subtitle}</title>
+	<title>BEIS indicators - {title}</title>
 </svelte:head>
 
 <div class='container'>
 	<header>
 		<div>
-			<h1>{subtitle}</h1>
-			<p>{title}</p>
+			<h1>{title}</h1>
+			<p>{subtitle}</p>
 		</div>
 		<div on:click={toggleInfoModal}>
 			<IconInfo

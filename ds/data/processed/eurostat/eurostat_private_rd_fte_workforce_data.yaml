@@ -1,7 +1,7 @@
 api_doc_url: https://ec.europa.eu/eurostat/cache/metadata/en/rd_esms.htm
 api_type: FETCH
-subtitle: FTE of R&D workforce
-title: Full time equivalent (FTE) of private sector research & development (R&D) workforce-  by NUTS 2 regions.
+title: FTE of R&D workforce
+subtitle: Full time equivalent (FTE) of private sector research & development (R&D) workforce-  by NUTS 2 regions.
 endpoint_url: http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/rd_p_persreg?sinceTimePeriod=2012&geoLevel=nuts2&precision=1&sex=T&sectperf=BES&prof_pos=TOTAL&unit=FTE
 framework_group: business_rnd_capacity
 is_experimental: False
