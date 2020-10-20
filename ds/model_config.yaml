@@ -3,8 +3,10 @@ data:
     {}
 
   nomis:
-    years: [2019,2018,2017,2016]
-    geography: TYPE450
+    years: [2019, 2018, 2017, 2016]
+    geography: TYPE459
+    #2013 nuts 2, nuts 3, lep 2017
+    #[TYPE450, TYPE449, TYPE459]
 
 seed: 42
 
