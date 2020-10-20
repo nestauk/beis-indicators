@@ -3,9 +3,9 @@ api_type: FETCH
 subtitle: Associated STEM professionals
 title: Number of Science, Research, Engineering and Technology associated professionals by NUTS 2 regions.
 endpoint_url:
-  2010: https://www.nomisweb.co.uk/api/v01/dataset/NM_17_1.jsonstat.json?geography=1908408321...1908408356&date=latestMINUS27,latestMINUS23,latestMINUS19&cell=404882177,404883201&measures=20100,20701,
-  2013: https://www.nomisweb.co.uk/api/v01/dataset/NM_17_1.jsonstat.json?geography=1887436801...1887436839&date=latestMINUS15,latestMINUS11,latestMINUS7&cell=404882177,404883201&measures=20100,20701,
-  2016: https://www.nomisweb.co.uk/api/v01/dataset/NM_17_1.jsonstat.json?geography=1837105153...1837105192&date=latestMINUS3&cell=404882177,404883201&measures=20100,20701
+  2010: https://www.nomisweb.co.uk/api/v01/dataset/NM_17_1.jsonstat.json?geography=1908408321...1908408356&date=latestMINUS29&cell=404882177,404883201&measures=20100,20701,
+  2013: https://www.nomisweb.co.uk/api/v01/dataset/NM_17_1.jsonstat.json?geography=1887436801...1887436839&date=latestMINUS25,latestMINUS21,latestMINUS17&cell=404882177,404883201&measures=20100,20701,
+  2016: https://www.nomisweb.co.uk/api/v01/dataset/NM_17_1.jsonstat.json?geography=1837105153...1837105192&date=latestMINUS13,latestMINUS9,latestMINUS5,latestMINUS1&cell=404882177,404883201&measures=20100,20701
   # nuts_spec_year: endpoint_url
 framework_group: public_rnd_capability
 is_experimental: False
