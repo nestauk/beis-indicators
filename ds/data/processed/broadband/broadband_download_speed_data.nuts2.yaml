@@ -1,6 +1,6 @@
 api_type: FETCH
-subtitle: Broadband speed
-title: Broadband download speed by NUTS 2 regions.
+title: Broadband speed
+subtitle: Broadband download speed (Mbit/s) by NUTS 2 regions.
 endpoint_url:
   2010: https://webarchive.nationalarchives.gov.uk/20160703065525/http://www.ofcom.org.uk/static/research/ir/Fixed_postcode.zip
   2013:
