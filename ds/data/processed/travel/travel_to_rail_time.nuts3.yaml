@@ -21,7 +21,7 @@ schema:
     format: .2f
     id: travel_to_rail_time
     label: Time (Minutes)
-  data_type: float
+    data_type: float
   year:
     data_type: int
     label: Year
