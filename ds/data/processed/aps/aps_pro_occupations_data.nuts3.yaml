@@ -1,7 +1,7 @@
 api_doc_url: https://www.nomisweb.co.uk/api/v01/help
 api_type: FETCH
-subtitle: Professional occupations employment
-title: Percentage of population employed in professional occupations by NUTS 3 regions.
+title: Professional occupations employment
+subtitle: Percentage of population employed in professional occupations by NUTS 3 regions.
 endpoint_url:
   2010: https://www.nomisweb.co.uk/api/v01/dataset/NM_17_5.jsonstat.json?geography=1912602625...1912602758&date=latestMINUS29&variable=1533&measures=20599,21001,21002,21003,
   2013: https://www.nomisweb.co.uk/api/v01/dataset/NM_17_5.jsonstat.json?geography=1883242497...1883242664&date=latestMINUS25,latestMINUS21,latestMINUS17&variable=1533&measures=20599,21001,21002,21003,
