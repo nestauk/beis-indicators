@@ -22,7 +22,6 @@ schema:
     id: eurostat_private_households_income
     label: Income (to nearest 100)
     type: EUR
-    data_type: float
   year:
     data_type: int
     label: Year
