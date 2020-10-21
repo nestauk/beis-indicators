@@ -1,0 +1,29 @@
+api_doc_url: https://ec.europa.eu/eurostat/cache/metadata/en/rd_esms.htm
+api_type: FETCH
+title: Private household income
+subtitle: Primary income of private households by NUTS 2 regions.
+description: Income of private households including income from labour, income of assets (interest, dividends and rents) and income from net operating surplus and self-employment. Negative values for households are interest and rents payable.
+endpoint_url: http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/tgs00036?sinceTimePeriod=2012&precision=2&unit=PPS_HAB'
+framework_group: place_potential
+is_experimental: False
+order: [year, nuts_id, nuts_year_spec, value.id] # do not change; specifies the order of the exported indicator fields
+region:
+  type: NutsRegion
+  level: 2
+  source: PROVIDED
+schema:
+  nuts_id:
+    type: NutsRegion.nuts_id
+  nuts_year_spec:
+    type: NutsRegion.nuts_year_spec
+  value:
+    format: ','
+    id: eurostat_private_households_income
+    label: Income (to nearest 100)
+    type: EUR
+    data_type: int
+  year:
+    data_type: int
+    label: Year
+source_name: Eurostat (European Statistical Office)
+source_url: https://ec.europa.eu/eurostat/
