@@ -1,6 +1,6 @@
 <script>
 	import LinkButton from 'app/components/LinkButton.svelte';
-	import {version} from 'app/utils';
+	import {version, allNUTS2IndicatorsCsvName} from 'app/utils';
 
 	const csvWikiURL = 'https://en.wikipedia.org/wiki/Comma-separated_values';
 </script>
@@ -81,7 +81,7 @@
 
 		<p>You can download all data in the tool for your own use.<p>
 		<p>Please click on the download icon at the top-right corner of the website header to download a zip file containing the CSV files of all of the indicators.</p>
-		<p>That zip file also contains an extra CSV file (titled <code>beis_indicators_{version}.csv</code>) containing all datapoints of all indicators in a single file.</p>
+		<p>That zip file also contains an extra CSV file (titled <code>{allNUTS2IndicatorsCsvName}</code>) containing all datapoints of all indicators in a single file.</p>
 
 		<!-- feedback -->
 		<h2>Version, changelog and feedback</h2>

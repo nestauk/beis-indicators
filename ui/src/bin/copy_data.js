@@ -13,15 +13,27 @@ import cpy from 'cpy';
 import del from 'del';
 import tempy from 'tempy';
 
-import {allIndicatorsCsvName, zipName} from 'app/utils';
+import {basename, zipName} from 'app/utils';
+import LEP_UK_labels from 'app/data/LEP_UK_labels';
 import NUTS2_UK_labels from 'app/data/NUTS2_UK_labels';
+import NUTS3_UK_labels from 'app/data/NUTS3_UK_labels';
 
-import {isNotLepFile, isNotNuts3File} from './utils';
+import {
+	isNotLepFile,
+	isLepFile,
+	isNotNuts3File,
+	isNuts3File
+} from './utils';
 
 const DS_DATA_REL_PATH = '../../../ds/data';
 const DATA_DIR = path.resolve(__dirname, DS_DATA_REL_PATH, 'processed');
 const TYPES_PATH = path.resolve(__dirname, DS_DATA_REL_PATH, 'schema/types.yaml');
 const DATA_DIR_STATIC = path.resolve(__dirname, '../../static/data');
+const UK_REGIONS_LABELS = {
+	NUTS2: NUTS2_UK_labels,
+	NUTS3: NUTS3_UK_labels,
+	LEP: LEP_UK_labels,
+};
 
 const isDir = name => !name.startsWith('.') && path.parse(name).ext === '';
 const isCsvFile = name => path.parse(name).ext === '.csv';
@@ -31,6 +43,75 @@ const makePath = dirName => filename => path.resolve(
 	filename
 );
 const csvToYamlPath = filepath => filepath.replace('.csv', '.yaml');
+
+const makeSingleFileWith = async (condition, regionType) => {
+	const dirNames = await readDir(DATA_DIR).then(_.filterWith(isDir));
+	const csvFilepaths = await Promise.all(
+		_.map(dirNames, dirName =>
+			readDir(path.resolve(DATA_DIR, dirName))
+			.then(_.pipe([
+				_.filterWith(condition),
+				_.mapWith(makePath(dirName))
+			]))
+		)
+	)
+	.then(_.flatten);
+
+	const specs = await Promise.all(
+		csvFilepaths.map(csvFilepath =>
+			readFile(csvToYamlPath(csvFilepath), 'utf-8')
+			.then(string =>
+				_.setPathIn(yaml.safeLoad(string), 'csvFilepath', csvFilepath)
+			)
+		)
+	);
+
+	const types = await readFile(TYPES_PATH).then(yaml.safeLoad);
+	const tmpAllIndicatorsCsvPath = tempy.file({
+		name: `${basename}_${regionType}.csv`
+	});
+
+	await Promise.all(
+		specs.map(spec => {
+			const [yearHeader, regionIdHeader, regionYearSpecHeader,] = spec.order;
+
+			return readCsv(spec.csvFilepath, transformValues({
+				[yearHeader]: Number,
+				[regionYearSpecHeader]: Number,
+				[spec.schema.value.id]: Number,
+			}))
+			.then(_.mapWith(applyFnMap({
+				indicator_id: () => spec.schema.value.id,
+				title: () => spec.title,
+				year: _.getKey(yearHeader),
+				region_id: _.getKey(regionIdHeader),
+				region_year_spec: _.getKey(regionYearSpecHeader),
+				region_name: obj => {
+					const yearSpec = regionType === 'LEP' && obj[regionYearSpecHeader] < 0
+						? 2014
+						: obj[regionYearSpecHeader];
+
+					return UK_REGIONS_LABELS[regionType][yearSpec][obj[regionIdHeader]]
+				},
+				value: _.getKey(spec.schema.value.id),
+				unit: _.adapter([
+					_.always(spec.schema.value.unit_string),
+					() => spec.schema.value.type &&
+						types[spec.schema.value.type] &&
+						types[spec.schema.value.type].unit_string,
+					_.always('')
+				]),
+				subtitle: () => spec.subtitle,
+			})))
+		})
+	)
+	.then(_.flatten)
+	.then(csvFormat)
+	.then(saveString(tmpAllIndicatorsCsvPath));
+
+	await cpy(tmpAllIndicatorsCsvPath, DATA_DIR_STATIC);
+}
+
 
 const run = async () => {
 
@@ -55,57 +136,30 @@ const run = async () => {
 
 	await cpy(csvFilepaths, DATA_DIR_STATIC);
 
-	/* make a single indicators file */
+	/* make an all-indicators single file */
 
-	const specs = await Promise.all(
-		csvFilepaths.map(csvFilepath =>
-			readFile(csvToYamlPath(csvFilepath), 'utf-8')
-			.then(string =>
-				_.setPathIn(yaml.safeLoad(string), 'csvFilepath', csvFilepath)
-			)
-		)
+	await makeSingleFileWith(
+		_.allOf([isCsvFile, isNotNuts3File, isNotLepFile]),
+		'NUTS2'
 	);
-
-	const types = await readFile(TYPES_PATH).then(yaml.safeLoad);
-	const tmpAllIndicatorsCsvPath = tempy.file({name: allIndicatorsCsvName});
-
-	await Promise.all(
-		specs.map(spec =>
-			readCsv(spec.csvFilepath, transformValues({
-				[spec.order[0]]: Number,
-				[spec.order[2]]: Number,
-				[spec.schema.value.id]: Number,
-			}))
-			.then(_.mapWith(applyFnMap({
-				id: () => spec.schema.value.id,
-				year: _.getKey('year'),
-				nuts_id: _.getKey('nuts_id'),
-				nuts_year_spec: _.getKey('nuts_year_spec'),
-				nuts_name: obj => NUTS2_UK_labels[obj.nuts_year_spec][obj.nuts_id],
-				value: _.getKey(spec.schema.value.id),
-				unit_string: _.adapter([
-					_.getKey(spec.schema.value.unit_string),
-					() => spec.schema.value.type &&
-						types[spec.schema.value.type] &&
-						types[spec.schema.value.type].unit_string,
-					_.always('')
-				]),
-				subtitle: () => spec.subtitle,
-				title: () => spec.title,
-			})))
-		)
-	)
-	.then(_.flatten)
-	.then(csvFormat)
-	.then(saveString(tmpAllIndicatorsCsvPath));
-
-	await cpy(tmpAllIndicatorsCsvPath, DATA_DIR_STATIC);
 
 	/* zip them all */
 
 	const tmpZipPath = tempy.file({name: zipName});
 	await zip(DATA_DIR_STATIC, tmpZipPath);
 	await cpy(tmpZipPath, DATA_DIR_STATIC);
+
+	/* make remaining all-indicators single files */
+
+	await makeSingleFileWith(
+		_.allOf([isCsvFile, isNuts3File]),
+		'NUTS3'
+	);
+
+	await makeSingleFileWith(
+		_.allOf([isCsvFile, isLepFile]),
+		'LEP'
+	);
 }
 
-run().then(tapMessage(`Copied data to ${DATA_DIR_STATIC}`));
+run().then(tapMessage(`Updated data in ${DATA_DIR_STATIC}`));

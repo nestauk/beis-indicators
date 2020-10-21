@@ -8,7 +8,7 @@ endpoint_url: https://www.ons.gov.uk/file?uri=%2fpeoplepopulationandcommunity%2f
 framework_group: public_rnd_capability
 is_experimental: False
 is_public: True
-order: [year, <region_type>_id, <region_type>_year_spec, value.id]
+order: [year, nuts_id, nuts_year_spec, value.id]
 region:
   type: NutsRegion
   level: 2
