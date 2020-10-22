@@ -59,6 +59,7 @@
 		getIndicatorFormat,
 		getNutsId,
 		getRefFormat,
+		makeavailableYears,
 		makeColorBins,
 		makeColorScale,
 		makeValueAccessor,
@@ -90,7 +91,6 @@
 	$: formatFn = getIndicatorFormat(id, lookup);
 	$: refFormatFn = getRefFormat(id, lookup);
 	$: getIndicatorValue = makeValueAccessor(id);
-	$: $availableYearsStore = inclusiveRange(year_extent);
 	$: data && lookupStore.update(_.setPath(`${id}.data`, data));
 	$: ({
 		api_doc_url,
@@ -122,6 +122,7 @@
 
 	// $: indicatorData = $lookupStore[id].data;
 	$: yearData = data && data.filter(obj => obj.year === year);
+	$: $availableYearsStore = makeavailableYears(data);
 	$: makeKeyToValue = _.pipe([
 		_.indexBy(getNutsId),
 		_.mapValuesWith(getIndicatorValue)
@@ -157,7 +158,6 @@
 	$: valueExtext = filteredData.length && extent(filteredData, getIndicatorValue);
 	$: colorScale = filteredData.length && makeColorScale(valueExtext);
 	$: colorBins = filteredData.length && makeColorBins(colorScale);
-	$: console.log(filteredData, valueExtext, colorBins);
 	$: makeKeyToColor = _.pipe([
 		keyValueArrayToObject,
 		_.mapValuesWith(colorScale)
