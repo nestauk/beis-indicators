@@ -69,6 +69,5 @@
     "start": "node __sapper__/build",
     "test": "run-p --race dev cy:run",
     "unittest": "mocha -r esm --spec src/**/*.spec.js"
-  },
-  "version": "0.0.12"
+  }
 }
