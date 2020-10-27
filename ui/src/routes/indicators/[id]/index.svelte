@@ -59,7 +59,7 @@
 	import {
 		getIndicatorFormat,
 		getNutsId,
-		makeavailableYears,
+		makeAvailableYears,
 		makeColorBins,
 		makeColorScale,
 		makeValueAccessor,
@@ -127,7 +127,7 @@
 	$: legendHeight = height / 3;
 
 	$: formatFn = getIndicatorFormat(id, lookup);
-	$: $availableYearsStore = makeavailableYears(data);
+	$: $availableYearsStore = makeAvailableYears(data);
 	$: layout = $timelineLayoutStore;
 	$: getIndicatorValue = makeValueAccessor(id);
 	$: setOrder = makeSetOrderWith(getIndicatorValue);

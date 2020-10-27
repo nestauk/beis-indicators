@@ -59,7 +59,7 @@
 		getIndicatorFormat,
 		getNutsId,
 		getRefFormat,
-		makeavailableYears,
+		makeAvailableYears,
 		makeColorBins,
 		makeColorScale,
 		makeValueAccessor,
@@ -122,7 +122,7 @@
 
 	// $: indicatorData = $lookupStore[id].data;
 	$: yearData = data && data.filter(obj => obj.year === year);
-	$: $availableYearsStore = makeavailableYears(data);
+	$: $availableYearsStore = makeAvailableYears(data);
 	$: makeKeyToValue = _.pipe([
 		_.indexBy(getNutsId),
 		_.mapValuesWith(getIndicatorValue)

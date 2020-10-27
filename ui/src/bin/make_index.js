@@ -15,6 +15,8 @@ import {
 import {tapMessage, tapWith} from '@svizzle/dev';
 import {applyFnMap, isKeyOf, transformValues} from '@svizzle/utils';
 
+import {makeAvailableYears} from 'app/utils';
+
 import {isNotLepFile, isNotNuts3File} from './utils';
 
 const DS_DATA_REL_PATH = '../../../ds/data';
@@ -93,7 +95,7 @@ const run = async () => {
 			.then(_.pipe([
 				_.filterWith(_.allOf([isYamlFile, isNotNuts3File, isNotLepFile])),
 				_.mapWith(applyFnMap({
-					filepath: makePath(dirName),
+					specFilepath: makePath(dirName),
 					url: makeCsvUrl,
 				}))
 			]))
@@ -101,17 +103,22 @@ const run = async () => {
 	);
 	const indicatorsGroups = await Promise.all(
 		_.flatten(refs)
-		.map(({filepath, url}) =>
+		.map(({specFilepath, url}) =>
 			Promise.all([
-				readFile(filepath, 'utf-8')
+				readFile(specFilepath, 'utf-8')
 				.then(yaml.safeLoad)
-				.then(tapWith([needsFormat, `needsFormat? ${filepath}`]))
+				.then(tapWith([needsFormat, `needsFormat? ${specFilepath}`]))
 				.then(setUrl(url)),
 
-				readCsv(yamlToCsvPath(filepath), transformValues({year: Number}))
-				.then(csv => extent(csv, _.getKey('year')))
+				readCsv(yamlToCsvPath(specFilepath), transformValues({year: Number}))
+				.then(csvData => ({
+					year_extent: extent(csvData, _.getKey('year')),
+					availableYears: makeAvailableYears(csvData)
+				}))
 			])
-			.then(([spec, year_extent]) => _.setIn(spec, 'year_extent', year_extent))
+			.then(([spec, {year_extent, availableYears}]) =>
+				_.merge(spec, {year_extent, availableYears})
+			)
 		)
 	).then(_.groupBy(_.getKey('framework_group')));
 

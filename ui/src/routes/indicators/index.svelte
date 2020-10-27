@@ -1,10 +1,10 @@
 <script>
 	import * as _ from 'lamb';
 	import {getContext} from 'svelte';
-	import {inclusiveRange} from '@svizzle/utils';
 
-	import { goto } from '@sapper/app';
-	import { yearExtent, yearRange } from 'app/data/groups';
+	import { goto } from '@sapper/app'; // dev
+
+	import { yearRange } from 'app/data/groups';
 	import groups from 'app/data/indicatorsGroups.json';
 	import {resetSafetyStore, resetSelection} from 'app/stores';
 
@@ -47,24 +47,28 @@
 					{width}
 					height='{4 * gap + layout.fontSize + vStep * indicators.length}'
 				>
+					<!-- global years range -->
+
 					{#each yearRange as year}
-					<g
-						class='xref'
-						transform='translate({layout.scaleX(year)},0)'
-					>
-						<line
-							y1='{gap}'
-							y2='{gap + vStep * indicators.length}'
-						/>
-						<text
-							font-size={layout.fontSize}
-							y='{2 * gap + vStep * indicators.length + layout.fontSize / 2}'
-						> {year}
-						</text>
-					</g>
+						<g
+							class='xref'
+							transform='translate({layout.scaleX(year)},0)'
+						>
+							<line
+								y1='{gap}'
+								y2='{gap + vStep * indicators.length}'
+							/>
+							<text
+								font-size={layout.fontSize}
+								y='{2 * gap + vStep * indicators.length + layout.fontSize / 2}'
+							> {year}
+							</text>
+						</g>
 					{/each}
 
-					{#each indicators as {title, schema, year_extent}, y}
+					<!-- indicators -->
+
+					{#each indicators as {availableYears, title, schema, year_extent}, y}
 					<g
 						class='indicatorsrange'
 						transform='translate(0,{vStep * (y + 1)})'
@@ -84,21 +88,21 @@
 							x1='{layout.scaleX(year_extent[0]) + layout.radius}'
 							x2='{layout.scaleX(year_extent[1]) - layout.radius}'
 						/>
-						{#each inclusiveRange(year_extent) as year}
-						{#if process.env.SAPPER_EXPORT}
-						<a rel='prefetch' href='/indicators/{schema.value.id}/{year}'>
-							<circle
-								cx='{layout.scaleX(year)}'
-								r={layout.radius}
-							/>
-						</a>
-						{:else}
-							<circle
-								cx='{layout.scaleX(year)}'
-								r={layout.radius}
-								on:click='{() => goto(`indicators/${schema.value.id}/${year}`)}'
-							/>
-						{/if}
+						{#each availableYears as year}
+							{#if process.env.SAPPER_EXPORT}
+								<a rel='prefetch' href='/indicators/{schema.value.id}/{year}'>
+									<circle
+										cx='{layout.scaleX(year)}'
+										r={layout.radius}
+									/>
+								</a>
+							{:else}
+								<circle
+									cx='{layout.scaleX(year)}'
+									r={layout.radius}
+									on:click='{() => goto(`indicators/${schema.value.id}/${year}`)}'
+								/>
+							{/if}
 						{/each}
 					</g>
 					{/each}
