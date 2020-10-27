@@ -7,7 +7,7 @@
 - add Travel connectivity indicators: to airport, to rail station, road junction times (#329)
 - add international and internal migration indicator (#327)
 - export all data in single tables for each region type (#370).
-  Note that `/data/beis_indicators_0_0_12_LEP.csv` and `/data/beis_indicators_0_0_12_NUTS3.csv` are available as direct download but they're not reachable from within the tool.
+  Note that `/data/beis_indicators_0_0_13_LEP.csv` and `/data/beis_indicators_0_0_13_NUTS3.csv` are available as direct download but they're not reachable from within the tool.
 
 ## Tool
 
