@@ -4,5 +4,6 @@
   "name": "beis_indicators",
   "scripts": {
     "deploy": "cd ui && npm install && npm run makedata && npm run export"
-  }
+  },
+  "version": "0.0.13"
 }
