@@ -120,7 +120,10 @@ const run = async () => {
 				_.merge(spec, {year_extent, availableYears})
 			)
 		)
-	).then(_.groupBy(_.getKey('framework_group')));
+	).then(_.pipe([
+		_.groupBy(_.getKey('framework_group')),
+		_.mapValuesWith(_.sortWith([_.getKey('title')]))
+	]))
 
 	const framework =
 		await readJson(FRAMEWORK_PATH).then(_.sortWith([_.getKey('order')]));
