@@ -1,3 +1,10 @@
+# 0.0.14 (next)
+
+## Tool
+
+- Update the color scale to green-blue (#390)
+
+
 # 0.0.13
 
 ## Indicators
@@ -24,6 +31,7 @@
 	- renamed `description_short` -> `title`
 	- renamed `description` -> `subtitle`
 	- removed `schema.value.description`
+
 
 # 0.0.12
 
@@ -55,6 +63,7 @@
 - Add the `warning` field to the spec template (#288)
 - Removed the `year_range` field, now derived automatically (#218)
 - Some more field can have different shape: `api_type`, `source_name`, `source_url` (#287)
+
 
 # 0.0.11
 
