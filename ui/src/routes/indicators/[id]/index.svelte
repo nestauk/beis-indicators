@@ -14,10 +14,8 @@
 	import {quadtree} from 'd3-quadtree';
 	import {scaleLinear} from 'd3-scale';
 	import {line, curveMonotoneX} from 'd3-shape';
-	import {makeStyle, toPx} from '@svizzle/dom';
 	import {
 		applyFnMap,
-		inclusiveRange,
 		isIterableNotEmpty,
 		makeKeyed,
 		mergeObj,
@@ -28,23 +26,19 @@
 	import ColorBinsG from '@svizzle/legend/src/ColorBinsG.svelte';
 	import Switch from '@svizzle/ui/src/Switch.svelte';
 
-	import { goto } from '@sapper/app';
-
 	import InfoModal from 'app/components/InfoModal/InfoModal.svelte';
 	import GeoFilterModal from 'app/components/GeoFilterModal.svelte';
 	import IconChevronDown from 'app/components/icons/IconChevronDown.svelte';
 	import IconChevronUp from 'app/components/icons/IconChevronUp.svelte';
 	import IconGlobe from 'app/components/icons/IconGlobe.svelte';
 	import IconInfo from 'app/components/icons/IconInfo.svelte';
-	import {lookup, yearExtent, yearRange} from 'app/data/groups';
-	import groups from 'app/data/indicatorsGroups.json';
+	import {lookup} from 'app/data/groups';
 	import yearlyKeyToLabel from 'app/data/NUTS2_UK_labels';
 	import types from 'app/data/types';
 	import {
 		availableYearsStore,
 		doFilterRegionsStore,
 		geoModalStore,
-		hideGeoModal,
 		hideInfoModal,
 		infoModalStore,
 		lookupStore,
@@ -59,7 +53,6 @@
 	import {
 		getIndicatorFormat,
 		getNutsId,
-		makeAvailableYears,
 		makeColorBins,
 		makeColorScale,
 		makeValueAccessor,
@@ -108,6 +101,7 @@
 		api_doc_url,
 		api_type,
 		auth_provider,
+		availableYears,
 		data_date,
 		description,
 		endpoint_url,
@@ -127,7 +121,7 @@
 	$: legendHeight = height / 3;
 
 	$: formatFn = getIndicatorFormat(id, lookup);
-	$: $availableYearsStore = makeAvailableYears(data);
+	$: $availableYearsStore = availableYears;
 	$: layout = $timelineLayoutStore;
 	$: getIndicatorValue = makeValueAccessor(id);
 	$: setOrder = makeSetOrderWith(getIndicatorValue);

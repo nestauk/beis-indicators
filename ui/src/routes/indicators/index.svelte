@@ -2,7 +2,7 @@
 	import * as _ from 'lamb';
 	import {getContext} from 'svelte';
 
-	import { goto } from '@sapper/app'; // dev
+	import {goto} from '@sapper/app'; // dev, don't remove
 
 	import { yearRange } from 'app/data/groups';
 	import groups from 'app/data/indicatorsGroups.json';

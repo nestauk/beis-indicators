@@ -21,13 +21,10 @@
 	import {
 		applyFnMap,
 		getValue,
-		inclusiveRange,
 		keyValueArrayAverage,
 		keyValueArrayToObject,
 		mergeObj,
 	} from '@svizzle/utils';
-
-	import {feature} from 'topojson-client';
 
 	import GeoFilterModal from 'app/components/GeoFilterModal.svelte';
 	import InfoModal from 'app/components/InfoModal/InfoModal.svelte';
@@ -59,7 +56,6 @@
 		getIndicatorFormat,
 		getNutsId,
 		getRefFormat,
-		makeAvailableYears,
 		makeColorBins,
 		makeColorScale,
 		makeValueAccessor,
@@ -96,6 +92,7 @@
 		api_doc_url,
 		api_type,
 		auth_provider,
+		availableYears,
 		data_date,
 		description,
 		endpoint_url,
@@ -122,7 +119,7 @@
 
 	// $: indicatorData = $lookupStore[id].data;
 	$: yearData = data && data.filter(obj => obj.year === year);
-	$: $availableYearsStore = makeAvailableYears(data);
+	$: $availableYearsStore = availableYears;
 	$: makeKeyToValue = _.pipe([
 		_.indexBy(getNutsId),
 		_.mapValuesWith(getIndicatorValue)
@@ -357,7 +354,6 @@
 									defaultFill: defaultGray,
 									defaultStroke: 'gray',
 									defaultStrokeWidth: 0.25,
-									focusedStroke: 'dodgerblue',
 									focusedStrokeWidth: 1.5,
 									selectedStroke: 'black',
 									selectedStrokeWidth: 0.5,

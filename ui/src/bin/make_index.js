@@ -15,8 +15,6 @@ import {
 import {tapMessage, tapWith} from '@svizzle/dev';
 import {applyFnMap, isKeyOf, transformValues} from '@svizzle/utils';
 
-import {makeAvailableYears} from 'app/utils';
-
 import {isNotLepFile, isNotNuts3File} from './utils';
 
 const DS_DATA_REL_PATH = '../../../ds/data';
@@ -82,6 +80,8 @@ const makeNeedsFormat = types => _.pipe([
 		]),
 	])
 ]);
+
+const makeAvailableYears = _.pipe([_.pluck('year'), _.uniques]);
 
 const run = async () => {
 	const types = await readFile(TYPES_PATH, 'utf-8').then(yaml.safeLoad);

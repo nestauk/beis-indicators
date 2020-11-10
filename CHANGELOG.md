@@ -3,6 +3,8 @@
 ## Tool
 
 - Update the color scale to green-blue (#390)
+- Fix: the map shows the current year again (#389)
+- Use red for the focused region (#389)
 
 
 # 0.0.13
