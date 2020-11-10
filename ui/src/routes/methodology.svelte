@@ -1,5 +1,4 @@
 <script>
-	import {zipUrl} from 'app/utils';
 	import LinkButton from 'app/components/LinkButton.svelte';
 	import ExternalLink from 'app/components/ExternalLink.svelte';
 
@@ -54,7 +53,7 @@
 
 		<div class='cta'>
 			<LinkButton
-				url={zipUrl}
+				url='/download'
 				text='Download all indicators'
 				withDownloadIcon={true}
 			/>

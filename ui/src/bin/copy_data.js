@@ -13,7 +13,7 @@ import cpy from 'cpy';
 import del from 'del';
 import tempy from 'tempy';
 
-import {basename, zipName} from 'app/utils';
+import {basename} from 'app/utils';
 import LEP_UK_labels from 'app/data/LEP_UK_labels';
 import NUTS2_UK_labels from 'app/data/NUTS2_UK_labels';
 import NUTS3_UK_labels from 'app/data/NUTS3_UK_labels';
@@ -145,7 +145,7 @@ const run = async () => {
 
 	/* zip them all */
 
-	const tmpZipPath = tempy.file({name: zipName});
+	const tmpZipPath = tempy.file({name: `${basename}.zip`});
 	await zip(DATA_DIR_STATIC, tmpZipPath);
 	await cpy(tmpZipPath, DATA_DIR_STATIC);
 

@@ -5,6 +5,12 @@
 - Update the color scale to green-blue (#390)
 - Fix: the map shows the current year again (#389)
 - Use red for the focused region (#389)
+- Dynamic download URLs (#390).
+  Indicators files are available at these locations:
+  - `/download`: versioned zip file of all indicators CSV files
+  - `/download/LEP`: versioned CSV file of all indicators for LEP regions
+  - `/download/NUTS2`: versioned CSV file of all indicators for NUTS2 regions
+  - `/download/NUTS3`: versioned CSV file of all indicators for NUTS3 regions
 
 
 # 0.0.13

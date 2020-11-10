@@ -1,8 +1,9 @@
 <script>
 	import LinkButton from 'app/components/LinkButton.svelte';
-	import {version, allNUTS2IndicatorsCsvName} from 'app/utils';
+	import {allNUTS2IndicatorsCsvName, availableDownloadIds, version} from 'app/utils';
 
 	const csvWikiURL = 'https://en.wikipedia.org/wiki/Comma-separated_values';
+	const maxIndex = availableDownloadIds.length - 1;
 </script>
 
 <svelte:head>
@@ -82,6 +83,16 @@
 		<p>You can download all data in the tool for your own use.<p>
 		<p>Please click on the download icon at the top-right corner of the website header to download a zip file containing the CSV files of all of the indicators.</p>
 		<p>That zip file also contains an extra CSV file (titled <code>{allNUTS2IndicatorsCsvName}</code>) containing all datapoints of all indicators in a single file.</p>
+
+		<h3>Extras</h3>
+
+		<p>
+			Note that some indicators have been created for NUTS3 and LEP, but these are not provided in then tool, nor they are official and should considered as non-official extras:
+			{#each availableDownloadIds as availableId, index}
+				<a href='/download/{availableId}'>{availableId}</a>
+				{#if index < maxIndex},{/if}
+			{/each}.
+		</p>
 
 		<!-- feedback -->
 		<h2>Version, changelog and feedback</h2>
