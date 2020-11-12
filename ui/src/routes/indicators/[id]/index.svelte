@@ -36,6 +36,7 @@
 	import yearlyKeyToLabel from 'app/data/NUTS2_UK_labels';
 	import types from 'app/data/types';
 	import {
+		areThereUnselectedNUTS1Regions,
 		availableYearsStore,
 		doFilterRegionsStore,
 		geoModalStore,
@@ -51,6 +52,7 @@
 		toggleInfoModal,
 	} from 'app/stores';
 	import {
+		colorSelected,
 		getIndicatorFormat,
 		getNutsId,
 		makeColorBins,
@@ -260,7 +262,11 @@
 					class='globe clickable'
 					on:click={toggleGeoModal}
 				>
-					<IconGlobe strokeWidth={1.5} size={28} />
+					<IconGlobe
+						strokeWidth={1.5}
+						stroke={$areThereUnselectedNUTS1Regions ? colorSelected : 'black'}
+						size={28}
+					/>
 					{#if $geoModalStore.isVisible}
 					<IconChevronUp strokeWidth={1} size={24} />
 					{:else}

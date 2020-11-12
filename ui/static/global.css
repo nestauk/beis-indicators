@@ -59,7 +59,7 @@ a {
 	--color-main-desat-50: hsla(199, 50%, 52%, 1);
 	--color-main-lighter: rgb(157, 219, 249);
 	--color-main: rgb(16, 174, 249);
-	--color-selected: lightseagreen; /* dodgerblue */
+	--color-selected: lightseagreen;
 	--color-grey-lighter: #f7f7f7;
 	--color-grey-180: rgb(180, 180, 180);
 	--color-grey-70: rgb(70, 70, 70);
