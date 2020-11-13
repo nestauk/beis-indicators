@@ -7,6 +7,7 @@
 - Use red for the focused region (#389)
 - Show a colored globe icon when some NUTS1 regions are deselected (#395)
 - Provide two color scales that can be toggled at will (#397)
+- Provide timeline navigation buttons (#399)
 - Dynamic download URLs (#390).
   Indicators files are available at these locations:
   - `/download`: versioned zip file of all indicators CSV files
