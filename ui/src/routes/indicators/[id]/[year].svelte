@@ -37,11 +37,14 @@
 	import {
 		areThereUnselectedNUTS1Regions,
 		availableYearsStore,
+		currentSchemeIndexStore,
 		doFilterRegionsStore,
 		geoModalStore,
 		hideInfoModal,
 		infoModalStore,
 		lookupStore,
+		makeColorBinsStore,
+		makeColorScaleStore,
 		nutsSelectionStore,
 		preselectedNUTS2IdsStore,
 		resetSafetyStore,
@@ -58,8 +61,6 @@
 		getIndicatorFormat,
 		getNutsId,
 		getRefFormat,
-		makeColorBins,
-		makeColorScale,
 		makeValueAccessor,
 		parseCSV,
 	} from 'app/utils';
@@ -82,6 +83,8 @@
 
 	let selectedKeys = [];
 
+	$: makeColorScale = $makeColorScaleStore;
+	$: makeColorBins = $makeColorBinsStore;
 	$: legendHeight = height / 3;
 	$: choroplethSafety = {...defaultGeometry, left: legendBarThickness * 2};
 	$: id && year && hideInfoModal();
@@ -325,6 +328,16 @@
 					}}
 				/>
 			</div>
+
+			<div class='optgroup'>
+				<Switch
+					value={$currentSchemeIndexStore ? 'Green-Blue' : 'Red-Blue'}
+					values={['Red-Blue', 'Green-Blue']}
+					on:toggled={event => {
+						$currentSchemeIndexStore = event.detail === 'Red-Blue' ? 0 : 1
+					}}
+				/>
+			</div>
 		</div>
 
 		{#if filteredData.length}
@@ -360,6 +373,7 @@
 									defaultFill: defaultGray,
 									defaultStroke: 'gray',
 									defaultStrokeWidth: 0.25,
+									focusedStroke: 'black',
 									focusedStrokeWidth: 1.5,
 									selectedStroke: 'black',
 									selectedStrokeWidth: 0.5,

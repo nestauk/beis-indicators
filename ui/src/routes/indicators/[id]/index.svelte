@@ -38,11 +38,14 @@
 	import {
 		areThereUnselectedNUTS1Regions,
 		availableYearsStore,
+		currentSchemeIndexStore,
 		doFilterRegionsStore,
 		geoModalStore,
 		hideInfoModal,
 		infoModalStore,
 		lookupStore,
+		makeColorBinsStore,
+		makeColorScaleStore,
 		nutsSelectionStore,
 		preselectedNUTS2IdsStore,
 		resetSelectedYear,
@@ -55,8 +58,6 @@
 		colorSelected,
 		getIndicatorFormat,
 		getNutsId,
-		makeColorBins,
-		makeColorScale,
 		makeValueAccessor,
 		parseCSV,
 		sortAscByYear,
@@ -122,6 +123,8 @@
 
 	$: legendHeight = height / 3;
 
+	$: makeColorScale = $makeColorScaleStore;
+	$: makeColorBins = $makeColorBinsStore;
 	$: formatFn = getIndicatorFormat(id, lookup);
 	$: $availableYearsStore = availableYears;
 	$: layout = $timelineLayoutStore;
@@ -289,6 +292,16 @@
 					values={['Absolute', 'Ranking']}
 					on:toggled={event => {
 						useOrderScale = event.detail === 'Ranking'
+					}}
+				/>
+			</div>
+
+			<div class='optgroup'>
+				<Switch
+					value={$currentSchemeIndexStore ? 'Green-Blue' : 'Red-Blue'}
+					values={['Red-Blue', 'Green-Blue']}
+					on:toggled={event => {
+						$currentSchemeIndexStore = event.detail === 'Red-Blue' ? 0 : 1
 					}}
 				/>
 			</div>
