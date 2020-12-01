@@ -1,0 +1,22 @@
+[
+    {'indicator': 'eurostat_private_rd_headcount_workforce_data',
+    'query': 'rd_p_persreg?sinceTimePeriod=2007&geoLevel=nuts2&precision=1&sex=T&sectperf=BES&prof_pos=TOTAL&unit=HC' },
+
+    {'indicator': 'eurostat_private_rd_fte_workforce_data',
+    'query': 'rd_p_persreg?sinceTimePeriod=2007&geoLevel=nuts2&precision=6&sex=T&sectperf=BES&prof_pos=TOTAL&unit=FTE'},
+
+    {'indicator': 'eurostat_berd_data',
+    'query': 'rd_e_gerdreg?sinceTimePeriod=2007&geoLevel=nuts2&precision=6&sectperf=BES&unit=MIO_EUR'},
+
+    {'indicator': 'eurostat_private_non_profit_rd_workforce_data',
+    'query': 'rd_e_gerdreg?sinceTimePeriod=2007&geoLevel=nuts2&precision=6&sectperf=PNP&unit=MIO_EUR'},
+
+    {'indicator': 'eurostat_higher_ed_rd_workforce_data',
+    'query': 'rd_e_gerdreg?sinceTimePeriod=2007&geoLevel=nuts2&precision=6&sectperf=HES&unit=MIO_EUR'},
+
+    {'indicator': 'eurostat_gov_rd_workforce_data',
+    'query': 'rd_e_gerdreg?sinceTimePeriod=2007&geoLevel=nuts2&precision=2&sectperf=GOV&unit=MIO_EUR'},
+
+    {'indicator': 'eurostat_private_households_income',
+    'query': 'tgs00036?sinceTimePeriod=2007&precision=2&unit=PPS_HAB'}
+]

@@ -2,7 +2,7 @@ api_doc_url: https://ec.europa.eu/eurostat/cache/metadata/en/rd_esms.htm
 api_type: FETCH
 title: Private non-profit R&D
 subtitle: Private non-profit sector enterprise research & development (R&D) expenditure by NUTS 2 regions.
-endpoint_url: http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/rd_e_gerdreg?sinceTimePeriod=2012&geoLevel=nuts2&precision=6&sectperf=PNP&unit=MIO_EUR'
+endpoint_url: http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/rd_e_gerdreg?sinceTimePeriod=2007&geoLevel=nuts2&precision=6&sectperf=PNP&unit=MIO_EUR'
 framework_group: public_rnd_capability
 is_experimental: False
 order: [year, nuts_id, nuts_year_spec, value.id] # do not change; specifies the order of the exported indicator fields
