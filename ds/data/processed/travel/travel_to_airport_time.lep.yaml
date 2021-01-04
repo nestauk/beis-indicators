@@ -1,6 +1,7 @@
 api_type: FETCH
 title: Travel time to airport
 subtitle: Minimum travel time to nearest airport from a LEP region for England (2011 & 2013) and Wales (2011 only)
+description: Minimum travel time to nearest airport from a LEP region for England (2011 & 2013) and Wales (2011 only). Note: Overlapping LEP regions are used therefore some calculations may be under-estimated or over-estimated.
 endpoint_url:
   2011: http://data.dft.gov.uk.s3.amazonaws.com/connectivity-data/Airports-travel-times.zip
   2013: http://data.dft.gov.uk.s3.amazonaws.com/connectivity-data/2013-travel-times.zip

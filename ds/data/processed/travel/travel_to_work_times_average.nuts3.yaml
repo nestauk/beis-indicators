@@ -1,0 +1,28 @@
+api_type: FETCH
+title: Average home to work travel time in minutes
+subtitle: Average home to work travel time where NUTS 3 region is home location (October to December)
+endpoint_url:
+  2016: https://www.ons.gov.uk/file?uri=/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/adhocs/007252averagehometoworktraveltimeages16andoverocttodec2016/2017update.xls
+  2017: https://www.ons.gov.uk/file?uri=/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/adhocs/006022averagehometoworktraveltimeages16plusocttodec2015/2018updateod17data.xls
+  2018: https://www.ons.gov.uk/file?uri=/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/adhocs/010202averagehometoworktraveltimeage16yearsandoverukoctobertodecember2018/averagehometoworktraveltimes16plusod18.xls
+framework_group: place_potential
+is_experimental: False
+order: [year, nuts_id, nuts_year_spec, value.id] # do not change; specifies the order of the exported indicator fields
+region:
+  type: NutsRegion # the region type, e.g. NutsRegion or LepRegion
+  level: 3
+  source: PROVIDED
+schema:
+  nuts_id:
+    type: NutsRegion.nuts_id
+  nuts_year_spec:
+    type: NutsRegion.nuts_year_spec
+  value:
+    format: .2f
+    id: travel_to_work_times_average
+    label: Time (Minutes)
+    data_type: float
+  year:
+    data_type: int
+    label: Year
+source_name: Department for Transport
