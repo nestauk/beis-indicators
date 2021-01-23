@@ -3,11 +3,11 @@ api_type: FETCH
 title: Economically active in professionals
 subtitle: Percentage of economically active persons in professional occupations by NUTS 3 regions.
 endpoint_url:
-  2010: https://www.nomisweb.co.uk/api/v01/dataset/NM_17_5.jsonstat.json?geography=1912602625...1912602758&date=latestMINUS29&variable=353&measures=20599,21001,21002,21003,
-  2013: https://www.nomisweb.co.uk/api/v01/dataset/NM_17_5.jsonstat.json?geography=1883242497...1883242664&date=latestMINUS25,latestMINUS21,latestMINUS17&variable=353&measures=20599,21001,21002,21003,
-  2016: https://www.nomisweb.co.uk/api/v01/dataset/NM_17_5.jsonstat.json?geography=1832910849...1832911016&date=latestMINUS13,latestMINUS9,latestMINUS5,latestMINUS1&variable=353&measures=20599,21001,21002,21003
+  2010: http://www.nomisweb.co.uk/api/v01/dataset/NM_17_5.data.csv?geography=TYPE456&date=2012-12,2011-12,2010-12&variable=546&measures=20599,21001,21002,21003&select=date,date_name,date_code,geography_type,geography_code,measures_name,variable,variable_name,obs_value,obs_status_name,obs_status,record_count,
+  2013: http://www.nomisweb.co.uk/api/v01/dataset/NM_17_5.data.csv?geography=TYPE449&date=2015-12,2014-12,2013-12&variable=546&measures=20599,21001,21002,21003&select=date,date_name,date_code,geography_type,geography_code,measures_name,variable,variable_name,obs_value,obs_status_name,obs_status,record_count,
+  2016: http://www.nomisweb.co.uk/api/v01/dataset/NM_17_5.data.csv?geography=TYPE437&date=2019-12,2018-12,2017-12,2016-12&variable=546&measures=20599,21001,21002,21003&select=date,date_name,date_code,geography_type,geography_code,measures_name,variable,variable_name,obs_value,obs_status_name,obs_status,record_count
   # nuts_spec_year: endpoint_url
-framework_group: public_rnd_capability
+framework_group: place_potential
 is_experimental: False
 order: [year, nuts_id, nuts_year_spec, value.id] # do not change; specifies the order of the exported indicator fields
 region:

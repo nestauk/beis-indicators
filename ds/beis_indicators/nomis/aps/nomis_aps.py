@@ -55,43 +55,43 @@ def make_nomis(geo_type, year_l, project_dir=None):
 
     for dataset in ["ECON_ACTIVE_NVQ_PRO", "ECON_ACTIVE_STEM_PRO", "STEM_DENSITY", "PRO_OCCS"]:
         # print(nuts_year)
-        for year in year_l:
-            for type in types:
+        # for year in year_l:
+        for type in types:
 
-            # print(geo_type)
-      # for each year, just go through all of them
-                raw_fout = (
-                    f"{project_dir}/data/raw/aps/aps_{dataset}_{year}_{type}.csv"
-                )
-                tidy_fout = (
-                    f"{project_dir}/data/interim/aps/aps_{dataset}_{year}_{type}.csv"
-                )
+        # print(geo_type)
+  # for each year, just go through all of them
+            raw_fout = (
+                f"{project_dir}/data/raw/aps/aps_{dataset}_{type}.csv"
+            )
+            tidy_fout = (
+                f"{project_dir}/data/interim/aps/aps_{dataset}_{type}.csv"
+            )
 
-                # Fetch and save raw data if not present
-                if os.path.exists(raw_fout):
-                    df = read_csv(raw_fout)
-                else:
-                    df = get_nomis(dataset, type, year)
-                    df.to_csv(raw_fout, index=False)
+            # Fetch and save raw data if not present
+            if os.path.exists(raw_fout):
+                df = read_csv(raw_fout)
+            else:
+                df = get_nomis(dataset, type, year_l)
+                df.to_csv(raw_fout, index=False)
 
-            # # Pivot to [Region x Sector] matrices
-            # logger.info(f"Pivoting {dataset} for {year} and {geo_type}")
-            # (
-            #     df.rename(
-            #         columns={
-            #             "DATE_NAME": "year",
-            #             "GEOGRAPHY_TYPE": "geo_type",
-            #             "OBS_VALUE": "value",
-            #         }
-            #     )
-            #     .drop(["OBS_STATUS_NAME", "RECORD_COUNT"], 1)
-            #     .pipe(preview)
-            #     .fillna(0)
-            #     .to_csv(tidy_fout)
-            # )
+        # # Pivot to [Region x Sector] matrices
+        # logger.info(f"Pivoting {dataset} for {year} and {geo_type}")
+        # (
+        #     df.rename(
+        #         columns={
+        #             "DATE_NAME": "year",
+        #             "GEOGRAPHY_TYPE": "geo_type",
+        #             "OBS_VALUE": "value",
+        #         }
+        #     )
+        #     .drop(["OBS_STATUS_NAME", "RECORD_COUNT"], 1)
+        #     .pipe(preview)
+        #     .fillna(0)
+        #     .to_csv(tidy_fout)
+        # )
 
 
-def get_nomis(dataset, geo_type, year):
+def get_nomis(dataset, geo_type, year_list):
     """ Get BRES or IDBR datasets (SIC4) from NOMIS for given year and geography
 
     Args:
@@ -115,7 +115,8 @@ def get_nomis(dataset, geo_type, year):
                 registered for PAYE only) : open access (2009 to 2015)
     """
     # geo_type = type
-    logger.info(f"Fetching {dataset} for {year} and {geo_type}")
+    # logger.info(f"Fetching {dataset} for {year} and {geo_type}")
+    logger.info(f"Fetching {dataset} for {geo_type}")
 
     if dataset == "ECON_ACTIVE_NVQ_PRO":
         data_id = 17
@@ -157,9 +158,11 @@ def get_nomis(dataset, geo_type, year):
     #         API_geo = f"?geography={geo_type}"
     #     else:
     #         raise ValueError(f"`geo_type` value {geo_type} not valid")
-
-
-    API_year = f"&date={year}-12"
+    API_year = "&date="
+    years= []
+    for year in year_list:
+        years.append(f"{year}-12")
+    API_year = API_year + ','.join(years)
 
     if dataset == "ECON_ACTIVE_STEM_PRO":
         fields = [
@@ -197,6 +200,10 @@ def get_nomis(dataset, geo_type, year):
     column_map = {"GEOGRAPHY_NAME": "geo_nm", "GEOGRAPHY_CODE": "geo_cd"}
 
     query = API_start + API_geo + API_year + API_cols + API_select
+
+    # with open(f"{project_dir}/beis_indicators/nomis/aps/links.txt", "a+") as file_object:
+    #     file_object.write(f'({dataset}, {query}) \n')
+
     return query_nomis(query).rename(columns=column_map)
 
 

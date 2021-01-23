@@ -11,6 +11,7 @@ from beis_indicators import project_dir
 from glob import glob
 from dateutil.parser import parse
 from datetime import datetime
+from collections import defaultdict
 
 
 import beis_indicators
@@ -31,7 +32,7 @@ geo_type = ['lep', 'nuts2', 'nuts3']
 
 years = conf['years']
 
-datasets = ["ECON_ACTIVE_NVQ_PRO", "ECON_ACTIVE_STEM_PRO", "STEM_DENSITY", "PRO_OCCS"]
+datasets = ["ECON_ACTIVE_STEM_PRO", "ECON_ACTIVE_NVQ_PRO", "STEM_DENSITY", "PRO_OCCS"]
 
 dataset_columns = {
     'ECON_ACTIVE_NVQ_PRO': ['DATE', 'GEOGRAPHY_TYPE', 'geo_cd', 'OBS_VALUE'],
@@ -48,7 +49,13 @@ geo_type_dict = {
 
 }
 
-
+geo_codes = [beis_indicators.config["data"]["aps"]["geography"]["nuts2010"]["nuts2"],
+    beis_indicators.config["data"]["aps"]["geography"]["nuts2010"]["nuts3"],
+    beis_indicators.config["data"]["aps"]["geography"]["nuts2013"]["nuts2"],
+    beis_indicators.config["data"]["aps"]["geography"]["nuts2013"]["nuts3"],
+    beis_indicators.config["data"]["aps"]["geography"]["nuts2016"]["nuts2"],
+    beis_indicators.config["data"]["aps"]["geography"]["nuts2016"]["nuts3"],
+    beis_indicators.config["data"]["aps"]["geography"]["lep"]]
 
 dates = {
  'nuts 2010 level 2': [i for i in range(2010,2012+1)],
@@ -101,15 +108,15 @@ indicator_names_1 = {
 
 dataset_id_dict = {
     "ECON_ACTIVE_NVQ_PRO": 'nvq',
-    "ECON_ACTIVE_STEM_PRO": 'stem_pro',
     "STEM_DENSITY": 'stem_dens',
     "PRO_OCCS":'pro_occs'
 }
 
 def split_df(df, dataset):
     if dataset == "ECON_ACTIVE_STEM_PRO":
-        split_dfs = {}
+        split_dfs = defaultdict(None)
         for k,v in cell_list_dict.items():
+
             df = df[df['CELL_NAME'] == v]
             split_dfs[k] = df
         return (split_dfs, type(split_dfs))
@@ -123,19 +130,28 @@ def split_df(df, dataset):
 def make_indicators():
 
     for dataset in datasets:
-        dataset_id = dataset_id_dict[dataset]
+
         print(dataset)
         df_list = []
 
         chosen_cols = dataset_columns[dataset]
 
         path_string = f"{project_dir}/data/raw/aps/"
-        files = glob('*file_string*')
+        files = glob('*path_string*')
 
         files = []
         for i in os.listdir(path_string):
             if os.path.isfile(os.path.join(path_string,i)) and dataset in i:
                 files.append(i)
+
+        # # print(files)
+        # for file in files:
+        #     # print(file)
+        #     if os.path.exists(path_string + file):
+        #         continue
+        #     else:
+        #         raise AttributeError(f"Run nomis_aps.py file to produce raw data files")
+
 
         for file in files:
             df = pd.read_csv(path_string + file)
@@ -145,7 +161,7 @@ def make_indicators():
         df_all = pd.concat(df_list)
         df_all['DATE'] = df_all['DATE'].apply(format_date)
 
-        df_all.to_csv(f"../../data/interim/aps/{dataset}_all.csv", index=False)
+        # df_all.to_csv(f"../../data/interim/aps/{dataset}_all.csv", index=False)
 
         for type in geo_type:
 
@@ -153,80 +169,96 @@ def make_indicators():
             #
             #
             type_df_list = []
-            print(type)
+            # print(type)
             for val in geo_type_dict[type]:
                 df_part = df_all[(df_all['DATE'].isin(dates[val]))
                 & (df_all['OBS_STATUS'] == 'A')
                 & (df_all['GEOGRAPHY_TYPE'] == val)]
+                # print(df_part.head(1))
+                # print(df_part['MEASURES_NAME'].unique())
 
+                if 'Value' in df_part['MEASURES_NAME'].unique():
+                # if (dataset == "ECON_ACTIVE_STEM_PRO"):
 
+                    df_part = df_part[(df_part['MEASURES_NAME'] =='Value')]
+                    #& (df_part['CELL_NAME'] == '')]
+                    type_df_list.append(df_part)
 
-                if (dataset == "ECON_ACTIVE_NVQ_PRO"):
+                elif 'Variable' in df_part['MEASURES_NAME'].unique():
 
                     df_part = df_part[(df_part['MEASURES_NAME'] =='Variable')]
 
                     type_df_list.append(df_part)
 
-                elif (dataset == "ECON_ACTIVE_STEM_PRO"):
 
-                    df_part = df_part[(df_part['MEASURES_NAME'] =='Value')]
-                    #& (df_part['CELL_NAME'] == '')]
-                    type_df_list.append(df_part)
 
 
 
 
 
             df_all_type = pd.concat(type_df_list).reset_index(drop=True)
-            print(df_all_type.head())
-        #     if df_all_type.empty != True:
-        #         # continue
-        #
-        #     # else:
-        #     #     continue
-        #
-            df_all_type = split_df(df_all_type, dataset)
+            # print(df_all_type['DATE'].unique())
+
+            # print(df_all_type['CELL_NAME'].unique())
 
         #
-            if df_all_type[1] == dict:
-                df_all_type = df_all_type[0]
+            # print(df_all_type[df_all_type['CELL_NAME'] == cell_list_dict['stem_assoc']].head())
+            # df_all_type = split_df(df_all_type, dataset)
 
-                for k,v in df_all_type.items():
-                    if v.empty == False:
-                        df_value = v[chosen_cols]
+            # print(df_all_type[0]['stem_assoc'].head(1))
+            #
+            # if df_all_type[1] == dict:
+            #     df_all_type = df_all_type[0]
 
-                        df_value.rename(columns = {"DATE": 'year', "OBS_VALUE": indicator_names[k]['indicator']}, inplace=True)
-                        df_value['year_spec'] = df_value['GEOGRAPHY_TYPE'].apply(extract_year_from_string)
-                        del df_value['GEOGRAPHY_TYPE']
-                        print(df_value.columns)
-                        if 'nuts' in type:
-                            df_value.rename(columns = {"year_spec": 'nuts_year_spec', "geo_cd": 'nuts_id'}, inplace=True)
-                            df_value = df_value[['year','nuts_id', 'nuts_year_spec', indicator_names[k]['indicator']]].reset_index(drop=True)
-                            df_value = df_value.sort_values(['nuts_id', 'year'])
+            if dataset == "ECON_ACTIVE_STEM_PRO":
+
+                split_dfs = defaultdict(None)
+                for k,v in cell_list_dict.items():
+                    c = df_all_type[df_all_type['CELL_NAME'] == v]
+                    split_dfs[k] = c
+                split_dfs = dict(split_dfs)
+                print(split_dfs['stem_pro']['DATE'].unique())
+
+                for ind,df in split_dfs.items():
+
+                    df_all_type = df
+
+                    print(df_all_type.head(1))
+                    df_value = df_all_type[chosen_cols]
+                    # print(df_value.columns)
+
+                    df_value.rename(columns = {"DATE": 'year', "OBS_VALUE": indicator_names[ind]['indicator']}, inplace=True)
+                    df_value['year_spec'] = df_value['GEOGRAPHY_TYPE'].apply(extract_year_from_string)
+                    del df_value['GEOGRAPHY_TYPE']
+                    # print(df_value.columns)
+                    if 'nuts' in type:
+                        df_value.rename(columns = {"year_spec": 'nuts_year_spec', "geo_cd": 'nuts_id'}, inplace=True)
+                        df_value = df_value[['year','nuts_id', 'nuts_year_spec', indicator_names[ind]['indicator']]].reset_index(drop=True)
+                        df_value = df_value.sort_values(['nuts_id', 'year'])
 
 
-                            df_value.to_csv(f"{project_dir}/data/interim/aps/{indicator_names[k]['file']}.{type}.csv", index=False)
+                        df_value.to_csv(f"{project_dir}/data/processed/aps/{indicator_names[ind]['file']}.{type}.csv", index=False)
 
 
-                        elif 'lep' in type:
-                            df_value.rename(columns = {"year_spec": 'lep_year_spec', "geo_cd": 'lep_id'}, inplace=True)
-                            df_value = df_value[['year','lep_id', 'lep_year_spec', indicator_names[k]['indicator']]].reset_index(drop=True)
-                            df_value = df_value.sort_values(['lep_id', 'year'])
+                    elif 'lep' in type:
+                        df_value.rename(columns = {"year_spec": 'lep_year_spec', "geo_cd": 'lep_id'}, inplace=True)
+                        df_value = df_value[['year','lep_id', 'lep_year_spec', indicator_names[ind]['indicator']]].reset_index(drop=True)
+                        df_value = df_value.sort_values(['lep_id', 'year'])
 
-                            df_value.to_csv(f"{project_dir}/data/interim/aps/{indicator_names[k]['file']}.{type}.csv", index=False)
+                        df_value.to_csv(f"{project_dir}/data/processed/aps/{indicator_names[ind]['file']}.{type}.csv", index=False)
 
                     # else:
                     #     break
 
 
-
-
-
-
-            #clean and save
         #
+        #
+        #
+        #
+        #     #clean and save
+        # #
             else:
-                df_all_type = df_all_type[0]
+                # df_all_type = df_all_type[0]
                 if df_all_type.empty == False:
                     df_value = df_all_type[chosen_cols]
                     dataset_id = dataset_id_dict[dataset]
@@ -239,7 +271,7 @@ def make_indicators():
                         df_value = df_value[['year','nuts_id', 'nuts_year_spec',  indicator_names_1[dataset_id]['indicator']]].reset_index(drop=True)
                         df_value = df_value.sort_values(['nuts_id', 'year'])
 
-                        df_value.to_csv(f"{project_dir}/data/interim/aps/{ indicator_names_1[dataset_id]['file']}.{type}.csv")
+                        df_value.to_csv(f"{project_dir}/data/processed/aps/{ indicator_names_1[dataset_id]['file']}.{type}.csv", index =False)
 
 
                     elif 'lep' in type:
@@ -247,25 +279,30 @@ def make_indicators():
                         df_value = df_value[['year','lep_id', 'lep_year_spec',  indicator_names_1[dataset_id]['indicator']]].reset_index(drop=True)
                         df_value = df_value.sort_values(['lep_id', 'year'])
 
-                        df_value.to_csv(f"{project_dir}/data/interim/aps/{ indicator_names_1[dataset_id]['file']}.{type}.csv", index =False)
-                # else:
-                #     break
-
-        #
-        #         #clean and save
+                        df_value.to_csv(f"{project_dir}/data/processed/aps/{ indicator_names_1[dataset_id]['file']}.{type}.csv", index =False)
+        #         # else:
+        #         #     break
         #
         # #
+        # #         #clean and save
+
+        #delete raw files
+
+        # path_string = f"{project_dir}/data/raw/aps/"
+        # files = glob('*file_string*')
         #
+        # files = []
+        # for i in os.listdir(path_string):
+        #     if os.path.isfile(os.path.join(path_string,i)) and dataset in i:
+        #         files.append(i)
+        #
+        # for file in files:
+        #     # print(file)
+        #     if os.path.exists(path_string + file):
+        #         os.remove(path_string + file)
+        #     else:
+        #         continue
 
-
-
-
-        # print(df_list[0].columns)
-        # print(df_all['GEOGRAPHY_TYPE'].value_counts())
-
-
-
-        #set
 
 
 if __name__ == "__main__":

@@ -2,8 +2,8 @@ api_doc_url: https://www.nomisweb.co.uk/api/v01/help
 api_type: FETCH
 title: Associated STEM professionals
 subtitle: Number of Science, Research, Engineering and Technology associated professionals by LEP regions
-endpoint_url: https://www.nomisweb.co.uk/api/v01/dataset/NM_17_1.jsonstat.json?geography=1925185537,1925185575,1925185538...1925185543,1925185572,1925185544,1925185570,1925185545,1925185577,1925185553,1925185547...1925185549,1925185571,1925185569,1925185551,1925185552,1925185554,1925185558,1925185555...1925185557,1925185559,1925185560,1925185550,1925185576,1925185562,1925185573,1925185563...192518556&date=latestMINUS25,latestMINUS21,latestMINUS17,latestMINUS13,latestMINUS9,latestMINUS5&cell=404882177,404883201&measures=20100,20701
-framework_group: public_rnd_capability
+endpoint_url: http://www.nomisweb.co.uk/api/v01/dataset/NM_17_1.data.csv?geography=TYPE459&date=2019-12,2018-12,2017-12,2016-12,2015-12,2014-12,2013-12,2012-12,2011-12,2010-12&cell=404882177,404883201&measures=20100,20701&select=date,date_name,date_code,geography_type,geography_code,measures_name,variable,cell_name,obs_value,obs_status_name,obs_status,record_count
+framework_group: place_potential
 is_experimental: False
 order: [year, lep_id, lep_year_spec, value.id] # do not change; specifies the order of the exported indicator fields
 region:

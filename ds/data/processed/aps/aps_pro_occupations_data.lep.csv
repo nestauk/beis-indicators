@@ -1,305 +1,381 @@
 year,lep_id,lep_year_spec,aps_pro_occupations_data
-2012,E37000001,2017,14.1
-2013,E37000001,2017,13.7
-2014,E37000001,2017,13.6
-2015,E37000001,2017,12.9
-2016,E37000001,2017,13.8
-2017,E37000001,2017,13.9
-2018,E37000001,2017,15.4
-2019,E37000001,2017,15.6
-2012,E37000002,2017,20.6
-2013,E37000002,2017,22.7
-2014,E37000002,2017,24.2
-2015,E37000002,2017,23.9
-2016,E37000002,2017,21.1
-2017,E37000002,2017,22.5
-2018,E37000002,2017,23.7
-2019,E37000002,2017,21.7
-2012,E37000003,2017,21.4
-2013,E37000003,2017,21.3
-2014,E37000003,2017,21.1
-2015,E37000003,2017,21.1
-2016,E37000003,2017,20.1
-2017,E37000003,2017,21.5
-2018,E37000003,2017,24.4
-2019,E37000003,2017,22.8
-2012,E37000004,2017,20.3
-2013,E37000004,2017,21.1
-2014,E37000004,2017,19.6
-2015,E37000004,2017,20.3
-2016,E37000004,2017,22.2
-2017,E37000004,2017,23.3
-2018,E37000004,2017,24.2
-2019,E37000004,2017,22.6
-2012,E37000005,2017,13.4
-2013,E37000005,2017,14.5
-2014,E37000005,2017,15.8
-2015,E37000005,2017,12.5
-2016,E37000005,2017,16.0
-2017,E37000005,2017,13.5
-2018,E37000005,2017,14.6
-2019,E37000005,2017,16.0
-2012,E37000006,2017,19.2
-2013,E37000006,2017,21.3
-2014,E37000006,2017,21.3
-2015,E37000006,2017,20.6
-2016,E37000006,2017,18.5
-2017,E37000006,2017,20.0
-2018,E37000006,2017,21.1
-2019,E37000006,2017,22.3
-2012,E37000007,2017,16.7
-2013,E37000007,2017,17.2
-2014,E37000007,2017,14.4
-2015,E37000007,2017,15.5
-2016,E37000007,2017,15.3
-2017,E37000007,2017,16.5
-2018,E37000007,2017,18.4
-2019,E37000007,2017,17.1
-2012,E37000008,2017,17.0
-2013,E37000008,2017,19.1
-2014,E37000008,2017,18.2
-2015,E37000008,2017,19.7
-2016,E37000008,2017,18.7
-2017,E37000008,2017,17.1
-2018,E37000008,2017,17.6
-2019,E37000008,2017,18.9
-2012,E37000009,2017,18.2
-2013,E37000009,2017,18.1
-2014,E37000009,2017,19.2
-2015,E37000009,2017,18.8
-2016,E37000009,2017,18.4
-2017,E37000009,2017,17.1
-2018,E37000009,2017,19.3
-2019,E37000009,2017,20.1
-2012,E37000010,2017,24.3
-2013,E37000010,2017,23.4
-2014,E37000010,2017,22.8
-2015,E37000010,2017,24.8
-2016,E37000010,2017,25.1
-2017,E37000010,2017,24.4
-2018,E37000010,2017,23.2
-2019,E37000010,2017,25.4
-2012,E37000011,2017,21.1
-2013,E37000011,2017,18.8
-2014,E37000011,2017,21.7
-2015,E37000011,2017,19.6
-2016,E37000011,2017,19.0
-2017,E37000011,2017,18.4
-2018,E37000011,2017,17.8
-2019,E37000011,2017,21.3
-2012,E37000012,2017,18.1
-2013,E37000012,2017,17.9
-2014,E37000012,2017,19.0
-2015,E37000012,2017,20.1
-2016,E37000012,2017,20.2
-2017,E37000012,2017,19.0
-2018,E37000012,2017,20.3
-2019,E37000012,2017,21.0
-2012,E37000014,2017,16.0
-2013,E37000014,2017,13.3
-2014,E37000014,2017,13.9
-2015,E37000014,2017,13.6
-2016,E37000014,2017,13.2
-2017,E37000014,2017,15.1
-2018,E37000014,2017,13.9
-2019,E37000014,2017,15.1
-2012,E37000015,2017,18.6
-2013,E37000015,2017,19.0
-2014,E37000015,2017,19.1
-2015,E37000015,2017,19.6
-2016,E37000015,2017,19.8
-2017,E37000015,2017,18.7
-2018,E37000015,2017,20.2
-2019,E37000015,2017,21.9
-2012,E37000016,2017,17.8
-2013,E37000016,2017,14.6
-2014,E37000016,2017,17.4
-2015,E37000016,2017,17.9
-2016,E37000016,2017,17.5
-2017,E37000016,2017,17.2
-2018,E37000016,2017,18.4
-2019,E37000016,2017,18.9
-2012,E37000017,2017,21.6
-2013,E37000017,2017,23.6
-2014,E37000017,2017,24.0
-2015,E37000017,2017,21.9
-2016,E37000017,2017,23.0
-2017,E37000017,2017,23.4
-2018,E37000017,2017,22.2
-2019,E37000017,2017,24.9
-2012,E37000018,2017,14.8
-2013,E37000018,2017,15.0
-2014,E37000018,2017,14.3
-2015,E37000018,2017,15.3
-2016,E37000018,2017,16.7
-2017,E37000018,2017,15.8
-2018,E37000018,2017,14.6
-2019,E37000018,2017,15.7
-2012,E37000019,2017,17.1
-2013,E37000019,2017,16.5
-2014,E37000019,2017,17.4
-2015,E37000019,2017,17.1
-2016,E37000019,2017,18.8
-2017,E37000019,2017,17.1
-2018,E37000019,2017,17.9
-2019,E37000019,2017,16.8
-2012,E37000020,2017,17.7
-2013,E37000020,2017,19.1
-2014,E37000020,2017,18.0
-2015,E37000020,2017,18.3
-2016,E37000020,2017,18.9
-2017,E37000020,2017,19.1
-2018,E37000020,2017,18.4
-2019,E37000020,2017,19.3
-2012,E37000021,2017,17.0
-2013,E37000021,2017,18.1
-2014,E37000021,2017,17.8
-2015,E37000021,2017,19.7
-2016,E37000021,2017,17.0
-2017,E37000021,2017,16.5
-2018,E37000021,2017,16.6
-2019,E37000021,2017,19.7
-2012,E37000022,2017,16.1
-2013,E37000022,2017,17.3
-2014,E37000022,2017,18.9
-2015,E37000022,2017,19.4
-2016,E37000022,2017,19.6
-2017,E37000022,2017,19.0
-2018,E37000022,2017,19.2
-2019,E37000022,2017,19.6
-2012,E37000023,2017,24.5
-2013,E37000023,2017,24.9
-2014,E37000023,2017,23.7
-2015,E37000023,2017,24.0
-2016,E37000023,2017,25.2
-2017,E37000023,2017,25.6
-2018,E37000023,2017,26.2
-2019,E37000023,2017,26.5
-2012,E37000024,2017,16.9
-2013,E37000024,2017,15.8
-2014,E37000024,2017,15.6
-2015,E37000024,2017,16.2
-2016,E37000024,2017,18.0
-2017,E37000024,2017,17.6
-2018,E37000024,2017,17.5
-2019,E37000024,2017,17.5
-2012,E37000025,2017,16.3
-2013,E37000025,2017,16.5
-2014,E37000025,2017,17.1
-2015,E37000025,2017,16.7
-2016,E37000025,2017,18.1
-2017,E37000025,2017,18.9
-2018,E37000025,2017,18.9
-2019,E37000025,2017,20.1
-2012,E37000027,2017,25.3
-2013,E37000027,2017,27.5
-2014,E37000027,2017,29.4
-2015,E37000027,2017,30.2
-2016,E37000027,2017,29.4
-2017,E37000027,2017,28.0
-2018,E37000027,2017,26.2
-2019,E37000027,2017,27.7
-2012,E37000029,2017,20.4
-2013,E37000029,2017,19.6
-2014,E37000029,2017,21.0
-2015,E37000029,2017,17.2
-2016,E37000029,2017,19.8
-2017,E37000029,2017,19.2
-2018,E37000029,2017,19.4
-2019,E37000029,2017,19.6
-2012,E37000030,2017,16.8
-2013,E37000030,2017,18.2
-2014,E37000030,2017,18.6
-2015,E37000030,2017,18.0
-2016,E37000030,2017,18.7
-2017,E37000030,2017,18.5
-2018,E37000030,2017,18.8
-2019,E37000030,2017,20.0
-2012,E37000032,2017,17.3
-2013,E37000032,2017,15.5
-2014,E37000032,2017,16.3
-2015,E37000032,2017,16.9
-2016,E37000032,2017,15.8
-2017,E37000032,2017,16.0
-2018,E37000032,2017,17.6
-2019,E37000032,2017,19.5
-2012,E37000033,2017,19.0
-2013,E37000033,2017,19.3
-2014,E37000033,2017,17.4
-2015,E37000033,2017,17.7
-2016,E37000033,2017,20.9
-2017,E37000033,2017,20.9
-2018,E37000033,2017,19.4
-2019,E37000033,2017,19.4
-2012,E37000034,2017,16.1
-2013,E37000034,2017,17.3
-2014,E37000034,2017,16.6
-2015,E37000034,2017,17.9
-2016,E37000034,2017,17.0
-2017,E37000034,2017,18.2
-2018,E37000034,2017,17.2
-2019,E37000034,2017,16.5
-2012,E37000035,2017,21.6
-2013,E37000035,2017,23.2
-2014,E37000035,2017,23.7
-2015,E37000035,2017,24.2
-2016,E37000035,2017,26.1
-2017,E37000035,2017,23.8
-2018,E37000035,2017,24.8
-2019,E37000035,2017,25.8
-2012,E37000036,2017,15.3
-2013,E37000036,2017,17.1
-2014,E37000036,2017,17.4
-2015,E37000036,2017,15.6
-2016,E37000036,2017,14.9
-2017,E37000036,2017,16.0
-2018,E37000036,2017,17.0
-2019,E37000036,2017,18.5
-2012,E37000037,2017,23.6
-2013,E37000037,2017,23.4
-2014,E37000037,2017,23.8
-2015,E37000037,2017,24.8
-2016,E37000037,2017,23.3
-2017,E37000037,2017,26.0
-2018,E37000037,2017,24.8
-2019,E37000037,2017,25.6
-2012,E37000038,2017,19.3
-2013,E37000038,2017,19.9
-2014,E37000038,2017,22.9
-2015,E37000038,2017,18.6
-2016,E37000038,2017,21.3
-2017,E37000038,2017,21.3
-2018,E37000038,2017,20.3
-2019,E37000038,2017,19.4
-2012,E37000039,2017,18.0
-2013,E37000039,2017,20.0
-2014,E37000039,2017,18.0
-2015,E37000039,2017,18.8
-2016,E37000039,2017,18.6
-2017,E37000039,2017,19.1
-2018,E37000039,2017,19.3
-2019,E37000039,2017,20.4
-2012,E37000040,2017,17.6
-2013,E37000040,2017,18.3
-2014,E37000040,2017,17.6
-2015,E37000040,2017,17.6
-2016,E37000040,2017,18.1
-2017,E37000040,2017,17.9
-2018,E37000040,2017,19.3
-2019,E37000040,2017,18.6
-2012,E37000041,2017,18.0
-2013,E37000041,2017,19.9
-2014,E37000041,2017,20.6
-2015,E37000041,2017,19.1
-2016,E37000041,2017,18.6
-2017,E37000041,2017,19.2
-2018,E37000041,2017,20.5
-2019,E37000041,2017,20.0
-2012,E37000042,2017,22.2
-2013,E37000042,2017,21.4
-2014,E37000042,2017,18.6
-2015,E37000042,2017,20.0
-2016,E37000042,2017,21.0
-2017,E37000042,2017,20.7
-2018,E37000042,2017,21.5
-2019,E37000042,2017,21.4
+2010,E37000001,local enterprise partnerships (as of April 2020),14.0
+2011,E37000001,local enterprise partnerships (as of April 2020),14.4
+2012,E37000001,local enterprise partnerships (as of April 2020),14.1
+2013,E37000001,local enterprise partnerships (as of April 2020),13.7
+2014,E37000001,local enterprise partnerships (as of April 2020),13.6
+2015,E37000001,local enterprise partnerships (as of April 2020),12.9
+2016,E37000001,local enterprise partnerships (as of April 2020),13.8
+2017,E37000001,local enterprise partnerships (as of April 2020),13.9
+2018,E37000001,local enterprise partnerships (as of April 2020),15.4
+2019,E37000001,local enterprise partnerships (as of April 2020),15.6
+2010,E37000003,local enterprise partnerships (as of April 2020),19.3
+2011,E37000003,local enterprise partnerships (as of April 2020),21.3
+2012,E37000003,local enterprise partnerships (as of April 2020),21.4
+2013,E37000003,local enterprise partnerships (as of April 2020),21.3
+2014,E37000003,local enterprise partnerships (as of April 2020),21.1
+2015,E37000003,local enterprise partnerships (as of April 2020),21.1
+2016,E37000003,local enterprise partnerships (as of April 2020),20.1
+2017,E37000003,local enterprise partnerships (as of April 2020),21.5
+2018,E37000003,local enterprise partnerships (as of April 2020),24.4
+2019,E37000003,local enterprise partnerships (as of April 2020),22.8
+2010,E37000005,local enterprise partnerships (as of April 2020),14.5
+2011,E37000005,local enterprise partnerships (as of April 2020),13.1
+2012,E37000005,local enterprise partnerships (as of April 2020),13.4
+2013,E37000005,local enterprise partnerships (as of April 2020),14.5
+2014,E37000005,local enterprise partnerships (as of April 2020),15.8
+2015,E37000005,local enterprise partnerships (as of April 2020),12.5
+2016,E37000005,local enterprise partnerships (as of April 2020),16.0
+2017,E37000005,local enterprise partnerships (as of April 2020),13.5
+2018,E37000005,local enterprise partnerships (as of April 2020),14.6
+2019,E37000005,local enterprise partnerships (as of April 2020),16.0
+2010,E37000006,local enterprise partnerships (as of April 2020),19.1
+2011,E37000006,local enterprise partnerships (as of April 2020),19.0
+2012,E37000006,local enterprise partnerships (as of April 2020),19.2
+2013,E37000006,local enterprise partnerships (as of April 2020),21.3
+2014,E37000006,local enterprise partnerships (as of April 2020),21.3
+2015,E37000006,local enterprise partnerships (as of April 2020),20.6
+2016,E37000006,local enterprise partnerships (as of April 2020),18.5
+2017,E37000006,local enterprise partnerships (as of April 2020),20.0
+2018,E37000006,local enterprise partnerships (as of April 2020),21.1
+2019,E37000006,local enterprise partnerships (as of April 2020),22.3
+2010,E37000007,local enterprise partnerships (as of April 2020),16.8
+2011,E37000007,local enterprise partnerships (as of April 2020),13.1
+2012,E37000007,local enterprise partnerships (as of April 2020),16.7
+2013,E37000007,local enterprise partnerships (as of April 2020),17.2
+2014,E37000007,local enterprise partnerships (as of April 2020),14.4
+2015,E37000007,local enterprise partnerships (as of April 2020),15.5
+2016,E37000007,local enterprise partnerships (as of April 2020),15.3
+2017,E37000007,local enterprise partnerships (as of April 2020),16.5
+2018,E37000007,local enterprise partnerships (as of April 2020),18.4
+2019,E37000007,local enterprise partnerships (as of April 2020),17.1
+2010,E37000009,local enterprise partnerships (as of April 2020),17.9
+2011,E37000009,local enterprise partnerships (as of April 2020),18.5
+2012,E37000009,local enterprise partnerships (as of April 2020),18.2
+2013,E37000009,local enterprise partnerships (as of April 2020),18.1
+2014,E37000009,local enterprise partnerships (as of April 2020),19.2
+2015,E37000009,local enterprise partnerships (as of April 2020),18.8
+2016,E37000009,local enterprise partnerships (as of April 2020),18.4
+2017,E37000009,local enterprise partnerships (as of April 2020),17.1
+2018,E37000009,local enterprise partnerships (as of April 2020),19.3
+2019,E37000009,local enterprise partnerships (as of April 2020),20.1
+2010,E37000011,local enterprise partnerships (as of April 2020),20.0
+2011,E37000011,local enterprise partnerships (as of April 2020),22.1
+2012,E37000011,local enterprise partnerships (as of April 2020),21.1
+2013,E37000011,local enterprise partnerships (as of April 2020),18.8
+2014,E37000011,local enterprise partnerships (as of April 2020),21.7
+2015,E37000011,local enterprise partnerships (as of April 2020),19.6
+2016,E37000011,local enterprise partnerships (as of April 2020),19.0
+2017,E37000011,local enterprise partnerships (as of April 2020),18.4
+2018,E37000011,local enterprise partnerships (as of April 2020),17.8
+2019,E37000011,local enterprise partnerships (as of April 2020),21.3
+2010,E37000012,local enterprise partnerships (as of April 2020),17.7
+2011,E37000012,local enterprise partnerships (as of April 2020),19.2
+2012,E37000012,local enterprise partnerships (as of April 2020),18.1
+2013,E37000012,local enterprise partnerships (as of April 2020),17.9
+2014,E37000012,local enterprise partnerships (as of April 2020),19.0
+2015,E37000012,local enterprise partnerships (as of April 2020),20.1
+2016,E37000012,local enterprise partnerships (as of April 2020),20.2
+2017,E37000012,local enterprise partnerships (as of April 2020),19.0
+2018,E37000012,local enterprise partnerships (as of April 2020),20.3
+2019,E37000012,local enterprise partnerships (as of April 2020),21.0
+2010,E37000014,local enterprise partnerships (as of April 2020),14.3
+2011,E37000014,local enterprise partnerships (as of April 2020),13.3
+2012,E37000014,local enterprise partnerships (as of April 2020),16.0
+2013,E37000014,local enterprise partnerships (as of April 2020),13.3
+2014,E37000014,local enterprise partnerships (as of April 2020),13.9
+2015,E37000014,local enterprise partnerships (as of April 2020),13.6
+2016,E37000014,local enterprise partnerships (as of April 2020),13.2
+2017,E37000014,local enterprise partnerships (as of April 2020),15.1
+2018,E37000014,local enterprise partnerships (as of April 2020),13.9
+2019,E37000014,local enterprise partnerships (as of April 2020),15.1
+2010,E37000015,local enterprise partnerships (as of April 2020),18.3
+2011,E37000015,local enterprise partnerships (as of April 2020),18.6
+2012,E37000015,local enterprise partnerships (as of April 2020),18.6
+2013,E37000015,local enterprise partnerships (as of April 2020),19.0
+2014,E37000015,local enterprise partnerships (as of April 2020),19.1
+2015,E37000015,local enterprise partnerships (as of April 2020),19.6
+2016,E37000015,local enterprise partnerships (as of April 2020),19.8
+2017,E37000015,local enterprise partnerships (as of April 2020),18.7
+2018,E37000015,local enterprise partnerships (as of April 2020),20.2
+2019,E37000015,local enterprise partnerships (as of April 2020),21.9
+2010,E37000016,local enterprise partnerships (as of April 2020),16.7
+2011,E37000016,local enterprise partnerships (as of April 2020),16.6
+2012,E37000016,local enterprise partnerships (as of April 2020),17.8
+2013,E37000016,local enterprise partnerships (as of April 2020),14.6
+2014,E37000016,local enterprise partnerships (as of April 2020),17.4
+2015,E37000016,local enterprise partnerships (as of April 2020),17.9
+2016,E37000016,local enterprise partnerships (as of April 2020),17.5
+2017,E37000016,local enterprise partnerships (as of April 2020),17.2
+2018,E37000016,local enterprise partnerships (as of April 2020),18.4
+2019,E37000016,local enterprise partnerships (as of April 2020),18.9
+2010,E37000019,local enterprise partnerships (as of April 2020),17.0
+2011,E37000019,local enterprise partnerships (as of April 2020),16.5
+2012,E37000019,local enterprise partnerships (as of April 2020),17.1
+2013,E37000019,local enterprise partnerships (as of April 2020),16.5
+2014,E37000019,local enterprise partnerships (as of April 2020),17.4
+2015,E37000019,local enterprise partnerships (as of April 2020),17.1
+2016,E37000019,local enterprise partnerships (as of April 2020),18.8
+2017,E37000019,local enterprise partnerships (as of April 2020),17.1
+2018,E37000019,local enterprise partnerships (as of April 2020),17.9
+2019,E37000019,local enterprise partnerships (as of April 2020),16.8
+2010,E37000021,local enterprise partnerships (as of April 2020),16.5
+2011,E37000021,local enterprise partnerships (as of April 2020),17.4
+2012,E37000021,local enterprise partnerships (as of April 2020),17.0
+2013,E37000021,local enterprise partnerships (as of April 2020),18.1
+2014,E37000021,local enterprise partnerships (as of April 2020),17.8
+2015,E37000021,local enterprise partnerships (as of April 2020),19.7
+2016,E37000021,local enterprise partnerships (as of April 2020),17.0
+2017,E37000021,local enterprise partnerships (as of April 2020),16.5
+2018,E37000021,local enterprise partnerships (as of April 2020),16.6
+2019,E37000021,local enterprise partnerships (as of April 2020),19.7
+2010,E37000022,local enterprise partnerships (as of April 2020),16.0
+2011,E37000022,local enterprise partnerships (as of April 2020),16.9
+2012,E37000022,local enterprise partnerships (as of April 2020),16.1
+2013,E37000022,local enterprise partnerships (as of April 2020),17.3
+2014,E37000022,local enterprise partnerships (as of April 2020),18.9
+2015,E37000022,local enterprise partnerships (as of April 2020),19.4
+2016,E37000022,local enterprise partnerships (as of April 2020),19.6
+2017,E37000022,local enterprise partnerships (as of April 2020),19.0
+2018,E37000022,local enterprise partnerships (as of April 2020),19.2
+2019,E37000022,local enterprise partnerships (as of April 2020),19.6
+2010,E37000025,local enterprise partnerships (as of April 2020),16.6
+2011,E37000025,local enterprise partnerships (as of April 2020),17.0
+2012,E37000025,local enterprise partnerships (as of April 2020),16.3
+2013,E37000025,local enterprise partnerships (as of April 2020),16.5
+2014,E37000025,local enterprise partnerships (as of April 2020),17.1
+2015,E37000025,local enterprise partnerships (as of April 2020),16.7
+2016,E37000025,local enterprise partnerships (as of April 2020),18.1
+2017,E37000025,local enterprise partnerships (as of April 2020),18.9
+2018,E37000025,local enterprise partnerships (as of April 2020),18.9
+2019,E37000025,local enterprise partnerships (as of April 2020),20.1
+2010,E37000032,local enterprise partnerships (as of April 2020),14.1
+2011,E37000032,local enterprise partnerships (as of April 2020),16.8
+2012,E37000032,local enterprise partnerships (as of April 2020),17.3
+2013,E37000032,local enterprise partnerships (as of April 2020),15.5
+2014,E37000032,local enterprise partnerships (as of April 2020),16.3
+2015,E37000032,local enterprise partnerships (as of April 2020),16.9
+2016,E37000032,local enterprise partnerships (as of April 2020),15.8
+2017,E37000032,local enterprise partnerships (as of April 2020),16.0
+2018,E37000032,local enterprise partnerships (as of April 2020),17.6
+2019,E37000032,local enterprise partnerships (as of April 2020),19.5
+2010,E37000033,local enterprise partnerships (as of April 2020),17.4
+2011,E37000033,local enterprise partnerships (as of April 2020),21.0
+2012,E37000033,local enterprise partnerships (as of April 2020),19.0
+2013,E37000033,local enterprise partnerships (as of April 2020),19.3
+2014,E37000033,local enterprise partnerships (as of April 2020),17.4
+2015,E37000033,local enterprise partnerships (as of April 2020),17.7
+2016,E37000033,local enterprise partnerships (as of April 2020),20.9
+2017,E37000033,local enterprise partnerships (as of April 2020),20.9
+2018,E37000033,local enterprise partnerships (as of April 2020),19.4
+2019,E37000033,local enterprise partnerships (as of April 2020),19.4
+2010,E37000034,local enterprise partnerships (as of April 2020),16.1
+2011,E37000034,local enterprise partnerships (as of April 2020),15.7
+2012,E37000034,local enterprise partnerships (as of April 2020),16.1
+2013,E37000034,local enterprise partnerships (as of April 2020),17.3
+2014,E37000034,local enterprise partnerships (as of April 2020),16.6
+2015,E37000034,local enterprise partnerships (as of April 2020),17.9
+2016,E37000034,local enterprise partnerships (as of April 2020),17.0
+2017,E37000034,local enterprise partnerships (as of April 2020),18.2
+2018,E37000034,local enterprise partnerships (as of April 2020),17.2
+2019,E37000034,local enterprise partnerships (as of April 2020),16.5
+2010,E37000035,local enterprise partnerships (as of April 2020),22.3
+2011,E37000035,local enterprise partnerships (as of April 2020),20.7
+2012,E37000035,local enterprise partnerships (as of April 2020),21.6
+2013,E37000035,local enterprise partnerships (as of April 2020),23.2
+2014,E37000035,local enterprise partnerships (as of April 2020),23.7
+2015,E37000035,local enterprise partnerships (as of April 2020),24.2
+2016,E37000035,local enterprise partnerships (as of April 2020),26.1
+2017,E37000035,local enterprise partnerships (as of April 2020),23.8
+2018,E37000035,local enterprise partnerships (as of April 2020),24.8
+2019,E37000035,local enterprise partnerships (as of April 2020),25.8
+2010,E37000036,local enterprise partnerships (as of April 2020),15.8
+2011,E37000036,local enterprise partnerships (as of April 2020),16.5
+2012,E37000036,local enterprise partnerships (as of April 2020),15.3
+2013,E37000036,local enterprise partnerships (as of April 2020),17.1
+2014,E37000036,local enterprise partnerships (as of April 2020),17.4
+2015,E37000036,local enterprise partnerships (as of April 2020),15.6
+2016,E37000036,local enterprise partnerships (as of April 2020),14.9
+2017,E37000036,local enterprise partnerships (as of April 2020),16.0
+2018,E37000036,local enterprise partnerships (as of April 2020),17.0
+2019,E37000036,local enterprise partnerships (as of April 2020),18.5
+2010,E37000037,local enterprise partnerships (as of April 2020),20.5
+2011,E37000037,local enterprise partnerships (as of April 2020),22.4
+2012,E37000037,local enterprise partnerships (as of April 2020),23.6
+2013,E37000037,local enterprise partnerships (as of April 2020),23.4
+2014,E37000037,local enterprise partnerships (as of April 2020),23.8
+2015,E37000037,local enterprise partnerships (as of April 2020),24.8
+2016,E37000037,local enterprise partnerships (as of April 2020),23.3
+2017,E37000037,local enterprise partnerships (as of April 2020),26.0
+2018,E37000037,local enterprise partnerships (as of April 2020),24.8
+2019,E37000037,local enterprise partnerships (as of April 2020),25.6
+2010,E37000038,local enterprise partnerships (as of April 2020),19.2
+2011,E37000038,local enterprise partnerships (as of April 2020),20.4
+2012,E37000038,local enterprise partnerships (as of April 2020),19.3
+2013,E37000038,local enterprise partnerships (as of April 2020),19.9
+2014,E37000038,local enterprise partnerships (as of April 2020),22.9
+2015,E37000038,local enterprise partnerships (as of April 2020),18.6
+2016,E37000038,local enterprise partnerships (as of April 2020),21.3
+2017,E37000038,local enterprise partnerships (as of April 2020),21.3
+2018,E37000038,local enterprise partnerships (as of April 2020),20.3
+2019,E37000038,local enterprise partnerships (as of April 2020),19.4
+2010,E37000043,local enterprise partnerships (as of April 2020),22.0
+2011,E37000043,local enterprise partnerships (as of April 2020),23.2
+2012,E37000043,local enterprise partnerships (as of April 2020),20.6
+2013,E37000043,local enterprise partnerships (as of April 2020),22.7
+2014,E37000043,local enterprise partnerships (as of April 2020),24.2
+2015,E37000043,local enterprise partnerships (as of April 2020),23.9
+2016,E37000043,local enterprise partnerships (as of April 2020),21.1
+2017,E37000043,local enterprise partnerships (as of April 2020),22.5
+2018,E37000043,local enterprise partnerships (as of April 2020),23.7
+2019,E37000043,local enterprise partnerships (as of April 2020),21.7
+2010,E37000044,local enterprise partnerships (as of April 2020),21.2
+2011,E37000044,local enterprise partnerships (as of April 2020),21.8
+2012,E37000044,local enterprise partnerships (as of April 2020),20.6
+2013,E37000044,local enterprise partnerships (as of April 2020),20.7
+2014,E37000044,local enterprise partnerships (as of April 2020),20.1
+2015,E37000044,local enterprise partnerships (as of April 2020),20.3
+2016,E37000044,local enterprise partnerships (as of April 2020),21.8
+2017,E37000044,local enterprise partnerships (as of April 2020),22.6
+2018,E37000044,local enterprise partnerships (as of April 2020),23.8
+2019,E37000044,local enterprise partnerships (as of April 2020),22.7
+2010,E37000045,local enterprise partnerships (as of April 2020),17.4
+2011,E37000045,local enterprise partnerships (as of April 2020),17.7
+2012,E37000045,local enterprise partnerships (as of April 2020),17.0
+2013,E37000045,local enterprise partnerships (as of April 2020),19.1
+2014,E37000045,local enterprise partnerships (as of April 2020),18.2
+2015,E37000045,local enterprise partnerships (as of April 2020),19.7
+2016,E37000045,local enterprise partnerships (as of April 2020),18.7
+2017,E37000045,local enterprise partnerships (as of April 2020),17.1
+2018,E37000045,local enterprise partnerships (as of April 2020),17.6
+2019,E37000045,local enterprise partnerships (as of April 2020),18.9
+2010,E37000046,local enterprise partnerships (as of April 2020),21.6
+2011,E37000046,local enterprise partnerships (as of April 2020),23.6
+2012,E37000046,local enterprise partnerships (as of April 2020),24.9
+2013,E37000046,local enterprise partnerships (as of April 2020),24.0
+2014,E37000046,local enterprise partnerships (as of April 2020),23.4
+2015,E37000046,local enterprise partnerships (as of April 2020),25.2
+2016,E37000046,local enterprise partnerships (as of April 2020),25.9
+2017,E37000046,local enterprise partnerships (as of April 2020),25.0
+2018,E37000046,local enterprise partnerships (as of April 2020),23.7
+2019,E37000046,local enterprise partnerships (as of April 2020),25.3
+2010,E37000047,local enterprise partnerships (as of April 2020),20.9
+2011,E37000047,local enterprise partnerships (as of April 2020),21.6
+2012,E37000047,local enterprise partnerships (as of April 2020),23.6
+2013,E37000047,local enterprise partnerships (as of April 2020),22.3
+2014,E37000047,local enterprise partnerships (as of April 2020),20.0
+2015,E37000047,local enterprise partnerships (as of April 2020),21.3
+2016,E37000047,local enterprise partnerships (as of April 2020),21.1
+2017,E37000047,local enterprise partnerships (as of April 2020),21.0
+2018,E37000047,local enterprise partnerships (as of April 2020),23.3
+2019,E37000047,local enterprise partnerships (as of April 2020),22.5
+2010,E37000048,local enterprise partnerships (as of April 2020),23.2
+2011,E37000048,local enterprise partnerships (as of April 2020),23.5
+2012,E37000048,local enterprise partnerships (as of April 2020),21.6
+2013,E37000048,local enterprise partnerships (as of April 2020),23.6
+2014,E37000048,local enterprise partnerships (as of April 2020),24.0
+2015,E37000048,local enterprise partnerships (as of April 2020),21.9
+2016,E37000048,local enterprise partnerships (as of April 2020),23.0
+2017,E37000048,local enterprise partnerships (as of April 2020),23.4
+2018,E37000048,local enterprise partnerships (as of April 2020),22.2
+2019,E37000048,local enterprise partnerships (as of April 2020),24.9
+2010,E37000049,local enterprise partnerships (as of April 2020),15.7
+2011,E37000049,local enterprise partnerships (as of April 2020),14.8
+2012,E37000049,local enterprise partnerships (as of April 2020),14.8
+2013,E37000049,local enterprise partnerships (as of April 2020),15.0
+2014,E37000049,local enterprise partnerships (as of April 2020),14.3
+2015,E37000049,local enterprise partnerships (as of April 2020),15.3
+2016,E37000049,local enterprise partnerships (as of April 2020),16.7
+2017,E37000049,local enterprise partnerships (as of April 2020),15.8
+2018,E37000049,local enterprise partnerships (as of April 2020),14.6
+2019,E37000049,local enterprise partnerships (as of April 2020),15.7
+2010,E37000050,local enterprise partnerships (as of April 2020),17.2
+2011,E37000050,local enterprise partnerships (as of April 2020),17.7
+2012,E37000050,local enterprise partnerships (as of April 2020),18.1
+2013,E37000050,local enterprise partnerships (as of April 2020),19.5
+2014,E37000050,local enterprise partnerships (as of April 2020),18.4
+2015,E37000050,local enterprise partnerships (as of April 2020),18.8
+2016,E37000050,local enterprise partnerships (as of April 2020),19.2
+2017,E37000050,local enterprise partnerships (as of April 2020),19.4
+2018,E37000050,local enterprise partnerships (as of April 2020),18.8
+2019,E37000050,local enterprise partnerships (as of April 2020),19.9
+2010,E37000051,local enterprise partnerships (as of April 2020),23.8
+2011,E37000051,local enterprise partnerships (as of April 2020),24.8
+2012,E37000051,local enterprise partnerships (as of April 2020),24.5
+2013,E37000051,local enterprise partnerships (as of April 2020),24.9
+2014,E37000051,local enterprise partnerships (as of April 2020),23.7
+2015,E37000051,local enterprise partnerships (as of April 2020),24.0
+2016,E37000051,local enterprise partnerships (as of April 2020),25.2
+2017,E37000051,local enterprise partnerships (as of April 2020),25.6
+2018,E37000051,local enterprise partnerships (as of April 2020),26.2
+2019,E37000051,local enterprise partnerships (as of April 2020),26.5
+2010,E37000052,local enterprise partnerships (as of April 2020),15.8
+2011,E37000052,local enterprise partnerships (as of April 2020),15.8
+2012,E37000052,local enterprise partnerships (as of April 2020),16.9
+2013,E37000052,local enterprise partnerships (as of April 2020),15.8
+2014,E37000052,local enterprise partnerships (as of April 2020),15.6
+2015,E37000052,local enterprise partnerships (as of April 2020),16.2
+2016,E37000052,local enterprise partnerships (as of April 2020),18.0
+2017,E37000052,local enterprise partnerships (as of April 2020),17.6
+2018,E37000052,local enterprise partnerships (as of April 2020),17.5
+2019,E37000052,local enterprise partnerships (as of April 2020),17.5
+2010,E37000053,local enterprise partnerships (as of April 2020),27.8
+2011,E37000053,local enterprise partnerships (as of April 2020),29.2
+2012,E37000053,local enterprise partnerships (as of April 2020),25.3
+2013,E37000053,local enterprise partnerships (as of April 2020),27.5
+2014,E37000053,local enterprise partnerships (as of April 2020),29.4
+2015,E37000053,local enterprise partnerships (as of April 2020),30.2
+2016,E37000053,local enterprise partnerships (as of April 2020),29.4
+2017,E37000053,local enterprise partnerships (as of April 2020),28.0
+2018,E37000053,local enterprise partnerships (as of April 2020),26.2
+2019,E37000053,local enterprise partnerships (as of April 2020),27.7
+2010,E37000054,local enterprise partnerships (as of April 2020),17.3
+2011,E37000054,local enterprise partnerships (as of April 2020),16.9
+2012,E37000054,local enterprise partnerships (as of April 2020),17.5
+2013,E37000054,local enterprise partnerships (as of April 2020),18.1
+2014,E37000054,local enterprise partnerships (as of April 2020),18.1
+2015,E37000054,local enterprise partnerships (as of April 2020),17.5
+2016,E37000054,local enterprise partnerships (as of April 2020),17.8
+2017,E37000054,local enterprise partnerships (as of April 2020),18.9
+2018,E37000054,local enterprise partnerships (as of April 2020),20.5
+2019,E37000054,local enterprise partnerships (as of April 2020),19.7
+2010,E37000055,local enterprise partnerships (as of April 2020),16.5
+2011,E37000055,local enterprise partnerships (as of April 2020),18.5
+2012,E37000055,local enterprise partnerships (as of April 2020),19.7
+2013,E37000055,local enterprise partnerships (as of April 2020),18.9
+2014,E37000055,local enterprise partnerships (as of April 2020),20.2
+2015,E37000055,local enterprise partnerships (as of April 2020),16.7
+2016,E37000055,local enterprise partnerships (as of April 2020),18.7
+2017,E37000055,local enterprise partnerships (as of April 2020),18.3
+2018,E37000055,local enterprise partnerships (as of April 2020),18.8
+2019,E37000055,local enterprise partnerships (as of April 2020),19.7
+2010,E37000056,local enterprise partnerships (as of April 2020),17.3
+2011,E37000056,local enterprise partnerships (as of April 2020),17.2
+2012,E37000056,local enterprise partnerships (as of April 2020),16.8
+2013,E37000056,local enterprise partnerships (as of April 2020),18.2
+2014,E37000056,local enterprise partnerships (as of April 2020),18.6
+2015,E37000056,local enterprise partnerships (as of April 2020),18.0
+2016,E37000056,local enterprise partnerships (as of April 2020),18.7
+2017,E37000056,local enterprise partnerships (as of April 2020),18.5
+2018,E37000056,local enterprise partnerships (as of April 2020),18.8
+2019,E37000056,local enterprise partnerships (as of April 2020),20.0
+2010,E37000057,local enterprise partnerships (as of April 2020),16.8
+2011,E37000057,local enterprise partnerships (as of April 2020),17.3
+2012,E37000057,local enterprise partnerships (as of April 2020),17.7
+2013,E37000057,local enterprise partnerships (as of April 2020),18.9
+2014,E37000057,local enterprise partnerships (as of April 2020),20.4
+2015,E37000057,local enterprise partnerships (as of April 2020),18.7
+2016,E37000057,local enterprise partnerships (as of April 2020),18.6
+2017,E37000057,local enterprise partnerships (as of April 2020),18.7
+2018,E37000057,local enterprise partnerships (as of April 2020),20.4
+2019,E37000057,local enterprise partnerships (as of April 2020),19.6
+2010,E37000058,local enterprise partnerships (as of April 2020),18.4
+2011,E37000058,local enterprise partnerships (as of April 2020),18.9
+2012,E37000058,local enterprise partnerships (as of April 2020),18.1
+2013,E37000058,local enterprise partnerships (as of April 2020),20.3
+2014,E37000058,local enterprise partnerships (as of April 2020),18.5
+2015,E37000058,local enterprise partnerships (as of April 2020),19.0
+2016,E37000058,local enterprise partnerships (as of April 2020),18.3
+2017,E37000058,local enterprise partnerships (as of April 2020),18.9
+2018,E37000058,local enterprise partnerships (as of April 2020),19.3
+2019,E37000058,local enterprise partnerships (as of April 2020),20.9
