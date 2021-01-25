@@ -1,7 +1,7 @@
 api_doc_url: https://www.nomisweb.co.uk/api/v01/help
 api_type: FETCH
-title: Economically active professionals with NVQ4+
-subtitle: Percentage of economically active persons in professional occupations with at least NVQ4+ by NUTS 2 regions.
+title: Economically active professionals with NVQ4 or above
+subtitle: Percentage of economically active persons in professional occupations with NVQ level 4 or above by NUTS 2 regions.
 endpoint_url:
   2010: http://www.nomisweb.co.uk/api/v01/dataset/NM_17_5.data.csv?geography=TYPE455&date=2012-12,2011-12,2010-12&variable=546&measures=20599,21001,21002,21003&select=date,date_name,date_code,geography_type,geography_code,measures_name,variable,variable_name,obs_value,obs_status_name,obs_status,record_count,
   2013: http://www.nomisweb.co.uk/api/v01/dataset/NM_17_5.data.csv?geography=TYPE450&date=2015-12,2014-12,2013-12&variable=546&measures=20599,21001,21002,21003&select=date,date_name,date_code,geography_type,geography_code,measures_name,variable,variable_name,obs_value,obs_status_name,obs_status,record_count,
