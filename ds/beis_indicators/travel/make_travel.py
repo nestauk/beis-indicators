@@ -20,12 +20,7 @@ coders = {
     'lep': LepCoder()
     }
 
-BROADBAND_DIR = f'{project_dir}/data/raw/travel'
 
-
-
-# MYDIR = (f'{project_dir}/data/raw/broadband')
-# CHECK_FOLDER = os.path.isdir(MYDIR)
 
 destinations = {'road_junctions': 'travel_to_road_junctions_average_time',
                 'rail_stations': 'travel_to_rail_time',
