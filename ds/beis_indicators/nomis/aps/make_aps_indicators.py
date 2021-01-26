@@ -5,6 +5,7 @@ import logging
 
 import ratelim
 import pandas as pd
+import re
 from numpy import arange, sum
 from pandas import concat, crosstab, melt, read_csv, read_excel
 from beis_indicators import project_dir
@@ -12,6 +13,8 @@ from glob import glob
 from dateutil.parser import parse
 from datetime import datetime
 from collections import defaultdict
+
+
 
 
 import beis_indicators
@@ -72,8 +75,8 @@ def format_date(string):
     return datetime.strptime(string, '%Y-%m').year
 
 def extract_year_from_string(string):
-
-    return parse(string, fuzzy=True).year
+    match = re.search(r'\d{4}', string)
+    return datetime.strptime(match.group(), '%Y').date().year
 #
 # def grab_geo(df):
 #
@@ -265,9 +268,11 @@ def make_indicators():
                     # for k,v in indicator_names_1.items():
 
                     df_value.rename(columns = {"DATE": 'year', "OBS_VALUE": indicator_names_1[dataset_id]['indicator']}, inplace=True)
+                    df_value['year_spec'] = df_value['GEOGRAPHY_TYPE'].apply(extract_year_from_string)
+                    del df_value['GEOGRAPHY_TYPE']
 
                     if 'nuts' in type:
-                        df_value.rename(columns = {"GEOGRAPHY_TYPE": 'nuts_year_spec', "geo_cd": 'nuts_id'}, inplace=True)
+                        df_value.rename(columns = {"year_spec": 'nuts_year_spec', "geo_cd": 'nuts_id'}, inplace=True)
                         df_value = df_value[['year','nuts_id', 'nuts_year_spec',  indicator_names_1[dataset_id]['indicator']]].reset_index(drop=True)
                         df_value = df_value.sort_values(['nuts_id', 'year'])
 
@@ -275,7 +280,7 @@ def make_indicators():
 
 
                     elif 'lep' in type:
-                        df_value.rename(columns = {"GEOGRAPHY_TYPE": 'lep_year_spec', "geo_cd": 'lep_id'}, inplace=True)
+                        df_value.rename(columns = {"year_spec": 'lep_year_spec', "geo_cd": 'lep_id'}, inplace=True)
                         df_value = df_value[['year','lep_id', 'lep_year_spec',  indicator_names_1[dataset_id]['indicator']]].reset_index(drop=True)
                         df_value = df_value.sort_values(['lep_id', 'year'])
 
