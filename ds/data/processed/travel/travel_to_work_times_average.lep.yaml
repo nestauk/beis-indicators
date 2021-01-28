@@ -1,11 +1,12 @@
 api_type: FETCH
-title: Average home to work travel time in minutes
+title: Travel to work (average)
 subtitle: Average home to work travel time where LEP region is home location (October to December).
-description: Average home to work travel time where LEP region is home location observed from October to December each year. Note: Overlapping LEP regions are used therefore some calculations may be under-estimated or over-estimated.
+description: Average home to work travel time where LEP region is home location observed from October to December each year. Overlapping LEP regions are used therefore some calculations may be under-estimated or over-estimated.
 endpoint_url:
   2016: https://www.ons.gov.uk/file?uri=/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/adhocs/007252averagehometoworktraveltimeages16andoverocttodec2016/2017update.xls
   2017: https://www.ons.gov.uk/file?uri=/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/adhocs/006022averagehometoworktraveltimeages16plusocttodec2015/2018updateod17data.xls
   2018: https://www.ons.gov.uk/file?uri=/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/adhocs/010202averagehometoworktraveltimeage16yearsandoverukoctobertodecember2018/averagehometoworktraveltimes16plusod18.xls
+# year: endpoint_url
 framework_group: place_potential
 is_experimental: False
 order: [year, lep_id, lep_year_spec, value.id] # do not change; specifies the order of the exported indicator fields
@@ -19,7 +20,7 @@ schema:
     type: LepRegion.lep_year_spec
   value:
     format: .2f
-    id: travel_to_road_junctions_average_time
+    id: travel_to_work_times_average
     label: Time (Minutes)
     data_type: float
   year:

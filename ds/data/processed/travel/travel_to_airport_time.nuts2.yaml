@@ -4,7 +4,7 @@ subtitle: Minimum travel time to nearest airport from a NUTS 2 regions for Engla
 endpoint_url:
   2011: http://data.dft.gov.uk.s3.amazonaws.com/connectivity-data/Airports-travel-times.zip
   2013: http://data.dft.gov.uk.s3.amazonaws.com/connectivity-data/2013-travel-times.zip
-# lep_spec_year: endpoint_url
+# year: endpoint_url
 framework_group: place_potential
 is_experimental: False
 order: [year, nuts_id, nuts_year_spec, value.id] # do not change; specifies the order of the exported indicator fields
