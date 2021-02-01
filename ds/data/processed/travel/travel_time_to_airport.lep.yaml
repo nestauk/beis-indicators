@@ -1,9 +1,9 @@
 api_type: FETCH
-title: Travel time to nearest rail station
-subtitle: Minimum travel time to nearest rail station from a LEP region for England (2011 & 2013) and Wales (2011 only)
-description: Minimum travel time to nearest rail station from a LEP region for England (2011 & 2013) and Wales (2011 only). Overlapping LEP regions are used therefore some calculations may be under-estimated or over-estimated.
+title: Travel time to nearest airport
+subtitle: Minimum travel time to nearest airport from a LEP region for England (2011 & 2013) and Wales (2011 only)
+description: Minimum travel time to nearest airport from a LEP region for England (2011 & 2013) and Wales (2011 only). Overlapping LEP regions are used therefore some calculations may be under-estimated or over-estimated.
 endpoint_url:
-  2011: http://data.dft.gov.uk.s3.amazonaws.com/connectivity-data/Rail-stations-travel-times.zip
+  2011: http://data.dft.gov.uk.s3.amazonaws.com/connectivity-data/Airports-travel-times.zip
   2013: http://data.dft.gov.uk.s3.amazonaws.com/connectivity-data/2013-travel-times.zip
 # year: endpoint_url
 framework_group: place_potential
@@ -19,7 +19,7 @@ schema:
     type: LepRegion.lep_year_spec
   value:
     format: .2f
-    id: travel_to_rail_time
+    id: travel_time_to_airport
     label: Time (Minutes)
     data_type: float
   year:

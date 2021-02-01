@@ -1,4 +1,4 @@
-api_type: FETCH
+travel_mean_time_to_workapi_type: FETCH
 title: Travel time to work (average)
 subtitle: Average home to work travel time where LEP region is home location (October to December).
 description: Average home to work travel time where LEP region is home location observed from October to December each year. Overlapping LEP regions are used therefore some calculations may be under-estimated or over-estimated.
@@ -20,7 +20,7 @@ schema:
     type: LepRegion.lep_year_spec
   value:
     format: .2f
-    id: travel_to_work_times_average
+    id: travel_mean_time_to_work
     label: Time (Minutes)
     data_type: float
   year:

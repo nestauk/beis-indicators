@@ -19,7 +19,7 @@ schema:
     type: LepRegion.lep_year_spec
   value:
     format: .2f
-    id: travel_to_road_junctions_average_time
+    id: travel_mean_time_to_road_junctions
     label: Time (Minutes)
     data_type: float
   year:

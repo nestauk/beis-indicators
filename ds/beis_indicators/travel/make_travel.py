@@ -22,9 +22,9 @@ coders = {
 
 
 
-destinations = {'road_junctions': 'travel_to_road_junctions_average_time',
-                'rail_stations': 'travel_to_rail_time',
-                'airports': 'travel_to_airport_time'}
+destinations = {'road_junctions': 'travel_mean_time_to_road_junctions',
+                'rail_stations': 'travel_time_to_rail',
+                'airports': 'travel_time_to_airport'}
 
 for destination,val_name in destinations.items():
     get_travel_data(destination)

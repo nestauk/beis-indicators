@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 
 TRAVEL_DIR = f'{project_dir}/data/raw/travel'
 TRAVEL_YEARS_URL = {
-    'road_junctions' : {'url': 'Http://data.dft.gov.uk.s3.amazonaws.com/connectivity-data/Road-junctions-travel-times.zip', 'string': 'Junctions'},
+    'road_junctions' : {'url': 'http://data.dft.gov.uk.s3.amazonaws.com/connectivity-data/Road-junctions-travel-times.zip', 'string': 'Junctions'},
     'rail_stations' : {'url': 'http://data.dft.gov.uk.s3.amazonaws.com/connectivity-data/Rail-stations-travel-times.zip', 'string': 'Stations'},
     'airports' : {'url': 'http://data.dft.gov.uk.s3.amazonaws.com/connectivity-data/Airports-travel-times.zip', 'string': 'Airports'},
     '2013_data' : 'http://data.dft.gov.uk.s3.amazonaws.com/connectivity-data/2013-travel-times.zip'

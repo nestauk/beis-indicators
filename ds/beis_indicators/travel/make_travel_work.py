@@ -27,9 +27,9 @@ for geo, coder in coders.items():
                     aggfunc=np.mean, value_rename= 'Mean',
                     projection='EPSG:4326', x_col='long', y_col='lat')
     if geo == 'lep':
-        time_mean = time_mean.rename(columns = {'Mean': 'travel_to_work_times_average'}).sort_values(['lep_id', 'year']).reset_index(drop=True)
+        time_mean = time_mean.rename(columns = {'Mean': 'travel_mean_time_to_work'}).sort_values(['lep_id', 'year']).reset_index(drop=True)
     else:
-        time_mean = time_mean.rename(columns = {'Mean': 'travel_to_work_times_average'}).sort_values(['nuts_id', 'year']).reset_index(drop=True)
+        time_mean = time_mean.rename(columns = {'Mean': 'travel_mean_time_to_work'}).sort_values(['nuts_id', 'year']).reset_index(drop=True)
 
 
     # print(time_mean.head())
