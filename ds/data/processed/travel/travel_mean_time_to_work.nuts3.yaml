@@ -1,5 +1,5 @@
 api_type: FETCH
-title: Travel time to work (average)
+title: Travel time to work
 subtitle: Average home to work travel time where NUTS 3 region is home location (October to December)
 endpoint_url:
   2016: https://www.ons.gov.uk/file?uri=/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/adhocs/007252averagehometoworktraveltimeages16andoverocttodec2016/2017update.xls

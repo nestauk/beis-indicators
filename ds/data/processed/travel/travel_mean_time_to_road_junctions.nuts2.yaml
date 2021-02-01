@@ -1,5 +1,5 @@
 api_type: FETCH
-title: Travel time to nearest five road junctions (average)
+title: Travel time to nearest five road junctions
 subtitle: Average minimum travel time to nearest five road junctions from a NUTS 2 regions for England (2011 & 2013) and Wales (2011 only)
 endpoint_url:
   2011: http://data.dft.gov.uk.s3.amazonaws.com/connectivity-data/Road-junctions-travel-times.zip

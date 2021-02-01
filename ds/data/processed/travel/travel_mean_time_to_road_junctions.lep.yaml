@@ -1,5 +1,5 @@
 api_type: FETCH
-title: Travel time to nearest five road junctions (average)
+title: Travel time to nearest five road junctions
 subtitle: Average minimum travel time to nearest five road junctions from a LEP region for England (2011 & 2013) and Wales (2011 only)
 description: Average minimum travel time to nearest five road junctions from a LEP region for England (2011 & 2013) and Wales (2011 only). Overlapping LEP regions are used therefore some calculations may be under-estimated or over-estimated.
 endpoint_url:
