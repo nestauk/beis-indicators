@@ -1,5 +1,5 @@
 api_type: FETCH
-title: Travel to work (average)
+title: Travel time to work (average)
 subtitle: Average home to work travel time where LEP region is home location (October to December).
 description: Average home to work travel time where LEP region is home location observed from October to December each year. Overlapping LEP regions are used therefore some calculations may be under-estimated or over-estimated.
 endpoint_url:
