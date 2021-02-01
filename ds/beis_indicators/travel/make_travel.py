@@ -22,7 +22,7 @@ coders = {
 
 
 
-destinations = {'road_junctions': 'travel_mean_time_to_road_junctions',
+destinations = {'road_junctions': 'travel_time_to_road_junctions',
                 'rail_stations': 'travel_time_to_rail',
                 'airports': 'travel_time_to_airport'}
 

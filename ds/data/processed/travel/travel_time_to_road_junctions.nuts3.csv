@@ -1,4 +1,4 @@
-year,nuts_id,nuts_year_spec,travel_mean_time_to_road_junctions
+year,nuts_id,nuts_year_spec,travel_time_to_road_junctions
 2011,UKC11,2010,12.21
 2013,UKC11,2013,12.19
 2013,UKC12,2013,11.35

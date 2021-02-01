@@ -1,4 +1,4 @@
-year,lep_id,lep_year_spec,travel_mean_time_to_road_junctions
+year,lep_id,lep_year_spec,travel_time_to_road_junctions
 2011,E37000001,-2014,16.38
 2013,E37000001,-2014,16.85
 2011,E37000002,-2014,20.15
