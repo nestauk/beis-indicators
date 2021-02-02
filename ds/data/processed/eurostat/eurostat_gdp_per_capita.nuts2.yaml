@@ -1,0 +1,28 @@
+api_doc_url: https://ec.europa.eu/eurostat/cache/metadata/en/rd_esms.htm
+api_type: FETCH
+title: GDP per capita
+subtitle: Regional gross domestic product (GDP) expressed in purchasing power standards by NUTS 2 regions.
+endpoint_url: http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/tgs00004
+framework_group: business_rnd_capacity
+is_experimental: False
+order: [year, nuts_id, nuts_year_spec, value.id] # do not change; specifies the order of the exported indicator fields
+region:
+  type: NutsRegion
+  level: 2
+  source: PROVIDED
+schema:
+  nuts_id:
+    type: NutsRegion.nuts_id
+  nuts_year_spec:
+    type: NutsRegion.nuts_year_spec
+  value:
+    data_type: int
+    format: ','
+    id: eurostat_gdp_per_capita
+    label: Expenditure (to nearest 10000)
+    type: EUR
+  year:
+    data_type: int
+    label: Year
+source_name: Eurostat (European Statistical Office)
+source_url: https://ec.europa.eu/eurostat/
