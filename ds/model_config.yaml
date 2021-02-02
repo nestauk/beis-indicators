@@ -8,6 +8,27 @@ data:
     #2013 nuts 2, nuts 3, lep 2017
     #[TYPE450, TYPE449, TYPE459]
 
+
+  aps:
+    years: [2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010]
+    geography:
+      nuts2010:
+        nuts2: TYPE455
+        nuts3: TYPE456
+
+      nuts2013:
+        nuts2: TYPE450
+        nuts3: TYPE449
+
+      nuts2016:
+        nuts2: TYPE438
+        nuts3: TYPE437
+
+      lep: TYPE459
+
+
+
+
 seed: 42
 
 models:
