@@ -1,3 +1,11 @@
+# 0.0.15
+
+## Indicators
+
+- add GDP per capita indicators (#402)
+- add Travel to- indicators (#369 & # #329)
+- add changes in APS indicator and corrections in framework groups (#407)
+
 # 0.0.14
 
 ## Tool
