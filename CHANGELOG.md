@@ -1,3 +1,10 @@
+# 0.0.16
+
+## Tool
+
+- The timeline navigation buttons support uneven distributions (#403)
+
+
 # 0.0.15
 
 ## Indicators
@@ -7,6 +14,10 @@
 - add changes in APS indicator, corrections in framework groups and observation year starts from 2010 (#407)
 
 # 0.0.14
+
+## Indicators
+
+- Eurostat indicators now start from observation year 2007 (except where earliest data after 2007 is available)
 
 ## Tool
 
@@ -22,10 +33,6 @@
   - `/download/LEP`: versioned CSV file of all indicators for LEP regions
   - `/download/NUTS2`: versioned CSV file of all indicators for NUTS2 regions
   - `/download/NUTS3`: versioned CSV file of all indicators for NUTS3 regions
-
-## Indicators
-
-- Eurostat indicators now start from observation year 2007 (except where earliest data after 2007 is available)
 
 # 0.0.13
 
