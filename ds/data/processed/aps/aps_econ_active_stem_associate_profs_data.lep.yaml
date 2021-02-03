@@ -10,7 +10,7 @@ region:
   type: LepRegion
   source: PROVIDED
 schema:
-  nuts_id
+  nuts_id:
     type: LepRegion.lep_id
   nuts_year_spec:
     type: LepRegion.lep_year_spec

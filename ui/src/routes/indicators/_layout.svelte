@@ -1,6 +1,5 @@
 <script>
 	import {setContext, onMount} from 'svelte';
-	import {writable} from 'svelte/store';
 
 	import groups from 'app/data/indicatorsGroups.json';
 	import Timeline from 'app/components/Timeline.svelte';
