@@ -3,8 +3,8 @@
 ## Indicators
 
 - add GDP per capita indicators (#402)
-- add Travel to- indicators (#369 & # #329)
-- add changes in APS indicator and corrections in framework groups (#407)
+- add Travel to- indicators (#369 & #329)
+- add changes in APS indicator, corrections in framework groups and observation year starts from 2010 (#407)
 
 # 0.0.14
 
@@ -23,6 +23,9 @@
   - `/download/NUTS2`: versioned CSV file of all indicators for NUTS2 regions
   - `/download/NUTS3`: versioned CSV file of all indicators for NUTS3 regions
 
+## Indicators
+
+- Eurostat indicators now start from observation year 2007 (except where earliest data after 2007 is available)
 
 # 0.0.13
 
