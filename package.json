@@ -5,5 +5,5 @@
   "scripts": {
     "deploy": "cd ui && npm install && npm run makedata && npm run export"
   },
-  "version": "0.0.14"
+  "version": "0.0.15"
 }
