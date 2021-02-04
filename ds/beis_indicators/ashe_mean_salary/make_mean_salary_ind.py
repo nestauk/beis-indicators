@@ -6,16 +6,16 @@ from beis_indicators.utils.dir_file_management import make_indicator,save_indica
 
 
 PROJECT_DIR = beis_indicators.project_dir
-TARGET_PATH = f"{PROJECT_DIR}/data/processed/housing"
 INTERIM_PATH = f"{PROJECT_DIR}/data/interim/ashe_mean_salary"
+TARGET_PATH = f"{PROJECT_DIR}/data/processed/ashe_mean_salary"
 
 
 # Get the LAD to NUTS lookup
 lad_nuts_lu = pd.read_csv(
     "https://opendata.arcgis.com/datasets/9b4c94e915c844adb11e15a4b1e1294d_0.csv")
 
-# # PART 1: Create mean salaries by NUTS
-#
+# Create mean salaries by NUTS
+
 # Get mean LAD salaries from ASHE (Annual Survey of Hours and Earnings)
 lads_ashe = pd.read_csv(
     "https://www.nomisweb.co.uk/api/v01/dataset/NM_30_1.data.csv?geography=1820327937...1820328307&date=latestMINUS9-latest&sex=8&item=4&pay=7&measures=20100,20701")
@@ -31,17 +31,17 @@ lads_ashe, lads_bres = [df.query("MEASURES_NAME == 'Value'")[my_vars].reset_inde
    drop=True).rename(columns={'OBS_VALUE':var_name}) for
         df, var_name in zip([lads_ashe,lads_bres],
                        ['annual_mean_salary_ft','employees_ft'])]
-#
+
 # Combine them
 merge_vars = ['GEOGRAPHY_NAME','GEOGRAPHY_CODE','DATE']
-#
+
 ashe_bres = pd.merge(lads_ashe,lads_bres,left_on=merge_vars,
                      right_on=merge_vars)
 
 # Multiply mean salary by full time employees so we can get the local wage bill
 ashe_bres['wage_bill'] = ashe_bres['annual_mean_salary_ft']*ashe_bres[
                     'employees_ft']
-#
+
 # Before merging with the LAD-NUTS lookup we need to relabel some LADs in
 # the lookup
 
@@ -70,58 +70,35 @@ lad_nuts_lu['LAD18CD+'] = [r['LAD18CD'] if r['LAD18NM'] not in recodes.keys() el
 nuts_look_nomis = pd.merge(
             lad_nuts_lu,ashe_bres,left_on='LAD18CD+',right_on='GEOGRAPHY_CODE')
 
-# Create House affordability indicators
 
-# Download house pricing index data
-hpi = pd.read_csv(
-        'http://publicdata.landregistry.gov.uk/market-trend-data/house-price-index-data/UK-HPI-full-file-2020-03.csv?utm_medium=GOV.UK&utm_source=datadownload&utm_campaign=full_fil&utm_term=9.30_20_05_20')
+# And now calculate the NUTS2 and NUTS3 mean salaries
+# Create the mean salaries by NUTS 2 and NUTS 3
 
-# We focus on these variables
-hpi_short = hpi[['Date','RegionName','AreaCode','AveragePrice','SalesVolume']]
+nuts_2_mean_salary, nuts_3_mean_salary = [
+    nuts_look_nomis.groupby(
+            ['DATE',code])[['employees_ft','wage_bill']].sum(
+            ).reset_index(
+                drop=False).assign(
+                mean_salary = lambda x:
+                    x['wage_bill']/x['employees_ft']) for code in [
+                            'NUTS218CD','NUTS318CD']]
 
-# Create a year variable
-hpi_short['year'] = hpi['Date'].apply(lambda x: int(x.split('/')[-1]))
+#Save interim data for housing affordability calculation
 
-# Focus on 2010-2019 (we don't have 2020 data for the denominator)
-# Like before we will create a value data we use to recalculate means at NUTS level
-hpi_short = hpi_short.query(
-    "(year >= 2010) & (year < 2020)").assign(
-    sales_value = lambda x: x.AveragePrice * x.SalesVolume)
+for mean_salary_df, file_name in zip([nuts_2_mean_salary, nuts_3_mean_salary],
+                            ['nuts_2_mean_salary', 'nuts_3_mean_salary']):
+    save_indicator(mean_salary_df,INTERIM_PATH,f'{file_name}')
 
-# Now we need to create a NUTS3 and NUTS2 lookup like before
-nuts_look_hpi = pd.merge(lad_nuts_lu,hpi_short,
-                        left_on='LAD18CD+',right_on='AreaCode')
+# Make the indicator
 
-nuts_2_mean_hp, nuts_3_mean_hp = [
-    nuts_look_hpi.groupby(
-        ['year',code])[['sales_value','SalesVolume']].sum().reset_index(
-        drop=False).assign(
-                        mean_hp = lambda x: x['sales_value']/x['SalesVolume']
-                        ) for code in ['NUTS218CD','NUTS318CD']]
-
-
-# Read mean salary data from interim/ashe_mean_salary folder
-# for following calculations
-
-nuts_2_mean_salary = pd.read_csv(f'{INTERIM_PATH}/nuts_2_mean_salary.csv')
-nuts_3_mean_salary = pd.read_csv(f'{INTERIM_PATH}/nuts_3_mean_salary.csv')
-
-# Create the indicatoes by combining salary and house price data at the
-# right level. We also include variable and indicator names in the loop
-
-for sal,med,code,suffix in zip([nuts_2_mean_salary,nuts_3_mean_salary],
-                             [nuts_2_mean_hp,nuts_3_mean_hp],
+for sal,code,suffix in zip([nuts_2_mean_salary,nuts_3_mean_salary],
                              ['NUTS218CD','NUTS318CD'],
                              ['nuts2','nuts3']):
-    # Merge salaries and house prices
-    m = sal.merge(med,left_on=['DATE',code],
-            right_on=['year',code]).assign(house_price_norm =
-            lambda x: x['mean_hp']/x['mean_salary'])
 
-    # Make the indicator
-    ind = make_indicator(m,
-                         {'house_price_norm':'house_price_normalised'},
-                        'year',nuts_var=code,nuts_spec=2016,decimals=3)
-#
-#     # Save the indicator
-#     save_indicator(ind,TARGET_PATH,f'house_price_normalised.{suffix}')
+    #Make indicator
+    ind = make_indicator(sal,
+                         {'mean_salary':'ashe_mean_salary'},
+                        'DATE',nuts_var=code,nuts_spec=2018,decimals=3)
+
+    #Save the indicator
+    save_indicator(ind,TARGET_PATH,f'ashe_mean_salary.{suffix}')
