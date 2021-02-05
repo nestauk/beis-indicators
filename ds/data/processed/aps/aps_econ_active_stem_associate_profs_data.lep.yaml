@@ -4,7 +4,7 @@ title: STEM associate professionals
 subtitle: Number of Science, Research, Engineering and Technology associated professionals by LEP regions
 endpoint_url: http://www.nomisweb.co.uk/api/v01/dataset/NM_17_1.data.csv?geography=TYPE459&date=2019-12,2018-12,2017-12,2016-12,2015-12,2014-12,2013-12,2012-12,2011-12,2010-12&cell=404883201&measures=20100,20701&select=date,date_name,date_code,geography_type,geography_code,measures_name,variable,cell_name,obs_value,obs_status_name,obs_status,record_count
 framework_group: place_potential
-is_experimental: False
+is_experimental: public_rnd_capability
 order: [year, lep_id, lep_year_spec, value.id] # do not change; specifies the order of the exported indicator fields
 region:
   type: LepRegion
