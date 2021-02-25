@@ -2,6 +2,7 @@
 
 ## Indicators
 
+- add ASHE mean salary indicators and schemas (#94)
 - Correction in framework group for APS (STEM associate professionals) indicators (#416)
 
 
