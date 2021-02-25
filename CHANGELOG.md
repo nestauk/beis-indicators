@@ -1,5 +1,10 @@
 # 0.0.16
 
+## Indicators
+
+- Correction in framework group for APS (STEM associate professionals) indicators (#416)
+
+
 ## Tool
 
 - The timeline navigation buttons support uneven distributions (#403)
