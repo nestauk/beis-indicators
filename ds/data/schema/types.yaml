@@ -1,4 +1,4 @@
-# dates
+# dates
 
 Date_YYYYMMDD:
   format: YYYYMMDD
@@ -15,7 +15,7 @@ URL:
 
 NutsRegion:
   level: int # e.g. 1|2|3
-  name: GeoRegion.name # e.g. Leicestershire, Rutland and Northamptonshire
+  name: GeoRegion.name # e.g. Leicestershire, Rutland and Northamptonshire
   nuts_id: GeoRegion.<region_type>_id # e.g. UKF2
   nuts_year_enforced: GeoRegion.<region_type>_year_enforced
   nuts_year_spec: GeoRegion.<region_type>_year_spec

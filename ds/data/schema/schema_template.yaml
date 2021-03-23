@@ -1,29 +1,29 @@
 api_doc_url: URL|URL[]|{key, URL}
-  # OPTIONAL – the URL of a documentation page with descriptions of the field meaning (if available)
+  # OPTIONAL - the URL of a documentation page with descriptions of the field meaning (if available)
   # use an array of URLs or an object if multiple files have been downloaded to build this indicator (key can be a year or a free identifier)
 api_type: string|string[]|{key, string}
-  # the type of API
+  # the type of API
   # use an array of strings or an object if multiple types are needed (key can be a year or a free identifier)
-  # FETCH: the dataset can be downloaded at a specific URL; this can be:
+  # FETCH: the dataset can be downloaded at a specific URL; this can be:
     # the URL of a file (e.g. www.download.com/datasets/companies.csv)
-    # or, the URL of a GET REST API (e.g. GET www.api.com/companies/London, returning a response in some format)
+    # or, the URL of a GET REST API (e.g. GET www.api.com/companies/London, returning a response in some format)
   # or, one of the types below, in which case we need to provide the `query` field
     # POST: the data is obtained by querying a POST REST API with a custom API (e.g. POST-ing the query `{city: 'London'}` to www.foo.com/companies to get a json response)
-    # ElasticSearch: the data is obtained by making a POST request to an ElasticSearch endpoint
+    # ElasticSearch: the data is obtained by making a POST request to an ElasticSearch endpoint
     # Neo4j: the data is obtained by making a POST request to a Neo4j endpoint
     # MySQL: the data is obtained by querying a MySQL endpoint
-auth_provider: string|URL # OPTIONAL – in case the source is not public, the name of the organization providing source access or a URL of a web page where to get or require access, e.g. Nesta, or https://www.foo.com/get_auth
+auth_provider: string|URL # OPTIONAL - in case the source is not public, the name of the organization providing source access or a URL of a web page where to get or require access, e.g. Nesta, or https://www.foo.com/get_auth
 data_date: Date_YYYYMMDD # OPTIONAL - the date of the data processing, e.g. 20201213
-description: string # a long description of the indicator: this is useful for a non-expert audience to have some short explanations about the data limitations (E.g. on Higher Edu R&D, they might wonder why we only have data for parts of the country), and foibles (e.g. on area of university site they may wonder about the Inner London West spike of 2016)
+description: string # a long description of the indicator: this is useful for a non-expert audience to have some short explanations about the data limitations (E.g. on Higher Edu R&D, they might wonder why we only have data for parts of the country), and foibles (e.g. on area of university site they may wonder about the Inner London West spike of 2016)
 derived_from: string[] # OPTIONAL - list of indicator keys this indicator derives from
 endpoint_url: URL|URL[]|{key, URL} # use an array of URLs or an object if multiple files have been downloaded to build this indicator (key can be a year or a free identifier)
-  # for querying APIs: the URL of the api endpoint at which queries can be executed
-  # for fetching: the URL where to fetch the data
-framework_group: string # key for the framework group that contains this indicator (from data/aux/framework.json)
+  # for querying APIs: the URL of the api endpoint at which queries can be executed
+  # for fetching: the URL where to fetch the data
+framework_group: string # key for the framework group that contains this indicator (from data/aux/framework.json)
 is_experimental: boolean # whether this indicator is experimental
-is_public: boolean # OPTIONAL – provide this if False in case the source is not public
+is_public: boolean # OPTIONAL - provide this if False in case the source is not public
 order: [year, <region_type>_id, <region_type>_year_spec, value.id] # it specifies the order of the exported indicator fields, please substitute `<region_type>` with ` nuts` or `lep`, etc (see GeoRegion.region_type)
-query: string # OPTIONAL - the query we POST-ed (not needed for FETCH), e.g. `{city: 'London'}` in the POST example above, or the query sent to  ElasticSearch, etc.
+query: string # OPTIONAL - the query we POST-ed (not needed for FETCH), e.g. `{city: 'London'}` in the POST example above, or the query sent to  ElasticSearch, etc.
 region:
   type: string # the region type, e.g. NutsRegion or LepRegion
   level: int # OPTIONAL - useful for NUTS
@@ -40,21 +40,21 @@ schema:
       # for currencies, please use `data_type: int`, this helps limiting the decimal part in the bar chart label for the average value
     format: string # OPTIONAL - the render format, useful for floats or dates (e.g. `.2f`), see [1] and [2], not needed for integers
     id: string # indicator name, should be identical to the file name (e.g. `berd` and `berd.csv`)
-    label: string # a short text to be used as a label in charts
-    type: string # (XOR `data_type`) - the value Type (e.g. Euro). Consider using `data_type` first.
-    unit_string: string # OPTIONAL - the unit of measure, should we not provide a `type`. E.g. '%' for percentages.
+    label: string # a short text to be used as a label in charts
+    type: string # (XOR `data_type`) - the value Type (e.g. Euro). Consider using `data_type` first.
+    unit_string: string # OPTIONAL - the unit of measure, should we not provide a `type`. E.g. '%' for percentages.
   year:
     data_type: int
     label: Year
 source_name: string|string[]|{key, string}
-  # the name of the data provider (e.g. Eurostat, NOMIS, etc.)
+  # the name of the data provider (e.g. Eurostat, NOMIS, etc.)
   # use an array of strings or an object if multiple types are needed (key can be a year or a free identifier)
 source_url: URL|URL[]|{key, URL}
-  # the URL of the data provider (e.g. https://gtr.ukri.org)
+  # the URL of the data provider (e.g. https://gtr.ukri.org)
   # use an array of URLs or an object if multiple files have been downloaded to build this indicator (key can be a year or a free identifier)
-subtitle: string # a brief description of the indicator short enough to be used in menus or sidebars (~40 chars)
-title: string # a description of the indicator, of the data source and transformations that have been applied
-warning: string # OPTIONAL - a note the user to be shown in the indicator info panel
+subtitle: string # a brief description of the indicator short enough to be used in menus or sidebars (~40 chars)
+title: string # a description of the indicator, of the data source and transformations that have been applied
+warning: string # OPTIONAL - a note the user to be shown in the indicator info panel
 
 
 # [1] https://docs.python.org/3/library/string.html#format-specification-mini-language

@@ -9,6 +9,7 @@
 ## Tool
 
 - The timeline navigation buttons support uneven distributions (#403)
+- Fix the `/guide` page title (#419)
 
 
 # 0.0.15

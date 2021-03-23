@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-	<title>BEIS indicators - Methodology</title>
+	<title>BEIS indicators - Guide</title>
 </svelte:head>
 
 <main>
