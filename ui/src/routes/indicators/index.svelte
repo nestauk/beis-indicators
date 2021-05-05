@@ -1,14 +1,16 @@
 <script>
 	import * as _ from 'lamb';
-	import {getContext} from 'svelte';
 
 	import {goto} from '@sapper/app'; // dev, don't remove
 
-	import { yearRange } from 'app/data/groups';
+	import {yearRange} from 'app/data/groups';
 	import groups from 'app/data/indicatorsGroups.json';
-	import {resetSafetyStore, resetSelection} from 'app/stores';
+	import {
+		resetSafetyStore,
+		resetSelection,
+		timelineLayoutStore,
+	} from 'app/stores';
 
-	const {timelineLayoutStore} = getContext('layout');
 	const gap = 7;
 
 	resetSelection();

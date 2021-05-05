@@ -1,6 +1,9 @@
 <script>
-	import LinkButton from 'app/components/LinkButton.svelte';
-	import ExternalLink from 'app/components/ExternalLink.svelte';
+	import ExternalLink from '@svizzle/ui/src/ExternalLink.svelte';
+	import LinkButton from '@svizzle/ui/src/LinkButton.svelte';
+	import Download from '@svizzle/ui/src/icons/feather/Download.svelte';
+
+	import theme from 'app/theme';
 
 	const crunchbaseUrl = 'https://www.crunchbase.com/';
 	const eurostatUrl = 'https://ec.europa.eu/eurostat';
@@ -53,12 +56,21 @@
 
 		<div class='cta'>
 			<LinkButton
-				url='/download'
+				glyph={Download}
+				href='/download'
 				text='Download all indicators'
-				withDownloadIcon={true}
+				theme={{backgroundColor: theme.colorMain}}
 			/>
-			<LinkButton url='/guide' text='Read the guide' />
-			<LinkButton url='/indicators' text='Explore the indicators' />
+			<LinkButton
+				href='/guide'
+				text='Read the guide'
+				theme={{backgroundColor: theme.colorMain}}
+			/>
+			<LinkButton
+				href='/indicators'
+				text='Explore the indicators'
+				theme={{backgroundColor: theme.colorMain}}
+			/>
 		</div>
 	</section>
 </main>

@@ -1,6 +1,8 @@
 <script>
-	import LinkButton from 'app/components/LinkButton.svelte';
+	import LinkButton from '@svizzle/ui/src/LinkButton.svelte';
 	import {allNUTS2IndicatorsCsvName, availableDownloadIds, version} from 'app/utils';
+
+	import theme from 'app/theme';
 
 	const csvWikiURL = 'https://en.wikipedia.org/wiki/Comma-separated_values';
 	const maxIndex = availableDownloadIds.length - 1;
@@ -102,7 +104,11 @@
 		<p>Should you find bugs or have ideas about how to enhance this tool, please don't hesitate to send your feedback: click on the "Feedback" link to navigate to a short survey and our contact details.</p>
 
 		<div class='cta'>
-			<LinkButton url='/indicators' text='Explore the indicators' />
+			<LinkButton
+				href='/indicators'
+				text='Explore the indicators'
+				theme={{backgroundColor: theme.colorMain}}
+			/>
 		</div>
 	</section>
 </main>

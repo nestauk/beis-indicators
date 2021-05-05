@@ -1,4 +1,4 @@
-# 0.0.16
+# 0.0.16 (next release)
 
 ## Indicators
 
@@ -10,9 +10,10 @@
 
 - The timeline navigation buttons support uneven distributions (#403)
 - Fix the `/guide` page title (#419)
+- Add a staging banner
+- Updated Svizzle dependencies
 
-
-# 0.0.15
+# 0.0.15 (staging release)
 
 ## Indicators
 

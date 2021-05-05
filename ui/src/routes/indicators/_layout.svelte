@@ -1,17 +1,16 @@
 <script>
-	import {setContext, onMount} from 'svelte';
+	import {onMount} from 'svelte';
 
 	import groups from 'app/data/indicatorsGroups.json';
 	import Timeline from 'app/components/Timeline.svelte';
 	import {
 		availableYearsStore,
+		disableBanner,
+		isBannerActiveStore,
 		selectedYearStore,
 		timelineHeightStore,
-		timelineLayoutStore,
 		timelineWidthStore,
 	} from 'app/stores';
-
-	setContext('layout', {timelineLayoutStore});
 
 	onMount(() => {
 		current && current.scrollIntoView({
