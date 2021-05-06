@@ -1,4 +1,4 @@
-# 0.0.16 (next release)
+# 0.0.16 (staging release)
 
 ## Indicators
 
@@ -13,7 +13,7 @@
 - Add a staging banner
 - Updated Svizzle dependencies
 
-# 0.0.15 (staging release)
+# 0.0.15
 
 ## Indicators
 
