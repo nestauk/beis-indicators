@@ -152,37 +152,36 @@
 	}
 
 	svg .xref text {
-		stroke: none;
-		fill: grey;
 		dominant-baseline: hanging;
-		text-anchor: middle;
+		fill: grey;
 		font-size: 10px;
-		/* cursor: pointer; */
+		stroke: none;
+		text-anchor: middle;
 	}
 
 	svg .indicatorsrange line {
-		stroke: black;
-		stroke-width: 0.7;
 		pointer-events: none;
+		stroke-width: 0.7;
+		stroke: black;
 	}
 
 	svg .indicatorsrange text {
-		stroke: none;
-		fill: rgb(70, 70, 70);
 		dominant-baseline: middle;
-		text-anchor: middle;
+		fill: rgb(70, 70, 70);
 		pointer-events: none;
+		stroke: none;
+		text-anchor: middle;
 	}
 	svg .indicatorsrange text.bkg {
-		stroke: white;
 		stroke-width: 5;
+		stroke: white;
 	}
 
 	svg .indicatorsrange circle {
+		cursor: pointer;
 		fill-opacity: 1;
 		fill: white;
-		stroke: black;
 		stroke-width: 1.5;
-		cursor: pointer;
+		stroke: black;
 	}
 </style>

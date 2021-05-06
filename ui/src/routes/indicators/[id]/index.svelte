@@ -485,14 +485,14 @@
 	.container {
 		--indicators-h1-height: 4.5rem;
 		height: 100%;
-		width: 100%;
 		user-select: none;
+		width: 100%;
 	}
 
 	header {
-		height: var(--indicators-h1-height);
-		display: flex;
 		align-items: center;
+		display: flex;
+		height: var(--indicators-h1-height);
 		justify-content: space-between;
 	}
 	header div:nth-child(1) {
@@ -502,9 +502,9 @@
 		margin: 0;
 	}
 	header div:nth-child(1) p {
-		font-style: italic;
-		font-size: 1rem;
 		color: grey;
+		font-size: 1rem;
+		font-style: italic;
 	}
 	header div:nth-child(2) {
 		align-items: center;
@@ -542,8 +542,8 @@
 		padding: 0.25rem;
 	}
 	.optgroup {
-		display: flex;
 		align-items: center;
+		display: flex;
 		padding: 0.25rem;
 	}
 
@@ -556,24 +556,24 @@
 	}
 
 	svg .ref line {
-		stroke: var(--color-grey-180);
 		pointer-events: none;
+		stroke: var(--color-grey-180);
 	}
 	svg .x line {
-		stroke-dasharray: 2 2;
 		pointer-events: none;
+		stroke-dasharray: 2 2;
 	}
 	svg text {
-		fill: var(--color-grey-70);
 		dominant-baseline: middle;
+		fill: var(--color-grey-70);
 		font-weight: var(--dim-fontsize-light);
-		stroke: none;
 		pointer-events: none;
+		stroke: none;
 	}
 	svg text.label,
 	svg text.message {
-		text-anchor: middle;
 		dominant-baseline: middle;
+		text-anchor: middle;
 	}
 	svg text.label tspan:nth-child(1) {
 		font-weight: bold;
@@ -593,43 +593,43 @@
 		pointer-events: none;
 	}
 	svg path.focused {
-		stroke-width: 3;
-		stroke-opacity: 1 !important;
 		stroke-dasharray: 10 4;
+		stroke-opacity: 1 !important;
+		stroke-width: 3;
 	}
 	svg path.preselected {
-		stroke-width: 2;
-		stroke-opacity: 1 !important;
 		stroke-dasharray: 10 4;
+		stroke-opacity: 1 !important;
+		stroke-width: 2;
 	}
 	svg path.dimmed {
 		stroke-opacity: 0.6;
 	}
 	svg path.deselected {
-		stroke-width: 0.75;
 		stroke-opacity: 0.25;
+		stroke-width: 0.75;
 	}
 
 	svg circle {
 		fill: white;
-		stroke: black;
-		stroke-width: 1.5;
 		pointer-events: none;
+		stroke-width: 1.5;
+		stroke: black;
 	}
 
 	/* marker */
 
 	svg .marker text {
-		fill: black;
 		dominant-baseline: middle;
+		fill: black;
 		pointer-events: none;
 	}
 	svg .marker text.bkg {
 		fill: none;
-		stroke: white;
+		stroke-linecap: round;
+		stroke-linecap: round;
 		stroke-width: 5;
-		stroke-linecap: round;
-		stroke-linecap: round;
+		stroke: white;
 	}
 	svg .marker .right text {
 		text-anchor: end;

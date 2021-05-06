@@ -39,10 +39,10 @@
 
 <style>
 	header {
-		height: var(--dim-header-height);
-		width: 100%;
-		padding: 0 var(--dim-padding);
 		border-bottom: 1px solid var(--color-main-lighter);
+		height: var(--dim-header-height);
+		padding: 0 var(--dim-padding);
+		width: 100%;
 	}
 
 	main {
@@ -67,10 +67,10 @@
 		width: 50%;
 	}
 	.banner header {
-		display: flex;
 		align-items: center;
 		background-color: red;
 		color: yellow;
+		display: flex;
 		padding: 1rem;
 	}
 	.banner header .title {

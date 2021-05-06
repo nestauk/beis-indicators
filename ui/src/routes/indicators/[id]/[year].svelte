@@ -511,14 +511,14 @@
 	.container {
 		--indicators-h1-height: 4.5rem;
 		height: 100%;
-		width: 100%;
 		user-select: none;
+		width: 100%;
 	}
 
 	.container > header {
-		height: var(--indicators-h1-height);
-		display: flex;
 		align-items: center;
+		display: flex;
+		height: var(--indicators-h1-height);
 		justify-content: space-between;
 	}
 
@@ -529,15 +529,15 @@
 		margin: 0;
 	}
 	.container > header div:nth-child(1) p {
-		font-style: italic;
-		font-size: 1rem;
 		color: grey;
+		font-size: 1rem;
+		font-style: italic;
 	}
 	.container > header div:nth-child(2) {
-		display: flex;
 		align-items: center;
-		justify-content: space-between;
 		cursor: pointer;
+		display: flex;
+		justify-content: space-between;
 	}
 
 	section {
@@ -568,8 +568,8 @@
 		padding: 0.25rem;
 	}
 	.optgroup {
-		display: flex;
 		align-items: center;
+		display: flex;
 		padding: 0.25rem;
 	}
 
@@ -616,27 +616,27 @@
 		text-anchor: end;
 	}
 	.cities text.background {
-		fill: white;
 		fill-opacity: 0.8;
-		stroke: white;
+		fill: white;
 		stroke-opacity: 0.8;
 		stroke-width: 4;
+		stroke: white;
 	}
 
 	/* tooltip */
 
 	.tooltip {
-		position: absolute;
-		pointer-events: none;
-		border: 1px solid black;
 		background-color: white;
+		border: 1px solid black;
 		color: black;
+		pointer-events: none;
+		position: absolute;
 	}
 	.tooltip header {
+		align-items: center;
 		background-color: var(--color-grey-40);
 		color: white;
 		display: flex;
-		align-items: center;
 		justify-content: space-between;
 		padding: 0.3rem;
 	}
@@ -644,8 +644,8 @@
 		margin-right: 1rem;
 	}
 	.tooltip div {
-		display: flex;
 		align-items: center;
+		display: flex;
 		padding: 0.3rem;
 	}
 
@@ -659,7 +659,7 @@
 		width: 100%;
 	}
 	.message span {
-		font-size: var(--messageFontSize);
 		color: var(--messageColor);
+		font-size: var(--messageFontSize);
 	}
 </style>

@@ -94,28 +94,25 @@
 
 <style>
 	.layout {
-		height: 100%;
-		width: 100%;
-
 		--sidebarWidth: 340px;
-
 		display: grid;
 		grid-template-columns: var(--sidebarWidth) calc(100% - var(--sidebarWidth));
 		grid-template-rows: 100%;
+		height: 100%;
+		width: 100%;
 	}
 
 	/* sidebar */
 
 	nav {
-		height: 100%;
-		width: 100%;
-		padding: var(--dim-padding);
-		overflow-y: auto;
-
 		background-color: var(--color-main);
 		border-right: 1px solid var(--color-main-lighter);
 		color: white;
 		font-weight: var(--dim-fontsize-light);
+		height: 100%;
+		overflow-y: auto;
+		padding: var(--dim-padding);
+		width: 100%;
 	}
 
 	nav .group:not(:last-child) {
@@ -133,37 +130,37 @@
 		text-decoration: none;
 	}
 	nav p {
-		line-height: 1.5rem;
-		display: flex;
 		align-items: center;
-		padding: 0.4rem;
+		display: flex;
+		line-height: 1.5rem;
 		margin-bottom: 0.5rem;
+		padding: 0.4rem;
 	}
 	nav p.selected {
 		background-color: var(--color-main-desat-50) !important;
 		font-family: 'Open Sans Regular', sans-serif;
 	}
 	nav p:hover {
-		cursor: pointer;
 		background-color: var(--color-selected);
+		cursor: pointer;
 	}
 
 	/* content */
 
 	.content {
 		display: grid;
-		grid-template-rows: calc(100% - 60px) 60px;
 		grid-template-columns: 100%;
+		grid-template-rows: calc(100% - 60px) 60px;
 	}
 	.content section {
 		height: 100%;
-		width: 100%;
 		padding: var(--dim-padding) var(--dim-padding) 0 var(--dim-padding);
+		width: 100%;
 	}
 	.content nav {
-		height: 100%;
-		width: 100%;
 		background-color: var(--color-paleyellow) !important;
+		height: 100%;
 		padding: 0 var(--dim-padding);
+		width: 100%;
 	}
 </style>
