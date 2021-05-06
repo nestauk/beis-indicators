@@ -98,7 +98,7 @@ for sal,code,suffix in zip([nuts_2_mean_salary,nuts_3_mean_salary],
     #Make indicator
     ind = make_indicator(sal,
                          {'mean_salary':'ashe_mean_salary'},
-                        'DATE',nuts_var=code,nuts_spec=2018)
+                        'DATE',nuts_var=code,nuts_spec=2016)
 
     #Save the indicator
     save_indicator(ind,TARGET_PATH,f'ashe_mean_salary.{suffix}')
