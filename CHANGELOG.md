@@ -4,7 +4,7 @@
 
 - add ASHE mean salary indicators and schemas (#94)
 - Correction in framework group for APS (STEM associate professionals) indicators (#416)
-
+- Corrected NUTS spec year in for ASHE Mean Salary data collection script and indicators (#424)
 
 ## Tool
 
