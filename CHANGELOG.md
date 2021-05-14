@@ -1,4 +1,4 @@
-# 0.0.17 (next release)
+# 0.0.17 (staging release)
 
 ## Indicators
 
@@ -23,7 +23,7 @@
     - STEM associate professionals (was in Public R&D)
 
 
-# 0.0.16 (staging release)
+# 0.0.16
 
 ## Indicators
 
