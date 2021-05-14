@@ -4,7 +4,7 @@ data_date: 20200820
 title: Area of university site
 subtitle: Area of university sites for universities in the LEP region
 endpoint_url: https://www.hesa.ac.uk/data-and-analysis/estates/data.csv
-framework_group: public_rnd_capability
+framework_group: public_rnd
 is_experimental: False
 order: [year, lep_id, lep_year_spec, value.id]
 region:

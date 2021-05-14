@@ -11,7 +11,7 @@ subtitle: Salary data is available at the Local Authority District levels so we 
 endpoint_url:
   Annual Survey of Hours and Earnings resident data (ASHE): https://www.nomisweb.co.uk/api/v01/dataset/NM_30_1.data.csv
   Business Register Employment Survey (BRES): https://www.nomisweb.co.uk/api/v01/dataset/NM_189_1.data.csv
-framework_group: public_rnd_capability
+framework_group: public_rnd
 is_experimental: True
 is_public: True
 order: [year, nuts_id, nuts_year_spec, value.id]

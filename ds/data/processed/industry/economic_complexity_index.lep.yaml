@@ -4,7 +4,7 @@ data_date: 20200218
 title: Economic Complexity Index
 subtitle: This indicator measures the economic complexity of LEP locations based on an analysis of its industrial composition ((based on Nesta sectoral definition, which clusters 4-digit SIC codes based on their similarity))
 endpoint_url: http://www.nomisweb.co.uk/api/v01/dataset/
-framework_group: business_rnd_capacity
+framework_group: private_rnd
 is_experimental: True
 order: [year, lep_id, lep_year_spec, value.id]
 region:

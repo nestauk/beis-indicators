@@ -7,7 +7,7 @@ endpoint_url:
   2013: http://www.nomisweb.co.uk/api/v01/dataset/NM_17_5.data.csv?geography=TYPE449&date=2015-12,2014-12,2013-12&variable=1543&measures=20599,21001,21002,21003&select=date,date_name,date_code,geography_type,geography_code,measures_name,variable,variable_name,obs_value,obs_status_name,obs_status,record_count,
   2016: http://www.nomisweb.co.uk/api/v01/dataset/NM_17_5.data.csv?geography=TYPE437&date=2019-12,2018-12,2017-12,2016-12&variable=1543&measures=20599,21001,21002,21003&select=date,date_name,date_code,geography_type,geography_code,measures_name,variable,variable_name,obs_value,obs_status_name,obs_status,record_count
   # nuts_spec_year: endpoint_url
-framework_group: business_rnd_capacity
+framework_group: private_rnd
 is_experimental: False
 order: [year, nuts_id, nuts_year_spec, value.id] # do not change; specifies the order of the exported indicator fields
 region:

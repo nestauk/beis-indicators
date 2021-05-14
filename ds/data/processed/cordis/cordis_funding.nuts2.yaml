@@ -7,7 +7,7 @@ subtitle: Sum of all European Commission funding awarded to organisations as par
 endpoint_url:
   H2020 projects: https://cordis.europa.eu/data/cordis-h2020projects-xml.zip
   H2020 project descriptions: https://cordis.europa.eu/data/cordis-h2020projects.csv
-framework_group: public_rnd_capability
+framework_group: public_rnd
 is_experimental: False
 is_public: True
 order: [year, nuts_id, nuts_year_spec, value.id]

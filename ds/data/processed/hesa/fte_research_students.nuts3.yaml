@@ -3,7 +3,7 @@ api_type: FETCH
 title: Number of research students (FTE)
 subtitle: Aggregate of Full Time Equivalent (FTE) of research students enrolled in universities in the NUTS3 region
 endpoint_url: https://www.hesa.ac.uk/data-and-analysis/estates/data.csv
-framework_group: public_rnd_capability
+framework_group: public_rnd
 is_experimental: False
 order: [year, nuts_id, nuts_year_spec, value.id]
 region:

@@ -26,14 +26,14 @@
 
 		<p>Our indicators are arranged in four broad categories.<p>
 
-		<h3>Public R&D Capability</h3>
+		<h3>Public R&D</h3>
 		<p>Measuring the quantity and excellence of R&D activity taking place in higher education institutions in a region.<p>
-
-		<h3>Business R&D Capability</h3>
-		<p>Measuring the level of R&D activity and innovative outputs in the private sector in a region.<p>
 
 		<h3>Knowledge exchange</h3>
 		<p>Measuring the connectivity between higher education institutions in a region and the wider economy.<p>
+
+		<h3>Private R&D</h3>
+		<p>Measuring the level of R&D activity and innovative outputs in the private sector in a region.<p>
 
 		<h3>Place potential</h3>
 		<p>Measuring wider infrastructures and framework conditions in a region that might drive - or hinder - its innovative performance.</p>

@@ -3,7 +3,7 @@ api_type: FETCH
 title: STEM employee density
 subtitle: Percentage of population employed in science, research, engineering and technology professional by LEP regions.
 endpoint_url: http://www.nomisweb.co.uk/api/v01/dataset/NM_17_5.data.csv?geography=TYPE459&date=2019-12,2018-12,2017-12,2016-12,2015-12,2014-12,2013-12,2012-12,2011-12,2010-12&variable=1543&measures=20599,21001,21002,21003&select=date,date_name,date_code,geography_type,geography_code,measures_name,variable,variable_name,obs_value,obs_status_name,obs_status,record_count
-framework_group: business_rnd_capacity
+framework_group: private_rnd
 is_experimental: False
 order: [year, lep_id, lep_year_spec, value.id] # do not change; specifies the order of the exported indicator fields
 region:

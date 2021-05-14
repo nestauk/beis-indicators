@@ -1,30 +1,30 @@
 [{
-    "description": "Existing capability to perform public R&D",
-    "id": "public_rnd_capability",
-    "label": "Public R&D capability",
-    "order": 1
+	"description": "Existing capability to perform public R&D",
+	"id": "public_rnd",
+	"label": "Public R&D",
+	"order": 1
 },
 {
-    "description": "Business absorptive capacity and private R&D investment",
-    "id": "business_rnd_capacity",
-    "label": "Business R&D capacity",
-    "order": 2
+	"description": "Knowledge exchange and university commercialisation",
+	"id": "knowledge_exchange",
+	"label": "Knowledge exchange and university commercialisation",
+	"order": 2
 },
 {
-    "description": "Knowledge exchange and commercialisation",
-    "id": "knowledge_exchange",
-    "label": "Knowledge exchange",
-    "order": 3
+	"description": "Business absorptive capacity and private R&D investment",
+	"id": "private_rnd",
+	"label": "Private R&D",
+	"order": 3
 },
 {
-    "description": "Place potential to attract researchers and innovators",
-    "id": "place_potential",
-    "label": "Place potential",
-    "order": 4
+	"description": "Place potential to attract researchers and innovators",
+	"id": "place_potential",
+	"label": "Places attracting R&D firms and workers",
+	"order": 4
 },
 {
-    "description": "Challenge oriented activity",
-    "id": "challenge_activity",
-    "label": "Challenge oriented activity",
-    "order": 5
+	"description": "Challenge oriented activity",
+	"id": "challenge_activity",
+	"label": "Challenge oriented activity",
+	"order": 5
 }]

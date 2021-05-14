@@ -5,7 +5,7 @@ data_date: 20200222
 title: STEM projects led by organisations in the region
 subtitle: Total number of projects led by organisations in the NUTS area in STEM subjects (see aux/gtr_stem_disciplines for the stem disciplines we are considering)
 endpoint_url: https://s3.console.aws.amazon.com/s3/object/nesta-data-getters/17_9_2019_gtr_orgs.csv
-framework_group: public_rnd_capability
+framework_group: public_rnd
 is_experimental: True
 is_public: False
 nuts_level: 2

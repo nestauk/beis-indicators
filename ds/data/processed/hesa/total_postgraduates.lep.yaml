@@ -3,7 +3,7 @@ api_type: FETCH
 title: Total number of postgraduates
 subtitle: Number of postgraduate (research) students enrolled full-time in universities in a LEP region in the starting academic year.
 endpoint_url: https://www.hesa.ac.uk/data-and-analysis/students/table-13.csv
-framework_group: public_rnd_capability
+framework_group: public_rnd
 is_experimental: False
 order: [year, lep_id, lep_year_spec, value.id]
 region:

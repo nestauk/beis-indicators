@@ -1,3 +1,28 @@
+# 0.0.17 (next release)
+
+## Indicators
+
+- Rename/reorder groups and regroup some indicators (#432):
+  - Rename groups like this:
+
+    Old name | New name
+    -- | --
+    Public R&D Capability | Public R&D
+    Business R&D capacity | Private R&D
+    Knowledge exchange | Knowledge exchange and university commercialisation
+    Place potential | Places attracting R&D firms and workers
+
+  - Reordered the four dimensions of the framework like this:
+    - Public R&D
+    - Knowledge exchange and university commercialisation
+    - Private R&D
+    - Places attracting R&D firms and workers
+
+  - Moved two indicators to Private R&D:
+    - STEM professionals (was in Public R&D)
+    - STEM associate professionals (was in Public R&D)
+
+
 # 0.0.16 (staging release)
 
 ## Indicators
@@ -10,8 +35,8 @@
 
 - The timeline navigation buttons support uneven distributions (#403)
 - Fix the `/guide` page title (#419)
-- Add a staging banner
-- Updated Svizzle dependencies
+- Add a staging banner (#422)
+- Updated Svizzle dependencies (#422)
 
 # 0.0.15
 
