@@ -10,28 +10,47 @@ from beis_indicators.utils.dir_file_management import make_indicator, save_indic
 
 PROJECT_DIR = beis_indicators.project_dir
 TARGET_PATH = f"{PROJECT_DIR}/data/processed/eurostat"
+YEARS = ["2010", "2013"]
 
-# We need to collect NUTS tables for 2010 (patents) and 2013 (trademarks)
-nuts_codes = {"2010": {}, "2013": {}}
 
-# Only get the data if we don't have it already
-for y in ["2010", "2013"]:
-    file = f"NUTS_{y}.xls"
-    if os.path.exists(f"{PROJECT_DIR}/data/aux/{file}") == False:
+def save_nuts_table(year, aux_path=f"{PROJECT_DIR}/data/aux/"):
+    """Saves nuts table if does not exist already
+
+    Args:
+        year (str): year for which to download nuts table for
+        aux_path (str): path to save nuts table to. Defaults to f'{PROJECT_DIR}/data/aux/'.
+    """
+    file = f"NUTS_{year}.xls"
+    if os.path.exists(f"{aux_path}{file}") == False:
         nuts = requests.get(
-            f"https://ec.europa.eu/eurostat/ramon/documents/nuts/NUTS_{y}.zip"
+            f"https://ec.europa.eu/eurostat/ramon/documents/nuts/NUTS_{year}.zip"
         )
         z = ZipFile(BytesIO(nuts.content))
-        z.extract(file, path=f"{PROJECT_DIR}/data/aux/")
+        z.extract(file, path=aux_path)
 
-    nuts_table = pd.read_excel(f"{PROJECT_DIR}/data/aux/{file}")
 
+def set_nuts_codes(year):
+    """Set nuts2 and nuts3 country codes values in dictionary
+
+    Args:
+        year (str): year to set values for
+    """
+    nuts_table = pd.read_excel(f"{PROJECT_DIR}/data/aux/NUTS_{year}.xls")
     for l in [2, 3]:
-        nuts_codes[y][l] = set(
+        nuts_codes[year][l] = set(
             nuts_table.loc[
                 (nuts_table["COUNTRY CODE"] == "UK") & (nuts_table["NUTS LEVEL"] == l)
             ]["NUTS CODE"]
         )
+
+
+# create dict with year as keys and empty dicts as values
+nuts_codes = {year: {} for year in YEARS}
+for year in YEARS:
+    # save nuts table if it does not exist already
+    save_nuts_table(year)
+    # populate dict with correct nuts2 and nuts3 country codes
+    set_nuts_codes(year)
 
 # Collect the patent and trademark data from Eurostat
 pats = es.get_data_df("pat_ep_rtot").query("unit == 'NR'")
