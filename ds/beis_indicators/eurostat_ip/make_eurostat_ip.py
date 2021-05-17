@@ -19,7 +19,8 @@ for y in ['2010','2013']:
     file = f'NUTS_{y}.xls'
     if os.path.exists(f'{PROJECT_DIR}/data/aux/{file}')==False:
         nuts = requests.get(
-            'https://ec.europa.eu/eurostat/ramon/documents/nuts/NUTS_{y}.zip')
+            f'https://ec.europa.eu/eurostat/ramon/documents/nuts/NUTS_{y}.zip'
+            )
         z = ZipFile(BytesIO(nuts.content))
         z.extract(file,path=f'{PROJECT_DIR}/data/aux/')
 
@@ -32,14 +33,15 @@ for y in ['2010','2013']:
 
 # Collect the patent and trademark data from Eurostat
 pats = es.get_data_df('pat_ep_rtot').query("unit == 'NR'")
+high_tech_pats = es.get_data_df('pat_ep_rtec').query("unit == 'NR'")
 trades = es.get_data_df('ipr_ta_reg')
 
 # For each NUTS codes list and name
 for nuts_level,level in zip([2,3],['nuts2','nuts3']):
     
     # For each table and variable name
-    for d,name in zip([pats,trades],
-                      ['epo_patent_applications','eu_trademark_applications']):
+    for d,name in zip([pats,high_tech_pats,trades],
+                      ['epo_patent_applications','epo_hightech_patent_applications','eu_trademark_applications']):
         
         # Extract nuts codes depending on the variable (patents are 2010)
         if 'patent' in name:
@@ -51,13 +53,13 @@ for nuts_level,level in zip([2,3],['nuts2','nuts3']):
         sel = d.loc[
             [x in nuts_list for x in d['geo\\time']]].reset_index(
             drop=True).drop('unit',1).melt(id_vars='geo\\time').query(
-            "variable > 2005")
+                "variable in [2006,2007,2008,2009,2010,2011,2012]")
         
         # Make indicator
         if 'patent' in name:
-            nuts_spec =2010
+            nuts_spec = 2010
         else:
-            nuts_spec =2013
+            nuts_spec = 2013
 
         ind = make_indicator(sel,{'value':name},year_var='variable',nuts_var='geo\\time',
                     nuts_spec=nuts_spec)
@@ -67,4 +69,3 @@ for nuts_level,level in zip([2,3],['nuts2','nuts3']):
         
         # Save indicator
         save_indicator(ind,TARGET_PATH,f"{name}.{level}")
-    
