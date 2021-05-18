@@ -55,13 +55,18 @@ for year in YEARS:
 # Collect the patent and trademark data from Eurostat
 pats = es.get_data_df("pat_ep_rtot").query("unit == 'NR'")
 high_tech_pats = es.get_data_df("pat_ep_rtec").query("unit == 'NR'")
+high_tech_pats_years = [col for col in high_tech_pats.columns if isinstance(col, int)]
+high_tech_pats = (
+    high_tech_pats.groupby(["unit", "geo\\time"])[high_tech_pats_years]
+    .sum()
+    .reset_index()
+)
 trades = es.get_data_df("ipr_ta_reg")
 
 # For each NUTS codes list and name
 for nuts_level, level in zip([2, 3], ["nuts2", "nuts3"]):
-
     # For each table and variable name
-    for d, name in zip(
+    for data, name in zip(
         [pats, high_tech_pats, trades],
         [
             "epo_patent_applications",
@@ -69,7 +74,6 @@ for nuts_level, level in zip([2, 3], ["nuts2", "nuts3"]):
             "eu_trademark_applications",
         ],
     ):
-
         # Extract nuts codes depending on the variable (patents are 2010)
         if "patent" in name:
             nuts_list = nuts_codes["2010"][nuts_level]
@@ -78,7 +82,7 @@ for nuts_level, level in zip([2, 3], ["nuts2", "nuts3"]):
 
         # Select the data. We will focus on activity after 2005
         sel = (
-            d.loc[[x in nuts_list for x in d["geo\\time"]]]
+            data.loc[[x in nuts_list for x in data["geo\\time"]]]
             .reset_index(drop=True)
             .drop("unit", 1)
             .melt(id_vars="geo\\time")
@@ -103,4 +107,4 @@ for nuts_level, level in zip([2, 3], ["nuts2", "nuts3"]):
         logging.info(str(max(ind["year"])))
 
         # Save indicator
-        save_indicator(ind, TARGET_PATH, f"{name}.{level}")
+        save_indicator(ind, TARGET_PATH, f"{name}.{level}.TEST")
