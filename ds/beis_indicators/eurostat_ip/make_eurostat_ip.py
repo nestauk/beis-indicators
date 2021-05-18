@@ -44,7 +44,47 @@ def set_nuts_codes(year):
         )
 
 
-# create dict with year as keys and empty dicts as values
+def create_nuts_list_spec(name):
+    """Create nuts_list and nuts_spec from particular nuts
+    codes as they were in a certain year. Dependent on whether
+    patent is in the name.
+
+    Args:
+        name (str): descriptive name of data
+
+    Returns:
+        (list): list of relevant nuts codes
+        (int): year for nuts_spec
+    """
+    if "patent" in name:
+        nuts_list = nuts_codes["2010"][nuts_level]
+        nuts_spec = 2010
+    else:
+        nuts_list = nuts_codes["2013"][nuts_level]
+        nuts_spec = 2013
+    return nuts_list, nuts_spec
+
+
+def select_data(data, output_years):
+    """Reformat data and select relevant years
+
+    Args:
+        data (pd.DataFrame): eurostat data
+        output_years (list): years to output data for
+
+    Returns:
+        (pd.Dataframe): reformated and filtered data
+    """
+    output_years = str(output_years)
+    return (
+        data.loc[[x in nuts_list for x in data["geo\\time"]]]
+        .reset_index(drop=True)
+        .drop("unit", 1)
+        .melt(id_vars="geo\\time")
+        .query(f"variable in {output_years}")
+    )
+
+
 nuts_codes = {year: {} for year in YEARS}
 for year in YEARS:
     # save nuts table if it does not exist already
@@ -52,10 +92,12 @@ for year in YEARS:
     # populate dict with correct nuts2 and nuts3 country codes
     set_nuts_codes(year)
 
-# Collect the patent and trademark data from Eurostat
+# collect the patent and trademark data from Eurostat
 pats = es.get_data_df("pat_ep_rtot").query("unit == 'NR'")
 high_tech_pats = es.get_data_df("pat_ep_rtec").query("unit == 'NR'")
+# find years from columns
 high_tech_pats_years = [col for col in high_tech_pats.columns if isinstance(col, int)]
+# groupby sum to remove column for international patent classification (ipc)
 high_tech_pats = (
     high_tech_pats.groupby(["unit", "geo\\time"])[high_tech_pats_years]
     .sum()
@@ -63,9 +105,7 @@ high_tech_pats = (
 )
 trades = es.get_data_df("ipr_ta_reg")
 
-# For each NUTS codes list and name
 for nuts_level, level in zip([2, 3], ["nuts2", "nuts3"]):
-    # For each table and variable name
     for data, name in zip(
         [pats, high_tech_pats, trades],
         [
@@ -74,27 +114,11 @@ for nuts_level, level in zip([2, 3], ["nuts2", "nuts3"]):
             "eu_trademark_applications",
         ],
     ):
-        # Extract nuts codes depending on the variable (patents are 2010)
-        if "patent" in name:
-            nuts_list = nuts_codes["2010"][nuts_level]
-        else:
-            nuts_list = nuts_codes["2013"][nuts_level]
-
-        # Select the data. We will focus on activity after 2005
-        sel = (
-            data.loc[[x in nuts_list for x in data["geo\\time"]]]
-            .reset_index(drop=True)
-            .drop("unit", 1)
-            .melt(id_vars="geo\\time")
-            .query("variable in [2006,2007,2008,2009,2010,2011,2012]")
-        )
-
-        # Make indicator
-        if "patent" in name:
-            nuts_spec = 2010
-        else:
-            nuts_spec = 2013
-
+        # extract nuts codes and spec depending on the name (patents are 2010)
+        nuts_list, nuts_spec = create_nuts_list_spec(name)
+        # select the data, set date range to 2006 onwards
+        sel = select_data(data, list(range(2006, 2025)))
+        # make indicator
         ind = make_indicator(
             sel,
             {"value": name},
@@ -102,9 +126,8 @@ for nuts_level, level in zip([2, 3], ["nuts2", "nuts3"]):
             nuts_var="geo\\time",
             nuts_spec=nuts_spec,
         )
-
+        # log max and min years in the data
         logging.info(str(min(ind["year"])))
         logging.info(str(max(ind["year"])))
-
-        # Save indicator
-        save_indicator(ind, TARGET_PATH, f"{name}.{level}.TEST")
+        # save indicator
+        save_indicator(ind, TARGET_PATH, f"{name}.{level}")
