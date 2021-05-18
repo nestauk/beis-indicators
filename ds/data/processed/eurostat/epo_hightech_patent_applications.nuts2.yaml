@@ -26,4 +26,4 @@ schema:
     label: Year
 source_name: Eurostat
 source_url: https://ec.europa.eu/eurostat
-warning: The regional breakdown of the EU Member States is based on the Nomenclature of Territorial Units for Statistics – NUTS 2010 level 3
+warning: The regional breakdown of the EU Member States is based on the Nomenclature of Territorial Units for Statistics – NUTS 2010 level 2
