@@ -1,3 +1,9 @@
+# 0.0.18 (next release)
+
+## Indicators
+
+- Added high tech patent applications indicator (#431)
+
 # 0.0.17 (staging release)
 
 ## Indicators

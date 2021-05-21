@@ -1,0 +1,29 @@
+api_doc_url: https://ec.europa.eu/eurostat/cache/metadata/en/pat_esms.htm
+api_type: FETCH
+data_date: 20210518
+description: High tech patent applications are a proxy for high tech inventions. We focus on applications to the European Patent Office (EPO). The year is the priority year for the patent i.e. the first year that the patent was filed with any patenting authority. There are significant lags between patent applications and publication, which explains the low timeliness of the data.
+title: High tech patent applications (EPO)
+subtitle: Count of high tech patent applications normalised by the number of applicants in a patent if there are more than one
+endpoint_url: https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=pat_ep_rtec&lang=en
+framework_group: knowledge_exchange
+is_experimental: False
+is_public: True
+order: [year, nuts_id, nuts_year_spec, value.id]
+region:
+  type: NutsRegion
+  level: 2
+schema:
+  nuts_id:
+    type: NutsRegion.nuts_id
+  nuts_year_spec:
+    type: NutsRegion.nuts_year_spec
+  value:
+    data_type: int
+    id: epo_hightech_patent_applications
+    label: High tech patent applications
+  year:
+    data_type: int
+    label: Year
+source_name: Eurostat
+source_url: https://ec.europa.eu/eurostat
+warning: The regional breakdown of the EU Member States is based on the Nomenclature of Territorial Units for Statistics – NUTS 2010 level 2
