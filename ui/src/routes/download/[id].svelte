@@ -1,5 +1,5 @@
 <script context="module">
-	import {availableDownloadIds, basename} from 'app/utils';
+	import {availableDownloadIds, basename} from 'app/utils/assets';
 
 	const maxIndex = availableDownloadIds.length - 1;
 

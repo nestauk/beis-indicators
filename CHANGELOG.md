@@ -4,6 +4,11 @@
 
 - Added high tech patent applications indicator (#431)
 
+## Tool
+
+- Refactor:
+	- split utils (#437)
+
 # 0.0.17 (staging release)
 
 ## Indicators

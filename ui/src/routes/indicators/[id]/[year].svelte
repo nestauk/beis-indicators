@@ -59,11 +59,10 @@
 	import {
 		colorSelected,
 		getIndicatorFormat,
-		getNutsId,
 		getRefFormat,
 		makeValueAccessor,
-		parseCSV,
 	} from 'app/utils';
+	import {getNutsId, parseCSV} from 'app/utils/domain';
 
 	resetSafetyStore();
 

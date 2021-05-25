@@ -13,7 +13,7 @@ import cpy from 'cpy';
 import del from 'del';
 import tempy from 'tempy';
 
-import {basename} from 'app/utils';
+import {basename} from 'app/utils/assets';
 import LEP_UK_labels from 'app/data/LEP_UK_labels';
 import NUTS2_UK_labels from 'app/data/NUTS2_UK_labels';
 import NUTS3_UK_labels from 'app/data/NUTS3_UK_labels';

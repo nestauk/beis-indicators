@@ -1,6 +1,10 @@
 <script>
 	import LinkButton from '@svizzle/ui/src/LinkButton.svelte';
-	import {allNUTS2IndicatorsCsvName, availableDownloadIds, version} from 'app/utils';
+	import {
+		allNUTS2IndicatorsCsvName,
+		availableDownloadIds,
+	} from 'app/utils/assets';
+	import {version} from 'app/utils/version';
 
 	import theme from 'app/theme';
 

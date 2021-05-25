@@ -57,11 +57,9 @@
 	import {
 		colorSelected,
 		getIndicatorFormat,
-		getNutsId,
 		makeValueAccessor,
-		parseCSV,
-		sortAscByYear,
 	} from 'app/utils';
+	import {getNutsId, parseCSV, sortAscByYear} from 'app/utils/domain';
 
 	const makeSetOrderWith = accessor => _.pipe([
 		_.groupBy(_.getKey('year')),
