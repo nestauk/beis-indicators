@@ -5,6 +5,7 @@
 - Added high tech patent applications indicator (#431)
 - Added high tech employment indicator (#428)
 - Added location quotient of high tech employment indicator (#429)
+- Fixed `beis_indicators/nomis/nomis.py` (#439)
 
 ## Tool
 

@@ -1,5 +1,3 @@
-"""
-"""
 from io import StringIO
 import requests
 import os
@@ -12,19 +10,21 @@ from pandas import concat, crosstab, melt, read_csv, read_excel
 import beis_indicators
 from beis_indicators.utils.pandas import preview
 
+from beis_indicators.utils.dir_file_management import make_dirs
+
 logger = logging.getLogger(__name__)
 CELL_LIMIT = 25_000
 REQUESTS_PER_SECOND = 2
 
 
 def _zero_pad(x, column, width=4):
-    """ Zero pad SIC4 codes missing leading zeros, such as 161 """
+    """Zero pad SIC4 codes missing leading zeros, such as 161"""
     x[column] = x[column].astype(str).apply(lambda x: x.zfill(width))
     return x
 
 
 def make_nomis(geo_type, year_l, project_dir=None):
-    """ Make NOMIS BRES & IDBR datasets
+    """Make NOMIS BRES & IDBR datasets
 
     Args:
         geo_type (str): Geography type to consider.
@@ -35,6 +35,8 @@ def make_nomis(geo_type, year_l, project_dir=None):
 
     if project_dir is None:
         project_dir = beis_indicators.project_dir
+
+    make_dirs("industry", ["raw", "interim"])
 
     # SIC4 <-> Nesta segement lookup
     fin = f"{beis_indicators.project_dir}/data/raw/sic_4_industry_segment_lookup.csv"
@@ -50,9 +52,7 @@ def make_nomis(geo_type, year_l, project_dir=None):
             raw_fout = (
                 f"{project_dir}/data/raw/industry/nomis_{dataset}_{year}_{geo_type}.csv"
             )
-            tidy_fout = (
-                f"{project_dir}/data/interim/industry/nomis_{dataset}_{year}_{geo_type}.csv"
-            )
+            tidy_fout = f"{project_dir}/data/interim/industry/nomis_{dataset}_{year}_{geo_type}.csv"
 
             # Fetch and save raw data if not present
             if os.path.exists(raw_fout):
@@ -82,7 +82,7 @@ def make_nomis(geo_type, year_l, project_dir=None):
 
 
 def get_nomis(dataset, geo_type, year):
-    """ Get BRES or IDBR datasets (SIC4) from NOMIS for given year and geography
+    """Get BRES or IDBR datasets (SIC4) from NOMIS for given year and geography
 
     Args:
         dataset (str, {'BRES', 'IDBR'}): BRES or IDBR
@@ -152,7 +152,7 @@ def get_nomis(dataset, geo_type, year):
 
 
 def make_gva(project_dir, year):
-    """ Make and save dataset of GVA per capita
+    """Make and save dataset of GVA per capita
 
     Args:
         project_dir (str):
@@ -183,7 +183,7 @@ def make_gva(project_dir, year):
 
 
 def make_lad_ttwa_map(project_dir):
-    """ Make lookup between TTWA's and LAD's
+    """Make lookup between TTWA's and LAD's
 
     Args:
         project_dir (str, optional):
@@ -213,7 +213,7 @@ def make_lad_ttwa_map(project_dir):
 
 @ratelim.patient(REQUESTS_PER_SECOND, time_interval=1)
 def query_nomis(link, offset_size=CELL_LIMIT):
-    """ Query NOMIS api with ratelimiting and pagination
+    """Query NOMIS api with ratelimiting and pagination
 
     Args:
         link (str): URL of NOMIS API query
@@ -296,7 +296,7 @@ def pivot_area_industry(df, sector, aggfunc=sum):
 
 
 def lad_to_ttwa(data, index, id_vars, project_dir=None):
-    """ Convert data[col] index by LAD to TTWA
+    """Convert data[col] index by LAD to TTWA
 
     Args:
         data (pandas.DataFrame): Input DataFrame
@@ -334,7 +334,7 @@ def lad_to_ttwa(data, index, id_vars, project_dir=None):
 
 
 def _check_geo_type_suffix(x):
-    """ Checks if `geo_type` suffix contains an `int` """
+    """Checks if `geo_type` suffix contains an `int`"""
     try:
         return int(x)
     except:
@@ -346,19 +346,3 @@ if __name__ == "__main__":
     geo_type = conf["geography"].upper()
     years = conf["years"]
     make_nomis(geo_type, years)
-
-    # Test pivot
-    f_test = (
-        f"{beis_indicators.project_dir}/data/processed/nomis_BRES_{years[0]}_{geo_type}.csv"
-    )
-    (
-        read_csv(f_test).fillna(0)
-        # Pivot to [areas x sectors]
-        .pivot_table(
-            index=["geo_cd", "geo_nm"],
-            columns="cluster_name",
-            values="value",
-            fill_value=0,
-            aggfunc="sum",
-        )
-    )
