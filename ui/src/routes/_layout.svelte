@@ -1,7 +1,8 @@
 <script>
 	import Icon from '@svizzle/ui/src/icons/Icon.svelte';
-	import XCircle from '@svizzle/ui/src/icons/feather/XCircle.svelte';
 	import AlertTriangle from '@svizzle/ui/src/icons/feather/AlertTriangle.svelte';
+	import XCircle from '@svizzle/ui/src/icons/feather/XCircle.svelte';
+
 	import Nav from 'app/components/Nav.svelte';
 	import {
 		disableBanner,

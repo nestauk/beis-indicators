@@ -8,6 +8,7 @@
 
 - Refactor:
 	- split utils (#437)
+	- Use `@svizzle/ui`'s icons (#441)
 
 # 0.0.17 (staging release)
 

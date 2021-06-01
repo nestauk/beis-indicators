@@ -24,14 +24,15 @@
 		transformValues,
 	} from '@svizzle/utils';
 	import ColorBinsG from '@svizzle/legend/src/ColorBinsG.svelte';
+	import Icon from '@svizzle/ui/src/icons/Icon.svelte';
+	import ChevronDown from '@svizzle/ui/src/icons/feather/ChevronDown.svelte';
+	import ChevronUp from '@svizzle/ui/src/icons/feather/ChevronUp.svelte';
+	import Globe from '@svizzle/ui/src/icons/feather/Globe.svelte';
+	import Info from '@svizzle/ui/src/icons/feather/Info.svelte';
 	import Switch from '@svizzle/ui/src/Switch.svelte';
 
 	import InfoModal from 'app/components/InfoModal/InfoModal.svelte';
 	import GeoFilterModal from 'app/components/GeoFilterModal.svelte';
-	import IconChevronDown from 'app/components/icons/IconChevronDown.svelte';
-	import IconChevronUp from 'app/components/icons/IconChevronUp.svelte';
-	import IconGlobe from 'app/components/icons/IconGlobe.svelte';
-	import IconInfo from 'app/components/icons/IconInfo.svelte';
 	import {lookup} from 'app/data/groups';
 	import yearlyKeyToLabel from 'app/data/NUTS2_UK_labels';
 	import types from 'app/data/types';
@@ -249,9 +250,10 @@
 			<p>{subtitle}</p>
 		</div>
 		<div on:click={toggleInfoModal}>
-			<IconInfo
-				size={30}
-				strokeWidth={1.5}
+			<Icon
+				glyph={Info}
+				size=30
+				strokeWidth=1.5
 			/>
 		</div>
 	</header>
@@ -263,15 +265,24 @@
 					class='globe clickable'
 					on:click={toggleGeoModal}
 				>
-					<IconGlobe
-						strokeWidth={1.5}
+					<Icon
+						glyph={Globe}
+						strokeWidth=1.5
 						stroke={$areThereUnselectedNUTS1Regions ? colorSelected : 'black'}
-						size={28}
+						size=28
 					/>
 					{#if $geoModalStore.isVisible}
-					<IconChevronUp strokeWidth={1} size={24} />
+						<Icon
+							glyph={ChevronUp}
+							size=24
+							strokeWidth=1
+						/>
 					{:else}
-					<IconChevronDown strokeWidth={1} size={24} />
+						<Icon
+							glyph={ChevronDown}
+							size=24
+							strokeWidth=1
+						/>
 					{/if}
 				</div>
 

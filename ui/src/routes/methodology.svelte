@@ -1,7 +1,7 @@
 <script>
+	import Download from '@svizzle/ui/src/icons/feather/Download.svelte';
 	import ExternalLink from '@svizzle/ui/src/ExternalLink.svelte';
 	import LinkButton from '@svizzle/ui/src/LinkButton.svelte';
-	import Download from '@svizzle/ui/src/icons/feather/Download.svelte';
 
 	import theme from 'app/theme';
 
