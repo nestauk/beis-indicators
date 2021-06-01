@@ -4,6 +4,7 @@
     "@svizzle/barchart": "^0.6.5",
     "@svizzle/choropleth": "^0.6.3",
     "@svizzle/legend": "^0.1.2",
+    "@svizzle/time_region_value": "^0.1.1",
     "@svizzle/ui": "^0.2.0",
     "@svizzle/utils": "^0.13.0",
     "compression": "^1.7.4",

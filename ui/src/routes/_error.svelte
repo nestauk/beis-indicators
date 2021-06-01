@@ -1,4 +1,6 @@
 <script>
+	import {isDev} from 'app/config';
+
 	export let status;
 	export let error;
 
@@ -13,7 +15,7 @@
 
 <p>{error.message}</p>
 
-{#if dev && error.stack}
+{#if isDev && error.stack}
 	<pre>{error.stack}</pre>
 {/if}
 
