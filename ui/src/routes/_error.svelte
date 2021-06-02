@@ -3,14 +3,12 @@
 
 	export let status;
 	export let error;
-
-	const dev = process.env.NODE_ENV === 'development';
 </script>
 
 <svelte:head>
 	<title>{status}</title>
 	<meta
-		content='Something got wrong, sorry!'
+		content='Something went wrong, sorry!'
 		name='description'
 	>
 </svelte:head>
