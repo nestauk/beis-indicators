@@ -1,18 +1,38 @@
 <script>
 	import ScreenGauge, {screen as _screen}
 		from '@svizzle/ui/src/gauges/screen/ScreenGauge.svelte';
+	import {onMount} from 'svelte';
 
 	import Banner from 'app/components/Banner.svelte';
+	import ColorCorrection from 'app/components/ColorCorrection.svelte';
 	import Nav from 'app/components/Nav.svelte';
+	import AccessibilityMenu from 'app/components/AccessibilityMenu.svelte';
 	import {isDev} from 'app/config';
 	import {_isBannerActive, disableBanner} from 'app/stores/banner';
+	import {
+		_a11yColorStyles,
+		_a11yTextStyles,
+		_isA11yDirty,
+		applyStyles,
+	} from 'app/stores/a11ySettings';
 
 	export let segment;
 
 	let contentHeight;
+	let rootStyle;
+	let showA11yMenu;
+
+	onMount(() => {
+		const root = document.documentElement;
+		rootStyle = root.style;
+	})
+
+	$: rootStyle && applyStyles(rootStyle, $_a11yTextStyles);
+	$: rootStyle && applyStyles(rootStyle, $_a11yColorStyles);
 </script>
 
 <ScreenGauge devMode={isDev} />
+<ColorCorrection />
 
 <section class={$_screen?.classes}>
 	<header>
@@ -20,11 +40,18 @@
 			{_screen}
 			{contentHeight}
 			{segment}
+			bind:showA11yMenu
+			isA11yDirty={$_isA11yDirty}
 		/>
 	</header>
 	<main bind:offsetHeight={contentHeight}>
 		<slot></slot>
 	</main>
+	{#if showA11yMenu}
+		<div class='accessibility'>
+			<AccessibilityMenu {_screen} />
+		</div>
+	{/if}
 </section>
 
 {#if $_isBannerActive}
@@ -39,16 +66,18 @@
 		display: grid;
 		grid-template-areas:
 			'content'
-			'nav';
-		grid-template-rows: 1fr min-content;
+			'nav'
+			'accessibility';
+		grid-template-rows: 1fr min-content min-content;
 		height: 100%;
 		overflow: hidden;
 	}
 	section.medium {
 		grid-template-areas:
 			'nav'
-			'content';
-		grid-template-rows: min-content 1fr;
+			'content'
+			'accessibility';
+		grid-template-rows: min-content 1fr min-content;
 	}
 	header {
 		border-top: 1px solid var(--color-main-lighter);
@@ -67,5 +96,8 @@
 		overflow: hidden;
 		position: relative;
 		width: 100%;
+	}
+	.accessibility {
+		grid-area: accessibility;
 	}
 </style>

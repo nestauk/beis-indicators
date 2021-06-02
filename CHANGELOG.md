@@ -14,6 +14,7 @@
 	- Use `@svizzle/time_region_value` (#443)
 - Add `<meta>` descriptions (#445)
 - Make the app skeleton responsive (#448)
+- Add the accessibility menu (#446)
 
 # 0.0.17 (staging release)
 
