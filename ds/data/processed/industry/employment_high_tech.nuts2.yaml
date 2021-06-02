@@ -1,0 +1,29 @@
+api_doc_url: https://www.nomisweb.co.uk/api/v01/help
+api_type: POST
+data_date: 20210601
+subtitle: Employment in high tech industries based on the Business Register Employment Survey
+title: Employment in high tech industries
+description: This indicator measures employment in high tech industries based on the Business Register Employment Survey. High tech industries are defined in terms of SIC-4 (industry) codes, using the definition in "The Geography of the UK's creative and high-tech economies" (https://media.nesta.org.uk/documents/geography_uks_creative_high-tech_economieswv20151.pdf) in table 6.1.3.4.
+endpoint_url: http://www.nomisweb.co.uk/api/v01/dataset/
+framework_group: place_potential
+is_experimental: True
+order: [year, nuts_id, nuts_year_spec, value.id]
+region:
+  type: NutsRegion
+  level: 2
+  source: PROVIDED
+schema:
+  region_id:
+    type: NutsRegion.nuts_id
+  region_year_spec:
+    type: NutsRegion.nuts_year_spec
+  value:
+    id: employment_high_tech
+    label: Employment in high tech industries
+    data_type: int
+  year:
+    data_type: int
+    label: Year
+source_name: NOMIS (official labour market statistics)
+source_url: https://www.nomisweb.co.uk
+warning: This indicator uses 2013 NUTS2 region spec for all years
