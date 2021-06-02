@@ -3,6 +3,7 @@
 	import ExternalLink from '@svizzle/ui/src/ExternalLink.svelte';
 	import LinkButton from '@svizzle/ui/src/LinkButton.svelte';
 
+	import {toolName} from 'app/config';
 	import theme from 'app/theme';
 
 	const crunchbaseUrl = 'https://www.crunchbase.com/';
@@ -20,6 +21,10 @@
 
 <svelte:head>
 	<title>BEIS indicators - Methodology</title>
+	<meta
+		content='{toolName}: methodology used to produce these indicators'
+		name='description'
+	>
 </svelte:head>
 
 <main>

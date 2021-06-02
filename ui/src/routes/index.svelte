@@ -1,6 +1,7 @@
 <script>
 	import LinkButton from '@svizzle/ui/src/LinkButton.svelte';
 
+	import {toolName} from 'app/config';
 	import theme from 'app/theme';
 
 	const beisUrl = 'https://www.gov.uk/government/organisations/department-for-business-energy-and-industrial-strategy';
@@ -10,6 +11,10 @@
 
 <svelte:head>
 	<title>BEIS indicators - Home</title>
+	<meta
+		content='{toolName}: homepage'
+		name='description'
+	>
 </svelte:head>
 
 <main>

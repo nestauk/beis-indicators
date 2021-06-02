@@ -18,6 +18,7 @@
 
 	/* data */
 
+	import {toolName} from 'app/config';
 	import types from 'app/data/types';
 	import {_lookup} from 'app/stores/data';
 	import {_availableYears, _selectedYear} from 'app/stores/selection';
@@ -40,6 +41,10 @@
 
 <svelte:head>
 	<title>BEIS indicators - {title} ({year})</title>
+	<meta
+		content='{toolName}: geographic distribution (NUTS2 regions) of the indicator: {title} ({year})'
+		name='description'
+	>
 </svelte:head>
 
 <IdYear

@@ -14,6 +14,7 @@
 	import * as _ from 'lamb';
 	import IdIndex from '@svizzle/time_region_value/src/routes/[id]/index.svelte';
 
+	import {toolName} from 'app/config';
 	import types from 'app/data/types';
 	import {_lookup} from 'app/stores/data';
 	import {
@@ -34,6 +35,10 @@
 
 <svelte:head>
 	<title>BEIS indicators - {title}</title>
+	<meta
+		content='{toolName}: temporal trends for each available NUTS2 region for the indicator: {title}'
+		name='description'
+	>
 </svelte:head>
 
 <IdIndex

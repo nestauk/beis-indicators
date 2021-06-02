@@ -1,9 +1,15 @@
 <script>
+	import {toolName} from 'app/config';
+
 	const userTestingUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSekqhPhm4VNDdQNmpbE0EjTQj8zruLw8mIyqJH5hV9z-Dytbw/viewform?embedded=true';
 </script>
 
 <svelte:head>
 	<title>BEIS indicators - Feedback</title>
+	<meta
+		content='{toolName}: a survey where you can leave your feedback on this tool'
+		name='description'
+	>
 </svelte:head>
 
 <main>

@@ -1,12 +1,13 @@
 <script>
 	import LinkButton from '@svizzle/ui/src/LinkButton.svelte';
+
+	import {toolName} from 'app/config';
+	import theme from 'app/theme';
 	import {
 		allNUTS2IndicatorsCsvName,
 		availableDownloadIds,
 	} from 'app/utils/assets';
 	import {version} from 'app/utils/version';
-
-	import theme from 'app/theme';
 
 	const csvWikiURL = 'https://en.wikipedia.org/wiki/Comma-separated_values';
 	const maxIndex = availableDownloadIds.length - 1;
@@ -14,6 +15,10 @@
 
 <svelte:head>
 	<title>BEIS indicators - Guide</title>
+	<meta
+		content='{toolName}: usage guide for this tool'
+		name='description'
+	>
 </svelte:head>
 
 <main>

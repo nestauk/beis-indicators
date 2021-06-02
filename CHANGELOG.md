@@ -11,6 +11,8 @@
 - Refactor:
 	- split utils (#437)
 	- Use `@svizzle/ui`'s icons (#441)
+	- Use `@svizzle/time_region_value` (#443)
+	- Add `<meta>` descriptions (#445)
 
 # 0.0.17 (staging release)
 

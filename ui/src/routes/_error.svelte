@@ -9,6 +9,10 @@
 
 <svelte:head>
 	<title>{status}</title>
+	<meta
+		content='Something got wrong, sorry!'
+		name='description'
+	>
 </svelte:head>
 
 <h1>{status}</h1>
