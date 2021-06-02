@@ -1,4 +1,6 @@
 <script>
+	import {screen as _screen}
+		from '@svizzle/ui/src/gauges/screen/ScreenGauge.svelte';
 	import Download from '@svizzle/ui/src/icons/feather/Download.svelte';
 	import ExternalLink from '@svizzle/ui/src/ExternalLink.svelte';
 	import LinkButton from '@svizzle/ui/src/LinkButton.svelte';
@@ -27,7 +29,7 @@
 	>
 </svelte:head>
 
-<main>
+<main class={$_screen?.classes}>
 	<section>
 		<h1>Methodology</h1>
 
@@ -134,5 +136,12 @@
 		display: flex;
 		justify-content: space-around;
 		margin: 4rem 0 3rem 0;
+		flex-direction: column;
+		row-gap: 1em;
+	}
+
+	.large .cta {
+		flex-direction: row;
+		row-gap: 0;
 	}
 </style>

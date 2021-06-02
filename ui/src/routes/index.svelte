@@ -1,4 +1,6 @@
 <script>
+	import {screen as _screen}
+		from '@svizzle/ui/src/gauges/screen/ScreenGauge.svelte';
 	import LinkButton from '@svizzle/ui/src/LinkButton.svelte';
 
 	import {toolName} from 'app/config';
@@ -17,7 +19,7 @@
 	>
 </svelte:head>
 
-<main>
+<main class={$_screen?.classes}>
 	<section>
 		<h1>BEIS indicators</h1>
 
@@ -105,7 +107,14 @@
 	.cta {
 		align-content: center;
 		display: flex;
+		flex-direction: column;
 		justify-content: space-around;
 		margin: 4rem 0 3rem 0;
+		row-gap: 1em;
+	}
+
+	.large .cta {
+		flex-direction: row;
+		row-gap: 0;
 	}
 </style>

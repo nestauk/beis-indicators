@@ -31,10 +31,6 @@ body {
 	line-height: 1.5;
 }
 
-#app {
-	position: relative;
-}
-
 h1, h2, h3, h4, h5, h6 {
 	font-weight: 400;
 	line-height: 1.2;
@@ -76,4 +72,5 @@ a {
 	--dim-main-height: calc(100% - var(--dim-header-height));
 	--dim-padding-minor: 0.5rem;
 	--dim-padding: 1rem;
+	--z-1000: 1000;
 }
