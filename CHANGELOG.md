@@ -15,6 +15,7 @@
 - Add `<meta>` descriptions (#445)
 - Make the app skeleton responsive (#448)
 - Add the accessibility menu (#446)
+- Set gov.uk blue as main color (#455)
 
 # 0.0.17 (staging release)
 
