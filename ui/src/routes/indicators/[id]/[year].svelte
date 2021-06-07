@@ -11,23 +11,24 @@
 </script>
 
 <script>
-	/* ext deps */
-
 	import * as _ from 'lamb';
 	import IdYear from '@svizzle/time_region_value/src/routes/[id]/[year].svelte';
 
-	/* data */
+	/* local deps */
 
 	import {toolName} from 'app/config';
 	import types from 'app/data/types';
 	import {_lookup} from 'app/stores/data';
 	import {_availableYears, _selectedYear} from 'app/stores/selection';
+	import theme from 'app/theme';
 
 	/* props */
 
 	export let data;
 	export let id;
 	export let year;
+
+	/* local vars */
 
 	let availableYears;
 	let title;
@@ -50,7 +51,8 @@
 <IdYear
 	{data}
 	{id}
-	lookupStore={_lookup}
+	{theme}
 	{types}
 	{year}
+	lookupStore={_lookup}
 />
