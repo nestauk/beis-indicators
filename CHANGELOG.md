@@ -13,6 +13,7 @@
 	- split utils (#437)
 	- Use `@svizzle/ui`'s icons (#441)
 	- Use `@svizzle/time_region_value` (#443)
+	- Upgrade Svizzle packages (#458)
 - Add `<meta>` descriptions (#445)
 - Make the app skeleton responsive (#448)
 - Add the accessibility menu (#446)

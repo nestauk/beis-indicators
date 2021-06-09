@@ -1,8 +1,8 @@
 <script>
 	import {isDev} from 'app/config';
 
-	export let status;
 	export let error;
+	export let status;
 </script>
 
 <svelte:head>

@@ -1,8 +1,7 @@
 <script>
-	import {screen as _screen}
-		from '@svizzle/ui/src/gauges/screen/ScreenGauge.svelte';
+	import {_screen} from '@svizzle/ui/src/gauges/screen/ScreenGauge.svelte';
 	import Download from '@svizzle/ui/src/icons/feather/Download.svelte';
-	import ExternalLink from '@svizzle/ui/src/ExternalLink.svelte';
+	import Link from '@svizzle/ui/src/Link.svelte';
 	import LinkButton from '@svizzle/ui/src/LinkButton.svelte';
 
 	import {toolName} from 'app/config';
@@ -36,30 +35,67 @@
 		<h2>Data sources</h2>
 		<p>
 			As much as possible we have used data from official sources such as
-			<a href={onsUrl} rel='noopener'>ONS</a>,
-			<a href={eurostatUrl} rel='noopener'>Eurostat</a>,
-			<a href={hesaUrl} rel='noopener'>HESA</a> or
-			<a href={ukriUrl} rel='noopener'>UKRI</a>. One reason to do this is
-			to enable the reproducibility of our analysis, and to remove the
-			reliance of the tool on proprietary sources.
+			<Link
+				href={onsUrl}
+				isExternal={true}
+				theme={{color: theme.colorMain}}
+			>ONS</Link>,
+			<Link
+				href={eurostatUrl}
+				isExternal={true}
+				theme={{color: theme.colorMain}}
+			>Eurostat</Link>,
+			<Link
+				href={hesaUrl}
+				isExternal={true}
+				theme={{color: theme.colorMain}}
+			>HESA</Link>,
+			<Link
+				href={ukriUrl}
+				isExternal={true}
+				theme={{color: theme.colorMain}}
+			>UKRI</Link>.
+		</p>
+		<p>
+			One reason to do this is to enable the reproducibility of our analysis,
+			and to remove the reliance of the tool on proprietary sources.
 		</p>
 		<p>
 			Having said this, in a small number of instances we have used
 			proprietary data sources such as
-			<a href={patstatUrl} rel='noopener'>PATSTAT</a> for the analysis of
-			patenting, and <a href={crunchbaseUrl} rel='noopener'>Crunchbase</a>
+			<Link
+				href={patstatUrl}
+				isExternal={true}
+				theme={{color: theme.colorMain}}
+			>PATSTAT</Link>
+			for the analysis of patenting, and
+			<Link
+				href={crunchbaseUrl}
+				isExternal={true}
+				theme={{color: theme.colorMain}}
+			>Crunchbase</Link>
 			for the analysis of venture capital investment.
 		</p>
 
 		<h2>Geographies</h2>
 		<p>
-			We use <a href={nutsUrl} rel='noopener'>NUTS2</a> regions as our
+			We use
+			<Link
+				href={nutsUrl}
+				isExternal={true}
+				theme={{color: theme.colorMain}}
+			>NUTS2</Link>
+			regions as our
 			geographical unit of analysis. This has allowed us to collect data
 			about regional R&D activity which is only available at that level.
-			We note that were possible we have also calculated indicators at a
+			We note that where possible we have also calculated indicators at a
 			higher level of granularity (NUTS3) as well as using policy-relevant
-			<a href={lepUrl} rel='noopener'>LEP</a>s boundaries. These will be
-			released when the tool is published later in 2020.
+			<Link
+				href={lepUrl}
+				isExternal={true}
+				theme={{color: theme.colorMain}}
+			>LEP</Link> boundaries.
+			These will be released when the tool is published later in 2020.
 		</p>
 		<p>
 			In many cases we have reverse geocoded observations available at
@@ -83,10 +119,11 @@
 				<p>
 					We have calculated indices of economic complexity for UK
 					regions used the algorithm developed by
-					<ExternalLink
+					<Link
 						href={HausmanAndHidalgoUrl}
-						text='Hausman and Hidalgo (2009)'
-					/>.
+						isExternal={true}
+						theme={{color: theme.colorMain}}
+					>Hausman and Hidalgo (2009)</Link>.
 				</p>
 			</li>
 			<li>
@@ -94,10 +131,11 @@
 					We have measured levels of employment in entertainment and
 					cultural sectors using an industrial segmentation based on
 					the methodology developed by
-					<ExternalLink
+					<Link
 						href={DelgadoEtAlUrl}
-						text='Delgado et al (2015)'
-					/>.
+						isExternal={true}
+						theme={{color: theme.colorMain}}
+					>Delgado et al (2015)</Link>.
 				</p>
 			</li>
 			<li>
@@ -105,10 +143,11 @@
 					We have identified UKRI-funded research projects in STEM
 					disciplines using a machine learning analysis of project
 					descriptions presented in
-					<ExternalLink
+					<Link
 						href={MateosGarciaUrl}
-						text='Mateos-Garcia (2017)'
-					/>.
+						isExternal={true}
+						theme={{color: theme.colorMain}}
+					>Mateos-Garcia (2017)</Link>.
 				</p>
 			</li>
 		</ul>
@@ -168,19 +207,6 @@
 
 	p {
 		margin-bottom: 1.5rem;
-	}
-
-	a {
-		text-decoration: none;
-		font-weight: bold;
-	}
-
-	p a {
-		padding: 0.1rem;
-		border-bottom: 1px solid var(--color-link);
-		color: var(--color-link);
-		text-decoration: none;
-		font-weight: bold;
 	}
 
 	ul {

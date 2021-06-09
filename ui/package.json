@@ -63,6 +63,7 @@
     "copydata": "npm run chmod && node -r esm src/bin/copy_data.js",
     "dev": "sapper dev",
     "export": "export SAPPER_EXPORT=true && sapper export --legacy",
+    "linksvizzles": "npm link @svizzle/barchart @svizzle/choropleth @svizzle/legend @svizzle/time_region_value @svizzle/ui @svizzle/utils @svizzle/dev @svizzle/file",
     "makedata": "npm run makeindex && npm run rmdata && npm run copydata",
     "makeindex": "npm run chmod && node -r esm src/bin/make_index.js",
     "rmdata": "rimraf static/data",

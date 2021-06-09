@@ -3,7 +3,6 @@
 
 	import {toolName} from 'app/config';
 	import {_groups, _yearRange} from 'app/stores/data';
-	import {goTo} from 'app/utils/sapper';
 </script>
 
 <svelte:head>
@@ -15,8 +14,7 @@
 </svelte:head>
 
 <Index
-	{goTo}
-	groupsStore={_groups}
-	yearRangeStore={_yearRange}
+	{_groups}
+	{_yearRange}
 	hrefBase='indicators'
 />
