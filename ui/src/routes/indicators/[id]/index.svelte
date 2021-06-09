@@ -23,7 +23,6 @@
 		_availableYears,
 		resetSelectedYear,
 	} from 'app/stores/selection';
-	import theme from 'app/theme';
 
 	/* props */
 
@@ -51,9 +50,8 @@
 </svelte:head>
 
 <IdIndex
+	{_lookup}
 	{data}
 	{id}
-	{theme}
 	{types}
-	lookupStore={_lookup}
 />

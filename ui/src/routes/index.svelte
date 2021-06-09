@@ -1,6 +1,6 @@
 <script>
-	import {screen as _screen}
-		from '@svizzle/ui/src/gauges/screen/ScreenGauge.svelte';
+	import {_screen} from '@svizzle/ui/src/gauges/screen/ScreenGauge.svelte';
+	import Link from '@svizzle/ui/src/Link.svelte';
 	import LinkButton from '@svizzle/ui/src/LinkButton.svelte';
 
 	import {toolName} from 'app/config';
@@ -26,20 +26,40 @@
 		<h2>Intro</h2>
 
 		<p>
-			In this project, <a href={nestaUrl}>Nesta</a> have worked closely with
-			<a href={beisUrl}>BEIS</a> to create an
-			<a href={repoUrl}>open repository</a> of indicators capturing various
-			dimensions of innovation and its drivers in regions across the UK.
+			In this project,
+			<Link
+				href={nestaUrl}
+				isExternal={true}
+				theme={{color: theme.colorMain}}
+			>Nesta</Link>
+			have worked closely with
+			<Link
+				href={beisUrl}
+				isExternal={true}
+				theme={{color: theme.colorMain}}
+			>BEIS</Link>
+			to create an
+			<Link
+				href={repoUrl}
+				isExternal={true}
+				theme={{color: theme.colorMain}}
+			>open repository</Link>
+			of indicators capturing various dimensions of innovation and its drivers
+			in regions across the UK.
 		</p>
 		<p>
 			We have also built a tool to
-			<a href='indicators'>visualise and explore</a> these indicators with the
-			goal of informing policies to drive innovation and growth across all of
-			the UK.
+			<Link
+				href='indicators'
+				isUnderlined={true}
+				isBold={true}
+				theme={{color: theme.colorMain}}
+			>visualise and explore</Link>
+			these indicators with the goal of informing policies to drive innovation
+			and growth across all of the UK.
 		</p>
 		<p>
-			All this work has been performed with support from
-			<a href={beisUrl}>BEIS</a>.
+			All this work has been performed with support from BEIS.
 		</p>
 
 		<h2>The framework</h2>
@@ -117,14 +137,6 @@
 
 	p {
 		margin-bottom: 1.5rem;
-	}
-
-	a {
-		border-bottom: 1px solid var(--color-link);
-		color: var(--color-link);
-		font-weight: bold;
-		padding: 0.1rem;
-		text-decoration: none;
 	}
 
 	.cta {

@@ -3,16 +3,14 @@
 
 	import {_groups} from 'app/stores/data';
 	import theme from 'app/theme';
-	import {goTo} from 'app/utils/sapper';
 
 	export let segment;
 </script>
 
 <Layout
-	{goTo}
+	{_groups}
 	{segment}
 	{theme}
-	groupsStore={_groups}
 	hrefBase='indicators'
 >
 	<slot></slot>

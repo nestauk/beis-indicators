@@ -20,7 +20,6 @@
 	import types from 'app/data/types';
 	import {_lookup} from 'app/stores/data';
 	import {_availableYears, _selectedYear} from 'app/stores/selection';
-	import theme from 'app/theme';
 
 	/* props */
 
@@ -49,10 +48,9 @@
 </svelte:head>
 
 <IdYear
+	{_lookup}
 	{data}
 	{id}
-	{theme}
 	{types}
 	{year}
-	lookupStore={_lookup}
 />

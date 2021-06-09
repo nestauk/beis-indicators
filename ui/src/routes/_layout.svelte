@@ -1,5 +1,5 @@
 <script>
-	import ScreenGauge, {screen as _screen}
+	import ScreenGauge, {_screen}
 		from '@svizzle/ui/src/gauges/screen/ScreenGauge.svelte';
 	import {onMount} from 'svelte';
 
@@ -7,7 +7,6 @@
 	import ColorCorrection from 'app/components/ColorCorrection.svelte';
 	import Nav from 'app/components/Nav.svelte';
 	import AccessibilityMenu from 'app/components/AccessibilityMenu.svelte';
-	import {isDev} from 'app/config';
 	import {_isBannerActive, disableBanner} from 'app/stores/banner';
 	import {
 		_a11yColorStyles,
@@ -31,7 +30,7 @@
 	$: rootStyle && applyStyles(rootStyle, $_a11yColorStyles);
 </script>
 
-<ScreenGauge devMode={isDev} />
+<ScreenGauge />
 <ColorCorrection />
 
 <section class={$_screen?.classes}>

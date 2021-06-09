@@ -1,6 +1,6 @@
 <script>
-	import {screen as _screen}
-		from '@svizzle/ui/src/gauges/screen/ScreenGauge.svelte';
+	import {_screen} from '@svizzle/ui/src/gauges/screen/ScreenGauge.svelte';
+	import Link from '@svizzle/ui/src/Link.svelte';
 	import LinkButton from '@svizzle/ui/src/LinkButton.svelte';
 
 	import {toolName} from 'app/config';
@@ -125,8 +125,12 @@
 		</p>
 		<p>
 			In that same panel there is a button to download a
-			<a href={csvWikiURL} rel='noopener'>CSV file</a> of the current
-			indicator.
+			<Link
+				href={csvWikiURL}
+				isExternal={true}
+				theme={{color: theme.colorMain}}
+			>CSV file</Link>
+			of the current indicator.
 		</p>
 		<p>The panel can be dismissed by clicking on the page background.</p>
 
@@ -204,7 +208,13 @@
 			these are not provided in the tool, nor they are official and should
 			be considered as non-official extras:
 			{#each availableDownloadIds as availableId, index}
-				<a href='/download/{availableId}'>{availableId}</a>
+				<Link
+					href='/download/{availableId}'
+					isExternal={true}
+					theme={{color: theme.colorMain}}
+				>
+					{availableId}
+				</Link>
 				{#if index < maxIndex},{/if}
 			{/each}.
 		</p>
@@ -269,18 +279,6 @@
 
 	ul {
 		padding: 0.5rem 0 0.5rem 2rem;
-	}
-	a {
-		font-weight: bold;
-		text-decoration: none;
-	}
-
-	p a {
-		border-bottom: 1px solid var(--color-link);
-		color: var(--color-link);
-		font-weight: bold;
-		padding: 0.1rem;
-		text-decoration: none;
 	}
 
 	code {
