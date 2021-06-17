@@ -143,14 +143,14 @@ nuts_est = multiple_nuts_estimates(
 all_nuts_est = nuts_est.sum(axis=1)
 all_nuts_est.name = "total_gtr_projects_all_disciplines"
 # make indicator for all disciplines
-ind = make_indicator(
+ind_all = make_indicator(
     all_nuts_est,
     {"total_gtr_projects_all_disciplines": "total_gtr_projects_all_disciplines"},
     "year",
 )
 # save indicator for all disciplines
 save_indicator(
-    ind,
+    ind_all,
     target_path=f"{PROJECT_DIR}/data/processed/gtr",
     var_name="total_gtr_projects_all_disciplines",
 )
@@ -162,12 +162,12 @@ with open(f"{PROJECT_DIR}/data/aux/stem_gtr.txt", "r") as infile:
 stem_nuts_est = nuts_est[stem].sum(axis=1)
 stem_nuts_est.name = "total_gtr_projects_stem"
 # make stem indicator
-ind = make_indicator(
+ind_stem = make_indicator(
     stem_nuts_est, {"total_gtr_projects_stem": "total_gtr_projects_stem"}, "year"
 )
 # save stem indicator
 save_indicator(
-    ind,
+    ind_stem,
     target_path=f"{PROJECT_DIR}/data/processed/gtr",
     var_name="total_gtr_projects_stem",
 )
