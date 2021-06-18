@@ -37,7 +37,7 @@
     "@rollup/plugin-yaml": "^2.1.0",
     "@svizzle/dev": "^0.4.3",
     "@svizzle/file": "^0.10.1",
-    "cpy": "^6.0.0",
+    "cpy": "^8.1.2",
     "del": "^5.1.0",
     "eslint": "^6.8.0",
     "esm": "^3.2.25",

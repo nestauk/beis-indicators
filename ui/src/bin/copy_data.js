@@ -5,7 +5,7 @@ import path from 'path';
 import yaml from 'js-yaml';
 import {readCsv, readDir, readFile, saveString} from '@svizzle/file';
 import {tapMessage} from '@svizzle/dev';
-import { applyFnMap, transformValues } from '@svizzle/utils';
+import {applyFnMap, transformValues} from '@svizzle/utils';
 import {zip} from 'zip-a-folder';
 import {csvFormat} from 'd3-dsv';
 import * as _ from 'lamb';
