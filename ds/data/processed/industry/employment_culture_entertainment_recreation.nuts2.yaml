@@ -1,8 +1,9 @@
 api_doc_url: https://www.nomisweb.co.uk/api/v01/help
 api_type: POST
-data_date: 20200218
-title: Employment in cultural, entertainment and leisure industries
-subtitle: This indicator measures level of employment in cultural, entertainment and leisure industries based on the Business Register Employment Survey. Those sectors are identified as clusters of SIC-4 (industry) codes
+data_date: 20210623
+title: Employment in cultural, entertainment and leisure industries 
+subtitle: Employment in cultural, entertainment and leisure industries based on the Business Register Employment Survey
+description: This indicator measures level of employment in cultural, entertainment and leisure industries based on the Business Register Employment Survey. Those sectors are identified as clusters of SIC-4 (industry) codes.
 endpoint_url: http://www.nomisweb.co.uk/api/v01/dataset/
 framework_group: place_potential
 is_experimental: True
@@ -25,3 +26,4 @@ schema:
     label: Year
 source_name: NOMIS (official labour market statistics)
 source_url: https://www.nomisweb.co.uk
+warning: This indicator uses 2013 NUTS2 region spec for all years
