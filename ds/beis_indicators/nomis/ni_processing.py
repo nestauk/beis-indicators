@@ -5,7 +5,7 @@ PROJECT_DIR = beis_indicators.project_dir
 NI_BRES_2019_PUB_TABLES = "https://www.nisra.gov.uk/sites/nisra.gov.uk/files/publications/BRES2019-Publication-Tables.xlsx"
 
 
-def SIC4_to_cluster_lookup(
+def sic4_to_cluster_lookup(
     sic4_lookup_csv=f"{PROJECT_DIR}/data/raw/sic_4_industry_segment_lookup.csv",
 ):
     """Use SIC4 to cluster namelookup csv file to create a dictionary
@@ -17,16 +17,26 @@ def SIC4_to_cluster_lookup(
     return dict(zip(lookup.SIC4, lookup.cluster_name))
 
 
-def read_NI_data(xlsx=NI_BRES_2019_PUB_TABLES):
-    """Read xlsx, sheet named 'SIC4' and return a dataframe"""
+def read_ni_data(pub_table=NI_BRES_2019_PUB_TABLES):
+    """Read Northern Ireland BRES publication table
+    xlsx file, sheet named 'SIC4' and return a dataframe
+
+    Args:
+        pub_table (xlsx): Northern Ireland BRES publication table.
+                        Defaults to NI_BRES_2019_PUB_TABLES.
+
+    Returns:
+        (dataframe): number of employees for each SIC4 code in Northern Ireland
+    """
+
     return pd.read_excel(
-        xlsx,
+        pub_table,
         sheet_name="SIC4",
         header=4,
     )
 
 
-def process_NI_data(
+def process_ni_data(
     df,
     lookup,
     year=2019,
@@ -46,9 +56,9 @@ def process_NI_data(
     Returns:
         df (dataframe): dataframe in the same format as nomis_BRES_2019_TYPE450.csv
     """
-    df.dropna(inplace=True)
     df = (
-        df[["SIC 2007", "Total"]]
+        df.loc[:, ["SIC 2007", "Total"]]
+        .dropna()
         .drop(df[df["SIC 2007"] == "Total"].index)
         .astype({"SIC 2007": "int64"})
         .replace("*", 0)
@@ -62,6 +72,6 @@ def process_NI_data(
     return df
 
 
-def add_NI_to_nomis_BRES(nomis_BRES, NI_df, save_path):
+def add_ni_to_nomis_bres(nomis_bres, ni_df, save_path):
     """Concat nomis_BRES df with NI df and save csv"""
-    pd.concat([nomis_BRES, NI_df]).reset_index(drop=True).to_csv(save_path, index=True)
+    pd.concat([nomis_bres, ni_df]).reset_index(drop=True).to_csv(save_path, index=True)

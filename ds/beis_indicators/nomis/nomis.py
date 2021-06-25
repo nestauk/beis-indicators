@@ -10,10 +10,10 @@ import beis_indicators
 from beis_indicators.utils.pandas import preview
 from beis_indicators.utils.dir_file_management import make_dirs
 from beis_indicators.nomis.ni_processing import (
-    SIC4_to_cluster_lookup,
-    read_NI_data,
-    process_NI_data,
-    add_NI_to_nomis_BRES,
+    sic4_to_cluster_lookup,
+    read_ni_data,
+    process_ni_data,
+    add_ni_to_nomis_bres,
 )
 
 logger = logging.getLogger(__name__)
@@ -356,9 +356,9 @@ if __name__ == "__main__":
     make_nomis(geo_type, years)
     # add NI data to nomis_BRES_2019_TYPE450.csv (data only available for 2019)
     if geo_type == "TYPE450":
-        NI_df = process_NI_data(df=read_NI_data(), lookup=SIC4_to_cluster_lookup())
-        add_NI_to_nomis_BRES(
-            nomis_BRES=pd.read_csv(BRES_2019_450, index_col=[0]),
-            NI_df=NI_df,
+        ni_df = process_ni_data(df=read_ni_data(), lookup=sic4_to_cluster_lookup())
+        add_ni_to_nomis_bres(
+            nomis_bres=pd.read_csv(BRES_2019_450, index_col=[0]),
+            ni_df=ni_df,
             save_path=BRES_2019_450,
         )
