@@ -10,11 +10,8 @@ def sic4_to_cluster_lookup(
 ):
     """Use SIC4 to cluster namelookup csv file to create a dictionary
     with SIC4 as keys, cluster_name as values"""
-    df = pd.read_csv(sic4_lookup_csv)
-    lookup = df[["sic_4", "cluster"]].rename(
-        columns={"sic_4": "SIC4", "cluster": "cluster_name"}
-    )
-    return dict(zip(lookup.SIC4, lookup.cluster_name))
+    lookup = pd.read_csv(sic4_lookup_csv)
+    return dict(zip(lookup.sic_4, lookup.cluster))
 
 
 def read_ni_data(pub_table=NI_BRES_2019_PUB_TABLES):
@@ -37,7 +34,7 @@ def read_ni_data(pub_table=NI_BRES_2019_PUB_TABLES):
 
 
 def process_ni_data(
-    df,
+    pub_table,
     lookup,
     year=2019,
     geo_type="nuts 2013 level 2",
@@ -47,29 +44,26 @@ def process_ni_data(
     """Process NI data into the same format as nomis_BRES_2019_TYPE450.csv
 
     Args:
-        df (dataframe): number of employees for each SIC4 code in Northern Ireland
+        pub_table (dataframe): number of employees for each SIC4 code in Northern Ireland
         lookup (dict): keys = SIC4 code, values = cluster_name
         geo_type (str): nuts year and level
         geo_cd (str): geographical code
         geo_nm (str): geographical name
 
     Returns:
-        df (dataframe): dataframe in the same format as nomis_BRES_2019_TYPE450.csv
+        (dataframe): dataframe in the same format as nomis_BRES_2019_TYPE450.csv
     """
-    df = (
-        df.loc[:, ["SIC 2007", "Total"]]
+    pub_table = (
+        pub_table.loc[:, ["SIC 2007", "Total"]]
         .dropna()
-        .drop(df[df["SIC 2007"] == "Total"].index)
+        .drop(pub_table[pub_table["SIC 2007"] == "Total"].index)
         .astype({"SIC 2007": "int64"})
         .replace("*", 0)
         .rename(columns={"SIC 2007": "SIC4", "Total": "value"})
+        .assign(year=year, geo_type=geo_type, geo_cd=geo_cd, geo_nm=geo_nm)
     )
-    df["year"] = year
-    df["geo_type"] = geo_type
-    df["geo_cd"] = geo_cd
-    df["geo_nm"] = geo_nm
-    df["cluster_name"] = df["SIC4"].map(lookup)
-    return df
+    pub_table["cluster_name"] = pub_table["SIC4"].map(lookup)
+    return pub_table
 
 
 def add_ni_to_nomis_bres(nomis_bres, ni_df, save_path):

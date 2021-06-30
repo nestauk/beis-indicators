@@ -356,7 +356,9 @@ if __name__ == "__main__":
     make_nomis(geo_type, years)
     # add NI data to nomis_BRES_2019_TYPE450.csv (data only available for 2019)
     if geo_type == "TYPE450":
-        ni_df = process_ni_data(df=read_ni_data(), lookup=sic4_to_cluster_lookup())
+        ni_df = process_ni_data(
+            pub_table=read_ni_data(), lookup=sic4_to_cluster_lookup()
+        )
         add_ni_to_nomis_bres(
             nomis_bres=pd.read_csv(BRES_2019_450, index_col=[0]),
             ni_df=ni_df,
