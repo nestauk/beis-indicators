@@ -27,4 +27,4 @@ schema:
     label: Year
 source_name: NOMIS (official labour market statistics)
 source_url: https://www.nomisweb.co.uk
-warning: This indicator uses 2013 NUTS2 region spec for all years
+warning: This indicator uses 2013 NUTS2 region spec for all years. Data for some industries for Northern Ireland (UKN0) have been supressed. Therefore, location quotient values for Northern Ireland might be an underestimate and the other regions might be an overestimate.
