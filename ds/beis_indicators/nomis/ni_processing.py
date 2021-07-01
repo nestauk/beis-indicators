@@ -8,8 +8,19 @@ NI_BRES_2019_PUB_TABLES = "https://www.nisra.gov.uk/sites/nisra.gov.uk/files/pub
 def sic4_to_cluster_lookup(
     sic4_lookup_csv=f"{PROJECT_DIR}/data/raw/sic_4_industry_segment_lookup.csv",
 ):
-    """Use SIC4 to cluster namelookup csv file to create a dictionary
-    with SIC4 as keys, cluster_name as values"""
+    """Read a lookup csv and return a lookup dictionary.
+
+    Args:
+        sic4_lookup_csv (csv): file to be used to create lookup dictionary,
+                    defaults to /data/raw/sic_4_industry_segment_lookup.csv.
+                    This csv contains the sic_4 code and the related cluster
+                    for different industries e.g "Manufacture of motor vehicles"
+                    industry has the sic_4 code of 2910 and the cluster
+                    "manufacture_automotive".
+
+    Returns:
+        (dict): lookup dictionary with sic_4 values as keys, cluster as values
+    """
     lookup = pd.read_csv(sic4_lookup_csv)
     return dict(zip(lookup.sic_4, lookup.cluster))
 
