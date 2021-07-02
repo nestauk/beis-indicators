@@ -2,19 +2,26 @@ from io import StringIO
 import requests
 import os
 import logging
-
 import ratelim
 from numpy import arange, sum
 from pandas import concat, crosstab, melt, read_csv, read_excel
-
+import pandas as pd
 import beis_indicators
 from beis_indicators.utils.pandas import preview
-
 from beis_indicators.utils.dir_file_management import make_dirs
+from beis_indicators.nomis.ni_processing import (
+    sic4_to_cluster_lookup,
+    read_ni_data,
+    process_ni_data,
+    add_ni_to_nomis_bres,
+)
 
 logger = logging.getLogger(__name__)
 CELL_LIMIT = 25_000
 REQUESTS_PER_SECOND = 2
+
+PROJECT_DIR = beis_indicators.project_dir
+BRES_2019_450 = f"{PROJECT_DIR}/data/interim/industry/nomis_BRES_2019_TYPE450.csv"
 
 
 def _zero_pad(x, column, width=4):
@@ -342,7 +349,18 @@ def _check_geo_type_suffix(x):
 
 
 if __name__ == "__main__":
+    # make nomis
     conf = beis_indicators.config["data"]["nomis"]
     geo_type = conf["geography"].upper()
     years = conf["years"]
     make_nomis(geo_type, years)
+    # add NI data to nomis_BRES_2019_TYPE450.csv (data only available for 2019)
+    if geo_type == "TYPE450":
+        ni_df = process_ni_data(
+            pub_table=read_ni_data(), lookup=sic4_to_cluster_lookup()
+        )
+        add_ni_to_nomis_bres(
+            nomis_bres=pd.read_csv(BRES_2019_450, index_col=[0]),
+            ni_df=ni_df,
+            save_path=BRES_2019_450,
+        )

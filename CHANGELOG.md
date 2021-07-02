@@ -7,6 +7,7 @@
 - Added high tech employment indicator (#428)
 - Added location quotient of high tech employment indicator (#429)
 - Fixed `beis_indicators/nomis/nomis.py` (#439)
+- Added data for Northern Ireland to industry indicators (#468)
 
 ## Tool
 
