@@ -5,9 +5,11 @@
 	import LinkButton from '@svizzle/ui/src/LinkButton.svelte';
 
 	import {toolName} from 'app/config';
+	import {zipUrl} from 'app/utils/assets';
 	import theme from 'app/theme';
 
 	const crunchbaseUrl = 'https://www.crunchbase.com/';
+	const DelgadoEtAlUrl = 'https://www.nber.org/papers/w20375.pdf';
 	const eurostatUrl = 'https://ec.europa.eu/eurostat';
 	const HausmanAndHidalgoUrl = 'https://www.pnas.org/content/106/26/10570';
 	const hesaUrl = 'https://www.hesa.ac.uk';
@@ -17,7 +19,6 @@
 	const onsUrl = 'https://ons.gov.uk';
 	const patstatUrl = 'https://www.epo.org/searching-for-patents/business/patstat.html';
 	const ukriUrl = 'https://www.ukri.org/';
-	const DelgadoEtAlUrl = 'https://www.nber.org/papers/w20375.pdf';
 
 	const linkTheme = {
 		color: theme.colorLink,
@@ -175,8 +176,9 @@
 
 		<div class='cta'>
 			<LinkButton
+				download
 				glyph={Download}
-				href='/download'
+				href={zipUrl}
 				text='Download all indicators'
 				theme={{backgroundColor: theme.colorLink}}
 			/>
