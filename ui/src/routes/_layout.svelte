@@ -1,7 +1,8 @@
 <script>
 	import ScreenGauge, {_screen}
 		from '@svizzle/ui/src/gauges/screen/ScreenGauge.svelte';
-	import {onMount} from 'svelte';
+	import LoadingView from '@svizzle/ui/src/LoadingView.svelte';
+	import {onMount, beforeUpdate, tick} from 'svelte';
 
 	import Banner from 'app/components/Banner.svelte';
 	import ColorCorrection from 'app/components/ColorCorrection.svelte';
@@ -14,6 +15,7 @@
 		_isA11yDirty,
 		applyStyles,
 	} from 'app/stores/a11ySettings';
+	import theme from 'app/theme';
 
 	export let segment;
 
@@ -22,22 +24,34 @@
 	let a11yHeight;
 	let rootStyle;
 	let showA11yMenu;
+	let isLayoutUndefined = true;
 
 	onMount(() => {
 		const root = document.documentElement;
 		rootStyle = root.style;
 	})
+	beforeUpdate(async () => {
+		if (isLayoutUndefined) {
+			await tick();
+		}
+	});
 
 	$: rootStyle && applyStyles(rootStyle, $_a11yTextStyles);
 	$: rootStyle && applyStyles(rootStyle, $_a11yColorStyles);
 	$: menuHeight = headerHeight + (showA11yMenu ? a11yHeight : 0);
+	$: $_screen?.classes && (isLayoutUndefined = false);
 </script>
 
 <ScreenGauge />
 <ColorCorrection />
 
+{#if isLayoutUndefined}
+	<LoadingView stroke={theme.colorMain} />
+{/if}
+
 <section
 	class={$_screen?.classes}
+	class:hidden={isLayoutUndefined}
 	style='--menu-height: {menuHeight}px;'
 >
 	<header bind:offsetHeight={headerHeight}>
@@ -53,7 +67,10 @@
 		<slot></slot>
 	</main>
 	{#if showA11yMenu}
-		<div class='accessibility' bind:offsetHeight={a11yHeight}>
+		<div
+			bind:offsetHeight={a11yHeight}
+			class='accessibility'
+		>
 			<AccessibilityMenu {_screen} />
 		</div>
 	{/if}
@@ -104,5 +121,8 @@
 	}
 	.accessibility {
 		grid-area: accessibility;
+	}
+	.hidden {
+		display: none;
 	}
 </style>
