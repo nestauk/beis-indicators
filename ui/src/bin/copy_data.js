@@ -3,7 +3,7 @@
 import path from 'path';
 
 import yaml from 'js-yaml';
-import {readCsv, readDir, readFile, saveString} from '@svizzle/file';
+import {isCsvFile, readCsv, readDir, readFile, saveString} from '@svizzle/file';
 import {tapMessage} from '@svizzle/dev';
 import {applyFnMap, transformValues} from '@svizzle/utils';
 import {zip} from 'zip-a-folder';
@@ -36,7 +36,6 @@ const UK_REGIONS_LABELS = {
 };
 
 const isDir = name => !name.startsWith('.') && path.parse(name).ext === '';
-const isCsvFile = name => path.parse(name).ext === '.csv';
 const makePath = dirName => filename => path.resolve(
 	DATA_DIR,
 	dirName,
