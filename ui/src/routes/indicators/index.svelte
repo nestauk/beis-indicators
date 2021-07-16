@@ -16,5 +16,4 @@
 <Index
 	{_groups}
 	{_yearRange}
-	hrefBase='indicators'
 />
