@@ -9,15 +9,20 @@
 
 	const crunchbaseUrl = 'https://www.crunchbase.com/';
 	const eurostatUrl = 'https://ec.europa.eu/eurostat';
+	const HausmanAndHidalgoUrl = 'https://www.pnas.org/content/106/26/10570';
 	const hesaUrl = 'https://www.hesa.ac.uk';
 	const lepUrl = 'https://geoportal.statistics.gov.uk/search?collection=Dataset&sort=name&tags=all(BDY_LEP)';
+	const MateosGarciaUrl = 'https://osf.io/preprints/socarxiv/3cu67';
 	const nutsUrl = 'https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/nuts';
 	const onsUrl = 'https://ons.gov.uk';
 	const patstatUrl = 'https://www.epo.org/searching-for-patents/business/patstat.html';
 	const ukriUrl = 'https://www.ukri.org/';
-	const HausmanAndHidalgoUrl = 'https://www.pnas.org/content/106/26/10570';
 	const DelgadoEtAlUrl = 'https://www.nber.org/papers/w20375.pdf';
-	const MateosGarciaUrl = 'https://osf.io/preprints/socarxiv/3cu67';
+
+	const linkTheme = {
+		color: theme.colorLink,
+		iconStroke: theme.colorLink
+	};
 </script>
 
 <svelte:head>
@@ -37,23 +42,27 @@
 			As much as possible we have used data from official sources such as
 			<Link
 				href={onsUrl}
-				isExternal={true}
-				theme={{color: theme.colorMain}}
+				isBold={true}
+				theme={linkTheme}
+				type='external'
 			>ONS</Link>,
 			<Link
 				href={eurostatUrl}
-				isExternal={true}
-				theme={{color: theme.colorMain}}
+				isBold={true}
+				theme={linkTheme}
+				type='external'
 			>Eurostat</Link>,
 			<Link
 				href={hesaUrl}
-				isExternal={true}
-				theme={{color: theme.colorMain}}
+				isBold={true}
+				theme={linkTheme}
+				type='external'
 			>HESA</Link>,
 			<Link
 				href={ukriUrl}
-				isExternal={true}
-				theme={{color: theme.colorMain}}
+				isBold={true}
+				theme={linkTheme}
+				type='external'
 			>UKRI</Link>.
 		</p>
 		<p>
@@ -65,14 +74,16 @@
 			proprietary data sources such as
 			<Link
 				href={patstatUrl}
-				isExternal={true}
-				theme={{color: theme.colorMain}}
+				isBold={true}
+				theme={linkTheme}
+				type='external'
 			>PATSTAT</Link>
 			for the analysis of patenting, and
 			<Link
 				href={crunchbaseUrl}
-				isExternal={true}
-				theme={{color: theme.colorMain}}
+				isBold={true}
+				theme={linkTheme}
+				type='external'
 			>Crunchbase</Link>
 			for the analysis of venture capital investment.
 		</p>
@@ -82,18 +93,20 @@
 			We use
 			<Link
 				href={nutsUrl}
-				isExternal={true}
-				theme={{color: theme.colorMain}}
+				isBold={true}
+				theme={linkTheme}
+				type='external'
 			>NUTS2</Link>
-			regions as our
-			geographical unit of analysis. This has allowed us to collect data
-			about regional R&D activity which is only available at that level.
+			regions as our geographical unit of analysis. This has allowed us to
+			collect data about regional R&D activity which is only available at
+			that level.
 			We note that where possible we have also calculated indicators at a
 			higher level of granularity (NUTS3) as well as using policy-relevant
 			<Link
 				href={lepUrl}
-				isExternal={true}
-				theme={{color: theme.colorMain}}
+				isBold={true}
+				theme={linkTheme}
+				type='external'
 			>LEP</Link> boundaries.
 			These will be released when the tool is published later in 2020.
 		</p>
@@ -121,8 +134,9 @@
 					regions used the algorithm developed by
 					<Link
 						href={HausmanAndHidalgoUrl}
-						isExternal={true}
-						theme={{color: theme.colorMain}}
+						isBold={true}
+						theme={linkTheme}
+						type='external'
 					>Hausman and Hidalgo (2009)</Link>.
 				</p>
 			</li>
@@ -133,8 +147,9 @@
 					the methodology developed by
 					<Link
 						href={DelgadoEtAlUrl}
-						isExternal={true}
-						theme={{color: theme.colorMain}}
+						isBold={true}
+						theme={linkTheme}
+						type='external'
 					>Delgado et al (2015)</Link>.
 				</p>
 			</li>
@@ -145,8 +160,9 @@
 					descriptions presented in
 					<Link
 						href={MateosGarciaUrl}
-						isExternal={true}
-						theme={{color: theme.colorMain}}
+						isBold={true}
+						theme={linkTheme}
+						type='external'
 					>Mateos-Garcia (2017)</Link>.
 				</p>
 			</li>
@@ -162,17 +178,17 @@
 				glyph={Download}
 				href='/download'
 				text='Download all indicators'
-				theme={{backgroundColor: theme.colorMain}}
+				theme={{backgroundColor: theme.colorLink}}
 			/>
 			<LinkButton
 				href='/guide'
 				text='Read the guide'
-				theme={{backgroundColor: theme.colorMain}}
+				theme={{backgroundColor: theme.colorLink}}
 			/>
 			<LinkButton
 				href='/indicators'
 				text='Explore the indicators'
-				theme={{backgroundColor: theme.colorMain}}
+				theme={{backgroundColor: theme.colorLink}}
 			/>
 		</div>
 	</section>

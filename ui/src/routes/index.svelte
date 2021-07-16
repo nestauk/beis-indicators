@@ -9,6 +9,11 @@
 	const beisUrl = 'https://www.gov.uk/government/organisations/department-for-business-energy-and-industrial-strategy';
 	const nestaUrl = 'https://www.nesta.org.uk';
 	const repoUrl = 'https://github.com/nestauk/beis-indicators';
+
+	const linkTheme = {
+		color: theme.colorLink,
+		iconStroke: theme.colorLink
+	};
 </script>
 
 <svelte:head>
@@ -29,20 +34,23 @@
 			In this project,
 			<Link
 				href={nestaUrl}
-				isExternal={true}
-				theme={{color: theme.colorMain}}
+				isBold={true}
+				theme={linkTheme}
+				type='external'
 			>Nesta</Link>
 			have worked closely with
 			<Link
 				href={beisUrl}
-				isExternal={true}
-				theme={{color: theme.colorMain}}
+				isBold={true}
+				theme={linkTheme}
+				type='external'
 			>BEIS</Link>
 			to create an
 			<Link
 				href={repoUrl}
-				isExternal={true}
-				theme={{color: theme.colorMain}}
+				isBold={true}
+				theme={linkTheme}
+				type='external'
 			>open repository</Link>
 			of indicators capturing various dimensions of innovation and its drivers
 			in regions across the UK.
@@ -51,10 +59,12 @@
 			We have also built a tool to
 			<Link
 				href='indicators'
-				isUnderlined={true}
 				isBold={true}
-				theme={{color: theme.colorMain}}
-			>visualise and explore</Link>
+				isUnderlined={true}
+				theme={linkTheme}
+			>
+				visualise and explore
+			</Link>
 			these indicators with the goal of informing policies to drive innovation
 			and growth across all of the UK.
 		</p>
@@ -93,12 +103,12 @@
 			<LinkButton
 				href='/methodology'
 				text='Read more about the methodology'
-				theme={{backgroundColor: theme.colorMain}}
+				theme={{backgroundColor: theme.colorLink}}
 			/>
 			<LinkButton
 				href='/indicators'
 				text='Explore the indicators'
-				theme={{backgroundColor: theme.colorMain}}
+				theme={{backgroundColor: theme.colorLink}}
 			/>
 		</div>
 	</section>
