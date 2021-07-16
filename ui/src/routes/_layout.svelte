@@ -49,12 +49,17 @@
 	<LoadingView stroke={theme.colorMain} />
 {/if}
 
-<section
+<div
 	class={$_screen?.classes}
 	class:hidden={isLayoutUndefined}
 	style='--menu-height: {menuHeight}px;'
+	role='none'
 >
-	<header bind:offsetHeight={headerHeight}>
+	<header
+		aria-label='Website header'
+		bind:offsetHeight={headerHeight}
+		role='banner'
+	>
 		<Nav
 			{_screen}
 			{contentHeight}
@@ -63,18 +68,23 @@
 			isA11yDirty={$_isA11yDirty}
 		/>
 	</header>
-	<main bind:offsetHeight={contentHeight}>
+	<main
+		aria-label='Website content'
+		bind:offsetHeight={contentHeight}
+		role='main'
+	>
 		<slot></slot>
 	</main>
 	{#if showA11yMenu}
-		<div
+		<section
 			bind:offsetHeight={a11yHeight}
 			class='accessibility'
+			role='region'
 		>
 			<AccessibilityMenu {_screen} />
-		</div>
+		</section>
 	{/if}
-</section>
+</div>
 
 {#if $_isBannerActive}
 	<Banner
@@ -84,7 +94,7 @@
 {/if}
 
 <style>
-	section {
+	div {
 		display: grid;
 		grid-template-areas:
 			'content'
@@ -94,7 +104,7 @@
 		height: 100%;
 		overflow: hidden;
 	}
-	section.medium {
+	div.medium {
 		grid-template-areas:
 			'nav'
 			'content'
