@@ -22,6 +22,8 @@
 - Set gov.uk blue as main color (#455, #457)
 - Format text routes (#447)
 - Add Lighthouse audits (#481)
+- Add Pa11y audits (#482)
+- Comply with WCAG recommendations (#477)
 
 # 0.0.17 (staging release)
 
