@@ -112,14 +112,14 @@
 		grid-template-rows: min-content 1fr min-content;
 	}
 	header {
-		border-top: 1px solid var(--color-main-lighter);
+		border-top: 1px solid var(--color-main);
 		grid-area: nav;
 		height: var(--dim-header-height);
 		padding: 0 var(--dim-padding);
 		width: 100%;
 	}
 	.medium header {
-		border-bottom: 1px solid var(--color-main-lighter);
+		border-bottom: 1px solid var(--color-main);
 		border-top: none;
 	}
 	main {
