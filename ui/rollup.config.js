@@ -20,8 +20,15 @@ const removeComments = cleanup({
 	extensions: ['js', 'mjs']
 });
 
-const onwarn = (warning, _onwarn) =>
-	warning.code !== 'CIRCULAR_DEPENDENCY' && _onwarn(warning);
+const onwarn = (warning, onwarn) => {
+	// console.log(warning);
+
+	return (
+		(warning.code === 'MISSING_EXPORT' && /'preload'/.test(warning.message))
+		|| (warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message))
+		|| warning.code !== 'CIRCULAR_DEPENDENCY'
+	) && onwarn(warning)
+};
 
 export default {
 	client: {
