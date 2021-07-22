@@ -1,0 +1,85 @@
+name: Browser Support Tests
+
+on:
+  pull_request:
+    branches: dev
+
+jobs:
+  get_commit_message:
+    runs-on: ubuntu-latest
+    outputs:
+      commit_message: ${{ steps.step2.outputs.commit_message }}
+
+    steps:
+    - name: 'Checkout the repository'
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 2
+
+    - id: step2
+      run: |
+        MESSAGE=$(git log -1 --format=%B HEAD^2)
+        echo ::set-output name=commit_message::$MESSAGE
+
+  browserstack_controller:
+    needs: get_commit_message
+    runs-on: ubuntu-latest
+    if: "contains(needs.get_commit_message.outputs.commit_message, 'RUN_BROWSERSTACK')"
+
+    strategy:
+      matrix:
+        node-version: [15.x]
+
+    steps:
+    - name: 'Checkout the repository'
+      uses: actions/checkout@v2
+
+    - name: 'BrowserStack Environment Setup'
+      uses: 'browserstack/github-actions/setup-env@master'
+      with:
+        username:  ${{ secrets.BROWSERSTACK_USERNAME }}
+        access-key: ${{ secrets.BROWSERSTACK_KEY }}
+        build-name: BUILD_INFO
+        project-name: REPO_NAME
+
+    - name: 'BrowserStackLocal Setup'
+      uses: 'browserstack/github-actions/setup-local@master'
+      with:
+        local-testing: start
+        local-identifier: random
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: 'Remove all but one indicator'
+      run: cd ds/data/processed && ls -Q | grep -v broadband | xargs rm -R
+
+    - name: 'Install npm modules and make data'
+      run: cd ui && npm ci
+    - run: cd ui && npm run makedata
+
+    - name: 'Build webapp'
+      run: cd ui && npm run build --if-present
+
+    - name: 'Start local server'
+      run: cd ui && npm run start &
+
+    - name: 'Run tests on Browserstack'
+      run: cd ui && npm run selenium
+
+    - name: 'Save results in Gist'
+      uses: popsiclestick/gist-sync-action@v1.2.0
+      id: sync
+      with:
+        auth: ${{ secrets.BROWSERSTACK_GIST_TOKEN }}
+        gist_url: https://gist.github.com/NestaTestUser/01b59a18ffe2a87e300b88f0be973ad0
+        gist_title: Browserstack test results for BEIS Indicators webapp
+        gist_description: Browserstack test results for BEIS Indicators webapp
+        github_file: ui/test/data/selenium-report.json
+
+    - name: 'BrowserStackLocal Stop'
+      uses: 'browserstack/github-actions/setup-local@master'
+      with:
+        local-testing: stop
