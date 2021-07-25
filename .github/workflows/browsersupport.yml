@@ -1,0 +1,727 @@
+name: Browser Support Tests
+
+on:
+  pull_request:
+    branches: dev
+
+jobs:
+  get_commit_message:
+    runs-on: ubuntu-latest
+    outputs:
+      commit_message: ${{ steps.step2.outputs.commit_message }}
+
+    steps:
+    - name: 'Checkout the repository'
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 2
+
+    - id: step2
+      run: |
+        MESSAGE=$(git log -1 --format=%B HEAD^2)
+        echo ::set-output name=commit_message::$MESSAGE
+
+  batch_OS_X_safari:
+    needs: get_commit_message
+    runs-on: ubuntu-latest
+    if: "contains(needs.get_commit_message.outputs.commit_message, 'RUN_BROWSERSTACK')"
+
+    env:
+      BROWSERSTACK_OS: OS X
+      BROWSERSTACK_BROWSER: safari
+
+    strategy:
+      matrix:
+        node-version: [15.x]
+
+    steps:
+    - name: 'Checkout the repository'
+      uses: actions/checkout@v2
+
+    - name: 'BrowserStack Environment Setup'
+      uses: 'browserstack/github-actions/setup-env@master'
+      with:
+        username:  ${{ secrets.BROWSERSTACK_USERNAME }}
+        access-key: ${{ secrets.BROWSERSTACK_KEY }}
+        build-name: BUILD_INFO
+        project-name: REPO_NAME
+
+    - name: 'BrowserStackLocal Setup'
+      uses: 'browserstack/github-actions/setup-local@master'
+      with:
+        local-testing: start
+        local-identifier: random
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: 'Remove all but one indicator'
+      run: cd ds/data/processed && ls -Q | grep -v broadband | xargs rm -R
+
+    - name: 'Install npm modules and make data'
+      run: cd ui && npm ci
+    - run: cd ui && npm run makedata
+
+    - name: 'Build webapp'
+      run: cd ui && npm run build --if-present
+
+    - name: 'Start local server'
+      run: cd ui && npm run start &
+
+    - name: 'Run tests on Browserstack'
+      run: cd ui && npm run selenium
+
+    - name: 'Save selenium_OS_X_safari.json results in Gist'
+      uses: exuanbo/actions-deploy-gist@v1
+      with:
+        token: ${{ secrets.BROWSERSTACK_GIST_TOKEN }}
+        gist_id: 9b517e016820851429322515f0a5aa29
+        gist_file_name: selenium_OS_X_safari.json
+        file_path: ui/test/data/selenium_OS_X_safari.json
+
+    - name: 'BrowserStackLocal Stop'
+      uses: 'browserstack/github-actions/setup-local@master'
+      with:
+        local-testing: stop
+
+  batch_android_Android_Browser:
+    needs: batch_OS_X_safari
+    runs-on: ubuntu-latest
+
+    env:
+      BROWSERSTACK_OS: android
+      BROWSERSTACK_BROWSER: Android Browser
+
+    strategy:
+      matrix:
+        node-version: [15.x]
+
+    steps:
+    - name: 'Checkout the repository'
+      uses: actions/checkout@v2
+
+    - name: 'BrowserStack Environment Setup'
+      uses: 'browserstack/github-actions/setup-env@master'
+      with:
+        username:  ${{ secrets.BROWSERSTACK_USERNAME }}
+        access-key: ${{ secrets.BROWSERSTACK_KEY }}
+        build-name: BUILD_INFO
+        project-name: REPO_NAME
+
+    - name: 'BrowserStackLocal Setup'
+      uses: 'browserstack/github-actions/setup-local@master'
+      with:
+        local-testing: start
+        local-identifier: random
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: 'Remove all but one indicator'
+      run: cd ds/data/processed && ls -Q | grep -v broadband | xargs rm -R
+
+    - name: 'Install npm modules and make data'
+      run: cd ui && npm ci
+    - run: cd ui && npm run makedata
+
+    - name: 'Build webapp'
+      run: cd ui && npm run build --if-present
+
+    - name: 'Start local server'
+      run: cd ui && npm run start &
+
+    - name: 'Run tests on Browserstack'
+      run: cd ui && npm run selenium
+
+    - name: 'Save selenium_android_Android_Browser.json results in Gist'
+      uses: exuanbo/actions-deploy-gist@v1
+      with:
+        token: ${{ secrets.BROWSERSTACK_GIST_TOKEN }}
+        gist_id: 9b517e016820851429322515f0a5aa29
+        gist_file_name: selenium_android_Android_Browser.json
+        file_path: ui/test/data/selenium_android_Android_Browser.json
+
+    - name: 'BrowserStackLocal Stop'
+      uses: 'browserstack/github-actions/setup-local@master'
+      with:
+        local-testing: stop
+
+  batch_ios_Mobile_Safari:
+    needs: batch_android_Android_Browser
+    runs-on: ubuntu-latest
+
+    env:
+      BROWSERSTACK_OS: ios
+      BROWSERSTACK_BROWSER: Mobile Safari
+
+    strategy:
+      matrix:
+        node-version: [15.x]
+
+    steps:
+    - name: 'Checkout the repository'
+      uses: actions/checkout@v2
+
+    - name: 'BrowserStack Environment Setup'
+      uses: 'browserstack/github-actions/setup-env@master'
+      with:
+        username:  ${{ secrets.BROWSERSTACK_USERNAME }}
+        access-key: ${{ secrets.BROWSERSTACK_KEY }}
+        build-name: BUILD_INFO
+        project-name: REPO_NAME
+
+    - name: 'BrowserStackLocal Setup'
+      uses: 'browserstack/github-actions/setup-local@master'
+      with:
+        local-testing: start
+        local-identifier: random
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: 'Remove all but one indicator'
+      run: cd ds/data/processed && ls -Q | grep -v broadband | xargs rm -R
+
+    - name: 'Install npm modules and make data'
+      run: cd ui && npm ci
+    - run: cd ui && npm run makedata
+
+    - name: 'Build webapp'
+      run: cd ui && npm run build --if-present
+
+    - name: 'Start local server'
+      run: cd ui && npm run start &
+
+    - name: 'Run tests on Browserstack'
+      run: cd ui && npm run selenium
+
+    - name: 'Save selenium_ios_Mobile_Safari.json results in Gist'
+      uses: exuanbo/actions-deploy-gist@v1
+      with:
+        token: ${{ secrets.BROWSERSTACK_GIST_TOKEN }}
+        gist_id: 9b517e016820851429322515f0a5aa29
+        gist_file_name: selenium_ios_Mobile_Safari.json
+        file_path: ui/test/data/selenium_ios_Mobile_Safari.json
+
+    - name: 'BrowserStackLocal Stop'
+      uses: 'browserstack/github-actions/setup-local@master'
+      with:
+        local-testing: stop
+
+  batch_Windows_firefox:
+    needs: batch_ios_Mobile_Safari
+    runs-on: ubuntu-latest
+
+    env:
+      BROWSERSTACK_OS: Windows
+      BROWSERSTACK_BROWSER: firefox
+
+    strategy:
+      matrix:
+        node-version: [15.x]
+
+    steps:
+    - name: 'Checkout the repository'
+      uses: actions/checkout@v2
+
+    - name: 'BrowserStack Environment Setup'
+      uses: 'browserstack/github-actions/setup-env@master'
+      with:
+        username:  ${{ secrets.BROWSERSTACK_USERNAME }}
+        access-key: ${{ secrets.BROWSERSTACK_KEY }}
+        build-name: BUILD_INFO
+        project-name: REPO_NAME
+
+    - name: 'BrowserStackLocal Setup'
+      uses: 'browserstack/github-actions/setup-local@master'
+      with:
+        local-testing: start
+        local-identifier: random
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: 'Remove all but one indicator'
+      run: cd ds/data/processed && ls -Q | grep -v broadband | xargs rm -R
+
+    - name: 'Install npm modules and make data'
+      run: cd ui && npm ci
+    - run: cd ui && npm run makedata
+
+    - name: 'Build webapp'
+      run: cd ui && npm run build --if-present
+
+    - name: 'Start local server'
+      run: cd ui && npm run start &
+
+    - name: 'Run tests on Browserstack'
+      run: cd ui && npm run selenium
+
+    - name: 'Save selenium_Windows_firefox.json results in Gist'
+      uses: exuanbo/actions-deploy-gist@v1
+      with:
+        token: ${{ secrets.BROWSERSTACK_GIST_TOKEN }}
+        gist_id: 9b517e016820851429322515f0a5aa29
+        gist_file_name: selenium_Windows_firefox.json
+        file_path: ui/test/data/selenium_Windows_firefox.json
+
+    - name: 'BrowserStackLocal Stop'
+      uses: 'browserstack/github-actions/setup-local@master'
+      with:
+        local-testing: stop
+
+  batch_OS_X_firefox:
+    needs: batch_Windows_firefox
+    runs-on: ubuntu-latest
+
+    env:
+      BROWSERSTACK_OS: OS X
+      BROWSERSTACK_BROWSER: firefox
+
+    strategy:
+      matrix:
+        node-version: [15.x]
+
+    steps:
+    - name: 'Checkout the repository'
+      uses: actions/checkout@v2
+
+    - name: 'BrowserStack Environment Setup'
+      uses: 'browserstack/github-actions/setup-env@master'
+      with:
+        username:  ${{ secrets.BROWSERSTACK_USERNAME }}
+        access-key: ${{ secrets.BROWSERSTACK_KEY }}
+        build-name: BUILD_INFO
+        project-name: REPO_NAME
+
+    - name: 'BrowserStackLocal Setup'
+      uses: 'browserstack/github-actions/setup-local@master'
+      with:
+        local-testing: start
+        local-identifier: random
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: 'Remove all but one indicator'
+      run: cd ds/data/processed && ls -Q | grep -v broadband | xargs rm -R
+
+    - name: 'Install npm modules and make data'
+      run: cd ui && npm ci
+    - run: cd ui && npm run makedata
+
+    - name: 'Build webapp'
+      run: cd ui && npm run build --if-present
+
+    - name: 'Start local server'
+      run: cd ui && npm run start &
+
+    - name: 'Run tests on Browserstack'
+      run: cd ui && npm run selenium
+
+    - name: 'Save selenium_OS_X_firefox.json results in Gist'
+      uses: exuanbo/actions-deploy-gist@v1
+      with:
+        token: ${{ secrets.BROWSERSTACK_GIST_TOKEN }}
+        gist_id: 9b517e016820851429322515f0a5aa29
+        gist_file_name: selenium_OS_X_firefox.json
+        file_path: ui/test/data/selenium_OS_X_firefox.json
+
+    - name: 'BrowserStackLocal Stop'
+      uses: 'browserstack/github-actions/setup-local@master'
+      with:
+        local-testing: stop
+
+  batch_Windows_chrome:
+    needs: batch_OS_X_firefox
+    runs-on: ubuntu-latest
+
+    env:
+      BROWSERSTACK_OS: Windows
+      BROWSERSTACK_BROWSER: chrome
+
+    strategy:
+      matrix:
+        node-version: [15.x]
+
+    steps:
+    - name: 'Checkout the repository'
+      uses: actions/checkout@v2
+
+    - name: 'BrowserStack Environment Setup'
+      uses: 'browserstack/github-actions/setup-env@master'
+      with:
+        username:  ${{ secrets.BROWSERSTACK_USERNAME }}
+        access-key: ${{ secrets.BROWSERSTACK_KEY }}
+        build-name: BUILD_INFO
+        project-name: REPO_NAME
+
+    - name: 'BrowserStackLocal Setup'
+      uses: 'browserstack/github-actions/setup-local@master'
+      with:
+        local-testing: start
+        local-identifier: random
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: 'Remove all but one indicator'
+      run: cd ds/data/processed && ls -Q | grep -v broadband | xargs rm -R
+
+    - name: 'Install npm modules and make data'
+      run: cd ui && npm ci
+    - run: cd ui && npm run makedata
+
+    - name: 'Build webapp'
+      run: cd ui && npm run build --if-present
+
+    - name: 'Start local server'
+      run: cd ui && npm run start &
+
+    - name: 'Run tests on Browserstack'
+      run: cd ui && npm run selenium
+
+    - name: 'Save selenium_Windows_chrome.json results in Gist'
+      uses: exuanbo/actions-deploy-gist@v1
+      with:
+        token: ${{ secrets.BROWSERSTACK_GIST_TOKEN }}
+        gist_id: 9b517e016820851429322515f0a5aa29
+        gist_file_name: selenium_Windows_chrome.json
+        file_path: ui/test/data/selenium_Windows_chrome.json
+
+    - name: 'BrowserStackLocal Stop'
+      uses: 'browserstack/github-actions/setup-local@master'
+      with:
+        local-testing: stop
+
+  batch_OS_X_chrome:
+    needs: batch_Windows_chrome
+    runs-on: ubuntu-latest
+
+    env:
+      BROWSERSTACK_OS: OS X
+      BROWSERSTACK_BROWSER: chrome
+
+    strategy:
+      matrix:
+        node-version: [15.x]
+
+    steps:
+    - name: 'Checkout the repository'
+      uses: actions/checkout@v2
+
+    - name: 'BrowserStack Environment Setup'
+      uses: 'browserstack/github-actions/setup-env@master'
+      with:
+        username:  ${{ secrets.BROWSERSTACK_USERNAME }}
+        access-key: ${{ secrets.BROWSERSTACK_KEY }}
+        build-name: BUILD_INFO
+        project-name: REPO_NAME
+
+    - name: 'BrowserStackLocal Setup'
+      uses: 'browserstack/github-actions/setup-local@master'
+      with:
+        local-testing: start
+        local-identifier: random
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: 'Remove all but one indicator'
+      run: cd ds/data/processed && ls -Q | grep -v broadband | xargs rm -R
+
+    - name: 'Install npm modules and make data'
+      run: cd ui && npm ci
+    - run: cd ui && npm run makedata
+
+    - name: 'Build webapp'
+      run: cd ui && npm run build --if-present
+
+    - name: 'Start local server'
+      run: cd ui && npm run start &
+
+    - name: 'Run tests on Browserstack'
+      run: cd ui && npm run selenium
+
+    - name: 'Save selenium_OS_X_chrome.json results in Gist'
+      uses: exuanbo/actions-deploy-gist@v1
+      with:
+        token: ${{ secrets.BROWSERSTACK_GIST_TOKEN }}
+        gist_id: 9b517e016820851429322515f0a5aa29
+        gist_file_name: selenium_OS_X_chrome.json
+        file_path: ui/test/data/selenium_OS_X_chrome.json
+
+    - name: 'BrowserStackLocal Stop'
+      uses: 'browserstack/github-actions/setup-local@master'
+      with:
+        local-testing: stop
+
+  batch_Windows_edge:
+    needs: batch_OS_X_chrome
+    runs-on: ubuntu-latest
+
+    env:
+      BROWSERSTACK_OS: Windows
+      BROWSERSTACK_BROWSER: edge
+
+    strategy:
+      matrix:
+        node-version: [15.x]
+
+    steps:
+    - name: 'Checkout the repository'
+      uses: actions/checkout@v2
+
+    - name: 'BrowserStack Environment Setup'
+      uses: 'browserstack/github-actions/setup-env@master'
+      with:
+        username:  ${{ secrets.BROWSERSTACK_USERNAME }}
+        access-key: ${{ secrets.BROWSERSTACK_KEY }}
+        build-name: BUILD_INFO
+        project-name: REPO_NAME
+
+    - name: 'BrowserStackLocal Setup'
+      uses: 'browserstack/github-actions/setup-local@master'
+      with:
+        local-testing: start
+        local-identifier: random
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: 'Remove all but one indicator'
+      run: cd ds/data/processed && ls -Q | grep -v broadband | xargs rm -R
+
+    - name: 'Install npm modules and make data'
+      run: cd ui && npm ci
+    - run: cd ui && npm run makedata
+
+    - name: 'Build webapp'
+      run: cd ui && npm run build --if-present
+
+    - name: 'Start local server'
+      run: cd ui && npm run start &
+
+    - name: 'Run tests on Browserstack'
+      run: cd ui && npm run selenium
+
+    - name: 'Save selenium_Windows_edge.json results in Gist'
+      uses: exuanbo/actions-deploy-gist@v1
+      with:
+        token: ${{ secrets.BROWSERSTACK_GIST_TOKEN }}
+        gist_id: 9b517e016820851429322515f0a5aa29
+        gist_file_name: selenium_Windows_edge.json
+        file_path: ui/test/data/selenium_Windows_edge.json
+
+    - name: 'BrowserStackLocal Stop'
+      uses: 'browserstack/github-actions/setup-local@master'
+      with:
+        local-testing: stop
+
+  batch_OS_X_edge:
+    needs: batch_Windows_edge
+    runs-on: ubuntu-latest
+
+    env:
+      BROWSERSTACK_OS: OS X
+      BROWSERSTACK_BROWSER: edge
+
+    strategy:
+      matrix:
+        node-version: [15.x]
+
+    steps:
+    - name: 'Checkout the repository'
+      uses: actions/checkout@v2
+
+    - name: 'BrowserStack Environment Setup'
+      uses: 'browserstack/github-actions/setup-env@master'
+      with:
+        username:  ${{ secrets.BROWSERSTACK_USERNAME }}
+        access-key: ${{ secrets.BROWSERSTACK_KEY }}
+        build-name: BUILD_INFO
+        project-name: REPO_NAME
+
+    - name: 'BrowserStackLocal Setup'
+      uses: 'browserstack/github-actions/setup-local@master'
+      with:
+        local-testing: start
+        local-identifier: random
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: 'Remove all but one indicator'
+      run: cd ds/data/processed && ls -Q | grep -v broadband | xargs rm -R
+
+    - name: 'Install npm modules and make data'
+      run: cd ui && npm ci
+    - run: cd ui && npm run makedata
+
+    - name: 'Build webapp'
+      run: cd ui && npm run build --if-present
+
+    - name: 'Start local server'
+      run: cd ui && npm run start &
+
+    - name: 'Run tests on Browserstack'
+      run: cd ui && npm run selenium
+
+    - name: 'Save selenium_OS_X_edge.json results in Gist'
+      uses: exuanbo/actions-deploy-gist@v1
+      with:
+        token: ${{ secrets.BROWSERSTACK_GIST_TOKEN }}
+        gist_id: 9b517e016820851429322515f0a5aa29
+        gist_file_name: selenium_OS_X_edge.json
+        file_path: ui/test/data/selenium_OS_X_edge.json
+
+    - name: 'BrowserStackLocal Stop'
+      uses: 'browserstack/github-actions/setup-local@master'
+      with:
+        local-testing: stop
+
+  batch_OS_X_opera:
+    needs: batch_OS_X_edge
+    runs-on: ubuntu-latest
+
+    env:
+      BROWSERSTACK_OS: OS X
+      BROWSERSTACK_BROWSER: opera
+
+    strategy:
+      matrix:
+        node-version: [15.x]
+
+    steps:
+    - name: 'Checkout the repository'
+      uses: actions/checkout@v2
+
+    - name: 'BrowserStack Environment Setup'
+      uses: 'browserstack/github-actions/setup-env@master'
+      with:
+        username:  ${{ secrets.BROWSERSTACK_USERNAME }}
+        access-key: ${{ secrets.BROWSERSTACK_KEY }}
+        build-name: BUILD_INFO
+        project-name: REPO_NAME
+
+    - name: 'BrowserStackLocal Setup'
+      uses: 'browserstack/github-actions/setup-local@master'
+      with:
+        local-testing: start
+        local-identifier: random
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: 'Remove all but one indicator'
+      run: cd ds/data/processed && ls -Q | grep -v broadband | xargs rm -R
+
+    - name: 'Install npm modules and make data'
+      run: cd ui && npm ci
+    - run: cd ui && npm run makedata
+
+    - name: 'Build webapp'
+      run: cd ui && npm run build --if-present
+
+    - name: 'Start local server'
+      run: cd ui && npm run start &
+
+    - name: 'Run tests on Browserstack'
+      run: cd ui && npm run selenium
+
+    - name: 'Save selenium_OS_X_opera.json results in Gist'
+      uses: exuanbo/actions-deploy-gist@v1
+      with:
+        token: ${{ secrets.BROWSERSTACK_GIST_TOKEN }}
+        gist_id: 9b517e016820851429322515f0a5aa29
+        gist_file_name: selenium_OS_X_opera.json
+        file_path: ui/test/data/selenium_OS_X_opera.json
+
+    - name: 'BrowserStackLocal Stop'
+      uses: 'browserstack/github-actions/setup-local@master'
+      with:
+        local-testing: stop
+
+  batch_Windows_opera:
+    needs: batch_OS_X_opera
+    runs-on: ubuntu-latest
+
+    env:
+      BROWSERSTACK_OS: Windows
+      BROWSERSTACK_BROWSER: opera
+
+    strategy:
+      matrix:
+        node-version: [15.x]
+
+    steps:
+    - name: 'Checkout the repository'
+      uses: actions/checkout@v2
+
+    - name: 'BrowserStack Environment Setup'
+      uses: 'browserstack/github-actions/setup-env@master'
+      with:
+        username:  ${{ secrets.BROWSERSTACK_USERNAME }}
+        access-key: ${{ secrets.BROWSERSTACK_KEY }}
+        build-name: BUILD_INFO
+        project-name: REPO_NAME
+
+    - name: 'BrowserStackLocal Setup'
+      uses: 'browserstack/github-actions/setup-local@master'
+      with:
+        local-testing: start
+        local-identifier: random
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: 'Remove all but one indicator'
+      run: cd ds/data/processed && ls -Q | grep -v broadband | xargs rm -R
+
+    - name: 'Install npm modules and make data'
+      run: cd ui && npm ci
+    - run: cd ui && npm run makedata
+
+    - name: 'Build webapp'
+      run: cd ui && npm run build --if-present
+
+    - name: 'Start local server'
+      run: cd ui && npm run start &
+
+    - name: 'Run tests on Browserstack'
+      run: cd ui && npm run selenium
+
+    - name: 'Save selenium_Windows_opera.json results in Gist'
+      uses: exuanbo/actions-deploy-gist@v1
+      with:
+        token: ${{ secrets.BROWSERSTACK_GIST_TOKEN }}
+        gist_id: 9b517e016820851429322515f0a5aa29
+        gist_file_name: selenium_Windows_opera.json
+        file_path: ui/test/data/selenium_Windows_opera.json
+
+    - name: 'BrowserStackLocal Stop'
+      uses: 'browserstack/github-actions/setup-local@master'
+      with:
+        local-testing: stop
