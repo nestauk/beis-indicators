@@ -60,10 +60,10 @@
 			These are:
 		</p>
 		<ul>
-			<li>Public R&D capability</li>
-			<li>Business R&D capacity</li>
-			<li>Knowledge exchange</li>
-			<li>Place potential</li>
+			<li>Public R&D</li>
+			<li>Knowledge exchange and university commercialisation</li>
+			<li>Private R&D</li>
+			<li>Places attracting R&D firms and workers</li>
 		</ul>
 		<p>
 			Clicking on the name of an indicator will navigate to the trend view

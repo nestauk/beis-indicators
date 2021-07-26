@@ -71,15 +71,8 @@
 			and to remove the reliance of the tool on proprietary sources.
 		</p>
 		<p>
-			Having said this, in a small number of instances we have used
-			proprietary data sources such as
-			<Link
-				href={patstatUrl}
-				isBold={true}
-				theme={linkTheme}
-				type='external'
-			>PATSTAT</Link>
-			for the analysis of patenting, and
+			Having said this, in a small number of instances we have used proprietary
+			data sources, such as
 			<Link
 				href={crunchbaseUrl}
 				isBold={true}

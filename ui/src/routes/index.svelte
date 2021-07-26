@@ -26,37 +26,44 @@
 
 <main class={$_screen?.classes}>
 	<section>
-		<h1>BEIS indicators</h1>
+		<h1>BEIS/Nesta Research & Development spatial data tool</h1>
 
 		<h2>Intro</h2>
 
 		<p>
 			In this project,
 			<Link
-				href={nestaUrl}
-				isBold={true}
-				theme={linkTheme}
-				type='external'
-			>Nesta</Link>
-			have worked closely with
-			<Link
 				href={beisUrl}
 				isBold={true}
 				theme={linkTheme}
 				type='external'
 			>BEIS</Link>
-			to create an
+			and
+			<Link
+				href={nestaUrl}
+				isBold={true}
+				theme={linkTheme}
+				type='external'
+			>Nesta</Link>
+			have co-developed a research and development (R&D) spatial data tool,
+			that allows users to access, visualise and compare indicators that show
+			the scale of R&D systems at a subregional level.
+			The tool is an
 			<Link
 				href={repoUrl}
 				isBold={true}
 				theme={linkTheme}
 				type='external'
-			>open repository</Link>
-			of indicators capturing various dimensions of innovation and its drivers
-			in regions across the UK.
+			>open data repository</Link>,
+			giving access to R&D related indicators broken down by place and time,
+			with associated easy-to-use visualisation options
+			(such as line charts and choropleths).
 		</p>
 		<p>
-			We have also built a tool to
+			The indicators are wide-ranging and capture various dimensions of R&D
+			ecosystems including public R&D, knowledge exchange and university
+			commercialisation, private R&D and places attracting R&D firms and workers.
+			With this tool users can access,
 			<Link
 				href='indicators'
 				isBold={true}
@@ -65,8 +72,9 @@
 			>
 				visualise and explore
 			</Link>
-			these indicators with the goal of informing policies to drive innovation
-			and growth across all of the UK.
+			the indicators, using it as a foundation for further analysis - with the
+			goal of informing policies to drive R&D, innovation and growth across
+			all of the UK.
 		</p>
 		<p>
 			All this work has been performed with support from BEIS.
@@ -81,16 +89,16 @@
 			in higher education institutions in a region.
 		</p>
 
-		<h3>Private R&D</h3>
-		<p>
-			Measuring the level of R&D activity and innovative outputs in the
-			private sector in a region.
-		</p>
-
 		<h3>Knowledge exchange and university commercialisation</h3>
 		<p>
-			Measuring the connectivity between higher education institutions in
-			a region and the wider economy.
+			Measuring the connectivity between higher education institutions in a
+			region and the wider economy.
+		</p>
+
+		<h3>Private R&D</h3>
+		<p>
+			Measuring the level of R&D activity and innovative outputs in the private
+			sector in a region.
 		</p>
 
 		<h3>Places attracting R&D firms and workers</h3>

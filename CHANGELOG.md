@@ -26,6 +26,7 @@
 - Add Browserstack device compatibility testing (#480)
 - Comply with WCAG recommendations (#477)
 - Add accessibility statement (#461)
+- Text changes (#495)
 
 # 0.0.17 (staging release)
 
