@@ -27,6 +27,7 @@
 - Comply with WCAG recommendations (#477)
 - Add accessibility statement (#461)
 - Text changes (#495)
+- Add `/info` route (#494)
 
 # 0.0.17 (staging release)
 
