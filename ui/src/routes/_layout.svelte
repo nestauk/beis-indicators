@@ -29,7 +29,9 @@
 	onMount(() => {
 		const root = document.documentElement;
 		rootStyle = root.style;
-	})
+
+		window.nesta_isLayoutUndefined = () => isLayoutUndefined;
+	});
 	beforeUpdate(async () => {
 		if (isLayoutUndefined) {
 			await tick();
