@@ -114,8 +114,19 @@
 		width: 100%;
 	}
 
+	.small section {
+		display: grid;
+		grid-template-areas: 'header' 'slot' 'menu';
+		grid-template-rows: auto 1fr auto;
+	}
+
+	.medium section {
+		display: initial;
+	}
+
 	h1 {
 		font-weight: bold;
+		grid-area: header;
 	}
 
 	ul {
@@ -125,6 +136,14 @@
 
 	.tabs {
 		user-select: none;
+		grid-area: menu;
+	}
+
+	.small .tabs {
+		margin-top: 2rem;
+	}
+	.medium .tabs {
+		margin-top: 0;
 	}
 	.tabs ul {
 		display: flex;

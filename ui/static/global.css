@@ -87,6 +87,7 @@ a {
 :root {
 	--box-shadow-y: 0px 8px 9px -4px lightgrey;
 	--box-shadow-xy: 2px 8px 9px -4px lightgrey;
+	--color-blackish: #333;
 	--color-main-desat-50: hsla(199, 50%, 52%, 1);
 	--color-main-lighter: rgb(157, 219, 249);
 	--color-main: #075aa2;
@@ -104,4 +105,5 @@ a {
 	--dim-padding-minor: 0.5rem;
 	--dim-padding: 1rem;
 	--z-1000: 1000;
+	--z-2000: 2000;
 }

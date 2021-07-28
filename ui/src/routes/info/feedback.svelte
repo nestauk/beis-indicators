@@ -1,12 +1,5 @@
 <script>
-	import LoadingView from '@svizzle/ui/src/LoadingView.svelte';
 	import {toolName, userTestingUrl} from 'app/config';
-
-	let showSpinner = true;
-
-	const hideSpinner = () => {
-		showSpinner = false;
-	};
 </script>
 
 <svelte:head>
@@ -18,17 +11,12 @@
 </svelte:head>
 
 <main>
-	{#if showSpinner}
-		<LoadingView />
-	{/if}
-
 	<iframe
 		frameborder='0'
 		marginheight='0'
 		marginwidth='0'
 		src={userTestingUrl}
 		title='User testing survey'
-		on:load={hideSpinner}
 	/>
 </main>
 
@@ -36,5 +24,8 @@
 	main, iframe {
 		height: 100%;
 		width: 100%;
+	}
+	main {
+		position: relative;
 	}
 </style>
