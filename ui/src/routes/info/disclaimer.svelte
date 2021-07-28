@@ -92,7 +92,7 @@
 		background-color: white;
 		max-width: 900px;
 		overflow-y: auto;
-		padding: 2rem;
+		padding: 0;
 	}
 	h2 {
 		font-weight: normal;
