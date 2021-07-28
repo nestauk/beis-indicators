@@ -1,4 +1,4 @@
-# 0.0.18 (next release)
+# 0.0.18
 
 ## Indicators
 
@@ -11,25 +11,28 @@
 
 ## Tool
 
+- Accessibility:
+	- Add `<meta>` descriptions (#445)
+	- Make the app skeleton responsive (#448)
+	- Add the accessibility menu (#446)
+	- Set gov.uk blue as main color (#455, #457)
+	- Add Lighthouse audits (#481)
+	- Add Pa11y audits (#482)
+	- Add Browserstack device compatibility testing (#480)
+	- Comply with WCAG recommendations (#477)
+	- Add accessibility statement (#461)
+- Copy and app info :
+	- Format text routes (#447)
+	- Text changes (#495)
+	- Add `/info` route (#494)
+	- Add multiple banners (#483)
 - Refactor:
 	- split utils (#437)
 	- Use `@svizzle/ui`'s icons (#441)
 	- Use `@svizzle/time_region_value` (#443)
 	- Upgrade Svizzle packages (#458)
-- Add `<meta>` descriptions (#445)
-- Make the app skeleton responsive (#448)
-- Add the accessibility menu (#446)
-- Set gov.uk blue as main color (#455, #457)
-- Format text routes (#447)
-- Add Lighthouse audits (#481)
-- Add Pa11y audits (#482)
-- Add Browserstack device compatibility testing (#480)
-- Comply with WCAG recommendations (#477)
-- Add accessibility statement (#461)
-- Text changes (#495)
-- Add `/info` route (#494)
 
-# 0.0.17 (staging release)
+# 0.0.17
 
 ## Indicators
 
