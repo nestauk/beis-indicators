@@ -33,7 +33,7 @@
 </script>
 
 <svelte:head>
-	<title>EURITO - Info</title>
+	<title>{toolName}: Info</title>
 	<meta
 		name='description'
 		content='All about accessibility in {toolName}, including a guide on how to enable the accessibility dialog, accessibility audit and other quality audits, plus some pointers to setup various accessibility tools on your system'

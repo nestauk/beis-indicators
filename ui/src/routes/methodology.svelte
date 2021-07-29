@@ -17,7 +17,6 @@
 	const MateosGarciaUrl = 'https://osf.io/preprints/socarxiv/3cu67';
 	const nutsUrl = 'https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/nuts';
 	const onsUrl = 'https://ons.gov.uk';
-	const patstatUrl = 'https://www.epo.org/searching-for-patents/business/patstat.html';
 	const ukriUrl = 'https://www.ukri.org/';
 
 	const linkTheme = {
@@ -27,7 +26,7 @@
 </script>
 
 <svelte:head>
-	<title>BEIS indicators - Methodology</title>
+	<title>{toolName}: Methodology</title>
 	<meta
 		content='{toolName}: methodology used to produce these indicators'
 		name='description'

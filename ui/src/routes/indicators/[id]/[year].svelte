@@ -40,7 +40,7 @@
 </script>
 
 <svelte:head>
-	<title>BEIS indicators - {title} ({year})</title>
+	<title>{toolName}: {title} ({year})</title>
 	<meta
 		content='{toolName}: geographic distribution (NUTS2 regions) of the indicator: {title} ({year})'
 		name='description'

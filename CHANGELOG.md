@@ -1,4 +1,10 @@
-# 0.0.18
+# 0.0.19 (dev)
+
+## Tool
+
+- Fixed typos in UI (#501)
+
+# 0.0.18 (staging)
 
 ## Indicators
 

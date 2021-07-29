@@ -88,10 +88,10 @@
 </script>
 
 <svelte:head>
-	<title>EURITO - Accessibility</title>
+	<title>{toolName}: Accessibility</title>
 	<meta
 		name='description'
-		content='All about accessibility in {toolName}, including a guide on how to enable the accessibility dialog, accessibility audit and other quality audits, plus some pointers to setup various accessibility tools on your system'
+		content='All about accessibility in the {toolName}, including a guide on how to enable the accessibility dialog, accessibility audit and other quality audits, plus some pointers to setup various accessibility tools on your system'
 	>
 </svelte:head>
 
@@ -105,7 +105,7 @@
 			cultures that empower individuals and teams to thrive.
 		</p>
 		<p>
-			Therefore, {toolName} is committed to making its best effort towards
+			Therefore, we are committed to making its best effort towards
 			continually improving the accessibility of all the information
 			provided in this website.
 		</p>
@@ -166,6 +166,7 @@
 			<Link
 				href={pa11yUrl}
 				isBold={true}
+				theme={linkTheme}
 				type='external'
 			>
 				Pa11y accessibility testing tool
@@ -176,6 +177,7 @@
 			<Link
 				href={lighthouseUrl}
 				isBold={true}
+				theme={linkTheme}
 				type='external'
 			>
 				Google's Lighthouse tool
@@ -192,7 +194,7 @@
 		</p>
 		<p>
 			Meeting all of the WCAG criteria requires evaluating some of
-			them manually. Due to time constraints we might not have been able 
+			them manually. Due to time constraints we might not have been able
 			to test all of the recommendations listed in the section "Additional
 			items to manually check" in the "Accessibility" part of each audit
 			below, in the "Quality audits" section of this page. In particular

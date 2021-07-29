@@ -1,12 +1,12 @@
 <script>
-	import {isDev} from 'app/config';
+	import {isDev, toolName} from 'app/config';
 
 	export let error;
 	export let status;
 </script>
 
 <svelte:head>
-	<title>{status}</title>
+	<title>{toolName}: {status}</title>
 	<meta
 		content='Something went wrong, sorry!'
 		name='description'

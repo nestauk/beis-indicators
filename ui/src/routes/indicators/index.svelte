@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-	<title>BEIS indicators - Timelines</title>
+	<title>{toolName}: Timelines</title>
 	<meta
 		content='{toolName}: the temporal distribution of all the indicators in this tool'
 		name='description'

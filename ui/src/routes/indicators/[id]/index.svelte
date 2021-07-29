@@ -42,7 +42,7 @@
 </script>
 
 <svelte:head>
-	<title>BEIS indicators - {title}</title>
+	<title>{toolName}: {title}</title>
 	<meta
 		content='{toolName}: temporal trends for each available NUTS2 region for the indicator: {title}'
 		name='description'

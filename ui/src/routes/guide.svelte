@@ -22,7 +22,7 @@
 </script>
 
 <svelte:head>
-	<title>BEIS indicators - Guide</title>
+	<title>{toolName}: Guide</title>
 	<meta
 		content='{toolName}: usage guide for this tool'
 		name='description'

@@ -17,7 +17,7 @@
 </script>
 
 <svelte:head>
-	<title>BEIS indicators - Home</title>
+	<title>{toolName}: Home</title>
 	<meta
 		content='{toolName}: homepage'
 		name='description'
