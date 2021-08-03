@@ -4,6 +4,7 @@
 
 - Fixed typos in UI (#501)
 - Fix: Ensure Nav component renders during export (#504)
+- Added message for environments where Javascript is disabled (#498)
 
 # 0.0.18 (staging)
 
