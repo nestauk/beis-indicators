@@ -21,7 +21,12 @@
 		testResultsBaseURL,
 		summarizeResults
 	} from 'app/utils/tests';
-	import {failingA11yAudit, lighthouseUrls, toolName} from 'app/config';
+	import {
+		contactEmail,
+		failingA11yAudit,
+		lighthouseUrls,
+		toolName
+	} from 'app/config';
 	import theme from 'app/theme';
 
 	const lighthouseIssueUrl = 'https://github.com/GoogleChrome/lighthouse/issues/12039';
@@ -222,11 +227,11 @@
 			can further improve the accessibility of our site,
 			please contact us at
 			<Link
-				href="mailto:dataanalytics@nesta.org.uk"
+				href="mailto:{contactEmail}"
 				isBold={true}
 				theme={linkTheme}
 			>
-				dataanalytics@nesta.org.uk
+				{contactEmail}
 			</Link>.
 		</p>
 

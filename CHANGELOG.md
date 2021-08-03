@@ -3,6 +3,7 @@
 ## Tool
 
 - Fixed typos in UI (#501)
+- Fix: Ensure Nav component renders during export (#504)
 
 # 0.0.18 (staging)
 

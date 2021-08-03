@@ -246,6 +246,13 @@
 
 		<div class='cta'>
 			<LinkButton
+				href='/accessibility'
+				text='Read the accessibility statement'
+				theme={{backgroundColor: theme.colorLink}}
+			/>
+		</div>
+		<div class='cta'>
+			<LinkButton
 				href='/indicators'
 				text='Explore the indicators'
 				theme={{backgroundColor: theme.colorLink}}
