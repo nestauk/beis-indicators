@@ -9,6 +9,7 @@
 	import ColorCorrection from 'app/components/ColorCorrection.svelte';
 	import MultiBanner from 'app/components/MultiBanner.svelte';
 	import Nav from 'app/components/Nav.svelte';
+	import NoScript from 'app/components/NoScript.svelte';
 	import Privacy from 'app/components/content/Privacy.svelte';
 	import {
 		_a11yColorStyles,
@@ -31,11 +32,13 @@
 	let rootStyle;
 	let showA11yMenu;
 	let isLayoutUndefined = true;
+	let scriptingActive = false;
 
 	onMount(() => {
 		const root = document.documentElement;
 		rootStyle = root.style;
 
+		scriptingActive = true;
 		window.nesta_isLayoutUndefined = () => isLayoutUndefined;
 	});
 	beforeUpdate(async () => {
@@ -52,10 +55,15 @@
 
 <ScreenGauge />
 <ColorCorrection />
-<MultiBanner
-	{_screen}
-	components={bannerComponents}
-/>
+
+<NoScript />
+
+{#if scriptingActive}
+	<MultiBanner
+		{_screen}
+		components={bannerComponents}
+	/>
+{/if}
 
 {#if isLayoutUndefined}
 	<LoadingView stroke={theme.colorMain} />
