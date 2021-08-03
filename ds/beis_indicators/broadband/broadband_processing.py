@@ -1,3 +1,4 @@
+# +
 
 import geopandas as gpd
 import glob
@@ -6,8 +7,14 @@ import logging
 import numpy as np
 import os
 import pandas as pd
+import requests
+import re
+from datetime import datetime
 from urllib.request import urlretrieve
 from zipfile import ZipFile
+from bs4 import BeautifulSoup
+from functools import lru_cache
+# -
 
 from beis_indicators import project_dir
 from beis_indicators.utils.dir_file_management import save_indicator
@@ -17,20 +24,82 @@ from beis_indicators.indicators import points_to_indicator, save_indicator
 
 logger = logging.getLogger(__name__)
 
+BROADBAND_BASE = "https://www.ofcom.org.uk/research-and-data/multi-sector-research/infrastructure-research{}"
 BROADBAND_DIR = f'{project_dir}/data/raw/broadband'
-BROADBAND_YEARS_URL = {
-    2014: 'http://www.ofcom.org.uk/static/research/ir/Fixed_postcode.zip',
-    2015: 'http://www.ofcom.org.uk/static/research/connected-nations2015/Fixed_Postcode_2015.zip',
-    2016: 'https://www.ofcom.org.uk/static/research/connected-nations2016/2016_fixed_pc_r01.zip',
-    2017: 'https://www.ofcom.org.uk/static/research/connected-nations2017/fixed-postcode-2017.zip',
-    2018: 'https://www.ofcom.org.uk/__data/assets/file/0011/131042/201809_fixed_pc_r03.zip',
-    2019: 'https://www.ofcom.org.uk/__data/assets/file/0036/186678/connected-nations-2019-fixed-postcode-data.zip'
-}
-
-postcode_latlon = pd.read_csv(f'{project_dir}/data/raw/final_postcode_lat_lon.csv')
-
 MYDIR = (f'{project_dir}/data/raw/broadband')
 CHECK_FOLDER = os.path.isdir(MYDIR)
+
+
+# +
+last_year = datetime.now().year - 1
+pre_years  = range(2015, 2016+1)
+current_years = range(2017, last_year+1)
+BROADBAND_YEARS_URL = {year:BROADBAND_BASE.format('/connected-nations-{}/downloads'.format(year)) for year in pre_years}
+BROADBAND_YEARS_URL_POST = {year:BROADBAND_BASE.format('/connected-nations-{}/data-downloads'.format(year)) for year in current_years}
+
+BROADBAND_YEARS_URL.update(BROADBAND_YEARS_URL_POST)
+
+
+# -
+
+def get_file_link_pre_2018(link):
+    """Finds string directing to dataset"""
+    pre_link_element = {"headers": "table70995r1c2"}
+    r = requests.get(link)
+    soup = BeautifulSoup(r.content, "html.parser")
+    for tag in soup.find_all("td", pre_link_element):
+        tag_ = tag.find('a', text= re.compile("Postcode | postcode"))
+        link = tag_["href"]
+        
+        if not link.endswith("zip"):
+            continue
+        else: 
+            return link
+#         return ONS_BASE.format(link)
+
+
+def get_file_link_post_2018(link):
+    """Finds string directing to dataset"""
+    post_link_element = {"headers": "table15976r1c2 table15976r2c1"}
+    r = requests.get(link)
+    soup = BeautifulSoup(r.content, "html.parser")
+
+    for tag in soup.find_all("td", post_link_element):        
+        if len(tag) ==1:
+            tag_ = tag.find('a', href=True)
+            link = tag_["href"]
+            if not link.endswith("zip"):
+                continue
+            else:
+                return link
+            
+        elif len(tag) == 0:
+            continue
+            
+        else:
+            tag_ = tag.find('a', text= re.compile(r"Coverage and performance ZIP| Postcode | performance postcode"))
+            link = tag_["href"]
+            if not link.endswith("zip"):
+                continue
+            else:
+                return link
+
+
+@lru_cache()
+def create_data_links():
+    BROADBAND_DATA_URL = {
+        2014: 'http://www.ofcom.org.uk/static/research/ir/Fixed_postcode.zip'
+    }
+    for k,v in BROADBAND_YEARS_URL.items():
+        if k <= 2017:
+
+            BROADBAND_DATA_URL[k] = get_file_link_pre_2018(v)
+
+        elif k > 2017:
+            BROADBAND_DATA_URL[k] = get_file_link_post_2018(v)
+            
+    return BROADBAND_DATA_URL
+
 
 def get_broadband_data(year, extract=True, delete_raw=False):
     '''get_cordis_projects
@@ -46,16 +115,16 @@ def get_broadband_data(year, extract=True, delete_raw=False):
 
     logger.info(f'Downloading Broadband data for {year}')
 
-    url = BROADBAND_YEARS_URL[year]
+    url = create_data_links()[year]
     fname = f'broadband_{year}'
-    broadband_dir = f'{project_dir}/data/raw/broadband'
-    if not os.path.isdir(broadband_dir):
-        os.mkdir(broadband_dir)
-    fout = f'{broadband_dir}/{fname}.zip'
+    if not os.path.isdir(BROADBAND_DIR):
+        os.mkdir(BROADBAND_DIR)
+    fout = f'{BROADBAND_DIR}/{fname}.zip'
     if not os.path.isfile(fout):
         urlretrieve(url, fout)
 
     if extract:
+        print('compiling')
         _compile_data(year, delete_raw=delete_raw)
 
 def _compile_data(year, delete_raw=True):
@@ -67,6 +136,7 @@ def _compile_data(year, delete_raw=True):
     project_zip_dir = f'{project_dir}/data/raw/broadband/broadband_{year}.zip'
     # project_zip_dir = BROADBAND_YEARS_URL[year]
     project_zip = ZipFile(project_zip_dir)
+    postcode_latlon = pd.read_csv(f'{project_dir}/data/aux/final_postcode_lat_lon.csv')
 
     if (year == 2016) or (year == 2017):
 
@@ -79,12 +149,12 @@ def _compile_data(year, delete_raw=True):
         df['year'] = [year] * len(df)
         df.to_csv(f'{project_dir}/data/raw/broadband/broadband_{year}.csv', index=False)
 
-    elif year == 2019:
+    elif year >= 2019:
 
         dfs = [pd.read_csv(project_zip.open(text_file.filename))
                 for text_file in project_zip.infolist()
                  if not text_file.filename.endswith('/')
-                 if '201905_fixed_pc_performance' in text_file.filename]
+                 if 'pc_performance' in text_file.filename]
         df = pd.concat(dfs,ignore_index=True)
         df = format_speeds(df, year)
         df = postcode_to_latlon(df, postcode_latlon, year)
@@ -140,10 +210,12 @@ def format_speeds(data, year):
     return data
 
 
+def main_run():
+    years = list(pre_years)+list(current_years)
+    for year in years:
+        get_broadband_data(year)
 
-# if __name__ == "__main__":
-# #
-#     years = [2014, 2015, 2016, 2017, 2018, 2019]
+
+if __name__ == "__main__":
 #
-#     for year in years:
-#         get_broadband_data(year)
+    main_run()

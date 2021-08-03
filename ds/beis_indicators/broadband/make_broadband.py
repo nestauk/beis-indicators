@@ -6,13 +6,11 @@ from beis_indicators import project_dir
 
 from beis_indicators.geo import NutsCoder, LepCoder
 from beis_indicators.indicators import points_to_indicator, save_indicator
-from beis_indicators.broadband.broadband_processing import get_broadband_data
+from beis_indicators.broadband.broadband_processing import main_run 
 
 import pandas as pd
 
 logger = logging.getLogger(__name__)
-
-
 
 coders = {
     'nuts2': NutsCoder(level=2),
@@ -22,18 +20,6 @@ coders = {
 
 BROADBAND_DIR = f'{project_dir}/data/raw/broadband'
 
-
-postcode_latlon = pd.read_csv(f'{project_dir}/data/raw/final_postcode_lat_lon.csv')
-
-# MYDIR = (f'{project_dir}/data/raw/broadband')
-# CHECK_FOLDER = os.path.isdir(MYDIR)
-
-years = [2014, 2015, 2016, 2017, 2018, 2019]
-
-for year in years:
-    get_broadband_data(year)
-
-# read and concat
 
 files = glob.glob(f'{BROADBAND_DIR}/*.csv')
 
