@@ -22,21 +22,21 @@
 </script>
 
 <svelte:head>
-	<title>{toolName}: Guide</title>
+	<title>{toolName}: Indicators Guide</title>
 	<meta
-		content='{toolName}: usage guide for this tool'
+		content='{toolName}: how to explore the indicators'
 		name='description'
 	>
 </svelte:head>
 
 <main class={$_screen?.classes}>
 	<section>
-		<h1>How to explore the indicators</h1>
+		<h2>How to explore the indicators</h2>
 
 		<!-- main -->
-		<h2>Indicators page</h2>
+		<h3>Indicators page</h3>
 
-		<h3>Temporal coverage</h3>
+		<h4>Temporal coverage</h4>
 		<p>
 			On the right you will find a representation of the temporal coverage
 			for each available indicator.
@@ -54,7 +54,7 @@
 			available for at least one indicator.
 		</p>
 
-		<h3>Sidebar</h3>
+		<h4>Sidebar</h4>
 		<p>
 			Here you will find a list of indicators, grouped by theme sections.
 			These are:
@@ -71,9 +71,9 @@
 		</p>
 
 		<!-- trends -->
-		<h2>Indicator trends</h2>
+		<h3>Indicator trends</h3>
 
-		<h3>Timeline</h3>
+		<h4>Timeline</h4>
 		<p>
 			The Timeline shows one white dot for each year that the indicator is
 			available. In this view, the timeline is interactive. Clicking on a
@@ -81,7 +81,7 @@
 			indicator for that year.
 		</p>
 
-		<h3>Trends</h3>
+		<h4>Trends</h4>
 		<p>
 			Here you will see a set of trend lines, with each line showing the
 			indicator value for one NUTS2 region over time (where data is
@@ -96,7 +96,7 @@
 			showing actual values or the rank of each region.
 		</p>
 
-		<h3>Regional selection</h3>
+		<h4>Regional selection</h4>
 		<p>
 			The trend lines shown correspond to NUTS2 regions, however it is
 			possible to select and filter regions based on the larger NUTS1
@@ -123,7 +123,7 @@
 			the values of the active trends.
 		</p>
 
-		<h3>Indicator info and download</h3>
+		<h4>Indicator info and download</h4>
 		<p>
 			Clicking on the "i" icon at the right of the page title shows an
 			info panel reporting the indicator metadata (data provenance, date
@@ -142,14 +142,14 @@
 		<p>The panel can be dismissed by clicking on the page background.</p>
 
 		<!-- map -->
-		<h2>Geographic distribution</h2>
+		<h3>Geographic distribution</h3>
 		<p>
 			This page can be reached either by clicking on a dot in the
 			Indicators page or by clicking on one of the dots of the timeline
 			when looking at the trend for a particular indicator.
 		</p>
 
-		<h3>Map</h3>
+		<h4>Map</h4>
 		<p>
 			On the left there is a choropleth showing the indicator values on a
 			map of the UK for the NUTS2 regions in that year.
@@ -164,7 +164,7 @@
 			its key relevance for BEIS regional policies.
 		</p>
 
-		<h3>Bar chart</h3>
+		<h4>Bar chart</h4>
 		<p>
 			On the right there is a bar chart showing the distribution of the
 			indicator values for each NUTS2 region in descending order.
@@ -175,7 +175,7 @@
 			the year shown.
 		</p>
 
-		<h3>Regional selection</h3>
+		<h4>Regional selection</h4>
 		<p>
 			As in the trends view, it is possible to highlight or filter the
 			NUTS2 regions within a certain year by selecting a NUTS1 region and
@@ -186,14 +186,14 @@
 			currently selected regions.
 		</p>
 
-		<h3>Indicator info and download</h3>
+		<h4>Indicator info and download</h4>
 		<p>
 			The "i" icon at the right of the page title has the same function
 			described in the Trends section above.
 		</p>
 
 		<!-- download -->
-		<h2>Downloading all indicators</h2>
+		<h3>Downloading all indicators</h3>
 		<p>
 			You can download all data in the tool for your own use.
 		</p>
@@ -208,7 +208,7 @@
 			of all indicators in a single file.
 		</p>
 
-		<h3>Extras</h3>
+		<h4>Extras</h4>
 
 		<p>
 			Note that some indicators have been created for NUTS3 and LEP, but
@@ -228,7 +228,7 @@
 		</p>
 
 		<!-- feedback -->
-		<h2>Version, changelog and feedback</h2>
+		<h3>Version, changelog and feedback</h3>
 
 		<p>
 			In the top-right corner, you will find the version number of the
@@ -262,26 +262,11 @@
 </main>
 
 <style>
-	main {
-		background-color: var(--color-background);
-		display: flex;
-		font-weight: 200;
-		height: 100%;
-		justify-content: space-around;
-		width: 100%;
-	}
-
 	section {
 		background-color: white;
-		box-shadow: var(--box-shadow-y);
-		max-width: 900px;
 		overflow-y: auto;
-		padding: 2rem;
 	}
 
-	h1 {
-		font-weight: bold;
-	}
 	h2 {
 		font-weight: normal;
 		margin-bottom: 1.5rem;
@@ -290,6 +275,14 @@
 	h3 {
 		font-weight: normal;
 		margin-top: 1.5rem;
+	}
+	h4 {
+		color: var(--color-main);
+		font-style: italic;
+	}
+
+	p {
+		margin: 0.75rem 0;
 	}
 
 	ul {

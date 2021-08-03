@@ -175,8 +175,8 @@
 				theme={{backgroundColor: theme.colorLink}}
 			/>
 			<LinkButton
-				href='/guide'
-				text='Read the guide'
+				href='/guides'
+				text='Read the guides'
 				theme={{backgroundColor: theme.colorLink}}
 			/>
 			<LinkButton
