@@ -9,7 +9,7 @@
 </script>
 
 <svelte:head>
-	<title>{toolName}: Indicators Guide</title>
+	<title>Indicators guide - {toolName}</title>
 	<meta
 		content='{toolName}: how to explore the indicators'
 		name='description'

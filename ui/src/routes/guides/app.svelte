@@ -9,7 +9,7 @@
 </script>
 
 <svelte:head>
-	<title>{toolName}: App Guide</title>
+	<title>App guide - {toolName}</title>
 	<meta
 		content='{toolName}: how to use the app'
 		name='description'

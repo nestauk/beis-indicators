@@ -17,7 +17,7 @@
 </script>
 
 <svelte:head>
-	<title>{toolName}: Home</title>
+	<title>Home - {toolName}</title>
 	<meta
 		content='{toolName}: homepage'
 		name='description'

@@ -42,7 +42,7 @@
 </script>
 
 <svelte:head>
-	<title>{toolName}: {title}</title>
+	<title>{title} - {toolName}</title>
 	<meta
 		content='{toolName}: temporal trends for each available NUTS2 region for the indicator: {title}'
 		name='description'

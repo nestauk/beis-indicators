@@ -40,7 +40,7 @@
 </script>
 
 <svelte:head>
-	<title>{toolName}: {title} ({year})</title>
+	<title>{title} ({year}) - {toolName}</title>
 	<meta
 		content='{toolName}: geographic distribution (NUTS2 regions) of the indicator: {title} ({year})'
 		name='description'

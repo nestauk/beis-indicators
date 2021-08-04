@@ -5,9 +5,9 @@
 </script>
 
 <svelte:head>
-	<title>{toolName}: Accessibility menu guide</title>
+	<title>Accessibility menu guide - {toolName}</title>
 	<meta
-		content='{toolName}: Accessibility Menu Guide'
+		content='{toolName}: Accessibility menu guide'
 		name='description'
 	>
 </svelte:head>

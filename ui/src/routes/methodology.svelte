@@ -26,7 +26,7 @@
 </script>
 
 <svelte:head>
-	<title>{toolName}: Methodology</title>
+	<title>Methodology - {toolName}</title>
 	<meta
 		content='{toolName}: methodology used to produce these indicators'
 		name='description'

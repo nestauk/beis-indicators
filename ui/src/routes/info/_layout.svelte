@@ -21,7 +21,7 @@
 
 	export let segment;
 
-	$: currentValueIndex = _.findIndex(segments,_.is(segment));
+	$: currentValueIndex = _.findIndex(segments, _.is(segment));
 	$: prevSegment = segments[currentValueIndex - 1];
 	$: nextSegment = segments[currentValueIndex + 1];
 	$: hasPrevSegment = isNotNil(prevSegment);

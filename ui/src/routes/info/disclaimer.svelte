@@ -1,3 +1,11 @@
+<svelte:head>
+	<title>Disclaimer - {toolName}</title>
+	<meta
+		content='{toolName}: disclaimer'
+		name='description'
+	>
+</svelte:head>
+
 <section>
 	<h2>Disclaimer</h2>
 	<p>
