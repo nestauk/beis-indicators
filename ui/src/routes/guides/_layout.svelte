@@ -16,7 +16,7 @@
 	const titles = {
 		app:'App',
 		indicators: 'Indicators',
-		a11ymenu: 'A11y menu',
+		a11ymenu: 'Accessibility menu',
 	};
 
 	export let segment;

@@ -3,7 +3,7 @@
 	import IndicatorsMedium
 		from 'app/components/content/guides/IndicatorsMedium.svelte';
 	import IndicatorsSmall
-	from 'app/components/content/guides/IndicatorsSmall.svelte';
+		from 'app/components/content/guides/IndicatorsSmall.svelte';
 
 	import {toolName} from 'app/config';
 </script>

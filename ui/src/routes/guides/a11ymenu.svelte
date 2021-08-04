@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>{toolName}: A11y menu guide</title>
+	<title>{toolName}: Accessibility menu guide</title>
 	<meta
 		content='{toolName}: Accessibility Menu Guide'
 		name='description'
