@@ -5,12 +5,12 @@ import * as sapper from '@sapper/server';
 
 import {isDev} from 'app/config';
 
-const { PORT } = process.env;
+const {PORT} = process.env;
 
 polka()
 	.use(
-		compression({ threshold: 0 }),
-		sirv('static', { dev: isDev }),
+		compression({threshold: 0}),
+		sirv('static', {dev: isDev}),
 		sapper.middleware()
 	)
 	.listen(PORT, err => {

@@ -2,7 +2,7 @@
 	import {lookup} from 'app/data/groups';
 	import {parseCSV} from 'app/utils/domain';
 
-	export function preload({ params: {id}, query }) {
+	export function preload ({params: {id}}) {
 		return this.fetch(lookup[id].url)
 		.then(r => r.text())
 		.then(parseCSV(id))
