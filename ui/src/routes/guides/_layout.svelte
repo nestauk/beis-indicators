@@ -12,12 +12,12 @@
 	import {toolName} from 'app/config';
 	import theme from 'app/theme';
 
-	const links = {
+	const segments = ['app', 'indicators', 'a11ymenu'];
+	const titles = {
 		app:'App',
 		indicators: 'Indicators',
 		a11ymenu: 'A11y menu',
 	};
-	const segments = _.keys(links);
 
 	export let segment;
 
@@ -45,7 +45,7 @@
 								}}
 							>
 								<span>
-									{links[id]}
+									{titles[id]}
 								</span>
 							</Link>
 						</li>
@@ -54,7 +54,7 @@
 			{:else}
 				<div class='tab-selector'>
 					<label for=''>
-						{links[segment]}
+						{titles[segment]}
 					</label>
 
 					<div>
