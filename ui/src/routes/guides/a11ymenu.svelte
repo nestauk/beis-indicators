@@ -17,7 +17,7 @@
 		<h2>What the accessibility menu does</h2>
 
 		<p>
-			You can use the menu to change 2 groups of features.
+			You can use the menu to change two groups of features.
 		</p>
 
 		<h3>Text features</h3>
@@ -96,7 +96,7 @@
 				or next feature,
 			</li>
 			<li>
-				on the left, you have 2 buttons to reset all the features of a
+				on the left, you have two buttons to reset all the features of a
 				particular group (text or color).
 			</li>
 		</ul>
