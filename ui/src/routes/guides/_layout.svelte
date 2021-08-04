@@ -14,8 +14,9 @@
 
 	const links = {
 		indicators: 'Indicators',
-		a11ymenu: 'A11y menu'
-	}
+		a11ymenu: 'A11y menu',
+		app:'App',
+	};
 	const segments = _.keys(links);
 
 	export let segment;

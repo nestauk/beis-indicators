@@ -1,9 +1,9 @@
 <script>
 	import {_screen} from '@svizzle/ui/src/gauges/screen/ScreenGauge.svelte';
-	import IndicatorsMedium
-		from 'app/components/content/guides/IndicatorsMedium.svelte';
-	import IndicatorsSmall
-	from 'app/components/content/guides/IndicatorsSmall.svelte';
+	import AppMedium
+		from 'app/components/content/guides/AppMedium.svelte';
+	import AppSmall
+	from 'app/components/content/guides/AppSmall.svelte';
 
 	import {toolName} from 'app/config';
 </script>
@@ -17,7 +17,7 @@
 </svelte:head>
 
 {#if $_screen?.sizes.medium}
-	<IndicatorsMedium />
+	<AppMedium />
 {:else}
-	<IndicatorsSmall />
+	<AppSmall />
 {/if}
