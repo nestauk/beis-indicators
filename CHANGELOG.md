@@ -5,7 +5,7 @@
 - Fixed typos in UI (#501)
 - Fix: Ensure Nav component renders during export (#504)
 - Added message for environments where Javascript is disabled (#498)
-- Added `/guides/a11ymenu`, moved `/guide` to `/guides/indicators` (#503)
+- Guides: Added app and a11ymenu, grouped with indicators under `/guides` (#503)
 
 # 0.0.18 (staging)
 
