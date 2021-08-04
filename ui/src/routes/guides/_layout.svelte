@@ -13,9 +13,9 @@
 	import theme from 'app/theme';
 
 	const links = {
+		app:'App',
 		indicators: 'Indicators',
 		a11ymenu: 'A11y menu',
-		app:'App',
 	};
 	const segments = _.keys(links);
 
@@ -27,17 +27,6 @@
 	$: hasPrevSegment = isNotNil(prevSegment);
 	$: hasNextSegment = isNotNil(nextSegment);
 </script>
-
-<svelte:head>
-	<title>{toolName}: Info</title>
-	<meta
-		name='description'
-		content='All about accessibility in {toolName}, including a guide on how
-			to enable the accessibility dialog, accessibility audit and other
-			quality audits, plus some pointers to setup various accessibility
-			tools on your system'
-	>
-</svelte:head>
 
 <main class={$_screen?.classes}>
 	<section>

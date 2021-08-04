@@ -22,23 +22,12 @@
 
 	export let segment;
 
-	$: currentValueIndex = _.findIndex(
-		segments,
-		_.is(segment)
-	);
+	$: currentValueIndex = _.findIndex(segments,_.is(segment));
 	$: prevSegment = segments[currentValueIndex - 1];
 	$: nextSegment = segments[currentValueIndex + 1];
 	$: hasPrevSegment = isNotNil(prevSegment);
 	$: hasNextSegment = isNotNil(nextSegment);
 </script>
-
-<svelte:head>
-	<title>{toolName}: Info</title>
-	<meta
-		name='description'
-		content='All about accessibility in {toolName}, including a guide on how to enable the accessibility dialog, accessibility audit and other quality audits, plus some pointers to setup various accessibility tools on your system'
-	>
-</svelte:head>
 
 <main class={$_screen?.classes}>
 	<section>

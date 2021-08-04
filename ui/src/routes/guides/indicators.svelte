@@ -11,9 +11,9 @@
 <svelte:head>
 	<title>{toolName}: Indicators Guide</title>
 	<meta
-		content='{toolName}: how to use the app'
+		content='{toolName}: how to explore the indicators'
 		name='description'
-	>
+	/>
 </svelte:head>
 
 {#if $_screen?.sizes.medium}
