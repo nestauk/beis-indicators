@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-	<title>{toolName}: Timelines</title>
+	<title>Indicators - {toolName}</title>
 	<meta
 		content='{toolName}: the temporal distribution of all the indicators in this tool'
 		name='description'

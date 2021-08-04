@@ -2,7 +2,7 @@
 	import {lookup} from 'app/data/groups';
 	import {parseCSV} from 'app/utils/domain';
 
-	export function preload({ params: {id}, query }) {
+	export function preload ({params: {id}}) {
 		return this.fetch(lookup[id].url)
 		.then(r => r.text())
 		.then(parseCSV(id))
@@ -42,7 +42,7 @@
 </script>
 
 <svelte:head>
-	<title>{toolName}: {title}</title>
+	<title>{title} - {toolName}</title>
 	<meta
 		content='{toolName}: temporal trends for each available NUTS2 region for the indicator: {title}'
 		name='description'

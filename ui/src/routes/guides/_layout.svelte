@@ -11,13 +11,12 @@
 	import {isNotNil} from '@svizzle/utils';
 	import theme from 'app/theme';
 
-	const segments = ['beta', 'privacy', 'disclaimer', 'feedback'];
+	const segments = ['app', 'indicators', 'a11ymenu'];
 	const titles = {
-		beta: 'Beta release',
-		privacy: 'Privacy',
-		disclaimer: 'Disclaimer',
-		feedback: 'Feedback',
-	}
+		app:'App',
+		indicators: 'Indicators',
+		a11ymenu: 'Accessibility menu',
+	};
 
 	export let segment;
 
@@ -30,7 +29,7 @@
 
 <main class={$_screen?.classes}>
 	<section>
-		<h1>App information</h1>
+		<h1>Guides</h1>
 		<menu class='tabs'>
 			{#if $_screen?.sizes?.medium}
 				<ul>
@@ -39,7 +38,7 @@
 							class:selected={segment === id}
 						>
 							<Link
-								href='/info/{id}'
+								href='/guides/{id}'
 								theme={{
 									color: segment === id ? 'white' : theme.colorLink,
 								}}
@@ -59,7 +58,7 @@
 
 					<div>
 						<Link
-							href={hasPrevSegment && `/info/${prevSegment}`}
+							href={hasPrevSegment && `/guides/${prevSegment}`}
 							theme={{
 								color: hasPrevSegment ? theme.colorLink : 'gray',
 							}}
@@ -69,7 +68,7 @@
 					</div>
 					<div>
 						<Link
-							href={hasNextSegment && `/info/${nextSegment}`}
+							href={hasNextSegment && `/guides/${nextSegment}`}
 							theme={{
 								color: hasNextSegment ? theme.colorLink : 'gray',
 							}}

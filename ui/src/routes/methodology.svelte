@@ -26,7 +26,7 @@
 </script>
 
 <svelte:head>
-	<title>{toolName}: Methodology</title>
+	<title>Methodology - {toolName}</title>
 	<meta
 		content='{toolName}: methodology used to produce these indicators'
 		name='description'
@@ -175,8 +175,8 @@
 				theme={{backgroundColor: theme.colorLink}}
 			/>
 			<LinkButton
-				href='/guide'
-				text='Read the guide'
+				href='/guides'
+				text='Read the guides'
 				theme={{backgroundColor: theme.colorLink}}
 			/>
 			<LinkButton
