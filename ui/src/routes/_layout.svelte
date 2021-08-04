@@ -10,7 +10,7 @@
 	import MultiBanner from 'app/components/MultiBanner.svelte';
 	import Nav from 'app/components/Nav.svelte';
 	import NoScript from 'app/components/NoScript.svelte';
-	import Privacy from 'app/components/content/Privacy.svelte';
+	import Privacy from 'app/components/content/info/Privacy.svelte';
 	import {
 		_a11yColorStyles,
 		_a11yTextStyles,
