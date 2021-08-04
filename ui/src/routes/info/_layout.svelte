@@ -9,7 +9,6 @@
 	import Link from '@svizzle/ui/src/Link.svelte';
 
 	import {isNotNil} from '@svizzle/utils';
-	import {toolName} from 'app/config';
 	import theme from 'app/theme';
 
 	const segments = ['beta', 'privacy', 'disclaimer', 'feedback'];
@@ -97,6 +96,7 @@
 
 	section {
 		background-color: white;
+		display: grid;
 		max-width: 900px;
 		overflow-y: auto;
 		padding: 2rem;
@@ -104,13 +104,13 @@
 	}
 
 	.small section {
-		display: grid;
 		grid-template-areas: 'header' 'slot' 'menu';
 		grid-template-rows: auto 1fr auto;
 	}
 
 	.medium section {
-		display: initial;
+		grid-template-areas: 'header' 'menu' 'slot';
+		grid-template-rows: auto auto 1fr;
 	}
 
 	h1 {

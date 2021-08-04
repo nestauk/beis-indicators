@@ -3,13 +3,13 @@
 	import AppMedium
 		from 'app/components/content/guides/AppMedium.svelte';
 	import AppSmall
-	from 'app/components/content/guides/AppSmall.svelte';
+		from 'app/components/content/guides/AppSmall.svelte';
 
 	import {toolName} from 'app/config';
 </script>
 
 <svelte:head>
-	<title>{toolName}: Indicators Guide</title>
+	<title>{toolName}: App Guide</title>
 	<meta
 		content='{toolName}: how to use the app'
 		name='description'
