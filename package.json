@@ -1,9 +1,9 @@
 {
   "description": "BEIS regional indicators",
   "license": "MIT",
-  "name": "beis_indicators",
+  "name": "beis_nesta_research_and_development_spatial_data",
   "scripts": {
     "deploy": "cd ui && npm install && npm run makedata && npm run export"
   },
-  "version": "0.0.18"
+  "version": "0.1.0"
 }

@@ -61,7 +61,7 @@
 		"zip-a-folder": "0.0.12"
 	},
 	"license": "MIT",
-	"name": "beis_indicators_ui",
+	"name": "beis_nesta_research_and_development_spatial_data_ui",
 	"scripts": {
 		"build": "sapper build --legacy",
 		"chmod": "chmod u+x src/bin/*",

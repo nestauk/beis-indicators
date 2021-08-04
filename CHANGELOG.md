@@ -1,4 +1,4 @@
-# 0.0.19 (dev)
+# 0.1.0
 
 ## Tool
 
@@ -8,7 +8,7 @@
 - Guides: Added app and a11ymenu, grouped with indicators under `/guides` (#503)
 - Fix: Restored full menu in `small` layout for easier navigation (#510)
 
-# 0.0.18 (staging)
+# 0.0.18
 
 ## Indicators
 
