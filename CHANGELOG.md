@@ -6,6 +6,7 @@
 - Fix: Ensure Nav component renders during export (#504)
 - Added message for environments where Javascript is disabled (#498)
 - Guides: Added app and a11ymenu, grouped with indicators under `/guides` (#503)
+- Fix: Restored full menu in `small` layout for easier navigation (#510)
 
 # 0.0.18 (staging)
 
