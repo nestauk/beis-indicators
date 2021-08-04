@@ -5,7 +5,7 @@
 	import {onMount, beforeUpdate, tick} from 'svelte';
 
 	import AccessibilityMenu from 'app/components/AccessibilityMenu.svelte';
-	import Beta from 'app/components/content/Beta.svelte';
+	import Beta from 'app/components/content/info/Beta.svelte';
 	import ColorCorrection from 'app/components/ColorCorrection.svelte';
 	import MultiBanner from 'app/components/MultiBanner.svelte';
 	import Nav from 'app/components/Nav.svelte';

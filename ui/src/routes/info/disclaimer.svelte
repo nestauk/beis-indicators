@@ -1,3 +1,7 @@
+<script>
+	import {toolName} from 'app/config';
+</script>
+
 <svelte:head>
 	<title>Disclaimer - {toolName}</title>
 	<meta
