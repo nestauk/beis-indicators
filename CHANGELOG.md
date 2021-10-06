@@ -1,9 +1,14 @@
+# 0.1.2 (next)
+
+## Tool
+
+- Point the version link to the changelog in the `release` branch (#519)
+
 # 0.1.1
 
 ## Tool
 
 - Updated the first banner (#513)
-
 
 # 0.1.0
 
