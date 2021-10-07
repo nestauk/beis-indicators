@@ -1,12 +1,12 @@
-import {terser} from 'rollup-plugin-terser';
-import babel from 'rollup-plugin-babel';
-import cleanup from "rollup-plugin-cleanup";
+import {babel} from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
 import dsv from '@rollup/plugin-dsv';
 import json from '@rollup/plugin-json';
-import replace from '@rollup/plugin-replace';
 import resolve from '@rollup/plugin-node-resolve';
+import replace from '@rollup/plugin-replace';
+import cleanup from "rollup-plugin-cleanup";
 import svelte from 'rollup-plugin-svelte';
+import {terser} from 'rollup-plugin-terser';
 import yaml from '@rollup/plugin-yaml';
 
 import config from 'sapper/config/rollup.js';
@@ -20,12 +20,17 @@ const removeComments = cleanup({
 	extensions: ['js', 'mjs']
 });
 
-const onwarn = (warning, onwarn) => {
-	return (
-		(warning.code === 'MISSING_EXPORT' && /'preload'/.test(warning.message))
-		|| (warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message))
-		|| warning.code !== 'CIRCULAR_DEPENDENCY'
-	) && onwarn(warning)
+const onwarn = (warning, _onwarn) => {
+	const doRun =
+		warning.code === 'MISSING_EXPORT' &&
+			(/'preload'/u).test(warning.message) ||
+
+		warning.code === 'CIRCULAR_DEPENDENCY' &&
+			(/[/\\]@sapper[/\\]/u).test(warning.message) ||
+
+		warning.code !== 'CIRCULAR_DEPENDENCY';
+
+	return doRun && _onwarn(warning)
 };
 
 export default {
@@ -57,20 +62,20 @@ export default {
 			removeComments,
 
 			legacy && babel({
-				extensions: ['.js', '.mjs', '.html', '.svelte'],
-				runtimeHelpers: true,
+				babelHelpers: 'runtime',
 				exclude: ['node_modules/@babel/**'],
-				presets: [
-					['@babel/preset-env', {
-						targets: '> 0.25%, not dead'
-					}]
-				],
+				extensions: ['.js', '.mjs', '.html', '.svelte'],
 				plugins: [
 					'@babel/plugin-syntax-dynamic-import',
 					['@babel/plugin-transform-runtime', {
 						useESModules: true
 					}]
-				]
+				],
+				presets: [
+					['@babel/preset-env', {
+						targets: '> 0.25%, not dead'
+					}]
+				],
 			}),
 
 			!dev && terser({

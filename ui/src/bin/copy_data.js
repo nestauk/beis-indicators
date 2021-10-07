@@ -9,7 +9,7 @@ import {applyFnMap, transformValues} from '@svizzle/utils';
 import {zip} from 'zip-a-folder';
 import {csvFormat} from 'd3-dsv';
 import * as _ from 'lamb';
-import cpy from 'cpy';
+import copyfiles from 'copyfiles';
 import del from 'del';
 import tempy from 'tempy';
 
@@ -35,6 +35,7 @@ const UK_REGIONS_LABELS = {
 	LEP: LEP_UK_labels,
 };
 
+const logError = err => err && console.log(err);
 const isDir = name => !name.startsWith('.') && path.parse(name).ext === '';
 const makePath = dirName => filename => path.resolve(
 	DATA_DIR,
@@ -108,7 +109,11 @@ const makeSingleFileWith = async (condition, regionType) => {
 	.then(csvFormat)
 	.then(saveString(tmpAllIndicatorsCsvPath));
 
-	await cpy(tmpAllIndicatorsCsvPath, DATA_DIR_STATIC);
+	copyfiles(
+		[tmpAllIndicatorsCsvPath, DATA_DIR_STATIC],
+		{up: true},
+		logError
+	);
 }
 
 
@@ -133,7 +138,11 @@ const run = async () => {
 	)
 	.then(_.flatten);
 
-	await cpy(csvFilepaths, DATA_DIR_STATIC);
+	copyfiles(
+		[...csvFilepaths, DATA_DIR_STATIC],
+		{up: true},
+		logError
+	);
 
 	/* make an all-indicators single file */
 
@@ -146,7 +155,11 @@ const run = async () => {
 
 	const tmpZipPath = tempy.file({name: `${basename}.zip`});
 	await zip(DATA_DIR_STATIC, tmpZipPath);
-	await cpy(tmpZipPath, DATA_DIR_STATIC);
+	copyfiles(
+		[tmpZipPath, DATA_DIR_STATIC],
+		{up: true},
+		logError
+	);
 
 	/* make remaining all-indicators single files */
 
