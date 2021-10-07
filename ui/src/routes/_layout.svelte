@@ -3,8 +3,10 @@
 		from '@svizzle/ui/src/gauges/screen/ScreenGauge.svelte';
 	import LoadingView from '@svizzle/ui/src/LoadingView.svelte';
 	import {onMount, beforeUpdate, tick} from 'svelte';
+	import MetaTags from 'svelte-meta-tags/MetaTags.svelte';
 
 	import AccessibilityMenu from 'app/components/AccessibilityMenu.svelte';
+	import {metas} from 'app/config';
 	import Beta from 'app/components/content/info/Beta.svelte';
 	import ColorCorrection from 'app/components/ColorCorrection.svelte';
 	import MultiBanner from 'app/components/MultiBanner.svelte';
@@ -52,6 +54,13 @@
 	$: menuHeight = headerHeight + (showA11yMenu ? a11yHeight : 0);
 	$: $_screen?.classes && (isLayoutUndefined = false);
 </script>
+
+<MetaTags
+	title={metas.title}
+	description={metas.description}
+	canonical={metas.url}
+	openGraph={metas.openGraph}
+/>
 
 <ScreenGauge sampleText='inwINW' />
 <ColorCorrection />

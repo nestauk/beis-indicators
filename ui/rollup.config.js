@@ -42,7 +42,8 @@ export default {
 			replace({
 				'process.browser': true,
 				'process.env.NODE_ENV': JSON.stringify(mode),
-				'process.env.SAPPER_EXPORT': JSON.stringify(isExported)
+				'process.env.SAPPER_EXPORT': JSON.stringify(isExported),
+				preventAssignment: true
 			}),
 			svelte({
 				compilerOptions: {
@@ -67,9 +68,7 @@ export default {
 				extensions: ['.js', '.mjs', '.html', '.svelte'],
 				plugins: [
 					'@babel/plugin-syntax-dynamic-import',
-					['@babel/plugin-transform-runtime', {
-						useESModules: true
-					}]
+					'@babel/plugin-transform-runtime'
 				],
 				presets: [
 					['@babel/preset-env', {
@@ -94,7 +93,8 @@ export default {
 			replace({
 				'process.browser': false,
 				'process.env.NODE_ENV': JSON.stringify(mode),
-				'process.env.SAPPER_EXPORT': JSON.stringify(isExported)
+				'process.env.SAPPER_EXPORT': JSON.stringify(isExported),
+				preventAssignment: true
 			}),
 			svelte({
 				compilerOptions: {
@@ -135,7 +135,8 @@ export default {
 			replace({
 				'process.browser': true,
 				'process.env.NODE_ENV': JSON.stringify(mode),
-				'process.env.SAPPER_EXPORT': JSON.stringify(isExported)
+				'process.env.SAPPER_EXPORT': JSON.stringify(isExported),
+				preventAssignment: true
 			}),
 			commonjs(),
 			dsv(),

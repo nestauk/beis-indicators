@@ -1,3 +1,9 @@
+# 0.1.3 (next)
+
+## Tool
+
+- Add Open Graph meta tags, rollup adjustments (#523)
+
 # 0.1.2
 
 ## Tool

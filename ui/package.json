@@ -6,6 +6,7 @@
 		"@svizzle/utils": "^0.15.0",
 		"bowser": "^2.11.0",
 		"lamb": "^0.60.0",
+		"svelte-meta-tags": "^2.0.0",
 		"uid": "^1.0.0"
 	},
 	"description": "Front-end for BEIS regional indicators",
