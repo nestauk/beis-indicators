@@ -2,11 +2,12 @@ import * as _ from 'lamb';
 
 const routes = [
 	'/',
-	'/guide',
+	'/guides/indicators',
 	'/methodology',
 	'/indicators',
 	'/indicators/broadband_download_speed_data',
-	'/indicators/broadband_download_speed_data/2015'
+	'/indicators/broadband_download_speed_data/2015',
+	'/info/privacy'
 ];
 
 export default async ({driver, target, log}) => {

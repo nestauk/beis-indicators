@@ -1,8 +1,8 @@
 <script>
-	import {onMount} from 'svelte';
+	// import {onMount} from 'svelte';
 	import * as _ from 'lamb';
 	import {isNotNil} from '@svizzle/utils';
-	import Bowser from 'bowser';
+	// import Bowser from 'bowser';
 	import {_screen}
 		from '@svizzle/ui/src/gauges/screen/ScreenGauge.svelte';
 
@@ -14,6 +14,7 @@
 	import LoadingView from '@svizzle/ui/src/LoadingView.svelte';
 
 	import {zipUrl} from 'app/utils/assets';
+	/*
 	import {
 		getTest,
 		getTestResultsFilename,
@@ -21,6 +22,7 @@
 		testResultsBaseURL,
 		summarizeResults
 	} from 'app/utils/tests';
+	*/
 	import {
 		contactEmail,
 		failingA11yAudit,
@@ -47,9 +49,10 @@
 	};
 
 	let currentreport = reportNames[0];
-	let environment;
+	// let environment;
 	let lighthouseFrame;
 	let loadingResults = false;
+	/*
 	let testResults = {
 		tested: false,
 		passed: false
@@ -65,16 +68,19 @@
 			testResults = summarizeResults(test);
 		}
 	}
+	*/
 
 	function resizeIFrameToFitContent ( iFrame ) {
 		loadingResults = false
 		iFrame.height = iFrame.contentWindow.document.body.scrollHeight;
 	}
 
+	/*
 	onMount(() => {
 		environment = Bowser.parse(window.navigator.userAgent);
 		loadResults(environment);
 	})
+	*/
 
 	$: currentreport, loadingResults = true;
 	$: currentValueIndex = _.findIndex(
@@ -272,6 +278,7 @@
 			/>
 		</div>
 
+		<!--
 		<h2>Detected Browsing Environment</h2>
 		<dl>
 			<dt>Platform</dt>
@@ -318,6 +325,7 @@
 				{/if}
 			</p>
 		{/if}
+		-->
 
 		<h2>Quality audits</h2>
 		<menu class='tabs'>
@@ -453,6 +461,7 @@
 		list-style: initial;
 		margin-left: 20px;
 	}
+	/*
 	dl {
 		display: grid;
 		grid-template-rows: repeat(4, auto);
@@ -475,6 +484,7 @@
 	dd:not(:last-child) {
 		border-bottom: none;
 	}
+	*/
 	.tabs ul {
 		border-bottom: thin solid var(--color-main);
 		display: flex;

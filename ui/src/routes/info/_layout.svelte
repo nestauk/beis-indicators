@@ -65,6 +65,9 @@
 							}}
 						>
 							<Icon glyph={ChevronLeft} />
+							<span
+								aria-label='previous tab'
+							/>
 						</Link>
 					</div>
 					<div>
@@ -75,6 +78,9 @@
 							}}
 						>
 							<Icon glyph={ChevronRight} />
+							<span
+								aria-label='next tab'
+							/>
 						</Link>
 					</div>
 				</div>
