@@ -53,7 +53,7 @@
 	$: $_screen?.classes && (isLayoutUndefined = false);
 </script>
 
-<ScreenGauge />
+<ScreenGauge sampleText='W' />
 <ColorCorrection />
 
 <NoScript />
