@@ -1,8 +1,10 @@
-# 0.1.2 (next)
+# 0.1.2
 
 ## Tool
 
 - Point the version link to the changelog in the `release` branch (#519)
+- Upgraded dependencies (#517)
+- Accessibility: updated Lighthouse and Browserstack tests and results (#524)
 
 # 0.1.1
 
