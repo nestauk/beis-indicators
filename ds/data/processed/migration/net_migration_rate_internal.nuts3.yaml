@@ -1,9 +1,9 @@
 api_doc_url: https://www.ons.gov.uk/file?uri=%2fpeoplepopulationandcommunity%2fpopulationandmigration%2fmigrationwithintheuk%2fdatasets%2flocalareamigrationindicatorsunitedkingdom%2fcurrent/lamis2020final.xlsx
 api_type: FETCH
 data_date: 20200910
-description: Internal net migration rate x 1000 inhabitants. Data is calculated mid-year 1 to mid-year 2. We have used the first year as the label. Data used for this indicator is in the first sheet of the excel worksheet.
+description: Internal net migration rate x 1000 inhabitants. Data is calculated mid-year 1 to mid-year 2. We have used the first year as the label. Data used for this indicator is in the first sheet of the excel worksheet. All normalisation based on data available from the table we fetched. Our main processing was crosswalking LADs to NUTS regions using NSPL and the ONS LAD-NUTS lookup
 title: Internal net migration rate
-subtitle: All normalisation based on data available from the table we fetched. Our main processing was crosswalking LADs to NUTS regions using NSPL and the ONS LAD-NUTS lookup
+subtitle: In-migration minus out-migration from internal sources (per 1000 inhabitants)
 endpoint_url: https://www.ons.gov.uk/file?uri=%2fpeoplepopulationandcommunity%2fpopulationandmigration%2fmigrationwithintheuk%2fdatasets%2flocalareamigrationindicatorsunitedkingdom%2fcurrent/lamis2020final.xlsx
 framework_group: public_rnd
 is_experimental: False

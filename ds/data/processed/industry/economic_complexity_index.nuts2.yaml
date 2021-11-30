@@ -2,7 +2,8 @@ api_doc_url: https://www.nomisweb.co.uk/api/v01/help
 api_type: POST
 data_date: 20200218
 title: Economic Complexity Index
-subtitle: This indicator measures the economic complexity of a location based on an analysis of its industrial composition ((based on Nesta sectoral definition, which clusters 4-digit SIC codes based on their similarity))
+subtitle: The Economic Complexity Index (ECI) captures the sophistication of economic activities in a location
+description: This indicator measures the economic complexity of NUTS 3 locations based on an analysis of its industrial composition ((based on Nesta sectoral definition, which clusters 4-digit SIC codes based on their similarity))
 endpoint_url: http://www.nomisweb.co.uk/api/v01/dataset/
 framework_group: private_rnd
 is_experimental: True

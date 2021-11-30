@@ -2,7 +2,7 @@ api_doc_url: https://gtr.ukri.org/resources/GtR-2-API-v1.7.4.pdf
 api_type: FETCH
 auth_provider: Nesta
 data_date: 20210617
-title:  Number of projects in all disciplines led by organisations in the region
+title:  Number of projects led by organisations in the region
 subtitle: Total number of projects led by organisations in the NUTS area in all disciplines
 endpoint_url: https://s3.console.aws.amazon.com/s3/object/nesta-data-getters/17_9_2019_gtr_orgs.csv
 framework_group: public_rnd

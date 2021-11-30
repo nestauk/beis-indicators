@@ -3,7 +3,8 @@ api_type: FETCH
 auth_provider: Nesta
 data_date: 20200218
 title: Venture capital investment
-subtitle: Level of venture capital investment in ventures based on a region based on data from CrunchBase. A small number of deals have been converted to GBP at the date when they were announced.
+subtitle: Venture capital investment in ventures based on a region.
+description: Level of venture capital investment in ventures based on a region based on data from CrunchBase. A small number of deals have been converted to GBP at the date when they were announced.
 endpoint_url: https://crunchbase-export.s3.eu-west-2.amazonaws.com/organizations.csv
 framework_group: private_rnd
 is_experimental: True
