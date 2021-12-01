@@ -1,6 +1,7 @@
 #!/usr/bin/env node -r esm
 
 import path from 'path';
+import util from 'util';
 
 import yaml from 'js-yaml';
 import {isCsvFile, readCsv, readDir, readFile, saveString} from '@svizzle/file';
@@ -35,6 +36,7 @@ const UK_REGIONS_LABELS = {
 	LEP: LEP_UK_labels,
 };
 
+const copyFiles = util.promisify(copyfiles);
 const logError = err => err && console.log(err);
 const isDir = name => !name.startsWith('.') && path.parse(name).ext === '';
 const makePath = dirName => filename => path.resolve(
@@ -109,11 +111,10 @@ const makeSingleFileWith = async (condition, regionType) => {
 	.then(csvFormat)
 	.then(saveString(tmpAllIndicatorsCsvPath));
 
-	copyfiles(
+	await copyFiles(
 		[tmpAllIndicatorsCsvPath, DATA_DIR_STATIC],
 		{up: true},
-		logError
-	);
+	).catch(logError);
 }
 
 
@@ -138,11 +139,10 @@ const run = async () => {
 	)
 	.then(_.flatten);
 
-	copyfiles(
+	await copyFiles(
 		[...csvFilepaths, DATA_DIR_STATIC],
 		{up: true},
-		logError
-	);
+	).catch(logError);
 
 	/* make an all-indicators single file */
 
@@ -155,11 +155,10 @@ const run = async () => {
 
 	const tmpZipPath = tempy.file({name: `${basename}.zip`});
 	await zip(DATA_DIR_STATIC, tmpZipPath);
-	copyfiles(
+	await copyFiles(
 		[tmpZipPath, DATA_DIR_STATIC],
 		{up: true},
-		logError
-	);
+	).catch(logError);
 
 	/* make remaining all-indicators single files */
 

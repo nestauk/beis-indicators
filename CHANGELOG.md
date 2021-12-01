@@ -1,3 +1,9 @@
+# 0.1.4 (next)
+
+## Tool
+
+- Fix the downloadable zip file not containing all of the expected files (#530)
+
 # 0.1.3
 
 ## Tool
