@@ -67,8 +67,9 @@
 		"pa11y": "node -r esm test/pa11y/validate.js",
 		"rmdata": "rimraf static/data",
 		"rmsappers": "rimraf __sapper__ src/node_modules/@sapper",
+		"selenium": "node test/browserstack/selenium-runner.mjs",
 		"start": "node __sapper__/build",
 		"test": "run-p --race dev cy:run",
-		"selenium": "node test/browserstack/selenium-runner.mjs"
+		"uninstall": "rimraf node_modules package-lock.json"
 	}
 }
