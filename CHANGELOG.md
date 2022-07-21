@@ -4,6 +4,7 @@
 
 - Fix the downloadable zip file not containing all of the expected files (#530)
 - Deployment scripts log and error out when some schemas are malformed (#531)
+- Change of eurostat links, from API to website (#541)
 
 # 0.1.3
 

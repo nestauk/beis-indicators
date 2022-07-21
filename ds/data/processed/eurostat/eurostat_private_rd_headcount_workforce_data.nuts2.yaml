@@ -2,7 +2,7 @@ api_doc_url: https://ec.europa.eu/eurostat/cache/metadata/en/rd_esms.htm
 api_type: FETCH
 title: HC of R&D workforce
 subtitle: Head count (HC) OF private sector research & development (R&D) workforce by NUTS 2 regions.
-endpoint_url: http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/rd_p_persreg?sinceTimePeriod=2007&geoLevel=nuts2&precision=1&sex=T&sectperf=BES&prof_pos=TOTAL&unit=HC
+endpoint_url: https://ec.europa.eu/eurostat/databrowser/bookmark/b19c38ea-b194-4e87-85ff-eaf8d95de0e3?lang=en
 framework_group: private_rnd
 is_experimental: False
 order: [year, nuts_id, nuts_year_spec, value.id] # do not change; specifies the order of the exported indicator fields
