@@ -1,7 +1,7 @@
 {
 	"author": "nestauk (https://www.nesta.org.uk/)",
 	"dependencies": {
-		"@svizzle/time_region_value": "^0.4.0",
+		"@svizzle/time_region_value": "^0.8.1",
 		"@svizzle/ui": "^0.4.0",
 		"@svizzle/utils": "^0.15.0",
 		"bowser": "^2.11.0",
